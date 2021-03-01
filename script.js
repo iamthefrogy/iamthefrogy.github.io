@@ -1,19 +1,19 @@
 const BLACKLISTED_KEY_CODES = [ 38 ];
 const COMMANDS = {
   help:
-    'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">certifications</span>, <span class="code">contact</span>',
+    'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">acknowledges</span>, <span class="code">contact</span>',
   about:
-    "Cyber Security practitioner capable of strategizing, architecting, building and maturing cyber security initiatives. Passionate about analyzing cyber security risks and translating them to actionable countermeasures. 8 years+ of working experience in Cyber Security domain. University Masters degree in Cybersecurity and Forensics from University of Bedfordshire (UK).",
+    "Hello 👋<br>I'm Alan Abhilash. I’m a 18 yr old pentester and bug bounty hunter currently living in India.",
   skills:
-    "Security Engineering | Threat and Vulnerability Management | Threat Hunting & Intelligence | Red teaming | Security Operation Analysis | Penetration Testing",
+    '<span class="code">Skill:</span> Ethical Hacking, Pen-Testing, Bug Hunting,..<br>',
   education:
-    "MSc. in Computer Security & Forensics<br> B.Tech in Computer Engineering",
-  experience: 
-    '<span class="code">Total experience: 9 years</span><br>Security Engineering Manager - Tesco - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months<br>',
-  certifications: 
-    'OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator',
+    "MES HSS Vandanmedu, Idukki,Kerala, India<br> Plus Two , Computer Science",
+  resume: "<a href='./resume.pdf' class='success link'>resume.pdf</a>",
+  experience: "No Experience😥",
+  acknowledges: 
+    "<a href='https://bughunter.withgoogle.com/profile/12edf378-705d-4ef8-ae44-2fc5ab8bbb69' class='success link'>Google Honorable Mention</a> , <a href='https://www.nokia.com/responsible-disclosure/' class='success link'>Nokia HOF On December 2020</a> , <a href='https://access.redhat.com/articles/66234' class='success link'>RedHat HOF 2021</a>", 
   contact:
-    "You can contact me on any of following links:<br><a href='https://www.linkedin.com/in/chintangurjar/' class='success link'>Linkedin</a>, <a href="mailto:chintangurjar@outlook.com" class='success link'>Email</a>, <a href='https://twitter.com/iamthefrogy/' class='success link'>Twitter</a>"
+    "You can contact me on any of following links:<br><a href='https://t.me/alan_abhilash' class='success link'>Telegram</a>, <a href='https://www.instagram.com/mr.blackmarketer/' class='success link'>Instagram</a>, <a href='https://www.twitter.com/alan_abhilash/' class='success link'>Twitter</a>"
 };
 let userInput, terminalOutput;
 
