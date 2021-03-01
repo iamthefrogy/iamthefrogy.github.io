@@ -3,7 +3,7 @@ const COMMANDS = {
   help:
     'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">acknowledges</span>, <span class="code">contact</span>',
   about:
-    "Hello 👋<br>I'm Alan Abhilash. I’m a 18 yr old pentester and bug bounty hunter currently living in India.",
+    "Cyber Security practitioner capable of strategizing, architecting, building and maturing cyber security initiatives. Passionate about analyzing cyber security risks and translating them to actionable countermeasures. 8 years+ of working experience in Cyber Security domain. University Masters degree in Cybersecurity and Forensics from University of Bedfordshire (UK).",
   skills:
     '<span class="code">Skill:</span> Ethical Hacking, Pen-Testing, Bug Hunting,..<br>',
   education:
