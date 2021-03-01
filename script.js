@@ -9,9 +9,9 @@ const COMMANDS = {
   education:
     "MSc. in Computer Security & Forensics<br> B.Tech in Computer Engineering",
   experience: 
-    "<span class="code">Total experience: 9 years</span><br>Security Engineering Manager - Tesco - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months<br>",
+    '<span class="code">Total experience: 9 years</span><br>Security Engineering Manager - Tesco - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months<br>',
   certifications: 
-    "OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator", 
+    'OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator',
   contact:
     "You can contact me on any of following links:<br><a href='https://www.linkedin.com/in/chintangurjar/' class='success link'>Linkedin</a>, <a href="mailto:chintangurjar@outlook.com" class='success link'>Email</a>, <a href='https://twitter.com/iamthefrogy/' class='success link'>Twitter</a>"
 };
