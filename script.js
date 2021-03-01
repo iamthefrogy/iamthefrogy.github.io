@@ -12,7 +12,7 @@ const COMMANDS = {
   certifications: 
     "OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator",
   contact:
-    "You can contact me on any of following links:<br><a href='https://www.linkedin.com/in/chintangurjar/' class='success link'>Linkedin</a>, <a href="mailto:chintangurjar@outlook.com" class='success link'>Email</a>, <a href='https://twitter.com/iamthefrogy/' class='success link'>Twitter</a>"
+    "You can contact me on any of following links:<br><a href='https://www.linkedin.com/in/chintangurjar/' class='success link'>Linkedin</a>, <a href='mailto:chintangurjar@outlook.com' class='success link'>Email</a>, <a href='https://twitter.com/iamthefrogy/' class='success link'>Twitter</a>"
 };
 let userInput, terminalOutput;
 
