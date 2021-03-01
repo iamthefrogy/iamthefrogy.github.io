@@ -5,9 +5,9 @@ const COMMANDS = {
   about:
     "Cyber Security practitioner capable of strategizing, architecting, building and maturing cyber security initiatives. Passionate about analyzing cyber security risks and translating them to actionable countermeasures. 8 years+ of working experience in Cyber Security domain. University Masters degree in Cybersecurity and Forensics from University of Bedfordshire (UK).",
   skills:
-    '<span class="code">Skill:</span> Ethical Hacking, Pen-Testing, Bug Hunting,..<br>',
+    "Security Engineering | Threat and Vulnerability Management | Threat Hunting & Intelligence | Red teaming | Security Operation Analysis |Penetration Tester",
   education:
-    "MES HSS Vandanmedu, Idukki,Kerala, India<br> Plus Two , Computer Science",
+    "MSc. in Computer Security & Forensics<br> B.Tech in Computer Engineering",
   resume: "<a href='./resume.pdf' class='success link'>resume.pdf</a>",
   experience: "No Experience😥",
   acknowledges: 
