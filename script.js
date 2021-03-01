@@ -9,8 +9,8 @@ const COMMANDS = {
   education:
     "MSc. in Computer Security & Forensics<br> B.Tech in Computer Engineering",
   experience:'<span class="code">Total experience: 9 years</span><br>Security Engineering Manager - Tesco - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months',
-  acknowledges: 
-    "<a href='https://bughunter.withgoogle.com/profile/12edf378-705d-4ef8-ae44-2fc5ab8bbb69' class='success link'>Google Honorable Mention</a> , <a href='https://www.nokia.com/responsible-disclosure/' class='success link'>Nokia HOF On December 2020</a> , <a href='https://access.redhat.com/articles/66234' class='success link'>RedHat HOF 2021</a>", 
+  certifications: 
+    "OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator", 
   contact:
     "You can contact me on any of following links:<br><a href='https://t.me/alan_abhilash' class='success link'>Telegram</a>, <a href='https://www.instagram.com/mr.blackmarketer/' class='success link'>Instagram</a>, <a href='https://www.twitter.com/alan_abhilash/' class='success link'>Twitter</a>"
 };
