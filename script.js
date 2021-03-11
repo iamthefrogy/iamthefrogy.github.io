@@ -1,7 +1,7 @@
 const BLACKLISTED_KEY_CODES = [ 38 ];
 const COMMANDS = {
   help:
-    'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">certifications</span>, <span class="code">contact</span>',
+    'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">articles</span>, <span class="code">skills</span>, <span class="code">certifications</span>, <span class="code">contact</span>',
   about:
     "Cyber Security practitioner capable of strategizing, architecting, building and maturing cyber security initiatives. Passionate about analyzing cyber security risks and translating them to actionable countermeasures. 8 years+ of working experience in Cyber Security domain. University Masters degree in Cybersecurity and Forensics from University of Bedfordshire (UK).",
   skills:
@@ -11,6 +11,8 @@ const COMMANDS = {
   experience:'<span class="code">Total experience: 9 years</span><br>Security Engineering Manager - Tesco - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months',
   certifications: 
     "OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator",
+  articles:
+    "<a href='https://infosecninja.blogspot.com/2019/09/integrate-threat-intelligence-program_26.html' class='success link'>Threat Intel</a>, <a href='https://www.linkedin.com/feed/update/urn:li:activity:6664730823222276096/' class='success link'>SOC monitoring mindmap</a>, <a href='https://infosecninja.blogspot.com/2018/05/on-april-26-2018-checkpoint-research.html' class='success link'>Stealing NTLM hash with BadPDF</a>",
   contact:
     "You can contact me on any of following links:<br><a href='https://www.linkedin.com/in/chintangurjar/' class='success link'>Linkedin</a>, <a href='mailto:chintangurjar@outlook.com' class='success link'>Email</a>, <a href='https://twitter.com/iamthefrogy/' class='success link'>Twitter</a>"
 };
