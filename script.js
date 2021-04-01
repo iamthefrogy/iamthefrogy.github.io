@@ -12,7 +12,7 @@ const COMMANDS = {
   certifications: 
     "OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator",
   articles:
-    "<a href='https://infosecninja.blogspot.com/2019/09/integrate-threat-intelligence-program_26.html' class='success link'>Threat Intel</a>, <a href='https://www.linkedin.com/feed/update/urn:li:activity:6664730823222276096/' class='success link'>SOC monitoring mindmap</a>, <a href='https://infosecninja.blogspot.com/2018/05/on-april-26-2018-checkpoint-research.html' class='success link'>Stealing NTLM hash with BadPDF</a>",
+    "<a href='https://github.com/iamthefrogy/FYI' class='success link'>FYI - This GitHub repo has the collection of my entire career's work/research/thoughts/articles/webinar/articles/publications.</a>",
   contact:
     "You can contact me on any of following links:<br><a href='https://www.linkedin.com/in/chintangurjar/' class='success link'>Linkedin</a>, <a href='mailto:chintangurjar@outlook.com' class='success link'>Email</a>, <a href='https://twitter.com/iamthefrogy/' class='success link'>Twitter</a>"
 };
