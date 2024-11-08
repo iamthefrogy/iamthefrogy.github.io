@@ -8,7 +8,7 @@ const COMMANDS = {
     "Security Engineering | Threat and Vulnerability Management | Threat Hunting & Intelligence | Red teaming | Security Operation Analysis | Penetration Testing",
   education:
     "MSc. in Computer Security & Forensics<br> B.Tech in Computer Engineering",
-  experience:'<span class="code">Total experience: 9 years</span><br>Security Engineering Manager - Tesco - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months',
+  experience:'<span class="code">Total experience: 9 years</span><br>Threat & Vulnerability Manager - M&S - United Kingdom - Present<br> Manager - KPMG New Zealand - New Zealand - 3 years 6 months<br>Security Consultant - NotSosecure - India - 8 months<br>Security Engineer - Zebpay - India - 6 months<br>Security Analyst (Enterprise Customer Service) - India - 1 year 9 months<br>Security Analyst - LetNurture - India - 1 year 6 months',
   certifications: 
     "SANS MGT 516 - Enterprise and Cloud Vulnerability Management<br>OSCP - Offensive Security Certified Professional<br>CTIA - Cyber Threat Intelligence Analyst<br>CEH - Certified Ethical Hacker<br>CCFH - Certified Crowdstrike Falcon Hunter<br>CCFA - Certified CrowdStrike Falcon Administrator",
   articles:
