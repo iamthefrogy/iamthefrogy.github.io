@@ -1,0 +1,272 @@
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+a,
+a:hover,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: rgb(24 24 27);
+}
+body {
+  font-family: "Roboto Slab", "Roboto", "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+
+  width: auto;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+
+  background-color: #fcfcfc;
+}
+html {
+  position: relative;
+
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+li {
+  text-align: left;
+}
+.author {
+  color: #444;
+}
+.author h1,
+.author h2,
+.author h3,
+.author h4,
+.author h5,
+.author h6,
+.author p {
+  font-family: "Roboto Slab", serif;
+}
+.category {
+  color: #966 !important;
+}
+.container {
+  overflow: auto;
+  max-width: auto;
+  padding: 0 15px;
+  text-align: justify;
+}
+.content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.content a {
+  text-decoration: none;
+  color: rgb(153 27 27);
+}
+div.content {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #000;
+}
+.copyright {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 10; /* Increase font weight slightly for better readability */
+  color: rgb(64 64 64);
+  font-size: 14px;
+  max-width: 100%; /* Allow the content to span the full width */
+  display: flex; /* Enables horizontal alignment */
+  flex-wrap: wrap; /* Allows content to wrap onto the next row if needed */
+  justify-content: space-between; /* Adds even spacing between elements */
+  gap: 1px; /* Adds spacing between wrapped items */
+  margin-top: 10px;
+  line-height: 1.5; /* Adjusts line height for better readability */
+  text-align: inherit;; /* Justifies text for a cleaner layout */
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.error {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin-top: 100px;
+}
+.error a {
+  color: rgb(153 27 27);
+}
+.error h1 {
+  font-size: 80px;
+
+  color: #8b8b8b;
+}
+.error p {
+  margin-top: 150px;
+
+  color: #777;
+}
+.excerpt {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+
+  color: #555;
+  margin-bottom: 20px;
+}
+.footer {
+  margin-top: 10px;
+  color: rgb(64 64 64) !important;
+
+  color: #8b8b8b;
+}
+.header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.headshot {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+.info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.intro {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: rgb(82 82 91);
+}
+h3.intro {
+  margin-top: 0px;
+}
+.list {
+  font-family: "Roboto", sans-serif;
+
+  margin-top: 10px;
+}
+.list li {
+  list-style: none;
+}
+.list-entry {
+  font-family: "Roboto Slab", serif;
+  font-size: 25px;
+  font-weight: 400;
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.list-entry-link {
+  padding: 0;
+}
+.main-menu {
+  display: flex; /* Align menu items horizontally */
+  justify-content: center; /* Center the menu items */
+  gap: 20px; /* Add spacing between items */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.menu {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: none;
+  color: rgb(64 64 64) !important;
+  display: inline-block; /* Allows transform to work */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.menu-item:hover {
+  color: rgb(0 76 153); /* Darker shade of blue on hover */
+  cursor: pointer; /* Change cursor to pointer */
+  transform: scale(1.1); /* Slightly enlarges the icon or text on hover */
+  font-weight: bold;
+}
+
+.meta {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(113 113 122);
+}
+a.meta {
+  color: rgb(153 27 27);
+}
+h6.meta {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(113 113 122);
+}
+section.meta {
+  margin-top: ;
+}
+.powered {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+.social {
+  margin: 10px 10px;
+  display: flex; /* Ensures horizontal alignment for social buttons */
+  justify-content: center; /* Centers the buttons */
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+.social a {
+  color: #526d7a;
+  margin: 5px;
+  font-size: 20px; /* Adjust size if needed */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Adds smooth transition for hover effects */
+}
+
+.social a:hover {
+  color: #404040; /* Change to a darker or different color on hover */
+  text-decoration: underline; /* Add underline effect on hover */
+  transform: scale(1.3); /* Slightly enlarges the icon or text on hover */
+  cursor: pointer; /* Changes cursor to pointer to indicate interactivity */
+}
+
+
+.title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+
+  rgb(24 24 27);
+}
+header.title {
+  margin-top: 50px;
+  padding: 0px;
+}
+@media (max-width: 991px) {
+  .header {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .list {
+    font-family: "Roboto", sans-serif;
+
+    margin-top: 30px;
+  }
+}
+pre > code {
+  white-space: pre;
+  word-wrap: initial;
+  word-break: initial;
+}

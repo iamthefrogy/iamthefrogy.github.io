@@ -1,0 +1,11 @@
+<footer class="text-center footer">
+  <hr />
+  {{ with .Site.Params.extra }}
+  <h6 class="text-center copyright">{{ .copyright | markdownify }}</h6>
+  {{ if ne .poweredby false }}
+  {{ end }}
+  {{ if ne .displayrssicon false }}
+  {{ end }}
+  {{ end }}
+
+</footer>

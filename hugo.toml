@@ -1,0 +1,89 @@
+## Basic Configuration
+
+baseurl = "https://iamthefrogy.github.io/"
+builddrafts = false
+canonifyurls = false
+languageCode = "en-US"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+author = "Chintan Gurjar"
+title = "Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming"
+
+theme = "hugo-goa"
+
+## Hugo Built-in Features
+# disqusShortname = "discusShortname" # Enable if you want to use Disqus
+# googleAnalytics = "UA-XXXXXXXX-X" # Enable if you want to use Google Analytics
+enableRobotsTXT = true
+
+## Site Settings
+[params]
+author = "Chintan Gurjar"
+intro = " Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming"
+description = """
+**Welcome to the professional profile of Chintan Gurjar**, a seasoned cybersecurity specialist with over **13 years of expertise** in safeguarding global organizations against evolving cyber threats. With a proven track record of leading advanced security programs across industries, I specialize in **Threat Intelligence**, **Vulnerability Management**, **Red Teaming**, and **Attack Surface Management**.
+
+Having collaborated with industry leaders like **M&S**, **TikTok**, **Tesco**, and **KPMG**, I bring a unique blend of **technical mastery** and **strategic vision** to fortify businesses against advanced persistent threats and complex vulnerabilities. My work involves integrating **cutting-edge tools and automation technologies**, aligning security practices with business objectives, and fostering a culture of **proactive risk management**.
+
+Notable achievements include designing and operationalizing **enterprise-level security frameworks**, enhancing efficiency through automation, and delivering actionable insights to **C-level executives**. I’ve also contributed as a **thought leader**, authoring industry courses, mentoring future cybersecurity professionals, and serving on advisory boards.
+
+"""
+authorimage = "headshot.png"
+dateformat = "Jan 2, 2006"
+
+## Site Meta Settings
+[params.meta]
+description = "Simple minimalist theme"
+keywords = "minimalist,blog,goa,hugo,developer"
+
+## Social Accounts
+[params.social]
+github = "iamthefrogy"
+linkedin = "chintangurjar"
+twitter = "iamthefrogy"
+youtube = "@Cyberevolution/videos"
+email = "chintangurjar@outlook.com"
+
+## Extras
+[params.extra]
+copyright = "© Chintan Gurjar - chintangurjar@outlook.com"
+poweredby = true
+highlightjs = true
+socialmarkup = true
+toc = true
+displayrssicon = true
+
+## Main Menu
+[[menu.main]]
+name = "Home"
+weight = 100
+identifier = "home"
+url = "/"
+[[menu.main]]
+name = "Blog"
+weight = 200
+identifier = "posts"
+url = "/posts"
+[[menu.main]]
+name = "About"
+identifier = "about"
+weight = 300
+url = "/about"
+[[menu.main]]
+name = "CV/Resume"
+identifier = "cv"
+weight = 400
+url = "/cv"
+[[menu.main]]
+name = "Repositories"
+identifier = "repositories"
+weight = 500
+url = "/repositories"
+[[menu.main]]
+name = "Journey"
+identifier = "timeline"
+weight = 600
+url = "/timeline"
