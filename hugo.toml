@@ -4,6 +4,7 @@ baseurl = "https://iamthefrogy.github.io/"
 builddrafts = false
 canonifyurls = false
 languageCode = "en-US"
+preserveCNAME = true
 
 contentdir = "content"
 layoutdir = "layouts"
