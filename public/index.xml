@@ -6,8 +6,15 @@
     <description>Recent content on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 25 Dec 2024 14:26:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2024 15:11:14 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mystirious Pixel</title>
+      <link>http://localhost:1313/hack-and-play/mystirious-pixel/</link>
+      <pubDate>Wed, 25 Dec 2024 15:11:14 +0000</pubDate>
+      <guid>http://localhost:1313/hack-and-play/mystirious-pixel/</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xA;&lt;html&gt;&#xA;&lt;head&gt;&#xA;  &lt;meta charset=&#34;UTF-8&#34;&gt;&#xA;  &lt;title&gt;The Lost Pixel&lt;/title&gt;&#xA;  &lt;style&gt;&#xA;    body {&#xA;      font-family: Arial, sans-serif;&#xA;      background: #f1f1f1;&#xA;      margin: 0;&#xA;      padding: 20px;&#xA;    }&#xA;    .game-container {&#xA;      max-width: 600px;&#xA;      margin: 0 auto;&#xA;      background: #fff;&#xA;      border-radius: 4px;&#xA;      padding: 20px;&#xA;      box-shadow: 0 0 10px rgba(0,0,0,0.1);&#xA;    }&#xA;    h2 {&#xA;      text-align: center;&#xA;    }&#xA;    p {&#xA;      line-height: 1.5;&#xA;    }&#xA;    .pixel-art {&#xA;      display: flex;&#xA;      justify-content: center;&#xA;      margin: 20px 0;&#xA;    }&#xA;    .footer {&#xA;      text-align: center;&#xA;      margin-top: 30px;&#xA;      font-size: 0.9em;&#xA;      color: #999;&#xA;    }&#xA;  &lt;/style&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;div class=&#34;game-container&#34;&gt;&#xA;  &lt;h1&gt;The Lost Pixel&lt;/h1&gt;&#xA;  &lt;p&gt;&#xA;    A mysterious pixel has appeared at the corner of this digital page.&#xA;    Rumor has it that hidden codes, locked secrets, and&#xA;    clandestine messages might be tucked away in the site’s source.&#xA;  &lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Mysterious Guestbook</title>
       <link>http://localhost:1313/hack-and-play/the-mysterious-guestbook/</link>
