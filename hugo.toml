@@ -2,7 +2,7 @@
 
 baseurl = "https://iamthefrogy.github.io/"
 builddrafts = false
-canonifyurls = true
+canonifyurls = false
 languageCode = "en-US"
 
 contentdir = "content"
