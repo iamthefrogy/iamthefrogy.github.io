@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hack-and-Plays on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</title>
+    <link>http://localhost:1313/hack-and-play/</link>
+    <description>Recent content in Hack-and-Plays on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 25 Dec 2024 14:26:27 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/hack-and-play/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Mysterious Guestbook</title>
+      <link>http://localhost:1313/hack-and-play/the-mysterious-guestbook/</link>
+      <pubDate>Wed, 25 Dec 2024 14:26:27 +0000</pubDate>
+      <guid>http://localhost:1313/hack-and-play/the-mysterious-guestbook/</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xA;&lt;html&gt;&#xA;&lt;head&gt;&#xA;  &lt;meta charset=&#34;UTF-8&#34;&gt;&#xA;  &lt;title&gt;Mysterious Encrypted Guestbook&lt;/title&gt;&#xA;  &lt;style&gt;&#xA;    body {&#xA;      font-family: sans-serif;&#xA;    }&#xA;    .hidden {&#xA;      display: none;&#xA;    }&#xA;  &lt;/style&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;h1&gt;Guestbook&lt;/h1&gt;&#xA;&lt;div&gt;Alice: “I wonder what secrets might lurk here.”&lt;/div&gt;&#xA;&lt;div&gt;Bob: “Maybe there’s nothing at all.”&lt;/div&gt;&#xA;&lt;div&gt;Carol: “Some strings look weird, but who cares?”&lt;/div&gt;&#xA;&lt;div&gt;Dan: “Sometimes the biggest clues are invisible.”&lt;/div&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;p1&#34; value=&#34;U29tZUNvbXBsZXRlbHlSYW5kb21TdHJpbmc=&#34;&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;p2&#34; value=&#34;V2hvQ2FyZXNJZkFueXRoaW5nR2V0c09ic2N1cmVk&#34;&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;h7fGx9&#34; value=&#34;UkNFUw==&#34;&gt;&#xA;&lt;div class=&#34;hidden&#34;&gt;50313a2f2f52616e646f6d486578537472696e672e536f4D7563684f627375726564&lt;/div&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;xQ09ns&#34; value=&#34;RUtURQ==&#34;&gt;&#xA;&lt;div class=&#34;hidden&#34;&gt;SGVyZUhhdmVBb3JlT2JSZWFsbHlOb3RoaW5n&lt;/div&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;K2uP0&#34; value=&#34;VVB7WQ==&#34;&gt;&#xA;&lt;div class=&#34;hidden&#34;&gt;0x42 0x61 0x73 0x65 0x36 0x34 0x43 0x6F 0x6E 0x66 0x75 0x73 0x69 0x6F 0x6E&lt;/div&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;f0ZZf1&#34; value=&#34;fURES0NBUkNFTFpa&#34;&gt;&#xA;&lt;input type=&#34;hidden&#34; name=&#34;ZZrandom&#34; value=&#34;RmluZCBzdGlsbCBtb3JlIGxhb3lhbCBkZWNveQ==&#34;&gt;&#xA;&lt;div style=&#34;color:blue; font-weight:bold;&#34;&gt;&#xA;  Garbled Note: UzBtLj9+LW9ObyF3aGF0&#xA;&lt;/div&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;If you think you found something interesting, DM me on LinkedIn!&lt;/br&gt;&#xA;&lt;a href=&#34;https://www.linkedin.com/in/chintangurjar/&#34;&gt;My Profile&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
