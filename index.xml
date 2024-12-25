@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 25 Dec 2024 14:26:27 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>The Mysterious Guestbook</title><link>https://iamthefrogy.github.io/hack-and-play/the-mysterious-guestbook/</link><pubDate>Wed, 25 Dec 2024 14:26:27 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/the-mysterious-guestbook/</guid><description>&lt;!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 25 Dec 2024 15:11:14 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Mystirious Pixel</title><link>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</link><pubDate>Wed, 25 Dec 2024 15:11:14 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</guid><description>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+ &lt;meta charset="UTF-8">
+ &lt;title>The Lost Pixel&lt;/title>
+ &lt;style>
+ body {
+ font-family: Arial, sans-serif;
+ background: #f1f1f1;
+ margin: 0;
+ padding: 20px;
+ }
+ .game-container {
+ max-width: 600px;
+ margin: 0 auto;
+ background: #fff;
+ border-radius: 4px;
+ padding: 20px;
+ box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ }
+ h2 {
+ text-align: center;
+ }
+ p {
+ line-height: 1.5;
+ }
+ .pixel-art {
+ display: flex;
+ justify-content: center;
+ margin: 20px 0;
+ }
+ .footer {
+ text-align: center;
+ margin-top: 30px;
+ font-size: 0.9em;
+ color: #999;
+ }
+ &lt;/style>
+&lt;/head>
+&lt;body>
+&lt;div class="game-container">
+ &lt;h1>The Lost Pixel&lt;/h1>
+ &lt;p>
+ A mysterious pixel has appeared at the corner of this digital page.
+ Rumor has it that hidden codes, locked secrets, and
+ clandestine messages might be tucked away in the site’s source.
+ &lt;/p></description></item><item><title>The Mysterious Guestbook</title><link>https://iamthefrogy.github.io/hack-and-play/the-mysterious-guestbook/</link><pubDate>Wed, 25 Dec 2024 14:26:27 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/the-mysterious-guestbook/</guid><description>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
  &lt;meta charset="UTF-8">
