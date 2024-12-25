@@ -98,3 +98,8 @@ name = "Are You Secure?"
 identifier = "are-you-secure"
 weight = 700
 url = "/are-you-secure"
+[[menu.main]]
+name = "Hack & Play"
+identifier = "hack-and-play"
+weight = 700
+url = "/hack-and-play"
