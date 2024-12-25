@@ -90,8 +90,8 @@ div.content {
   margin-top: 10px;
   line-height: 1.5; /* Adjusts line height for better readability */
   text-align: inherit;; /* Justifies text for a cleaner layout */
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .error {
@@ -189,6 +189,7 @@ h3.intro {
   color: rgb(64 64 64) !important;
   display: inline-block; /* Allows transform to work */
   transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+  text-align: inherit;
 }
 
 .menu-item:hover {
