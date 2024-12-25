@@ -57,6 +57,11 @@ socialmarkup = true
 toc = true
 displayrssicon = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 ## Main Menu
 [[menu.main]]
 name = "Home"

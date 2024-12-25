@@ -6,7 +6,7 @@ title = '(CTI) - VIP Monitoring in Threat Intel - Part 2'
 
 ## Implement an Effective VIP Monitoring Program
 
-![VIP Monitoring](/images/vip.png)
+<center><img src="/images/vip.png" alt="Gaps" width="1350"/></center>
 
 Monitoring high-profile individuals requires a methodical and structured approach. Below are actionable steps to design and implement an effective VIP monitoring program:
 
