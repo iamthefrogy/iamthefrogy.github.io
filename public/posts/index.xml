@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</title>
+    <title>Posts on Cyber Frogy</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming</description>
+    <description>Recent content in Posts on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 25 Dec 2024 13:03:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2024 01:19:40 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(CTI) - Bringing External and Internal Intel Data Together</title>
+      <link>http://localhost:1313/posts/what-to-cover-in-matured-cti-program/</link>
+      <pubDate>Thu, 26 Dec 2024 01:19:40 +0000</pubDate>
+      <guid>http://localhost:1313/posts/what-to-cover-in-matured-cti-program/</guid>
+      <description>&lt;p&gt;Effective cyber threat intelligence isn’t just about collecting random feeds or logging bits of data—it’s about having complete coverage. By gathering external intel (like commercial feeds, open-source reports, and real-time Indicators of Compromise) and pairing it with internal data (such as DNS logs, endpoint alerts, and application activity), organizations get a full picture of potential threats. In this blog post, we’ll focus on the coverage side of a mature CTI program—pinpointing the most important intel sources and data points you need for a strong defense and quick response.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>(VM/ASM) - GAP comparision In Traditional VM/ASM</title>
       <link>http://localhost:1313/posts/gaps-in-vm-asm/</link>

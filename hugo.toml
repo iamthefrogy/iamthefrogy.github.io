@@ -11,7 +11,7 @@ layoutdir = "layouts"
 publishdir = "public"
 
 author = "Chintan Gurjar"
-title = "Chintan Gurjar - Cybersecurity Specialist in Threat Intelligence, Vulnerability Management, and Red Teaming"
+title = "Cyber Frogy"
 
 theme = "hugo-goa"
 
