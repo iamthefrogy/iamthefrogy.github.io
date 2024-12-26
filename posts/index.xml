@@ -12,8 +12,27 @@
 &lt;li>Collaborating effectively with multiple teams for root-cause fixes.&lt;/li>
 &lt;/ul>
 &lt;p>A well-designed &lt;strong>Vulnerability Management (VM)&lt;/strong> program is critical for mitigating risks and ensuring organizational security maturity.&lt;/p></description></item><item><title>(CTI) - CTI Maturity Model</title><link>https://iamthefrogy.github.io/posts/cti-maturity-model/</link><pubDate>Tue, 24 Dec 2024 23:00:30 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/cti-maturity-model/</guid><description>&lt;h2 id="introduction">&lt;strong>Introduction&lt;/strong>&lt;/h2>
-&lt;p>In this post, we’ll explore a &lt;strong>2024 Cyber Threat Intelligence (CTI) Maturity Model&lt;/strong>, designed to help organizations systematically enhance their threat intelligence capabilities. We’ll break down five maturity levels—ranging from initial, ad hoc practices to fully optimized and AI-driven CTI—and examine each level’s &lt;strong>People&lt;/strong>, &lt;strong>Process&lt;/strong>, and &lt;strong>Tools&lt;/strong> requirements. We’ll also discuss transition milestones, standards alignment, real-world examples, and how to scale for different industries and business sizes.&lt;/p>
-&lt;hr>
+&lt;p>In this post, we’ll explore a &lt;strong>Cyber Threat Intelligence (CTI) Maturity Model&lt;/strong>, designed to help organizations systematically enhance their threat intelligence capabilities. We’ll break down five maturity levels—ranging from initial, ad hoc practices to fully optimized and AI-driven CTI—and examine each level’s &lt;strong>People&lt;/strong>, &lt;strong>Process&lt;/strong>, and &lt;strong>Tools&lt;/strong> requirements. We’ll also discuss transition milestones, standards alignment, real-world examples, and how to scale for different industries and business sizes.&lt;/p>
+&lt;style>
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 20px 0;
+ font-size: 15px;
+ text-align: left;
+ }
+ th, td {
+ border: 1px solid #ddd;
+ padding: 5px;
+ }
+ th {
+ background-color: #f4f4f4; /* Header row color */
+ font-weight: bold;
+ }
+ tr:nth-child(even) {
+ background-color: #f9f9f9; /* Alternate row coloring for readability */
+ }
+&lt;/style>
 &lt;h2 id="table-1-high-level-maturity-levels--cti-perspective">&lt;strong>Table 1: High-Level Maturity Levels – CTI Perspective&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -45,7 +64,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-2-people-domain">&lt;strong>Table 2: People Domain&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -93,7 +111,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-3-process-domain">&lt;strong>Table 3: Process Domain&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -149,7 +166,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-4-tools-domain">&lt;strong>Table 4: Tools Domain&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -197,7 +213,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-5-transition-requirements-between-cti-maturity-levels">&lt;strong>Table 5: Transition Requirements Between CTI Maturity Levels&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -225,7 +240,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-6-alignment-with-key-cti-standards">&lt;strong>Table 6: Alignment with Key CTI Standards&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -249,7 +263,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-7-real-world-cti-scenarios">&lt;strong>Table 7: Real-World CTI Scenarios&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -277,13 +290,12 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-8-comparison-with-other-cti-maturity-models">&lt;strong>Table 8: Comparison with Other CTI Maturity Models&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>&lt;strong>Model&lt;/strong>&lt;/th>
- &lt;th>&lt;strong>Unique Improvements in This 2024 CTI Model&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Unique Improvements in CTI Model&lt;/strong>&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
@@ -301,7 +313,6 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="table-9-scalability--applicability">&lt;strong>Table 9: Scalability &amp;amp; Applicability&lt;/strong>&lt;/h2>
 &lt;table>
  &lt;thead>
@@ -329,9 +340,8 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="conclusion">&lt;strong>Conclusion&lt;/strong>&lt;/h2>
-&lt;p>This &lt;strong>2024 Cyber Threat Intelligence Maturity Model&lt;/strong> provides a clear roadmap for evolving CTI practices—from ad hoc, reactive efforts to fully automated and AI-driven intelligence that informs strategic business decisions. By considering the &lt;strong>People&lt;/strong>, &lt;strong>Process&lt;/strong>, and &lt;strong>Tools&lt;/strong> dimensions, alongside transition milestones, standards alignment, real-world scenarios, comparisons, and scalability tips, organizations can confidently progress toward a state of proactive, integrated threat intelligence.&lt;/p></description></item><item><title>(CTI) - How to Build Cyber Threat Intelligence Division For Your Organisation</title><link>https://iamthefrogy.github.io/posts/how-to-build-cti-division/</link><pubDate>Tue, 24 Dec 2024 22:58:04 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/how-to-build-cti-division/</guid><description>&lt;p>Establishing a Cyber Threat Intelligence (CTI) division involves a structured approach encompassing planning, designing, and optimizing processes to effectively counter cyber threats. Below is a practical guide to building a CTI division:&lt;/p>
+&lt;p>This &lt;strong>Cyber Threat Intelligence Maturity Model&lt;/strong> provides a clear roadmap for evolving CTI practices—from ad hoc, reactive efforts to fully automated and AI-driven intelligence that informs strategic business decisions. By considering the &lt;strong>People&lt;/strong>, &lt;strong>Process&lt;/strong>, and &lt;strong>Tools&lt;/strong> dimensions, alongside transition milestones, standards alignment, real-world scenarios, comparisons, and scalability tips, organizations can confidently progress toward a state of proactive, integrated threat intelligence.&lt;/p></description></item><item><title>(CTI) - How to Build Cyber Threat Intelligence Division For Your Organisation</title><link>https://iamthefrogy.github.io/posts/how-to-build-cti-division/</link><pubDate>Tue, 24 Dec 2024 22:58:04 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/how-to-build-cti-division/</guid><description>&lt;p>Establishing a Cyber Threat Intelligence (CTI) division involves a structured approach encompassing planning, designing, and optimizing processes to effectively counter cyber threats. Below is a practical guide to building a CTI division:&lt;/p>
 &lt;h2 id="phase-1-plan-for-a-cti-program">Phase 1: Plan for a CTI Program&lt;/h2>
 &lt;ol>
 &lt;li>
