@@ -44,40 +44,4 @@
  A mysterious pixel has appeared at the corner of this digital page.
  Rumor has it that hidden codes, locked secrets, and
  clandestine messages might be tucked away in the site’s source.
- &lt;/p></description></item><item><title>The Mysterious Guestbook</title><link>https://iamthefrogy.github.io/hack-and-play/the-mysterious-guestbook/</link><pubDate>Wed, 25 Dec 2024 14:26:27 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/the-mysterious-guestbook/</guid><description>&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
- &lt;meta charset="UTF-8">
- &lt;title>Mysterious Encrypted Guestbook&lt;/title>
- &lt;style>
- body {
- font-family: sans-serif;
- }
- .hidden {
- display: none;
- }
- &lt;/style>
-&lt;/head>
-&lt;body>
-&lt;h1>Guestbook&lt;/h1>
-&lt;div>Alice: “I wonder what secrets might lurk here.”&lt;/div>
-&lt;div>Bob: “Maybe there’s nothing at all.”&lt;/div>
-&lt;div>Carol: “Some strings look weird, but who cares?”&lt;/div>
-&lt;div>Dan: “Sometimes the biggest clues are invisible.”&lt;/div>
-&lt;input type="hidden" name="p1" value="U29tZUNvbXBsZXRlbHlSYW5kb21TdHJpbmc=">
-&lt;input type="hidden" name="p2" value="V2hvQ2FyZXNJZkFueXRoaW5nR2V0c09ic2N1cmVk">
-&lt;input type="hidden" name="h7fGx9" value="UkNFUw==">
-&lt;div class="hidden">50313a2f2f52616e646f6d486578537472696e672e536f4D7563684f627375726564&lt;/div>
-&lt;input type="hidden" name="xQ09ns" value="RUtURQ==">
-&lt;div class="hidden">SGVyZUhhdmVBb3JlT2JSZWFsbHlOb3RoaW5n&lt;/div>
-&lt;input type="hidden" name="K2uP0" value="VVB7WQ==">
-&lt;div class="hidden">0x42 0x61 0x73 0x65 0x36 0x34 0x43 0x6F 0x6E 0x66 0x75 0x73 0x69 0x6F 0x6E&lt;/div>
-&lt;input type="hidden" name="f0ZZf1" value="fURES0NBUkNFTFpa">
-&lt;input type="hidden" name="ZZrandom" value="RmluZCBzdGlsbCBtb3JlIGxhb3lhbCBkZWNveQ==">
-&lt;div style="color:blue; font-weight:bold;">
- Garbled Note: UzBtLj9+LW9ObyF3aGF0
-&lt;/div>
-&lt;hr>
-&lt;p>If you think you found something interesting, DM me on LinkedIn!&lt;/br>
-&lt;a href="https://www.linkedin.com/in/chintangurjar/">My Profile&lt;/a>
-&lt;/p></description></item></channel></rss>
+ &lt;/p></description></item></channel></rss>
