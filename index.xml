@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 26 Dec 2024 01:19:40 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>(CTI) - Bringing External and Internal Intel Data Together</title><link>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</link><pubDate>Thu, 26 Dec 2024 01:19:40 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</guid><description>&lt;p>Effective cyber threat intelligence isn’t just about collecting random feeds or logging bits of data—it’s about having complete coverage. By gathering external intel (like commercial feeds, open-source reports, and real-time Indicators of Compromise) and pairing it with internal data (such as DNS logs, endpoint alerts, and application activity), organizations get a full picture of potential threats. In this blog post, we’ll focus on the coverage side of a mature CTI program—pinpointing the most important intel sources and data points you need for a strong defense and quick response.&lt;/p></description></item><item><title>Mystirious Pixel</title><link>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</link><pubDate>Wed, 25 Dec 2024 15:11:14 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</guid><description>&lt;!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 27 Dec 2024 11:23:51 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Kick Start Your Cybersecurity Career</title><link>https://iamthefrogy.github.io/kickstartcareer/</link><pubDate>Fri, 27 Dec 2024 11:23:51 +0000</pubDate><guid>https://iamthefrogy.github.io/kickstartcareer/</guid><description>&lt;style>
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 20px 0;
+ font-size: 15px;
+ text-align: left;
+ }
+ th, td {
+ border: 1px solid #ddd;
+ padding: 5px;
+ }
+ th {
+ background-color: #f4f4f4; /* Header row color */
+ font-weight: bold;
+ }
+ tr:nth-child(even) {
+ background-color: #f9f9f9; /* Alternate row coloring for readability */
+ }
+&lt;/style>
+&lt;h2 id="highlighters-youll-see-in-throughout-this-article">&lt;strong>Highlighters You’ll See in Throughout This Article&lt;/strong>&lt;/h2>
+&lt;h3 id="myth-buster">MYTH BUSTER&lt;/h3>
+&lt;p>&lt;left>&lt;img src="https://iamthefrogy.github.io/images/myth.png" alt="myth" width="55"/>&lt;/left>&lt;/p>
+&lt;p>When you see the &lt;strong>Myth Buster&lt;/strong> icon, it’s time to challenge commonly held beliefs! This marker highlights misconceptions or myths that might hold you back and replaces them with facts to set the record straight.&lt;br>
+&lt;em>Example: “MYTH: You need a Master’s degree to start a cybersecurity career.”&lt;/em>&lt;/p></description></item><item><title>(CTI) - Bringing External and Internal Intel Data Together</title><link>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</link><pubDate>Thu, 26 Dec 2024 01:19:40 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</guid><description>&lt;p>Effective cyber threat intelligence isn’t just about collecting random feeds or logging bits of data—it’s about having complete coverage. By gathering external intel (like commercial feeds, open-source reports, and real-time Indicators of Compromise) and pairing it with internal data (such as DNS logs, endpoint alerts, and application activity), organizations get a full picture of potential threats. In this blog post, we’ll focus on the coverage side of a mature CTI program—pinpointing the most important intel sources and data points you need for a strong defense and quick response.&lt;/p></description></item><item><title>Mystirious Pixel</title><link>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</link><pubDate>Wed, 25 Dec 2024 15:11:14 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</guid><description>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
  &lt;meta charset="UTF-8">
@@ -422,6 +446,7 @@
 &lt;li>&lt;strong>2021&lt;/strong> - UK - Published Course on Attack Surface Analysis (EC-Council)&lt;/li>
 &lt;li>&lt;strong>2022&lt;/strong> - UK - Technical Reviewer: Resilient Cybersecurity Book&lt;/li>
 &lt;li>&lt;strong>2022&lt;/strong> - UK - Joined as Senior Vulnerability Management Senior Analyst at TikTok&lt;/li>
+&lt;li>&lt;strong>2022&lt;/strong> - USA - Visited USA for 3 weeks on a TikTok project&lt;/li>
 &lt;li>&lt;strong>2023&lt;/strong> - UK - Began role as Threat &amp;amp; Vulnerability Manager at M&amp;amp;S&lt;/li>
 &lt;/ul></description></item><item><title>Repositories</title><link>https://iamthefrogy.github.io/repositories/</link><pubDate>Tue, 24 Dec 2024 22:49:54 +0000</pubDate><guid>https://iamthefrogy.github.io/repositories/</guid><description>&lt;p>🎉 &lt;strong>Welcome to my collection of open-source projects and tools!&lt;/strong>&lt;br>
 Each repository reflects my passion for &lt;strong>cybersecurity, automation, and innovation.&lt;/strong> Below is an overview of the repositories and their purpose:&lt;/p>
