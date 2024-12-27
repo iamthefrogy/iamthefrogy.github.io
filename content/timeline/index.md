@@ -17,4 +17,5 @@ title = 'Career Span'
 - **2021** - UK - Published Course on Attack Surface Analysis (EC-Council)
 - **2022** - UK - Technical Reviewer: Resilient Cybersecurity Book
 - **2022** - UK - Joined as Senior Vulnerability Management Senior Analyst at TikTok
+- **2022** - USA - Visited USA for 3 weeks on a TikTok project
 - **2023** - UK - Began role as Threat & Vulnerability Manager at M&S

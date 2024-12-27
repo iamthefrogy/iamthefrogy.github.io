@@ -94,7 +94,12 @@ identifier = "timeline"
 weight = 600
 url = "/timeline"
 [[menu.main]]
+name = "Kickstart Career"
+identifier = "kickstartcareer"
+weight = 700
+url = "/kickstartcareer"
+[[menu.main]]
 name = "Hack & Play"
 identifier = "hack-and-play"
-weight = 700
+weight = 800
 url = "/hack-and-play"
