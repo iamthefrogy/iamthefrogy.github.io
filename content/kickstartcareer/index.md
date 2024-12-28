@@ -25,7 +25,7 @@ title = 'Kick Start Your Cybersecurity Career'
   }
 </style>
 
-## **Highlighters You’ll See in Throughout This Article**
+## **IMPORTANT!!!!**
 
 ### MYTH BUSTER
 <left><img src="/images/myth.png" alt="myth" width="55"/></left>
@@ -82,7 +82,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 ---
 
 ### Key Tip: Keep Doing Your Current Job
-- **Why?**: It’s vital to keep earning until you secure a full-time cybersecurity role. Your financial stability and responsibilities matter.Do not take a break for study or certifications unless absolutely necessary.
+- <left><img src="/images/tip.png" alt="tip" width="55"/></left> **Why?**: It’s vital to keep earning until you secure a full-time cybersecurity role. Your financial stability and responsibilities matter.<left><img src="/images/warning.png" alt="warning" width="55"/></left> Do not take a break for study or certifications unless absolutely necessary.
 
 ## 2. Which cybersecurity domain is the right fit for me?
 1. **Refer to the CISO Mind Map**: Explore these resources to get an overview of cybersecurity domains that one large company CISO would handle:
@@ -90,7 +90,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 
 2. **Understand the Domains**: Learn about the various domains available in cybersecurity. Each domain has unique responsibilities and skill requirements.
 
-3. **Ask Yourself Key Questions**: For each domain, answer the following:
+3. <left><img src="/images/act.png" alt="action" width="55"/></left> **Ask Yourself Key Questions**: For each domain, answer the following:
    - What is that domain about?
    - What kinds of roles/titles/designations does the company offer in that domain?
    - What free, open-source, or commercial tools and solutions do people/companies use?
@@ -101,7 +101,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
    - Does it fancy you?
    - Which roles you can start within that domain as beginer and where can you reach maximum after 5/10/15 years?
    - What will be the future of this role in regards to automation and AI?
-   - **Bonus Tip:**
+   - <left><img src="/images/tip.png" alt="tip" width="55"/></left> **Bonus Tip:**
      - Stay curious and use resources like Google or ChatGPT to gather more insights into each of these questions for any of your domains you are interested in like mentioned below.
 
     <center><img src="/images/gpt1.png" alt="gpt1" width="700"/></center>
@@ -140,7 +140,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
      Ideal for those with shift jobs or variable schedules. Dedicate 1-3 hours to study when free.
 
 4. **Use Tools to Plan Effectively**  
-   - Create a study plan using Excel or similar tools.  
+   - <left><img src="/images/act.png" alt="action" width="65"/></left> Create a study plan using Excel or similar tools.  
    - Organize topics and track progress systematically.
 
 5. **Keep Your Plan Visible**: Place your plan somewhere you see often (e.g., desk, fridge) to stay motivated.
@@ -167,7 +167,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 ---
 
 ### Prioritizing Your Needs
-**Let’s be honest—no company can meet **all** your expectations, even if you’re working for Google’s California beachside office two days a week! Yes, even with the stunning views, free gourmet meals, and bean bags galore, something will always be missing.**
+<left><img src="/images/myth.png" alt="myth" width="55"/></left> **Let’s be honest—no company can meet **all** your expectations, even if you’re working for Google’s California beachside office two days a week! Yes, even with the stunning views, free gourmet meals, and bean bags galore, something will always be missing.**
 
 **That’s why it’s crucial to prioritize. Choose at least 2–3 factors that matter the most to you, and if those are fulfilled, consider that company a good match. Remember, perfection is a myth—even in Silicon Valley.**
 
@@ -208,25 +208,27 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 
 ---
 
-**How to Use This Table:**
+## 6. What should I know before switching jobs in cybersecurity?
+
+### How to Use the Above Table:
+<left><img src="/images/act.png" alt="action" width="55"/></left>
 1. Identify the industries you’re passionate about or align with your skills.  
 2. Research the companies in your desired industry using tools like LinkedIn, Glassdoor, and company websites.  
 3. Use this as a reference to create a **company comparison spreadsheet** in Excel or Notion, tracking factors like revenue, reviews, and future opportunities.
 
 ### Steps to Research Effectively
+<left><img src="/images/act.png" alt="action" width="55"/></left>
 1. List industries and companies that interest you.
 2. Use LinkedIn, Glassdoor, and company websites to gather insights.
 3. Create a spreadsheet to track revenue, employee reviews, culture, and industry focus.
 4. Prioritize the 2–3 factors most important to you (e.g., compensation, career growth, flexibility).
 5. Regularly update your research as companies evolve.
 
-## 6. What should I know before switching jobs in cybersecurity?
-
 ## 7. How do I find a quality mentor who truly adds value?
 
 Finding the right mentor is challenging, especially for beginners in the security field. Use this table to explore the DOs and DON'Ts before selecting your mentor:
 
-| **DOs <left><img src="/images/tip.png" alt="tip" width="55"/></left>**                                                                                                   | **DON'Ts <left><img src="/images/myth.png" alt="myth" width="55"/></left>**                                                                 |
+| **DOs <left><img src="/images/tip.png" alt="tip" width="55"/></left>**                                                                                                   | **DON'Ts <left><img src="/images/warning.png" alt="warning" width="55"/></left>**                                                                 |
 |-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | Select a mentor who is **down to earth**, willing to learn and coach.                                     | Don’t select mentors solely based on their **number of certifications**.   |
 | Look for mentors who provide a **clear vision and guidance** for your career goals over 2–5 years.        | Don’t base your decision only on their **online presence or popularity**.  |
@@ -264,7 +266,7 @@ While no mentor will check every single box, prioritize the ones who align most 
 
 - **Beginners**:  
   Create a professional resume even if you lack work experience. Focus on showcasing your technical skills, certifications, and learning progress.  
-  *ACTION ITEM: Refer to the "Resume Writing – How Not to Blunder" section for more guidance.*
+  *<left><img src="/images/act.png" alt="action" width="65"/></left> Refer to the **section number 16** for more guidance.*
 
 - **No Professional Experience?**  
   Add the following to your resume:  
@@ -278,7 +280,7 @@ While no mentor will check every single box, prioritize the ones who align most 
 - Use multiple job portals but **don’t forget Google Jobs**.  
   *WARNING: Many jobs listed on Google Jobs are not available on LinkedIn or other platforms, so always check there.*
 
-- Reach out to **cybersecurity-specific recruitment agencies**.  
+- <left><img src="/images/tip.png" alt="tip" width="55"/></left> Reach out to **cybersecurity-specific recruitment agencies**.  
   These agencies often fill roles for big companies and are familiar with the industry demands.
 
 - Connect with **HR professionals in cybersecurity** on LinkedIn.  
@@ -289,6 +291,7 @@ While no mentor will check every single box, prioritize the ones who align most 
 ### Interview Preparation
 Prepare for interviews based on job descriptions (JD). Most questions will stem from the roles and responsibilities mentioned in the JD. Follow these steps for effective preparation:
 
+<left><img src="/images/tip.png" alt="tip" width="55"/></left>
 1. **Understand the JD**: Break down each line of the job description.  
 2. **Use ChatGPT or other AI modules**:  
    - Give ChatGPT a paragraph summarizing the JD and company.  
@@ -450,7 +453,7 @@ This section explores whether pursuing a master’s degree in cybersecurity is a
 
 ### Myths vs. Realities
 
-| **Myth**                                              | **Reality**                                                                                                         |
+| **Myth <left><img src="/images/myth.png" alt="myth" width="55"/></left>**                                              | **Reality <left><img src="/images/tip.png" alt="tip" width="55"/></left>**                                                                                                         |
 |-------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | A Master’s degree in cybersecurity is not required.   | True but not 100%. It offers intermediate benefits such as enhanced networking, soft skills, and academic recognition. |
 | A Master’s degree guarantees a higher salary or quick job. | Generally false, unless it’s from a prestigious university with excellent placement programs.                        |
@@ -531,9 +534,9 @@ Whether a Master’s degree is worth it depends on your personal goals, financia
 | **Certification from Reputable Authorities**      | Ensure the certification is issued by well-known authorities in cybersecurity.                                                                                                 |
 |                                                   | - Cybersecurity-specific authorities: ISC2, eLearnSecurity, Offensive Security, ISACA, EC-Council, CompTIA, CREST, SANS, GIAC, etc.                                             |
 |                                                   | - Vendor-specific authorities: Amazon (AWS), Google (GCP), Microsoft (Azure), Cisco, Checkpoint, etc.                                                                           |
-| **Market Demand for the Certification**           | Research if the certification is in demand by analyzing job descriptions on LinkedIn or other platforms.                                                                        |
+| **Market Demand for the Certification**           | <left><img src="/images/tip.png" alt="tip" width="55"/></left> Research if the certification is in demand by analyzing job descriptions on LinkedIn or other platforms.                                                                        |
 | **Beginner vs Advanced Certification**            | Understand if you're opting for a beginner-level cert in your domain or directly aiming for a management/high-level cert. Plan your starting point and endpoint.               |
-| **Certification Variety**                         | Consider obtaining certificates from different providers to diversify your resume and showcase versatility.                                                                     |
+| **Certification Variety**                         | <left><img src="/images/tip.png" alt="tip" width="55"/></left> Consider obtaining certificates from different providers to diversify your resume and showcase versatility.                                                                     |
 | **Purpose of the Certification**                  | Reflect on whether you’re pursuing the certification for:                                                                                                                       |
 |                                                   | - Job-specific purposes: Be cautious about spending a significant amount without a job guarantee.                                                                               |
 |                                                   | - Knowledge acquisition: A certification should ideally enhance your understanding and practical skills.                                                                        |
@@ -597,6 +600,7 @@ Which types of companies should you consider in the initial stages of your cyber
 ---
 
 ### Factors to Consider While Choosing
+<left><img src="/images/tip.png" alt="tip" width="55"/></left>
 1. **Career Goals**: Are you aiming for diverse exposure or niche expertise?
 2. **Work-Life Balance**: Product companies often provide better work-life balance compared to consulting.
 3. **Learning Curve**: Consulting firms offer faster growth but may not allow deep specialization.
@@ -631,6 +635,8 @@ Want to break into cybersecurity but lack experience? Here are some great resume
 
 Accomplishing the majority of these activities will provide strong content for your resume and interviews.
 
+
+    <left><img src="/images/warning.png" alt="warning" width="55"/></left>
 ---
 | **Mistake**                            | **Explanation**                                                                                      |
 |----------------------------------------|------------------------------------------------------------------------------------------------------|
@@ -677,9 +683,9 @@ By avoiding common mistakes and actively building relevant skills and activities
 | **Category**              | **Details**                                                                                                                                                              |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Profile Picture**       | Choose a professional photo. Your LinkedIn profile picture should reflect professionalism and seriousness towards the platform. Avoid casual or overly social photos.    |
-| **Things You Share and Like** | Share and like content relevant to your profession. Avoid random posts, jokes, politics, or unrelated debates. Focus on cybersecurity topics to show expertise and interest. |
-| **Writing Posts on Your Wall** | Write clear and concise posts. Avoid controversial topics, hate speech, or irrelevant content. Post about unique topics in your field and ensure your tone is professional and neutral. |
-| **Writing Relevant Posts** | Share unique insights within your domain. Avoid over-discussed topics unless you add a new perspective. Be neutral and clear, avoiding slang or unprofessional language.    |
+| <left><img src="/images/tip.png" alt="tip" width="55"/></left> **Things You Share and Like** | Share and like content relevant to your profession. Avoid random posts, jokes, politics, or unrelated debates. Focus on cybersecurity topics to show expertise and interest. |
+| <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Writing Posts on Your Wall** | Write clear and concise posts. Avoid controversial topics, hate speech, or irrelevant content. Post about unique topics in your field and ensure your tone is professional and neutral. |
+| <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Writing Relevant Posts** | Share unique insights within your domain. Avoid over-discussed topics unless you add a new perspective. Be neutral and clear, avoiding slang or unprofessional language.    |
 | **Be Polite and Gentle**   | Maintain professionalism when connecting or responding to others. Greet new connections politely. Handle negative comments gracefully and choose your words carefully.        |
 | **Contact Information**    | Keep your profile updated with current email, phone number, and other contact details. Highlight roles, awards, and achievements in each job experience.                    |
 | **Introduction Paragraph** | Write a strong introduction summarizing who you are, your experience, and your career goals. Clearly outline your expertise and future aspirations.                         |
@@ -704,7 +710,23 @@ By avoiding common mistakes and actively building relevant skills and activities
 
 By following these guidelines, you can make your LinkedIn profile a powerful tool for career advancement.
 ## 18. Why is finding a job abroad so challenging for international candidates?
+<left><img src="/images/myth.png" alt="myth" width="55"/></left>
+Why companies don't sponsor, they just need to provide a sponsorship letter right then why they don't do it?
 
+Do you know how much it would cost a company if they sponsor a candidate outside of their own country? (**I am taking an example of UK as I have UK experience**)
+
+| **Cost Item**                 | **Small Sponsor (£)** | **Medium/Large Sponsor (£)** | **Description**                                     |
+|-------------------------------|------------------------|------------------------------|-----------------------------------------------------|
+| Sponsor Licence Application   | 536                   | 1,476                        | Valid for 4 years                                  |
+| Certificate of Sponsorship    | 199                   | 199                          | Per sponsored candidate                            |
+| Immigration Skills Charge     | 364 (Year 1) + 182/6m | 1,000 (Year 1) + 500/6m      | Based on sponsorship duration                      |
+| Visa Application Fee          | 479–943               | 625–1,235                    | Depends on job type and visa duration              |
+| Immigration Health Surcharge  | 624/year              | 624/year                     | Per year of sponsorship (e.g., £1,872 for 3 years) |
+| **Estimated Total (3 Years)** | **~2,800**            | **~7,800**                   | Including all mandatory fees                       |
+
+**If candidate is married then they ask companies to sponsor for both him/herself and partner which would double this cost.**
+
+Imagine if you are running your own firm in UK, and if you are flooded with plenty of resumes locally from UK, would you rather spend above amount to hire someone outside of UK? No right, hence these is the main reason along with some other factors like time duration, paper work, etc. due to which companies hesitate to sponsor.
 ### Key Challenges
 
 | **Challenge**                 | **Details**                                                                                                                                                              |
@@ -728,7 +750,7 @@ By following these guidelines, you can make your LinkedIn profile a powerful too
 
 ---
 
-### Key Insights
+### Key Takeaways for Candidates
 
 | **Insight**                                       | **Benefits**                                                                                                                                                          |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -750,7 +772,7 @@ By following these guidelines, you can make your LinkedIn profile a powerful too
 By following the below bulletproof framework with dedication, you are setting yourself up for success in breaking into cybersecurity or landing a foreign job.
 
 ### Step 1: Read the Guide
-- Carefully read the entire guide word by word to understand the comprehensive process and strategies.
+- Carefully read the entire guide word by word to understand the comprehensive process and strategies. There is not only 1 or few sections which would land you a job. A combination of multiple sections from this guide only will help you in your job hunt.
 
 ### Step 2: Domain Identification
 1. Choose 2-3 cybersecurity domains you are interested in exploring further.
@@ -762,20 +784,58 @@ By following the below bulletproof framework with dedication, you are setting yo
 - Find relevant resources (online platforms, certifications, mentors) to enhance your skills.
 - If unsure about resources, connect with a mentor or expert for guidance.
 
-### Step 4: Continuous Learning and Skill Development
+### Step 4: Continuous Learning Sharing to Create Outreach on LinkedIn
 - Dedicate daily or weekly time to learning.
   - **Action Items:**
     - Share your learning experiences and takeaways on LinkedIn for visibility and networking.
     - Update your resume and LinkedIn profile with new skills and expertise every 2 weeks.
 
-### Step 5: Expand Your Network
-1. **Connect with Professionals**
-   - Add 20 security professionals daily from countries like New Zealand, Australia, the US, and Canada.
+### Step 5: Create Minimum 10 Target Countries
+1. <left><img src="/images/tip.png" alt="tip" width="55"/></left> Select top 10 countries in which you are interested to migrate. Imagine depending upon geopolitical stuff, market demand, government rules and many other factors your dream country may or may not be ease. Hence you need to pick a region rather than specific country. Region breakdown is as follows:
+
+| **Region**   | **Description**                                                               |
+|--------------|-------------------------------------------------------------------------------|
+| **EMEA**     | Europe, Middle East, and Africa. Covers countries in these continents.       |
+| **APAC**     | Asia-Pacific. Includes Asia and Oceania (e.g., China, India, Australia).     |
+| **AMER**     | Americas. Covers North, Central, and South America.                          |
+| **LATAM**    | Latin America. Focuses on Central and South America, including the Caribbean.|
+| **ANZ**      | Australia and New Zealand. Often part of APAC but sometimes distinct.        |
+| **MENA**     | Middle East and North Africa. Subset of EMEA.                                |
+| **CIS**      | Commonwealth of Independent States. Includes Russia and neighboring countries.|
+
+
+### Step 6: Expand Your Network
+1. <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Connect with Professionals**
+   - Add 30/40 security professionals (at least at your same designation or above, I prefer anyone who is manager and above) daily from your target countries of any region you chose from above.
    - Rotate to a new country every week.
 
-2. **Connect with Recruiters**  
+2. <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Connect with Recruiters**  
    - Add 20 security recruiters daily from the same target countries.
    - Engage in meaningful conversations and discussions.
+   - Below are the various roles for specific Cybersecurity Recruiters you can find on LinkedIn.
+      - Cybersecurity Recruiter
+      - Information Security Recruiter
+      - Cybersecurity Talent Acquisition
+      - Cybersecurity Headhunte
+      - Security Recruitment Specialist
+      - Cybersecurity Staffing
+      - Cyber Talent Consultant
+   - <left><img src="/images/tip.png" alt="tip" width="55"/></left>Do you know you can create boolean search queries based on your need and perform search effectively on LinkedIn.     
+
+      ##### Basic Search
+      ("Cybersecurity Recruiter" OR "Information Security Recruiter" OR "Cyber Talent Acquisition Specialist" OR "Security Recruitment Specialist")
+
+      ##### Targeting Specific Roles
+      (("Cybersecurity Recruiter" OR "Information Security Recruiter") AND ("SOC Analyst" OR "Penetration Testing" OR "Cloud Security"))
+
+      ##### Narrow by Location
+      (("Cybersecurity Recruiter" OR "Cyber Talent Consultant") AND ("USA" OR "UK" OR "India"))
+
+      ##### Targeting Agencies
+      (("Cybersecurity Recruiter" OR "Cybersecurity Staffing Specialist") AND ("CyberSN" OR "Hays Technology" OR "Optiv"))
+    - <left><img src="/images/tip.png" alt="tip" width="55"/></left>Alternatively you can also use advance filters of LinkedIn to narrow down your searches as mentioned in the below screenshot.
+
+<Center><img src="/images/linkedin.png" alt="LinkedIn" width="700"/></Center>
 
 ### Step 6: Optimize Your Resume
 1. Tailor your resume to match the job description:
@@ -787,11 +847,12 @@ By following the below bulletproof framework with dedication, you are setting yo
 ### Step 7: Apply Strategically
 1. Apply to 10 jobs daily in each target country.
    - If focusing on your home country, follow the same routine.
-2. Track your applications using a spreadsheet or project management tool.
+2. <left><img src="/images/tip.png" alt="tip" width="55"/></left> Track your applications using a spreadsheet. It is extremely important to ask the full name of the recruiter and his/her numbers. Lots of companies when they do the first initial screening HR call, you would not have an official email. Post screening if they don't come back and you want to reachout, you won't have any contact information. Sometimes more than 1 agencies or recruiters are hiring for the same position in one large company. So it's easy for you to map all these information in your excel tracker.
 
 ### Timeline and Expectations
 - **Duration**: Follow this methodology consistently for **8 months** to see tangible results.  
-- **Results**: While there’s no guaranteed timeline, consistent efforts will lead to:
+- <left><img src="/images/warning.png" alt="warning" width="55"/></left>
+**Results**: While there’s no guaranteed timeline, consistent efforts will lead to:
   - A cybersecurity job within a year.
   - Expanded LinkedIn network and increased visibility.
   - Valuable skills and knowledge.
@@ -811,8 +872,7 @@ By following the below bulletproof framework with dedication, you are setting yo
 <center><img src="/images/job-satisfaction.png" alt="js" width="900"/></center>
 
 ## 21. What are the general DOs and DON’Ts in cybersecurity?
-
-| **DO**                                                                                                                                                               | **DON'T**                                                                                                                       |
+| **✅ DO**                                                                                                                                                               | **❌ DON'T**                                                                                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | **Ask questions to yourself**                                                                                                                                      | **Don't waste money blindly**                                                                                                  |
 | - Why this way?                                                                                                                                                    | - Do not go for paid courses that are already freely available on the internet.                                                |
@@ -863,9 +923,11 @@ By following the below bulletproof framework with dedication, you are setting yo
 ## 23. How do I stay up-to-date with cybersecurity trends?
 ### Actionable Methods to Stay Updated
 
+
+<left><img src="/images/act.png" alt="action" width="65"/></left>
+
 | **Method**                                  | **Description**                                                                                                                             | **Action Steps**                                                                                                                      |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| **Follow Hashtags on Social Media**         | Track trending topics on Twitter, LinkedIn, and other platforms using specific hashtags.                                                   | - Identify hashtags relevant to your domain (e.g., #SOC, #Pentest, #CloudSecurity, #CyberThreats).<br>- Check daily/weekly updates. |
 | **Subscribe to Newsletters**                | Many cybersecurity organizations and blogs share regular updates through newsletters.                                                      | - Subscribe to sources like [Krebs on Security](https://krebsonsecurity.com), [Dark Reading](https://www.darkreading.com).          |
 | **Join Cybersecurity Communities**          | Engage with peers in forums, Slack groups, and Discord channels.                                                                           | - Join communities like Reddit’s r/cybersecurity, OWASP Slack, or Threat Intelligence Discords.                                     |
 | **Participate in Webinars and Conferences** | Attend virtual and in-person cybersecurity conferences to gain insights from industry leaders.                                              | - Follow events like Black Hat, DEF CON, or local InfoSec meetups.<br>- Watch recordings or join live sessions.                     |
@@ -882,7 +944,7 @@ By following the below bulletproof framework with dedication, you are setting yo
 
 ### DOs and DON'Ts of Staying Up-to-Date
 
-| **DO**                                                                 | **DON'T**                                                                                         |
+| **✅ DO**                                                                 | **❌ DON'T**                                                                                         |
 |------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | - Know your domain focus (e.g., SOC, Pentest, Cloud Security).          | - Don't add irrelevant hashtags or follow unrelated trends.                                      |
 | - Use hashtags to filter specific content (latest 24 hours/week).      | - Don't waste time on overly broad hashtags or outdated trends.                                  |
@@ -894,7 +956,7 @@ By following the below bulletproof framework with dedication, you are setting yo
 By implementing these strategies, you can stay ahead in the rapidly evolving cybersecurity landscape.
 
 ## 24. Why can’t I become a CEO right out of my degree?
-
+<left><img src="/images/warning.png" alt="warning" width="55"/></left>
 <head>
     <style>
         body {
@@ -981,6 +1043,7 @@ By implementing these strategies, you can stay ahead in the rapidly evolving cyb
 ### How to Succeed as a CEO in the Market
 
 ### Core Elements for Success
+    <left><img src="/images/tip.png" alt="tip" width="55"/></left>
 
 | **Solid Product**                                                                                                               | **Unique Service**                                                                                                                                                                                                                                                                                   | **Solid Funding**                                                                                                              |
 |-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -1068,5 +1131,5 @@ At the end of the day, we all have the same life expectancy to grow and learn. T
 
 Embrace your potential, keep learning, stay positive, and remember that your career is a marathon, not a sprint.
 
-### DISCLAIMER:
+### DISCLAIMER
 **This guide has been written pre-ChatGPT era. However since we have GPT now I have used it to enhance the guide but its not completely written by GPT only. All of the information collection, organization, and presentation are my own thoughts.**
