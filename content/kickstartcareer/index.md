@@ -635,10 +635,8 @@ Want to break into cybersecurity but lack experience? Here are some great resume
 
 Accomplishing the majority of these activities will provide strong content for your resume and interviews.
 
-
-    <left><img src="/images/warning.png" alt="warning" width="55"/></left>
 ---
-| **Mistake**                            | **Explanation**                                                                                      |
+|<left><img src="/images/warning.png" alt="warning" width="55"/></left> Mistake                           | **Explanation**                                                                                      |
 |----------------------------------------|------------------------------------------------------------------------------------------------------|
 | **Typos and Grammatical Errors**       | It's crucial to proofread your resume before submitting it. Errors may suggest a lack of attention to detail or professionalism. |
 | **Providing Inaccurate Information**   | Whether it's wrong dates or exaggerated qualifications, falsifying information is always a big no-no. |
@@ -1043,8 +1041,8 @@ By implementing these strategies, you can stay ahead in the rapidly evolving cyb
 ### How to Succeed as a CEO in the Market
 
 ### Core Elements for Success
-    <left><img src="/images/tip.png" alt="tip" width="55"/></left>
 
+<left><img src="/images/tip.png" alt="tip" width="55"/></left>
 | **Solid Product**                                                                                                               | **Unique Service**                                                                                                                                                                                                                                                                                   | **Solid Funding**                                                                                                              |
 |-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Creating a product that is unique and solves significant problems for enterprises. Ensure no other product in the market is as good as yours, and include all features to meet any large enterprise's needs.                                     | Offering no common services (like code reviews or standard risk management assessments). Instead, provide services that are unique and deliver exceptional value compared to competitors.                                                                 | If you don't have a great idea, invest in building an exceptional service or product with the help of a skilled and experienced team.                              |
