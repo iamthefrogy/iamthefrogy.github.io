@@ -835,14 +835,14 @@ By following the below bulletproof framework with dedication, you are setting yo
 
 <Center><img src="/images/linkedin.png" alt="LinkedIn" width="700"/></Center>
 
-### Step 6: Optimize Your Resume
+### Step 7: Optimize Your Resume
 1. Tailor your resume to match the job description:
    - Identify important keywords from the job posting.
    - Include these keywords strategically in your resume and LinkedIn profile.
 
 2. Ensure your LinkedIn profile and resume reflect consistent and professional messaging.
 
-### Step 7: Apply Strategically
+### Step 8: Apply Strategically
 1. Apply to 10 jobs daily in each target country.
    - If focusing on your home country, follow the same routine.
 2. <left><img src="/images/tip.png" alt="tip" width="55"/></left> Track your applications using a spreadsheet. It is extremely important to ask the full name of the recruiter and his/her numbers. Lots of companies when they do the first initial screening HR call, you would not have an official email. Post screening if they don't come back and you want to reachout, you won't have any contact information. Sometimes more than 1 agencies or recruiters are hiring for the same position in one large company. So it's easy for you to map all these information in your excel tracker.
