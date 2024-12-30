@@ -4,6 +4,8 @@ draft = false
 title = '(CTI) Dead Drops: Threat Actor Perspective'
 +++
 
+<center><img src="/images/dd_bg.png" alt="dd_bg" width="850"/></center></br>
+
 ## Introduction
 
 Dead Drops are an interesting mix of art, technology, and espionage-inspired tactics. They started as a public art project but have evolved into a fascinating case for cybersecurity professionals. These are USB drives embedded in public spaces, like walls or structures, where anyone can access and exchange files offline. It sounds harmless, right? Well, not always.
