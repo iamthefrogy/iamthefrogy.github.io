@@ -84,22 +84,17 @@ identifier = "cv"
 weight = 400
 url = "/cv"
 [[menu.main]]
-name = "Repositories"
+name = "My Repos"
 identifier = "repositories"
 weight = 500
 url = "/repositories"
 [[menu.main]]
-name = "Journey"
-identifier = "timeline"
-weight = 600
-url = "/timeline"
-[[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
-weight = 700
+weight = 600
 url = "/kickstartcareer"
 [[menu.main]]
-name = "Hack & Play"
-identifier = "hack-and-play"
-weight = 800
-url = "/hack-and-play"
+name = "Disclaimer"
+identifier = "disclaimer"
+weight = 700
+url = "/disclaimer"
