@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 30 Dec 2024 15:58:23 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 16:16:28 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(CTI) Dead Drops: Threat Actor Perspective</title>
+      <link>http://localhost:1313/posts/dead-drops/</link>
+      <pubDate>Mon, 30 Dec 2024 16:16:28 +0000</pubDate>
+      <guid>http://localhost:1313/posts/dead-drops/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Dead Drops are an interesting mix of art, technology, and espionage-inspired tactics. They started as a public art project but have evolved into a fascinating case for cybersecurity professionals. These are USB drives embedded in public spaces, like walls or structures, where anyone can access and exchange files offline. It sounds harmless, right? Well, not always.&lt;/p&gt;&#xA;&lt;p&gt;From a cybersecurity perspective, Dead Drops can be both a curiosity and a potential threat. In this article, we will explore what Dead Drops are, how they can be exploited, what risks they pose, and what practical actions you can take if you decide to interact with them. If you are into advanced threat analysis and operational strategies, you are in the right place.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Disclaimer and Legal Notice</title>
       <link>http://localhost:1313/disclaimer/</link>
