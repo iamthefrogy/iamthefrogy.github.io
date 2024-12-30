@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 27 Dec 2024 11:23:51 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Kick Start Your Cybersecurity Career</title><link>https://iamthefrogy.github.io/kickstartcareer/</link><pubDate>Fri, 27 Dec 2024 11:23:51 +0000</pubDate><guid>https://iamthefrogy.github.io/kickstartcareer/</guid><description>&lt;style>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 30 Dec 2024 15:58:23 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Disclaimer and Legal Notice</title><link>https://iamthefrogy.github.io/disclaimer/</link><pubDate>Mon, 30 Dec 2024 15:58:23 +0000</pubDate><guid>https://iamthefrogy.github.io/disclaimer/</guid><description>&lt;h2 id="agreement-and-acknowledgment">Agreement and Acknowledgment&lt;/h2>
+&lt;p>By engaging with the information, resources, code samples, commands, tutorials, videos, or any other content (collectively referred to as &amp;ldquo;Content&amp;rdquo;) shared by Chintan Gurjar across any platform—including but not limited to this website (&lt;a href="https://chintangurjar.com">https://chintangurjar.com&lt;/a>), blogs, GitHub repositories, LinkedIn posts, YouTube videos, Twitter, Facebook, and any offline/online interactions (collectively referred to as &amp;ldquo;Platforms&amp;rdquo;)—you (the &amp;ldquo;User&amp;rdquo;) acknowledge and agree to the following terms and conditions. If you do not agree to these terms, you must immediately cease using the Content and any associated services.&lt;/p></description></item><item><title>Kick Start Your Cybersecurity Career</title><link>https://iamthefrogy.github.io/kickstartcareer/</link><pubDate>Fri, 27 Dec 2024 11:23:51 +0000</pubDate><guid>https://iamthefrogy.github.io/kickstartcareer/</guid><description>&lt;style>
  table {
  width: 100%;
  border-collapse: collapse;
@@ -22,53 +23,7 @@
 &lt;h3 id="myth-buster">MYTH BUSTER&lt;/h3>
 &lt;p>&lt;left>&lt;img src="https://iamthefrogy.github.io/images/myth.png" alt="myth" width="55"/>&lt;/left>&lt;/p>
 &lt;p>When you see the &lt;strong>Myth Buster&lt;/strong> icon, it’s time to challenge commonly held beliefs! This marker highlights misconceptions or myths that might hold you back and replaces them with facts to set the record straight.&lt;br>
-&lt;em>Example: “MYTH: You need a Master’s degree to start a cybersecurity career.”&lt;/em>&lt;/p></description></item><item><title>(CTI) - Bringing External and Internal Intel Data Together</title><link>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</link><pubDate>Thu, 26 Dec 2024 01:19:40 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</guid><description>&lt;p>Effective cyber threat intelligence isn’t just about collecting random feeds or logging bits of data—it’s about having complete coverage. By gathering external intel (like commercial feeds, open-source reports, and real-time Indicators of Compromise) and pairing it with internal data (such as DNS logs, endpoint alerts, and application activity), organizations get a full picture of potential threats. In this blog post, we’ll focus on the coverage side of a mature CTI program—pinpointing the most important intel sources and data points you need for a strong defense and quick response.&lt;/p></description></item><item><title>Mystirious Pixel</title><link>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</link><pubDate>Wed, 25 Dec 2024 15:11:14 +0000</pubDate><guid>https://iamthefrogy.github.io/hack-and-play/mystirious-pixel/</guid><description>&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
- &lt;meta charset="UTF-8">
- &lt;title>The Lost Pixel&lt;/title>
- &lt;style>
- body {
- font-family: Arial, sans-serif;
- background: #f1f1f1;
- margin: 0;
- padding: 20px;
- }
- .game-container {
- max-width: 600px;
- margin: 0 auto;
- background: #fff;
- border-radius: 4px;
- padding: 20px;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
- }
- h2 {
- text-align: center;
- }
- p {
- line-height: 1.5;
- }
- .pixel-art {
- display: flex;
- justify-content: center;
- margin: 20px 0;
- }
- .footer {
- text-align: center;
- margin-top: 30px;
- font-size: 0.9em;
- color: #999;
- }
- &lt;/style>
-&lt;/head>
-&lt;body>
-&lt;div class="game-container">
- &lt;h1>The Lost Pixel&lt;/h1>
- &lt;p>
- A mysterious pixel has appeared at the corner of this digital page.
- Rumor has it that hidden codes, locked secrets, and
- clandestine messages might be tucked away in the site’s source.
- &lt;/p></description></item><item><title>(VM/ASM) - GAP comparision In Traditional VM/ASM</title><link>https://iamthefrogy.github.io/posts/gaps-in-vm-asm/</link><pubDate>Wed, 25 Dec 2024 13:03:24 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/gaps-in-vm-asm/</guid><description>&lt;p>In today’s rapidly evolving threat landscape, traditional vulnerability management (VM) practices face significant limitations, creating gaps that leave organizations exposed to modern cybersecurity challenges. Attack Surface Management (ASM) emerges as a transformative approach that bridges these gaps, aligning security strategies with the pace and complexity of contemporary threats. This blog explores how ASM enhances traditional VM to create a more comprehensive and dynamic security framework.&lt;/p>
+&lt;em>Example: “MYTH: You need a Master’s degree to start a cybersecurity career.”&lt;/em>&lt;/p></description></item><item><title>(CTI) - Bringing External and Internal Intel Data Together</title><link>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</link><pubDate>Thu, 26 Dec 2024 01:19:40 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/what-to-cover-in-matured-cti-program/</guid><description>&lt;p>Effective cyber threat intelligence isn’t just about collecting random feeds or logging bits of data—it’s about having complete coverage. By gathering external intel (like commercial feeds, open-source reports, and real-time Indicators of Compromise) and pairing it with internal data (such as DNS logs, endpoint alerts, and application activity), organizations get a full picture of potential threats. In this blog post, we’ll focus on the coverage side of a mature CTI program—pinpointing the most important intel sources and data points you need for a strong defense and quick response.&lt;/p></description></item><item><title>(VM/ASM) - GAP comparision In Traditional VM/ASM</title><link>https://iamthefrogy.github.io/posts/gaps-in-vm-asm/</link><pubDate>Wed, 25 Dec 2024 13:03:24 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/gaps-in-vm-asm/</guid><description>&lt;p>In today’s rapidly evolving threat landscape, traditional vulnerability management (VM) practices face significant limitations, creating gaps that leave organizations exposed to modern cybersecurity challenges. Attack Surface Management (ASM) emerges as a transformative approach that bridges these gaps, aligning security strategies with the pace and complexity of contemporary threats. This blog explores how ASM enhances traditional VM to create a more comprehensive and dynamic security framework.&lt;/p>
 &lt;hr>
 &lt;h2 id="from-traditional-vm-to-asm-a-comparative-analysis">From Traditional VM to ASM: A Comparative Analysis&lt;/h2>
 &lt;h3 id="traditional-vulnerability-management-strong-but-limited">Traditional Vulnerability Management: Strong but Limited&lt;/h3>
@@ -432,29 +387,13 @@
 &lt;li>Navigate through the sections for detailed action items.&lt;/li>
 &lt;li>Use the checklist for planning, monitoring, and evaluating your VIP monitoring efforts.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;em>Note: You can download the file or make a copy to adapt it for your organization’s needs.&lt;/em>&lt;/p></description></item><item><title>Career Span</title><link>https://iamthefrogy.github.io/timeline/</link><pubDate>Tue, 24 Dec 2024 22:52:41 +0000</pubDate><guid>https://iamthefrogy.github.io/timeline/</guid><description>&lt;ul>
-&lt;li>&lt;strong>2011&lt;/strong> - India - Started as Security Analyst/Engineer in SMEs&lt;/li>
-&lt;li>&lt;strong>2014&lt;/strong> - UK - Completed MSc in Computer Security &amp;amp; Forensics&lt;/li>
-&lt;li>&lt;strong>2014&lt;/strong> - Norway - Co-trained at HackCon: Mobile Application Hacking&lt;/li>
-&lt;li>&lt;strong>2016&lt;/strong> - India - Discovered CVE-2016-7786 (Sophos UTM)&lt;/li>
-&lt;li>&lt;strong>2017&lt;/strong> - New Zealand - Joined KPMG as Cybersecurity Manager&lt;/li>
-&lt;li>&lt;strong>2018&lt;/strong> - Thailand - Participated into APAC Hacknet Conference in Bangkok&lt;/li>
-&lt;li>&lt;strong>2020&lt;/strong> - New Zealand - Discovered CVE-2020-35387 (EDT Web Application)&lt;/li>
-&lt;li>&lt;strong>2020&lt;/strong> - UK - Certified Threat Intelligence Analyst (CTIA)&lt;/li>
-&lt;li>&lt;strong>2020&lt;/strong> - UK - Certified CrowdStrike Falcon Hunter (CCFH)&lt;/li>
-&lt;li>&lt;strong>2020&lt;/strong> - UK - Became Security Engineering Manager at Tesco&lt;/li>
-&lt;li>&lt;strong>2021&lt;/strong> - UK - Published Course on Attack Surface Analysis (EC-Council)&lt;/li>
-&lt;li>&lt;strong>2022&lt;/strong> - UK - Technical Reviewer: Resilient Cybersecurity Book&lt;/li>
-&lt;li>&lt;strong>2022&lt;/strong> - UK - Joined as Senior Vulnerability Management Senior Analyst at TikTok&lt;/li>
-&lt;li>&lt;strong>2022&lt;/strong> - USA - Visited USA for 3 weeks on a TikTok project&lt;/li>
-&lt;li>&lt;strong>2023&lt;/strong> - UK - Began role as Threat &amp;amp; Vulnerability Manager at M&amp;amp;S&lt;/li>
-&lt;/ul></description></item><item><title>Repositories</title><link>https://iamthefrogy.github.io/repositories/</link><pubDate>Tue, 24 Dec 2024 22:49:54 +0000</pubDate><guid>https://iamthefrogy.github.io/repositories/</guid><description>&lt;p>🎉 &lt;strong>Welcome to my collection of open-source projects and tools!&lt;/strong>&lt;br>
+&lt;p>&lt;em>Note: You can download the file or make a copy to adapt it for your organization’s needs.&lt;/em>&lt;/p></description></item><item><title>Repositories</title><link>https://iamthefrogy.github.io/repositories/</link><pubDate>Tue, 24 Dec 2024 22:49:54 +0000</pubDate><guid>https://iamthefrogy.github.io/repositories/</guid><description>&lt;p>🎉 &lt;strong>Welcome to my collection of open-source projects and tools!&lt;/strong>&lt;br>
 Each repository reflects my passion for &lt;strong>cybersecurity, automation, and innovation.&lt;/strong> Below is an overview of the repositories and their purpose:&lt;/p>
 &lt;hr>
-&lt;h4 id="-frogyhttpsgithubcomiamthefrogyfrogy">🚀 &lt;a href="https://github.com/iamthefrogy/frogy">&lt;strong>Frogy&lt;/strong>&lt;/a>&lt;/h4>
+&lt;h5 id="frogyhttpsgithubcomiamthefrogyfrogy">&lt;a href="https://github.com/iamthefrogy/frogy">&lt;strong>Frogy&lt;/strong>&lt;/a>&lt;/h5>
 &lt;p>&lt;em>A multi-functional cybersecurity utility for recon and attack surface management.&lt;/em>&lt;br>
 ➡️ &lt;strong>Key Features&lt;/strong>: Automates common tasks for both red and blue teams.&lt;/p>
-&lt;h4 id="-emailauthinspectorhttpsgithubcomiamthefrogyemailauthinspector">🛡️ &lt;a href="https://github.com/iamthefrogy/EmailAuthInspector">&lt;strong>EmailAuthInspector&lt;/strong>&lt;/a>&lt;/h4>
+&lt;h5 id="emailauthinspectorhttpsgithubcomiamthefrogyemailauthinspector">&lt;a href="https://github.com/iamthefrogy/EmailAuthInspector">&lt;strong>EmailAuthInspector&lt;/strong>&lt;/a>&lt;/h5>
 &lt;p>&lt;em>A tool for analyzing email authentication protocols like SPF, DKIM, and DMARC.&lt;/em>&lt;br>
 ➡️ &lt;strong>Use Case&lt;/strong>: Securing email communication and preventing spoofing attacks.&lt;/p></description></item><item><title>CV/Resume</title><link>https://iamthefrogy.github.io/cv/</link><pubDate>Tue, 24 Dec 2024 22:44:17 +0000</pubDate><guid>https://iamthefrogy.github.io/cv/</guid><description>&lt;hr>
 &lt;p>&lt;strong>Email:&lt;/strong> &lt;a href="mailto:chintangurjar@outlook.com">chintangurjar@outlook.com&lt;/a>&lt;/p>
