@@ -1106,11 +1106,12 @@ The key to staying motivated in cybersecurity lies in shifting your perspective 
 6. **Document and Reflect**  
    Keep a note of what you’ve learned. Revisit this regularly to track your progress and stay motivated.
 
-   <center><img src="/images/exp-demotivate.png" alt="gpt1" width="850"/></center>
 
 ### Overcoming Demotivation Due to Experience Gap
 
    It's common to feel intimidated or demotivated when comparing your experience to those who have been in cybersecurity for decades. However, here's a fresh perspective to help you stay motivated:
+
+   <center><img src="/images/exp-demotivate.png" alt="gpt1" width="850"/></center>
 
 ### The Reality of Experience
    1. **Experience vs. Life Expectancy**  
