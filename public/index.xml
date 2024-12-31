@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 30 Dec 2024 16:16:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2024 13:24:29 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JWT Pentest Checklist</title>
+      <link>http://localhost:1313/posts/jwt-pentest-checklist/</link>
+      <pubDate>Tue, 31 Dec 2024 13:24:29 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jwt-pentest-checklist/</guid>
+      <description>&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;&#xA;&lt;p&gt;In this blog post, I am sharing a detailed &lt;strong&gt;JWT Security Testing Checklist&lt;/strong&gt; document I have created and found immensely valuable for penetration testers, developers, and security teams. This checklist provides a structured approach to identifying vulnerabilities in JSON Web Tokens (JWTs) implementations.&lt;/p&gt;&#xA;&lt;h3 id=&#34;sneakpeak-of-checklist&#34;&gt;Sneakpeak of Checklist&lt;/h3&gt;&#xA;&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/jwt.png&#34; alt=&#34;jwt&#34; width=&#34;750&#34;/&gt;&lt;/center&gt;&#xA;&lt;h3 id=&#34;why-share-this-document&#34;&gt;Why Share This Document?&lt;/h3&gt;&#xA;&lt;p&gt;JWTs are widely used for authentication and authorization, but they can introduce serious vulnerabilities if not implemented securely. By sharing this checklist, I hope to provide &lt;strong&gt;practical guidance&lt;/strong&gt; to developers and penetration testers, bug-hunters.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>(CTI) Dead Drops: Threat Actor Perspective</title>
       <link>http://localhost:1313/posts/dead-drops/</link>
