@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 31 Dec 2024 13:24:29 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>(VAPT) JWT Pentest Checklist</title><link>https://iamthefrogy.github.io/posts/jwt-pentest-checklist/</link><pubDate>Tue, 31 Dec 2024 13:24:29 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/jwt-pentest-checklist/</guid><description>&lt;h3 id="overview">Overview&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 02 Jan 2025 21:38:11 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules</title><link>https://iamthefrogy.github.io/posts/intel-to-hunt/</link><pubDate>Thu, 02 Jan 2025 21:38:11 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/intel-to-hunt/</guid><description>&lt;h2 id="overview-of-road">Overview of R.O.A.D.&lt;/h2>
+&lt;p>&lt;strong>R.O.A.D.&lt;/strong> stands for:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Raw Intelligence Gathering&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Organization &amp;amp; Analysis&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Actionable Detection&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Deployment &amp;amp; Refinement&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;center>&lt;img src="https://iamthefrogy.github.io/images/ROAD_CTIDetection_Diagram.svg" alt="r1" width="1200"/>&lt;/center>&lt;/br>
+&lt;p>When combined with the six steps outlined below, this approach ensures your organization can systematically transform raw CTI into real-world detection rules. While each step is broken down into an extensive checklist, think of R.O.A.D. as the conceptual glue that keeps your CTI lifecycle aligned, effective, and continually improving.&lt;/p>
+&lt;hr>
+&lt;h2 id="step-1-collection-and-normalization">Step 1: Collection and Normalization&lt;/h2>
+&lt;p>&lt;strong>Objective&lt;/strong>&lt;br>
+Assemble threat data from all relevant sources, then standardize it so that your organization can use it effectively. This ensures incoming information is high-quality, unique, and ready for downstream analysis.&lt;/p></description></item><item><title>(VAPT) JWT Pentest Checklist</title><link>https://iamthefrogy.github.io/posts/jwt-pentest-checklist/</link><pubDate>Tue, 31 Dec 2024 13:24:29 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/jwt-pentest-checklist/</guid><description>&lt;h3 id="overview">Overview&lt;/h3>
 &lt;p>In this blog post, I am sharing a detailed &lt;strong>JWT Security Testing Checklist&lt;/strong> document I have created and found immensely valuable for penetration testers, developers, and security teams. This checklist provides a structured approach to identifying vulnerabilities in JSON Web Tokens (JWTs) implementations.&lt;/p>
 &lt;h3 id="sneakpeak-of-checklist">Sneakpeak of Checklist&lt;/h3>
 &lt;center>&lt;img src="https://iamthefrogy.github.io/images/jwt.png" alt="jwt" width="750"/>&lt;/center>
