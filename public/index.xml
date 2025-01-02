@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 31 Dec 2024 13:24:29 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jan 2025 21:38:11 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules</title>
+      <link>http://localhost:1313/posts/intel-to-hunt/</link>
+      <pubDate>Thu, 02 Jan 2025 21:38:11 +0000</pubDate>
+      <guid>http://localhost:1313/posts/intel-to-hunt/</guid>
+      <description>&lt;h2 id=&#34;overview-of-road&#34;&gt;Overview of R.O.A.D.&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;R.O.A.D.&lt;/strong&gt; stands for:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Raw Intelligence Gathering&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Organization &amp;amp; Analysis&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Actionable Detection&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Deployment &amp;amp; Refinement&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/ROAD_CTIDetection_Diagram.svg&#34; alt=&#34;r1&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;&#xA;&lt;p&gt;When combined with the six steps outlined below, this approach ensures your organization can systematically transform raw CTI into real-world detection rules. While each step is broken down into an extensive checklist, think of R.O.A.D. as the conceptual glue that keeps your CTI lifecycle aligned, effective, and continually improving.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;step-1-collection-and-normalization&#34;&gt;Step 1: Collection and Normalization&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;br&gt;&#xA;Assemble threat data from all relevant sources, then standardize it so that your organization can use it effectively. This ensures incoming information is high-quality, unique, and ready for downstream analysis.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>(VAPT) JWT Pentest Checklist</title>
       <link>http://localhost:1313/posts/jwt-pentest-checklist/</link>
