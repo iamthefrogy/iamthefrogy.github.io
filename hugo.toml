@@ -74,27 +74,32 @@ weight = 200
 identifier = "posts"
 url = "/posts"
 [[menu.main]]
+name = "Visualisations"
+identifier = "visualisations"
+weight = 300
+url = "/visualisations"
+[[menu.main]]
 name = "About"
 identifier = "about"
-weight = 300
+weight = 400
 url = "/about"
 [[menu.main]]
 name = "CV/Resume"
 identifier = "cv"
-weight = 400
+weight = 500
 url = "/cv"
 [[menu.main]]
 name = "My Repos"
 identifier = "repositories"
-weight = 500
+weight = 600
 url = "/repositories"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
-weight = 600
+weight = 700
 url = "/kickstartcareer"
 [[menu.main]]
 name = "Disclaimer"
 identifier = "disclaimer"
-weight = 700
+weight = 800
 url = "/disclaimer"

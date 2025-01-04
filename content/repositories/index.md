@@ -9,7 +9,7 @@ Each repository reflects my passion for **cybersecurity, automation, and innovat
 
 ---
 
-##### [**Frogy**](https://github.com/iamthefrogy/frogy)  
+##### [**Kickstart your cyber career**](https://github.com/iamthefrogy/frogy)  
 *A multi-functional cybersecurity utility for recon and attack surface management.*  
 ➡️ **Key Features**: Automates common tasks for both red and blue teams.  
 
