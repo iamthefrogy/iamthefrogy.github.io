@@ -14,7 +14,17 @@ So why not take a look and see what catches your eye? I hope you find it as help
 ---
 
 ##### [Kickstart Cyber Career](http://localhost:1313/kickstartcareer/)  
-<img src="/images/kickstart-cyber-career.jpeg" alt="kickstart-cyber-career" width="950"/></br>
+<center><img src="/images/kickstart-cyber-career.jpeg" alt="kickstart-cyber-career" width="950"/></br></center></br>
 
 ##### [(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules](http://localhost:1313/posts/intel-to-hunt/)  
-<img src="/images/ROAD_CTIDetection_Diagram.svg" width="950"/></br>
+<center><img src="/images/ROAD_CTIDetection_Diagram.svg" width="950"/></br></center></br>
+
+##### (CTI) Starting Cybersecurity Business
+<center><img src="/images/start-cyber-business.png" width="1100"/></br></center></br>
+
+##### [(AppSec) Ensure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile](https://csrc.nist.gov/pubs/sp/800/218/a/final)  
+<center><img src="/images/ssdf-ai-3.png" width="700"/></br></center></br>
+
+##### (Bug-Bounty) BugBounty Recon Methodology
+<center><img src="/images/external-recon-1.png" width="1250"/></br></center></br>
+<center><img src="/images/external-recon-2.png" width="1450"/></br></center></br>
