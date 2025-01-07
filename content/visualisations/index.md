@@ -13,10 +13,10 @@ So why not take a look and see what catches your eye? I hope you find it as help
 
 ---
 
-##### [Kickstart Cyber Career](http://localhost:1313/kickstartcareer/)  
+##### [Kickstart Cyber Career](https://chintangurjar.com/kickstartcareer/)  
 <center><img src="/images/kickstart-cyber-career.jpeg" alt="kickstart-cyber-career" width="950"/></br></center></br>
 
-##### [(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules](http://localhost:1313/posts/intel-to-hunt/)  
+##### [(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules](https://chintangurjar.com/posts/intel-to-hunt/)  
 <center><img src="/images/ROAD_CTIDetection_Diagram.svg" width="950"/></br></center></br>
 
 ##### (CTI) Starting Cybersecurity Business
