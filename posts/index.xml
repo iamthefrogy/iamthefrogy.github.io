@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Cyber Frogy</title><link>https://iamthefrogy.github.io/posts/</link><description>Recent content in Posts on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 02 Jan 2025 21:38:11 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules</title><link>https://iamthefrogy.github.io/posts/intel-to-hunt/</link><pubDate>Thu, 02 Jan 2025 21:38:11 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/intel-to-hunt/</guid><description>&lt;h2 id="overview-of-road">Overview of R.O.A.D.&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Cyber Frogy</title><link>https://iamthefrogy.github.io/posts/</link><description>Recent content in Posts on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 12 Jan 2025 01:08:17 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>(SIEM) SIEM Query Knowledgebase Document Template</title><link>https://iamthefrogy.github.io/posts/siem-query-document-template/</link><pubDate>Sun, 12 Jan 2025 01:08:17 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/siem-query-document-template/</guid><description>&lt;h2 id="1-title">1. Title&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Title:&lt;/strong> [Query Title]&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-author">2. Author&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Author:&lt;/strong> [Author Name]&lt;/li>
+&lt;li>&lt;strong>Date Created:&lt;/strong> [Creation Date]&lt;/li>
+&lt;li>&lt;strong>Last Modified:&lt;/strong> [Last Modification Date]&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-frequency-to-run">3. Frequency to Run&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Frequency:&lt;/strong> [Run Frequency]&lt;/li>
+&lt;/ul>
+&lt;h2 id="4-log-sources">4. Log Sources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Log Sources:&lt;/strong>
+&lt;ul>
+&lt;li>[Source 1]&lt;/li>
+&lt;li>[Source 2]&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="5-alert-severity">5. Alert Severity&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Severity:&lt;/strong> [Severity Level (P1-P4)]&lt;/li>
+&lt;/ul>
+&lt;h2 id="6-escalation-path">6. Escalation Path&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Escalation:&lt;/strong> [Level of Analyst (L1-L3)]&lt;/li>
+&lt;/ul>
+&lt;h2 id="7-scope">7. Scope&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Scope:&lt;/strong> [Description of Scope]&lt;/li>
+&lt;/ul>
+&lt;h2 id="8-query-description">8. Query Description&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Description:&lt;/strong> [Detailed Description of the Query]&lt;/li>
+&lt;/ul>
+&lt;h2 id="9-mitre-attck-mapping">9. MITRE ATT&amp;amp;CK Mapping&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>TTPs:&lt;/strong>
+&lt;ul>
+&lt;li>[Tactic, Technique, Procedure]&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="10-detection-methodology">10. Detection Methodology&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Methodology:&lt;/strong> [Description of Detection Method]&lt;/li>
+&lt;/ul>
+&lt;h2 id="11-query-lifecycle-management">11. Query Lifecycle Management&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Review Frequency:&lt;/strong> [Review Frequency]&lt;/li>
+&lt;li>&lt;strong>Responsible Party:&lt;/strong> [Person/Team Responsible]&lt;/li>
+&lt;/ul>
+&lt;h2 id="12-testing-and-validation">12. Testing and Validation&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Test Cases:&lt;/strong>
+&lt;ul>
+&lt;li>[Test Case 1]&lt;/li>
+&lt;li>[Test Case 2]&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="13-references">13. References&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>References:&lt;/strong>
+&lt;ul>
+&lt;li>[Reference 1]&lt;/li>
+&lt;li>[Reference 2]&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="14-compliance-considerations">14. Compliance Considerations&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Compliance:&lt;/strong> [Compliance Standards]&lt;/li>
+&lt;/ul>
+&lt;h2 id="15-query-code">15. Query Code&lt;/h2>
+&lt;p>[Query Code Here]&lt;/p></description></item><item><title>(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules</title><link>https://iamthefrogy.github.io/posts/intel-to-hunt/</link><pubDate>Thu, 02 Jan 2025 21:38:11 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/intel-to-hunt/</guid><description>&lt;h2 id="overview-of-road">Overview of R.O.A.D.&lt;/h2>
 &lt;p>&lt;strong>R.O.A.D.&lt;/strong> stands for:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Raw Intelligence Gathering&lt;/strong>&lt;/li>
