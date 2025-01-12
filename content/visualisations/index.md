@@ -31,3 +31,6 @@ So why not take a look and see what catches your eye? I hope you find it as help
 ##### (Bug-Bounty) BugBounty Recon Methodology
 <center><img src="/images/external-recon-1.png" width="1250"/></br></center></br>
 <center><img src="/images/external-recon-2.png" width="1450"/></br></center></br>
+
+##### SIEM Query Document Knowledgebase Template
+<center><img src="/images/siem-query-document-kb-template.png" width="650"/></br></center></br>
