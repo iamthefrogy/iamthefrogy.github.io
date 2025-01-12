@@ -4,6 +4,27 @@ draft = false
 title = '(SIEM) SIEM Query Knowledgebase Document Template'
 +++
 
+## Why I Created a SIEM Query Template
+
+In today's fast-paced cybersecurity environment, managing SIEM queries effectively is paramount for timely threat detection and response. As someone who handles SIEM services in a product-based company, I've encountered challenges with organizing and maintaining numerous queries, both automated and manual. Without a centralized documentation system, queries were scattered, difficult to locate, and not consistently updated, which hindered efficiency and clarity.
+
+To address these issues, I developed a comprehensive SIEM query template designed to systematically capture essential details such as:
+
+- **Title**: What the query finds
+- **Author**: Who created the query
+- **Frequency**: How often the query runs
+- **Log Sources**: Required log sources
+- **Alert Severity**: P1 to P4 classification
+- **Escalation Paths**: Which SOC analyst level it goes to
+- **Scope**: Query scope
+- **Description**: Detailed description
+- **MITRE Mappings**: ATT&CK mappings
+- **Detection Methods**: How the query detects threats
+- **Lifecycle Management**: Review and update processes
+- **Testing and Validation**: Ensuring query effectiveness
+
+This template not only brings order to the management of SIEM queries but also enhances team collaboration, ensures compliance, facilitates onboarding of new members, and guarantees consistent reviews. By implementing this template, we strengthen our security posture, streamline operations, and ensure faster, more effective responses to security incidents.
+
 ## 1. Title
 - **Title:** [Query Title]
 
