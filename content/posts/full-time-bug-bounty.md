@@ -90,6 +90,8 @@ Even with a solid roadmap, there are extra details—and outright pitfalls—tha
 
 Below are realities that many hunters encounter but few talk about openly. While some might never face every issue, awareness is key to preparing mentally and operationally.
 
+<center><img src="/images/bb-demotivation.png" alt="bb-demotivation" width="1300"/></center>
+
 #### 1.1 Demotivation and Burnout
 - **Why It Happens**: A large percentage of your recon and testing may lead to dead-ends or low-severity issues. With no guaranteed timeline for payouts, motivation can plummet.  
 - **Example**: A researcher spends two weeks on a complex target only to end up with a “not applicable” or duplicate response from triage. They feel they wasted their entire time, leading to intense frustration or burnout.

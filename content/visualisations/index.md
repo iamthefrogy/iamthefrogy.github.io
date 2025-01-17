@@ -10,8 +10,19 @@ Welcome to the Visualizations section! Here, you'll find a variety of diagrams, 
 
 So why not take a look and see what catches your eye? I hope you find it as helpful as I do!
 
+I use GenAI to create these visualizations.
+
 
 ---
+
+##### [The Darker Side of Bug-Bounty](https://chintangurjar.com/posts/full-time-bug-bounty/)  
+<center><img src="/images/bb-demotivation.png" width="1300"/></br></center></br>
+
+##### [Full-time Bug-Bounty Roadmap](https://chintangurjar.com/posts/full-time-bug-bounty/)  
+<center><img src="/images/bb-fulltime.jpeg" width="800"/></br></center></br>
+
+##### [Full-time Bug-Bounty Roadmap - Detailed](https://chintangurjar.com/posts/full-time-bug-bounty/)  
+<center><img src="/images/bb-full-time2.jpeg" width="1300"/></br></center></br>
 
 ##### [Kickstart Cyber Career](https://chintangurjar.com/kickstartcareer/)  
 <center><img src="/images/kickstart-cyber-career.jpeg" alt="kickstart-cyber-career" width="950"/></br></center></br>
