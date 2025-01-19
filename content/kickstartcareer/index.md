@@ -1123,12 +1123,16 @@ The key to staying motivated in cybersecurity lies in shifting your perspective 
    3. **A Future Edge**  
       Younger professionals (pink bar) often have the advantage of learning and adapting to newer technologies. This positions you for a more dynamic career in the future.
 
-### The Final Perspective
+## 26. Why not to start career with only Bug-Bounty?
+
+Read this blog - https://chintangurjar.com/posts/full-time-bug-bounty/
+
+## The Final Perspective
 By constantly learning and growing, you can bridge the knowledge gap. If someone knows more today, it’s an opportunity for you to catch up tomorrow. With dedication and focus, you’ll be able to stand on equal ground in terms of skills and expertise.
 
 At the end of the day, we all have the same life expectancy to grow and learn. The journey is about making the most of the time you have, staying adaptable, and advancing with the evolving landscape of cybersecurity.
 
 Embrace your potential, keep learning, stay positive, and remember that your career is a marathon, not a sprint.
 
-### DISCLAIMER
+## DISCLAIMER
 **This guide has been written pre-ChatGPT era. However since we have GPT now I have used it to enhance the guide but its not completely written by GPT only. All of the information collection, organization, and presentation are my own thoughts.**
