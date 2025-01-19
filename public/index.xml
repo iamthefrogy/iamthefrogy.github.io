@@ -6,8 +6,36 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 17 Jan 2025 19:47:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2025 00:20:42 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compiled</title>
+      <link>http://localhost:1313/hackthebox/compiled/</link>
+      <pubDate>Sun, 19 Jan 2025 00:20:42 +0000</pubDate>
+      <guid>http://localhost:1313/hackthebox/compiled/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/compiled.png&#34; width=&#34;450&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Sea</title>
+      <link>http://localhost:1313/hackthebox/sea/</link>
+      <pubDate>Sun, 19 Jan 2025 00:20:42 +0000</pubDate>
+      <guid>http://localhost:1313/hackthebox/sea/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/sea.png&#34; width=&#34;350&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Sightless</title>
+      <link>http://localhost:1313/hackthebox/sightless/</link>
+      <pubDate>Sun, 19 Jan 2025 00:20:41 +0000</pubDate>
+      <guid>http://localhost:1313/hackthebox/sightless/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/sightless.png&#34; width=&#34;450&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>MonitorsThree</title>
+      <link>http://localhost:1313/hackthebox/monitorsthree/</link>
+      <pubDate>Sat, 18 Jan 2025 22:36:16 +0000</pubDate>
+      <guid>http://localhost:1313/hackthebox/monitorsthree/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/MonitorsThree.png&#34; width=&#34;350&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
     <item>
       <title>(Bug-Bounty) How to Know You are Ready for Full-Time Bug Bounty</title>
       <link>http://localhost:1313/posts/full-time-bug-bounty/</link>

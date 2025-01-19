@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/full-time-bug-bounty/</loc>
-    <lastmod>2025-01-17T19:47:14+00:00</lastmod>
+    <loc>http://localhost:1313/hackthebox/compiled/</loc>
+    <lastmod>2025-01-19T00:20:42+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-01-19T00:20:42+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hackthebox/</loc>
+    <lastmod>2025-01-19T00:20:42+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hackthebox/sea/</loc>
+    <lastmod>2025-01-19T00:20:42+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hackthebox/sightless/</loc>
+    <lastmod>2025-01-19T00:20:41+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hackthebox/monitorsthree/</loc>
+    <lastmod>2025-01-18T22:36:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/full-time-bug-bounty/</loc>
     <lastmod>2025-01-17T19:47:14+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
