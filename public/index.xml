@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 19 Jan 2025 00:20:42 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2025 04:46:47 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(Bug-Bounty) Master XSS Hunting Methodology</title>
+      <link>http://localhost:1313/posts/xss-hunting/</link>
+      <pubDate>Mon, 03 Feb 2025 04:46:47 +0000</pubDate>
+      <guid>http://localhost:1313/posts/xss-hunting/</guid>
+      <description>&lt;p&gt;Below is a straightforward, step-by-step approach to uncovering Cross-Site Scripting (XSS) vulnerabilities. The focus here is on the methodology rather than specific payload examples.&lt;/p&gt;&#xA;&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/xss_hunting.png&#34; width=&#34;1300&#34;/&gt;&lt;/center&gt;&lt;/br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-identify-where-user-input-can-appear&#34;&gt;1. Identify Where User Input Can Appear&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Look for any field, query parameter, or user-controllable data source.&lt;/li&gt;&#xA;&lt;li&gt;Observe if the input is shown back on the page, either directly or indirectly.&lt;/li&gt;&#xA;&lt;li&gt;Note whether the input appears inside HTML, in script code, or within attributes.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-classify-the-reflection-context&#34;&gt;2. Classify the Reflection Context&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Raw HTML Context:&lt;/strong&gt; Check if the input is inserted as normal text or within tags.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;HTML Attribute Context:&lt;/strong&gt; Examine if the input is used inside attributes (e.g., &lt;code&gt;href&lt;/code&gt;, &lt;code&gt;src&lt;/code&gt;).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;JavaScript Context:&lt;/strong&gt; Determine if the input lands inside script blocks or inline event handlers.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Client-Side Templating:&lt;/strong&gt; If frameworks like Angular, React, or Vue are present, see if user input is being processed through a template.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Callback Functions:&lt;/strong&gt; Look for parameters that might be used inside a JavaScript function call.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Understanding exactly where and how input is reflected dictates the techniques you use next.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Compiled</title>
       <link>http://localhost:1313/hackthebox/compiled/</link>
