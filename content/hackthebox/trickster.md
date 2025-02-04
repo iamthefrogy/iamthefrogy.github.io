@@ -4,4 +4,4 @@ draft = false
 title = 'Trickster'
 +++
 
-<center><img src="/images/Trickster.png" width="350"/></center></br>
+<center><img src="/images/trickster.png" width="350"/></center></br>
