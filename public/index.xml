@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 03 Feb 2025 04:46:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2025 05:50:45 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trickster</title>
+      <link>http://localhost:1313/hackthebox/trickster/</link>
+      <pubDate>Tue, 04 Feb 2025 05:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/hackthebox/trickster/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/Trickster.png&#34; width=&#34;350&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
     <item>
       <title>(Bug-Bounty) Master XSS Hunting Methodology</title>
       <link>http://localhost:1313/posts/xss-hunting/</link>
