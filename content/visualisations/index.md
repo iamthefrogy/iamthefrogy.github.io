@@ -15,6 +15,9 @@ I use GenAI to create these visualizations.
 
 ---
 
+##### Bug-Bounty Recon Automation (Active vs. Passive)
+<center><img src="/images/bb-automation-active-passive.png" width="450"/></br></center></br>
+
 ##### [The Darker Side of Bug-Bounty](https://chintangurjar.com/posts/full-time-bug-bounty/)  
 <center><img src="/images/bb-demotivation.png" width="1300"/></br></center></br>
 
