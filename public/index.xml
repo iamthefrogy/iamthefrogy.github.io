@@ -6,8 +6,22 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 04 Feb 2025 05:50:45 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Feb 2025 11:42:41 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(ASM) Free/Open-Source External ASM Toolkit</title>
+      <link>http://localhost:1313/posts/frogy-asm/</link>
+      <pubDate>Thu, 20 Feb 2025 11:42:41 +0000</pubDate>
+      <guid>http://localhost:1313/posts/frogy-asm/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In today’s security landscape, &lt;strong&gt;Attack Surface Management (ASM)&lt;/strong&gt; is a cornerstone of proactive defense. Monitoring internet-facing assets, uncovering shadow IT, and identifying vulnerable endpoints before attackers do can mean the difference between a resilient organization and a breach-in-the-making. Yet, many ASM tools remain &lt;strong&gt;proprietary&lt;/strong&gt;, &lt;strong&gt;expensive&lt;/strong&gt;, or too &lt;strong&gt;complex&lt;/strong&gt; for smaller security teams, researchers, or hobbyists to adopt effectively.&lt;/p&gt;&#xA;&lt;p&gt;This is why I created &lt;strong&gt;Frogy&lt;/strong&gt;—an open-source, Bash-based ASM tool you can run with minimal configuration. Before diving into how it works, let’s explore the motivations and driving forces behind its creation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>(CTI) Threat Intelligence Information Sharing</title>
+      <link>http://localhost:1313/posts/cti-info-sharing/</link>
+      <pubDate>Fri, 07 Feb 2025 04:54:48 +0000</pubDate>
+      <guid>http://localhost:1313/posts/cti-info-sharing/</guid>
+      <description>&lt;h1 id=&#34;cyber-threat-intelligence-sharing-a-comprehensive-guide-to-building-collective-resilience&#34;&gt;Cyber Threat Intelligence Sharing: A Comprehensive Guide to Building Collective Resilience&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;By [Your Name], Cybersecurity Strategist&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Updated: [Date]&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;the-imperative-of-cyber-threat-intelligence-sharing&#34;&gt;The Imperative of Cyber Threat Intelligence Sharing&lt;/h2&gt;&#xA;&lt;p&gt;In 2021, the &lt;strong&gt;Colonial Pipeline ransomware attack&lt;/strong&gt; paralyzed fuel distribution across the U.S. East Coast, costing $4.4 million in ransom payments. A year later, the &lt;strong&gt;Log4Shell vulnerability&lt;/strong&gt; exposed over 48% of corporate networks globally to remote code execution. These incidents underscore a critical truth: cyber adversaries collaborate, adapt, and scale. Defenders must do the same.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Trickster</title>
       <link>http://localhost:1313/hackthebox/trickster/</link>
@@ -146,7 +160,7 @@
       <link>http://localhost:1313/repositories/</link>
       <pubDate>Tue, 24 Dec 2024 22:49:54 +0000</pubDate>
       <guid>http://localhost:1313/repositories/</guid>
-      <description>&lt;p&gt;🎉 &lt;strong&gt;Welcome to my collection of open-source projects and tools!&lt;/strong&gt;&lt;br&gt;&#xA;Each repository reflects my passion for &lt;strong&gt;cybersecurity, automation, and innovation.&lt;/strong&gt; Below is an overview of the repositories and their purpose:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h5 id=&#34;kickstart-your-cyber-careerhttpsgithubcomiamthefrogyfrogy&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/frogy&#34;&gt;&lt;strong&gt;Kickstart your cyber career&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A multi-functional cybersecurity utility for recon and attack surface management.&lt;/em&gt;&lt;br&gt;&#xA;➡️ &lt;strong&gt;Key Features&lt;/strong&gt;: Automates common tasks for both red and blue teams.&lt;/p&gt;&#xA;&lt;h5 id=&#34;emailauthinspectorhttpsgithubcomiamthefrogyemailauthinspector&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/EmailAuthInspector&#34;&gt;&lt;strong&gt;EmailAuthInspector&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A tool for analyzing email authentication protocols like SPF, DKIM, and DMARC.&lt;/em&gt;&lt;br&gt;&#xA;➡️ &lt;strong&gt;Use Case&lt;/strong&gt;: Securing email communication and preventing spoofing attacks.&lt;/p&gt;</description>
+      <description>&lt;p&gt;🎉 &lt;strong&gt;Welcome to my collection of open-source projects and tools!&lt;/strong&gt;&lt;br&gt;&#xA;Each repository reflects my passion for &lt;strong&gt;cybersecurity, automation, and innovation.&lt;/strong&gt; Below is an overview of the repositories and their purpose:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h5 id=&#34;kickstart-your-cyber-career&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/frogy&#34;&gt;&lt;strong&gt;Kickstart your cyber career&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A multi-functional cybersecurity utility for recon and attack surface management.&lt;/em&gt;&lt;br&gt;&#xA;➡️ &lt;strong&gt;Key Features&lt;/strong&gt;: Automates common tasks for both red and blue teams.&lt;/p&gt;&#xA;&lt;h5 id=&#34;emailauthinspector&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/EmailAuthInspector&#34;&gt;&lt;strong&gt;EmailAuthInspector&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A tool for analyzing email authentication protocols like SPF, DKIM, and DMARC.&lt;/em&gt;&lt;br&gt;&#xA;➡️ &lt;strong&gt;Use Case&lt;/strong&gt;: Securing email communication and preventing spoofing attacks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CV/Resume</title>
