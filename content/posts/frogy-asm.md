@@ -85,7 +85,7 @@ https://github.com/iamthefrogy/frogy2.0
 
 Below is the working process of this tool.
 
-<center><img src="/images/frogyasm.png" width="700"/></center></br>
+<center><img src="/images/frogyasm.png" width="900"/></center></br>
 
 ## How Does it Run?
 
