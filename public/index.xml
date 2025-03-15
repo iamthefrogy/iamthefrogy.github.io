@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 20 Feb 2025 11:42:41 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Mar 2025 18:14:09 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certified</title>
+      <link>http://localhost:1313/hackthebox/certified/</link>
+      <pubDate>Sat, 15 Mar 2025 18:14:09 +0000</pubDate>
+      <guid>http://localhost:1313/hackthebox/certified/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/htb-certified.png&#34; width=&#34;500/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
     <item>
       <title>(ASM) Free/Open-Source External ASM Toolkit</title>
       <link>http://localhost:1313/posts/frogy-asm/</link>

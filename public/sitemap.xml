@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/frogy-asm/</loc>
-    <lastmod>2025-02-20T11:42:41+00:00</lastmod>
+    <loc>http://localhost:1313/hackthebox/certified/</loc>
+    <lastmod>2025-03-15T18:14:09+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-03-15T18:14:09+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hackthebox/</loc>
+    <lastmod>2025-03-15T18:14:09+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/frogy-asm/</loc>
     <lastmod>2025-02-20T11:42:41+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
@@ -13,9 +19,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/cti-info-sharing/</loc>
     <lastmod>2025-02-07T04:54:48+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/hackthebox/</loc>
-    <lastmod>2025-02-04T05:50:45+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hackthebox/trickster/</loc>
     <lastmod>2025-02-04T05:50:45+00:00</lastmod>
