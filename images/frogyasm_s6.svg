@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="613pt" height="617pt" viewBox="0.00 0.00 613.24 617.18">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 613.18)">
+<title>RiskScoring</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-613.18 609.24,-613.18 609.24,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_riskScoring</title>
+<path fill="none" stroke="#999999" d="M14.76,-236.18C14.76,-236.18 138.18,-236.18 138.18,-236.18 144.18,-236.18 150.18,-242.18 150.18,-248.18 150.18,-248.18 150.18,-355.18 150.18,-355.18 150.18,-361.18 144.18,-367.18 138.18,-367.18 138.18,-367.18 14.76,-367.18 14.76,-367.18 8.76,-367.18 2.76,-361.18 2.76,-355.18 2.76,-355.18 2.76,-248.18 2.76,-248.18 2.76,-242.18 8.76,-236.18 14.76,-236.18"/>
+<text text-anchor="middle" x="76.47" y="-350.58" font-family="Times,serif" font-size="14.00">Risk Scoring Overview</text>
+</g>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<path fill="#ffd27f" stroke="#666666" d="M123.94,-334.18C123.94,-334.18 28,-334.18 28,-334.18 22,-334.18 16,-328.18 16,-322.18 16,-322.18 16,-310.18 16,-310.18 16,-304.18 22,-298.18 28,-298.18 28,-298.18 123.94,-298.18 123.94,-298.18 129.94,-298.18 135.94,-304.18 135.94,-310.18 135.94,-310.18 135.94,-322.18 135.94,-322.18 135.94,-328.18 129.94,-334.18 123.94,-334.18"/>
+<text text-anchor="middle" x="75.97" y="-313.18" font-family="Helvetica,sans-Serif" font-size="10.00">Start: Analyze an Asset</text>
+</g>
+<!-- employee -->
+<g id="node3" class="node">
+<title>employee</title>
+<path fill="#ffb6c1" stroke="#666666" d="M299.46,-609.18C299.46,-609.18 203.51,-609.18 203.51,-609.18 197.51,-609.18 191.51,-603.18 191.51,-597.18 191.51,-597.18 191.51,-585.18 191.51,-585.18 191.51,-579.18 197.51,-573.18 203.51,-573.18 203.51,-573.18 299.46,-573.18 299.46,-573.18 305.46,-573.18 311.46,-579.18 311.46,-585.18 311.46,-585.18 311.46,-597.18 311.46,-597.18 311.46,-603.18 305.46,-609.18 299.46,-609.18"/>
+<text text-anchor="middle" x="251.49" y="-594.18" font-family="Helvetica,sans-Serif" font-size="10.00">1) Employee-Intended?</text>
+<text text-anchor="middle" x="251.49" y="-582.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+1 if found)</text>
+</g>
+<!-- start&#45;&gt;employee -->
+<g id="edge1" class="edge">
+<title>start-&gt;employee</title>
+<path fill="none" stroke="#666666" d="M79.37,-334.54C86.25,-379.86 110.1,-498.11 178.18,-564.18 179.39,-565.34 180.64,-566.46 181.95,-567.53"/>
+<polygon fill="#666666" stroke="#666666" points="179.69,-570.22 189.9,-573.06 183.69,-564.48 179.69,-570.22"/>
+</g>
+<!-- url -->
+<g id="node4" class="node">
+<title>url</title>
+<path fill="#fffacd" stroke="#666666" d="M306.68,-555.18C306.68,-555.18 196.29,-555.18 196.29,-555.18 190.29,-555.18 184.29,-549.18 184.29,-543.18 184.29,-543.18 184.29,-531.18 184.29,-531.18 184.29,-525.18 190.29,-519.18 196.29,-519.18 196.29,-519.18 306.68,-519.18 306.68,-519.18 312.68,-519.18 318.68,-525.18 318.68,-531.18 318.68,-531.18 318.68,-543.18 318.68,-543.18 318.68,-549.18 312.68,-555.18 306.68,-555.18"/>
+<text text-anchor="middle" x="251.49" y="-540.18" font-family="Helvetica,sans-Serif" font-size="10.00">2) Valid / Accessible URL?</text>
+<text text-anchor="middle" x="251.49" y="-528.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+1 if found)</text>
+</g>
+<!-- start&#45;&gt;url -->
+<g id="edge2" class="edge">
+<title>start-&gt;url</title>
+<path fill="none" stroke="#666666" d="M81.68,-334.44C92.4,-372.45 122.1,-460.62 178.18,-510.18 178.97,-510.88 179.79,-511.56 180.61,-512.22"/>
+<polygon fill="#666666" stroke="#666666" points="178.6,-515.09 188.83,-517.85 182.56,-509.31 178.6,-515.09"/>
+</g>
+<!-- login -->
+<g id="node5" class="node">
+<title>login</title>
+<path fill="#bdecb6" stroke="#666666" d="M289.18,-501.18C289.18,-501.18 213.79,-501.18 213.79,-501.18 207.79,-501.18 201.79,-495.18 201.79,-489.18 201.79,-489.18 201.79,-477.18 201.79,-477.18 201.79,-471.18 207.79,-465.18 213.79,-465.18 213.79,-465.18 289.18,-465.18 289.18,-465.18 295.18,-465.18 301.18,-471.18 301.18,-477.18 301.18,-477.18 301.18,-489.18 301.18,-489.18 301.18,-495.18 295.18,-501.18 289.18,-501.18"/>
+<text text-anchor="middle" x="251.49" y="-486.18" font-family="Helvetica,sans-Serif" font-size="10.00">3) Login Interface?</text>
+<text text-anchor="middle" x="251.49" y="-474.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+1 if found)</text>
+</g>
+<!-- start&#45;&gt;login -->
+<g id="edge3" class="edge">
+<title>start-&gt;login</title>
+<path fill="none" stroke="#666666" d="M85.58,-334.27C100.49,-363.78 133.81,-422.37 178.18,-456.18 182.19,-459.23 186.58,-461.97 191.15,-464.42"/>
+<polygon fill="#666666" stroke="#666666" points="189.48,-467.5 200.01,-468.67 192.51,-461.19 189.48,-467.5"/>
+</g>
+<!-- http200 -->
+<g id="node6" class="node">
+<title>http200</title>
+<path fill="#ffdead" stroke="#666666" d="M294.45,-447.18C294.45,-447.18 208.52,-447.18 208.52,-447.18 202.52,-447.18 196.52,-441.18 196.52,-435.18 196.52,-435.18 196.52,-423.18 196.52,-423.18 196.52,-417.18 202.52,-411.18 208.52,-411.18 208.52,-411.18 294.45,-411.18 294.45,-411.18 300.45,-411.18 306.45,-417.18 306.45,-423.18 306.45,-423.18 306.45,-435.18 306.45,-435.18 306.45,-441.18 300.45,-447.18 294.45,-447.18"/>
+<text text-anchor="middle" x="251.49" y="-432.18" font-family="Helvetica,sans-Serif" font-size="10.00">4) HTTP Status 200?</text>
+<text text-anchor="middle" x="251.49" y="-420.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+1 if found)</text>
+</g>
+<!-- start&#45;&gt;http200 -->
+<g id="edge4" class="edge">
+<title>start-&gt;http200</title>
+<path fill="none" stroke="#666666" d="M94.5,-334.45C113.6,-353.49 145.77,-383.15 178.18,-402.18 180.66,-403.63 183.23,-405.03 185.86,-406.38"/>
+<polygon fill="#666666" stroke="#666666" points="184.32,-409.52 194.85,-410.64 187.32,-403.19 184.32,-409.52"/>
+</g>
+<!-- tls -->
+<g id="node7" class="node">
+<title>tls</title>
+<path fill="#add8e6" stroke="#666666" d="M296.82,-393.18C296.82,-393.18 206.16,-393.18 206.16,-393.18 200.16,-393.18 194.16,-387.18 194.16,-381.18 194.16,-381.18 194.16,-337.18 194.16,-337.18 194.16,-331.18 200.16,-325.18 206.16,-325.18 206.16,-325.18 296.82,-325.18 296.82,-325.18 302.82,-325.18 308.82,-331.18 308.82,-337.18 308.82,-337.18 308.82,-381.18 308.82,-381.18 308.82,-387.18 302.82,-393.18 296.82,-393.18"/>
+<text text-anchor="middle" x="251.49" y="-380.18" font-family="Helvetica,sans-Serif" font-size="10.00">5) SSL/TLS Version?</text>
+<text text-anchor="middle" x="251.49" y="-368.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +0 if TLSv1.2 or 1.3</text>
+<text text-anchor="middle" x="251.49" y="-356.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +2 if TLSv1.0/1.1</text>
+<text text-anchor="middle" x="251.49" y="-344.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +5 if SSLv1/2/3</text>
+<text text-anchor="middle" x="251.49" y="-332.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +1 if none reported</text>
+</g>
+<!-- start&#45;&gt;tls -->
+<g id="edge5" class="edge">
+<title>start-&gt;tls</title>
+<path fill="none" stroke="#666666" d="M136.2,-330.85C151.21,-334.57 167.45,-338.6 182.84,-342.41"/>
+<polygon fill="#666666" stroke="#666666" points="181.85,-345.77 192.4,-344.78 183.53,-338.98 181.85,-345.77"/>
+</g>
+<!-- cert -->
+<g id="node8" class="node">
+<title>cert</title>
+<path fill="#ffc0cb" stroke="#666666" d="M285.7,-307.18C285.7,-307.18 217.27,-307.18 217.27,-307.18 211.27,-307.18 205.27,-301.18 205.27,-295.18 205.27,-295.18 205.27,-251.18 205.27,-251.18 205.27,-245.18 211.27,-239.18 217.27,-239.18 217.27,-239.18 285.7,-239.18 285.7,-239.18 291.7,-239.18 297.7,-245.18 297.7,-251.18 297.7,-251.18 297.7,-295.18 297.7,-295.18 297.7,-301.18 291.7,-307.18 285.7,-307.18"/>
+<text text-anchor="middle" x="251.49" y="-294.18" font-family="Helvetica,sans-Serif" font-size="10.00">6) Cert Expiry?</text>
+<text text-anchor="middle" x="251.49" y="-282.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +20 if expired</text>
+<text text-anchor="middle" x="251.49" y="-270.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +10 if ≤7 days</text>
+<text text-anchor="middle" x="251.49" y="-258.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +5 if ≤14 days</text>
+<text text-anchor="middle" x="251.49" y="-246.18" font-family="Helvetica,sans-Serif" font-size="10.00">• +2 if ≤30 days</text>
+</g>
+<!-- start&#45;&gt;cert -->
+<g id="edge6" class="edge">
+<title>start-&gt;cert</title>
+<path fill="none" stroke="#666666" d="M136.2,-301.5C154.91,-296.86 175.52,-291.76 194.02,-287.17"/>
+<polygon fill="#666666" stroke="#666666" points="194.61,-290.63 203.47,-284.83 192.93,-283.84 194.61,-290.63"/>
+</g>
+<!-- headers -->
+<g id="node9" class="node">
+<title>headers</title>
+<path fill="#d3ffce" stroke="#666666" d="M312.79,-221.18C312.79,-221.18 190.18,-221.18 190.18,-221.18 184.18,-221.18 178.18,-215.18 178.18,-209.18 178.18,-209.18 178.18,-153.18 178.18,-153.18 178.18,-147.18 184.18,-141.18 190.18,-141.18 190.18,-141.18 312.79,-141.18 312.79,-141.18 318.79,-141.18 324.79,-147.18 324.79,-153.18 324.79,-153.18 324.79,-209.18 324.79,-209.18 324.79,-215.18 318.79,-221.18 312.79,-221.18"/>
+<text text-anchor="middle" x="251.49" y="-208.18" font-family="Helvetica,sans-Serif" font-size="10.00">7) Missing Security Headers?</text>
+<text text-anchor="middle" x="251.49" y="-196.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+1 each for missing:</text>
+<text text-anchor="middle" x="251.49" y="-184.18" font-family="Helvetica,sans-Serif" font-size="10.00">HSTS, X-Frame-Options,</text>
+<text text-anchor="middle" x="251.49" y="-172.18" font-family="Helvetica,sans-Serif" font-size="10.00">CSP, X-XSS-Protection,</text>
+<text text-anchor="middle" x="251.49" y="-160.18" font-family="Helvetica,sans-Serif" font-size="10.00">Referrer-Policy,</text>
+<text text-anchor="middle" x="251.49" y="-148.18" font-family="Helvetica,sans-Serif" font-size="10.00">Permissions-Policy)</text>
+</g>
+<!-- start&#45;&gt;headers -->
+<g id="edge7" class="edge">
+<title>start-&gt;headers</title>
+<path fill="none" stroke="#666666" d="M136.11,-299.17C141.19,-296.32 145.98,-293.02 150.18,-289.18 171.61,-269.59 159.28,-252.2 178.18,-230.18 178.34,-229.99 178.51,-229.8 178.67,-229.62"/>
+<polygon fill="#666666" stroke="#666666" points="181.01,-232.23 185.44,-222.61 175.97,-227.37 181.01,-232.23"/>
+</g>
+<!-- ports -->
+<g id="node10" class="node">
+<title>ports</title>
+<path fill="#f0e68c" stroke="#666666" d="M291.26,-123.18C291.26,-123.18 211.71,-123.18 211.71,-123.18 205.71,-123.18 199.71,-117.18 199.71,-111.18 199.71,-111.18 199.71,-99.18 199.71,-99.18 199.71,-93.18 205.71,-87.18 211.71,-87.18 211.71,-87.18 291.26,-87.18 291.26,-87.18 297.26,-87.18 303.26,-93.18 303.26,-99.18 303.26,-99.18 303.26,-111.18 303.26,-111.18 303.26,-117.18 297.26,-123.18 291.26,-123.18"/>
+<text text-anchor="middle" x="251.49" y="-108.18" font-family="Helvetica,sans-Serif" font-size="10.00">8) Open Ports?</text>
+<text text-anchor="middle" x="251.49" y="-96.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+ openPortsCount)</text>
+</g>
+<!-- start&#45;&gt;ports -->
+<g id="edge8" class="edge">
+<title>start-&gt;ports</title>
+<path fill="none" stroke="#666666" d="M136.22,-300.91C141.47,-297.72 146.27,-293.85 150.18,-289.18 195.68,-234.83 132.8,-186.62 178.18,-132.18 181.46,-128.25 185.36,-124.89 189.64,-122.03"/>
+<polygon fill="#666666" stroke="#666666" points="191.16,-125.18 198.16,-117.24 187.73,-119.08 191.16,-125.18"/>
+</g>
+<!-- tech -->
+<g id="node11" class="node">
+<title>tech</title>
+<path fill="#e6e6fa" stroke="#666666" d="M295.84,-69.18C295.84,-69.18 207.13,-69.18 207.13,-69.18 201.13,-69.18 195.13,-63.18 195.13,-57.18 195.13,-57.18 195.13,-45.18 195.13,-45.18 195.13,-39.18 201.13,-33.18 207.13,-33.18 207.13,-33.18 295.84,-33.18 295.84,-33.18 301.84,-33.18 307.84,-39.18 307.84,-45.18 307.84,-45.18 307.84,-57.18 307.84,-57.18 307.84,-63.18 301.84,-69.18 295.84,-69.18"/>
+<text text-anchor="middle" x="251.49" y="-54.18" font-family="Helvetica,sans-Serif" font-size="10.00">9) Tech Stack Count?</text>
+<text text-anchor="middle" x="251.49" y="-42.18" font-family="Helvetica,sans-Serif" font-size="10.00">(+ techCount)</text>
+</g>
+<!-- start&#45;&gt;tech -->
+<g id="edge9" class="edge">
+<title>start-&gt;tech</title>
+<path fill="none" stroke="#666666" d="M136.43,-301.09C141.64,-297.86 146.38,-293.94 150.18,-289.18 209.28,-215.31 119.24,-152.17 178.18,-78.18 180.37,-75.44 182.86,-72.97 185.58,-70.76"/>
+<polygon fill="#666666" stroke="#666666" points="187.28,-73.83 193.64,-65.35 183.39,-68.01 187.28,-73.83"/>
+</g>
+<!-- final -->
+<g id="node2" class="node">
+<title>final</title>
+<path fill="#b8e0d2" stroke="#666666" d="M108.37,-280.18C108.37,-280.18 43.57,-280.18 43.57,-280.18 37.57,-280.18 31.57,-274.18 31.57,-268.18 31.57,-268.18 31.57,-256.18 31.57,-256.18 31.57,-250.18 37.57,-244.18 43.57,-244.18 43.57,-244.18 108.37,-244.18 108.37,-244.18 114.37,-244.18 120.37,-250.18 120.37,-256.18 120.37,-256.18 120.37,-268.18 120.37,-268.18 120.37,-274.18 114.37,-280.18 108.37,-280.18"/>
+<text text-anchor="middle" x="75.97" y="-259.18" font-family="Helvetica,sans-Serif" font-size="10.00">Final Risk Score</text>
+</g>
+<!-- aggregator -->
+<g id="node12" class="node">
+<title>aggregator</title>
+<path fill="#8ea7e9" stroke="#666666" d="M429.81,-334.18C429.81,-334.18 372.79,-334.18 372.79,-334.18 366.79,-334.18 360.79,-328.18 360.79,-322.18 360.79,-322.18 360.79,-310.18 360.79,-310.18 360.79,-304.18 366.79,-298.18 372.79,-298.18 372.79,-298.18 429.81,-298.18 429.81,-298.18 435.81,-298.18 441.81,-304.18 441.81,-310.18 441.81,-310.18 441.81,-322.18 441.81,-322.18 441.81,-328.18 435.81,-334.18 429.81,-334.18"/>
+<text text-anchor="middle" x="401.3" y="-313.18" font-family="Helvetica,sans-Serif" font-size="10.00">Sum All Points</text>
+</g>
+<!-- employee&#45;&gt;aggregator -->
+<g id="edge10" class="edge">
+<title>employee-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M311.86,-574.5C316.61,-571.59 321.03,-568.18 324.79,-564.18 383.01,-502.24 396.42,-396.72 399.46,-345.62"/>
+<polygon fill="#666666" stroke="#666666" points="402.94,-346.11 399.93,-335.95 395.95,-345.77 402.94,-346.11"/>
+</g>
+<!-- url&#45;&gt;aggregator -->
+<g id="edge11" class="edge">
+<title>url-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M313.98,-518.7C317.89,-516.2 321.55,-513.38 324.79,-510.18 370.91,-464.69 389.46,-387.8 396.44,-345.78"/>
+<polygon fill="#666666" stroke="#666666" points="399.86,-346.57 397.92,-336.16 392.95,-345.51 399.86,-346.57"/>
+</g>
+<!-- login&#45;&gt;aggregator -->
+<g id="edge12" class="edge">
+<title>login-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M301.46,-470.4C309.84,-466.73 318.02,-462.07 324.79,-456.18 359.28,-426.12 380.75,-376.34 391.61,-344.95"/>
+<polygon fill="#666666" stroke="#666666" points="394.85,-346.32 394.66,-335.72 388.2,-344.12 394.85,-346.32"/>
+</g>
+<!-- http200&#45;&gt;aggregator -->
+<g id="edge13" class="edge">
+<title>http200-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M306.88,-412.25C313.16,-409.33 319.27,-405.98 324.79,-402.18 347.63,-386.42 368.02,-362.26 381.84,-343.56"/>
+<polygon fill="#666666" stroke="#666666" points="384.58,-345.74 387.56,-335.58 378.89,-341.66 384.58,-345.74"/>
+</g>
+<!-- tls&#45;&gt;aggregator -->
+<g id="edge14" class="edge">
+<title>tls-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M309.21,-342.68C322.57,-338.79 336.72,-334.67 349.78,-330.87"/>
+<polygon fill="#666666" stroke="#666666" points="350.38,-334.34 359.01,-328.19 348.43,-327.62 350.38,-334.34"/>
+</g>
+<!-- cert&#45;&gt;aggregator -->
+<g id="edge15" class="edge">
+<title>cert-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M298.04,-286.43C314.46,-291.21 333.09,-296.62 349.9,-301.51"/>
+<polygon fill="#666666" stroke="#666666" points="348.61,-304.79 359.19,-304.22 350.57,-298.06 348.61,-304.79"/>
+</g>
+<!-- headers&#45;&gt;aggregator -->
+<g id="edge16" class="edge">
+<title>headers-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M314.44,-221.57C318.01,-224.39 321.49,-227.27 324.79,-230.18 345.09,-248.09 365.17,-271.29 379.52,-289.09"/>
+<polygon fill="#666666" stroke="#666666" points="376.57,-291 385.53,-296.65 382.05,-286.65 376.57,-291"/>
+</g>
+<!-- ports&#45;&gt;aggregator -->
+<g id="edge17" class="edge">
+<title>ports-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M303.47,-118.06C311.27,-121.69 318.73,-126.3 324.79,-132.18 368.72,-174.72 388.01,-246.46 395.72,-286.64"/>
+<polygon fill="#666666" stroke="#666666" points="392.25,-287.08 397.45,-296.3 399.14,-285.84 392.25,-287.08"/>
+</g>
+<!-- tech&#45;&gt;aggregator -->
+<g id="edge18" class="edge">
+<title>tech-&gt;aggregator</title>
+<path fill="none" stroke="#666666" d="M308.26,-65.86C314.38,-69.17 320.08,-73.23 324.79,-78.18 380.7,-136.96 395.22,-236.98 398.99,-286.54"/>
+<polygon fill="#666666" stroke="#666666" points="395.49,-286.73 399.63,-296.49 402.48,-286.28 395.49,-286.73"/>
+</g>
+<!-- note -->
+<g id="node13" class="node">
+<title>note</title>
+<polygon fill="#ffffcc" stroke="#666666" points="599.24,-161.18 477.81,-161.18 477.81,-117.18 605.24,-117.18 605.24,-155.18 599.24,-161.18"/>
+<polyline fill="none" stroke="#666666" points="599.24,-161.18 599.24,-155.18"/>
+<polyline fill="none" stroke="#666666" points="605.24,-155.18 599.24,-155.18"/>
+<text text-anchor="middle" x="541.53" y="-148.18" font-family="Helvetica,sans-Serif" font-size="10.00">Aggregate Risk Score</text>
+<text text-anchor="middle" x="541.53" y="-136.18" font-family="Helvetica,sans-Serif" font-size="10.00">(Higher = More Attractive</text>
+<text text-anchor="middle" x="541.53" y="-124.18" font-family="Helvetica,sans-Serif" font-size="10.00">to Attackers)</text>
+</g>
+<!-- aggregator&#45;&gt;note -->
+<g id="edge19" class="edge">
+<title>aggregator-&gt;note</title>
+<path fill="none" stroke="#666666" d="M416.57,-297.9C440.1,-267.77 487.29,-207.34 516.18,-170.36"/>
+<polygon fill="#666666" stroke="#666666" points="518.77,-172.72 522.17,-162.68 513.26,-168.41 518.77,-172.72"/>
+</g>
+<!-- note&#45;&gt;final -->
+<g id="edge20" class="edge">
+<title>note-&gt;final</title>
+<path fill="none" stroke="#666666" d="M514.73,-116.93C452.3,-65.89 289.93,49.73 178.18,-24.18 106.79,-71.4 85.6,-180.29 79.43,-232.8"/>
+<polygon fill="#666666" stroke="#666666" points="75.98,-232.17 78.41,-242.48 82.94,-232.91 75.98,-232.17"/>
+</g>
+</g>
+</svg>
