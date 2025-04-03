@@ -16,13 +16,6 @@
       <description>&lt;p&gt;Maintaining a clean and secure application inventory is critical for any organization. Over time, however, many web applications become outdated or downright abandoned. This post presents an &lt;strong&gt;in-depth decision framework&lt;/strong&gt;—complete with a &lt;strong&gt;GraphViz DOT diagram&lt;/strong&gt;—that you can use to systematically identify potentially unwanted or abandoned applications.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;why-does-this-matter&#34;&gt;Why Does This Matter?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Security Risks&lt;/strong&gt;: Unpatched or poorly maintained apps are prime targets for attackers.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Resource Management&lt;/strong&gt;: Abandoned systems waste hosting costs, domain fees, and other resources.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance&lt;/strong&gt;: Many regulations require up-to-date, actively maintained environments.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;high-level-criteria&#34;&gt;High-Level Criteria&lt;/h2&gt;&#xA;&lt;p&gt;We generally split “abandonment indicators” into &lt;em&gt;Potential&lt;/em&gt; vs. &lt;em&gt;Confirmed&lt;/em&gt;. A few examples:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Certified</title>
-      <link>http://localhost:1313/hackthebox/certified/</link>
-      <pubDate>Sat, 15 Mar 2025 18:14:09 +0000</pubDate>
-      <guid>http://localhost:1313/hackthebox/certified/</guid>
-      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/htb-certified.png&#34; width=&#34;500/&gt;&lt;/center&gt;&lt;/br&gt;</description>
-    </item>
-    <item>
       <title>(ASM) Free/Open-Source External ASM Toolkit</title>
       <link>http://localhost:1313/posts/frogy-asm/</link>
       <pubDate>Thu, 20 Feb 2025 11:42:41 +0000</pubDate>
@@ -37,46 +30,11 @@
       <description>&lt;h1 id=&#34;cyber-threat-intelligence-sharing-a-comprehensive-guide-to-building-collective-resilience&#34;&gt;Cyber Threat Intelligence Sharing: A Comprehensive Guide to Building Collective Resilience&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;By [Your Name], Cybersecurity Strategist&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Updated: [Date]&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;the-imperative-of-cyber-threat-intelligence-sharing&#34;&gt;The Imperative of Cyber Threat Intelligence Sharing&lt;/h2&gt;&#xA;&lt;p&gt;In 2021, the &lt;strong&gt;Colonial Pipeline ransomware attack&lt;/strong&gt; paralyzed fuel distribution across the U.S. East Coast, costing $4.4 million in ransom payments. A year later, the &lt;strong&gt;Log4Shell vulnerability&lt;/strong&gt; exposed over 48% of corporate networks globally to remote code execution. These incidents underscore a critical truth: cyber adversaries collaborate, adapt, and scale. Defenders must do the same.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Trickster</title>
-      <link>http://localhost:1313/hackthebox/trickster/</link>
-      <pubDate>Tue, 04 Feb 2025 05:50:45 +0000</pubDate>
-      <guid>http://localhost:1313/hackthebox/trickster/</guid>
-      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/trickster.png&#34; width=&#34;350&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
-    </item>
-    <item>
       <title>(Bug-Bounty) Master XSS Hunting Methodology</title>
       <link>http://localhost:1313/posts/xss-hunting/</link>
       <pubDate>Mon, 03 Feb 2025 04:46:47 +0000</pubDate>
       <guid>http://localhost:1313/posts/xss-hunting/</guid>
       <description>&lt;p&gt;Below is a straightforward, step-by-step approach to uncovering Cross-Site Scripting (XSS) vulnerabilities. The focus here is on the methodology rather than specific payload examples.&lt;/p&gt;&#xA;&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/xss_hunting.png&#34; width=&#34;1300&#34;/&gt;&lt;/center&gt;&lt;/br&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-identify-where-user-input-can-appear&#34;&gt;1. Identify Where User Input Can Appear&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Look for any field, query parameter, or user-controllable data source.&lt;/li&gt;&#xA;&lt;li&gt;Observe if the input is shown back on the page, either directly or indirectly.&lt;/li&gt;&#xA;&lt;li&gt;Note whether the input appears inside HTML, in script code, or within attributes.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-classify-the-reflection-context&#34;&gt;2. Classify the Reflection Context&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Raw HTML Context:&lt;/strong&gt; Check if the input is inserted as normal text or within tags.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;HTML Attribute Context:&lt;/strong&gt; Examine if the input is used inside attributes (e.g., &lt;code&gt;href&lt;/code&gt;, &lt;code&gt;src&lt;/code&gt;).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;JavaScript Context:&lt;/strong&gt; Determine if the input lands inside script blocks or inline event handlers.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Client-Side Templating:&lt;/strong&gt; If frameworks like Angular, React, or Vue are present, see if user input is being processed through a template.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Callback Functions:&lt;/strong&gt; Look for parameters that might be used inside a JavaScript function call.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Understanding exactly where and how input is reflected dictates the techniques you use next.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Compiled</title>
-      <link>http://localhost:1313/hackthebox/compiled/</link>
-      <pubDate>Sun, 19 Jan 2025 00:20:42 +0000</pubDate>
-      <guid>http://localhost:1313/hackthebox/compiled/</guid>
-      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/compiled.png&#34; width=&#34;450&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
-    </item>
-    <item>
-      <title>Sea</title>
-      <link>http://localhost:1313/hackthebox/sea/</link>
-      <pubDate>Sun, 19 Jan 2025 00:20:42 +0000</pubDate>
-      <guid>http://localhost:1313/hackthebox/sea/</guid>
-      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/sea.png&#34; width=&#34;350&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
-    </item>
-    <item>
-      <title>Sightless</title>
-      <link>http://localhost:1313/hackthebox/sightless/</link>
-      <pubDate>Sun, 19 Jan 2025 00:20:41 +0000</pubDate>
-      <guid>http://localhost:1313/hackthebox/sightless/</guid>
-      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/sightless.png&#34; width=&#34;450&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
-    </item>
-    <item>
-      <title>MonitorsThree</title>
-      <link>http://localhost:1313/hackthebox/monitorsthree/</link>
-      <pubDate>Sat, 18 Jan 2025 22:36:16 +0000</pubDate>
-      <guid>http://localhost:1313/hackthebox/monitorsthree/</guid>
-      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/MonitorsThree.png&#34; width=&#34;350&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
       <title>(Bug-Bounty) How to Know You are Ready for Full-Time Bug Bounty</title>
@@ -177,14 +135,7 @@
       <description>&lt;p&gt;🎉 &lt;strong&gt;Welcome to my collection of open-source projects and tools!&lt;/strong&gt;&lt;br&gt;&#xA;Each repository reflects my passion for &lt;strong&gt;cybersecurity, automation, and innovation.&lt;/strong&gt; Below is an overview of the repositories and their purpose:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h5 id=&#34;kickstart-your-cyber-career&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/frogy&#34;&gt;&lt;strong&gt;Kickstart your cyber career&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A multi-functional cybersecurity utility for recon and attack surface management.&lt;/em&gt;&lt;br&gt;&#xA;➡️ &lt;strong&gt;Key Features&lt;/strong&gt;: Automates common tasks for both red and blue teams.&lt;/p&gt;&#xA;&lt;h5 id=&#34;emailauthinspector&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/EmailAuthInspector&#34;&gt;&lt;strong&gt;EmailAuthInspector&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A tool for analyzing email authentication protocols like SPF, DKIM, and DMARC.&lt;/em&gt;&lt;br&gt;&#xA;➡️ &lt;strong&gt;Use Case&lt;/strong&gt;: Securing email communication and preventing spoofing attacks.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>CV/Resume</title>
-      <link>http://localhost:1313/cv/</link>
-      <pubDate>Tue, 24 Dec 2024 22:44:17 +0000</pubDate>
-      <guid>http://localhost:1313/cv/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:chintangurjar@outlook.com&#34;&gt;chintangurjar@outlook.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;p&gt;Visionary cybersecurity leader with over &lt;strong&gt;13 years of experience&lt;/strong&gt; in steering comprehensive security programs, integrating &lt;strong&gt;Threat Intelligence (CTI)&lt;/strong&gt;, &lt;strong&gt;Vulnerability Management (VM)&lt;/strong&gt;, &lt;strong&gt;Red Teaming&lt;/strong&gt;, and &lt;strong&gt;Attack Surface Management (ASM)&lt;/strong&gt; to protect global enterprises from advanced threats. Known for aligning cybersecurity initiatives with business goals, driving &lt;strong&gt;risk-based strategies&lt;/strong&gt;, and fostering a culture of security excellence in top-tier organizations like &lt;strong&gt;M&amp;amp;S&lt;/strong&gt;, &lt;strong&gt;TikTok&lt;/strong&gt;, &lt;strong&gt;Tesco&lt;/strong&gt;, and &lt;strong&gt;KPMG&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Proficient in building &lt;strong&gt;automation-driven workflows&lt;/strong&gt;, &lt;strong&gt;scalable security architectures&lt;/strong&gt;, and delivering actionable insights that reduce organizational risk exposure and enhance cyber resilience. Passionate about mentoring the next generation of cybersecurity leaders, contributing to global forums, and advancing the field through innovative solutions.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About</title>
+      <title>About Me</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Tue, 24 Dec 2024 22:36:16 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
