@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 25 Mar 2025 12:55:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Apr 2025 14:34:07 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(Threat Model) - STRIDE Threat Modelling - In-Depth Practical</title>
+      <link>http://localhost:1313/posts/stride/</link>
+      <pubDate>Tue, 29 Apr 2025 14:34:07 +0100</pubDate>
+      <guid>http://localhost:1313/posts/stride/</guid>
+      <description>&lt;h2 id=&#34;threat-modeling-isnt-just-for-paranoids-getting-real-with-stride&#34;&gt;Threat Modeling Isn&amp;rsquo;t Just for Paranoids: Getting Real with STRIDE&lt;/h2&gt;&#xA;&lt;p&gt;Ever pushed code feeling pretty darn good about it, only to have that sinking feeling when a security issue pops up later? Yeah, me too. 13 years in this industry, and I can tell you, surprises in security are rarely the good kind. We build complex systems, juggling features, deadlines, and performance, and sometimes, just sometimes, security feels like this mystical thing we bolt on at the end, hoping for the best. But hope, as they say, isn’t a strategy, especially not in cybersecurity.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>(ASM) Decision Tree to Identify Potential/Confirmed Abandoned/Unmaintained External Applications</title>
       <link>http://localhost:1313/posts/abandoned_asset/</link>
