@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Managerdesks on Cyber Frogy</title>
+    <link>http://localhost:1313/managerdesk/</link>
+    <description>Recent content in Managerdesks on Cyber Frogy</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 02 May 2025 09:27:54 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/managerdesk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Management and Power</title>
+      <link>http://localhost:1313/managerdesk/management-and-power/</link>
+      <pubDate>Fri, 02 May 2025 09:27:54 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/management-and-power/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/management-and-power.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Situational Leadership</title>
+      <link>http://localhost:1313/managerdesk/situational-leadership/</link>
+      <pubDate>Fri, 02 May 2025 09:26:05 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/situational-leadership/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/situational-leadership.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Management Styles</title>
+      <link>http://localhost:1313/managerdesk/management-styles/</link>
+      <pubDate>Fri, 02 May 2025 09:24:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/management-styles/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/management-styles.png&#34; width=&#34;600&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Leaders and Managers</title>
+      <link>http://localhost:1313/managerdesk/leaders-and-managers/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/leaders-and-managers/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/leaders-and-managers.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Management Roles</title>
+      <link>http://localhost:1313/managerdesk/mgt-roles/</link>
+      <pubDate>Fri, 02 May 2025 09:02:24 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/mgt-roles/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/management-roles.png&#34; width=&#34;800&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+  </channel>
+</rss>

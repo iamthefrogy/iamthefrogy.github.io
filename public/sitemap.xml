@@ -2,10 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/stride/</loc>
-    <lastmod>2025-04-29T14:34:07+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-02T09:27:54+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/managerdesk/management-and-power/</loc>
+    <lastmod>2025-05-02T09:27:54+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/managerdesk/</loc>
+    <lastmod>2025-05-02T09:27:54+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/managerdesk/situational-leadership/</loc>
+    <lastmod>2025-05-02T09:26:05+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/managerdesk/management-styles/</loc>
+    <lastmod>2025-05-02T09:24:20+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/managerdesk/leaders-and-managers/</loc>
+    <lastmod>2025-05-02T09:20:20+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/managerdesk/mgt-roles/</loc>
+    <lastmod>2025-05-02T09:02:24+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/stride/</loc>
     <lastmod>2025-04-29T14:34:07+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
