@@ -30,11 +30,81 @@
       <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/management-styles.png&#34; width=&#34;600&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
+      <title>Financial Management</title>
+      <link>http://localhost:1313/managerdesk/financial-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/financial-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/financial-management.png&#34; width=&#34;600&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>HR Management</title>
+      <link>http://localhost:1313/managerdesk/hr-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/hr-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/hr-management.png&#34; width=&#34;1250&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Key Principles</title>
+      <link>http://localhost:1313/managerdesk/scientific-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/scientific-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/key-principles.png&#34; width=&#34;1050&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Leaders and Managers</title>
+      <link>http://localhost:1313/managerdesk/key-principles/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/key-principles/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/leaders-and-managers.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
       <title>Leaders and Managers</title>
       <link>http://localhost:1313/managerdesk/leaders-and-managers/</link>
       <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
       <guid>http://localhost:1313/managerdesk/leaders-and-managers/</guid>
       <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/leaders-and-managers.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Marketing Management</title>
+      <link>http://localhost:1313/managerdesk/marketing-management0/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/marketing-management0/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/marketing-management.png&#34; width=&#34;1250&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Operations Management</title>
+      <link>http://localhost:1313/managerdesk/quality-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/quality-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/operations-management.png&#34; width=&#34;1250&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Quality Management</title>
+      <link>http://localhost:1313/managerdesk/operations-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/operations-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/quality-management.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Risk Management</title>
+      <link>http://localhost:1313/managerdesk/risk-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/risk-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/risk-management.png&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Strategic Management</title>
+      <link>http://localhost:1313/managerdesk/strategic-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/strategic-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/strategic-management.png&#34; width=&#34;1050&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>The Project Lifecycle</title>
+      <link>http://localhost:1313/managerdesk/the-project-lifecycle/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/the-project-lifecycle/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/the-project-lifecycle.png&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
       <title>Management Roles</title>
