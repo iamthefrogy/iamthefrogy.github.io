@@ -30,6 +30,34 @@
       <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/management-styles.png&#34; width=&#34;600&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
+      <title>Accountability</title>
+      <link>http://localhost:1313/managerdesk/accountability/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/accountability/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/accountability.png&#34; width=&#34;1000&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Coping With Stress</title>
+      <link>http://localhost:1313/managerdesk/coping-with-stress/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/coping-with-stress/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/coping-with-stress.png&#34; width=&#34;1250&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Developing New Routines</title>
+      <link>http://localhost:1313/managerdesk/developing-new-routines/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/developing-new-routines/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/developing-new-routines.png&#34; width=&#34;1050&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Effective Networking</title>
+      <link>http://localhost:1313/managerdesk/effective-networking/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/effective-networking/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/effective-networking.png&#34; width=&#34;1050&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
       <title>Financial Management</title>
       <link>http://localhost:1313/managerdesk/financial-management/</link>
       <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
@@ -65,6 +93,20 @@
       <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/leaders-and-managers.png&#34; width=&#34;900&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
+      <title>Learning and Development</title>
+      <link>http://localhost:1313/managerdesk/learning-and-development/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/learning-and-development/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/learning-and-development.png&#34; width=&#34;1050&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Learning Styles</title>
+      <link>http://localhost:1313/managerdesk/learning-styles/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/learning-styles/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/learning-styles.png&#34; width=&#34;600&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
       <title>Marketing Management</title>
       <link>http://localhost:1313/managerdesk/marketing-management0/</link>
       <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
@@ -77,6 +119,13 @@
       <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
       <guid>http://localhost:1313/managerdesk/quality-management/</guid>
       <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/operations-management.png&#34; width=&#34;1250&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Personal Impact</title>
+      <link>http://localhost:1313/managerdesk/personal-impact/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/personal-impact/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/personal-impact.png&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
       <title>Quality Management</title>
@@ -105,6 +154,20 @@
       <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
       <guid>http://localhost:1313/managerdesk/the-project-lifecycle/</guid>
       <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/the-project-lifecycle.png&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Time Management</title>
+      <link>http://localhost:1313/managerdesk/time-management/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/time-management/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/time-management.png&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
+    </item>
+    <item>
+      <title>Work-Life Balance</title>
+      <link>http://localhost:1313/managerdesk/work-life-balance/</link>
+      <pubDate>Fri, 02 May 2025 09:20:20 +0100</pubDate>
+      <guid>http://localhost:1313/managerdesk/work-life-balance/</guid>
+      <description>&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/work-life-balance.png&#34; width=&#34;1200&#34;/&gt;&lt;/center&gt;&lt;/br&gt;</description>
     </item>
     <item>
       <title>Management Roles</title>
