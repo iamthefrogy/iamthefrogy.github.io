@@ -311,8 +311,6 @@ DNS is deceptively simple yet attackers exploit every layer, from zone files to 
 
 Even if you’re new to DNS security, you’ll walk away knowing exactly which controls to apply where.
 
-<center><img src="/images/secure-dns-3.png" width="650"/></center></br>
-
 ---
 
 ### 2. DNS Threat Categories
@@ -351,7 +349,7 @@ Even if you’re new to DNS security, you’ll walk away knowing exactly which c
 
 Below is a quick-reference table summarizing the flow from attack type through to defense:
 
-Add Diagram here
+<center><img src="/images/secure-dns-3.png" width="650"/></center></br>
 
 ---
 
