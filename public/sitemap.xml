@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/secure_dns/</loc>
+    <lastmod>2025-05-13T10:10:44+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-02T09:27:54+01:00</lastmod>
+    <lastmod>2025-05-13T10:10:44+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-13T10:10:44+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/managerdesk/management-and-power/</loc>
     <lastmod>2025-05-02T09:27:54+01:00</lastmod>
@@ -81,9 +87,6 @@
     <lastmod>2025-05-02T09:02:24+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/stride/</loc>
-    <lastmod>2025-04-29T14:34:07+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-04-29T14:34:07+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/abandoned_asset/</loc>
