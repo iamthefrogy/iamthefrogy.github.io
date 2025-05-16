@@ -373,3 +373,6 @@ This pattern decouples your services from direct secret management and enables s
 ## Conclusion
 
 Effective API security is not achieved through a single control or tool it’s the result of aligning architecture, policy, identity, and enforcement across the entire lifecycle. By combining DevSecOps rigor, Zero Trust principles, and gateway-centric design patterns, organizations can confidently defend their APIs against modern threats. This unified framework provides the clarity and structure needed to assess risk, implement appropriate controls, and continuously improve security posture. Whether you’re securing internal microservices or exposing APIs to partners and customers, adopting these patterns ensures every API interaction is authenticated, authorized, observable, and resilient by design.
+
+## Reference
+- I learned a lot from the NIST guide and then I simplified this guide into this blog - https://csrc.nist.gov/pubs/sp/800/228/ipd
