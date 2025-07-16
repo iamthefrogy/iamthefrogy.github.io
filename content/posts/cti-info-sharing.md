@@ -4,11 +4,6 @@ draft = false
 title = '(CTI) Threat Intelligence Information Sharing'
 +++
 
-# Cyber Threat Intelligence Sharing: A Comprehensive Guide to Building Collective Resilience
-
-**By [Your Name], Cybersecurity Strategist**  
-*Updated: [Date]*  
-
 ---
 
 ## The Imperative of Cyber Threat Intelligence Sharing  
