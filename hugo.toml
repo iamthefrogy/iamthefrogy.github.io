@@ -84,10 +84,10 @@ identifier = "repositories"
 weight = 500
 url = "/repositories"
 [[menu.main]]
-name = "The Manager's Desk"
-identifier = "managerdesk"
+name = "Checklists"
+identifier = "checklists"
 weight = 600
-url = "/managerdesk"
+url = "/checklists"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
