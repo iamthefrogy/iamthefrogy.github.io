@@ -48,3 +48,6 @@ I use GenAI to create these visualizations.
 
 ##### SIEM Query Document Knowledgebase Template
 <center><img src="/images/siem-query-document-kb-template.png" width="650"/></br></center></br>
+
+##### GRC Summary
+<center><img src="/images/grc-summary.png" width="1250"/></br></center></br>
