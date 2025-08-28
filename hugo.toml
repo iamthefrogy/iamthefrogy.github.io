@@ -32,8 +32,8 @@ dateformat = "Jan 2, 2006"
 
 ## Site Meta Settings
 [params.meta]
-description = "Simple minimalist theme"
-keywords = "minimalist,blog,goa,hugo,developer"
+description = "Practical Cybersecurity Blog"
+keywords = "cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense"
 
 ## Social Accounts
 [params.social]
