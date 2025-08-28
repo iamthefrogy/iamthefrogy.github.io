@@ -168,8 +168,8 @@ These are settings that are specific to this theme.
 
 These settings are included in the site's meta section.
 
-- `description`: User this field to describe your site to search engines. eg. `Simple minimalist theme`.
-- `keywords`: Keywords that desribe your site. eg. `minimalist,blog,goa,hugo,developer`.
+- `description`: User this field to describe your site to search engines. eg. `Practical Cybersecurity Blog`.
+- `keywords`: Keywords that desribe your site. eg. `Pentest, AppSec, Cyber Defense, Vulnerability Management, Threat Hunting, Cyber Threat Intelligence`.
 
 ### Social Accounts `[params.social]`
 
