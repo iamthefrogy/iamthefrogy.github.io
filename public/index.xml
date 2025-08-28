@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 21 Jul 2025 13:34:44 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 28 Aug 2025 03:10:29 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(SIEM) Advanced Detection Engineering</title>
+      <link>http://localhost:1313/posts/detection-engineering/</link>
+      <pubDate>Thu, 28 Aug 2025 03:10:29 +0100</pubDate>
+      <guid>http://localhost:1313/posts/detection-engineering/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I was going through the SANS material on detection engineering from multiple of their courses and I wanted to make a practical ready notes for the same. This is the output of my reading and implementing some of them into my home personal lab as well as my past companies.&lt;/p&gt;&#xA;&lt;p&gt;The summary of entire process is:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;OPEN IMAGE IN A NEW TAB AND IT WILL BE THE HIGH RESOLUTION IMAGE&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Network Pentest Checklist</title>
       <link>http://localhost:1313/checklists/network-pentest-checklist/</link>
