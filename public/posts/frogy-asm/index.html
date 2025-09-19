@@ -1,4 +1,265 @@
-<!doctype html><html lang=en-US><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=description content="Practical Cybersecurity Blog"><meta name=keywords content="cybersecurity,infosec,bug-bounty,bugbounty,SOC,CTI,VM,Pentest,Cyber Defense"><title>Cyber Frogy - (ASM) Free/Open-Source External ASM Toolkit</title><meta name=generator content="Hugo 0.148.2"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700"><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/main.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=theme-color content="#ffffff"></head><body lang=en-US><div class="container my-auto"><section id=main-menu-pane class="text-center main-menu"><h4><a class=menu-item href=/>Home</a></h4><h4><a class=menu-item href=/posts>Blog</a></h4><h4><a class=menu-item href=/visualisations>Visualisations</a></h4><h4><a class=menu-item href=/about>About Me</a></h4><h4><a class=menu-item href=/repositories>My Repos</a></h4><h4><a class=menu-item href=/checklists>Checklists</a></h4><h4><a class=menu-item href=/kickstartcareer>Kickstart Career</a></h4><h4><a class=menu-item href=/disclaimer>Disclaimer</a></h4></section><header class="text-start title"><h1 class=title>(ASM) Free/Open-Source External ASM Toolkit</h1></header><section id=category-pane class=meta><div class="d-flex flex-column flex-md-row justify-content-between"><h6 class="text-start meta">PUBLISHED ON FEB 20, 2025
-/ 3 MIN READ</h6></div></section><section id=content-pane><div class="text-justify content"><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#the-challenge-attack-surface-complexity>The Challenge: Attack Surface Complexity</a></li><li><a href=#the-vision-democratizing-asm>The Vision: Democratizing ASM</a></li><li><a href=#bridging-the-gap-between-tools-and-actionable-insights>Bridging the Gap Between Tools and Actionable Insights</a></li><li><a href=#a-tool-for-teams-and-individuals-alike>A Tool for Teams and Individuals Alike</a></li><li><a href=#github-link>GitHub Link</a></li><li><a href=#core-logic>Core Logic</a></li><li><a href=#how-does-it-run>How Does it Run?</a></li></ul></nav><h2 id=introduction>Introduction</h2><p>In today’s security landscape, <strong>Attack Surface Management (ASM)</strong> is a cornerstone of proactive defense. Monitoring internet-facing assets, uncovering shadow IT, and identifying vulnerable endpoints before attackers do can mean the difference between a resilient organization and a breach-in-the-making. Yet, many ASM tools remain <strong>proprietary</strong>, <strong>expensive</strong>, or too <strong>complex</strong> for smaller security teams, researchers, or hobbyists to adopt effectively.</p><p>This is why I created <strong>Frogy</strong>—an open-source, Bash-based ASM tool you can run with minimal configuration. Before diving into how it works, let’s explore the motivations and driving forces behind its creation.</p><hr><h2 id=the-challenge-attack-surface-complexity>The Challenge: Attack Surface Complexity</h2><p>Most organizations today have:</p><ul><li><strong>Multiple domains and subdomains</strong> hosted across different providers.</li><li><strong>Rapidly expanding infrastructures</strong>, including microservices, cloud platforms, and third-party integrations.</li><li><strong>Limited internal visibility</strong>—Shadow IT and untracked systems can slip under the radar.</li></ul><p>Identifying all these assets, monitoring them for changes or exposures, and sorting out which ones are actually “live” can be a <strong>daunting</strong> process. Traditional ASM platforms exist but often come with:</p><ol><li><strong>High licensing costs</strong>—difficult for small or underfunded teams.</li><li><strong>Steep learning curves</strong>—enterprise-class platforms take time and specialized expertise to manage.</li><li><strong>Vendor lock-in</strong>—data remains siloed in closed systems, limiting opportunities for custom integrations.</li></ol><p>For penetration testers, bug bounty hunters, or <strong>lean security teams</strong>, these obstacles may discourage systematic attack surface analysis—leading to missed vulnerabilities.</p><hr><h2 id=the-vision-democratizing-asm>The Vision: Democratizing ASM</h2><p>With Frogy, the <strong>goal</strong> is to <strong>simplify</strong> and <strong>democratize</strong> ASM:</p><ol><li><p><strong>Open Source & Transparent</strong></p><ul><li>Anyone can inspect the code, audit the logic, and contribute enhancements.</li><li>No vendor lock-in; results are in your own environment, in a format you can customize.</li></ul></li><li><p><strong>Easy to Run</strong></p><ul><li>It’s just a Bash script—no complicated setup or specialized hardware needed.</li><li>Designed to work on popular Linux distributions, installing everything automatically.</li></ul></li><li><p><strong>Cost-Effective</strong></p><ul><li>Built on top of widely used community tools (e.g., Subfinder, Naabu, Httpx).</li><li>Zero recurring licenses—ideal for educational use, bug bounty programs, and smaller consultancies.</li></ul></li><li><p><strong>End-to-End Workflow</strong></p><ul><li>From subdomain discovery to port scanning to HTTP probing, all in one go.</li><li>Outputs a consolidated HTML report, with no manual merging or guesswork required.</li></ul></li></ol><p>In short, <strong>Frogy</strong> aims to provide a complete ASM snapshot <strong>without</strong> the usual friction and expense.</p><hr><h2 id=bridging-the-gap-between-tools-and-actionable-insights>Bridging the Gap Between Tools and Actionable Insights</h2><p>It’s no secret that the security community already has a variety of excellent recon tools—like <strong>ProjectDiscovery</strong>’s suite (Subfinder, DNSX, Naabu, Httpx) and <strong>Tomnomnom</strong>’s Assetfinder. But each tool often requires separate commands and outputs. <strong>Newcomers</strong> can quickly get lost in the pipeline:</p><ul><li>“Which tools do I run first?”</li><li>“How do I merge results?”</li><li>“How do I prioritize subdomains or ports?”</li><li>“How do I visualize this data?”</li></ul><p><strong>Frogy</strong> bridges these gaps by orchestrating each tool in a logical sequence, then outputting an <strong>HTML-based</strong> dashboard that’s easy to <strong>parse</strong> and <strong>navigate</strong>. It doesn’t just show raw data; it presents intuitive bar charts, priority buckets (P0–P4), and a searchable table so you can quickly find high-risk assets.</p><hr><h2 id=a-tool-for-teams-and-individuals-alike>A Tool for Teams and Individuals Alike</h2><p>Because <strong>Frogy</strong> is open source and lightweight, it’s ideal for:</p><ul><li><strong>Bug Bounty Hunters</strong>: Quickly discover a target’s external attack surface before diving deeper.</li><li><strong>Penetration Testers</strong>: Add a consistent reconnaissance workflow to your engagements, ensuring no domain or subdomain goes undiscovered.</li><li><strong>Security Engineers / DevOps</strong>: Integrate routine checks into CI/CD or cron jobs, monitoring domain expansions or new hosts.</li><li><strong>Students & Researchers</strong>: Learn recon fundamentals without fighting steep licensing or complicated product ecosystems.</li></ul><hr><h2 id=github-link>GitHub Link</h2><p><a href=https://github.com/iamthefrogy/frogy2.0>https://github.com/iamthefrogy/frogy2.0</a></p><h2 id=core-logic>Core Logic</h2><p>Below is the working process of this tool.</p><center><img src=/images/frogyasm.png width=900></center></br><h2 id=how-does-it-run>How Does it Run?</h2><p>Below is how you provide user input and run it. Post completion, it will generate all report files into output/company name folder. There will be report.html file.</p><p><strong>The content of report.html file will not be visible until you create a web server and then load report.html</strong></p><center><img src=/images/asm2frogy.png width=1200></center></br><center><img src=/images/asm1frogy.png width=1200></center></br></div></section><section id=tag-pane class=meta><div class="d-flex flex-column flex-md-row justify-content-between"><h6 class="text-end meta"></h6></div></section><section id=menu-pane class="menu text-center"><nav aria-label="Page navigation"><ul class="pagination justify-content-center"><li class=menu-item><a class=menu-item href=https://iamthefrogy.github.io/posts/cti-info-sharing/>&lt; prev</a></li><li class=menu-item><span class=menu-item>&nbsp;|&nbsp;</span>
-<a class=menu-item href=/posts>posts</a>
-<span class=menu-item>&nbsp;|&nbsp;</span></li><li class=menu-item><a class=menu-item href=https://iamthefrogy.github.io/posts/abandoned_asset/>next ></a></li></ul></nav><h4 class="text-center mt-3"><a class=menu-item href=https://iamthefrogy.github.io/>Home</a></h4></section><footer class="text-center footer"><hr><h6 class="text-center copyright">© Chintan Gurjar - <a href=mailto:chintangurjar@outlook.com>chintangurjar@outlook.com</a></h6></footer></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js></script><script>hljs.highlightAll()</script><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script><script src=/js/custom.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        
+        <meta name="description" content="Practical Cybersecurity Blog">
+        
+        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
+
+        <title>
+              Cyber Frogy - (ASM) Free/Open-Source External ASM Toolkit 
+        </title>
+
+        <meta name="generator" content="Hugo 0.150.0">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#ffffff"></head>
+
+    <body lang="en-US">
+        <div class="container my-auto">
+
+
+<section id="main-menu-pane" class="text-center main-menu">
+  
+  <h4><a class="menu-item" href="/">Home</a></h4>
+  
+  <h4><a class="menu-item" href="/posts">Blog</a></h4>
+  
+  <h4><a class="menu-item" href="/visualisations">Visualisations</a></h4>
+  
+  <h4><a class="menu-item" href="/about">About Me</a></h4>
+  
+  <h4><a class="menu-item" href="/repositories">My Repos</a></h4>
+  
+  <h4><a class="menu-item" href="/checklists">Checklists</a></h4>
+  
+  <h4><a class="menu-item" href="/kickstartcareer">Kickstart Career</a></h4>
+  
+  <h4><a class="menu-item" href="/disclaimer">Disclaimer</a></h4>
+  
+</section>
+
+<header class="text-start title">
+  <h1 class="title">(ASM) Free/Open-Source External ASM Toolkit</h1>
+</header>
+
+<section id="category-pane" class="meta">
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <h6 class="text-start meta">
+       PUBLISHED ON FEB 20, 2025
+      
+      / 3 MIN READ
+      
+    </h6>
+  </div>
+  
+</section>
+
+<section id="content-pane">
+  <div class="text-justify content">
+    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#the-challenge-attack-surface-complexity">The Challenge: Attack Surface Complexity</a></li>
+    <li><a href="#the-vision-democratizing-asm">The Vision: Democratizing ASM</a></li>
+    <li><a href="#bridging-the-gap-between-tools-and-actionable-insights">Bridging the Gap Between Tools and Actionable Insights</a></li>
+    <li><a href="#a-tool-for-teams-and-individuals-alike">A Tool for Teams and Individuals Alike</a></li>
+    <li><a href="#github-link">GitHub Link</a></li>
+    <li><a href="#core-logic">Core Logic</a></li>
+    <li><a href="#how-does-it-run">How Does it Run?</a></li>
+  </ul>
+</nav>
+    
+    <h2 id="introduction">Introduction</h2>
+<p>In today’s security landscape, <strong>Attack Surface Management (ASM)</strong> is a cornerstone of proactive defense. Monitoring internet-facing assets, uncovering shadow IT, and identifying vulnerable endpoints before attackers do can mean the difference between a resilient organization and a breach-in-the-making. Yet, many ASM tools remain <strong>proprietary</strong>, <strong>expensive</strong>, or too <strong>complex</strong> for smaller security teams, researchers, or hobbyists to adopt effectively.</p>
+<p>This is why I created <strong>Frogy</strong>—an open-source, Bash-based ASM tool you can run with minimal configuration. Before diving into how it works, let’s explore the motivations and driving forces behind its creation.</p>
+<hr>
+<h2 id="the-challenge-attack-surface-complexity">The Challenge: Attack Surface Complexity</h2>
+<p>Most organizations today have:</p>
+<ul>
+<li><strong>Multiple domains and subdomains</strong> hosted across different providers.</li>
+<li><strong>Rapidly expanding infrastructures</strong>, including microservices, cloud platforms, and third-party integrations.</li>
+<li><strong>Limited internal visibility</strong>—Shadow IT and untracked systems can slip under the radar.</li>
+</ul>
+<p>Identifying all these assets, monitoring them for changes or exposures, and sorting out which ones are actually “live” can be a <strong>daunting</strong> process. Traditional ASM platforms exist but often come with:</p>
+<ol>
+<li><strong>High licensing costs</strong>—difficult for small or underfunded teams.</li>
+<li><strong>Steep learning curves</strong>—enterprise-class platforms take time and specialized expertise to manage.</li>
+<li><strong>Vendor lock-in</strong>—data remains siloed in closed systems, limiting opportunities for custom integrations.</li>
+</ol>
+<p>For penetration testers, bug bounty hunters, or <strong>lean security teams</strong>, these obstacles may discourage systematic attack surface analysis—leading to missed vulnerabilities.</p>
+<hr>
+<h2 id="the-vision-democratizing-asm">The Vision: Democratizing ASM</h2>
+<p>With Frogy, the <strong>goal</strong> is to <strong>simplify</strong> and <strong>democratize</strong> ASM:</p>
+<ol>
+<li>
+<p><strong>Open Source &amp; Transparent</strong></p>
+<ul>
+<li>Anyone can inspect the code, audit the logic, and contribute enhancements.</li>
+<li>No vendor lock-in; results are in your own environment, in a format you can customize.</li>
+</ul>
+</li>
+<li>
+<p><strong>Easy to Run</strong></p>
+<ul>
+<li>It’s just a Bash script—no complicated setup or specialized hardware needed.</li>
+<li>Designed to work on popular Linux distributions, installing everything automatically.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cost-Effective</strong></p>
+<ul>
+<li>Built on top of widely used community tools (e.g., Subfinder, Naabu, Httpx).</li>
+<li>Zero recurring licenses—ideal for educational use, bug bounty programs, and smaller consultancies.</li>
+</ul>
+</li>
+<li>
+<p><strong>End-to-End Workflow</strong></p>
+<ul>
+<li>From subdomain discovery to port scanning to HTTP probing, all in one go.</li>
+<li>Outputs a consolidated HTML report, with no manual merging or guesswork required.</li>
+</ul>
+</li>
+</ol>
+<p>In short, <strong>Frogy</strong> aims to provide a complete ASM snapshot <strong>without</strong> the usual friction and expense.</p>
+<hr>
+<h2 id="bridging-the-gap-between-tools-and-actionable-insights">Bridging the Gap Between Tools and Actionable Insights</h2>
+<p>It’s no secret that the security community already has a variety of excellent recon tools—like <strong>ProjectDiscovery</strong>’s suite (Subfinder, DNSX, Naabu, Httpx) and <strong>Tomnomnom</strong>’s Assetfinder. But each tool often requires separate commands and outputs. <strong>Newcomers</strong> can quickly get lost in the pipeline:</p>
+<ul>
+<li>“Which tools do I run first?”</li>
+<li>“How do I merge results?”</li>
+<li>“How do I prioritize subdomains or ports?”</li>
+<li>“How do I visualize this data?”</li>
+</ul>
+<p><strong>Frogy</strong> bridges these gaps by orchestrating each tool in a logical sequence, then outputting an <strong>HTML-based</strong> dashboard that’s easy to <strong>parse</strong> and <strong>navigate</strong>. It doesn’t just show raw data; it presents intuitive bar charts, priority buckets (P0–P4), and a searchable table so you can quickly find high-risk assets.</p>
+<hr>
+<h2 id="a-tool-for-teams-and-individuals-alike">A Tool for Teams and Individuals Alike</h2>
+<p>Because <strong>Frogy</strong> is open source and lightweight, it’s ideal for:</p>
+<ul>
+<li><strong>Bug Bounty Hunters</strong>: Quickly discover a target’s external attack surface before diving deeper.</li>
+<li><strong>Penetration Testers</strong>: Add a consistent reconnaissance workflow to your engagements, ensuring no domain or subdomain goes undiscovered.</li>
+<li><strong>Security Engineers / DevOps</strong>: Integrate routine checks into CI/CD or cron jobs, monitoring domain expansions or new hosts.</li>
+<li><strong>Students &amp; Researchers</strong>: Learn recon fundamentals without fighting steep licensing or complicated product ecosystems.</li>
+</ul>
+<hr>
+<h2 id="github-link">GitHub Link</h2>
+<p><a href="https://github.com/iamthefrogy/frogy2.0">https://github.com/iamthefrogy/frogy2.0</a></p>
+<h2 id="core-logic">Core Logic</h2>
+<p>Below is the working process of this tool.</p>
+<center><img src="/images/frogyasm.png" width="900"/></center></br>
+<h2 id="how-does-it-run">How Does it Run?</h2>
+<p>Below is how you provide user input and run it. Post completion, it will generate all report files into output/company name folder. There will be report.html file.</p>
+<p><strong>The content of report.html file will not be visible until you create a web server and then load report.html</strong></p>
+<center><img src="/images/asm2frogy.png" width="1200"/></center></br>
+<center><img src="/images/asm1frogy.png" width="1200"/></center></br>
+
+  </div>
+</section>
+
+<section id="tag-pane" class="meta">
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <h6 class="text-end meta">
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="menu text-center">
+  
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      
+      
+      <li class="menu-item">
+        <a class="menu-item" href="http://localhost:1313/posts/cti-info-sharing/">&lt; prev</a>
+      </li>
+      
+
+      <li class="menu-item">
+        
+        <span class="menu-item">&nbsp;|&nbsp;</span>
+        
+        <a class="menu-item" href="/posts">posts</a>
+        
+        <span class="menu-item">&nbsp;|&nbsp;</span>
+        
+      </li>
+
+      
+      <li class="menu-item">
+        <a class="menu-item" href="http://localhost:1313/posts/abandoned_asset/">next &gt;</a>
+      </li>
+      
+      
+    </ul>
+  </nav>
+  
+  <h4 class="text-center mt-3"><a class="menu-item" href="http://localhost:1313/">Home</a></h4>
+</section>
+
+
+<footer class="text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© Chintan Gurjar - <a href="mailto:chintangurjar@outlook.com">chintangurjar@outlook.com</a></h6>
+  
+  
+  
+  
+  
+
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+</html>
+
+

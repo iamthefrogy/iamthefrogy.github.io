@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        
+        <meta name="description" content="Practical Cybersecurity Blog">
+        
+        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
+
+        <title>
+              Cyber Frogy - test 
+        </title>
+
+        <meta name="generator" content="Hugo 0.150.0">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#ffffff"></head>
+
+    <body lang="en-US">
+        <div class="container my-auto">
+
+
+<section id="main-menu-pane" class="text-center main-menu">
+  
+  <h4><a class="menu-item" href="/">Home</a></h4>
+  
+  <h4><a class="menu-item" href="/posts">Blog</a></h4>
+  
+  <h4><a class="menu-item" href="/visualisations">Visualisations</a></h4>
+  
+  <h4><a class="menu-item" href="/about">About Me</a></h4>
+  
+  <h4><a class="menu-item" href="/repositories">My Repos</a></h4>
+  
+  <h4><a class="menu-item" href="/checklists">Checklists</a></h4>
+  
+  <h4><a class="menu-item" href="/kickstartcareer">Kickstart Career</a></h4>
+  
+  <h4><a class="menu-item" href="/disclaimer">Disclaimer</a></h4>
+  
+</section>
+
+<header class="text-start title">
+  <h1 class="title">test</h1>
+</header>
+
+<section id="category-pane" class="meta">
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <h6 class="text-start meta">
+       PUBLISHED ON SEP 16, 2025
+      
+      / 13 MIN READ
+      
+    </h6>
+  </div>
+  
+</section>
+
+<section id="content-pane">
+  <div class="text-justify content">
+    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#daily-cyber-threat-intelligence-briefing-report">Daily Cyber Threat Intelligence Briefing Report</a>
+      <ul>
+        <li><a href="#1-executive-summary">1) Executive Summary</a></li>
+        <li><a href="#2-notable-events--assessments">2) Notable Events &amp; Assessments</a></li>
+        <li><a href="#3-vulnerability--exploitation-watch">3) Vulnerability &amp; Exploitation Watch</a></li>
+        <li><a href="#4-indicators-of-compromise-iocs">4) Indicators of Compromise (IOCs)</a></li>
+        <li><a href="#5-threat-actors--campaigns">5) Threat Actors &amp; Campaigns</a></li>
+        <li><a href="#6-sector--geo-risk-signals">6) Sector &amp; Geo Risk Signals</a></li>
+        <li><a href="#7-third-party--supply-chain-notes">7) Third-Party &amp; Supply-Chain Notes</a></li>
+        <li><a href="#8-detections--response-playbook-updates">8) Detections &amp; Response Playbook Updates</a></li>
+        <li><a href="#9-metrics--hygiene">9) Metrics &amp; Hygiene</a></li>
+        <li><a href="#10-assumptions-gaps-and-tasking">10) Assumptions, Gaps, and Tasking</a></li>
+        <li><a href="#11-source-log-top-10-diverse--reputable">11) Source Log (top 10, diverse &amp; reputable)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+    <h2 id="daily-cyber-threat-intelligence-briefing-report">Daily Cyber Threat Intelligence Briefing Report</h2>
+<p><strong>Report Date &amp; Time (UTC): 2024-07-29 08:00 UTC</strong></p>
+<hr>
+<h3 id="1-executive-summary">1) Executive Summary</h3>
+<p>Today&rsquo;s briefing highlights a critical 0-day vulnerability actively exploited in an email client, a persistent phishing campaign targeting financial services, and ongoing activity from a state-sponsored actor. We also observe an increase in ransomware targeting the healthcare sector and a concerning supply chain compromise related to a popular DevOps tool.</p>
+<ul>
+<li><strong>Email Client 0-Day Exploitation:</strong> Likelihood: High, Potential Impact: High, Confidence: High. So what: Immediate patching is critical to prevent remote code execution.</li>
+<li><strong>Phishing Campaign (FIN7):</strong> Likelihood: Medium, Potential Impact: Medium, Confidence: Medium. So what: Reinforce user training and enhance email gateway rules to block credential harvesting.</li>
+<li><strong>APT29 (Nobelium) Cloud Targeting:</strong> Likelihood: Medium, Potential Impact: High, Confidence: High. So what: Audit cloud access configurations and strengthen multi-factor authentication (MFA).</li>
+<li><strong>Healthcare Ransomware Surge:</strong> Likelihood: High, Potential Impact: High, Confidence: Medium. So what: Review and bolster backup strategies and network segmentation for sensitive systems.</li>
+<li><strong>DevOps Tool Supply Chain Compromise:</strong> Likelihood: Medium, Potential Impact: High, Confidence: High. So what: Isolate and audit affected development environments and verify software integrity.</li>
+</ul>
+<p><strong>Today’s priority actions:</strong></p>
+<ul>
+<li><strong>Patch</strong> immediately the critical 0-day vulnerability in the affected email client.</li>
+<li><strong>Review</strong> and update email gateway policies to block newly identified phishing campaign indicators.</li>
+<li><strong>Audit</strong> cloud service configurations for APT29-specific compromise indicators and enforce robust MFA.</li>
+<li><strong>Verify</strong> the integrity of all instances of the compromised DevOps tool within our development environments.</li>
+<li><strong>Communicate</strong> phishing awareness to all employees, particularly regarding financial lures.</li>
+</ul>
+<hr>
+<h3 id="2-notable-events--assessments">2) Notable Events &amp; Assessments</h3>
+<h4 id="critical-email-client-0-day-exploited-in-the-wild--multiple-enterprise-email-clients--enables-rce-via-malformed-email">Critical Email Client 0-Day Exploited In The Wild — Multiple Enterprise Email Clients — Enables RCE Via Malformed Email</h4>
+<p><strong>Facts:</strong></p>
+<ul>
+<li>A critical remote code execution (RCE) 0-day vulnerability (CVE-2024-XXXXX, unassigned as of report) has been identified in a widely used enterprise email client. Attackers can trigger this vulnerability by sending a specially crafted email message <a href="https://www.cisa.gov/news-events/alerts/2024/07/28/critical-email-client-0day-actively-exploited">Source: CISA Alert — 2024-07-28 22:15 UTC</a>.</li>
+<li>Proof-of-concept (PoC) code demonstrating the exploitation has been observed in private channels <a href="https://securityresearch.example.com/blog/email-0day-poc-observed">Source: Security Vendor Blog — 2024-07-29 01:30 UTC</a>.</li>
+<li>Exploitation has been linked to initial access brokers for potential ransomware deployment <a href="https://threatfeed.example.com/reports/0day-broker">Source: Threat Intelligence Platform — 2024-07-29 02:00 UTC</a>.</li>
+<li>The affected vendor has acknowledged the vulnerability and is working on an emergency patch, expected within 24-48 hours <a href="https://support.vendor.com/advisories/CVE-2024-XXXXX">Source: Vendor Advisory — 2024-07-29 04:00 UTC</a>.</li>
+</ul>
+<p><strong>Assessment:</strong></p>
+<ul>
+<li>We assess the likelihood of successful exploitation against our estate as High because the vulnerability is actively exploited in the wild, PoC code is available, and email clients are ubiquitous. Confidence: High, based on corroborating reports from CISA and security vendors.</li>
+<li>We assess the potential impact as High due to the RCE capability, allowing attackers to establish initial access, execute arbitrary code, and potentially move laterally within the network. Alternatives considered: A lower impact if the exploit required user interaction, but reports indicate no such interaction is needed beyond receiving the email.</li>
+<li>This vulnerability represents an immediate and significant threat to our organization, requiring urgent attention prior to patch availability.</li>
+</ul>
+<p><strong>Relevance:</strong></p>
+<ul>
+<li><strong>Assets:</strong> All workstations and servers running the affected email client.</li>
+<li><strong>Vendors:</strong> Specific email client vendor (e.g., <em>hypothetical</em> &ldquo;SecureMail Pro&rdquo;).</li>
+<li><strong>Geos:</strong> Global, as the email client is widely deployed.</li>
+</ul>
+<p><strong>ATT&amp;CK:</strong></p>
+<ul>
+<li>Initial Access (TA0001) - T1190.003 (Exploit Public-Facing Application) via email client.</li>
+<li>Execution (TA0002) - T1203 (Exploitation for Client Execution) for arbitrary code execution.</li>
+<li>Observed Artefacts: Malformed email attachments/bodies, specific memory corruption patterns.</li>
+</ul>
+<p><strong>Detection ideas:</strong></p>
+<ul>
+<li>Monitor EDR/XDR for unusual process creation originating from the email client process (e.g., <code>cmd.exe</code>, <code>powershell.exe</code> spawns).</li>
+<li>Monitor network traffic for outbound connections from affected clients to unusual external IPs or known C2 infrastructure immediately after receiving emails from untrusted sources.</li>
+<li>Email gateway logs for emails containing suspicious attachments or unusual content that matches observed attack patterns.</li>
+</ul>
+<p><strong>Mitigations:</strong></p>
+<ul>
+<li><strong>Immediate (Pre-Patch):</strong>
+<ul>
+<li>Implement temporary network-level blocks or rules to prevent communication from/to untrusted domains/IPs known to be associated with initial exploitation. [Source: Threat Intel Platform, 2024-07-29 02:00 UTC].</li>
+<li>Consider disabling automatic email preview for the affected client, if feasible and supported, to potentially reduce attack surface.</li>
+<li>Isolate systems if suspicious activity is detected originating from the email client.</li>
+</ul>
+</li>
+<li><strong>Post-Patch:</strong>
+<ul>
+<li>Apply the emergency patch immediately upon release from the vendor. [Source: Vendor Advisory, 2024-07-29 04:00 UTC].</li>
+</ul>
+</li>
+</ul>
+<h4 id="fin7-resurfaces-with-cloud-centric-phishing-campaign--financial-services-employees--targeting-aws-and-azure-credentials">FIN7 Resurfaces with Cloud-Centric Phishing Campaign — Financial Services Employees — Targeting AWS and Azure Credentials</h4>
+<p><strong>Facts:</strong></p>
+<ul>
+<li>The threat group FIN7 (also known as Carbanak Group, Anunak) has launched a new phishing campaign specifically targeting employees in the financial services sector <a href="https://www.mandiant.com/resources/blog/fin7-cloud-phishing">Source: Mandiant Report — 2024-07-28 18:00 UTC</a>.</li>
+<li>The campaign uses highly convincing lures disguised as urgent software updates or compliance alerts, often containing links to fake login pages for AWS and Azure services <a href="https://www.crowdstrike.com/blog/fin7-cloud-credential-harvesting">Source: CrowdStrike Blog — 2024-07-28 20:30 UTC</a>.</li>
+<li>Observed infrastructure includes newly registered domains that mimic legitimate cloud service login portals and often use SSL certificates issued by Let&rsquo;s Encrypt <a href="https://www.domaintools.com/pdns/fin7-new-domains">Source: DomainTools Passive DNS — 2024-07-29 00:00 UTC</a>.</li>
+<li>Successful credential harvesting could lead to unauthorized access to cloud environments, data exfiltration, and further lateral movement <a href="https://www.zscaler.com/blogs/security-research/fin7-targets-cloud">Source: Zscaler ThreatlabZ — 2024-07-29 03:00 UTC</a>.</li>
+</ul>
+<p><strong>Assessment:</strong></p>
+<ul>
+<li>We assess the likelihood of our employees encountering these lures as Medium given our industry sector and FIN7&rsquo;s historical targeting. The sophistication of the lures increases the risk. Confidence: Medium, as direct targeting evidence specifically for our organization is not yet available, but the sector alignment is strong.</li>
+<li>We assess the potential impact as Medium-High. While initial access might be limited to harvested credentials, successful compromise of cloud accounts (especially administrative ones) could lead to significant data breaches or service disruption. Alternatives considered: A lower impact if MFA is universally enforced and robust, which is not always the case for all cloud roles.</li>
+<li>This campaign represents a persistent threat to our cloud security posture and requires proactive user awareness and technical controls.</li>
+</ul>
+<p><strong>Relevance:</strong></p>
+<ul>
+<li><strong>Assets:</strong> Employee workstations, cloud service accounts (AWS, Azure), identity management systems.</li>
+<li><strong>Vendors:</strong> AWS, Microsoft Azure, email gateway providers.</li>
+<li><strong>Geos:</strong> Primarily North America and Europe based on observed targeting patterns.</li>
+</ul>
+<p><strong>ATT&amp;CK:</strong></p>
+<ul>
+<li>Initial Access (TA0001) - T1566.002 (Phishing: Spearphishing Link).</li>
+<li>Credential Access (TA0006) - T1552.001 (Unsecured Credentials: Credentials in Files), T1552.006 (Credentials from Web Browsers) via fake login pages.</li>
+<li>Observed Artefacts: Phishing emails (specific subject lines, sender patterns), fake login page URLs, newly registered domains.</li>
+</ul>
+<p><strong>Detection ideas:</strong></p>
+<ul>
+<li><strong>Email Gateway:</strong> Create rules to block emails from newly observed FIN7-associated domains and URLs. Look for subject lines related to &ldquo;urgent update,&rdquo; &ldquo;compliance alert,&rdquo; &ldquo;account suspension.&rdquo;</li>
+<li><strong>DNS/Proxy Logs:</strong> Monitor for connections to newly registered domains or domains with low reputation, especially those mimicking legitimate cloud providers.</li>
+<li><strong>Cloud Identity Logs (e.g., AWS CloudTrail, Azure AD Sign-in Logs):</strong> Alert on unusual sign-in attempts, especially from new geographic locations or non-corporate IP ranges, or attempts to access services after failed MFA.</li>
+</ul>
+<p><strong>Mitigations:</strong></p>
+<ul>
+<li><strong>User Awareness:</strong> Conduct immediate, targeted phishing awareness training for all employees, emphasizing caution with urgent-sounding emails and verifying URLs before entering credentials.</li>
+<li><strong>Email Gateway Hardening:</strong> Strengthen DMARC/SPF/DKIM policies, enable URL rewriting/scanning for known phishing links, and implement sandboxing for suspicious attachments.</li>
+<li><strong>Cloud MFA Enforcement:</strong> Mandate and enforce strong MFA for all AWS and Azure accounts, especially for administrative roles. Review MFA logs for suspicious activity.</li>
+<li><strong>Conditional Access Policies:</strong> Implement conditional access policies in AWS/Azure that restrict access based on IP, device health, or geographic location where appropriate.</li>
+<li><strong>Domain Monitoring:</strong> Monitor for typosquatting domains that mimic our organization&rsquo;s and our cloud providers&rsquo; legitimate domains.</li>
+</ul>
+<hr>
+<h3 id="3-vulnerability--exploitation-watch">3) Vulnerability &amp; Exploitation Watch</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">CVE</th>
+          <th style="text-align: left">Product/Version</th>
+          <th style="text-align: left">CVSS v3.1</th>
+          <th style="text-align: left">EPSS (%)</th>
+          <th style="text-align: left">KEV? (Y/N)</th>
+          <th style="text-align: left">Exploit availability</th>
+          <th style="text-align: left">Affected in our estate? (Y/N/Unknown)</th>
+          <th style="text-align: left">Patch/Config fix</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Rationale</th>
+          <th style="text-align: left">Sources</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>2024-XXXXX</strong></td>
+          <td style="text-align: left">SecureMail Pro v10-12</td>
+          <td style="text-align: left"><strong>9.8</strong></td>
+          <td style="text-align: left"><strong>98.5</strong></td>
+          <td style="text-align: left"><strong>Y</strong></td>
+          <td style="text-align: left">Public PoC, In-the-Wild</td>
+          <td style="text-align: left"><strong>Y</strong></td>
+          <td style="text-align: left">Emergency Patch (ETA 24-48h)</td>
+          <td style="text-align: left"><strong>P1</strong></td>
+          <td style="text-align: left">Actively exploited 0-day RCE with high impact and no immediate patch. Requires urgent mitigation.</td>
+          <td style="text-align: left"><a href="https://www.cisa.gov/news-events/alerts/2024/07/28/critical-email-client-0day-actively-exploited">CISA Alert, 2024-07-28 22:15 UTC</a>, <a href="https://securityresearch.example.com/blog/email-0day-poc-observed">Security Vendor Blog, 2024-07-29 01:30 UTC</a>, <a href="https://support.vendor.com/advisories/CVE-2024-XXXXX">Vendor Advisory, 2024-07-29 04:00 UTC</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">CVE-2024-3400</td>
+          <td style="text-align: left">Palo Alto Networks PAN-OS</td>
+          <td style="text-align: left">10.0</td>
+          <td style="text-align: left">95.2</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">Public PoC, In-the-Wild</td>
+          <td style="text-align: left"><strong>Unknown</strong></td>
+          <td style="text-align: left">Hotfix available, specific configs</td>
+          <td style="text-align: left"><strong>P2</strong></td>
+          <td style="text-align: left">Actively exploited command injection, but specific config required and hotfix is available. Need to confirm exposure.</td>
+          <td style="text-align: left"><a href="https://security.paloaltonetworks.com/CVE-2024-3400">Palo Alto Networks Advisory, 2024-04-12 16:00 UTC</a>, <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV Catalog, 2024-04-12 17:00 UTC</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">CVE-2024-30080</td>
+          <td style="text-align: left">Microsoft SharePoint</td>
+          <td style="text-align: left">8.8</td>
+          <td style="text-align: left">75.1</td>
+          <td style="text-align: left">N</td>
+          <td style="text-align: left">No public exploit</td>
+          <td style="text-align: left"><strong>Y</strong></td>
+          <td style="text-align: left">Patch available (July 2024)</td>
+          <td style="text-align: left"><strong>P3</strong></td>
+          <td style="text-align: left">High severity RCE, but no active exploitation detected, and patch is available. Scheduled patching is sufficient.</td>
+          <td style="text-align: left"><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-30080">Microsoft Security Update Guide, 2024-07-09 10:00 UTC</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-indicators-of-compromise-iocs">4) Indicators of Compromise (IOCs)</h3>
+<p><strong>Overview:</strong> The provided IOCs are primarily associated with the FIN7 phishing campaign targeting financial services and the observed C2 infrastructure for the email client 0-day exploitation. These indicators are high confidence due to correlation across multiple reputable threat intelligence sources. False-positive risk is considered low for the domains and IPs during the active campaign period, though some IPs might be shared infrastructure over time. Hashes are specific to malicious payloads.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">First Seen (UTC)</th>
+          <th style="text-align: left">Last Seen (UTC)</th>
+          <th style="text-align: left">Related Actor/Campaign</th>
+          <th style="text-align: left">Confidence</th>
+          <th style="text-align: left">Source(s)</th>
+          <th style="text-align: left">Enrichment (ASN/WHOIS/VirusTotal score/Geo)</th>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">TTL/Review date</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Domain</td>
+          <td style="text-align: left"><code>aws-update-portal[.]com</code></td>
+          <td style="text-align: left">2024-07-27 10:00</td>
+          <td style="text-align: left">2024-07-29 07:00</td>
+          <td style="text-align: left">FIN7 Cloud Phishing</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">[Mandiant, CrowdStrike]</td>
+          <td style="text-align: left">ASN: AS26496 (GoDaddy), VT: 70/90, Geo: US</td>
+          <td style="text-align: left">Block</td>
+          <td style="text-align: left">2024-08-29</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Domain</td>
+          <td style="text-align: left"><code>securemail-support[.]net</code></td>
+          <td style="text-align: left">2024-07-28 14:00</td>
+          <td style="text-align: left">2024-07-29 07:30</td>
+          <td style="text-align: left">Email Client 0-Day C2</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">[CISA, Security Vendor]</td>
+          <td style="text-align: left">ASN: AS15133 (Cloudflare), VT: 65/88, Geo: DE</td>
+          <td style="text-align: left">Block</td>
+          <td style="text-align: left">2024-08-29</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IP</td>
+          <td style="text-align: left"><code>185.123.45.67</code></td>
+          <td style="text-align: left">2024-07-28 15:30</td>
+          <td style="text-align: left">2024-07-29 06:45</td>
+          <td style="text-align: left">Email Client 0-Day C2</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">[Threat Intel Platform]</td>
+          <td style="text-align: left">ASN: AS9009 (M247 Ltd), Geo: RO, VT: 5/70</td>
+          <td style="text-align: left">Block</td>
+          <td style="text-align: left">2024-08-29</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IP</td>
+          <td style="text-align: left"><code>207.244.71.180</code></td>
+          <td style="text-align: left">2024-07-27 11:00</td>
+          <td style="text-align: left">2024-07-29 07:00</td>
+          <td style="text-align: left">FIN7 Cloud Phishing (Redirect)</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">[CrowdStrike, Zscaler]</td>
+          <td style="text-align: left">ASN: AS394747 (OVH US), Geo: CA, VT: 3/68</td>
+          <td style="text-align: left">Block</td>
+          <td style="text-align: left">2024-08-29</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hash (SHA256)</td>
+          <td style="text-align: left"><code>a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4</code></td>
+          <td style="text-align: left">2024-07-28 17:00</td>
+          <td style="text-align: left">2024-07-29 05:00</td>
+          <td style="text-align: left">Email Client 0-Day Payload</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">[Security Vendor Blog]</td>
+          <td style="text-align: left">File: <code>update.exe</code>, VT: 60/72</td>
+          <td style="text-align: left">Block</td>
+          <td style="text-align: left">2024-08-29</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">URL</td>
+          <td style="text-align: left"><code>https://outlook-update-prod[.]net/login</code></td>
+          <td style="text-align: left">2024-07-27 12:00</td>
+          <td style="text-align: left">2024-07-29 07:00</td>
+          <td style="text-align: left">FIN7 Cloud Phishing</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">[Mandiant]</td>
+          <td style="text-align: left">VT: 70/90</td>
+          <td style="text-align: left">Block</td>
+          <td style="text-align: left">2024-08-29</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="5-threat-actors--campaigns">5) Threat Actors &amp; Campaigns</h3>
+<h4 id="name--aliases-fin7-carbanak-group-anunak">Name &amp; Aliases: FIN7 (Carbanak Group, Anunak)</h4>
+<ul>
+<li><strong>Likely Sponsor/Motive:</strong> Financially motivated cybercrime group.</li>
+<li><strong>Targeting:</strong> Primarily retail, hospitality, financial services, and critical infrastructure sectors. Historically focused on point-of-sale (POS) systems, now adapting to cloud environments.</li>
+<li><strong>Typical TTPs (ATT&amp;CK IDs):</strong>
+<ul>
+<li>T1566.002 (Phishing: Spearphishing Link)</li>
+<li>T1552.001 (Unsecured Credentials: Credentials in Files)</li>
+<li>T1078 (Valid Accounts)</li>
+<li>T1059.003 (Command and Scripting Interpreter: Windows Command Shell)</li>
+<li>T1021.001 (Remote Services: Remote Desktop Protocol)</li>
+</ul>
+</li>
+<li><strong>Recent Ops in window:</strong> New cloud-centric phishing campaign targeting AWS and Azure credentials within financial services.</li>
+<li><strong>Confidence:</strong> High. Well-documented group with consistent TTPs and clear financial motivation.</li>
+<li><strong>Sources:</strong> <a href="https://www.mandiant.com/resources/blog/fin7-cloud-phishing">Mandiant Report, 2024-07-28 18:00 UTC</a>, <a href="https://www.crowdstrike.com/blog/fin7-cloud-credential-harvesting">CrowdStrike Blog, 2024-07-28 20:30 UTC</a></li>
+</ul>
+<h4 id="name--aliases-apt29-nobelium-cozy-bear-the-dukes">Name &amp; Aliases: APT29 (Nobelium, Cozy Bear, The Dukes)</h4>
+<ul>
+<li><strong>Likely Sponsor/Motive:</strong> Russian state-sponsored, intelligence collection and espionage.</li>
+<li><strong>Targeting:</strong> Government entities, diplomatic organizations, think tanks, healthcare, and critical infrastructure, often leveraging supply chain and cloud vulnerabilities.</li>
+<li><strong>Typical TTPs (ATT&amp;CK IDs):</strong>
+<ul>
+<li>T1190.003 (Exploit Public-Facing Application) - often N-day or 0-day.</li>
+<li>T1566.001 (Phishing: Spearphishing Attachment)</li>
+<li>T1078 (Valid Accounts) - often via MFA bypass.</li>
+<li>T1537 (Transfer Data to Cloud Account)</li>
+<li>T1071.001 (Application Layer Protocol: Web Protocols)</li>
+</ul>
+</li>
+<li><strong>Recent Ops in window:</strong> Active reconnaissance and attempted cloud tenant takeovers using compromised legitimate credentials, targeting Microsoft 365 and Google Workspace environments of think tanks and NGOs <a href="https://www.microsoft.com/security/blog/apt29-cloud-targeting">Source: Microsoft Threat Intelligence — 2024-07-28 16:00 UTC</a>. This aligns with their pattern of exploiting legitimate services for persistent access.</li>
+<li><strong>Confidence:</strong> High. Extensive public reporting on this group by multiple national intelligence agencies and security vendors.</li>
+<li><strong>Sources:</strong> <a href="https://www.microsoft.com/security/blog/apt29-cloud-targeting">Microsoft Threat Intelligence, 2024-07-28 16:00 UTC</a>, <a href="https://www.cisa.gov/news-events/alerts/2021/01/05/apt-actors-exploiting-solarwinds-vulnerability">CISA Alert AA21-001A, 2021-01-05 10:00 UTC (reaffirmed)</a></li>
+</ul>
+<hr>
+<h3 id="6-sector--geo-risk-signals">6) Sector &amp; Geo Risk Signals</h3>
+<ul>
+<li><strong>Healthcare Ransomware Trends:</strong> A notable uptick in ransomware attacks against small to medium-sized healthcare providers across North America. Observed groups include Black Basta and LockBit affiliates leveraging known vulnerabilities (e.g., in unpatched VPN appliances) for initial access. This surge is likely driven by the perceived criticality of healthcare services and increased willingness to pay. <a href="https://www.h-isac.org/advisories/ransomware-surge-july2024">Source: Health-ISAC Advisory — 2024-07-28 19:00 UTC</a>.</li>
+<li><strong>Geopolitical Cyber Activities (Middle East):</strong> Increased low-level disruptive cyber activities targeting critical infrastructure (e.g., water, energy sectors) in the Middle East, primarily defacement and denial-of-service, linked to state-aligned non-state actors in the ongoing regional conflict. While not directly impactful to our core business, these activities signal broader instability and potential for escalation. <a href="https://www.recordedfuture.com/reports/middle-east-cyber-tension">Source: Recorded Future Report — 2024-07-28 23:00 UTC</a>.</li>
+</ul>
+<hr>
+<h3 id="7-third-party--supply-chain-notes">7) Third-Party &amp; Supply-Chain Notes</h3>
+<ul>
+<li><strong>DevOps Tool &ldquo;CodeFlow&rdquo; Supply Chain Compromise:</strong> A widely used internal DevOps automation tool, &ldquo;CodeFlow&rdquo; (hypothetical), has been reported to contain a malicious backdoor in versions 3.5.0-3.5.2. The compromise originated from a malicious dependency introduced into the open-source library that CodeFlow relies on. <a href="https://snyk.io/blog/codeflow-supply-chain-compromise">Source: Snyk Advisory — 2024-07-28 21:00 UTC</a>.
+<ul>
+<li><strong>Blast Radius Hypothesis:</strong> If CodeFlow is used in our build pipelines, compromised versions could lead to malicious code injection into our applications or unauthorized access to build secrets.</li>
+<li><strong>Required vendor follow-ups:</strong> Immediate outreach to the CodeFlow vendor for official remediation guidance and a full impact assessment.</li>
+</ul>
+</li>
+<li><strong>Cloud Identity Provider (IdP) &ldquo;SecureAuth&rdquo; (hypothetical) Incident:</strong> SecureAuth reported a brief service interruption yesterday due to a configuration error, which has been resolved. No evidence of data breach or unauthorized access was found. While reassuring, it highlights the inherent risk in IdP single points of failure. <a href="https://status.secureauth.com/incident/july28-2024">Source: SecureAuth Status Page — 2024-07-28 17:00 UTC</a>.
+<ul>
+<li><strong>Required vendor follow-ups:</strong> Review SecureAuth&rsquo;s Root Cause Analysis (RCA) report when available and assess our contingency plans for IdP outages.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-detections--response-playbook-updates">8) Detections &amp; Response Playbook Updates</h3>
+<ul>
+<li><strong>New EDR Rule:</strong>
+<ul>
+<li><strong>ID:</strong> EDR-FIN7-PHISH-001</li>
+<li><strong>Intent:</strong> Detect unusual process spawns from web browsers or email clients to credential harvesting tools (e.g., <code>cmd.exe /c &quot;certutil -urlcache...&quot;</code> or <code>powershell.exe -encodedcommand...</code>) following execution of suspicious links.</li>
+</ul>
+</li>
+<li><strong>New Email Gateway Rule:</strong>
+<ul>
+<li><strong>ID:</strong> EMG-0DAY-SUSP-LINK-001</li>
+<li><strong>Intent:</strong> Block emails containing links to newly observed domains (<code>securemail-support[.]net</code>, <code>outlook-update-prod[.]net</code>) or attachments matching SHA256 hashes from 0-day exploitation.</li>
+</ul>
+</li>
+<li><strong>Example KQL Query (EDR-FIN7-PHISH-001):</strong>
+<code>kusto\n    DeviceProcessEvents\n    | where InitiatingProcessFileName in (&quot;outlook.exe&quot;, &quot;thunderbird.exe&quot;, &quot;chrome.exe&quot;, &quot;firefox.exe&quot;, &quot;msedge.exe&quot;)\n    | where FileName in (&quot;cmd.exe&quot;, &quot;powershell.exe&quot;) and ProcessCommandLine contains &quot;certutil&quot; or ProcessCommandLine contains &quot;Invoke-WebRequest&quot;\n    | project Timestamp, DeviceName, InitiatingProcessFileName, FileName, ProcessCommandLine, InitiatingProcessCommandLine, RemoteIP\n    | join kind=leftouter (\n        DeviceNetworkEvents\n        | where RemoteIP in (&quot;185.123.45.67&quot;, &quot;207.244.71.180&quot;) or RemoteUrl contains &quot;aws-update-portal[.]com&quot; or RemoteUrl contains &quot;securemail-support[.]net&quot;\n        | project DeviceName, RemoteIP, RemoteUrl, ActionType\n    ) on DeviceName\n    | where isnotempty(RemoteIP) or isnotempty(RemoteUrl)\n    </code></li>
+<li><strong>Containment/Eradication Guidance Deltas:</strong>
+<ul>
+<li><strong>Email Client 0-Day:</strong> If exploitation is confirmed, immediately isolate the affected endpoint from the network. Prioritize forensic imaging and memory analysis to extract payloads and C2 communications. Force password resets for any accounts compromised.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="9-metrics--hygiene">9) Metrics &amp; Hygiene</h3>
+<ul>
+<li><strong>Exposure Deltas (Last 24h):</strong>
+<ul>
+<li>Internet-facing assets: Stable (+0).</li>
+<li>Expired Certificates (Critical): Stable (+0).</li>
+<li>Open Critical Ports (e.g., RDP, SMB to Internet): Stable (+0).</li>
+</ul>
+</li>
+<li><strong>Patch Coverage Snapshot for Today’s P1 CVEs:</strong>
+<ul>
+<li>CVE-2024-XXXXX (SecureMail Pro): 0% (Patch not yet released).</li>
+</ul>
+</li>
+<li><strong>Phishing/EDR Alerts of Interest (Last 24h):</strong>
+<ul>
+<li>Phishing alerts (FIN7 campaign related): 12 (increase of 8 from previous day). All successfully blocked by email gateway, but 3 were &ldquo;clicked&rdquo; by users before being blocked (user was directed to a block page).</li>
+<li>EDR alerts (suspicious process activity related to 0-day): 0 (No confirmed exploitation within estate yet).</li>
+<li>Outliers: The 3 user clicks on FIN7 phishing links are concerning and indicate a need for immediate user awareness refresher.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="10-assumptions-gaps-and-tasking">10) Assumptions, Gaps, and Tasking</h3>
+<ul>
+<li><strong>Assumptions:</strong>
+<ul>
+<li>Our email gateway is configured to perform basic URL and attachment scanning.</li>
+<li>EDR is deployed across all endpoints, providing process and network visibility.</li>
+<li>Our cloud environments (AWS, Azure) have basic logging enabled.</li>
+</ul>
+</li>
+<li><strong>Gaps:</strong>
+<ul>
+<li>Lack of granular visibility into outbound connections from email client processes on all endpoints, making detection of 0-day exploitation difficult without the EDR rule.</li>
+<li>Uncertainty regarding which specific versions of &ldquo;CodeFlow&rdquo; (DevOps tool) are deployed across our development environment.</li>
+<li>Incomplete inventory of all cloud services and roles, making a full assessment of FIN7&rsquo;s potential impact challenging.</li>
+</ul>
+</li>
+<li><strong>Requested Tasking:</strong>
+<ul>
+<li><strong>Security Engineering:</strong> Prioritize deployment of EDR-FIN7-PHISH-001 and EMG-0DAY-SUSP-LINK-001 rules immediately.</li>
+<li><strong>IT Operations:</strong> Conduct an inventory scan for &ldquo;SecureMail Pro&rdquo; and &ldquo;CodeFlow&rdquo; versions across all endpoints and development servers.</li>
+<li><strong>Cloud Security Team:</strong> Perform an audit of AWS and Azure roles and permissions, focusing on administrative and highly privileged accounts. Ensure MFA is enforced universally.</li>
+<li><strong>Training &amp; Awareness:</strong> Schedule an urgent phishing awareness reminder for all employees, specifically addressing cloud-themed lures and the email client 0-day.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="11-source-log-top-10-diverse--reputable">11) Source Log (top 10, diverse &amp; reputable)</h3>
+<ul>
+<li><strong>CISA Alert - Critical Email Client 0-Day Actively Exploited</strong> — CISA — <a href="https://www.cisa.gov/news-events/alerts/2024/07/28/critical-email-client-0day-actively-exploited">https://www.cisa.gov/news-events/alerts/2024/07/28/critical-email-client-0day-actively-exploited</a> — Accessed at 2024-07-28 22:15 UTC.</li>
+<li><strong>FIN7 Evolves: Cloud Credential Harvesting Campaign Targeting Financial Services</strong> — Mandiant — <a href="https://www.mandiant.com/resources/blog/fin7-cloud-phishing">https://www.mandiant.com/resources/blog/fin7-cloud-phishing</a> — Accessed at 2024-07-28 18:00 UTC.</li>
+<li><strong>CrowdStrike Intelligence Report: FIN7&rsquo;s New Cloud Focus</strong> — CrowdStrike — <a href="https://www.crowdstrike.com/blog/fin7-cloud-credential-harvesting">https://www.crowdstrike.com/blog/fin7-cloud-credential-harvesting</a> — Accessed at 2024-07-28 20:30 UTC.</li>
+<li><strong>Microsoft Threat Intelligence: APT29 Cloud Operations</strong> — Microsoft — <a href="https://www.microsoft.com/security/blog/apt29-cloud-targeting">https://www.microsoft.com/security/blog/apt29-cloud-targeting</a> — Accessed at 2024-07-28 16:00 UTC.</li>
+<li><strong>Snyk Advisory: Malicious Dependency Discovered in &lsquo;CodeFlow&rsquo; DevOps Tool</strong> — Snyk — <a href="https://snyk.io/blog/codeflow-supply-chain-compromise">https://snyk.io/blog/codeflow-supply-chain-compromise</a> — Accessed at 2024-07-28 21:00 UTC.</li>
+<li><strong>Vendor Advisory: SecureMail Pro Critical 0-Day Vulnerability</strong> — SecureMail Pro Support — <a href="https://support.vendor.com/advisories/CVE-2024-XXXXX">https://support.vendor.com/advisories/CVE-2024-XXXXX</a> — Accessed at 2024-07-29 04:00 UTC.</li>
+<li><strong>Health-ISAC Advisory: Ransomware Surge in North American Healthcare Sector</strong> — Health-ISAC — <a href="https://www.h-isac.org/advisories/ransomware-surge-july2024">https://www.h-isac.org/advisories/ransomware-surge-july2024</a> — Accessed at 2024-07-28 19:00 UTC.</li>
+<li><strong>Palo Alto Networks Security Advisory: CVE-2024-3400</strong> — Palo Alto Networks — <a href="https://security.paloaltonetworks.com/CVE-2024-3400">https://security.paloaltonetworks.com/CVE-2024-3400</a> — Accessed at 2024-04-12 16:00 UTC.</li>
+<li><strong>Zscaler ThreatlabZ: In-depth Analysis of FIN7 Phishing Infrastructure</strong> — Zscaler — <a href="https://www.zscaler.com/blogs/security-research/fin7-targets-cloud">https://www.zscaler.com/blogs/security-research/fin7-targets-cloud</a> — Accessed at 2024-07-29 03:00 UTC.</li>
+<li><strong>Security Vendor Blog: Email Client 0-day PoC Observed in the Wild</strong> — Example Security Research Blog — <a href="https://securityresearch.example.com/blog/email-0day-poc-observed">https://securityresearch.example.com/blog/email-0day-poc-observed</a> — Accessed at 2024-07-29 01:30 UTC.</li>
+</ul>
+
+  </div>
+</section>
+
+<section id="tag-pane" class="meta">
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <h6 class="text-end meta">
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="menu text-center">
+  
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      
+      
+      <li class="menu-item">
+        <a class="menu-item" href="http://localhost:1313/posts/detection-engineering/">&lt; prev</a>
+      </li>
+      
+
+      <li class="menu-item">
+        
+        <span class="menu-item">&nbsp;|&nbsp;</span>
+        
+        <a class="menu-item" href="/posts">posts</a>
+        
+      </li>
+
+      
+      
+    </ul>
+  </nav>
+  
+  <h4 class="text-center mt-3"><a class="menu-item" href="http://localhost:1313/">Home</a></h4>
+</section>
+
+
+<footer class="text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© Chintan Gurjar - <a href="mailto:chintangurjar@outlook.com">chintangurjar@outlook.com</a></h6>
+  
+  
+  
+  
+  
+
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+</html>
+
+

@@ -1,7 +1,1855 @@
-<!doctype html><html lang=en-US><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=description content="Practical Cybersecurity Blog"><meta name=keywords content="cybersecurity,infosec,bug-bounty,bugbounty,SOC,CTI,VM,Pentest,Cyber Defense"><title>Cyber Frogy - (Threat Model) - STRIDE Threat Modelling - In-Depth Practical</title><meta name=generator content="Hugo 0.148.2"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700"><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/main.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=theme-color content="#ffffff"></head><body lang=en-US><div class="container my-auto"><section id=main-menu-pane class="text-center main-menu"><h4><a class=menu-item href=/>Home</a></h4><h4><a class=menu-item href=/posts>Blog</a></h4><h4><a class=menu-item href=/visualisations>Visualisations</a></h4><h4><a class=menu-item href=/about>About Me</a></h4><h4><a class=menu-item href=/repositories>My Repos</a></h4><h4><a class=menu-item href=/checklists>Checklists</a></h4><h4><a class=menu-item href=/kickstartcareer>Kickstart Career</a></h4><h4><a class=menu-item href=/disclaimer>Disclaimer</a></h4></section><header class="text-start title"><h1 class=title>(Threat Model) - STRIDE Threat Modelling - In-Depth Practical</h1></header><section id=category-pane class=meta><div class="d-flex flex-column flex-md-row justify-content-between"><h6 class="text-start meta">PUBLISHED ON APR 29, 2025
-/ 30 MIN READ</h6></div></section><section id=content-pane><div class="text-justify content"><nav id=TableOfContents><ul><li><a href=#threat-modeling-isnt-just-for-paranoids-getting-real-with-stride>Threat Modeling Isn&rsquo;t Just for Paranoids: Getting Real with STRIDE</a></li><li><a href=#getting-cozy-with-stride-more-than-just-a-long-walk>Getting Cozy with STRIDE: More Than Just a Long Walk</a><ul><li><a href=#why-stride-rocks-and-when-to-use-it>Why STRIDE Rocks (and When to Use It)</a></li></ul></li><li><a href=#summary-of-the-approach>Summary of The Approach</a></li><li><a href=#the-stride-process-from-theory-to-action>The STRIDE Process: From Theory to Action</a><ul><li><a href=#1model-the-system-draw-the-map>1. Model the system (draw the map)</a></li><li><a href=#2identify-threats-the-stride-pass>2. Identify threats (The STRIDE Pass)</a></li><li><a href=#3going-beyond-just-six-questions>3. Going Beyond “Just Six Questions”</a></li><li><a href=#4how-to-use>4. How-to use</a></li><li><a href=#5analyzing-threats-documentation-and-prioritization>5. Analyzing Threats (Documentation and Prioritization)</a></li><li><a href=#6define-mitigations-plan-the-fixes>6. Define Mitigations (Plan the Fixes)</a></li><li><a href=#7validate-check-your-work>7. Validate (Check Your Work)</a></li></ul></li><li><a href=#scenario-1-securing-an-e-commerce-checkout-api>Scenario 1: Securing an E-Commerce Checkout API</a><ul><li><a href=#system-overview>System Overview</a></li><li><a href=#data-flow-diagram-dfd>Data Flow Diagram (DFD)</a></li><li><a href=#applying-stride>Applying STRIDE</a></li></ul></li><li><a href=#homework-for-you>Homework for you</a></li><li><a href=#scenario-2-hardening-an-iot-smart-lock-system>Scenario 2: Hardening an IoT Smart Lock System</a><ul><li><a href=#system-overview-1>System Overview</a></li><li><a href=#data-flow-diagrams-dfds>Data Flow Diagrams (DFDs)</a></li></ul></li><li><a href=#scenario-3-analyzing-a-cloud-based-data-analytics-platform>Scenario 3: Analyzing a Cloud-Based Data Analytics Platform</a><ul><li><a href=#system-overview-2>System Overview</a></li><li><a href=#data-flow-diagrams-dfds-1>Data Flow Diagrams (DFDs)</a></li></ul></li><li><a href=#making-stride-work-for-you-practical-tips-from-the-trenches>Making STRIDE Work for You: Practical Tips from the Trenches</a><ul><li><a href=#getting-started-without-getting-overwhelmed>Getting started without getting overwhelmed:</a></li><li><a href=#common-pitfalls-to-sidestep>Common Pitfalls to Sidestep:</a></li><li><a href=#integrating-into-devsecops-making-it-stick>Integrating into DevSecOps (Making it stick):</a></li><li><a href=#a-word-on-tooling>A Word on Tooling:</a></li></ul></li><li><a href=#summary--the-people-part>Summary – The People Part</a></li></ul></nav><h2 id=threat-modeling-isnt-just-for-paranoids-getting-real-with-stride>Threat Modeling Isn&rsquo;t Just for Paranoids: Getting Real with STRIDE</h2><p>Ever pushed code feeling pretty darn good about it, only to have that sinking feeling when a security issue pops up later? Yeah, me too. 13 years in this industry, and I can tell you, surprises in security are rarely the good kind. We build complex systems, juggling features, deadlines, and performance, and sometimes, just sometimes, security feels like this mystical thing we bolt on at the end, hoping for the best. But hope, as they say, isn’t a strategy, especially not in cybersecurity.</p><p>That’s where threat modeling comes in. Threat modeling is a practical, engineering discipline. It’s about proactively looking at your system before the bad guys do, figuring out where the weaknesses might be, and fixing them before they become headlines. It’s about shifting security left, making it part of the design conversation, not just an afterthought during a frantic incident response.</p><p>Now, there are various ways to approach threat modeling, but one framework that’s stood the test of time, especially for folks building software, is STRIDE that helps us systematically brainstorm how things could go wrong. It gives us a common language and a structured way to think about potential attacks.</p><p>We are going to ditch the overly academic jargon and get practical. We will break down what STRIDE is, walk through how to actually use it with three different real-world-ish scenarios (think APIs, IoT, and cloud platforms), share some hard-won tips from the trenches, and even suggest some ways you could visualize this stuff later on.</p><p>My goal here isn’t just to define STRIDE, but to show you how it can become a valuable tool in your engineering toolkit. It’s about making security less scary and more systematic. So, grab a coffee, settle in, and let’s talk about how to stride confidently towards more secure systems.</p><h2 id=getting-cozy-with-stride-more-than-just-a-long-walk>Getting Cozy with STRIDE: More Than Just a Long Walk</h2><p>The magic of STRIDE lies in its acronym, which covers six key categories of security threats. When you are looking at a system component – whether it&rsquo;s a user logging in, data moving across a network, or a file being saved – you ask yourself: how could someone mess with this using one of the STRIDE methods?</p><p>Let&rsquo;s break down the letters:</p><ol><li><p><strong>S - Spoofing:</strong> This is all about impersonation. An attacker pretends to be someone or something they&rsquo;re not. Think fake login pages trying to steal your credentials, or a malicious server mimicking a legitimate one to intercept data. The security property being violated here is <strong>Authenticity</strong>. Are you really talking to who you think you are talking to? Is that user really who they claim to be?</p></li><li><p><strong>T - Tampering:</strong> This one&rsquo;s about unauthorized modification. Attackers mess with data – maybe changing values in a database, altering code as it runs, or modifying data packets flying across the network. Imagine someone changing the amount on a financial transaction or tweaking configuration files to gain an advantage. The property under attack is <strong>Integrity</strong>. Can you trust that your data and your system haven&rsquo;t been illicitly changed?</p></li><li><p><strong>R - Repudiation:</strong> This is the &ldquo;I didn&rsquo;t do it!&rdquo; threat. An attacker performs some malicious action and then tries to deny having done it. Or, perhaps more commonly, the system simply lacks the ability to prove who did what. If you can&rsquo;t prove a user placed that order or deleted that critical file, you have a repudiation problem. The violated property here is **Non-**<strong>repudiability</strong>. Can you trace actions back to the actor responsible?</p></li><li><p><strong>I - Information Disclosure:</strong> This is about confidentiality breaches. Sensitive information gets exposed to people who shouldn&rsquo;t see it. This could be anything from error messages revealing system internals, to attackers accessing private user data, to sniffing unencrypted network traffic. The property at stake is <strong>Confidentiality</strong>. Is your sensitive data kept secret from unauthorized eyes?</p></li><li><p><strong>D - Denial of Service (DoS):</strong> Pretty self-explanatory – making a system or service unavailable to legitimate users. This could be by overwhelming it with traffic (like a classic flood attack), crashing a service, or locking out user accounts. The violated property is <strong>Availability</strong>. Can authorized users access the system and its data when they need to?</p></li><li><p><strong>E - Elevation of Privilege:</strong> This is when someone gains more permissions than they should have. A regular user somehow gets admin rights, or one application component manages to execute code with the privileges of another, more trusted component. This is often the goal that enables other attacks. The violated property is <strong>Authorization</strong>. Are users and components restricted to only the actions and data they are explicitly allowed to access?</p></li></ol><p>So if I were to summarize all of these in a single table, it would be something like this:</p><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Letter</th><th>Threat Type</th><th>Description</th><th>Violated Security Property</th><th>Example Scenarios</th></tr></thead><tbody><tr><td>S</td><td>Spoofing</td><td>Impersonation of users or systems.</td><td>Authenticity</td><td>Fake login pages, malicious servers intercepting data.</td></tr><tr><td>T</td><td>Tampering</td><td>Unauthorized data/code modification.</td><td>Integrity</td><td>Altering database values, changing code or config files.</td></tr><tr><td>R</td><td>Repudiation</td><td>Denial of performed actions due to lack of accountability.</td><td>Non-repudiability</td><td>No audit trail for deleted files or transactions.</td></tr><tr><td>I</td><td>Information Disclosure</td><td>Exposure of confidential information to unauthorized entities.</td><td>Confidentiality</td><td>Leaked error messages, sniffed traffic, internal data exposed.</td></tr><tr><td>D</td><td>Denial of Service (DoS)</td><td>System made unavailable to legitimate users.</td><td>Availability</td><td>Flooding traffic, service crashes, user lockouts.</td></tr><tr><td>E</td><td>Elevation of Privilege</td><td>Gaining unauthorized access or higher privileges than allowed.</td><td>Authorization</td><td>Regular user gaining admin rights, untrusted code gaining system privileges.</td></tr></tbody></table></div></br><h3 id=why-stride-rocks-and-when-to-use-it>Why STRIDE Rocks (and When to Use It)</h3><p>So, why has STRIDE stuck around? A few reasons:</p><ul><li><strong>It&rsquo;s systematic:</strong> It forces you to think through different types of attacks, reducing the chance you will miss something obvious because you were only focused on, say, injection attacks.</li><li><strong>Common language:</strong> It gives teams a shared vocabulary. Talking about a potential &ldquo;Tampering&rdquo; threat is clearer than vague hand-waving about security.</li><li><strong>Good coverage:</strong> While not exhaustive (no framework is), it covers the major ways software systems get compromised.</li><li><strong>Relatively simple:</strong> Compared to some other methodologies, STRIDE is fairly easy to grasp and start applying.</li></ul><p>Ideally, you want to apply STRIDE during the <strong>design phase</strong> of the software development lifecycle (SDLC). Finding a flaw on a whiteboard is infinitely cheaper and easier to fix than finding it in production code. However, it&rsquo;s never too late. You can apply STRIDE to existing systems, new features, or even specific changes to understand the security implications.</p><p>Now that we know what STRIDE is, let&rsquo;s look at how to actually put it into practice.</p><h2 id=summary-of-the-approach>Summary of The Approach</h2><p>Before we go deep into this novel approach, let me summarize the overall process from this article in a simplistic diagram.</p><center><img src=/images/overall-stride-approach.png width=850></center><h2 id=the-stride-process-from-theory-to-action>The STRIDE Process: From Theory to Action</h2><p>Before we go deep into process, let’s look at the high level process how does it look like:</p><center><img src=/images/stride_process_high_level.png width=850></center><p>Okay, we know the what (the STRIDE categories) and the why (proactive security!). Now, let&rsquo;s get into the how. How do you actually do a STRIDE analysis? It&rsquo;s not just about chanting the acronym; it&rsquo;s a process. Here’s a typical flow, keeping in mind this can be adapted:</p><h3 id=1model-the-system-draw-the-map>1. Model the system (draw the map)</h3><p>You can&rsquo;t find threats in something you don&rsquo;t understand. The first step is always to visualize the system you are analyzing. The most common way to do this in threat modeling is using <strong>Data Flow Diagrams (DFDs)</strong>. A DFD is just a structured way to show how data moves through your system. Key symbols you will use are:</p><ul><li><strong>External entities:</strong> Squares representing users, other systems, or anything outside your system boundary that interacts with it.</li><li><strong>Processes:</strong> Circles representing activities or functions that transform data (e.g., &lsquo;Validate Payment&rsquo;, &lsquo;Update Inventory&rsquo;).</li><li><strong>Data stores:</strong> Two parallel lines representing where data rests (e.g., &lsquo;User Database&rsquo;, &lsquo;Order Cache&rsquo;).</li><li><strong>Data flows:</strong> Arrows showing the movement of data between entities, processes, and stores.</li><li><strong>Trust boundaries:</strong> Dashed or dotted lines indicating where the level of trust changes (e.g., between the public internet and your internal network, or between a user process and an admin process). Start high-level and decompose complex processes into lower-level DFDs if needed. The goal is clarity, not artistic perfection.</li></ul><h3 id=2identify-threats-the-stride-pass>2. Identify threats (The STRIDE Pass)</h3><p>This is where the STRIDE mnemonic shines. Go through your DFD, element by element (each process, data store, data flow, and even external entity interaction). For each element, systematically ask the STRIDE questions:</p><ul><li>How could an attacker <strong>Spoof</strong> this entity or process?</li><li>How could someone <strong>Tamper</strong> with this data flow or data store?</li><li>Could an action involving this element be <strong>Repudiated?</strong></li><li>Could <strong>Information</strong> be improperly <strong>Disclosed</strong> from this element or flow?</li><li>Could this process or data store be subject to <strong>Denial of Service</strong>?</li><li>Could an attacker achieve <strong>Elevation of Privilege</strong> through this element? Focus especially on data flows crossing trust boundaries – these are often hotspots for vulnerabilities.</li></ul><h3 id=3going-beyond-just-six-questions>3. Going Beyond “Just Six Questions”</h3><p>Most guides you will find online stop at the simple STRIDE checklist:</p><ol><li>How could this be Spoofed?</li><li>How could it be Tampered with?</li><li>Could someone Repudiate the action?</li><li>Might Information be Disclosed?</li><li>Could this element suffer a Denial-of-Service?</li><li>Is there a path to Elevate Privilege?</li></ol><p>That’s a useful starting point but it leaves you asking the same six questions over and over, without telling you how to think about where the gaps actually live or why an attacker would exploit them. You end up with a bullet list of “possible threats” rather than a rich map of all the angles you need to sweep.</p><p>To fill that gap, I have developed a <strong>360° thinking blueprint</strong> for each STRIDE category, four complementary “lenses” you can peer through, a mini-checklist of red-flags, and reflective prompts to spark concrete scenarios. Use it against any DFD element, at any level (1/2), and you will move from rote questions to real insight: precisely where your system is vulnerable, how an attacker might work their way in, and what defenses belong at each step.</p><p>Below you will find the full blueprint your new go-to process whenever you sit down with a whiteboard or a DFD.</p><h5 id=spoofing-authenticity>Spoofing (Authenticity)</h5><ul><li>Make sure every participant really is who they claim to be.</li></ul><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Lens</th><th>What to Explore / Do</th><th>Mini-Checklist</th><th>Reflective Prompts</th></tr></thead><tbody><tr><td>Context & Scope</td><td>Define exactly where “identity” matters; list every human, service or system identity in this element.</td><td>– Missing or default accounts?<br>- Shared or hard-coded credentials?</td><td><p>• What or who is assumed genuine here?</p><p>• Where does belief begin or end?</p></td></tr><tr><td>Trust Relationships<br></td><td>Map who trusts whom and on what basis; spot every credential handshake.</td><td><p>– One-way authentication only?</p><p>– Weak or missing proof?</p></td><td><p>• Who is counting on this proof of identity?</p><p>• What minimal cue grants trust?</p></td></tr><tr><td>Adversary Motivation</td><td>Imagine why someone would pretend to be this entity; enumerate replay, cloning or masquerade tactics.</td><td><p>– Replayable tokens?</p><p>– Lack of anti-replay checks?</p></td><td><p>• What’s the upside for an imposter?</p><p>• How could they gain advantage?</p></td></tr><tr><td>Verification Points</td><td>Spot every moment identity is (or isn’t) checked; consider where mutual checks or external roots apply.</td><td><p>– No mutual proof?</p><p>– Missing challenge-response?</p></td><td><p>• How would you prove it’s really them?</p><p>• Where could that proof be faked?</p></td></tr></tbody></table></div><br><h5 id=tampering-integrity>Tampering (Integrity)</h5><p>Catch any unauthorized change to data, code or decisions.</p><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Lens</th><th>What to Explore / Do</th><th>Mini-Checklist</th><th>Reflective Prompts</th></tr></thead><tbody><tr><td>Lifecycle View</td><td>Trace where data or logic is created, stored or transformed; list flows, caches, temp stores.</td><td><p>– Plaintext in flight?</p><p>– Writable surfaces?</p></td><td><p>• When/where does the “original” exist?</p><p>• Where could it be altered unseen?</p></td></tr><tr><td>Change & Update Paths</td><td>Identify every hand-off, deployment, patch or update process.</td><td><p>– Unsigned artifacts?</p><p>– Missing checksum validation?</p></td><td><div>• What hand-off could go wrong?</div><div>• Where could an extra change slip in?</div><div><br></div></td></tr><tr><td>Adversary Goals</td><td>Consider why an attacker would corrupt this element; think interception, direct writes, replays.</td><td><p>– MITM possible?</p><p>– Unchecked replay?</p></td><td><p>• What would they gain by tweaking it?</p><p>• Which distortions best serve their aim?</p></td></tr><tr><td>Validation & Recovery</td><td>Review how illicit changes are detected or rolled back; integrity checks and recovery mechanisms.</td><td><p>– No tamper alerts?</p><p>– Missing backup/rollback plan?</p></td><td><p>• How would you know it’s been altered?</p><p>• What resets it to “known good”?</p></td></tr></tbody></table></div><br><h5 id=repudiation-non-repudiation>Repudiation (Non-repudiation)</h5><ul><li>Guarantee every action leaves a clear, unforgeable trail.</li></ul><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Lens</th><th>What to Explore / Do</th><th>Mini-Checklist</th><th>Reflective Prompts</th></tr></thead><tbody><tr><td>Action Points</td><td>List every critical operation deletes, transfers, approvals where proof may be needed.</td><td><p>– Missing audit hooks?</p><p>– Anonymous/shared actions?</p></td><td><p>• Which steps matter legally or financially?</p><p>• What counts as “proof”?</p></td></tr><tr><td>Actor Binding</td><td>Ensure each log entry ties to a unique, non-shareable originator (user ID, session, request ID).</td><td><p>– Shared sessions?</p><p>– Session hijacking risks?</p></td><td><p>• How do you link deed to doer?</p><p>• Could someone hide behind a shared handle?</p></td></tr><tr><td>Temporal Context</td><td>Anchor events with unambiguous timestamps and ordering; account for clock skew and sequence.</td><td><p>– Missing timestamps?</p><p>– Easily adjusted clocks?</p></td><td><p>• When did it happen and why does sequence matter?</p><p>• Could times be contested?</p></td></tr><tr><td>Audit Assurance</td><td>Protect logs from tampering or deletion consider append-only, off-site archives and strict controls.</td><td><p>– Editable logs?</p><p>– Insecure log transport?</p></td><td><p>• How would you spot log tampering?</p><p>• Where would you look first?</p></td></tr></tbody></table></div><br><h5 id=information-disclosure-confidentiality>Information Disclosure (Confidentiality)</h5><ul><li>Keep every secret and private detail from leaking.</li></ul><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Lens</th><th>What to Explore / Do</th><th>Mini-Checklist</th><th>Reflective Prompts</th></tr></thead><tbody><tr><td>Data Sensitivity</td><td>Classify each piece of information (public, internal, secret, PII) and note its hiding requirements.</td><td><p>– Misclassified data?</p><p>– Unlabeled secrets?</p></td><td><p>• How damaging if this got out?</p><p>• Who must stay ignorant?</p></td></tr><tr><td>Exposure Channels</td><td>Enumerate all ways info might slip APIs, logs, UIs, error messages, backups, side-channels.</td><td><p>– Verbose stack traces?</p><p>– Open debug endpoints?</p></td><td><p>• Where might a whisper become public?</p><p>• What side-paths exist?</p></td></tr><tr><td>Adversary Benefits</td><td>Envision motives for extracting each data type and map potential misuse.</td><td><p>– Valuable metadata exposed?</p><p>– No usage monitoring?</p></td><td><p>• Who gains from knowing this?</p><p>• How would they exploit it?</p></td></tr><tr><td>Masking & Purge</td><td>Plan how to obscure or destroy residual copies temp files, caches, logs.</td><td><p>– Unremoved temp files?</p><p>– Long log retention?</p></td><td><p>• How would you blur it?</p><p>• How do you erase every copy?</p></td></tr></tbody></table></div><br><h5 id=denial-of-service-availability>Denial of Service (Availability)</h5><ul><li>Keep the system usable even under strain or attack.</li></ul><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Lens</th><th>What to Explore / Do</th><th>Mini-Checklist</th><th>Reflective Prompts</th></tr></thead><tbody><tr><td>Resource Inventory</td><td>List all critical resources CPU, memory, threads, connections and map consumption patterns.</td><td><p>– Unbounded allocations?</p><p>– No quotas?</p></td><td><p>• What do people expect always works?</p><p>• What would they miss first?</p></td></tr><tr><td>Demand Patterns</td><td>Analyze normal vs. peak usage seasonal spikes, bursts, user behavior extremes.</td><td><p>– Unexpected spikes?</p><p>– Resource starvation?</p></td><td><p>• When do demands spike?</p><p>• What breaks under unusual stress?</p></td></tr><tr><td>Disruption Scenarios</td><td>Imagine deliberate or accidental overloads, partial failures, dependency breakdowns.</td><td><p>– Retry storms?</p><p>– Unhandled errors?</p></td><td><p>• How might service be disrupted?</p><p>• What small hiccups cascade?</p></td></tr><tr><td>Resilience Measures</td><td>Spot controls rate limits, circuit breakers, graceful degradation, fail-over and back-pressure.</td><td><p>– No rate limiting?</p><p>– Missing failover paths?</p></td><td><p>• How does it bounce back?</p><p>• Where is the “safety net”?</p></td></tr></tbody></table></div><br><h5 id=elevation-of-privilege-authorization>Elevation of Privilege (Authorization)</h5><ul><li>Stop anyone gaining more rights than intended.</li></ul><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>Lens</th><th>What to Explore / Do</th><th>Mini-Checklist</th><th>Reflective Prompts</th></tr></thead><tbody><tr><td>Role & Scope Mapping</td><td>Define every role, permission set and boundary; note defaults and inheritance.</td><td><p>– Over-permissive defaults?</p><p>– Role explosion?</p></td><td><p>• Who can do what and why?</p><p>• Where might those lines blur?</p></td></tr><tr><td>Interaction Flows</td><td>Chart every path APIs, UIs, batch jobs to sensitive operations, including indirect or hidden routes.</td><td><p>– Hidden/end-of-life endpoints?</p><p>– Unprotected APIs?</p></td><td><p>• How do they reach a sensitive operation?</p><p>• What shortcuts could be abused?</p></td></tr><tr><td>Abuse Pathways</td><td>Envision detours callbacks, escalation loops, side-channels that grant extra power.</td><td><p>– Orphaned admin functions?</p><p>– Unchecked callbacks?</p></td><td><p>• What’s an unlikely shortcut to admin?</p><p>• Where could checks be skipped?</p></td></tr><tr><td>Enforcement Checks</td><td>Verify authorization at every critical step before and after and spot missing or inconsistent checks.</td><td><p>– Missing post-action checks?</p><p>– Inconsistent gating?</p></td><td><p>• When do you ask “Is this allowed?”</p><p>• Where might that check be missing?</p></td></tr></tbody></table></div><br><h3 id=4how-to-use>4. How-to use</h3><p><strong>Select your DFD element</strong></p><ul><li>Pick one bubble, arrow or datastore on your diagram.</li><li>Note its name, purpose and where it sits in the overall flow.</li></ul><p><strong>Determine Which STRIDE Category(ies) to Apply</strong></p><ul><li>Every element potentially touches all six but start by mapping it to the most obvious threat types.<ul><li>E.g. a “Login Service” ⇒ Spoofing, Tampering, Repudiation, DoS.</li></ul></li><li>You can circle all six at first to ensure full coverage.</li></ul><p><strong>Run the Four-Lens Sweep for Each STRIDE Category</strong>
-For each category you have marked, work through the four lenses in order:</p><ol><li><strong>A. Lens 1 (Context & Scope / Lifecycle View / Action Points / Data Sensitivity / Resource Inventory / Role & Scope Mapping)</strong></li></ol><ul><li><strong>What to do:</strong> Define the boundaries and key facts.<ul><li>Context & Scope: Who or what identities appear here?</li><li>Lifecycle View: When and where does data/code originate and rest?</li><li>Action Points: Which operations must be provable?</li><li>Data Sensitivity: How secret is the information?</li><li>Resource Inventory: What resources (CPU, memory, threads) does this element consume?</li><li>Role & Scope Mapping: Which roles and permissions live here?</li></ul></li><li><strong>Output:</strong> A crisp bullet list of your findings (e.g., “this datastore holds PII; it’s written to by two processes; default service account exists”).</li></ul><ol start=2><li><strong>Lens 2 (Trust Relationships / Change & Update Paths / Actor Binding / Exposure Channels / Demand Patterns / Interaction Flows)</strong></li></ol><ul><li><strong>What to do:</strong> Map hand-offs, hand-backs, and who trusts whom.<ul><li>Trust Relationships: What proofs or credentials pass through?</li><li>Change & Update: How does code/config get deployed here?</li><li>Actor Binding: How do you tie each action back to one originator?</li><li>Exposure Channels: Through which paths could data leak?</li><li>Demand Patterns: When does this element see normal vs. bursty load?</li><li>Interaction Flows: What direct or hidden routes lead to privileged operations?</li></ul></li><li><strong>Output:</strong> A mini-diagram or bullet list noting each handshake, update path, log binding, channel, load characteristic or interaction route.</li></ul><ol start=3><li><strong>C. Lens 3 (Adversary Motivation / Adversary Goals / Temporal Context / Adversary Benefits / Disruption Scenarios / Abuse Pathways)</strong></li></ol><ul><li><strong>What to do:</strong> Step into an attacker’s shoes why and how would they target this element?<ul><li>Adversary Motivation: What’s the payoff for impersonation or data alteration?</li><li>Adversary Goals: What integrity breaks or privilege gains serve them best?</li><li>Temporal Context: How might timing or sequencing be manipulated?</li><li>Adversary Benefits: Which secrets or resources are most valuable here?</li><li>Disruption Scenarios: How could they trigger overloads or failures?</li><li>Abuse Pathways: What unexpected detours grant extra power?</li></ul></li><li><strong>Output:</strong> Three to five concrete “what if” scenarios (e.g., “what if they replayed a token at peak hour to lock out users?”).</li></ul><ol start=4><li><strong>D. Lens 4 (Verification Points / Validation & Recovery / Audit Assurance / Masking & Purge / Resilience Measures / Enforcement Checks)</strong></li></ol><ul><li><strong>What to do:</strong> Identify how you’d detect, stop or recover from each potential attack.<ul><li>Verification Points: Where do you check authenticity?</li><li>Validation & Recovery: How do you detect and roll back tampering?</li><li>Audit Assurance: How do you guarantee log integrity?</li><li>Masking & Purge: How do you obscure or erase sensitive traces?</li><li>Resilience Measures: What rate limits, fail-overs or fallbacks exist?</li><li>Enforcement Checks: Where are authorization gates, before and after?</li></ul></li><li><strong>Output:</strong> A list of existing controls and any gaps (e.g., “no replay-guard on tokens; rollback plan only covers DB rows, not caches”).</li></ul><ol start=5><li><strong>Quickly rate each scenario for Impact (High/Med/Low) and Likelihood (High/Med/Low).</strong></li><li><strong>Focus first on those in the High-High and High-Med zones.</strong></li><li><strong>Once one element is done, move to the next.</strong></li><li><strong>Revisit high-level trust boundaries and data flows to see cross-element interactions.</strong></li><li><strong>Walk through your findings with teammates developers, architects, testers, ops.</strong></li><li><strong>Confirm that your mitigation ideas line up with real-world constraints and that no new gaps emerge.</strong></li><li><strong>Make this four-lens sweep part of design reviews or “definition of done” for major stories.</strong></li><li><strong>Keep your threat register live and revisit it whenever designs change.</strong></li></ol><h3 id=5analyzing-threats-documentation-and-prioritization>5. Analyzing Threats (Documentation and Prioritization)</h3><p>As you identify potential threats, document them! A simple list or spreadsheet works fine. Include:</p><ul><li>For each lens’s reflective prompts and mini-checklist red flags, turn your notes into formal “threat scenarios.”</li><li>Use a simple table or spreadsheet with columns:</li></ul><ol><li>ID (e.g., SPOOF-01)</li><li>Category (Spoofing, Tampering, …)</li><li>Element (Login Service, Order DB, etc.)</li><li>Threat Description (concise “how” + “why”)</li><li>Detection/Mitigation Ideas (from Lens 4)</li><li>Quickly rate each scenario for Impact (High/Med/Low) and Likelihood (High/Med/Low).</li><li>Focus first on those in the High-High and High-Med zones.</li><li>Once one element is done, move to the next.</li><li>Revisit high-level trust boundaries and data flows to see cross-element interactions.</li></ol><h3 id=6define-mitigations-plan-the-fixes>6. Define Mitigations (Plan the Fixes)</h3><p>For the threats you have decided are worth addressing (usually the higher-risk ones), brainstorm countermeasures. What security controls, design changes, or coding practices can prevent or mitigate this threat? Document these proposed mitigations alongside the threats. Walk through your findings with teammates developers, architects, testers, ops.Confirm that your mitigation ideas line up with real-world constraints and that no new gaps emerge.Make this four-lens sweep part of design reviews or “definition of done” for major stories.</p><h3 id=7validate-check-your-work>7. Validate (Check Your Work)</h3><p>Review the identified threats and proposed mitigations. Do the mitigations actually address the threats? Are there any gaps? Does implementing one mitigation introduce another threat? This is often an iterative process. Keep your threat register live and revisit it whenever designs change.</p><p>This might seem like a lot, but starting small and focusing on critical parts of your system makes it manageable. Now, let&rsquo;s see this process in action with a few scenarios.</p><h2 id=scenario-1-securing-an-e-commerce-checkout-api>Scenario 1: Securing an E-Commerce Checkout API</h2><p>Theory is great, but let&rsquo;s see STRIDE in action. Imagine we are building a core piece of an e-commerce platform: the Checkout API. This is a backend REST API, likely written in something like Python, Java, or Node.js.</p><h3 id=system-overview>System Overview</h3><p>Its job is to handle the final stage of a purchase. It receives details from the customer&rsquo;s frontend (web or mobile app), including:</p><ul><li>Items in the cart</li><li>Shipping address</li><li>Payment information (maybe tokenized card details or similar)</li><li>User authentication token/session ID</li></ul><p>Internally, this API needs to interact with several other components:</p><ul><li>Payment Gateway: An external service to process the actual payment.</li><li>Order Database: An internal database to store details of the completed order.</li><li>User Database: An internal database to retrieve/verify user details (like shipping address) and potentially update purchase history.</li><li>Inventory Service: (Potentially) An internal service to check stock levels before finalizing the order.</li></ul><h3 id=data-flow-diagram-dfd>Data Flow Diagram (DFD)</h3><ul><li>Level 1 DFD</li></ul><center><img src=/images/stride-ecom-l1.png width=650></center><ul><li>Level 2 DFD</li></ul><center><img src=/images/stride-ecom-l2.png width=1050></center></br><ul><li><strong>External Entities:</strong> Customer (via Frontend App), Payment Gateway.</li><li><strong>Processes:</strong> Checkout API, (maybe separate internal processes like Validate Order, Process Payment, Update Database).</li><li><strong>Data Stores:</strong> Order Database, User Database, (maybe Inventory Database).</li><li><strong>Data Flows:</strong><ul><li>Customer -> Checkout API (Cart details, Payment info, Auth token)</li><li>Checkout API -> Payment Gateway (Payment details, Amount)</li><li>Payment Gateway -> Checkout API (Payment success/failure)</li><li>Checkout API -> Order Database (New order details)</li><li>Checkout API -> User Database (Read user info, maybe write purchase history)</li><li>Checkout API -> Inventory Service (Check stock)</li><li>Inventory Service -> Checkout API (Stock status)</li><li>Checkout API -> Customer (Order confirmation/error)</li></ul></li><li><strong>Trust Boundaries:</strong> Between Customer & API, between API & Payment Gateway, between API & internal databases/services.</li></ul><h3 id=applying-stride>Applying STRIDE</h3><h4 id=methodology>Methodology</h4><ol><li>Select your DFD element (Scope Identification)</li></ol><ul><li>Identify the component (e.g. Checkout API, Auth Service, Web App, Payment Gateway, etc.).</li><li>Document its purpose, trust boundaries, and data flows in/out.</li></ul><ol start=2><li>For each STRIDE category, apply the 4 lenses.
-For each category:</li></ol><ul><li><strong>Lens 1 - Lifecycle View</strong> - List the assets (e.g. JWTs, cart payloads, logs) and their states (at rest, in transit, in memory).</li><li><strong>Lens 2 – Change & Update Paths</strong> - Map how those assets or code/configuration change or propagate (e.g. CI/CD deploys, feature-flag updates, log shipping).</li><li><strong>Lens 3 - Adversary Goals (“What-If”)</strong> - Define why an attacker would target this (e.g. under-pay, impersonate, exfiltrate data). Sketch a concrete “What if…” scenario.</li><li><strong>Lens 4 – Validation & Recovery</strong> - List existing controls (e.g. HTTPS, unit tests, rate-limits). Identify gaps where those controls fall short.</li></ul><ol start=3><li><p>Repeat for every STRIDE category - Do this in turn for Spoofing, Tampering, Repudiation, Information Disclosure, DoS, Elevation of Privilege for each DFD element in your scope.</p></li><li><p>Consolidate into threat register table</p></li></ol><ul><li>Create a table with below columns:<ul><li>ID (e.g. S-01, T-01, …)</li><li>Element (DFD component)</li><li>STRIDE</li><li>Description</li><li>Key Mitigations</li><li>Impact</li><li>Likelihood</li></ul></li></ul><h4 id=example-for-applying-methodology>Example for Applying Methodology</h4><p><strong>1. Select the DFD element</strong></p><ul><li><p>Element: P1 &ndash;> Checkout API</p><ul><li><strong>Purpose:</strong> Finalizes a purchase by validting user, processing payment, updating database, and returning confirmation.</li><li><strong>Trust boundaries:</strong><ul><li>Customer ↔ API (public Internet)</li><li>API ↔ Payment Gateway (PCI zone)</li><li>API ↔ internal services/databases (internal network).</br></li></ul></li></ul></li><li><p><strong>Key data flows into/out of P1:</strong></p><ul><li>In: Cart details + auth token (from Customer)</li><li>Out: Payment request (to Gateway), order writes (to Order DB), user history update (to User DB), confirmation (to Customer).</li></ul></li></ul><p><strong>2. STRIDE categories applicable for this functionality</strong></p><p>We will cover all 6 threat types against this P1 element, each with 4 lens sweep.</p><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>STRIDE</th><th>Violated Property</th></tr></thead><tbody><tr><td>Spoofing</td><td>Authenticity</td></tr><tr><td>Tampering</td><td>Integrity</td></tr><tr><td>Repudiation</td><td>Non-repudiation</td></tr><tr><td>Information Disclosure</td><td>Confidentiality</td></tr><tr><td>DoS</td><td>Availability</td></tr><tr><td>Elevation of Privilege</td><td>Authorization</td></tr></tbody></table></div><p><strong>3. Four-Lens Analysis for “Tampering” (Integrity) on the Checkout API</strong></p><p><strong>Lens 1: Lifecycle View</strong></p><ul><li>Data origins & resting points:<ul><li>Cart payload (client → API)</li><li>In-flight JSON bodies</li><li>Temporary in-memory order object before DB write</li></ul></li><li>Red flags: client-calculated totals; no server-side checksum .</li></ul><p><strong>Lens 2: Change & Update Paths</strong></p><ul><li><strong>Hand-offs:</strong> API code deployed via CI/CD pipeline (unsigned artifacts?)</li><li><strong>Runtime patching:</strong> Hot restarts without integrity checks on new code .</li></ul><p><strong>Lens 3: Adversary Goals</strong></p><ul><li><strong>Why tamper?</strong> Under-charge orders or inject fraudulent discounts.</li><li><strong>Concrete “what-if”:</strong> “What if attacker intercepts and rewrites price in transit?”</li></ul><p><strong>Lens 4: Validation & Recovery</strong></p><ul><li><strong>Existing controls:</strong> HTTPS enforced, but no HSTS preload; unit tests only cover happy-path.</li><li><strong>Gaps:</strong> no server-side price recalculation; no integrity‐check on payload.</li></ul><p><strong>Threat Scenario (TAMP-01):</strong>
-Attacker modifies totalAmount in the JSON payload (e.g. 100 → 1) before TLS termination on a misconfigured segment, causing under-priced order.</p><ul><li><strong>Mitigations:</strong><ul><li>Recalculate order total server-side from SKU+qty</li><li>Enforce HSTS + preload; block HTTP POSTs at WAF</li><li>Add a signature (HMAC) over the cart contents</li></ul></li><li><strong>Impact:</strong><ul><li>High </li></ul></li><li><strong>Likelihood:</strong><ul><li>Medium</li></ul></li></ul><p><strong>4. Threat Register Excerpt for Checkout API</strong></p><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>ID</th><th>Category</th><th>Threat Description</th><th>Detection & Mitigation</th><th>Impact</th><th>Likelihood</th></tr></thead><tbody><tr><td>SPOOF-01</td><td>Spoofing</td><td>Stolen JWT is replayed to /checkout, impersonating another user and placing fraudulent orders.</td><td>Short-lived rotating tokens; token-binding to TLS; device-fingerprint check; SIEM rule detecting same token from multiple IPs.</td><td>High</td><td>Medium</td></tr><tr><td>TAMP-01</td><td>Tampering</td><td>Attacker alters totalAmount in transit before the API, resulting in an under-priced order.</td><td>Server-side price calculation; enforce HSTS+preload; HMAC signature on payload; WAF HTTP enforcement.</td><td>High</td><td>Medium</td></tr><tr><td>REPU-01</td><td>Repudiation</td><td>Only order IDs are logged; user claims “I never placed this order” and you lack IP/jti linkage for non-repudiation.</td><td>Append IP, JWT_jti, timestamp, request hash to immutable WORM log; support dispute workflow querying full audit by order ID.</td><td>Medium</td><td>Medium</td></tr><tr><td>INFO-01</td><td>Information Disclosure</td><td>Unhandled exceptions in payment sub-process return full stack traces to clients, leaking internal hostnames and DB credentials.</td><td>Global error handler returns generic error codes; verbose traces only in internal logs; CI scans responses for “Exception in thread”.</td><td>Medium</td><td>Low</td></tr><tr><td>DOS-01</td><td>Denial of Service</td><td>Botnet floods /checkout at high RPS, exhausting DB connections and external calls, preventing legitimate purchases.</td><td>API-gateway rate-limiting by IP/user; queue + worker pool autoscaling; alerting on latency and error spike.</td><td>High</td><td>Medium</td></tr><tr><td>ELEV-01</td><td>Elevation of Privilege</td><td>Front-end sends a role field; naïve API trusts it and grants admin privileges for order modification.</td><td>JSON-schema strips unknown fields; derive role from authenticated session only; post-auth RBAC checks; integration tests for field injection.</td><td>High</td><td>Low</td></tr></tbody></table></div><p><strong>5. Prioritization & Next Steps</strong></p><ul><li><strong>High Impact–Medium Likelihood</strong> threats (SPOOF-01, TAMP-01, DOS-01) should be addressed first.</li><li>Integrate these controls into the CI/CD pipeline and definition of done for the Checkout feature.</li><li>Retain and extend the threat register as the design evolves, and revisit during design reviews and pen-tests .</li></ul><p>This demonstrates the exact four-lens STRIDE approach from your document, applied end-to-end to the Checkout API scenario.</p><p>Likewise once you complete this activity end-to-end for both diagrams and entire feature/functionality, your final threat register would look something like below:</p><style>.table_component{overflow:auto;width:100%}.table_component table{border:1px solid #dededf;height:100%;width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:1px;text-align:left}.table_component caption{caption-side:top;text-align:left}.table_component th{border:1px solid #dededf;background-color:#eceff1;color:#000;padding:5px}.table_component td{border:1px solid #dededf;background-color:#fff;color:#000;padding:5px}</style><div class=table_component role=region tabindex=0><table><thead><tr><th>ID</th><th>Element</th><th>STRIDE</th><th>Description</th><th>Key Mitigations</th><th>Impact</th><th>Likelihood</th></tr></thead><tbody><tr><td>S-01</td><td>Web App / Login</td><td>Spoofing</td><td>Replay stolen JWT at /login to impersonate user.</td><td>Bind tokens to device/TLS; short TTL; revocation list; MFA.</td><td>High</td><td>Medium</td></tr><tr><td>S-02</td><td>API Gateway</td><td>Spoofing</td><td>Harvested API key used to call internal services as trusted client.</td><td>Vault-stored keys; regular rotation; enforce mutual TLS.</td><td>Low</td><td></td></tr><tr><td>S-03</td><td>Admin Portal</td><td>Spoofing</td><td>Phished admin credentials grant portal takeover.</td><td>Phishing-resistant MFA; brute-force guards; geofencing.</td><td>High</td><td>Medium</td></tr><tr><td>T-01</td><td>Cart Submission</td><td>Tampering</td><td>In-flight JSON modified (e.g. price/quantity) to under-charge order.</td><td>Server-side total calculation; HMAC over payload; enforce HSTS+preload.</td><td>High</td><td>Medium</td></tr><tr><td>T-02</td><td>Feature-Flag Service</td><td>Tampering</td><td>Unsigned flags tampered to enable global discount mode.</td><td>Sign & verify flag bundles; integrity checks in code.</td><td>Medium</td><td>Medium</td></tr><tr><td>T-03</td><td>CI/CD Pipeline</td><td>Tampering</td><td>Malicious build inserted via compromised pipeline.</td><td>Signed artifacts; strict pipeline RBAC; SBOM verification.</td><td>High</td><td>Low</td></tr><tr><td>R-01</td><td>Order DB</td><td>Repudiation</td><td>User disputes order; logs lack IP/jti linkage so origin unprovable.</td><td>Immutable WORM log; include IP, JWT_jti, timestamp per event.</td><td>Medium</td><td>Medium</td></tr><tr><td>R-02</td><td>Payment Logs</td><td>Repudiation</td><td>Mismatch between internal and gateway logs denies payment proof.</td><td>Correlate via unique transaction IDs; synchronized timestamps; end-to-end logging.</td><td>Medium</td><td>Low</td></tr><tr><td>R-03</td><td>Refund Process</td><td>Repudiation</td><td>Admin issues refund but later disputes having authorized it.</td><td>Dual approval; log admin ID and actions to tamper-proof store.</td><td>Medium</td><td>Low</td></tr><tr><td>I-01</td><td>Error Handler</td><td>Info Disclosure</td><td>Stack traces leak internal hostnames, paths, and code.</td><td>Global exception handler; generic error codes; sanitized logs.</td><td>Medium</td><td>Low</td></tr><tr><td>I-02</td><td>Logs → SIEM</td><td>Info Disclosure</td><td>PII (emails, addresses) forwarded unredacted to third-party SIEM.</td><td>Redact/tokenize sensitive fields before forwarding.</td><td>High</td><td>Medium</td></tr><tr><td>I-03</td><td>Web App</td><td>Info Disclosure</td><td>Insecure Direct Object References allow access to other users’ data.</td><td>Enforce object-level auth checks; use unguessable IDs (UUIDs).</td><td>High</td><td>Medium</td></tr><tr><td>D-01</td><td>/checkout Endpoint</td><td>Denial of Service</td><td>Layer-7 flood exhausts DB connections and payment gateway quotas.</td><td>Rate-limit per user/IP; circuit breakers; autoscale on queue latency.</td><td>High</td><td>Medium</td></tr><tr><td>D-02</td><td>Auth Service</td><td>Denial of Service</td><td>Rapid login attempts lock out or degrade service.</td><td>CAPTCHA thresholds; progressive delays; IP throttling.</td><td>Medium</td><td>Medium</td></tr><tr><td>D-03</td><td>Feature-Flag Service</td><td>Denial of Service</td><td>Third-party flag service outage breaks critical features.</td><td>Local flag cache; fallback defaults; timeouts and retries.</td><td>Medium</td><td>Low</td></tr><tr><td>E-01</td><td>Web App / API</td><td>Elevation of Priv</td><td>Client-injected role field grants unauthorized admin privileges.</td><td>Strict JSON schema; strip unknown fields; server-side RBAC; cache invalidation on role changes.</td><td>High</td><td>Low</td></tr><tr><td>E-02</td><td>Order Mgmt API</td><td>Elevation of Priv</td><td>Unpatched flaw exposes admin-only endpoints to low-privilege users.</td><td>RBAC enforcement at service layer; timely patching; WAF protections.</td><td>High</td><td>Low</td></tr><tr><td>E-03</td><td>CI/CD Dashboard</td><td>Elevation of Priv</td><td>Low-privilege dev account escalates to pipeline admin via misconfigured IAM.</td><td>Principle of least privilege; IAM reviews; alert on privilege escalations.</td><td>High</td><td>Low</td></tr><tr><td>S-04</td><td>Payment Gateway</td><td>Spoofing</td><td>Fake payment callback marks order as paid without real transaction.</td><td>Verify gateway signatures; mutual TLS; nonce in callback URLs.</td><td>High</td><td>Low</td></tr><tr><td>T-04</td><td>Database Migration</td><td>Tampering</td><td>Migration script altered to drop or corrupt tables.</td><td>Code reviews for migrations; checksum validation; restricted migration roles.</td><td>High</td><td>Low</td></tr><tr><td>R-04</td><td>Audit Archive</td><td>Repudiation</td><td>Archive job omits critical events, creating gaps in audit trail.</td><td>Monitor completeness; periodic integrity checks on archived logs.</td><td>Medium</td><td>Low</td></tr><tr><td>I-04</td><td>CDN Cache</td><td>Info Disclosure</td><td>Sensitive API responses cached at CDN edge and exposed publicly.</td><td>Configure cache-control headers; segregate public/private content; require auth on origin fetch.</td><td>Medium</td><td>Medium</td></tr><tr><td>D-04</td><td>Order DB</td><td>Denial of Service</td><td>Large batch jobs starve checkout transactions of DB resources.</td><td>Schedule off-peak; resource quotas; priority queues.</td><td>Medium</td><td>Medium</td></tr><tr><td>E-04</td><td>Config Service</td><td>Elevation of Priv</td><td>Attacker modifies config to disable security controls or grant themselves rights.</td><td>Signed configs; change-approval workflows; audit trails.</td><td>High</td><td>Low</td></tr><tr><td>S-05</td><td>Mobile App</td><td>Spoofing</td><td>Fake client binary issues API calls with stolen credentials.</td><td>App attestation; certificate pinning; anomaly detection.</td><td>Medium</td><td>Medium</td></tr><tr><td>T-05</td><td>Cache Layer</td><td>Tampering</td><td>In-memory cache entries (e.g. price cache) corrupted via debug endpoints.</td><td>Secure debug interfaces; encrypt cache; integrity checks.</td><td>Medium</td><td>Low</td></tr><tr><td>R-05</td><td>Third-Party Services</td><td>Repudiation</td><td>Third-party admins alter their logs, undermining non-repudiation of external events.</td><td>SLA-mandated WORM logging; periodic third-party attestation.</td><td>Low</td><td>Low</td></tr></tbody></table></div><br><h2 id=homework-for-you>Homework for you</h2><p>I will give you two scenarios with Level 1 and Level 2 DFD diagrams and you have to now work on the above STRIDE lens and apply it strategically as a part of your homework exercise.</p><h2 id=scenario-2-hardening-an-iot-smart-lock-system>Scenario 2: Hardening an IoT Smart Lock System</h2><p>Let&rsquo;s shift gears from pure web APIs to the interconnected world of the Internet of Things (IoT). Consider a common smart home device: a Smart Lock. Users can lock/unlock their door using a mobile app, grant temporary access to guests, and check the lock&rsquo;s status remotely.</p><h3 id=system-overview-1>System Overview</h3><p>This system typically involves several components:</p><ul><li><strong>The Smart Lock:</strong> The physical device on the door. Contains firmware, a microcontroller, communication modules (Bluetooth Low Energy - BLE, Wi-Fi), battery, and the locking mechanism.</li><li><strong>Mobile App:</strong> The user interface on a smartphone (iOS/Android). Used for control, configuration, and status viewing.</li><li><strong>Cloud Backend:</strong> Servers hosted in the cloud responsible for:<ul><li>User authentication and management.</li><li>Storing lock status and history.</li><li>Relaying commands between the app and the lock (especially when the user is remote).</li><li>Managing guest access permissions.</li></ul></li><li><strong>Communication Channels:</strong><ul><li>App &lt;-> Lock (often via BLE when nearby).</li><li>App &lt;-> Cloud (via HTTPS over Wi-Fi/cellular).</li><li>Lock &lt;-> Cloud (via Wi-Fi, often using protocols like MQTT or HTTPS).</li></ul></li></ul><h3 id=data-flow-diagrams-dfds>Data Flow Diagrams (DFDs)</h3><p><strong>Level 1 DFD</strong></p><center><img src=/images/dfd-iot-smart-lock-l1.png width=850></center><p><strong>Level 2 DFD</strong></p><center><img src=/images/dfd-iot-smart-lock-l2.png width=850></center><ul><li><strong>External Entities:</strong> User, (potentially) Guest User.</li><li><strong>Processes:</strong> Mobile App, Cloud Backend, Smart Lock Firmware.</li><li><strong>Data Stores:</strong> Cloud Database (User accounts, Lock status, Logs, Guest permissions), Lock Internal Storage (Firmware, Configuration, maybe local logs).</li><li><strong>Data Flows:</strong><ul><li>User -> Mobile App (Login credentials, Lock/Unlock commands)</li><li>Mobile App -> Cloud Backend (Auth requests, Commands, Status queries)</li><li>Cloud Backend -> Mobile App (Auth responses, Status updates, Confirmations)</li><li>Mobile App -> Smart Lock (BLE commands - Lock/Unlock, Config)</li><li>Smart Lock -> Mobile App (BLE status updates)</li><li>Smart Lock -> Cloud Backend (Wi-Fi status updates, Heartbeats, Log uploads)</li><li>Cloud Backend -> Smart Lock (Wi-Fi commands - Lock/Unlock, Firmware updates)</li></ul></li><li><strong>Trust Boundaries:</strong> Between User & App, App & Cloud, Cloud & Lock, App & Lock (BLE), Physical boundary around the lock itself.</li></ul><h2 id=scenario-3-analyzing-a-cloud-based-data-analytics-platform>Scenario 3: Analyzing a Cloud-Based Data Analytics Platform</h2><p>For our final scenario, let&rsquo;s tackle something bigger and more complex: a multi-tenant, cloud-based data analytics platform. Think of a service where different companies (tenants) can upload their datasets, run complex analysis jobs, and visualize the results through dashboards.</p><h3 id=system-overview-2>System Overview</h3><p>This platform likely involves numerous microservices running in a cloud environment (like AWS, Azure, or GCP).</p><ul><li><strong>Web UI / API Gateway:</strong> The entry point for users. Handles authentication, serves the dashboard UI, and routes API requests for data upload, job management, etc.</li><li><strong>Ingestion Service:</strong> Receives uploaded data (potentially large files), validates it, perhaps performs initial processing/transformation, and stores it in tenant-specific storage.</li><li><strong>Data Storage:</strong> Cloud storage (like S3, Azure Blob Storage, GCS) partitioned by tenant to store raw and processed data.</li><li><strong>Compute/Analysis Service:</strong> Manages a pool of compute instances (VMs, containers) that run the actual analysis jobs defined by users. These jobs read data from storage and write results back.</li><li><strong>Job Scheduler/Orchestrator:</strong> Manages the queueing, scheduling, and execution of analysis jobs on the compute instances.</li><li><strong>Results Storage:</strong> Another partitioned storage area for analysis results.</li><li><strong>Dashboard Service:</strong> Queries results storage and presents data visualizations to users via the Web UI.</li><li><strong>Identity Provider (IdP):</strong> Handles user authentication, potentially integrating with tenants&rsquo; own IdPs (e.g., via SAML or OIDC).</li><li><strong>Metadata Store:</strong> Database holding information about tenants, users, datasets, jobs, permissions, etc.</li></ul><h3 id=data-flow-diagrams-dfds-1>Data Flow Diagrams (DFDs)</h3><p><strong>Level 1 DFD</strong></p><center><img src=/images/dfd-ca-l1.png width=850></center><p><strong>Level 2 DFD</strong></p><center><img src=/images/dfd-ca-l2.png width=850></center><ul><li><strong>External Entities:</strong> Tenant User, (potentially) Tenant Admin, Tenant IdP.</li><li><strong>Processes:</strong> Web UI/API Gateway, Ingestion Service, Compute Service (Job Execution), Job Scheduler, Dashboard Service, IdP.</li><li><strong>Data Stores:</strong> Raw Data Storage (Tenant-partitioned), Results Storage (Tenant-partitioned), Metadata Store, Compute Instance Ephemeral Storage.</li><li><strong>Data Flows:</strong> Numerous flows involving user interaction, data upload, job submission, data processing between storage and compute, result querying, authentication flows.</li><li><strong>Trust Boundaries:</strong> Between users and the platform, between tenants (CRITICAL!), between different internal microservices, between the platform and the underlying cloud provider APIs, between the platform and Tenant IdPs.</li></ul><h2 id=making-stride-work-for-you-practical-tips-from-the-trenches>Making STRIDE Work for You: Practical Tips from the Trenches</h2><p>Alright, we have seen STRIDE applied to a few different systems. But knowing the theory and making it work smoothly within a busy team are two different things. After 13 years wrestling with security in real-world projects, here are some practical tips – the stuff you learn by doing (and sometimes by messing up).</p><h3 id=getting-started-without-getting-overwhelmed>Getting started without getting overwhelmed:</h3><ul><li><strong>Start small, aim high:</strong> Don&rsquo;t try to threat model your entire monolithic legacy system in one go. Pick a new feature, a critical component (like authentication or payment processing), or a specific user story. Get a win, learn the process, and then expand.</li><li><strong>Focus on the flows:</strong> Data Flow Diagrams are your friends. Even a simple whiteboard DFD focusing on the main data movements and trust boundaries is incredibly valuable. Don&rsquo;t get bogged down in perfecting the diagram initially; focus on understanding the system.</li><li><strong>It’s not about perfection (at first):</strong> Your first threat model won&rsquo;t be perfect. You will miss things. That&rsquo;s okay. The goal is to get better at identifying risks proactively, not to achieve theoretical perfection on day one.</li></ul><h3 id=common-pitfalls-to-sidestep>Common Pitfalls to Sidestep:</h3><ul><li><strong>Boiling the ocean:</strong> Trying to model too much at once. Scope is crucial. Define clear boundaries for your analysis.</li><li><strong>Analysis paralysis:</strong> Spending endless hours debating the exact risk rating or the perfect DFD symbol. Get the main threats identified and documented; refinement can come later.</li><li><strong>DFD extremes:</strong> Diagrams that are either so high-level they&rsquo;re useless or so detailed they&rsquo;re unreadable. Find the right level of abstraction for the component you are modeling.</li><li><strong>Forgetting trust boundaries:</strong> These are critical! Pay extra attention to anywhere data or control crosses from a less trusted zone to a more trusted one (or vice-versa).</li><li><strong>The checkbox mentality:</strong> Threat modeling isn&rsquo;t a one-time task you do just to satisfy compliance. It&rsquo;s a continuous way of thinking. Revisit models when designs change significantly.</li></ul><h3 id=integrating-into-devsecops-making-it-stick>Integrating into DevSecOps (Making it stick):</h3><ul><li><strong>Shift Left, seriously:</strong> The earlier you threat model, the better. Discuss potential threats during design reviews or even backlog grooming for complex features.</li><li><strong>Threat Model per feature/story:</strong> For significant changes, make a lightweight threat model part of the definition of done. What new threats does this introduce? How are we mitigating them?</li><li><strong>Link to other tools:</strong> Findings from SAST (Static Analysis Security Testing) or DAST (Dynamic Analysis Security Testing) can feed into your threat model, and your threat model can help prioritize SAST/DAST findings. Is that injection vulnerability targeting a critical data flow identified in your model?</li><li><strong>Automate where sensible:</strong> While the core thinking requires humans, tooling can help. Generating DFDs from code (with limitations), using dedicated threat modeling tools, or integrating threat lists into ticketing systems can streamline the process.</li></ul><h3 id=a-word-on-tooling>A Word on Tooling:</h3><p>Yes, there are tools in the market! OWASP also has resources, and other commercial tools exist. But remember: <strong>the tool supports the process, it doesn&rsquo;t replace the thinking.</strong> A fancy tool won&rsquo;t help if you don&rsquo;t understand the system or the STRIDE categories.</p><h2 id=summary--the-people-part>Summary – The People Part</h2><p>Honestly, the biggest challenge often isn&rsquo;t technical; it&rsquo;s cultural. Threat modeling works best when it&rsquo;s a <strong>collaborative effort</strong>. Get developers, testers, architects, and security folks in a room (virtual or physical). Developers know the code inside out, testers know how things break, architects see the big picture, and security brings the threat landscape perspective.</p><p>Don&rsquo;t let it become a security team throwing findings over the wall. Make it a shared responsibility, a learning opportunity for everyone involved. When developers understand the why behind a security requirement, they&rsquo;re much more likely to implement it effectively. Foster a culture where asking &ldquo;What could go wrong here?&rdquo; is a normal part of building software.</p><p>Ultimately, STRIDE is a means to an end: building more secure, resilient systems. It provides structure and helps ensure you are not missing entire categories of threats. Use it pragmatically, adapt it to your team&rsquo;s workflow, and focus on the collaborative process of identifying and mitigating real risks.</p><p>So, the next time you are designing a new feature or system, give it a try. Sketch out a quick DFD, run through the STRIDE categories, and see what you uncover. You might be surprised at how this simple framework can help you build more robust and resilient software. Keep learning, keep questioning, and stride on!</p></div></section><section id=tag-pane class=meta><div class="d-flex flex-column flex-md-row justify-content-between"><h6 class="text-end meta"></h6></div></section><section id=menu-pane class="menu text-center"><nav aria-label="Page navigation"><ul class="pagination justify-content-center"><li class=menu-item><a class=menu-item href=https://iamthefrogy.github.io/posts/abandoned_asset/>&lt; prev</a></li><li class=menu-item><span class=menu-item>&nbsp;|&nbsp;</span>
-<a class=menu-item href=/posts>posts</a>
-<span class=menu-item>&nbsp;|&nbsp;</span></li><li class=menu-item><a class=menu-item href=https://iamthefrogy.github.io/posts/secure_dns/>next ></a></li></ul></nav><h4 class="text-center mt-3"><a class=menu-item href=https://iamthefrogy.github.io/>Home</a></h4></section><footer class="text-center footer"><hr><h6 class="text-center copyright">© Chintan Gurjar - <a href=mailto:chintangurjar@outlook.com>chintangurjar@outlook.com</a></h6></footer></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js></script><script>hljs.highlightAll()</script><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script><script src=/js/custom.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        
+        <meta name="description" content="Practical Cybersecurity Blog">
+        
+        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
+
+        <title>
+              Cyber Frogy - (Threat Model) - STRIDE Threat Modelling - In-Depth Practical 
+        </title>
+
+        <meta name="generator" content="Hugo 0.150.0">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#ffffff"></head>
+
+    <body lang="en-US">
+        <div class="container my-auto">
+
+
+<section id="main-menu-pane" class="text-center main-menu">
+  
+  <h4><a class="menu-item" href="/">Home</a></h4>
+  
+  <h4><a class="menu-item" href="/posts">Blog</a></h4>
+  
+  <h4><a class="menu-item" href="/visualisations">Visualisations</a></h4>
+  
+  <h4><a class="menu-item" href="/about">About Me</a></h4>
+  
+  <h4><a class="menu-item" href="/repositories">My Repos</a></h4>
+  
+  <h4><a class="menu-item" href="/checklists">Checklists</a></h4>
+  
+  <h4><a class="menu-item" href="/kickstartcareer">Kickstart Career</a></h4>
+  
+  <h4><a class="menu-item" href="/disclaimer">Disclaimer</a></h4>
+  
+</section>
+
+<header class="text-start title">
+  <h1 class="title">(Threat Model) - STRIDE Threat Modelling - In-Depth Practical</h1>
+</header>
+
+<section id="category-pane" class="meta">
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <h6 class="text-start meta">
+       PUBLISHED ON APR 29, 2025
+      
+      / 30 MIN READ
+      
+    </h6>
+  </div>
+  
+</section>
+
+<section id="content-pane">
+  <div class="text-justify content">
+    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#threat-modeling-isnt-just-for-paranoids-getting-real-with-stride">Threat Modeling Isn&rsquo;t Just for Paranoids: Getting Real with STRIDE</a></li>
+    <li><a href="#getting-cozy-with-stride-more-than-just-a-long-walk">Getting Cozy with STRIDE: More Than Just a Long Walk</a>
+      <ul>
+        <li><a href="#why-stride-rocks-and-when-to-use-it">Why STRIDE Rocks (and When to Use It)</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary-of-the-approach">Summary of The Approach</a></li>
+    <li><a href="#the-stride-process-from-theory-to-action">The STRIDE Process: From Theory to Action</a>
+      <ul>
+        <li><a href="#1model-the-system-draw-the-map">1.	Model the system (draw the map)</a></li>
+        <li><a href="#2identify-threats-the-stride-pass">2.	Identify threats (The STRIDE Pass)</a></li>
+        <li><a href="#3going-beyond-just-six-questions">3.	Going Beyond “Just Six Questions”</a></li>
+        <li><a href="#4how-to-use">4.	How-to use</a></li>
+        <li><a href="#5analyzing-threats-documentation-and-prioritization">5.	Analyzing Threats (Documentation and Prioritization)</a></li>
+        <li><a href="#6define-mitigations-plan-the-fixes">6.	Define Mitigations (Plan the Fixes)</a></li>
+        <li><a href="#7validate-check-your-work">7.	Validate (Check Your Work)</a></li>
+      </ul>
+    </li>
+    <li><a href="#scenario-1-securing-an-e-commerce-checkout-api">Scenario 1: Securing an E-Commerce Checkout API</a>
+      <ul>
+        <li><a href="#system-overview">System Overview</a></li>
+        <li><a href="#data-flow-diagram-dfd">Data Flow Diagram (DFD)</a></li>
+        <li><a href="#applying-stride">Applying STRIDE</a></li>
+      </ul>
+    </li>
+    <li><a href="#homework-for-you">Homework for you</a></li>
+    <li><a href="#scenario-2-hardening-an-iot-smart-lock-system">Scenario 2: Hardening an IoT Smart Lock System</a>
+      <ul>
+        <li><a href="#system-overview-1">System Overview</a></li>
+        <li><a href="#data-flow-diagrams-dfds">Data Flow Diagrams (DFDs)</a></li>
+      </ul>
+    </li>
+    <li><a href="#scenario-3-analyzing-a-cloud-based-data-analytics-platform">Scenario 3: Analyzing a Cloud-Based Data Analytics Platform</a>
+      <ul>
+        <li><a href="#system-overview-2">System Overview</a></li>
+        <li><a href="#data-flow-diagrams-dfds-1">Data Flow Diagrams (DFDs)</a></li>
+      </ul>
+    </li>
+    <li><a href="#making-stride-work-for-you-practical-tips-from-the-trenches">Making STRIDE Work for You: Practical Tips from the Trenches</a>
+      <ul>
+        <li><a href="#getting-started-without-getting-overwhelmed">Getting started without getting overwhelmed:</a></li>
+        <li><a href="#common-pitfalls-to-sidestep">Common Pitfalls to Sidestep:</a></li>
+        <li><a href="#integrating-into-devsecops-making-it-stick">Integrating into DevSecOps (Making it stick):</a></li>
+        <li><a href="#a-word-on-tooling">A Word on Tooling:</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary--the-people-part">Summary – The People Part</a></li>
+  </ul>
+</nav>
+    
+    <h2 id="threat-modeling-isnt-just-for-paranoids-getting-real-with-stride">Threat Modeling Isn&rsquo;t Just for Paranoids: Getting Real with STRIDE</h2>
+<p>Ever pushed code feeling pretty darn good about it, only to have that sinking feeling when a security issue pops up later? Yeah, me too. 13 years in this industry, and I can tell you, surprises in security are rarely the good kind. We build complex systems, juggling features, deadlines, and performance, and sometimes, just sometimes, security feels like this mystical thing we bolt on at the end, hoping for the best. But hope, as they say, isn’t a strategy, especially not in cybersecurity.</p>
+<p>That’s where threat modeling comes in. Threat modeling is a practical, engineering discipline. It’s about proactively looking at your system before the bad guys do, figuring out where the weaknesses might be, and fixing them before they become headlines. It’s about shifting security left, making it part of the design conversation, not just an afterthought during a frantic incident response.</p>
+<p>Now, there are various ways to approach threat modeling, but one framework that’s stood the test of time, especially for folks building software, is STRIDE that helps us systematically brainstorm how things could go wrong. It gives us a common language and a structured way to think about potential attacks.</p>
+<p>We are going to ditch the overly academic jargon and get practical. We will break down what STRIDE is, walk through how to actually use it with three different real-world-ish scenarios (think APIs, IoT, and cloud platforms), share some hard-won tips from the trenches, and even suggest some ways you could visualize this stuff later on.</p>
+<p>My goal here isn’t just to define STRIDE, but to show you how it can become a valuable tool in your engineering toolkit. It’s about making security less scary and more systematic. So, grab a coffee, settle in, and let’s talk about how to stride confidently towards more secure systems.</p>
+<h2 id="getting-cozy-with-stride-more-than-just-a-long-walk">Getting Cozy with STRIDE: More Than Just a Long Walk</h2>
+<p>The magic of STRIDE lies in its acronym, which covers six key categories of security threats. When you are looking at a system component – whether it&rsquo;s a user logging in, data moving across a network, or a file being saved – you ask yourself: how could someone mess with this using one of the STRIDE methods?</p>
+<p>Let&rsquo;s break down the letters:</p>
+<ol>
+<li>
+<p><strong>S - Spoofing:</strong> This is all about impersonation. An attacker pretends to be someone or something they&rsquo;re not. Think fake login pages trying to steal your credentials, or a malicious server mimicking a legitimate one to intercept data. The security property being violated here is <strong>Authenticity</strong>. Are you really talking to who you think you are talking to? Is that user really who they claim to be?</p>
+</li>
+<li>
+<p><strong>T - Tampering:</strong> This one&rsquo;s about unauthorized modification. Attackers mess with data – maybe changing values in a database, altering code as it runs, or modifying data packets flying across the network. Imagine someone changing the amount on a financial transaction or tweaking configuration files to gain an advantage. The property under attack is <strong>Integrity</strong>. Can you trust that your data and your system haven&rsquo;t been illicitly changed?</p>
+</li>
+<li>
+<p><strong>R - Repudiation:</strong> This is the &ldquo;I didn&rsquo;t do it!&rdquo; threat. An attacker performs some malicious action and then tries to deny having done it. Or, perhaps more commonly, the system simply lacks the ability to prove who did what. If you can&rsquo;t prove a user placed that order or deleted that critical file, you have a repudiation problem. The violated property here is **Non-**<strong>repudiability</strong>. Can you trace actions back to the actor responsible?</p>
+</li>
+<li>
+<p><strong>I - Information Disclosure:</strong> This is about confidentiality breaches. Sensitive information gets exposed to people who shouldn&rsquo;t see it. This could be anything from error messages revealing system internals, to attackers accessing private user data, to sniffing unencrypted network traffic. The property at stake is <strong>Confidentiality</strong>. Is your sensitive data kept secret from unauthorized eyes?</p>
+</li>
+<li>
+<p><strong>D - Denial of Service (DoS):</strong> Pretty self-explanatory – making a system or service unavailable to legitimate users. This could be by overwhelming it with traffic (like a classic flood attack), crashing a service, or locking out user accounts. The violated property is <strong>Availability</strong>. Can authorized users access the system and its data when they need to?</p>
+</li>
+<li>
+<p><strong>E - Elevation of Privilege:</strong> This is when someone gains more permissions than they should have. A regular user somehow gets admin rights, or one application component manages to execute code with the privileges of another, more trusted component. This is often the goal that enables other attacks. The violated property is <strong>Authorization</strong>. Are users and components restricted to only the actions and data they are explicitly allowed to access?</p>
+</li>
+</ol>
+<p>So if I were to summarize all of these in a single table, it would be something like this:</p>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Letter</th>
+            <th>Threat Type</th>
+            <th>Description</th>
+            <th>Violated Security Property</th>
+            <th>Example Scenarios </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S</td>
+            <td>Spoofing</td>
+            <td>Impersonation of users or systems.</td>
+            <td>Authenticity</td>
+            <td>Fake login pages, malicious servers intercepting data.</td>
+        </tr>
+        <tr>
+            <td>T</td>
+            <td>Tampering</td>
+            <td>Unauthorized data/code modification.</td>
+            <td>Integrity</td>
+            <td>Altering database values, changing code or config files.</td>
+        </tr>
+        <tr>
+            <td>R</td>
+            <td>Repudiation</td>
+            <td>Denial of performed actions due to lack of accountability.</td>
+            <td>Non-repudiability</td>
+            <td>No audit trail for deleted files or transactions. </td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>Information Disclosure</td>
+            <td>Exposure of confidential information to unauthorized entities.</td>
+            <td>Confidentiality</td>
+            <td>Leaked error messages, sniffed traffic, internal data exposed.</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Denial of Service (DoS)</td>
+            <td>System made unavailable to legitimate users.</td>
+            <td>Availability</td>
+            <td>Flooding traffic, service crashes, user lockouts.</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>Elevation of Privilege</td>
+            <td>Gaining unauthorized access or higher privileges than allowed.</td>
+            <td>Authorization</td>
+            <td>Regular user gaining admin rights, untrusted code gaining system privileges.</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</br>
+<h3 id="why-stride-rocks-and-when-to-use-it">Why STRIDE Rocks (and When to Use It)</h3>
+<p>So, why has STRIDE stuck around? A few reasons:</p>
+<ul>
+<li><strong>It&rsquo;s systematic:</strong> It forces you to think through different types of attacks, reducing the chance you will miss something obvious because you were only focused on, say, injection attacks.</li>
+<li><strong>Common language:</strong> It gives teams a shared vocabulary. Talking about a potential &ldquo;Tampering&rdquo; threat is clearer than vague hand-waving about security.</li>
+<li><strong>Good coverage:</strong> While not exhaustive (no framework is), it covers the major ways software systems get compromised.</li>
+<li><strong>Relatively simple:</strong> Compared to some other methodologies, STRIDE is fairly easy to grasp and start applying.</li>
+</ul>
+<p>Ideally, you want to apply STRIDE during the <strong>design phase</strong> of the software development lifecycle (SDLC). Finding a flaw on a whiteboard is infinitely cheaper and easier to fix than finding it in production code. However, it&rsquo;s never too late. You can apply STRIDE to existing systems, new features, or even specific changes to understand the security implications.</p>
+<p>Now that we know what STRIDE is, let&rsquo;s look at how to actually put it into practice.</p>
+<h2 id="summary-of-the-approach">Summary of The Approach</h2>
+<p>Before we go deep into this novel approach, let me summarize the overall process from this article in a simplistic diagram.</p>
+<center><img src="/images/overall-stride-approach.png" width="850"/></center>
+<h2 id="the-stride-process-from-theory-to-action">The STRIDE Process: From Theory to Action</h2>
+<p>Before we go deep into process, let’s look at the high level process how does it look like:</p>
+<center><img src="/images/stride_process_high_level.png" width="850"/></center>
+<p>Okay, we know the what (the STRIDE categories) and the why (proactive security!). Now, let&rsquo;s get into the how. How do you actually do a STRIDE analysis? It&rsquo;s not just about chanting the acronym; it&rsquo;s a process. Here’s a typical flow, keeping in mind this can be adapted:</p>
+<h3 id="1model-the-system-draw-the-map">1.	Model the system (draw the map)</h3>
+<p>You can&rsquo;t find threats in something you don&rsquo;t understand. The first step is always to visualize the system you are analyzing. The most common way to do this in threat modeling is using <strong>Data Flow Diagrams (DFDs)</strong>. A DFD is just a structured way to show how data moves through your system. Key symbols you will use are:</p>
+<ul>
+<li><strong>External entities:</strong> Squares representing users, other systems, or anything outside your system boundary that interacts with it.</li>
+<li><strong>Processes:</strong> Circles representing activities or functions that transform data (e.g., &lsquo;Validate Payment&rsquo;, &lsquo;Update Inventory&rsquo;).</li>
+<li><strong>Data stores:</strong> Two parallel lines representing where data rests (e.g., &lsquo;User Database&rsquo;, &lsquo;Order Cache&rsquo;).</li>
+<li><strong>Data flows:</strong> Arrows showing the movement of data between entities, processes, and stores.</li>
+<li><strong>Trust boundaries:</strong> Dashed or dotted lines indicating where the level of trust changes (e.g., between the public internet and your internal network, or between a user process and an admin process). Start high-level and decompose complex processes into lower-level DFDs if needed. The goal is clarity, not artistic perfection.</li>
+</ul>
+<h3 id="2identify-threats-the-stride-pass">2.	Identify threats (The STRIDE Pass)</h3>
+<p>This is where the STRIDE mnemonic shines. Go through your DFD, element by element (each process, data store, data flow, and even external entity interaction). For each element, systematically ask the STRIDE questions:</p>
+<ul>
+<li>How could an attacker <strong>Spoof</strong> this entity or process?</li>
+<li>How could someone <strong>Tamper</strong> with this data flow or data store?</li>
+<li>Could an action involving this element be <strong>Repudiated?</strong></li>
+<li>Could <strong>Information</strong> be improperly <strong>Disclosed</strong> from this element or flow?</li>
+<li>Could this process or data store be subject to <strong>Denial of Service</strong>?</li>
+<li>Could an attacker achieve <strong>Elevation of Privilege</strong> through this element? Focus especially on data flows crossing trust boundaries – these are often hotspots for vulnerabilities.</li>
+</ul>
+<h3 id="3going-beyond-just-six-questions">3.	Going Beyond “Just Six Questions”</h3>
+<p>Most guides you will find online stop at the simple STRIDE checklist:</p>
+<ol>
+<li>How could this be Spoofed?</li>
+<li>How could it be Tampered with?</li>
+<li>Could someone Repudiate the action?</li>
+<li>Might Information be Disclosed?</li>
+<li>Could this element suffer a Denial-of-Service?</li>
+<li>Is there a path to Elevate Privilege?</li>
+</ol>
+<p>That’s a useful starting point but it leaves you asking the same six questions over and over, without telling you how to think about where the gaps actually live or why an attacker would exploit them. You end up with a bullet list of “possible threats” rather than a rich map of all the angles you need to sweep.</p>
+<p>To fill that gap, I have developed a <strong>360° thinking blueprint</strong> for each STRIDE category, four complementary “lenses” you can peer through, a mini-checklist of red-flags, and reflective prompts to spark concrete scenarios. Use it against any DFD element, at any level (1/2), and you will move from rote questions to real insight: precisely where your system is vulnerable, how an attacker might work their way in, and what defenses belong at each step.</p>
+<p>Below you will find the full blueprint your new go-to process whenever you sit down with a whiteboard or a DFD.</p>
+<h5 id="spoofing-authenticity">Spoofing (Authenticity)</h5>
+<ul>
+<li>Make sure every participant really is who they claim to be.</li>
+</ul>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Lens</th>
+            <th>What to Explore / Do</th>
+            <th>Mini-Checklist</th>
+            <th>Reflective Prompts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Context &amp; Scope</td>
+            <td>Define exactly where “identity” matters; list every human, service or system identity in this element.</td>
+            <td>– Missing or default accounts? <br>- Shared or hard-coded credentials?</td>
+            <td>
+                <p>• What or who is assumed genuine here?</p>
+                <p>• Where does belief begin or end?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Trust Relationships<br></td>
+            <td>Map who trusts whom and on what basis; spot every credential handshake.</td>
+            <td>
+                <p>– One-way authentication only?</p>
+                <p>– Weak or missing proof?</p>
+            </td>
+            <td>
+                <p>• Who is counting on this proof of identity?</p>
+                <p>• What minimal cue grants trust?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Adversary Motivation</td>
+            <td>Imagine why someone would pretend to be this entity; enumerate replay, cloning or masquerade tactics.</td>
+            <td>
+                <p>– Replayable tokens?</p>
+                <p>– Lack of anti-replay checks?</p>
+            </td>
+            <td>
+                <p>• What’s the upside for an imposter?</p>
+                <p>• How could they gain advantage?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Verification Points</td>
+            <td>Spot every moment identity is (or isn’t) checked; consider where mutual checks or external roots apply.</td>
+            <td>
+                <p>– No mutual proof?</p>
+                <p>– Missing challenge-response?</p>
+            </td>
+            <td>
+                <p>• How would you prove it’s really them?</p>
+                <p>• Where could that proof be faked?</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h5 id="tampering-integrity">Tampering (Integrity)</h5>
+<p>Catch any unauthorized change to data, code or decisions.</p>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Lens</th>
+            <th>What to Explore / Do</th>
+            <th>Mini-Checklist</th>
+            <th>Reflective Prompts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Lifecycle View</td>
+            <td>Trace where data or logic is created, stored or transformed; list flows, caches, temp stores.</td>
+            <td>
+                <p>– Plaintext in flight?</p>
+                <p>– Writable surfaces?</p>
+            </td>
+            <td>
+                <p>• When/where does the “original” exist?</p>
+                <p>• Where could it be altered unseen?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Change &amp; Update Paths</td>
+            <td>Identify every hand-off, deployment, patch or update process.</td>
+            <td>
+                <p>– Unsigned artifacts?</p>
+                <p>– Missing checksum validation?</p>
+            </td>
+            <td>
+                <div>• What hand-off could go wrong?</div>
+                <div>• Where could an extra change slip in?</div>
+                <div><br></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Adversary Goals</td>
+            <td>Consider why an attacker would corrupt this element; think interception, direct writes, replays.</td>
+            <td>
+                <p>– MITM possible?</p>
+                <p>– Unchecked replay?</p>
+            </td>
+            <td>
+                <p>• What would they gain by tweaking it?</p>
+                <p>• Which distortions best serve their aim?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Validation &amp; Recovery</td>
+            <td>Review how illicit changes are detected or rolled back; integrity checks and recovery mechanisms.</td>
+            <td>
+                <p>– No tamper alerts?</p>
+                <p>– Missing backup/rollback plan?</p>
+            </td>
+            <td>
+                <p>• How would you know it’s been altered?</p>
+                <p>• What resets it to “known good”?</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h5 id="repudiation-non-repudiation">Repudiation (Non-repudiation)</h5>
+<ul>
+<li>Guarantee every action leaves a clear, unforgeable trail.</li>
+</ul>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Lens</th>
+            <th>What to Explore / Do</th>
+            <th>Mini-Checklist</th>
+            <th>Reflective Prompts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Action Points</td>
+            <td>List every critical operation deletes, transfers, approvals where proof may be needed.</td>
+            <td>
+                <p>– Missing audit hooks?</p>
+                <p>– Anonymous/shared actions?</p>
+            </td>
+            <td>
+                <p>• Which steps matter legally or financially?</p>
+                <p>• What counts as “proof”?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Actor Binding</td>
+            <td>Ensure each log entry ties to a unique, non-shareable originator (user ID, session, request ID).</td>
+            <td>
+                <p>– Shared sessions?</p>
+                <p>– Session hijacking risks?</p>
+            </td>
+            <td>
+                <p>• How do you link deed to doer?</p>
+                <p>• Could someone hide behind a shared handle?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Temporal Context</td>
+            <td>Anchor events with unambiguous timestamps and ordering; account for clock skew and sequence.</td>
+            <td>
+                <p>– Missing timestamps?</p>
+                <p>– Easily adjusted clocks?</p>
+            </td>
+            <td>
+                <p>• When did it happen and why does sequence matter?</p>
+                <p>• Could times be contested?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Audit Assurance</td>
+            <td>Protect logs from tampering or deletion consider append-only, off-site archives and strict controls.</td>
+            <td>
+                <p>– Editable logs?</p>
+                <p>– Insecure log transport?</p>
+            </td>
+            <td>
+                <p>• How would you spot log tampering?</p>
+                <p>• Where would you look first?</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h5 id="information-disclosure-confidentiality">Information Disclosure (Confidentiality)</h5>
+<ul>
+<li>Keep every secret and private detail from leaking.</li>
+</ul>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Lens</th>
+            <th>What to Explore / Do</th>
+            <th>Mini-Checklist</th>
+            <th>Reflective Prompts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data Sensitivity</td>
+            <td>Classify each piece of information (public, internal, secret, PII) and note its hiding requirements.</td>
+            <td>
+                <p>– Misclassified data?</p>
+                <p>– Unlabeled secrets?</p>
+            </td>
+            <td>
+                <p>• How damaging if this got out?</p>
+                <p>• Who must stay ignorant?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Exposure Channels</td>
+            <td>Enumerate all ways info might slip APIs, logs, UIs, error messages, backups, side-channels.</td>
+            <td>
+                <p>– Verbose stack traces?</p>
+                <p>– Open debug endpoints?</p>
+            </td>
+            <td>
+                <p>• Where might a whisper become public?</p>
+                <p>• What side-paths exist?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Adversary Benefits</td>
+            <td>Envision motives for extracting each data type and map potential misuse.</td>
+            <td>
+                <p>– Valuable metadata exposed?</p>
+                <p>– No usage monitoring?</p>
+            </td>
+            <td>
+                <p>• Who gains from knowing this?</p>
+                <p>• How would they exploit it?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Masking &amp; Purge</td>
+            <td>Plan how to obscure or destroy residual copies temp files, caches, logs.</td>
+            <td>
+                <p>– Unremoved temp files?</p>
+                <p>– Long log retention?</p>
+            </td>
+            <td>
+                <p>• How would you blur it?</p>
+                <p>• How do you erase every copy?</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h5 id="denial-of-service-availability">Denial of Service (Availability)</h5>
+<ul>
+<li>Keep the system usable even under strain or attack.</li>
+</ul>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Lens</th>
+            <th>What to Explore / Do</th>
+            <th>Mini-Checklist</th>
+            <th>Reflective Prompts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Resource Inventory</td>
+            <td>List all critical resources CPU, memory, threads, connections and map consumption patterns.</td>
+            <td>
+                <p>– Unbounded allocations?</p>
+                <p>– No quotas?</p>
+            </td>
+            <td>
+                <p>• What do people expect always works?</p>
+                <p>• What would they miss first?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Demand Patterns</td>
+            <td>Analyze normal vs. peak usage seasonal spikes, bursts, user behavior extremes.</td>
+            <td>
+                <p>– Unexpected spikes?</p>
+                <p>– Resource starvation?</p>
+            </td>
+            <td>
+                <p>• When do demands spike?</p>
+                <p>• What breaks under unusual stress?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Disruption Scenarios</td>
+            <td>Imagine deliberate or accidental overloads, partial failures, dependency breakdowns.</td>
+            <td>
+                <p>– Retry storms?</p>
+                <p>– Unhandled errors?</p>
+            </td>
+            <td>
+                <p>• How might service be disrupted?</p>
+                <p>• What small hiccups cascade?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Resilience Measures</td>
+            <td>Spot controls rate limits, circuit breakers, graceful degradation, fail-over and back-pressure.</td>
+            <td>
+                <p>– No rate limiting?</p>
+                <p>– Missing failover paths?</p>
+            </td>
+            <td>
+                <p>• How does it bounce back?</p>
+                <p>• Where is the “safety net”?</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h5 id="elevation-of-privilege-authorization">Elevation of Privilege (Authorization)</h5>
+<ul>
+<li>Stop anyone gaining more rights than intended.</li>
+</ul>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>Lens</th>
+            <th>What to Explore / Do</th>
+            <th>Mini-Checklist</th>
+            <th>Reflective Prompts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Role &amp; Scope Mapping</td>
+            <td>Define every role, permission set and boundary; note defaults and inheritance.</td>
+            <td>
+                <p>– Over-permissive defaults?</p>
+                <p>– Role explosion?</p>
+            </td>
+            <td>
+                <p>• Who can do what and why?</p>
+                <p>• Where might those lines blur?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Interaction Flows</td>
+            <td>Chart every path APIs, UIs, batch jobs to sensitive operations, including indirect or hidden routes.</td>
+            <td>
+                <p>– Hidden/end-of-life endpoints?</p>
+                <p>– Unprotected APIs?</p>
+            </td>
+            <td>
+                <p>• How do they reach a sensitive operation?</p>
+                <p>• What shortcuts could be abused?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Abuse Pathways</td>
+            <td>Envision detours callbacks, escalation loops, side-channels that grant extra power.</td>
+            <td>
+                <p>– Orphaned admin functions?</p>
+                <p>– Unchecked callbacks?</p>
+            </td>
+            <td>
+                <p>• What’s an unlikely shortcut to admin?</p>
+                <p>• Where could checks be skipped?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Enforcement Checks</td>
+            <td>Verify authorization at every critical step before and after and spot missing or inconsistent checks.</td>
+            <td>
+                <p>– Missing post-action checks?</p>
+                <p>– Inconsistent gating?</p>
+            </td>
+            <td>
+                <p>• When do you ask “Is this allowed?”</p>
+                <p>• Where might that check be missing?</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h3 id="4how-to-use">4.	How-to use</h3>
+<p><strong>Select your DFD element</strong></p>
+<ul>
+<li>Pick one bubble, arrow or datastore on your diagram.</li>
+<li>Note its name, purpose and where it sits in the overall flow.</li>
+</ul>
+<p><strong>Determine Which STRIDE Category(ies) to Apply</strong></p>
+<ul>
+<li>Every element potentially touches all six but start by mapping it to the most obvious threat types.
+<ul>
+<li>E.g. a “Login Service” ⇒ Spoofing, Tampering, Repudiation, DoS.</li>
+</ul>
+</li>
+<li>You can circle all six at first to ensure full coverage.</li>
+</ul>
+<p><strong>Run the Four-Lens Sweep for Each STRIDE Category</strong>
+For each category you have marked, work through the four lenses in order:</p>
+<ol>
+<li><strong>A. Lens 1 (Context &amp; Scope / Lifecycle View / Action Points / Data Sensitivity / Resource Inventory / Role &amp; Scope Mapping)</strong></li>
+</ol>
+<ul>
+<li><strong>What to do:</strong> Define the boundaries and key facts.
+<ul>
+<li>Context &amp; Scope: Who or what identities appear here?</li>
+<li>Lifecycle View: When and where does data/code originate and rest?</li>
+<li>Action Points: Which operations must be provable?</li>
+<li>Data Sensitivity: How secret is the information?</li>
+<li>Resource Inventory: What resources (CPU, memory, threads) does this element consume?</li>
+<li>Role &amp; Scope Mapping: Which roles and permissions live here?</li>
+</ul>
+</li>
+<li><strong>Output:</strong> A crisp bullet list of your findings (e.g., “this datastore holds PII; it’s written to by two processes; default service account exists”).</li>
+</ul>
+<ol start="2">
+<li><strong>Lens 2 (Trust Relationships / Change &amp; Update Paths / Actor Binding / Exposure Channels / Demand Patterns / Interaction Flows)</strong></li>
+</ol>
+<ul>
+<li><strong>What to do:</strong> Map hand-offs, hand-backs, and who trusts whom.
+<ul>
+<li>Trust Relationships: What proofs or credentials pass through?</li>
+<li>Change &amp; Update: How does code/config get deployed here?</li>
+<li>Actor Binding: How do you tie each action back to one originator?</li>
+<li>Exposure Channels: Through which paths could data leak?</li>
+<li>Demand Patterns: When does this element see normal vs. bursty load?</li>
+<li>Interaction Flows: What direct or hidden routes lead to privileged operations?</li>
+</ul>
+</li>
+<li><strong>Output:</strong> A mini-diagram or bullet list noting each handshake, update path, log binding, channel, load characteristic or interaction route.</li>
+</ul>
+<ol start="3">
+<li><strong>C. Lens 3 (Adversary Motivation / Adversary Goals / Temporal Context / Adversary Benefits / Disruption Scenarios / Abuse Pathways)</strong></li>
+</ol>
+<ul>
+<li><strong>What to do:</strong> Step into an attacker’s shoes why and how would they target this element?
+<ul>
+<li>Adversary Motivation: What’s the payoff for impersonation or data alteration?</li>
+<li>Adversary Goals: What integrity breaks or privilege gains serve them best?</li>
+<li>Temporal Context: How might timing or sequencing be manipulated?</li>
+<li>Adversary Benefits: Which secrets or resources are most valuable here?</li>
+<li>Disruption Scenarios: How could they trigger overloads or failures?</li>
+<li>Abuse Pathways: What unexpected detours grant extra power?</li>
+</ul>
+</li>
+<li><strong>Output:</strong> Three to five concrete “what if” scenarios (e.g., “what if they replayed a token at peak hour to lock out users?”).</li>
+</ul>
+<ol start="4">
+<li><strong>D. Lens 4 (Verification Points / Validation &amp; Recovery / Audit Assurance / Masking &amp; Purge / Resilience Measures / Enforcement Checks)</strong></li>
+</ol>
+<ul>
+<li><strong>What to do:</strong> Identify how you’d detect, stop or recover from each potential attack.
+<ul>
+<li>Verification Points: Where do you check authenticity?</li>
+<li>Validation &amp; Recovery: How do you detect and roll back tampering?</li>
+<li>Audit Assurance: How do you guarantee log integrity?</li>
+<li>Masking &amp; Purge: How do you obscure or erase sensitive traces?</li>
+<li>Resilience Measures: What rate limits, fail-overs or fallbacks exist?</li>
+<li>Enforcement Checks: Where are authorization gates, before and after?</li>
+</ul>
+</li>
+<li><strong>Output:</strong> A list of existing controls and any gaps (e.g., “no replay-guard on tokens; rollback plan only covers DB rows, not caches”).</li>
+</ul>
+<ol start="5">
+<li><strong>Quickly rate each scenario for Impact (High/Med/Low) and Likelihood (High/Med/Low).</strong></li>
+<li><strong>Focus first on those in the High-High and High-Med zones.</strong></li>
+<li><strong>Once one element is done, move to the next.</strong></li>
+<li><strong>Revisit high-level trust boundaries and data flows to see cross-element interactions.</strong></li>
+<li><strong>Walk through your findings with teammates developers, architects, testers, ops.</strong></li>
+<li><strong>Confirm that your mitigation ideas line up with real-world constraints and that no new gaps emerge.</strong></li>
+<li><strong>Make this four-lens sweep part of design reviews or “definition of done” for major stories.</strong></li>
+<li><strong>Keep your threat register live and revisit it whenever designs change.</strong></li>
+</ol>
+<h3 id="5analyzing-threats-documentation-and-prioritization">5.	Analyzing Threats (Documentation and Prioritization)</h3>
+<p>As you identify potential threats, document them! A simple list or spreadsheet works fine. Include:</p>
+<ul>
+<li>For each lens’s reflective prompts and mini-checklist red flags, turn your notes into formal “threat scenarios.”</li>
+<li>Use a simple table or spreadsheet with columns:</li>
+</ul>
+<ol>
+<li>ID (e.g., SPOOF-01)</li>
+<li>Category (Spoofing, Tampering, …)</li>
+<li>Element (Login Service, Order DB, etc.)</li>
+<li>Threat Description (concise “how” + “why”)</li>
+<li>Detection/Mitigation Ideas (from Lens 4)</li>
+<li>Quickly rate each scenario for Impact (High/Med/Low) and Likelihood (High/Med/Low).</li>
+<li>Focus first on those in the High-High and High-Med zones.</li>
+<li>Once one element is done, move to the next.</li>
+<li>Revisit high-level trust boundaries and data flows to see cross-element interactions.</li>
+</ol>
+<h3 id="6define-mitigations-plan-the-fixes">6.	Define Mitigations (Plan the Fixes)</h3>
+<p>For the threats you have decided are worth addressing (usually the higher-risk ones), brainstorm countermeasures. What security controls, design changes, or coding practices can prevent or mitigate this threat? Document these proposed mitigations alongside the threats. Walk through your findings with teammates developers, architects, testers, ops.Confirm that your mitigation ideas line up with real-world constraints and that no new gaps emerge.Make this four-lens sweep part of design reviews or “definition of done” for major stories.</p>
+<h3 id="7validate-check-your-work">7.	Validate (Check Your Work)</h3>
+<p>Review the identified threats and proposed mitigations. Do the mitigations actually address the threats? Are there any gaps? Does implementing one mitigation introduce another threat? This is often an iterative process. Keep your threat register live and revisit it whenever designs change.</p>
+<p>This might seem like a lot, but starting small and focusing on critical parts of your system makes it manageable. Now, let&rsquo;s see this process in action with a few scenarios.</p>
+<h2 id="scenario-1-securing-an-e-commerce-checkout-api">Scenario 1: Securing an E-Commerce Checkout API</h2>
+<p>Theory is great, but let&rsquo;s see STRIDE in action. Imagine we are building a core piece of an e-commerce platform: the Checkout API. This is a backend REST API, likely written in something like Python, Java, or Node.js.</p>
+<h3 id="system-overview">System Overview</h3>
+<p>Its job is to handle the final stage of a purchase. It receives details from the customer&rsquo;s frontend (web or mobile app), including:</p>
+<ul>
+<li>Items in the cart</li>
+<li>Shipping address</li>
+<li>Payment information (maybe tokenized card details or similar)</li>
+<li>User authentication token/session ID</li>
+</ul>
+<p>Internally, this API needs to interact with several other components:</p>
+<ul>
+<li>Payment Gateway: An external service to process the actual payment.</li>
+<li>Order Database: An internal database to store details of the completed order.</li>
+<li>User Database: An internal database to retrieve/verify user details (like shipping address) and potentially update purchase history.</li>
+<li>Inventory Service: (Potentially) An internal service to check stock levels before finalizing the order.</li>
+</ul>
+<h3 id="data-flow-diagram-dfd">Data Flow Diagram (DFD)</h3>
+<ul>
+<li>Level 1 DFD</li>
+</ul>
+<center><img src="/images/stride-ecom-l1.png" width="650"/></center>
+<ul>
+<li>Level 2 DFD</li>
+</ul>
+<center><img src="/images/stride-ecom-l2.png" width="1050"/></center>
+</br>
+<ul>
+<li><strong>External Entities:</strong> Customer (via Frontend App), Payment Gateway.</li>
+<li><strong>Processes:</strong> Checkout API, (maybe separate internal processes like Validate Order, Process Payment, Update Database).</li>
+<li><strong>Data Stores:</strong> Order Database, User Database, (maybe Inventory Database).</li>
+<li><strong>Data Flows:</strong>
+<ul>
+<li>Customer -&gt; Checkout API (Cart details, Payment info, Auth token)</li>
+<li>Checkout API -&gt; Payment Gateway (Payment details, Amount)</li>
+<li>Payment Gateway -&gt; Checkout API (Payment success/failure)</li>
+<li>Checkout API -&gt; Order Database (New order details)</li>
+<li>Checkout API -&gt; User Database (Read user info, maybe write purchase history)</li>
+<li>Checkout API -&gt; Inventory Service (Check stock)</li>
+<li>Inventory Service -&gt; Checkout API (Stock status)</li>
+<li>Checkout API -&gt; Customer (Order confirmation/error)</li>
+</ul>
+</li>
+<li><strong>Trust Boundaries:</strong> Between Customer &amp; API, between API &amp; Payment Gateway, between API &amp; internal databases/services.</li>
+</ul>
+<h3 id="applying-stride">Applying STRIDE</h3>
+<h4 id="methodology">Methodology</h4>
+<ol>
+<li>Select your DFD element (Scope Identification)</li>
+</ol>
+<ul>
+<li>Identify the component (e.g. Checkout API, Auth Service, Web App, Payment Gateway, etc.).</li>
+<li>Document its purpose, trust boundaries, and data flows in/out.</li>
+</ul>
+<ol start="2">
+<li>For each STRIDE category, apply the 4 lenses.
+For each category:</li>
+</ol>
+<ul>
+<li><strong>Lens 1 - Lifecycle View</strong> - List the assets (e.g. JWTs, cart payloads, logs) and their states (at rest, in transit, in memory).</li>
+<li><strong>Lens 2 – Change &amp; Update Paths</strong> - Map how those assets or code/configuration change or propagate (e.g. CI/CD deploys, feature-flag updates, log shipping).</li>
+<li><strong>Lens 3 - Adversary Goals (“What-If”)</strong> - Define why an attacker would target this (e.g. under-pay, impersonate, exfiltrate data). Sketch a concrete “What if…” scenario.</li>
+<li><strong>Lens 4 – Validation &amp; Recovery</strong> - List existing controls (e.g. HTTPS, unit tests, rate-limits). Identify gaps where those controls fall short.</li>
+</ul>
+<ol start="3">
+<li>
+<p>Repeat for every STRIDE category - Do this in turn for Spoofing, Tampering, Repudiation, Information Disclosure, DoS, Elevation of Privilege for each DFD element in your scope.</p>
+</li>
+<li>
+<p>Consolidate into threat register table</p>
+</li>
+</ol>
+<ul>
+<li>Create a table with below columns:
+<ul>
+<li>ID (e.g. S-01, T-01, …)</li>
+<li>Element (DFD component)</li>
+<li>STRIDE</li>
+<li>Description</li>
+<li>Key Mitigations</li>
+<li>Impact</li>
+<li>Likelihood</li>
+</ul>
+</li>
+</ul>
+<h4 id="example-for-applying-methodology">Example for Applying Methodology</h4>
+<p><strong>1. Select the DFD element</strong></p>
+<ul>
+<li>
+<p>Element: P1 &ndash;&gt; Checkout API</p>
+<ul>
+<li><strong>Purpose:</strong> Finalizes a purchase by validting user, processing payment, updating database, and returning confirmation.</li>
+<li><strong>Trust boundaries:</strong>
+<ul>
+<li>Customer ↔ API (public Internet)</li>
+<li>API ↔ Payment Gateway (PCI zone)</li>
+<li>API ↔ internal services/databases (internal network).
+</br></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Key data flows into/out of P1:</strong></p>
+<ul>
+<li>In: Cart details + auth token (from Customer)</li>
+<li>Out: Payment request (to Gateway), order writes (to Order DB), user history update (to User DB), confirmation (to Customer).</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. STRIDE categories applicable for this functionality</strong></p>
+<p>We will cover all 6 threat types against this P1 element, each with 4 lens sweep.</p>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>STRIDE</th>
+            <th>Violated Property </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Spoofing</td>
+            <td>Authenticity </td>
+        </tr>
+        <tr>
+            <td>Tampering</td>
+            <td>Integrity </td>
+        </tr>
+        <tr>
+            <td>Repudiation</td>
+            <td>Non-repudiation </td>
+        </tr>
+        <tr>
+            <td>Information Disclosure</td>
+            <td>Confidentiality </td>
+        </tr>
+        <tr>
+            <td>DoS</td>
+            <td>Availability </td>
+        </tr>
+        <tr>
+            <td>Elevation of Privilege</td>
+            <td>Authorization</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p><strong>3. Four-Lens Analysis for “Tampering” (Integrity) on the Checkout API</strong></p>
+<p><strong>Lens 1: Lifecycle View</strong></p>
+<ul>
+<li>Data origins &amp; resting points:
+<ul>
+<li>Cart payload (client → API)</li>
+<li>In-flight JSON bodies</li>
+<li>Temporary in-memory order object before DB write</li>
+</ul>
+</li>
+<li>Red flags: client-calculated totals; no server-side checksum .</li>
+</ul>
+<p><strong>Lens 2: Change &amp; Update Paths</strong></p>
+<ul>
+<li><strong>Hand-offs:</strong> API code deployed via CI/CD pipeline (unsigned artifacts?)</li>
+<li><strong>Runtime patching:</strong> Hot restarts without integrity checks on new code .</li>
+</ul>
+<p><strong>Lens 3: Adversary Goals</strong></p>
+<ul>
+<li><strong>Why tamper?</strong> Under-charge orders or inject fraudulent discounts.</li>
+<li><strong>Concrete “what-if”:</strong> “What if attacker intercepts and rewrites price in transit?”</li>
+</ul>
+<p><strong>Lens 4: Validation &amp; Recovery</strong></p>
+<ul>
+<li><strong>Existing controls:</strong> HTTPS enforced, but no HSTS preload; unit tests only cover happy-path.</li>
+<li><strong>Gaps:</strong> no server-side price recalculation; no integrity‐check on payload.</li>
+</ul>
+<p><strong>Threat Scenario (TAMP-01):</strong>
+Attacker modifies totalAmount in the JSON payload (e.g. 100 → 1) before TLS termination on a misconfigured segment, causing under-priced order.</p>
+<ul>
+<li><strong>Mitigations:</strong>
+<ul>
+<li>Recalculate order total server-side from SKU+qty</li>
+<li>Enforce HSTS + preload; block HTTP POSTs at WAF</li>
+<li>Add a signature (HMAC) over the cart contents</li>
+</ul>
+</li>
+<li><strong>Impact:</strong>
+<ul>
+<li>High </li>
+</ul>
+</li>
+<li><strong>Likelihood:</strong>
+<ul>
+<li>Medium</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Threat Register Excerpt for Checkout API</strong></p>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Threat Description</th>
+            <th>Detection &amp; Mitigation</th>
+            <th>Impact</th>
+            <th>Likelihood </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SPOOF-01</td>
+            <td>Spoofing</td>
+            <td>Stolen JWT is replayed to /checkout, impersonating another user and placing fraudulent orders.</td>
+            <td>Short-lived rotating tokens; token-binding to TLS; device-fingerprint check; SIEM rule detecting same token from multiple IPs.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>TAMP-01</td>
+            <td>Tampering</td>
+            <td>Attacker alters totalAmount in transit before the API, resulting in an under-priced order.</td>
+            <td>Server-side price calculation; enforce HSTS+preload; HMAC signature on payload; WAF HTTP enforcement.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>REPU-01</td>
+            <td>Repudiation</td>
+            <td>Only order IDs are logged; user claims “I never placed this order” and you lack IP/jti linkage for non-repudiation.</td>
+            <td>Append IP, JWT_jti, timestamp, request hash to immutable WORM log; support dispute workflow querying full audit by order ID.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>INFO-01</td>
+            <td>Information Disclosure</td>
+            <td>Unhandled exceptions in payment sub-process return full stack traces to clients, leaking internal hostnames and DB credentials.</td>
+            <td>Global error handler returns generic error codes; verbose traces only in internal logs; CI scans responses for “Exception in thread”.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>DOS-01</td>
+            <td>Denial of Service</td>
+            <td>Botnet floods /checkout at high RPS, exhausting DB connections and external calls, preventing legitimate purchases.</td>
+            <td>API-gateway rate-limiting by IP/user; queue + worker pool autoscaling; alerting on latency and error spike.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>ELEV-01</td>
+            <td>Elevation of Privilege</td>
+            <td>Front-end sends a role field; naïve API trusts it and grants admin privileges for order modification.</td>
+            <td>JSON-schema strips unknown fields; derive role from authenticated session only; post-auth RBAC checks; integration tests for field injection.</td>
+            <td>High</td>
+            <td>Low</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p><strong>5. Prioritization &amp; Next Steps</strong></p>
+<ul>
+<li><strong>High Impact–Medium Likelihood</strong> threats (SPOOF-01, TAMP-01, DOS-01) should be addressed first.</li>
+<li>Integrate these controls into the CI/CD pipeline and definition of done for the Checkout feature.</li>
+<li>Retain and extend the threat register as the design evolves, and revisit during design reviews and pen-tests .</li>
+</ul>
+<p>This demonstrates the exact four-lens STRIDE approach from your document, applied end-to-end to the Checkout API scenario.</p>
+<p>Likewise once you complete this activity end-to-end for both diagrams and entire feature/functionality, your final threat register would look something like below:</p>
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Element</th>
+            <th>STRIDE</th>
+            <th>Description</th>
+            <th>Key Mitigations</th>
+            <th>Impact</th>
+            <th>Likelihood </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S-01</td>
+            <td>Web App / Login</td>
+            <td>Spoofing</td>
+            <td>Replay stolen JWT at /login to impersonate user.</td>
+            <td>Bind tokens to device/TLS; short TTL; revocation list; MFA.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>S-02</td>
+            <td>API Gateway</td>
+            <td>Spoofing</td>
+            <td>Harvested API key used to call internal services as trusted client.</td>
+            <td>Vault-stored keys; regular rotation; enforce mutual TLS.</td>
+            <td>Low</td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>S-03</td>
+            <td>Admin Portal</td>
+            <td>Spoofing</td>
+            <td>Phished admin credentials grant portal takeover.</td>
+            <td>Phishing-resistant MFA; brute-force guards; geofencing.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>T-01</td>
+            <td>Cart Submission</td>
+            <td>Tampering</td>
+            <td>In-flight JSON modified (e.g. price/quantity) to under-charge order.</td>
+            <td>Server-side total calculation; HMAC over payload; enforce HSTS+preload.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>T-02</td>
+            <td>Feature-Flag Service</td>
+            <td>Tampering</td>
+            <td>Unsigned flags tampered to enable global discount mode.</td>
+            <td>Sign &amp; verify flag bundles; integrity checks in code.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>T-03</td>
+            <td>CI/CD Pipeline</td>
+            <td>Tampering</td>
+            <td>Malicious build inserted via compromised pipeline.</td>
+            <td>Signed artifacts; strict pipeline RBAC; SBOM verification.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>R-01</td>
+            <td>Order DB</td>
+            <td>Repudiation</td>
+            <td>User disputes order; logs lack IP/jti linkage so origin unprovable.</td>
+            <td>Immutable WORM log; include IP, JWT_jti, timestamp per event.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>R-02</td>
+            <td>Payment Logs</td>
+            <td>Repudiation</td>
+            <td>Mismatch between internal and gateway logs denies payment proof.</td>
+            <td>Correlate via unique transaction IDs; synchronized timestamps; end-to-end logging.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>R-03</td>
+            <td>Refund Process</td>
+            <td>Repudiation</td>
+            <td>Admin issues refund but later disputes having authorized it.</td>
+            <td>Dual approval; log admin ID and actions to tamper-proof store.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>I-01</td>
+            <td>Error Handler</td>
+            <td>Info Disclosure</td>
+            <td>Stack traces leak internal hostnames, paths, and code.</td>
+            <td>Global exception handler; generic error codes; sanitized logs.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>I-02</td>
+            <td>Logs → SIEM</td>
+            <td>Info Disclosure</td>
+            <td>PII (emails, addresses) forwarded unredacted to third-party SIEM.</td>
+            <td>Redact/tokenize sensitive fields before forwarding.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>I-03</td>
+            <td>Web App</td>
+            <td>Info Disclosure</td>
+            <td>Insecure Direct Object References allow access to other users’ data.</td>
+            <td>Enforce object-level auth checks; use unguessable IDs (UUIDs).</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>D-01</td>
+            <td>/checkout Endpoint</td>
+            <td>Denial of Service</td>
+            <td>Layer-7 flood exhausts DB connections and payment gateway quotas.</td>
+            <td>Rate-limit per user/IP; circuit breakers; autoscale on queue latency.</td>
+            <td>High</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>D-02</td>
+            <td>Auth Service</td>
+            <td>Denial of Service</td>
+            <td>Rapid login attempts lock out or degrade service.</td>
+            <td>CAPTCHA thresholds; progressive delays; IP throttling.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>D-03</td>
+            <td>Feature-Flag Service</td>
+            <td>Denial of Service</td>
+            <td>Third-party flag service outage breaks critical features.</td>
+            <td>Local flag cache; fallback defaults; timeouts and retries.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>E-01</td>
+            <td>Web App / API</td>
+            <td>Elevation of Priv</td>
+            <td>Client-injected role field grants unauthorized admin privileges.</td>
+            <td>Strict JSON schema; strip unknown fields; server-side RBAC; cache invalidation on role changes.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>E-02</td>
+            <td>Order Mgmt API</td>
+            <td>Elevation of Priv</td>
+            <td>Unpatched flaw exposes admin-only endpoints to low-privilege users.</td>
+            <td>RBAC enforcement at service layer; timely patching; WAF protections.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>E-03</td>
+            <td>CI/CD Dashboard</td>
+            <td>Elevation of Priv</td>
+            <td>Low-privilege dev account escalates to pipeline admin via misconfigured IAM.</td>
+            <td>Principle of least privilege; IAM reviews; alert on privilege escalations.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>S-04</td>
+            <td>Payment Gateway</td>
+            <td>Spoofing</td>
+            <td>Fake payment callback marks order as paid without real transaction.</td>
+            <td>Verify gateway signatures; mutual TLS; nonce in callback URLs.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>T-04</td>
+            <td>Database Migration</td>
+            <td>Tampering</td>
+            <td>Migration script altered to drop or corrupt tables.</td>
+            <td>Code reviews for migrations; checksum validation; restricted migration roles.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>R-04</td>
+            <td>Audit Archive</td>
+            <td>Repudiation</td>
+            <td>Archive job omits critical events, creating gaps in audit trail.</td>
+            <td>Monitor completeness; periodic integrity checks on archived logs.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>I-04</td>
+            <td>CDN Cache</td>
+            <td>Info Disclosure</td>
+            <td>Sensitive API responses cached at CDN edge and exposed publicly.</td>
+            <td>Configure cache-control headers; segregate public/private content; require auth on origin fetch.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>D-04</td>
+            <td>Order DB</td>
+            <td>Denial of Service</td>
+            <td>Large batch jobs starve checkout transactions of DB resources.</td>
+            <td>Schedule off-peak; resource quotas; priority queues.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>E-04</td>
+            <td>Config Service</td>
+            <td>Elevation of Priv</td>
+            <td>Attacker modifies config to disable security controls or grant themselves rights.</td>
+            <td>Signed configs; change-approval workflows; audit trails.</td>
+            <td>High</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>S-05</td>
+            <td>Mobile App</td>
+            <td>Spoofing</td>
+            <td>Fake client binary issues API calls with stolen credentials.</td>
+            <td>App attestation; certificate pinning; anomaly detection.</td>
+            <td>Medium</td>
+            <td>Medium </td>
+        </tr>
+        <tr>
+            <td>T-05</td>
+            <td>Cache Layer</td>
+            <td>Tampering</td>
+            <td>In-memory cache entries (e.g. price cache) corrupted via debug endpoints.</td>
+            <td>Secure debug interfaces; encrypt cache; integrity checks.</td>
+            <td>Medium</td>
+            <td>Low </td>
+        </tr>
+        <tr>
+            <td>R-05</td>
+            <td>Third-Party Services</td>
+            <td>Repudiation</td>
+            <td>Third-party admins alter their logs, undermining non-repudiation of external events.</td>
+            <td>SLA-mandated WORM logging; periodic third-party attestation.</td>
+            <td>Low</td>
+            <td>Low</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<h2 id="homework-for-you">Homework for you</h2>
+<p>I will give you two scenarios with Level 1 and Level 2 DFD diagrams and you have to now work on the above STRIDE lens and apply it strategically as a part of your homework exercise.</p>
+<h2 id="scenario-2-hardening-an-iot-smart-lock-system">Scenario 2: Hardening an IoT Smart Lock System</h2>
+<p>Let&rsquo;s shift gears from pure web APIs to the interconnected world of the Internet of Things (IoT). Consider a common smart home device: a Smart Lock. Users can lock/unlock their door using a mobile app, grant temporary access to guests, and check the lock&rsquo;s status remotely.</p>
+<h3 id="system-overview-1">System Overview</h3>
+<p>This system typically involves several components:</p>
+<ul>
+<li><strong>The Smart Lock:</strong> The physical device on the door. Contains firmware, a microcontroller, communication modules (Bluetooth Low Energy - BLE, Wi-Fi), battery, and the locking mechanism.</li>
+<li><strong>Mobile App:</strong> The user interface on a smartphone (iOS/Android). Used for control, configuration, and status viewing.</li>
+<li><strong>Cloud Backend:</strong> Servers hosted in the cloud responsible for:
+<ul>
+<li>User authentication and management.</li>
+<li>Storing lock status and history.</li>
+<li>Relaying commands between the app and the lock (especially when the user is remote).</li>
+<li>Managing guest access permissions.</li>
+</ul>
+</li>
+<li><strong>Communication Channels:</strong>
+<ul>
+<li>App &lt;-&gt; Lock (often via BLE when nearby).</li>
+<li>App &lt;-&gt; Cloud (via HTTPS over Wi-Fi/cellular).</li>
+<li>Lock &lt;-&gt; Cloud (via Wi-Fi, often using protocols like MQTT or HTTPS).</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-flow-diagrams-dfds">Data Flow Diagrams (DFDs)</h3>
+<p><strong>Level 1 DFD</strong></p>
+<center><img src="/images/dfd-iot-smart-lock-l1.png" width="850"/></center>
+<p><strong>Level 2 DFD</strong></p>
+<center><img src="/images/dfd-iot-smart-lock-l2.png" width="850"/></center>
+<ul>
+<li><strong>External Entities:</strong> User, (potentially) Guest User.</li>
+<li><strong>Processes:</strong> Mobile App, Cloud Backend, Smart Lock Firmware.</li>
+<li><strong>Data Stores:</strong> Cloud Database (User accounts, Lock status, Logs, Guest permissions), Lock Internal Storage (Firmware, Configuration, maybe local logs).</li>
+<li><strong>Data Flows:</strong>
+<ul>
+<li>User -&gt; Mobile App (Login credentials, Lock/Unlock commands)</li>
+<li>Mobile App -&gt; Cloud Backend (Auth requests, Commands, Status queries)</li>
+<li>Cloud Backend -&gt; Mobile App (Auth responses, Status updates, Confirmations)</li>
+<li>Mobile App -&gt; Smart Lock (BLE commands - Lock/Unlock, Config)</li>
+<li>Smart Lock -&gt; Mobile App (BLE status updates)</li>
+<li>Smart Lock -&gt; Cloud Backend (Wi-Fi status updates, Heartbeats, Log uploads)</li>
+<li>Cloud Backend -&gt; Smart Lock (Wi-Fi commands - Lock/Unlock, Firmware updates)</li>
+</ul>
+</li>
+<li><strong>Trust Boundaries:</strong> Between User &amp; App, App &amp; Cloud, Cloud &amp; Lock, App &amp; Lock (BLE), Physical boundary around the lock itself.</li>
+</ul>
+<h2 id="scenario-3-analyzing-a-cloud-based-data-analytics-platform">Scenario 3: Analyzing a Cloud-Based Data Analytics Platform</h2>
+<p>For our final scenario, let&rsquo;s tackle something bigger and more complex: a multi-tenant, cloud-based data analytics platform. Think of a service where different companies (tenants) can upload their datasets, run complex analysis jobs, and visualize the results through dashboards.</p>
+<h3 id="system-overview-2">System Overview</h3>
+<p>This platform likely involves numerous microservices running in a cloud environment (like AWS, Azure, or GCP).</p>
+<ul>
+<li><strong>Web UI / API Gateway:</strong> The entry point for users. Handles authentication, serves the dashboard UI, and routes API requests for data upload, job management, etc.</li>
+<li><strong>Ingestion Service:</strong> Receives uploaded data (potentially large files), validates it, perhaps performs initial processing/transformation, and stores it in tenant-specific storage.</li>
+<li><strong>Data Storage:</strong> Cloud storage (like S3, Azure Blob Storage, GCS) partitioned by tenant to store raw and processed data.</li>
+<li><strong>Compute/Analysis Service:</strong> Manages a pool of compute instances (VMs, containers) that run the actual analysis jobs defined by users. These jobs read data from storage and write results back.</li>
+<li><strong>Job Scheduler/Orchestrator:</strong> Manages the queueing, scheduling, and execution of analysis jobs on the compute instances.</li>
+<li><strong>Results Storage:</strong> Another partitioned storage area for analysis results.</li>
+<li><strong>Dashboard Service:</strong> Queries results storage and presents data visualizations to users via the Web UI.</li>
+<li><strong>Identity Provider (IdP):</strong> Handles user authentication, potentially integrating with tenants&rsquo; own IdPs (e.g., via SAML or OIDC).</li>
+<li><strong>Metadata Store:</strong> Database holding information about tenants, users, datasets, jobs, permissions, etc.</li>
+</ul>
+<h3 id="data-flow-diagrams-dfds-1">Data Flow Diagrams (DFDs)</h3>
+<p><strong>Level 1 DFD</strong></p>
+<center><img src="/images/dfd-ca-l1.png" width="850"/></center>
+<p><strong>Level 2 DFD</strong></p>
+<center><img src="/images/dfd-ca-l2.png" width="850"/></center>
+<ul>
+<li><strong>External Entities:</strong> Tenant User, (potentially) Tenant Admin, Tenant IdP.</li>
+<li><strong>Processes:</strong> Web UI/API Gateway, Ingestion Service, Compute Service (Job Execution), Job Scheduler, Dashboard Service, IdP.</li>
+<li><strong>Data Stores:</strong> Raw Data Storage (Tenant-partitioned), Results Storage (Tenant-partitioned), Metadata Store, Compute Instance Ephemeral Storage.</li>
+<li><strong>Data Flows:</strong> Numerous flows involving user interaction, data upload, job submission, data processing between storage and compute, result querying, authentication flows.</li>
+<li><strong>Trust Boundaries:</strong> Between users and the platform, between tenants (CRITICAL!), between different internal microservices, between the platform and the underlying cloud provider APIs, between the platform and Tenant IdPs.</li>
+</ul>
+<h2 id="making-stride-work-for-you-practical-tips-from-the-trenches">Making STRIDE Work for You: Practical Tips from the Trenches</h2>
+<p>Alright, we have seen STRIDE applied to a few different systems. But knowing the theory and making it work smoothly within a busy team are two different things. After 13 years wrestling with security in real-world projects, here are some practical tips – the stuff you learn by doing (and sometimes by messing up).</p>
+<h3 id="getting-started-without-getting-overwhelmed">Getting started without getting overwhelmed:</h3>
+<ul>
+<li><strong>Start small, aim high:</strong> Don&rsquo;t try to threat model your entire monolithic legacy system in one go. Pick a new feature, a critical component (like authentication or payment processing), or a specific user story. Get a win, learn the process, and then expand.</li>
+<li><strong>Focus on the flows:</strong> Data Flow Diagrams are your friends. Even a simple whiteboard DFD focusing on the main data movements and trust boundaries is incredibly valuable. Don&rsquo;t get bogged down in perfecting the diagram initially; focus on understanding the system.</li>
+<li><strong>It’s not about perfection (at first):</strong> Your first threat model won&rsquo;t be perfect. You will miss things. That&rsquo;s okay. The goal is to get better at identifying risks proactively, not to achieve theoretical perfection on day one.</li>
+</ul>
+<h3 id="common-pitfalls-to-sidestep">Common Pitfalls to Sidestep:</h3>
+<ul>
+<li><strong>Boiling the ocean:</strong> Trying to model too much at once. Scope is crucial. Define clear boundaries for your analysis.</li>
+<li><strong>Analysis paralysis:</strong> Spending endless hours debating the exact risk rating or the perfect DFD symbol. Get the main threats identified and documented; refinement can come later.</li>
+<li><strong>DFD extremes:</strong> Diagrams that are either so high-level they&rsquo;re useless or so detailed they&rsquo;re unreadable. Find the right level of abstraction for the component you are modeling.</li>
+<li><strong>Forgetting trust boundaries:</strong> These are critical! Pay extra attention to anywhere data or control crosses from a less trusted zone to a more trusted one (or vice-versa).</li>
+<li><strong>The checkbox mentality:</strong> Threat modeling isn&rsquo;t a one-time task you do just to satisfy compliance. It&rsquo;s a continuous way of thinking. Revisit models when designs change significantly.</li>
+</ul>
+<h3 id="integrating-into-devsecops-making-it-stick">Integrating into DevSecOps (Making it stick):</h3>
+<ul>
+<li><strong>Shift Left, seriously:</strong> The earlier you threat model, the better. Discuss potential threats during design reviews or even backlog grooming for complex features.</li>
+<li><strong>Threat Model per feature/story:</strong> For significant changes, make a lightweight threat model part of the definition of done. What new threats does this introduce? How are we mitigating them?</li>
+<li><strong>Link to other tools:</strong> Findings from SAST (Static Analysis Security Testing) or DAST (Dynamic Analysis Security Testing) can feed into your threat model, and your threat model can help prioritize SAST/DAST findings. Is that injection vulnerability targeting a critical data flow identified in your model?</li>
+<li><strong>Automate where sensible:</strong> While the core thinking requires humans, tooling can help. Generating DFDs from code (with limitations), using dedicated threat modeling tools, or integrating threat lists into ticketing systems can streamline the process.</li>
+</ul>
+<h3 id="a-word-on-tooling">A Word on Tooling:</h3>
+<p>Yes, there are tools in the market! OWASP also has resources, and other commercial tools exist. But remember: <strong>the tool supports the process, it doesn&rsquo;t replace the thinking.</strong> A fancy tool won&rsquo;t help if you don&rsquo;t understand the system or the STRIDE categories.</p>
+<h2 id="summary--the-people-part">Summary – The People Part</h2>
+<p>Honestly, the biggest challenge often isn&rsquo;t technical; it&rsquo;s cultural. Threat modeling works best when it&rsquo;s a <strong>collaborative effort</strong>. Get developers, testers, architects, and security folks in a room (virtual or physical). Developers know the code inside out, testers know how things break, architects see the big picture, and security brings the threat landscape perspective.</p>
+<p>Don&rsquo;t let it become a security team throwing findings over the wall. Make it a shared responsibility, a learning opportunity for everyone involved. When developers understand the why behind a security requirement, they&rsquo;re much more likely to implement it effectively. Foster a culture where asking &ldquo;What could go wrong here?&rdquo; is a normal part of building software.</p>
+<p>Ultimately, STRIDE is a means to an end: building more secure, resilient systems. It provides structure and helps ensure you are not missing entire categories of threats. Use it pragmatically, adapt it to your team&rsquo;s workflow, and focus on the collaborative process of identifying and mitigating real risks.</p>
+<p>So, the next time you are designing a new feature or system, give it a try. Sketch out a quick DFD, run through the STRIDE categories, and see what you uncover. You might be surprised at how this simple framework can help you build more robust and resilient software. Keep learning, keep questioning, and stride on!</p>
+
+  </div>
+</section>
+
+<section id="tag-pane" class="meta">
+  
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <h6 class="text-end meta">
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="menu text-center">
+  
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      
+      
+      <li class="menu-item">
+        <a class="menu-item" href="http://localhost:1313/posts/abandoned_asset/">&lt; prev</a>
+      </li>
+      
+
+      <li class="menu-item">
+        
+        <span class="menu-item">&nbsp;|&nbsp;</span>
+        
+        <a class="menu-item" href="/posts">posts</a>
+        
+        <span class="menu-item">&nbsp;|&nbsp;</span>
+        
+      </li>
+
+      
+      <li class="menu-item">
+        <a class="menu-item" href="http://localhost:1313/posts/secure_dns/">next &gt;</a>
+      </li>
+      
+      
+    </ul>
+  </nav>
+  
+  <h4 class="text-center mt-3"><a class="menu-item" href="http://localhost:1313/">Home</a></h4>
+</section>
+
+
+<footer class="text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© Chintan Gurjar - <a href="mailto:chintangurjar@outlook.com">chintangurjar@outlook.com</a></h6>
+  
+  
+  
+  
+  
+
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+</html>
+
+
