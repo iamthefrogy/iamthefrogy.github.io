@@ -955,88 +955,90 @@ By implementing these strategies, you can stay ahead in the rapidly evolving cyb
 
 ## 24. Why can’t I become a CEO right out of my degree?
 <left><img src="/images/warning.png" alt="warning" width="55"/></left>
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: auto;
-            margin: 50px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        .grid-item {
-            text-align: center;
-            background: #eef2f7;
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .grid-item:hover {
-            transform: scale(1.05);
-        }
-        .grid-item img {
-            width: 50px;
-            margin-bottom: 10px;
-        }
-        .grid-item p {
-            color: #333;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="grid">
-            <div class="grid-item">
-                <img src="/images/market-exp.png" alt="Market Experience Icon">
-                <p><strong>No Market Experience</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/competition.png" alt="Competitor Experience Icon">
-                <p><strong>No Competitor Experience</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/interactions.png" alt="Customer Interaction Icon">
-                <p><strong>No Professional Experience with Customers</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/trust.png" alt="Trust Icon">
-                <p><strong>No One Knows or Trusts You</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/hard-work.png" alt="Project Icon">
-                <p><strong>Struggle to Get Projects</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/gap.png" alt="Experience Gap Icon">
-                <p><strong>Long Gap in Professional Experience</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/patience.png" alt="Patience Icon">
-                <p><strong>Lose Patience</strong></p>
-            </div>
-            <div class="grid-item">
-                <img src="/images/reputation.png" alt="Reputation Icon">
-                <p><strong>Reputation at Stake When Searching for a Job</strong></p>
-            </div>
-        </div>
+<style>
+  .kickstart-ceo {
+    margin: clamp(2rem, 6vw, 3.2rem) auto;
+    background: var(--color-surface);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: clamp(1.25rem, 4vw, 2.4rem);
+  }
+
+  body[data-theme="dark"] .kickstart-ceo {
+    background: rgba(32, 41, 62, 0.92);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .kickstart-ceo__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(1rem, 3vw, 1.8rem);
+  }
+
+  .kickstart-ceo__item {
+    text-align: center;
+    background: var(--color-surface-alt);
+    border-radius: 8px;
+    padding: clamp(1rem, 3vw, 1.6rem);
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  }
+
+  body[data-theme="dark"] .kickstart-ceo__item {
+    background: rgba(46, 56, 80, 0.92);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .kickstart-ceo__item:hover {
+    transform: scale(1.05);
+  }
+
+  .kickstart-ceo__item img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .kickstart-ceo__item p {
+    color: var(--color-text);
+    font-size: 0.9rem;
+  }
+</style>
+<div class="kickstart-ceo">
+  <div class="kickstart-ceo__grid">
+    <div class="kickstart-ceo__item">
+      <img src="/images/market-exp.png" alt="Market Experience Icon">
+      <p><strong>No Market Experience</strong></p>
     </div>
-</body>
-</html>
+    <div class="kickstart-ceo__item">
+      <img src="/images/competition.png" alt="Competitor Experience Icon">
+      <p><strong>No Competitor Experience</strong></p>
+    </div>
+    <div class="kickstart-ceo__item">
+      <img src="/images/interactions.png" alt="Customer Interaction Icon">
+      <p><strong>No Professional Experience with Customers</strong></p>
+    </div>
+    <div class="kickstart-ceo__item">
+      <img src="/images/trust.png" alt="Trust Icon">
+      <p><strong>No One Knows or Trusts You</strong></p>
+    </div>
+    <div class="kickstart-ceo__item">
+      <img src="/images/hard-work.png" alt="Project Icon">
+      <p><strong>Struggle to Get Projects</strong></p>
+    </div>
+    <div class="kickstart-ceo__item">
+      <img src="/images/gap.png" alt="Experience Gap Icon">
+      <p><strong>Long Gap in Professional Experience</strong></p>
+    </div>
+    <div class="kickstart-ceo__item">
+      <img src="/images/patience.png" alt="Patience Icon">
+      <p><strong>Lose Patience</strong></p>
+    </div>
+    <div class="kickstart-ceo__item">
+      <img src="/images/reputation.png" alt="Reputation Icon">
+      <p><strong>Reputation at Stake When Searching for a Job</strong></p>
+    </div>
+  </div>
+</div>
 
 ### How to Succeed as a CEO in the Market
 

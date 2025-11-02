@@ -1,7 +1,3 @@
-{{ with .Site.Menus.main }}
-<section id="main-menu-pane" class="text-center main-menu">
-  {{ range sort . }}
-  <h4><a class="menu-item" href="{{ .URL }}">{{ .Name }}</a></h4>
-  {{ end }}
-</section>
+{{ if not .IsHome }}
+{{ partial "site/nav.html" . }}
 {{ end }}

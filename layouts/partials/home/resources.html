@@ -1,0 +1,35 @@
+{{ $home := .Site.Params.home }}
+{{ with $home.resources }}
+<section class="home-section home-resources mb-5">
+  <div class="section-heading">
+    <h2 class="section-heading__title">
+      {{ if $home.resources_heading }}
+      {{ $home.resources_heading }}
+      {{ else }}
+      Featured resources
+      {{ end }}
+    </h2>
+    <p class="section-heading__subtitle text-muted">
+      Download-ready assets you can plug into your team’s workflow today.
+    </p>
+  </div>
+  <div class="row g-4">
+    {{ range . }}
+    <div class="col-md-4">
+      <article class="home-resource h-100">
+        {{ with .badge }}
+        <span class="home-resource__badge">{{ . }}</span>
+        {{ end }}
+        <h3 class="home-resource__title">{{ .title }}</h3>
+        <p class="home-resource__description text-muted">{{ .description }}</p>
+        {{ if .link }}
+        <a class="home-resource__link" href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+          Access resource <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        {{ end }}
+      </article>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

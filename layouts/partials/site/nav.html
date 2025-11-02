@@ -1,0 +1,33 @@
+<div class="site-nav">
+  <div class="site-nav__inner">
+    <a class="site-brand" href="{{ "/" | relURL }}">
+      <span class="site-brand__mark"></span>
+      <span class="site-brand__text">{{ .Site.Title }}</span>
+    </a>
+    {{ with .Site.Menus.main }}
+    <nav class="site-menu d-none d-md-flex">
+      {{ range . }}
+      <a class="site-menu__link" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+    <div class="site-nav__actions">
+      {{ with .Site.Menus.main }}
+      <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      {{ end }}
+    </div>
+  </div>
+  {{ with .Site.Menus.main }}
+  <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
+    <nav class="d-flex flex-column gap-2">
+      {{ range . }}
+      <a class="site-menu__link" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+  {{ end }}
+</div>

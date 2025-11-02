@@ -1,0 +1,35 @@
+{{ $social := .Site.Params.social }}
+<section class="home-section home-connect mb-5">
+  <div class="home-connect__inner">
+    <div class="home-connect__body">
+      <div class="home-connect__content">
+        <h2 class="home-connect__title">Let’s collaborate</h2>
+        <p class="home-connect__subtitle">
+          I partner with founders, CISOs, and security leads to turn security intent into measurable progress.
+          Reach out for advisory, visual storytelling, or enablement sessions.
+        </p>
+        {{ with $social.email }}
+        <a class="home-connect__email" href="mailto:{{ . }}"><i class="fa-solid fa-envelope me-2"></i>{{ . }}</a>
+        {{ end }}
+      </div>
+      <div class="home-connect__socials">
+        {{ with $social.linkedin }}
+        <a class="home-connect__social" href="https://linkedin.com/in/{{ . }}" target="_blank" rel="noopener"
+          aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        {{ end }}
+        {{ with $social.github }}
+        <a class="home-connect__social" href="https://github.com/{{ . }}" target="_blank" rel="noopener"
+          aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        {{ end }}
+        {{ with $social.twitter }}
+        <a class="home-connect__social" href="https://twitter.com/{{ . }}" target="_blank" rel="noopener"
+          aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        {{ end }}
+        {{ with $social.youtube }}
+        <a class="home-connect__social" href="https://youtube.com/{{ . }}" target="_blank" rel="noopener"
+          aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

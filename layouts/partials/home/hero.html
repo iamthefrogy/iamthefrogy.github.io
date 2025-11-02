@@ -1,0 +1,64 @@
+{{ $hero := .Site.Params.hero }}
+<section class="home-hero mb-5">
+  {{ partial "site/nav.html" . }}
+  <div class="home-hero__content mt-4">
+    <div class="p-4 p-xl-5">
+      <div class="row align-items-center g-4 g-xl-5">
+        <div class="col-lg-7">
+          {{ with $hero.greeting }}
+          <p class="home-hero__eyebrow mb-2">{{ . }}</p>
+          {{ end }}
+          <h1 class="home-hero__headline mb-3">
+            {{ with $hero.title }}
+            {{ . }}
+            {{ else }}
+            Helping teams ship secure software faster.
+            {{ end }}
+          </h1>
+          {{ with $hero.subtitle }}
+          <p class="home-hero__lead mb-4">{{ . }}</p>
+          {{ end }}
+
+          <div class="home-hero__cta d-flex flex-column flex-sm-row gap-3">
+            {{ if and $hero.primary_cta_label $hero.primary_cta_link }}
+            <a class="btn btn-outline-primary btn-lg px-4" href="{{ $hero.primary_cta_link | safeURL }}">{{ $hero.primary_cta_label }}</a>
+            {{ end }}
+            {{ if and $hero.secondary_cta_label $hero.secondary_cta_link }}
+            <a class="btn btn-outline-primary btn-lg px-4" href="{{ $hero.secondary_cta_link | safeURL }}">{{ $hero.secondary_cta_label }}</a>
+            {{ end }}
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="home-hero__profile">
+            <div class="text-center">
+              {{ with .Site.Params.authorimage }}
+              {{ $imagePath := printf "images/%s" . }}
+              {{ with resources.Get $imagePath }}
+              <img src="{{ .RelPermalink }}" alt="{{ $.Site.Params.author }}" class="home-hero__avatar img-fluid rounded-circle mb-3">
+              {{ else }}
+              {{ $fallbackPath := printf "img/%s" . }}
+              {{ with resources.Get $fallbackPath }}
+              <img src="{{ .RelPermalink }}" alt="{{ $.Site.Params.author }}" class="home-hero__avatar img-fluid rounded-circle mb-3">
+              {{ end }}
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ with $hero.stats }}
+      <div class="row row-cols-2 row-cols-md-4 g-3 g-md-4 mt-4">
+        {{ range . }}
+        <div class="col">
+          <div class="hero-stat h-100">
+            <div class="hero-stat__value">{{ .value }}</div>
+            <div class="hero-stat__label">{{ .label }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

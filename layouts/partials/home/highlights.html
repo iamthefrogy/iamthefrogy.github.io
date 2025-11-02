@@ -1,0 +1,47 @@
+{{ $home := .Site.Params.home }}
+{{ $subtitle := $home.highlights_subheading }}
+{{ with $home.highlights }}
+<section class="home-section home-highlights mb-5">
+  <div class="section-heading">
+    <h2 class="section-heading__title">
+      {{ if $home.highlights_heading }}
+      {{ $home.highlights_heading }}
+      {{ else }}
+      How I can help
+      {{ end }}
+    </h2>
+    {{ if $subtitle }}
+    <p class="section-heading__subtitle">
+      {{ $subtitle }}
+    </p>
+    {{ end }}
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+    {{ range . }}
+    <div class="col">
+      <article class="home-card h-100">
+        <div class="home-card__icon">
+          {{ with .icon }}
+          <span class="icon-circle"><i class="fa-solid {{ . }}"></i></span>
+          {{ end }}
+        </div>
+        <h3 class="home-card__title">{{ .title }}</h3>
+        <p class="home-card__body text-muted">{{ .description }}</p>
+        {{ with .tags }}
+        <ul class="home-card__tags">
+          {{ range . }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        {{ if and .url .link_label }}
+        <a class="home-card__link" href="{{ .url }}">{{ .link_label }} <i class="fa-solid fa-arrow-right-long"></i></a>
+        {{ else if .url }}
+        <a class="home-card__link" href="{{ .url }}">Learn more <i class="fa-solid fa-arrow-right-long"></i></a>
+        {{ end }}
+      </article>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

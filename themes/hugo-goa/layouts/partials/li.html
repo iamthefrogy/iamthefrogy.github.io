@@ -1,31 +1,45 @@
 {{ partial "main_menu.html" . }}
-<section id="list-pane" class="list">
-  <ul class="list-unstyled">
-    {{ range .Data.Pages.ByPublishDate.Reverse }}
-    <li class="list-entry">
-      <a class="list-entry-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <p class="meta">
-        {{ if not .Date.IsZero }} {{ .Date.Format (default "Jan 2, 2006" .Site.Params.dateformat) | upper }} {{ end }}
-        - {{ math.Round (div (countwords .Content) 220.0) }} MIN READ
-        <span class="category">
+<main class="page-shell">
+  <section class="page-collection">
+    <header class="page-collection__header">
+      <h1 class="page-collection__title">{{ .Title }}</h1>
+      {{ with .Content }}
+      <div class="page-collection__intro">
+        {{ . }}
+      </div>
+      {{ end }}
+    </header>
+    <div class="page-collection__list">
+      {{ range .Data.Pages.ByPublishDate.Reverse }}
+      <article class="page-collection__item">
+        <div class="page-collection__meta">
+          {{ if not .Date.IsZero }}{{ .Date.Format (default "Jan 2, 2006" $.Site.Params.dateformat) | upper }}{{ end }}
+          · {{ math.Round (div (countwords .Content) 220.0) }} MIN READ
           {{ if isset .Params "categories" }}
           {{ $total := len .Params.categories }}
           {{ if gt $total 0 }}
-          —
-          {{ $total := sub $total 1 }}
+          ·
+          {{ $totalMinusOne := sub $total 1 }}
           {{ range $i, $cat := sort .Params.categories }}
-          <a class="category-link"
-            href="{{ "categories/" | relURL }}{{ $cat | humanize | urlize }}">{{ $cat | upper }}</a>{{ if lt $i $total }},
+          <a class="page-collection__meta-link"
+            href="{{ "categories/" | relURL }}{{ $cat | humanize | urlize }}">{{ $cat | upper }}</a>{{ if lt $i $totalMinusOne }}, {{ end }}
           {{ end }}
           {{ end }}
           {{ end }}
+        </div>
+        <h2 class="page-collection__item-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        <p class="page-collection__excerpt">
+          {{ with .Description }}
+          {{ . }}
+          {{ else }}
+          {{ .Summary | plainify | truncate 150 }}
           {{ end }}
-        </span>
-      </p>
-      <p class="excerpt">
-        {{ .Description }}
-      </p>
-    </li>
-    {{ end }}
-  </ul>
-</section>
+        </p>
+        <a class="page-collection__cta" href="{{ .RelPermalink }}">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+</main>

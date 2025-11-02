@@ -1,0 +1,38 @@
+{{ $home := .Site.Params.home }}
+{{ $posts := first 4 (sort (where .Site.RegularPages "Section" "posts") "Date" "desc") }}
+{{ if gt (len $posts) 0 }}
+<section class="home-section home-latest mb-5">
+  <div class="section-heading">
+    <h2 class="section-heading__title">
+      {{ if $home.latest_posts_heading }}
+      {{ $home.latest_posts_heading }}
+      {{ else }}
+      Latest writing
+      {{ end }}
+    </h2>
+    <p class="section-heading__subtitle">
+      Brief, actionable lessons from the field—covering detection engineering, CTI, and leadership.
+    </p>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+    {{ range $posts }}
+    <div class="col">
+      <article class="home-article h-100">
+        <header>
+          <p class="home-article__meta">{{ .Date.Format (.Site.Params.dateformat | default "Jan 2, 2006") }}</p>
+          <h3 class="home-article__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        </header>
+        <p class="home-article__excerpt text-muted">
+          {{ with .Summary }}
+          {{ . | plainify | truncate 140 }}
+          {{ else }}
+          {{ .Plain | plainify | truncate 140 }}
+          {{ end }}
+        </p>
+        <a class="home-article__cta" href="{{ .RelPermalink }}">Read article <i class="fa-solid fa-arrow-right-long"></i></a>
+      </article>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
