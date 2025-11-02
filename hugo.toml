@@ -31,7 +31,7 @@ authorimage = "headshot.png"
 dateformat = "Jan 2, 2006"
 
 [params.hero]
-greeting = "Hi, I'm Chintan"
+greeting = "Hi, I am Chintan"
 title = "Building resilient cyber defense programs that scale."
 subtitle = "Hands-on security leader with 13+ years orchestrating threat intelligence, vulnerability management, and application security across global teams."
 primary_cta_label = "Download Resume"
