@@ -121,32 +121,37 @@ weight = 200
 identifier = "posts"
 url = "/posts"
 [[menu.main]]
+name = "Weekly-Intel"
+weight = 300
+identifier = "weekly-intel"
+url = "/weekly-intel"
+[[menu.main]]
 name = "Visualisations"
 identifier = "visualisations"
-weight = 300
+weight = 400
 url = "/visualisations"
 [[menu.main]]
 name = "About Me"
 identifier = "about"
-weight = 400
+weight = 500
 url = "/about"
 [[menu.main]]
 name = "My Repos"
 identifier = "repositories"
-weight = 500
+weight = 600
 url = "/repositories"
 [[menu.main]]
 name = "Checklists"
 identifier = "checklists"
-weight = 600
+weight = 700
 url = "/checklists"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
-weight = 700
+weight = 800
 url = "/kickstartcareer"
 [[menu.main]]
 name = "Disclaimer"
 identifier = "disclaimer"
-weight = 800
+weight = 900
 url = "/disclaimer"
