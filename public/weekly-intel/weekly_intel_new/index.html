@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        
+        <meta name="description" content="Practical Cybersecurity Blog">
+        
+        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
+
+        <title>
+              Cyber Frogy - Weekly_intel_new 
+        </title>
+
+        <meta name="generator" content="Hugo 0.152.2">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#ffffff"></head>
+
+    <body lang="en-US" class="is-page">
+        <div class="container my-auto">
+
+
+
+<div class="site-nav">
+  <div class="site-nav__inner">
+    <a class="site-brand" href="/">
+      <span class="site-brand__mark"></span>
+      <span class="site-brand__text">Cyber Frogy</span>
+    </a>
+    
+    <nav class="site-menu d-none d-md-flex">
+      
+      <a class="site-menu__link" href="/">Home</a>
+      
+      <a class="site-menu__link" href="/posts">Blog</a>
+      
+      <a class="site-menu__link" href="/weekly-intel">Weekly-Intel</a>
+      
+      <a class="site-menu__link" href="/visualisations">Visualisations</a>
+      
+      <a class="site-menu__link" href="/about">About Me</a>
+      
+      <a class="site-menu__link" href="/repositories">My Repos</a>
+      
+      <a class="site-menu__link" href="/checklists">Checklists</a>
+      
+      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+      
+      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+      
+    </nav>
+    
+    <div class="site-nav__actions">
+      
+      <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+    </div>
+  </div>
+  
+  <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
+    <nav class="d-flex flex-column gap-2">
+      
+      <a class="site-menu__link" href="/">Home</a>
+      
+      <a class="site-menu__link" href="/posts">Blog</a>
+      
+      <a class="site-menu__link" href="/weekly-intel">Weekly-Intel</a>
+      
+      <a class="site-menu__link" href="/visualisations">Visualisations</a>
+      
+      <a class="site-menu__link" href="/about">About Me</a>
+      
+      <a class="site-menu__link" href="/repositories">My Repos</a>
+      
+      <a class="site-menu__link" href="/checklists">Checklists</a>
+      
+      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+      
+      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+      
+    </nav>
+  </div>
+  
+</div>
+
+
+
+<main class="page-shell">
+  <article class="page-article">
+    <header class="page-article__header">
+      <h1 class="page-article__title">Weekly_intel_new</h1>
+    </header>
+
+    <section id="category-pane" class="page-article__meta meta-block">
+      
+      <div class="meta-row">
+        <p class="meta meta--label">
+           PUBLISHED ON NOV 10, 2025
+          
+          / 10 MIN READ
+          
+        </p>
+      </div>
+      
+    </section>
+
+    <section id="content-pane" class="page-article__content">
+      <div class="content">
+        
+        <nav id="TableOfContents"></nav>
+        
+        <!-- Weekly Threat Intelligence Briefing -->
+<style>
+:root {
+color-scheme: light;
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: #f4f6fb;
+}
+body {
+margin: 0;
+padding: 0;
+background: #f4f6fb;
+color: #1f2430;
+}
+.ti-wrapper {
+width: 100%;
+max-width: 1400px;
+margin: 2rem auto;
+padding: 3rem 3.5rem;
+background: #ffffff;
+border-radius: 32px;
+box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+.ti-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem;
+border-bottom: 1px solid #e4e8f2;
+padding-bottom: 1.5rem;
+margin-bottom: 2rem;
+}
+.ti-header h1 {
+margin: 0;
+font-size: 2.25rem;
+color: #101626;
+}
+.ti-header .eyebrow {
+letter-spacing: 0.18em;
+text-transform: uppercase;
+font-size: 0.78rem;
+color: #4b6fff;
+}
+.ti-header .timestamp {
+text-align: right;
+color: #4a4f63;
+}
+.ti-panel {
+margin-bottom: 2.5rem;
+background: #ffffff;
+border: 1px solid #e6e9f3;
+border-radius: 28px;
+padding: 2rem;
+box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);
+}
+.panel-title {
+margin-top: 0;
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+color: #6d7693;
+text-transform: uppercase;
+}
+.summary-grid {
+display: flex;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+.summary-card {
+flex: 1 1 calc(20% - 0.8rem);
+border-radius: 22px;
+padding: 1.2rem;
+background: #f9faff;
+border: 1px solid #e4e9ff;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.summary-card h4 {
+margin: 0;
+font-size: 1rem;
+color: #141b31;
+}
+.summary-card p {
+margin: 0;
+color: #4c5169;
+font-size: 0.92rem;
+}
+.summary-chip {
+align-self: flex-start;
+font-size: 0.72rem;
+font-weight: 600;
+padding: 0.2rem 0.6rem;
+border-radius: 999px;
+background: #e8edff;
+color: #3046c7;
+}
+.summary-card dl {
+margin: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+font-size: 0.8rem;
+}
+.summary-card dl div {
+flex: 1 1 90px;
+min-width: 90px;
+}
+.summary-card dt {
+color: #7e85a5;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-size: 0.68rem;
+}
+.summary-card dd {
+margin: 0;
+font-weight: 600;
+color: #101626;
+}
+.summary-card.severity-high {
+border-color: #ffb1b1;
+background: #fff6f6;
+}
+.summary-card.severity-medium {
+border-color: #ffd9a3;
+background: #fff9f0;
+}
+.summary-card.severity-low {
+border-color: #bfe9ff;
+background: #f4fbff;
+}
+.priority-list {
+counter-reset: priority;
+list-style: none;
+padding-left: 0;
+margin: 1.25rem 0 0;
+}
+.priority-list li {
+counter-increment: priority;
+padding: 1rem 0 1rem 3.25rem;
+position: relative;
+border-bottom: 1px solid #edf0f7;
+color: #2b3042;
+line-height: 1.45;
+}
+.priority-list li::before {
+content: counter(priority);
+position: absolute;
+left: 0.8rem;
+top: 1rem;
+background: #4b6fff;
+color: #ffffff;
+width: 1.65rem;
+height: 1.65rem;
+border-radius: 999px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+font-weight: 600;
+box-shadow: 0 6px 20px rgba(75,111,255,0.3);
+}
+.event-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.event-card {
+background: #fefefe;
+border-radius: 24px;
+padding: 1.75rem;
+border: 1px solid #e6eaf5;
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
+box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+.event-card h4 {
+margin: 0;
+font-size: 1.05rem;
+color: #12182b;
+}
+.event-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 0.75rem;
+font-size: 0.8rem;
+color: #5b6075;
+}
+.priority-pill {
+background: #ffe5e5;
+color: #c21f3a;
+border-radius: 999px;
+padding: 0.2rem 0.8rem;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 0.72rem;
+}
+.event-card.severity-medium .priority-pill {
+background: #ffeccf;
+color: #a86a00;
+}
+.event-card.severity-low .priority-pill {
+background: #e1f6ff;
+color: #1477a5;
+}
+.event-body h5, .event-body h6 {
+margin-top: 1rem;
+margin-bottom: 0.3rem;
+font-size: 0.85rem;
+letter-spacing: 0.05em;
+color: #4b6fff;
+text-transform: uppercase;
+}
+.event-body ul {
+margin: 0.5rem 0 0.5rem 1.1rem;
+padding: 0;
+}
+.table-scroll {
+overflow-x: auto;
+border: 1px solid #e5e8f2;
+border-radius: 16px;
+margin-top: 1.25rem;
+}
+.table-scroll table {
+width: 100%;
+border-collapse: collapse;
+min-width: 640px;
+}
+.table-scroll th,
+.table-scroll td {
+padding: 0.55rem 0.85rem;
+border-bottom: 1px solid #edf0f7;
+white-space: nowrap;
+}
+.table-scroll th {
+text-transform: uppercase;
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+color: #6c7693;
+background: #f7f8fd;
+}
+.table-scroll td {
+color: #2d3245;
+font-size: 0.85rem;
+}
+.ti-section-block {
+border-top: 1px solid #eef1f8;
+padding-top: 1.25rem;
+margin-top: 1.25rem;
+}
+.ti-section-block h4 {
+margin: 0 0 0.6rem 0;
+font-size: 1rem;
+color: #141b31;
+}
+.ti-section-body {
+color: #3a404f;
+line-height: 1.55;
+}
+.ti-section-body ul,
+.ti-section-body ol {
+margin-left: 1.25rem;
+}
+.ti-footer {
+text-align: right;
+font-size: 0.8rem;
+color: #7a8097;
+margin-top: 1.75rem;
+}
+@media (max-width: 1100px) {
+.summary-grid {
+flex-wrap: wrap;
+}
+.summary-card {
+flex: 1 1 calc(50% - 0.75rem);
+}
+}
+@media (max-width: 768px) {
+.ti-wrapper {
+width: 95%;
+padding: 1.75rem;
+}
+.ti-header {
+flex-direction: column;
+align-items: flex-start;
+}
+.ti-header .timestamp {
+text-align: left;
+}
+.summary-card {
+flex: 1 1 100%;
+}
+}
+</style>
+<div class="ti-wrapper">
+<header class="ti-header">
+<div>
+<div class="eyebrow">Weekly Threat Intelligence Briefing</div>
+<h1>Cyber Threat Intelligence Briefing</h1>
+</div>
+<div class="timestamp">
+<div class="eyebrow">Report Date (UTC)</div>
+<div>2025-11-08 14:00:00 UTC</div>
+</div>
+</header>
+<section class="ti-panel">
+<h3 class="panel-title">Executive Summary — Top Threats</h3>
+<div class="summary-grid">
+<article class="summary-card severity-high">
+<div class="summary-chip">NEW</div>
+<h4>A patched Samsung zero-day vulnerability (CVE-2025-21042) was actively exploited in the wild via zero-click messages to deploy new commercial-grade Android spyware called LANDFALL, primarily targeting entities in the Middle East</h4>
+<p>A patched Samsung zero-day vulnerability (CVE-2025-21042) was actively exploited in the wild via zero-click messages to deploy new commercial-grade Android spyware called LANDFALL, primarily targeting entities in the Middle East.</p>
+<dl>
+<div><dt>Likelihood</dt><dd>High</dd></div>
+<div><dt>Impact</dt><dd>High</dd></div>
+<div><dt>Confidence</dt><dd>High</dd></div>
+</dl>
+</article>
+<article class="summary-card severity-high">
+<div class="summary-chip">UPDATE</div>
+<h4>Previously disclosed, exploited Cisco firewall vulnerabilities (CVE-2025-20333, CVE-2025-20362) are now being used in a new attack variant that forces devices into a reboot loop, causing a denial-of-service condition</h4>
+<p>Previously disclosed, exploited Cisco firewall vulnerabilities (CVE-2025-20333, CVE-2025-20362) are now being used in a new attack variant that forces devices into a reboot loop, causing a denial-of-service condition.</p>
+<dl>
+<div><dt>Likelihood</dt><dd>High</dd></div>
+<div><dt>Impact</dt><dd>High</dd></div>
+<div><dt>Confidence</dt><dd>High</dd></div>
+</dl>
+</article>
+<article class="summary-card severity-high">
+<div class="summary-chip">NEW</div>
+<h4>Malicious NuGet packages containing logic bombs have been discovered in the public repository; these packages target developers and are designed to sabotage database operations and Siemens industrial control systems, with payloads scheduled to activate in 2027 and 2028</h4>
+<p>Malicious NuGet packages containing logic bombs have been discovered in the public repository; these packages target developers and are designed to sabotage database operations and Siemens industrial control systems, with payloads scheduled to activate in 2027 and 2028.</p>
+<dl>
+<div><dt>Likelihood</dt><dd>Medium</dd></div>
+<div><dt>Impact</dt><dd>High</dd></div>
+<div><dt>Confidence</dt><dd>High</dd></div>
+</dl>
+</article>
+<article class="summary-card severity-high">
+<div class="summary-chip">NEW</div>
+<h4>CISA issued an advisory for multiple critical vulnerabilities (CVSS 10.0) in Radiometrics VizAir airport weather monitoring systems that could allow unauthenticated remote attackers to manipulate critical flight safety data</h4>
+<p>CISA issued an advisory for multiple critical vulnerabilities (CVSS 10.0) in Radiometrics VizAir airport weather monitoring systems that could allow unauthenticated remote attackers to manipulate critical flight safety data.</p>
+<dl>
+<div><dt>Likelihood</dt><dd>High</dd></div>
+<div><dt>Impact</dt><dd>Critical</dd></div>
+<div><dt>Confidence</dt><dd>High</dd></div>
+</dl>
+</article>
+<article class="summary-card severity-high">
+<div class="summary-chip">NEW</div>
+<h4>QNAP has released patches for seven zero-day vulnerabilities demonstrated at the Pwn2Own hacking competition, which could allow attackers to gain control of network-attached storage (NAS) devices</h4>
+<p>QNAP has released patches for seven zero-day vulnerabilities demonstrated at the Pwn2Own hacking competition, which could allow attackers to gain control of network-attached storage (NAS) devices.</p>
+<dl>
+<div><dt>Likelihood</dt><dd>Medium</dd></div>
+<div><dt>Impact</dt><dd>High</dd></div>
+<div><dt>Confidence</dt><dd>High</dd></div>
+</dl>
+</article>
+</div>
+</section>
+<section class="ti-panel">
+<h3 class="panel-title">Immediate Priority Actions</h3>
+<ol class="priority-list">
+<li><strong>Patch:</strong> Immediately apply updates to all Samsung mobile devices to mitigate CVE-2025-21042.</li><li><strong>Verify &amp; Monitor:</strong> Confirm that Cisco ASA and FTD firewalls are patched against CVE-2025-20333 and CVE-2025-20362 and monitor for unexpected reboots.</li><li><strong>Hunt &amp; Remove:</strong> Task development teams to scan software supply chains for malicious NuGet packages published by the user &quot;shanhai666&quot; and remove them.</li><li><strong>Patch:</strong> Prioritize patching of all ICS/OT systems listed in today&#x27;s CISA advisories, especially Radiometrics VizAir, ABB FLXeon, and Advantech DeviceOn/iEdge.</li><li><strong>Patch:</strong> Apply available patches for all QNAP NAS devices to address the seven zero-day vulnerabilities.</li><li><strong>Block:</strong> Add the IOCs listed in this report to blocklists and retroactively hunt for related activity.</li>
+</ol>
+</section>
+<section class="ti-panel">
+<h3 class="panel-title">Notable Events & Assessments</h3>
+<div class="event-grid">
+<article class="event-card severity-low">
+<div class="event-meta">
+<span class="priority-pill">P1</span>
+<span><strong>Title:</strong> Samsung Zero-Day (CVE-2025-21042) Exploited via Zero-Click Messages to Deliver New LANDFALL Spyware in Middle East.</span>
+</div>
+<h4>Samsung Zero-Day Exploited In-the-Wild to Deploy LANDFALL Android Spyware</h4>
+<div class="event-body">
+<ul><li><strong>Likelihood:</strong> High</li><li><strong>Impact:</strong> High</li><li><strong>Overall Priority:</strong> P1 (Rationale: In-the-wild zero-day exploitation of a widely used mobile device to install potent spyware.)</li></ul>
+<p><strong>Facts:</strong></p>
+<ul><li>A now-patched zero-day vulnerability, CVE-2025-21042 (CVSS 8.8), in a Samsung Android image processing library (<code>libimagecodec.quram.so</code>) was exploited in targeted attacks (Unit 42, 2025-11-07 11:00:23 UTC; Security Affairs, 2025-11-07 21:54:22 UTC).</li><li>The exploit was delivered via zero-click messages, such as WhatsApp, containing a malicious image, to deploy a previously unknown commercial-grade Android spyware named LANDFALL (BleepingComputer, 2025-11-07 13:23:25 -0500; The Hacker News, 2025-11-07 23:30:00 +0530).</li><li>The campaign, which ran for approximately nine months, targeted entities in the Middle East (The Record, 2025-11-07 17:12:43 GMT).</li><li>LANDFALL spyware possesses capabilities to collect sensitive user data, including contacts, call logs, messages, location data, and files (Unit 42, 2025-11-07 11:00:23 UTC).</li><li>Samsung has released a patch for the vulnerability. The specific patch date was not detailed in the sources (Security Affairs, 2025-11-07 21:54:22 UTC).</li></ul>
+<p><strong>Assessment:</strong></p>
+<ul><li>We assess with high confidence that this campaign was conducted by a sophisticated actor, likely a commercial spyware vendor, given the use of a zero-day exploit and the advanced capabilities of the LANDFALL spyware. The zero-click nature of the exploit makes it particularly dangerous as it requires no user interaction to succeed.</li><li>The targeting of individuals in the Middle East is consistent with the operational patterns of several known commercial surveillanceware providers.</li><li>While a patch is available, the long duration of the campaign suggests that many devices may have been compromised. The risk of compromise for unpatched devices remains high.</li></ul>
+<p><strong>Relevance:</strong></p>
+<ul><li>This threat is relevant to our organization due to the widespread use of Samsung Android devices among employees for both corporate and personal use. A compromise could lead to the loss of sensitive corporate data, credentials, and PII.</li><li><strong>Affected in estate?</strong> Unknown. Asset management must identify all corporate-managed Samsung devices and verify patch status with device owners.</li></ul>
+<p><strong>ATT&amp;CK:</strong></p>
+<ul><li>T1400: Exploit via Charging/Tethering Port</li><li>T1404: Exploitation for Client Execution</li><li>T1417: Input Capture</li><li>T1426: System Information Discovery</li><li>T1432: Access Contact List</li><li>T1433: Access Calendar</li><li>T1637: Steal Application Data</li><li><strong>Malware:</strong> LANDFALL Spyware</li></ul>
+<p><strong>Detection Ideas:</strong></p>
+<ul><li>Monitor mobile device management (MDM) logs for unpatched Samsung devices.</li><li>Deploy Mobile Threat Defense (MTD) solutions capable of detecting spyware behavior and anomalous application activity.</li></ul>
+<p><strong>Mitigations:</strong></p>
+<ul><li>Ensure all Samsung devices are updated with the latest security patches immediately.</li><li>Educate users about the risk of zero-click exploits and the importance of timely updates.</li><li>Restrict the installation of applications from untrusted sources on all mobile devices.</li></ul>
+<hr />
+</div>
+</article>
+<article class="event-card severity-low">
+<div class="event-meta">
+<span class="priority-pill">P1</span>
+<span><strong>Title:</strong> Actively Exploited Cisco Firewall Flaws (CVE-2025-20333, CVE-2025-20362) Now Abused in New Variant of DoS Attacks.</span>
+</div>
+<h4>UPDATE - New DoS Attacks Exploit Cisco Firewall Zero-Days</h4>
+<div class="event-body">
+<ul><li><strong>Likelihood:</strong> High</li><li><strong>Impact:</strong> High</li><li><strong>Overall Priority:</strong> P1 (Rationale: Active exploitation of critical edge network devices with a new attack variant that causes service disruption.)</li></ul>
+<p><strong>Facts:</strong></p>
+<ul><li>Cisco has warned that two previously disclosed zero-day vulnerabilities, CVE-2025-20333 and CVE-2025-20362, are now being targeted by a new attack variant (BleepingComputer, 2025-11-07 10:44:31 -0500; Security Affairs, 2025-11-06 18:26:17 +0000).</li><li>The new attack can cause unpatched Cisco Secure Firewall Adaptive Security Appliance (ASA) and Firewall Threat Defense (FTD) devices to unexpectedly reload, resulting in a denial-of-service (DoS) condition (The Hacker News, 2025-11-06 20:28:00 +0530).</li><li>These vulnerabilities were initially exploited in the wild before patches were available, and are now being leveraged for this new purpose (BleepingComputer, 2025-11-07 10:44:31 -0500).</li></ul>
+<p><strong>Assessment:</strong></p>
+<ul><li>We assess with high confidence that threat actors are expanding their use of these vulnerabilities beyond initial access and espionage to include disruptive attacks. This indicates that the flaws are well-understood and widely exploited.</li><li>Organizations that have not yet patched are at immediate risk of network outages from these DoS attacks. The impact on business operations could be significant, especially for public-facing services.</li></ul>
+<p><strong>Relevance:</strong></p>
+<ul><li>This threat is directly relevant as Cisco ASA/FTD firewalls are deployed at our network edge. A successful DoS attack would disrupt internet connectivity and access to critical services.</li><li><strong>Affected in estate?</strong> Unknown. Network operations must confirm the patch status of all Cisco firewall appliances.</li></ul>
+<p><strong>ATT&amp;CK:</strong></p>
+<ul><li>T1499: Endpoint Denial of Service</li><li>T1499.003: OS Exhaustion Flood</li></ul>
+<p><strong>Detection Ideas:</strong></p>
+<ul><li>Monitor firewall logs for unexpected reboots or crashes.</li><li>Implement network monitoring to detect anomalous traffic patterns targeting firewall management interfaces.</li><li>Review logs for any indicators of compromise related to the initial exploitation of these CVEs.</li></ul>
+<p><strong>Mitigations:</strong></p>
+<ul><li>Apply the security updates provided by Cisco for CVE-2025-20333 and CVE-2025-20362 immediately.</li><li>Restrict access to firewall management interfaces to a limited set of trusted IP addresses.</li></ul>
+<hr />
+</div>
+</article>
+<article class="event-card severity-low">
+<div class="event-meta">
+<span class="priority-pill">P2</span>
+<span><strong>Title:</strong> Software Supply Chain Threat: Malicious NuGet Packages Contain Logic Bombs Targeting Databases and Siemens ICS.</span>
+</div>
+<h4>Malicious NuGet Packages with Delayed Sabotage Payloads Discovered</h4>
+<div class="event-body">
+<ul><li><strong>Likelihood:</strong> Medium</li><li><strong>Impact:</strong> High</li><li><strong>Overall Priority:</strong> P2 (Rationale: A novel supply chain attack with a delayed, high-impact payload presents a hidden risk to software development and operational technology.)</li></ul>
+<p><strong>Facts:</strong></p>
+<ul><li>Several malicious packages have been discovered on the NuGet package manager containing sabotage payloads scheduled to activate in August 2027 and 2028 (BleepingComputer, 2025-11-07 15:53:48 -0500).</li><li>The nine packages were published in 2023 and 2024 by a user named &quot;shanhai666&quot; (The Hacker News, 2025-11-07 17:25:00 +0530).</li><li>The delayed &quot;time bomb&quot; payloads are designed to disrupt database implementations and corrupt Siemens S7 industrial control devices (BleepingComputer, 2025-11-07 15:53:48 -0500).</li></ul>
+<p><strong>Assessment:</strong></p>
+<ul><li>We assess with high confidence that this is a deliberate and patient attempt to compromise software supply chains for future sabotage. The long delay between installation and payload activation is designed to evade detection and maximize impact.</li><li>The targeting of both general database implementations and specific ICS hardware suggests the actor may have broad objectives, ranging from widespread disruption to targeted attacks on industrial environments. The risk is significant for any organization that has unknowingly incorporated these packages into their software.</li></ul>
+<p><strong>Relevance:</strong></p>
+<ul><li>This threat is highly relevant to our software development lifecycle. Our developers use NuGet for managing dependencies, and an inadvertent inclusion of these packages could embed a latent threat in our proprietary applications.</li><li><strong>Affected in estate?</strong> Unknown. A full scan of our software repositories and build environments is required to determine if these packages are present.</li></ul>
+<p><strong>ATT&amp;CK:</strong></p>
+<ul><li>T1195: Supply Chain Compromise</li><li>T1195.001: Compromise Software Dependencies and Development Tools</li><li>T1499: Endpoint Denial of Service</li><li>T1485: Data Destruction</li></ul>
+<p><strong>Detection Ideas:</strong></p>
+<ul><li>Utilize Software Composition Analysis (SCA) tools to scan all code repositories for the identified malicious packages published by &quot;shanhai666&quot;.</li><li>Monitor build server logs for any connections to suspicious domains or execution of unexpected commands during package installation.</li></ul>
+<p><strong>Mitigations:</strong></p>
+<ul><li>Immediately remove any identified malicious packages from development environments, build servers, and deployed applications.</li><li>Implement stricter policies for vetting third-party libraries, including checking author reputation and package download statistics.</li><li>Educate developers on the risks of typosquatting and malicious packages in open-source repositories.</li></ul>
+<hr />
+</div>
+</article>
+</div>
+</section>
+<section class="ti-panel">
+<h3 class="panel-title">Full Intelligence Sections</h3>
+<article class="ti-section-block">
+<h4>3) Vulnerability &amp; Exploitation Watch</h4>
+<div class="ti-section-body">
+<div class="table-scroll"><table><thead><tr><th>CVE</th><th>Product/Version</th><th>CVSS v3.1</th><th>EPSS (%)</th><th>KEV?</th><th>Exploit Availability</th><th>Affected in estate?</th><th>Patch/Config Fix</th><th>Priority</th><th>Rationale</th><th>Sources (URLs, UTC)</th></tr></thead><tbody><tr><td><strong>CVE-2025-21042</strong></td><td>Samsung Galaxy Devices (libimagecodec.quram.so)</td><td>8.8</td><td>—</td><td>No</td><td><strong>In the Wild</strong></td><td>Unknown</td><td>Patch Available</td><td>P1</td><td>Zero-day exploited in the wild to deliver spyware via zero-click messages.</td><td><a href="https://securityaffairs.com/184331/security/landfall-spyware-exploited-samsung-zero-day-cve-2025-21042-in-middle-east-attacks.html" target="_blank" rel="noopener">securityaffairs.com</a> (2025-11-07 21:54:22), <a href="https://www.bleepingcomputer.com/news/security/new-landfall-spyware-exploited-samsung-zero-day-via-whatsapp-messages/" target="_blank" rel="noopener">bleepingcomputer.com</a> (2025-11-07 13:23:25 -0500)</td></tr><tr><td><strong>CVE-2025-20333</strong></td><td>Cisco Secure Firewall ASA/FTD</td><td>—</td><td>—</td><td>No</td><td><strong>In the Wild</strong></td><td>Unknown</td><td>Patch Available</td><td>P1</td><td>Actively exploited to cause DoS (reboot loop) on critical edge devices.</td><td><a href="https://www.bleepingcomputer.com/news/security/cisco-actively-exploited-firewall-flaws-now-abused-for-dos-attacks/" target="_blank" rel="noopener">bleepingcomputer.com</a> (2025-11-07 10:44:31 -0500)</td></tr><tr><td><strong>CVE-2025-20362</strong></td><td>Cisco Secure Firewall ASA/FTD</td><td>—</td><td>—</td><td>No</td><td><strong>In the Wild</strong></td><td>Unknown</td><td>Patch Available</td><td>P1</td><td>Actively exploited to cause DoS (reboot loop) on critical edge devices.</td><td><a href="https://www.bleepingcomputer.com/news/security/cisco-actively-exploited-firewall-flaws-now-abused-for-dos-attacks/" target="_blank" rel="noopener">bleepingcomputer.com</a> (2025-11-07 10:44:31 -0500)</td></tr><tr><td><strong>CVE-2025-61945</strong></td><td>Radiometrics VizAir</td><td>10.0</td><td>—</td><td>No</td><td>Theoretical</td><td>Unknown</td><td>Patch Available</td><td>P1</td><td>Critical (CVSS 10.0) missing authentication in airport weather system.</td><td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-25-308-04" target="_blank" rel="noopener">cisa.gov</a> (2025-11-04 12:00:00 +0000)</td></tr><tr><td><strong>N/A</strong></td><td>QNAP NAS Devices (7 vulnerabilities)</td><td>—</td><td>—</td><td>No</td><td>PoC Available</td><td>Unknown</td><td>Patch Available</td><td>P2</td><td>Seven zero-days affecting NAS devices were demonstrated at Pwn2Own.</td><td><a href="https://www.bleepingcomputer.com/news/security/qnap-fixes-seven-nas-zero-day-vulnerabilities-exploited-at-pwn2own/" target="_blank" rel="noopener">bleepingcomputer.com</a> (2025-11-07 13:24:43 -0500)</td></tr><tr><td><strong>CVE-2025-20354</strong></td><td>Cisco Unified Contact Center Express (UCCX)</td><td>9.8</td><td>—</td><td>No</td><td>Theoretical</td><td>Unknown</td><td>Patch Available</td><td>P2</td><td>Critical vulnerability allowing command execution with root privileges.</td><td><a href="https://securityaffairs.com/184321/security/cisco-fixes-critical-uccx-flaw-allowing-root-command-execution.html" target="_blank" rel="noopener">securityaffairs.com</a> (2025-11-07 11:37:10 UTC)</td></tr><tr><td><strong>CVE-2025-62630</strong></td><td>Advantech DeviceOn/iEdge &lt;= 2.0.2</td><td>8.8</td><td>—</td><td>No</td><td>Theoretical</td><td>Unknown</td><td>Upgrade to DeviceOn</td><td>P2</td><td>Path traversal allowing RCE with system-level permissions on IoT platform.</td><td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-25-310-01" target="_blank" rel="noopener">cisa.gov</a> (2025-11-06 12:00:00 +0000)</td></tr><tr><td><strong>CVE-2025-10205</strong></td><td>ABB FLXeon Controllers &lt;= 9.3.5</td><td>8.8</td><td>—</td><td>No</td><td>Theoretical</td><td>Unknown</td><td>Apply Mitigations</td><td>P2</td><td>Vulnerable password hashing (MD5) allows credential compromise.</td><td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-25-310-03" target="_blank" rel="noopener">cisa.gov</a> (2025-11-06 12:00:00 +0000)</td></tr></tbody></table></div>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>4) Indicators of Compromise (IOCs)</h4>
+<div class="ti-section-body">
+<p><em>The following indicators are derived from today&#x27;s sources. High-confidence indicators should be blocked and hunted. Assess potential for false positives before implementing blocking actions.</em></p>
+<div class="table-scroll"><table><thead><tr><th>Type</th><th>Value</th><th>First Seen (UTC)</th><th>Last Seen (UTC)</th><th>Related Threat Actor/Campaign</th><th>Confidence</th><th>Source(s) (URL+UTC)</th><th>Enrichment</th><th>Sinkhole?</th></tr></thead><tbody><tr><td>Domain</td><td><code>foggydoxz.xyz</code></td><td>2025-10-18</td><td>2025-10-18</td><td>Multi-stage macOS Dropper</td><td>High</td><td><a href="https://blog.virustotal.com/2025/11/reversing-at-scale-ai-powered-malware.html" target="_blank" rel="noopener">blog.virustotal.com</a> (2025-11-06 21:17:00.001Z)</td><td>C2 for downloading second-stage payload.</td><td>No</td></tr><tr><td>URL</td><td><code>https://t[.]me/blatants</code></td><td>2025-10-18</td><td>2025-10-18</td><td>iOS Jailbreak Tweak (Phishing)</td><td>High</td><td><a href="https://blog.virustotal.com/2025/11/reversing-at-scale-ai-powered-malware.html" target="_blank" rel="noopener">blog.virustotal.com</a> (2025-11-06 21:17:00.001Z)</td><td>Telegram channel used for C2/distribution.</td><td>No</td></tr></tbody></table></div>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>5) Threat Actors &amp; Campaigns</h4>
+<div class="ti-section-body">
+<div class="table-scroll"><table><thead><tr><th>Name &amp; Aliases</th><th>Sponsor/Motive</th><th>Targeting</th><th>Typical TTPs (ATT&amp;CK IDs)</th><th>Recent Activity</th><th>Confidence</th><th>Source(s)</th></tr></thead><tbody><tr><td><strong>LANDFALL Spyware</strong></td><td>Likely Commercial Surveillance Vendor / Espionage</td><td>Entities in the Middle East</td><td>T1404 (Exploitation for Client Execution), T1417 (Input Capture), T1637 (Steal Application Data)</td><td>Deployed via a Samsung zero-day (CVE-2025-21042) in a nine-month campaign.</td><td>High</td><td><a href="https://unit42.paloaltonetworks.com/landfall-is-new-commercial-grade-android-spyware/" target="_blank" rel="noopener">unit42.paloaltonetworks.com</a>, <a href="https://therecord.media/landfall-spyware-middle-east-appears-commercial-grade" target="_blank" rel="noopener">therecord.media</a></td></tr><tr><td><strong>Unnamed China-linked Actor</strong></td><td>China / Espionage</td><td>U.S. non-profit organizations involved in policy issues</td><td>T1190 (Exploit Public-Facing Application), T1071 (Application Layer Protocol)</td><td>Targeted a U.S. non-profit using legacy vulnerabilities like Log4j to establish long-term persistence.</td><td>Medium</td><td><a href="https://thehackernews.com/2025/11/from-log4j-to-iis-chinas-hackers-turn.html" target="_blank" rel="noopener">thehackernews.com</a></td></tr></tbody></table></div>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>6) Sector &amp; Geo Risk Signals</h4>
+<div class="ti-section-body">
+<ul><li><strong>US Government:</strong> The U.S. Congressional Budget Office (CBO) confirmed it suffered a cyberattack by a suspected foreign actor and is implementing additional security controls (The Record, 2025-11-07 18:09:33 GMT). This highlights continued targeting of U.S. government entities.</li><li><strong>US Defense Industrial Base:</strong> An article notes that more than half of U.S. military contractors are unprepared to meet the new Cybersecurity Maturity Model Certification (CMMC) 2.0 requirements, increasing supply chain risk for the Department of Defense (DataBreaches.net, 2025-11-08 12:53:23 UTC).</li><li><strong>Pakistan:</strong> Law enforcement arrested a suspect for selling the personal data of millions of Pakistani citizens, indicating a large-scale data breach affecting the region (DataBreaches.net, 2025-11-08 13:01:53 UTC).</li></ul>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>7) Third-Party &amp; Supply Chain Notes</h4>
+<div class="ti-section-body">
+<ul><li><strong>Software Development (NuGet):</strong> Discovery of malicious packages with &quot;time bomb&quot; sabotage payloads on the public NuGet repository poses a significant supply chain risk for any organization using the platform for .NET development (BleepingComputer, 2025-11-07 15:53:48 -0500).</li><li><strong>Aviation (Collins Aerospace):</strong> An interview with the Everest ransomware group disputes the official &quot;ransomware&quot; classification of the Collins Aerospace breach, suggesting a different attack vector. This may have implications for third parties (airports) that rely on their systems (DataBreaches.net, 2025-11-07 17:08:26 UTC).</li></ul>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>8) Detections &amp; Response Playbook Updates</h4>
+<div class="ti-section-body">
+<ul><li><strong>New Sigma Rule:</strong> A rule to detect suspicious downloads via <code>CertReq.exe</code> was fixed to improve accuracy (<code>43b6fae2</code>). Threat actors use this living-off-the-land binary for C2 communication and file downloads (GitHub, 2025-11-06 04:46:11.000Z).</li><li><strong>New Sigma Rules:</strong> New rules were added to detect the ClickFix/FileFix malware campaign&#x27;s use of whitespace padding in process execution and registry paths to evade detection (<code>251be1e</code>). SOCs should review and implement these (GitHub, 2025-11-05 10:11:32.000Z).</li><li><strong>Playbook Update:</strong> Review and update incident response playbooks for network device outages to include steps for investigating potential DoS attacks targeting known vulnerabilities, as seen with the new Cisco firewall attack variant.</li></ul>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>9) Metrics &amp; Hygiene</h4>
+<div class="ti-section-body">
+<ul><li>No significant updates from today&#x27;s sources.</li></ul>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>10) Assumptions, Gaps, and Tasking</h4>
+<div class="ti-section-body">
+<ul><li><strong>Assumptions:</strong> We assume that the CVEs and technical details provided by vendors (Samsung, Cisco, QNAP) and security researchers (Unit 42) are accurate (High Confidence).</li><li><strong>Gaps:</strong> Specific IOCs (hashes, C2 IPs) for the LANDFALL spyware campaign were not provided in the source articles. The full list of malicious NuGet packages was also not provided, only the publisher&#x27;s username.</li><li><strong>Tasking:</strong></li></ul>
+<ol><li><strong>Asset Management:</strong> Provide a list of all corporate-managed Samsung mobile devices, Cisco ASA/FTD firewalls, QNAP NAS devices, and the specific ICS products mentioned in CISA advisories by EOD.</li><li><strong>Vulnerability Management:</strong> Prioritize scanning and patching for all vulnerabilities listed in the Vulnerability Watch table, with P1 items addressed within 72 hours.</li><li><strong>SOC / Hunt Team:</strong> Conduct a 30-day retroactive hunt for the IOCs listed in this report.</li><li><strong>Development / DevOps:</strong> Scan all software repositories for any packages published on NuGet by the user &quot;shanhai666&quot;. Report findings to the security team immediately.</li></ol>
+<hr />
+</div>
+</article>
+<article class="ti-section-block">
+<h4>11) Source Log</h4>
+<div class="ti-section-body">
+<ul><li><a href="https://databreaches.net/2025/11/08/nccia-arrests-man-over-massive-data-breach-involving-millions-of-pakistanis/?pk_campaign=feed&amp;pk_kwd=nccia-arrests-man-over-massive-data-breach-involving-millions-of-pakistanis" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://databreaches.net/2025/11/08/defense-contractors-are-silencing-their-cybersecurity-watchdogs/?pk_campaign=feed&amp;pk_kwd=defense-contractors-are-silencing-their-cybersecurity-watchdogs" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://databreaches.net/2025/11/07/fourth-circuit-weighs-in-on-standing-in-data-breach-class-actions/?pk_campaign=feed&amp;pk_kwd=fourth-circuit-weighs-in-on-standing-in-data-breach-class-actions" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://databreaches.net/2025/11/07/alt5-sigma-sues-former-consultant-over-alleged-data-breach/?pk_campaign=feed&amp;pk_kwd=alt5-sigma-sues-former-consultant-over-alleged-data-breach" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://www.wired.com/story/the-government-shutdown-is-a-ticking-cybersecurity-time-bomb/" target="_blank" rel="noopener">wired.com</a></li><li><a href="https://databreaches.net/2025/11/07/is-your-cyberinsurance-paid-up-are-you-sure/?pk_campaign=feed&amp;pk_kwd=is-your-cyberinsurance-paid-up-are-you-sure" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://www.schneier.com/blog/archives/2025/11/friday-squid-blogging-squid-game-the-challenge-season-two.html" target="_blank" rel="noopener">schneier.com</a></li><li><a href="https://securityaffairs.com/184331/security/landfall-spyware-exploited-samsung-zero-day-cve-2025-21042-in-middle-east-attacks.html" target="_blank" rel="noopener">securityaffairs.com</a></li><li><a href="https://www.bleepingcomputer.com/news/security/malicious-nuget-packages-drop-disruptive-time-bombs/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://www.comparitech.com/blog/vpn-privacy/common-vpn-scams/" target="_blank" rel="noopener">comparitech.com</a></li><li><a href="https://www.comparitech.com/blog/vpn-privacy/uk-digital-ids-privacy-concerns/" target="_blank" rel="noopener">comparitech.com</a></li><li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-testing-faster-quick-machine-recovery-in-windows-11/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://therecord.media/revised-cyber-command-master-plan-dod-pentagon" target="_blank" rel="noopener">therecord.media</a></li><li><a href="https://www.bleepingcomputer.com/news/security/qnap-fixes-seven-nas-zero-day-vulnerabilities-exploited-at-pwn2own/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://www.bleepingcomputer.com/news/security/new-landfall-spyware-exploited-samsung-zero-day-via-whatsapp-messages/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://therecord.media/cbo-implements-controls-following-cyberattack-reports" target="_blank" rel="noopener">therecord.media</a></li><li><a href="https://www.malwarebytes.com/blog/news/2025/11/malwarebytes-scores-100-in-av-comparatives-stalkerware-test-2025" target="_blank" rel="noopener">malwarebytes.com</a></li><li><a href="https://thehackernews.com/2025/11/samsung-zero-click-flaw-exploited-to.html" target="_blank" rel="noopener">thehackernews.com</a></li><li><a href="https://therecord.media/landfall-spyware-middle-east-appears-commercial-grade" target="_blank" rel="noopener">therecord.media</a></li><li><a href="https://databreaches.net/2025/11/07/everest-group-interview-on-collins-aerospace-breach-daily-dark-web/?pk_campaign=feed&amp;pk_kwd=everest-group-interview-on-collins-aerospace-breach-daily-dark-web" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://www.microsoft.com/en-us/security/blog/2025/11/07/whisper-leak-a-novel-side-channel-cyberattack-on-remote-language-models/" target="_blank" rel="noopener">microsoft.com</a></li><li><a href="https://thehackernews.com/2025/11/from-log4j-to-iis-chinas-hackers-turn.html" target="_blank" rel="noopener">thehackernews.com</a></li><li><a href="https://databreaches.net/2025/11/07/breaking-up-with-edtech-is-hard-to-do/?pk_campaign=feed&amp;pk_kwd=breaking-up-with-edtech-is-hard-to-do" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://hackread.com/i-paid-twice-scam-booking-com-purerat-clickfix/" target="_blank" rel="noopener">hackread.com</a></li><li><a href="https://www.bleepingcomputer.com/news/security/cisco-actively-exploited-firewall-flaws-now-abused-for-dos-attacks/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://www.bleepingcomputer.com/news/security/id-verification-laws-are-fueling-the-next-wave-of-breaches/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://www.malwarebytes.com/blog/news/2025/11/fake-captcha-sites-now-have-tutorial-videos-to-help-victims-install-malware" target="_blank" rel="noopener">malwarebytes.com</a></li><li><a href="https://databreaches.net/2025/11/07/benworth-capital-partners-negotiated-with-threat-actors-after-more-than-25000-lenders-had-data-stolen/?pk_campaign=feed&amp;pk_kwd=benworth-capital-partners-negotiated-with-threat-actors-after-more-than-25000-lenders-had-data-stolen" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-45-7/" target="_blank" rel="noopener">sentinelone.com</a></li><li><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/leak-confirms-google-gemini-3-pro-and-nano-banana-2-could-launch-soon/" target="_blank" rel="noopener">bleepingcomputer.com</a></li><li><a href="https://databreaches.net/2025/11/07/android-hit-by-0-click-rce-vulnerability-in-core-system-component/?pk_campaign=feed&amp;pk_kwd=android-hit-by-0-click-rce-vulnerability-in-core-system-component" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://databreaches.net/2025/11/07/attorney-general-james-and-multistate-coalition-secure-5-1-million-from-illuminate-education-for-failing-to-protect-students-data/?pk_campaign=feed&amp;pk_kwd=attorney-general-james-and-multistate-coalition-secure-5-1-million-from-illuminate-education-for-failing-to-protect-students-data" target="_blank" rel="noopener">databreaches.net</a></li><li><a href="https://hackread.com/fake-0-day-exploit-emails-crypto-malicious-code/" target="_blank" rel="noopener">hackread.com</a></li><li><a href="https://www.infosecurity-magazine.com/news/russian-sandworm-new-wiper-ukraine/" target="_blank" rel="noopener">infosecurity-magazine.com</a></li><li><a href="https://www.schneier.com/blog/archives/2025/11/faking-receipts-with-ai.html" target="_blank" rel="noopener">schneier.com</a></li><li><a href="https://thehackernews.com/2025/11/hidden-logic-bombs-in-malware-laced.html" target="_blank" rel="noopener">thehackernews.com</a></li><li><a href="https://securityaffairs.com/184321/security/cisco-fixes-critical-uccx-flaw-allowing-root-command-execution.html" target="_blank" rel="noopener">securityaffairs.com</a></li><li><a href="https://unit42.paloaltonetworks.com/landfall-is-new-commercial-grade-android-spyware/" target="_blank" rel="noopener">unit42.paloaltonetworks.com</a></li><li><a href="https://www.wired.com/story/mexico-city-is-the-most-video-surveilled-city-in-the-americas/" target="_blank" rel="noopener">wired.com</a></li><li>... and all other unique URLs from the provided source data.</li></ul>
+</div>
+</article>
+</section>
+<footer class="ti-footer">
+Generated automatically from source markdown.
+</footer>
+</div>
+
+      </div>
+    </section>
+
+    
+    
+  </article>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+</html>
+
+

@@ -15,6 +15,9 @@ I use GenAI to create these visualizations.
 
 ---
 
+##### Understanding Active Directory and how bloodhound enumerates entire directory
+<center><img src="/images/ad-bloodhound-relation.png" width="1250"/></br></center></br>
+
 ##### Bug-Bounty Recon Automation (Active vs. Passive)
 <center><img src="/images/bb-automation-active-passive.png" width="450"/></br></center></br>
 
