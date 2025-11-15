@@ -1,4 +1,295 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 08 Nov 2025 12:34:16 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2025-11-08</title><link>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</link><pubDate>Sat, 08 Nov 2025 12:34:16 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 15 Nov 2025 01:43:18 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2025-11-15</title><link>https://iamthefrogy.github.io/weekly-intel/15-11.2025/</link><pubDate>Sat, 15 Nov 2025 01:43:18 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/15-11.2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
+&lt;style&gt;
+:root {
+color-scheme: light;
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: #f5f5f8;
+}
+body {
+margin: 0;
+padding: 0;
+background: #f5f5f8;
+color: #131722;
+}
+.ti-wrapper {
+width: 100%;
+max-width: 1100px;
+margin: 1.5rem auto;
+padding: 2.5rem 2.75rem;
+background: #ffffff;
+border-radius: 18px;
+border: 1px solid #e3e6ef;
+box-shadow: 0 15px 40px rgba(15, 18, 46, 0.08);
+}
+.ti-header {
+display: flex;
+justify-content: space-between;
+gap: 1.5rem;
+border-bottom: 1px solid #eceff7;
+padding-bottom: 1rem;
+margin-bottom: 2rem;
+}
+.ti-header h1 {
+margin: 0.2rem 0;
+font-size: 1.85rem;
+}
+.ti-header .eyebrow {
+font-size: 0.78rem;
+letter-spacing: 0.15em;
+color: #6c738a;
+text-transform: uppercase;
+}
+.ti-header .timestamp {
+text-align: right;
+color: #4d5366;
+font-size: 0.9rem;
+}
+.ti-panel {
+padding: 1.75rem 0;
+border-top: 1px solid #eceff7;
+}
+.panel-title {
+margin: 0 0 0.8rem 0;
+font-size: 1rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #6c738a;
+}
+.summary-grid {
+display: grid;
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 0.8rem;
+}
+.summary-card {
+border: 1px solid #dde2f1;
+border-left-width: 4px;
+border-radius: 10px;
+padding: 0.9rem;
+background: #fafbff;
+cursor: pointer;
+transition: box-shadow 0.2s ease, transform 0.2s ease;
+min-height: 180px;
+}
+.summary-card:focus-visible {
+outline: 2px solid #2f8ecf;
+outline-offset: 2px;
+}
+.summary-card h4 {
+margin: 0.3rem 0;
+font-size: 0.95rem;
+color: #1a1f2c;
+}
+.summary-status {
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+color: #50556a;
+text-transform: uppercase;
+}
+.summary-snippet {
+margin: 0;
+color: #485064;
+font-size: 0.85rem;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.summary-full {
+display: none;
+margin-top: 0.4rem;
+}
+.summary-card.expanded {
+box-shadow: 0 12px 40px rgba(20, 23, 40, 0.12);
+transform: translateY(-2px);
+}
+.summary-card.expanded .summary-snippet {
+-webkit-line-clamp: unset;
+}
+.summary-card.expanded .summary-full {
+display: block;
+}
+.summary-metrics {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+gap: 0.3rem 0.8rem;
+margin: 0.6rem 0 0;
+font-size: 0.75rem;
+}
+.summary-metrics dt {
+text-transform: uppercase;
+color: #8087a1;
+letter-spacing: 0.06em;
+font-size: 0.68rem;
+}
+.summary-metrics dd {
+margin: 0;
+color: #1d2332;
+font-weight: 600;
+}
+.summary-card.severity-high {
+border-left-color: #d64545;
+}
+.summary-card.severity-medium {
+border-left-color: #d59b2d;
+}
+.summary-card.severity-low {
+border-left-color: #2f8ecf;
+}
+.priority-list {
+margin: 0;
+padding-left: 1.1rem;
+color: #1f2534;
+line-height: 1.45;
+}
+.priority-list li {
+margin-bottom: 0.4rem;
+}
+.event-card {
+border: 1px solid #e3e6ef;
+border-radius: 12px;
+padding: 1.25rem;
+background: #fff;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.event-card header {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+gap: 1rem;
+}
+.event-card h4 {
+margin: 0;
+font-size: 1rem;
+color: #1a1f2c;
+}
+.event-meta {
+font-size: 0.82rem;
+color: #4f5669;
+}
+.event-rationale {
+margin: 0;
+font-size: 0.85rem;
+color: #373c4f;
+}
+.priority-pill {
+font-size: 0.72rem;
+text-transform: uppercase;
+border: 1px solid currentColor;
+border-radius: 999px;
+padding: 0.1rem 0.5rem;
+color: #d64545;
+}
+.event-card.severity-medium .priority-pill {
+color: #d59b2d;
+}
+.event-card.severity-low .priority-pill {
+color: #2f8ecf;
+}
+.event-body h5,
+.event-body h6 {
+margin: 0.8rem 0 0.2rem;
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: #2f8ecf;
+}
+.ti-section-block {
+border: 1px solid #edf0f8;
+border-radius: 12px;
+padding: 1.1rem 1.2rem;
+margin-bottom: 1rem;
+background: #fbfcff;
+}
+.ti-section-block h4 {
+margin: 0 0 0.4rem 0;
+color: #1b2030;
+font-size: 1rem;
+}
+.ti-section-body {
+color: #353b4f;
+line-height: 1.55;
+}
+.empty-state {
+margin: 0;
+color: #5a6074;
+font-size: 0.9rem;
+}
+.ti-footer {
+margin-top: 1.5rem;
+font-size: 0.8rem;
+color: #6f7387;
+text-align: right;
+}
+.table-scroll {
+overflow-x: auto;
+border: 1px solid #e5e8f2;
+border-radius: 6px;
+margin-top: 1rem;
+}
+.table-scroll table {
+width: 100%;
+border-collapse: collapse;
+min-width: 640px;
+}
+.table-scroll th,
+.table-scroll td {
+padding: 0.5rem 0.75rem;
+border-bottom: 1px solid #edf0f7;
+white-space: nowrap;
+}
+.table-scroll th {
+text-transform: uppercase;
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+color: #6c7693;
+background: #f7f8fd;
+}
+.table-scroll td {
+color: #2d3245;
+font-size: 0.85rem;
+}
+@media (max-width: 1100px) {
+.summary-grid {
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+}
+@media (max-width: 720px) {
+.ti-wrapper {
+width: 94%;
+padding: 1.5rem;
+}
+.ti-header {
+flex-direction: column;
+}
+.ti-header .timestamp {
+text-align: left;
+}
+.summary-card {
+min-height: 0;
+}
+}
+&lt;/style&gt;
+&lt;div class="ti-wrapper"&gt;
+&lt;header class="ti-header"&gt;
+&lt;div&gt;
+&lt;div class="eyebrow"&gt;Threat Landscape Update&lt;/div&gt;
+&lt;h1&gt;Priority Actions&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="timestamp"&gt;
+&lt;div class="eyebrow"&gt;Report Date (UTC)&lt;/div&gt;
+&lt;div&gt;2024-06-16T10:00:00Z&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;section class="ti-panel"&gt;
+&lt;h3 class="panel-title"&gt;Executive Summary&lt;/h3&gt;
+&lt;div class="summary-grid"&gt;
+&lt;article class="summary-card severity-high" tabindex="0" role="button" aria-expanded="false"&gt;
+&lt;div class="summary-status"&gt;NEW&lt;/div&gt;
+&lt;h4&gt;A critical, unauthenticated authentication bypass vulnerability (CVE-2025-64446) in Fortinet FortiWeb is being actively exploited to create unauthorized administrator accounts, requiring immediate patching of internet-facing devices&lt;/h4&gt;
+&lt;p class="summary-snippet"&gt;A critical, unauthenticated authentication bypass vulnerability (CVE-2025-64446) in Fortinet FortiWeb is being actively exploited to create unauthorized administrator accounts, requiring immediate patching of internet-facing devices.&lt;/p&gt;</description></item><item><title>2025-11-08</title><link>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</link><pubDate>Sat, 08 Nov 2025 12:34:16 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
 &lt;style&gt;
 :root {
 color-scheme: light;
