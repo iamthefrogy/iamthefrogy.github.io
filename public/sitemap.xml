@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/weekly-intel/08-11-2025/</loc>
-    <lastmod>2025-11-08T12:34:16+00:00</lastmod>
+    <loc>http://localhost:1313/weekly-intel/15-11.2025/</loc>
+    <lastmod>2025-11-15T01:43:18+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-08T12:34:16+00:00</lastmod>
+    <lastmod>2025-11-15T01:43:18+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/weekly-intel/</loc>
+    <lastmod>2025-11-15T01:43:18+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/weekly-intel/08-11-2025/</loc>
     <lastmod>2025-11-08T12:34:16+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/detection-engineering/</loc>
