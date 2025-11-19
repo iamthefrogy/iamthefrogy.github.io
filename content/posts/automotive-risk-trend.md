@@ -4,7 +4,7 @@ draft = false
 title = '(CTI) Automotive industry threat landscape'
 +++
 
-Modern cars are not just machines that move you from A to B. They are packed with radios, sensors, SIM cards, Wi-Fi, Bluetooth, cloud backends, and mobile apps — effectively **computers on wheels that talk a lot**. That connectivity is great for drivers and fleet operators. It is also great targets for attackers.
+Modern cars are not just machines that move you from A to B. They are packed with radios, sensors, SIM cards, Wi-Fi, Bluetooth, cloud backends, and mobile apps   effectively **computers on wheels that talk a lot**. That connectivity is great for drivers and fleet operators. It is also great targets for attackers.
 
 Today I am going to cover the automotive IoT threat landscape: where attackers are getting in, what they are doing, and what both drivers and builders should be doing to reduce the blast radius.
 
@@ -29,7 +29,7 @@ Today:
 A few cases that show this shift:
 
 - **Telematics as a remote key**  
-  A weakness in a major telematics platform (used in regions like the US, Canada, and Japan) made it possible to unlock, start, and track vehicles using only low-entropy personal info such as last name and postal/ZIP code. That is not “Hollywood hacking” — That is broken authentication. https://s3yfullah.medium.com/how-exposed-teslamate-instances-leak-sensitive-tesla-data-80bedd123166
+  A weakness in a major telematics platform (used in regions like the US, Canada, and Japan) made it possible to unlock, start, and track vehicles using only low-entropy personal info such as last name and postal/ZIP code. That is not “Hollywood hacking”   That is broken authentication. https://s3yfullah.medium.com/how-exposed-teslamate-instances-leak-sensitive-tesla-data-80bedd123166
 
 
 - **Exposed self-hosted dashboards**  
@@ -255,7 +255,7 @@ Below are practical steps, split between:
 
 - Only pair devices you control.  
 - Avoid unknown USB sticks or cables into the car.  
-- Turn off Bluetooth when you are not using it — fewer attack paths, less noise.
+- Turn off Bluetooth when you are not using it   fewer attack paths, less noise.
 
 #### Watch for odd behavior
 
@@ -276,7 +276,7 @@ The phone or tablet that talks to your car is part of the attack surface.
 
 - Keep it updated.  
 - Use reputable security / endpoint protection software.  
-- If the device no longer receives OS updates, strongly consider replacing it — an outdated phone is an easy way in.
+- If the device no longer receives OS updates, strongly consider replacing it   an outdated phone is an easy way in.
 
 
 ### 7.2. For developers, OEMs, and suppliers
