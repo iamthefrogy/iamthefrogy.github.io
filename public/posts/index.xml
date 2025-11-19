@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 28 Aug 2025 03:10:29 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 19 Nov 2025 06:37:07 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(CTI) Automotive industry threat landscape</title>
+      <link>http://localhost:1313/posts/automotive-risk-trend/</link>
+      <pubDate>Wed, 19 Nov 2025 06:37:07 +0000</pubDate>
+      <guid>http://localhost:1313/posts/automotive-risk-trend/</guid>
+      <description>&lt;p&gt;Modern cars are not just machines that move you from A to B. They are packed with radios, sensors, SIM cards, Wi-Fi, Bluetooth, cloud backends, and mobile apps — effectively &lt;strong&gt;computers on wheels that talk a lot&lt;/strong&gt;. That connectivity is great for drivers and fleet operators. It is also great targets for attackers.&lt;/p&gt;&#xA;&lt;p&gt;Today I am going to cover the automotive IoT threat landscape: where attackers are getting in, what they are doing, and what both drivers and builders should be doing to reduce the blast radius.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>(SIEM) Advanced Detection Engineering</title>
       <link>http://localhost:1313/posts/detection-engineering/</link>
