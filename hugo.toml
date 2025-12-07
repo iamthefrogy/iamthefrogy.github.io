@@ -131,27 +131,32 @@ identifier = "visualisations"
 weight = 400
 url = "/visualisations"
 [[menu.main]]
+name = "Threat-Actor Map"
+identifier = "threatactormap"
+weight = 500
+url = "/threat-actor-map"
+[[menu.main]]
 name = "About Me"
 identifier = "about"
-weight = 500
+weight = 600
 url = "/about"
 [[menu.main]]
 name = "My Repos"
 identifier = "repositories"
-weight = 600
+weight = 700
 url = "/repositories"
 [[menu.main]]
 name = "Checklists"
 identifier = "checklists"
-weight = 700
+weight = 800
 url = "/checklists"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
-weight = 800
+weight = 900
 url = "/kickstartcareer"
 [[menu.main]]
 name = "Disclaimer"
 identifier = "disclaimer"
-weight = 900
+weight = 1000
 url = "/disclaimer"

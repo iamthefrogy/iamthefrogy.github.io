@@ -1,0 +1,60 @@
+General Information,,,How to Search in this Spreadsheet?,
+Topic,Comment,,,
+Motive,"Cyber security companies and Antivirus vendors use different names for the same threat actors and often refer to the reports and group names of each other. However, it is a difficult task to keep track of the different names and naming schemes. I wanted to create a reference that answers questions like ""I read a report about the 'Tsar Team', is there another name for that group?"" or ""Attackers used 'China Chopper' webshell, which of the APT groups did use that shell too?"" or ""Did he just say 'NetTraveler'? So, does he talk about Chinese or Russian attackers?""",,"1. Step
+
+Use Ctrl+F / Command+F to bring up the search field, then click on the dotted vectical line next to the ""X"" ",
+Hints,"- Each active country / region has its own tab
+- The ""Other"" tab contains actors from certain regions not covered by the main tabs
+- The ""Unknown"" tab is used for groups and operations with no attribution
+- Cells with overlaps are highlighted in gray - overlaps are no error per se but necessary to visualize that groups tracked by one vendor are divided into two different groups by another vendor ",,"2. Step
+
+Type the keyword you search for in the ""Find"" field and click on the ""Find"" button or press Enter. This will search the keyword in all tabs of the spreadsheet.","2. Step
+
+Type the keyword you search for in the ""Find"" field and click on the ""Find"" button or press Enter. This will search the keyword in all tabs of the spreadsheet."
+Disclaimer,"Attribution is a very complex issue. This list is an intent to map together the findings of different vendors and is not a reliable source. Most of the mappings rely on the findings in a single incident analysis. Groups often change their toolsets or exchange them with other groups. This makes attribution of certain operations extremely difficult. However, we decided that even an uncertain mapping is better than no mapping at all. Be aware that information published here may be wrong, quickly outdated, or may change based on evolving information. 
+
+People tend to comment on the sheet. Sometimes they add threat intel that isn't TLP:WHITE but taken from some fee-based platform. Please let me know if confidential information has been disclosed.",,,
+Known Issues,"- Groups named after the malware (families) they've used
+- Groups named after a certain operation
+- Lists / tables are not normalized to allow a better overview by avoiding too many spreadsheets
+- Some groups have now been discovered to be ""umbrella"" terms for sub-groups. (e.g. Lazarus has subgroups; Winnti's ""Burning Umbrella"" report )",,,
+Search,Press CTRL+F or Command+F and then use the Symbol with the three dots to bring up the search dialogue that looks in the full workbook for your keywords,,,
+Overlaps,Names that appear multiple times are shaded in a light grey,,,
+First Release,12/26/2015,,,
+License,"CC Creative Commons - Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/",,,
+Access Rights,"Everyone: READ / COMMENT
+Invited Editors: READ / COMMENT / WRITE",,,
+Support,"Please contact me (@cyb3rops) if you would like to modify or add content to these lists. 
+I will gladly give you write access to this list if:
+- I know you personally or from my Twitter stream
+- you are a threat intel researcher / malware analyst with some reference
+- you are a vendor representative
+- you are an author of the listed sources (see '_Sources' work sheet)
+
+Please provide you email address if you are interested in helping me (preferably Gmail - this allows native access via the connected Google account)",,,
+Search Engine,https://cse.google.com/cse/publicurl?cx=003248445720253387346:turlh5vi4xc,,,
+Short URL,https://apt.threattracking.com,,,
+,,,,
+Contributors,,,,
+Name / Nickname,Twitter Handle,,,
+Pasquale Stirparo,@pstirparo,,,
+David Bizeul,@davidbizeul,,,
+Brian Bell,No Twitter Account,,,
+Ziv Chang,@Gasgas4Ggyy,,,
+Joel Esler,@joelesler,,,
+Kristopher Bleich,@kc0iqx_bleich,,,
+Maite Moreno,@mmorenog,,,
+Monnappa K A,@monnappa22,,,
+J. Capmany,@theweeZ,,,
+Paul Hutchinson,@AllAboutAPT,,,
+Boris Ivanov,@BlackCaesar1973,,,
+Andre Gironda,@andregironda,,,
+Devon Ackerman,@aboutdfir,,,
+Carlos Fragoso,@cfragoso,,,
+Eyal Sela,@eyalsela,,,
+Florian Egloff,@egflo,,,
+Ohad Zaidenberg,@ohad_mz,,,
+Gary Warner,@GarWarner,,,
+Efi Pecani,@Excited_Efi,,,
+And many helpful people that just commented on cells - thank you!,,,,

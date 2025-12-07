@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+>
+
+<channel>
+	<title>Unit 42</title>
+	<atom:link href="https://unit42.paloaltonetworks.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://unit42.paloaltonetworks.com/</link>
+	<description>Palo Alto Networks</description>
+	<lastBuildDate>Fri, 05 Dec 2025 22:15:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.8.1</generator>
+
+<image>
+	<url>https://unit42.paloaltonetworks.com/wp-content/uploads/2024/06/icon-Unit42-180x180-1.png</url>
+	<title>Unit 42</title>
+	<link>https://unit42.paloaltonetworks.com/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>New Prompt Injection Attack Vectors Through MCP Sampling</title>
+		<link>https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/</link>
+		
+		<dc:creator><![CDATA[Yongzhe Huang, Akshata Rao, Changjiang Li, Yang Ji and Wenjun Hu]]></dc:creator>
+		<pubDate>Fri, 05 Dec 2025 23:00:59 +0000</pubDate>
+				<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[LLM]]></category>
+		<category><![CDATA[prompt injection]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=167649</guid>
+
+					<description><![CDATA[<p>Model Context Protocol connects LLM apps to external data sources or tools. We examine its security implications through various attack vectors.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/">New Prompt Injection Attack Vectors Through MCP Sampling</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>14</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/12/AdobeStock_992950050-300x300.jpeg</featuredImage>
+		<dcterms:extent>14</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/12/AdobeStock_992950050-scaled.jpeg" type="image/jpeg"  length="228623"/>
+			</item>
+		<item>
+		<title>Critical Vulnerabilities in React Server Components and Next.js</title>
+		<link>https://unit42.paloaltonetworks.com/cve-2025-55182-react-and-cve-2025-66478-next/</link>
+		
+		<dc:creator><![CDATA[Unit 42]]></dc:creator>
+		<pubDate>Thu, 04 Dec 2025 20:30:55 +0000</pubDate>
+				<category><![CDATA[High Profile Threats]]></category>
+		<category><![CDATA[Vulnerabilities]]></category>
+		<category><![CDATA[CVE-2025-55182]]></category>
+		<category><![CDATA[CVE-2025-66478]]></category>
+		<category><![CDATA[Remote Code Execution]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=167619</guid>
+
+					<description><![CDATA[<p>We discuss the CVSS 10.0-rated RCE vulnerabilities in the Flight protocol used by React Server Components. These are tracked as CVE-2025-55182 and CVE-2025-55182-66478. </p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/cve-2025-55182-react-and-cve-2025-66478-next/">Critical Vulnerabilities in React Server Components and Next.js</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>5</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/12/02_Vulnerabilities_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>5</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/12/02_Vulnerabilities_1920x900.jpg" type="image/jpeg"  length="1552982"/>
+			</item>
+		<item>
+		<title>The Browser Defense Playbook: Stopping the Attacks That Start on Your Screen</title>
+		<link>https://unit42.paloaltonetworks.com/browser-defense-playbook/</link>
+		
+		<dc:creator><![CDATA[Unit 42]]></dc:creator>
+		<pubDate>Wed, 03 Dec 2025 00:00:04 +0000</pubDate>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[Insights]]></category>
+		<category><![CDATA[Cloud Security]]></category>
+		<category><![CDATA[Defense]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=166268</guid>
+
+					<description><![CDATA[<p>85% of daily work occurs in the browser. Unit 42 outlines key security controls and strategies to make sure yours is secure.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/browser-defense-playbook/">The Browser Defense Playbook: Stopping the Attacks That Start on Your Screen</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>3</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07_Myth-Busting_Category_1505x922-300x300.jpg</featuredImage>
+		<dcterms:extent>3</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07_Myth-Busting_Category_1505x922.jpg" type="image/jpeg"  length="705014"/>
+			</item>
+		<item>
+		<title>The Golden Scale: &#039;Tis the Season for Unwanted Gifts</title>
+		<link>https://unit42.paloaltonetworks.com/new-shinysp1d3r-ransomware/</link>
+		
+		<dc:creator><![CDATA[Matt Brady]]></dc:creator>
+		<pubDate>Wed, 26 Nov 2025 11:00:30 +0000</pubDate>
+				<category><![CDATA[Hospitality Hacks and Retail Reality Checks]]></category>
+		<category><![CDATA[Insights]]></category>
+		<category><![CDATA[Bling Libra]]></category>
+		<category><![CDATA[Lapsus$]]></category>
+		<category><![CDATA[Leak site]]></category>
+		<category><![CDATA[RaaS]]></category>
+		<category><![CDATA[Salesforce]]></category>
+		<category><![CDATA[Scattered LAPSUS$ Hunters]]></category>
+		<category><![CDATA[ShinySp1d3r]]></category>
+		<category><![CDATA[Telegram]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=167198</guid>
+
+					<description><![CDATA[<p>Unit 42 shares further updates of cybercrime group Scattered LAPSUS$ Hunters. Secure your organization this holiday season. </p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/new-shinysp1d3r-ransomware/">The Golden Scale: &#039;Tis the Season for Unwanted Gifts</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>6</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07_Listicle_Category_1505x922-300x300.jpg</featuredImage>
+		<dcterms:extent>6</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07_Listicle_Category_1505x922.jpg" type="image/jpeg"  length="831759"/>
+			</item>
+		<item>
+		<title>&quot;Shai-Hulud&quot; Worm Compromises npm Ecosystem in Supply Chain Attack (Updated November 26)</title>
+		<link>https://unit42.paloaltonetworks.com/npm-supply-chain-attack/</link>
+		
+		<dc:creator><![CDATA[Unit 42]]></dc:creator>
+		<pubDate>Tue, 25 Nov 2025 16:00:14 +0000</pubDate>
+				<category><![CDATA[High Profile Threats]]></category>
+		<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Cloud Security]]></category>
+		<category><![CDATA[Credential Harvesting]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[phishing]]></category>
+		<category><![CDATA[supply chain]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=157750</guid>
+
+					<description><![CDATA[<p>Self-replicating worm “Shai-Hulud” has compromised hundreds of software packages in a supply chain attack targeting the npm ecosystem. We discuss scope and more.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/npm-supply-chain-attack/">&quot;Shai-Hulud&quot; Worm Compromises npm Ecosystem in Supply Chain Attack (Updated November 26)</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>8</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/09/06_Malware_Category_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>8</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/09/06_Malware_Category_1920x900.jpg" type="image/jpeg"  length="1106422"/>
+			</item>
+		<item>
+		<title>The Dual-Use Dilemma of AI: Malicious LLMs</title>
+		<link>https://unit42.paloaltonetworks.com/dilemma-of-ai-malicious-llms/</link>
+		
+		<dc:creator><![CDATA[Unit 42]]></dc:creator>
+		<pubDate>Tue, 25 Nov 2025 11:00:26 +0000</pubDate>
+				<category><![CDATA[Cybercrime]]></category>
+		<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[Credential Harvesting]]></category>
+		<category><![CDATA[data exfiltration]]></category>
+		<category><![CDATA[LLM]]></category>
+		<category><![CDATA[phishing]]></category>
+		<category><![CDATA[Reconnaissance]]></category>
+		<category><![CDATA[Telegram]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=166254</guid>
+
+					<description><![CDATA[<p>The line between research tool and threat creation engine is thin. We examine the capabilities of WormGPT 4 and KawaiiGPT, two malicious LLMs.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/dilemma-of-ai-malicious-llms/">The Dual-Use Dilemma of AI: Malicious LLMs</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>13</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/AdobeStock_1270203474-300x300.jpeg</featuredImage>
+		<dcterms:extent>13</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/AdobeStock_1270203474.jpeg" type="image/jpeg"  length="2016771"/>
+			</item>
+		<item>
+		<title>Anatomy of an Akira Ransomware Attack: When a Fake CAPTCHA Led to 42 Days of Compromise</title>
+		<link>https://unit42.paloaltonetworks.com/fake-captcha-to-compromise/</link>
+		
+		<dc:creator><![CDATA[Jeremy Brown]]></dc:creator>
+		<pubDate>Wed, 19 Nov 2025 00:00:01 +0000</pubDate>
+				<category><![CDATA[Anatomy of an Attack]]></category>
+		<category><![CDATA[Insights]]></category>
+		<category><![CDATA[Akira ransomware]]></category>
+		<category><![CDATA[Howling Scorpius]]></category>
+		<category><![CDATA[Unit 42]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=165779</guid>
+
+					<description><![CDATA[<p>Unit 42 outlines a Howling Scorpius attack delivering Akira ransomware that originated from a fake CAPTCHA and led to a 42-day compromise.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/fake-captcha-to-compromise/">Anatomy of an Akira Ransomware Attack: When a Fake CAPTCHA Led to 42 Days of Compromise</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>4</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07-9-Howling-Scorpius-1920x900-1-300x300.png</featuredImage>
+		<dcterms:extent>4</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07-9-Howling-Scorpius-1920x900-1.png" type="image/png"  length="353984"/>
+			</item>
+		<item>
+		<title>Digital Doppelgangers: Anatomy of Evolving Impersonation Campaigns Distributing Gh0st RAT</title>
+		<link>https://unit42.paloaltonetworks.com/impersonation-campaigns-deliver-gh0st-rat/</link>
+		
+		<dc:creator><![CDATA[Keerthiraj Nagaraj, Vishwa Thothathri, Nabeel Mohamed and Reethika Ramesh]]></dc:creator>
+		<pubDate>Fri, 14 Nov 2025 23:00:04 +0000</pubDate>
+				<category><![CDATA[Cybercrime]]></category>
+		<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[DLL Sideloading]]></category>
+		<category><![CDATA[Gh0st Rat]]></category>
+		<category><![CDATA[PDNS]]></category>
+		<category><![CDATA[Remote Access Trojan]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=165582</guid>
+
+					<description><![CDATA[<p>Two campaigns delivering Gh0st RAT to Chinese speakers show a deep understanding of the target population's virtual environment and online behavior.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/impersonation-campaigns-deliver-gh0st-rat/">Digital Doppelgangers: Anatomy of Evolving Impersonation Campaigns Distributing Gh0st RAT</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>17</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/04_Security-Technology_Category_1505x922-300x300.jpg</featuredImage>
+		<dcterms:extent>17</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/04_Security-Technology_Category_1505x922.jpg" type="image/jpeg"  length="751727"/>
+			</item>
+		<item>
+		<title>You Thought It Was Over? Authentication Coercion Keeps Evolving</title>
+		<link>https://unit42.paloaltonetworks.com/authentication-coercion/</link>
+		
+		<dc:creator><![CDATA[Bar Maor and Hila Cohen]]></dc:creator>
+		<pubDate>Tue, 11 Nov 2025 04:30:09 +0000</pubDate>
+				<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[Vulnerabilities]]></category>
+		<category><![CDATA[Mimikatz]]></category>
+		<category><![CDATA[PrintNightmare]]></category>
+		<category><![CDATA[privilege escalation]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=165000</guid>
+
+					<description><![CDATA[<p>A new type of authentication coercion attack exploits an obscure and rarely monitored remote procedure call (RPC) interface. </p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/authentication-coercion/">You Thought It Was Over? Authentication Coercion Keeps Evolving</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>12</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07_Vulnerabilities_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>12</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/07_Vulnerabilities_1920x900.jpg" type="image/jpeg"  length="1486607"/>
+			</item>
+		<item>
+		<title>LANDFALL: New Commercial-Grade Android Spyware in Exploit Chain Targeting Samsung Devices</title>
+		<link>https://unit42.paloaltonetworks.com/landfall-is-new-commercial-grade-android-spyware/</link>
+		
+		<dc:creator><![CDATA[Unit 42]]></dc:creator>
+		<pubDate>Fri, 07 Nov 2025 11:00:23 +0000</pubDate>
+				<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[Vulnerabilities]]></category>
+		<category><![CDATA[Android]]></category>
+		<category><![CDATA[Apple]]></category>
+		<category><![CDATA[CVE-2025-21042]]></category>
+		<category><![CDATA[CVE-2025-21043]]></category>
+		<category><![CDATA[CVE-2025-43300]]></category>
+		<category><![CDATA[CVE-2025-55177]]></category>
+		<category><![CDATA[Samsung]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=164365</guid>
+
+					<description><![CDATA[<p>Commercial-grade LANDFALL spyware exploits CVE-2025-21042 in Samsung Android’s image processing library. The spyware was embedded in malicious DNG files.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/landfall-is-new-commercial-grade-android-spyware/">LANDFALL: New Commercial-Grade Android Spyware in Exploit Chain Targeting Samsung Devices</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>21</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/09_Nation-State-cyberattacks_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>21</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/09_Nation-State-cyberattacks_1920x900.jpg" type="image/jpeg"  length="983065"/>
+			</item>
+		<item>
+		<title>Know Ourselves Before Knowing Our Enemies: Threat Intelligence at the Expense of Asset Management</title>
+		<link>https://unit42.paloaltonetworks.com/asset-management/</link>
+		
+		<dc:creator><![CDATA[Bradley Duncan]]></dc:creator>
+		<pubDate>Wed, 05 Nov 2025 00:00:02 +0000</pubDate>
+				<category><![CDATA[Insights]]></category>
+		<category><![CDATA[Opinions]]></category>
+		<category><![CDATA[network security]]></category>
+		<category><![CDATA[threat intelligence]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=163660</guid>
+
+					<description><![CDATA[<p>Effective cyber defense starts with knowing your own network. Unit 42 explains why asset management is the foundation of threat intelligence.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/asset-management/">Know Ourselves Before Knowing Our Enemies: Threat Intelligence at the Expense of Asset Management</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>3</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/06_Opinion_Category_1505x922-1-300x300.jpg</featuredImage>
+		<dcterms:extent>3</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/11/06_Opinion_Category_1505x922-1.jpg" type="image/jpeg"  length="879388"/>
+			</item>
+		<item>
+		<title>Microsoft WSUS Remote Code Execution (CVE-2025-59287) Actively Exploited in the Wild (Updated November 3)</title>
+		<link>https://unit42.paloaltonetworks.com/microsoft-cve-2025-59287/</link>
+		
+		<dc:creator><![CDATA[Unit 42]]></dc:creator>
+		<pubDate>Mon, 03 Nov 2025 12:45:54 +0000</pubDate>
+				<category><![CDATA[High Profile Threats]]></category>
+		<category><![CDATA[Vulnerabilities]]></category>
+		<category><![CDATA[CVE-2025-59287]]></category>
+		<category><![CDATA[Microsoft]]></category>
+		<category><![CDATA[Microsoft Vulnerability]]></category>
+		<category><![CDATA[Remote Code Execution]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=163039</guid>
+
+					<description><![CDATA[<p>CVE-2025-59287 is a critical RCE vulnerability identified in Microsoft’s WSUS. Our observations from cases show a consistent methodology.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/microsoft-cve-2025-59287/">Microsoft WSUS Remote Code Execution (CVE-2025-59287) Actively Exploited in the Wild (Updated November 3)</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>6</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/08_DNS_Overview_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>6</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/08_DNS_Overview_1920x900.jpg" type="image/jpeg"  length="949628"/>
+			</item>
+		<item>
+		<title>When AI Agents Go Rogue: Agent Session Smuggling Attack in A2A Systems</title>
+		<link>https://unit42.paloaltonetworks.com/agent-session-smuggling-in-agent2agent-systems/</link>
+		
+		<dc:creator><![CDATA[Jay Chen and Royce Lu]]></dc:creator>
+		<pubDate>Fri, 31 Oct 2025 10:00:33 +0000</pubDate>
+				<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[Vulnerabilities]]></category>
+		<category><![CDATA[GenAI]]></category>
+		<category><![CDATA[Google]]></category>
+		<category><![CDATA[LLM]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=163280</guid>
+
+					<description><![CDATA[<p>Agent session smuggling is a novel technique where AI agent-to-agent communication is misused. We demonstrate two proof of concept examples.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/agent-session-smuggling-in-agent2agent-systems/">When AI Agents Go Rogue: Agent Session Smuggling Attack in A2A Systems</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>12</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/04_Tutorial_Category_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>12</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/04_Tutorial_Category_1920x900.jpg" type="image/jpeg"  length="634994"/>
+			</item>
+		<item>
+		<title>Suspected Nation-State Threat Actor Uses New Airstalk Malware in a Supply Chain Attack</title>
+		<link>https://unit42.paloaltonetworks.com/new-windows-based-malware-family-airstalk/</link>
+		
+		<dc:creator><![CDATA[Kristopher Russo and Chema Garcia]]></dc:creator>
+		<pubDate>Wed, 29 Oct 2025 10:00:31 +0000</pubDate>
+				<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Threat Research]]></category>
+		<category><![CDATA[.NET]]></category>
+		<category><![CDATA[CL-STA-1009]]></category>
+		<category><![CDATA[Malicious PowerShell scripts]]></category>
+		<category><![CDATA[supply-chain attack]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=163077</guid>
+
+					<description><![CDATA[<p>A nation-state attacker is using novel Airstalk malware in supply chain attacks to exfiltrate browser data. Airstalk misuses the AirWatch API.</p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/new-windows-based-malware-family-airstalk/">Suspected Nation-State Threat Actor Uses New Airstalk Malware in a Supply Chain Attack</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>13</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/07_Security-Technology_Category_1920x900-300x300.jpg</featuredImage>
+		<dcterms:extent>13</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/07_Security-Technology_Category_1920x900.jpg" type="image/jpeg"  length="818255"/>
+			</item>
+		<item>
+		<title>Bots, Bread and the Battle for the Web</title>
+		<link>https://unit42.paloaltonetworks.com/malicious-seo-and-ai/</link>
+		
+		<dc:creator><![CDATA[Anna Chung]]></dc:creator>
+		<pubDate>Tue, 28 Oct 2025 23:00:05 +0000</pubDate>
+				<category><![CDATA[Insights]]></category>
+		<category><![CDATA[Opinions]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[SEO]]></category>
+		<category><![CDATA[SEO poisoning]]></category>
+		<guid isPermaLink="false">https://unit42.paloaltonetworks.com/?p=163023</guid>
+
+					<description><![CDATA[<p>Unit 42 explores the escalating threat of AI-powered malicious SEO and its impact on the credibility of the open web. Read more about how threat actors are exploiting AI to manipulate search results and spread misinformation across the web. </p>
+<p>The post <a href="https://unit42.paloaltonetworks.com/malicious-seo-and-ai/">Bots, Bread and the Battle for the Web</a> appeared first on <a href="https://unit42.paloaltonetworks.com">Unit 42</a>.</p>
+]]></description>
+		
+		
+		
+		<readTime>3</readTime>
+		<featuredImage>https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/07_Opinion_Category_1505x922-300x300.jpg</featuredImage>
+		<dcterms:extent>3</dcterms:extent>
+		<enclosure url="https://unit42.paloaltonetworks.com/wp-content/uploads/2025/10/07_Opinion_Category_1505x922.jpg" type="image/jpeg"  length="743088"/>
+			</item>
+	</channel>
+</rss>
