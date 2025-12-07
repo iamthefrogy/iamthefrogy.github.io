@@ -1,40 +1,1249 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Weekly-Intels on Cyber Frogy</title>
-    <link>https://iamthefrogy.github.io/weekly-intel/</link>
-    <description>Recent content in Weekly-Intels on Cyber Frogy</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 02 Dec 2025 09:13:45 +0000</lastBuildDate>
-    <atom:link href="https://iamthefrogy.github.io/weekly-intel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>2025-12-02</title>
-      <link>https://iamthefrogy.github.io/weekly-intel/02-12-2025/</link>
-      <pubDate>Tue, 02 Dec 2025 09:13:45 +0000</pubDate>
-      <guid>https://iamthefrogy.github.io/weekly-intel/02-12-2025/</guid>
-      <description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;&#xA;&lt;style&gt;&#xA;:root {&#xA;color-scheme: light;&#xA;font-family: &#39;Inter&#39;, &#39;Segoe UI&#39;, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;&#xA;background: #f4f6fb;&#xA;}&#xA;body {&#xA;margin: 0;&#xA;padding: 0;&#xA;background: #f4f6fb;&#xA;color: #1f2430;&#xA;}&#xA;.ti-wrapper {&#xA;width: 100%;&#xA;max-width: 1400px;&#xA;margin: 2rem auto;&#xA;padding: 3rem 3.5rem;&#xA;background: #ffffff;&#xA;border-radius: 32px;&#xA;box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);&#xA;}&#xA;.ti-header {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: flex-start;&#xA;gap: 2rem;&#xA;border-bottom: 1px solid #e4e8f2;&#xA;padding-bottom: 1.5rem;&#xA;margin-bottom: 2rem;&#xA;}&#xA;.ti-header h1 {&#xA;margin: 0;&#xA;font-size: 2.25rem;&#xA;color: #101626;&#xA;}&#xA;.ti-header .eyebrow {&#xA;letter-spacing: 0.18em;&#xA;text-transform: uppercase;&#xA;font-size: 0.78rem;&#xA;color: #4b6fff;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: right;&#xA;color: #4a4f63;&#xA;}&#xA;.ti-panel {&#xA;margin-bottom: 2.5rem;&#xA;background: #ffffff;&#xA;border: 1px solid #e6e9f3;&#xA;border-radius: 28px;&#xA;padding: 2rem;&#xA;box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);&#xA;}&#xA;.panel-title {&#xA;margin-top: 0;&#xA;font-size: 0.95rem;&#xA;letter-spacing: 0.16em;&#xA;color: #6d7693;&#xA;text-transform: uppercase;&#xA;}&#xA;.summary-grid {&#xA;display: flex;&#xA;gap: 1rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(20% - 0.8rem);&#xA;border-radius: 22px;&#xA;padding: 1.2rem;&#xA;background: #f9faff;&#xA;border: 1px solid #e4e9ff;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.6rem;&#xA;}&#xA;.summary-card h4 {&#xA;margin: 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.summary-card p {&#xA;margin: 0;&#xA;color: #4c5169;&#xA;font-size: 0.92rem;&#xA;}&#xA;.summary-chip {&#xA;align-self: flex-start;&#xA;font-size: 0.72rem;&#xA;font-weight: 600;&#xA;padding: 0.2rem 0.6rem;&#xA;border-radius: 999px;&#xA;background: #e8edff;&#xA;color: #3046c7;&#xA;}&#xA;.summary-card dl {&#xA;margin: 0;&#xA;display: flex;&#xA;flex-wrap: wrap;&#xA;gap: 0.6rem;&#xA;font-size: 0.8rem;&#xA;}&#xA;.summary-card dl div {&#xA;flex: 1 1 90px;&#xA;min-width: 90px;&#xA;}&#xA;.summary-card dt {&#xA;color: #7e85a5;&#xA;text-transform: uppercase;&#xA;letter-spacing: 0.05em;&#xA;font-size: 0.68rem;&#xA;}&#xA;.summary-card dd {&#xA;margin: 0;&#xA;font-weight: 600;&#xA;color: #101626;&#xA;}&#xA;.summary-card.severity-high {&#xA;border-color: #ffb1b1;&#xA;background: #fff6f6;&#xA;}&#xA;.summary-card.severity-medium {&#xA;border-color: #ffd9a3;&#xA;background: #fff9f0;&#xA;}&#xA;.summary-card.severity-low {&#xA;border-color: #bfe9ff;&#xA;background: #f4fbff;&#xA;}&#xA;.priority-list {&#xA;counter-reset: priority;&#xA;list-style: none;&#xA;padding-left: 0;&#xA;margin: 1.25rem 0 0;&#xA;}&#xA;.priority-list li {&#xA;counter-increment: priority;&#xA;padding: 1rem 0 1rem 3.25rem;&#xA;position: relative;&#xA;border-bottom: 1px solid #edf0f7;&#xA;color: #2b3042;&#xA;line-height: 1.45;&#xA;}&#xA;.priority-list li::before {&#xA;content: counter(priority);&#xA;position: absolute;&#xA;left: 0.8rem;&#xA;top: 1rem;&#xA;background: #4b6fff;&#xA;color: #ffffff;&#xA;width: 1.65rem;&#xA;height: 1.65rem;&#xA;border-radius: 999px;&#xA;display: flex;&#xA;align-items: center;&#xA;justify-content: center;&#xA;font-size: 0.9rem;&#xA;font-weight: 600;&#xA;box-shadow: 0 6px 20px rgba(75,111,255,0.3);&#xA;}&#xA;.event-grid {&#xA;display: grid;&#xA;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));&#xA;gap: 1.5rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.event-card {&#xA;background: #fefefe;&#xA;border-radius: 24px;&#xA;padding: 1.75rem;&#xA;border: 1px solid #e6eaf5;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.85rem;&#xA;box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);&#xA;}&#xA;.event-card h4 {&#xA;margin: 0;&#xA;font-size: 1.05rem;&#xA;color: #12182b;&#xA;}&#xA;.event-meta {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: center;&#xA;gap: 0.75rem;&#xA;font-size: 0.8rem;&#xA;color: #5b6075;&#xA;}&#xA;.priority-pill {&#xA;background: #ffe5e5;&#xA;color: #c21f3a;&#xA;border-radius: 999px;&#xA;padding: 0.2rem 0.8rem;&#xA;font-weight: 600;&#xA;text-transform: uppercase;&#xA;font-size: 0.72rem;&#xA;}&#xA;.event-card.severity-medium .priority-pill {&#xA;background: #ffeccf;&#xA;color: #a86a00;&#xA;}&#xA;.event-card.severity-low .priority-pill {&#xA;background: #e1f6ff;&#xA;color: #1477a5;&#xA;}&#xA;.event-body h5, .event-body h6 {&#xA;margin-top: 1rem;&#xA;margin-bottom: 0.3rem;&#xA;font-size: 0.85rem;&#xA;letter-spacing: 0.05em;&#xA;color: #4b6fff;&#xA;text-transform: uppercase;&#xA;}&#xA;.event-body ul {&#xA;margin: 0.5rem 0 0.5rem 1.1rem;&#xA;padding: 0;&#xA;}&#xA;.table-scroll {&#xA;overflow-x: auto;&#xA;border: 1px solid #e5e8f2;&#xA;border-radius: 16px;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.table-scroll table {&#xA;width: 100%;&#xA;border-collapse: collapse;&#xA;min-width: 640px;&#xA;}&#xA;.table-scroll th,&#xA;.table-scroll td {&#xA;padding: 0.55rem 0.85rem;&#xA;border-bottom: 1px solid #edf0f7;&#xA;white-space: nowrap;&#xA;}&#xA;.table-scroll th {&#xA;text-transform: uppercase;&#xA;font-size: 0.68rem;&#xA;letter-spacing: 0.12em;&#xA;color: #6c7693;&#xA;background: #f7f8fd;&#xA;}&#xA;.table-scroll td {&#xA;color: #2d3245;&#xA;font-size: 0.85rem;&#xA;}&#xA;.ti-section-block {&#xA;border-top: 1px solid #eef1f8;&#xA;padding-top: 1.25rem;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.ti-section-block h4 {&#xA;margin: 0 0 0.6rem 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.ti-section-body {&#xA;color: #3a404f;&#xA;line-height: 1.55;&#xA;}&#xA;.ti-section-body ul,&#xA;.ti-section-body ol {&#xA;margin-left: 1.25rem;&#xA;}&#xA;.ti-footer {&#xA;text-align: right;&#xA;font-size: 0.8rem;&#xA;color: #7a8097;&#xA;margin-top: 1.75rem;&#xA;}&#xA;@media (max-width: 1100px) {&#xA;.summary-grid {&#xA;flex-wrap: wrap;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(50% - 0.75rem);&#xA;}&#xA;}&#xA;@media (max-width: 768px) {&#xA;.ti-wrapper {&#xA;width: 95%;&#xA;padding: 1.75rem;&#xA;}&#xA;.ti-header {&#xA;flex-direction: column;&#xA;align-items: flex-start;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: left;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 100%;&#xA;}&#xA;}&#xA;&lt;/style&gt;&#xA;&lt;div class=&#34;ti-wrapper&#34;&gt;&#xA;&lt;header class=&#34;ti-header&#34;&gt;&#xA;&lt;div&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Threat Landscape Update&lt;/div&gt;&#xA;&lt;h1&gt;Notable Events &amp;amp; Assessments&lt;/h1&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;timestamp&#34;&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Report Date (UTC)&lt;/div&gt;&#xA;&lt;div&gt;2025-12-02 18:00:00 UTC&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/header&gt;&#xA;&lt;section class=&#34;ti-panel&#34;&gt;&#xA;&lt;h3 class=&#34;panel-title&#34;&gt;Executive Summary&lt;/h3&gt;&#xA;&lt;div class=&#34;summary-grid&#34;&gt;&#xA;&lt;article class=&#34;summary-card severity-low&#34; tabindex=&#34;0&#34; role=&#34;button&#34; aria-expanded=&#34;false&#34;&gt;&#xA;&lt;div class=&#34;summary-status&#34;&gt;NEW&lt;/div&gt;&#xA;&lt;h4&gt;- &lt;strong&gt;[NEW]&lt;/strong&gt; Google has patched 107 Android vulnerabilities, including two high-severity flaws confirmed to be actively exploited in the wild, creating significant risk for unpatched corporate and personal mobile devices&lt;/h4&gt;&#xA;&lt;p class=&#34;summary-snippet&#34;&gt;- &lt;strong&gt;[NEW]&lt;/strong&gt; Google has patched 107 Android vulnerabilities, including two high-severity flaws confirmed to be actively exploited in the wild, creating significant risk for unpatched corporate and personal mobile devices.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2025-11-24</title>
-      <link>https://iamthefrogy.github.io/weekly-intel/24-11-2025/</link>
-      <pubDate>Mon, 24 Nov 2025 14:26:50 +0000</pubDate>
-      <guid>https://iamthefrogy.github.io/weekly-intel/24-11-2025/</guid>
-      <description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;&#xA;&lt;style&gt;&#xA;:root {&#xA;color-scheme: light;&#xA;font-family: &#39;Inter&#39;, &#39;Segoe UI&#39;, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;&#xA;background: #f4f6fb;&#xA;}&#xA;body {&#xA;margin: 0;&#xA;padding: 0;&#xA;background: #f4f6fb;&#xA;color: #1f2430;&#xA;}&#xA;.ti-wrapper {&#xA;width: 100%;&#xA;max-width: 1400px;&#xA;margin: 2rem auto;&#xA;padding: 3rem 3.5rem;&#xA;background: #ffffff;&#xA;border-radius: 32px;&#xA;box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);&#xA;}&#xA;.ti-header {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: flex-start;&#xA;gap: 2rem;&#xA;border-bottom: 1px solid #e4e8f2;&#xA;padding-bottom: 1.5rem;&#xA;margin-bottom: 2rem;&#xA;}&#xA;.ti-header h1 {&#xA;margin: 0;&#xA;font-size: 2.25rem;&#xA;color: #101626;&#xA;}&#xA;.ti-header .eyebrow {&#xA;letter-spacing: 0.18em;&#xA;text-transform: uppercase;&#xA;font-size: 0.78rem;&#xA;color: #4b6fff;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: right;&#xA;color: #4a4f63;&#xA;}&#xA;.ti-panel {&#xA;margin-bottom: 2.5rem;&#xA;background: #ffffff;&#xA;border: 1px solid #e6e9f3;&#xA;border-radius: 28px;&#xA;padding: 2rem;&#xA;box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);&#xA;}&#xA;.panel-title {&#xA;margin-top: 0;&#xA;font-size: 0.95rem;&#xA;letter-spacing: 0.16em;&#xA;color: #6d7693;&#xA;text-transform: uppercase;&#xA;}&#xA;.summary-grid {&#xA;display: flex;&#xA;gap: 1rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(20% - 0.8rem);&#xA;border-radius: 22px;&#xA;padding: 1.2rem;&#xA;background: #f9faff;&#xA;border: 1px solid #e4e9ff;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.6rem;&#xA;}&#xA;.summary-card h4 {&#xA;margin: 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.summary-card p {&#xA;margin: 0;&#xA;color: #4c5169;&#xA;font-size: 0.92rem;&#xA;}&#xA;.summary-chip {&#xA;align-self: flex-start;&#xA;font-size: 0.72rem;&#xA;font-weight: 600;&#xA;padding: 0.2rem 0.6rem;&#xA;border-radius: 999px;&#xA;background: #e8edff;&#xA;color: #3046c7;&#xA;}&#xA;.summary-card dl {&#xA;margin: 0;&#xA;display: flex;&#xA;flex-wrap: wrap;&#xA;gap: 0.6rem;&#xA;font-size: 0.8rem;&#xA;}&#xA;.summary-card dl div {&#xA;flex: 1 1 90px;&#xA;min-width: 90px;&#xA;}&#xA;.summary-card dt {&#xA;color: #7e85a5;&#xA;text-transform: uppercase;&#xA;letter-spacing: 0.05em;&#xA;font-size: 0.68rem;&#xA;}&#xA;.summary-card dd {&#xA;margin: 0;&#xA;font-weight: 600;&#xA;color: #101626;&#xA;}&#xA;.summary-card.severity-high {&#xA;border-color: #ffb1b1;&#xA;background: #fff6f6;&#xA;}&#xA;.summary-card.severity-medium {&#xA;border-color: #ffd9a3;&#xA;background: #fff9f0;&#xA;}&#xA;.summary-card.severity-low {&#xA;border-color: #bfe9ff;&#xA;background: #f4fbff;&#xA;}&#xA;.priority-list {&#xA;counter-reset: priority;&#xA;list-style: none;&#xA;padding-left: 0;&#xA;margin: 1.25rem 0 0;&#xA;}&#xA;.priority-list li {&#xA;counter-increment: priority;&#xA;padding: 1rem 0 1rem 3.25rem;&#xA;position: relative;&#xA;border-bottom: 1px solid #edf0f7;&#xA;color: #2b3042;&#xA;line-height: 1.45;&#xA;}&#xA;.priority-list li::before {&#xA;content: counter(priority);&#xA;position: absolute;&#xA;left: 0.8rem;&#xA;top: 1rem;&#xA;background: #4b6fff;&#xA;color: #ffffff;&#xA;width: 1.65rem;&#xA;height: 1.65rem;&#xA;border-radius: 999px;&#xA;display: flex;&#xA;align-items: center;&#xA;justify-content: center;&#xA;font-size: 0.9rem;&#xA;font-weight: 600;&#xA;box-shadow: 0 6px 20px rgba(75,111,255,0.3);&#xA;}&#xA;.event-grid {&#xA;display: grid;&#xA;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));&#xA;gap: 1.5rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.event-card {&#xA;background: #fefefe;&#xA;border-radius: 24px;&#xA;padding: 1.75rem;&#xA;border: 1px solid #e6eaf5;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.85rem;&#xA;box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);&#xA;}&#xA;.event-card h4 {&#xA;margin: 0;&#xA;font-size: 1.05rem;&#xA;color: #12182b;&#xA;}&#xA;.event-meta {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: center;&#xA;gap: 0.75rem;&#xA;font-size: 0.8rem;&#xA;color: #5b6075;&#xA;}&#xA;.priority-pill {&#xA;background: #ffe5e5;&#xA;color: #c21f3a;&#xA;border-radius: 999px;&#xA;padding: 0.2rem 0.8rem;&#xA;font-weight: 600;&#xA;text-transform: uppercase;&#xA;font-size: 0.72rem;&#xA;}&#xA;.event-card.severity-medium .priority-pill {&#xA;background: #ffeccf;&#xA;color: #a86a00;&#xA;}&#xA;.event-card.severity-low .priority-pill {&#xA;background: #e1f6ff;&#xA;color: #1477a5;&#xA;}&#xA;.event-body h5, .event-body h6 {&#xA;margin-top: 1rem;&#xA;margin-bottom: 0.3rem;&#xA;font-size: 0.85rem;&#xA;letter-spacing: 0.05em;&#xA;color: #4b6fff;&#xA;text-transform: uppercase;&#xA;}&#xA;.event-body ul {&#xA;margin: 0.5rem 0 0.5rem 1.1rem;&#xA;padding: 0;&#xA;}&#xA;.table-scroll {&#xA;overflow-x: auto;&#xA;border: 1px solid #e5e8f2;&#xA;border-radius: 16px;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.table-scroll table {&#xA;width: 100%;&#xA;border-collapse: collapse;&#xA;min-width: 640px;&#xA;}&#xA;.table-scroll th,&#xA;.table-scroll td {&#xA;padding: 0.55rem 0.85rem;&#xA;border-bottom: 1px solid #edf0f7;&#xA;white-space: nowrap;&#xA;}&#xA;.table-scroll th {&#xA;text-transform: uppercase;&#xA;font-size: 0.68rem;&#xA;letter-spacing: 0.12em;&#xA;color: #6c7693;&#xA;background: #f7f8fd;&#xA;}&#xA;.table-scroll td {&#xA;color: #2d3245;&#xA;font-size: 0.85rem;&#xA;}&#xA;.ti-section-block {&#xA;border-top: 1px solid #eef1f8;&#xA;padding-top: 1.25rem;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.ti-section-block h4 {&#xA;margin: 0 0 0.6rem 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.ti-section-body {&#xA;color: #3a404f;&#xA;line-height: 1.55;&#xA;}&#xA;.ti-section-body ul,&#xA;.ti-section-body ol {&#xA;margin-left: 1.25rem;&#xA;}&#xA;.ti-footer {&#xA;text-align: right;&#xA;font-size: 0.8rem;&#xA;color: #7a8097;&#xA;margin-top: 1.75rem;&#xA;}&#xA;@media (max-width: 1100px) {&#xA;.summary-grid {&#xA;flex-wrap: wrap;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(50% - 0.75rem);&#xA;}&#xA;}&#xA;@media (max-width: 768px) {&#xA;.ti-wrapper {&#xA;width: 95%;&#xA;padding: 1.75rem;&#xA;}&#xA;.ti-header {&#xA;flex-direction: column;&#xA;align-items: flex-start;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: left;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 100%;&#xA;}&#xA;}&#xA;&lt;/style&gt;&#xA;&lt;div class=&#34;ti-wrapper&#34;&gt;&#xA;&lt;header class=&#34;ti-header&#34;&gt;&#xA;&lt;div&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Threat Landscape Update&lt;/div&gt;&#xA;&lt;h1&gt;Weekly Threat Landscape Briefing&lt;/h1&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;timestamp&#34;&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Report Date (UTC)&lt;/div&gt;&#xA;&lt;div&gt;2024-05-21T16:00:00Z&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/header&gt;&#xA;&lt;section class=&#34;ti-panel&#34;&gt;&#xA;&lt;h3 class=&#34;panel-title&#34;&gt;Executive Summary&lt;/h3&gt;&#xA;&lt;div class=&#34;summary-grid&#34;&gt;&#xA;&lt;article class=&#34;summary-card severity-high&#34; tabindex=&#34;0&#34; role=&#34;button&#34; aria-expanded=&#34;false&#34;&gt;&#xA;&lt;div class=&#34;summary-status&#34;&gt;NEW&lt;/div&gt;&#xA;&lt;h4&gt;&lt;strong&gt;Likelihood: High | Potential Impact: High | Confidence: High&lt;/strong&gt; An actively exploited, critical remote code execution (RCE) vulnerability in Oracle Identity Manager (CVE-2025-61757) has been added to CISA&amp;#x27;s KEV catalog, indicating a significant and immediate threat to identity and access management systems&lt;/h4&gt;&#xA;&lt;p class=&#34;summary-snippet&#34;&gt;&lt;strong&gt;Likelihood: High | Potential Impact: High | Confidence: High&lt;/strong&gt; An actively exploited, critical remote code execution (RCE) vulnerability in Oracle Identity Manager (CVE-2025-61757) has been added to CISA&amp;#x27;s KEV catalog, indicating a significant and immediate threat to identity and access management systems.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2025-11-15</title>
-      <link>https://iamthefrogy.github.io/weekly-intel/15-11.2025/</link>
-      <pubDate>Sat, 15 Nov 2025 01:43:18 +0000</pubDate>
-      <guid>https://iamthefrogy.github.io/weekly-intel/15-11.2025/</guid>
-      <description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;&#xA;&lt;style&gt;&#xA;:root {&#xA;color-scheme: light;&#xA;font-family: &#39;Inter&#39;, &#39;Segoe UI&#39;, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;&#xA;background: #f4f6fb;&#xA;}&#xA;body {&#xA;margin: 0;&#xA;padding: 0;&#xA;background: #f4f6fb;&#xA;color: #1f2430;&#xA;}&#xA;.ti-wrapper {&#xA;width: 100%;&#xA;max-width: 1400px;&#xA;margin: 2rem auto;&#xA;padding: 3rem 3.5rem;&#xA;background: #ffffff;&#xA;border-radius: 32px;&#xA;box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);&#xA;}&#xA;.ti-header {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: flex-start;&#xA;gap: 2rem;&#xA;border-bottom: 1px solid #e4e8f2;&#xA;padding-bottom: 1.5rem;&#xA;margin-bottom: 2rem;&#xA;}&#xA;.ti-header h1 {&#xA;margin: 0;&#xA;font-size: 2.25rem;&#xA;color: #101626;&#xA;}&#xA;.ti-header .eyebrow {&#xA;letter-spacing: 0.18em;&#xA;text-transform: uppercase;&#xA;font-size: 0.78rem;&#xA;color: #4b6fff;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: right;&#xA;color: #4a4f63;&#xA;}&#xA;.ti-panel {&#xA;margin-bottom: 2.5rem;&#xA;background: #ffffff;&#xA;border: 1px solid #e6e9f3;&#xA;border-radius: 28px;&#xA;padding: 2rem;&#xA;box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);&#xA;}&#xA;.panel-title {&#xA;margin-top: 0;&#xA;font-size: 0.95rem;&#xA;letter-spacing: 0.16em;&#xA;color: #6d7693;&#xA;text-transform: uppercase;&#xA;}&#xA;.summary-grid {&#xA;display: flex;&#xA;gap: 1rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(20% - 0.8rem);&#xA;border-radius: 22px;&#xA;padding: 1.2rem;&#xA;background: #f9faff;&#xA;border: 1px solid #e4e9ff;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.6rem;&#xA;}&#xA;.summary-card h4 {&#xA;margin: 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.summary-card p {&#xA;margin: 0;&#xA;color: #4c5169;&#xA;font-size: 0.92rem;&#xA;}&#xA;.summary-chip {&#xA;align-self: flex-start;&#xA;font-size: 0.72rem;&#xA;font-weight: 600;&#xA;padding: 0.2rem 0.6rem;&#xA;border-radius: 999px;&#xA;background: #e8edff;&#xA;color: #3046c7;&#xA;}&#xA;.summary-card dl {&#xA;margin: 0;&#xA;display: flex;&#xA;flex-wrap: wrap;&#xA;gap: 0.6rem;&#xA;font-size: 0.8rem;&#xA;}&#xA;.summary-card dl div {&#xA;flex: 1 1 90px;&#xA;min-width: 90px;&#xA;}&#xA;.summary-card dt {&#xA;color: #7e85a5;&#xA;text-transform: uppercase;&#xA;letter-spacing: 0.05em;&#xA;font-size: 0.68rem;&#xA;}&#xA;.summary-card dd {&#xA;margin: 0;&#xA;font-weight: 600;&#xA;color: #101626;&#xA;}&#xA;.summary-card.severity-high {&#xA;border-color: #ffb1b1;&#xA;background: #fff6f6;&#xA;}&#xA;.summary-card.severity-medium {&#xA;border-color: #ffd9a3;&#xA;background: #fff9f0;&#xA;}&#xA;.summary-card.severity-low {&#xA;border-color: #bfe9ff;&#xA;background: #f4fbff;&#xA;}&#xA;.priority-list {&#xA;counter-reset: priority;&#xA;list-style: none;&#xA;padding-left: 0;&#xA;margin: 1.25rem 0 0;&#xA;}&#xA;.priority-list li {&#xA;counter-increment: priority;&#xA;padding: 1rem 0 1rem 3.25rem;&#xA;position: relative;&#xA;border-bottom: 1px solid #edf0f7;&#xA;color: #2b3042;&#xA;line-height: 1.45;&#xA;}&#xA;.priority-list li::before {&#xA;content: counter(priority);&#xA;position: absolute;&#xA;left: 0.8rem;&#xA;top: 1rem;&#xA;background: #4b6fff;&#xA;color: #ffffff;&#xA;width: 1.65rem;&#xA;height: 1.65rem;&#xA;border-radius: 999px;&#xA;display: flex;&#xA;align-items: center;&#xA;justify-content: center;&#xA;font-size: 0.9rem;&#xA;font-weight: 600;&#xA;box-shadow: 0 6px 20px rgba(75,111,255,0.3);&#xA;}&#xA;.event-grid {&#xA;display: grid;&#xA;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));&#xA;gap: 1.5rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.event-card {&#xA;background: #fefefe;&#xA;border-radius: 24px;&#xA;padding: 1.75rem;&#xA;border: 1px solid #e6eaf5;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.85rem;&#xA;box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);&#xA;}&#xA;.event-card h4 {&#xA;margin: 0;&#xA;font-size: 1.05rem;&#xA;color: #12182b;&#xA;}&#xA;.event-meta {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: center;&#xA;gap: 0.75rem;&#xA;font-size: 0.8rem;&#xA;color: #5b6075;&#xA;}&#xA;.priority-pill {&#xA;background: #ffe5e5;&#xA;color: #c21f3a;&#xA;border-radius: 999px;&#xA;padding: 0.2rem 0.8rem;&#xA;font-weight: 600;&#xA;text-transform: uppercase;&#xA;font-size: 0.72rem;&#xA;}&#xA;.event-card.severity-medium .priority-pill {&#xA;background: #ffeccf;&#xA;color: #a86a00;&#xA;}&#xA;.event-card.severity-low .priority-pill {&#xA;background: #e1f6ff;&#xA;color: #1477a5;&#xA;}&#xA;.event-body h5, .event-body h6 {&#xA;margin-top: 1rem;&#xA;margin-bottom: 0.3rem;&#xA;font-size: 0.85rem;&#xA;letter-spacing: 0.05em;&#xA;color: #4b6fff;&#xA;text-transform: uppercase;&#xA;}&#xA;.event-body ul {&#xA;margin: 0.5rem 0 0.5rem 1.1rem;&#xA;padding: 0;&#xA;}&#xA;.table-scroll {&#xA;overflow-x: auto;&#xA;border: 1px solid #e5e8f2;&#xA;border-radius: 16px;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.table-scroll table {&#xA;width: 100%;&#xA;border-collapse: collapse;&#xA;min-width: 640px;&#xA;}&#xA;.table-scroll th,&#xA;.table-scroll td {&#xA;padding: 0.55rem 0.85rem;&#xA;border-bottom: 1px solid #edf0f7;&#xA;white-space: nowrap;&#xA;}&#xA;.table-scroll th {&#xA;text-transform: uppercase;&#xA;font-size: 0.68rem;&#xA;letter-spacing: 0.12em;&#xA;color: #6c7693;&#xA;background: #f7f8fd;&#xA;}&#xA;.table-scroll td {&#xA;color: #2d3245;&#xA;font-size: 0.85rem;&#xA;}&#xA;.ti-section-block {&#xA;border-top: 1px solid #eef1f8;&#xA;padding-top: 1.25rem;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.ti-section-block h4 {&#xA;margin: 0 0 0.6rem 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.ti-section-body {&#xA;color: #3a404f;&#xA;line-height: 1.55;&#xA;}&#xA;.ti-section-body ul,&#xA;.ti-section-body ol {&#xA;margin-left: 1.25rem;&#xA;}&#xA;.ti-footer {&#xA;text-align: right;&#xA;font-size: 0.8rem;&#xA;color: #7a8097;&#xA;margin-top: 1.75rem;&#xA;}&#xA;@media (max-width: 1100px) {&#xA;.summary-grid {&#xA;flex-wrap: wrap;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(50% - 0.75rem);&#xA;}&#xA;}&#xA;@media (max-width: 768px) {&#xA;.ti-wrapper {&#xA;width: 95%;&#xA;padding: 1.75rem;&#xA;}&#xA;.ti-header {&#xA;flex-direction: column;&#xA;align-items: flex-start;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: left;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 100%;&#xA;}&#xA;}&#xA;&lt;/style&gt;&#xA;&lt;div class=&#34;ti-wrapper&#34;&gt;&#xA;&lt;header class=&#34;ti-header&#34;&gt;&#xA;&lt;div&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Threat Landscape Update&lt;/div&gt;&#xA;&lt;h1&gt;Priority Actions&lt;/h1&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;timestamp&#34;&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Report Date (UTC)&lt;/div&gt;&#xA;&lt;div&gt;2024-06-16T10:00:00Z&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/header&gt;&#xA;&lt;section class=&#34;ti-panel&#34;&gt;&#xA;&lt;h3 class=&#34;panel-title&#34;&gt;Executive Summary&lt;/h3&gt;&#xA;&lt;div class=&#34;summary-grid&#34;&gt;&#xA;&lt;article class=&#34;summary-card severity-high&#34; tabindex=&#34;0&#34; role=&#34;button&#34; aria-expanded=&#34;false&#34;&gt;&#xA;&lt;div class=&#34;summary-status&#34;&gt;NEW&lt;/div&gt;&#xA;&lt;h4&gt;A critical, unauthenticated authentication bypass vulnerability (CVE-2025-64446) in Fortinet FortiWeb is being actively exploited to create unauthorized administrator accounts, requiring immediate patching of internet-facing devices&lt;/h4&gt;&#xA;&lt;p class=&#34;summary-snippet&#34;&gt;A critical, unauthenticated authentication bypass vulnerability (CVE-2025-64446) in Fortinet FortiWeb is being actively exploited to create unauthorized administrator accounts, requiring immediate patching of internet-facing devices.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2025-11-08</title>
-      <link>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</link>
-      <pubDate>Sat, 08 Nov 2025 12:34:16 +0000</pubDate>
-      <guid>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</guid>
-      <description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;&#xA;&lt;style&gt;&#xA;:root {&#xA;color-scheme: light;&#xA;font-family: &#39;Inter&#39;, &#39;Segoe UI&#39;, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;&#xA;background: #f4f6fb;&#xA;}&#xA;body {&#xA;margin: 0;&#xA;padding: 0;&#xA;background: #f4f6fb;&#xA;color: #1f2430;&#xA;}&#xA;.ti-wrapper {&#xA;width: 100%;&#xA;max-width: 1400px;&#xA;margin: 2rem auto;&#xA;padding: 3rem 3.5rem;&#xA;background: #ffffff;&#xA;border-radius: 32px;&#xA;box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);&#xA;}&#xA;.ti-header {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: flex-start;&#xA;gap: 2rem;&#xA;border-bottom: 1px solid #e4e8f2;&#xA;padding-bottom: 1.5rem;&#xA;margin-bottom: 2rem;&#xA;}&#xA;.ti-header h1 {&#xA;margin: 0;&#xA;font-size: 2.25rem;&#xA;color: #101626;&#xA;}&#xA;.ti-header .eyebrow {&#xA;letter-spacing: 0.18em;&#xA;text-transform: uppercase;&#xA;font-size: 0.78rem;&#xA;color: #4b6fff;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: right;&#xA;color: #4a4f63;&#xA;}&#xA;.ti-panel {&#xA;margin-bottom: 2.5rem;&#xA;background: #ffffff;&#xA;border: 1px solid #e6e9f3;&#xA;border-radius: 28px;&#xA;padding: 2rem;&#xA;box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);&#xA;}&#xA;.panel-title {&#xA;margin-top: 0;&#xA;font-size: 0.95rem;&#xA;letter-spacing: 0.16em;&#xA;color: #6d7693;&#xA;text-transform: uppercase;&#xA;}&#xA;.summary-grid {&#xA;display: flex;&#xA;gap: 1rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(20% - 0.8rem);&#xA;border-radius: 22px;&#xA;padding: 1.2rem;&#xA;background: #f9faff;&#xA;border: 1px solid #e4e9ff;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.6rem;&#xA;}&#xA;.summary-card h4 {&#xA;margin: 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.summary-card p {&#xA;margin: 0;&#xA;color: #4c5169;&#xA;font-size: 0.92rem;&#xA;}&#xA;.summary-chip {&#xA;align-self: flex-start;&#xA;font-size: 0.72rem;&#xA;font-weight: 600;&#xA;padding: 0.2rem 0.6rem;&#xA;border-radius: 999px;&#xA;background: #e8edff;&#xA;color: #3046c7;&#xA;}&#xA;.summary-card dl {&#xA;margin: 0;&#xA;display: flex;&#xA;flex-wrap: wrap;&#xA;gap: 0.6rem;&#xA;font-size: 0.8rem;&#xA;}&#xA;.summary-card dl div {&#xA;flex: 1 1 90px;&#xA;min-width: 90px;&#xA;}&#xA;.summary-card dt {&#xA;color: #7e85a5;&#xA;text-transform: uppercase;&#xA;letter-spacing: 0.05em;&#xA;font-size: 0.68rem;&#xA;}&#xA;.summary-card dd {&#xA;margin: 0;&#xA;font-weight: 600;&#xA;color: #101626;&#xA;}&#xA;.summary-card.severity-high {&#xA;border-color: #ffb1b1;&#xA;background: #fff6f6;&#xA;}&#xA;.summary-card.severity-medium {&#xA;border-color: #ffd9a3;&#xA;background: #fff9f0;&#xA;}&#xA;.summary-card.severity-low {&#xA;border-color: #bfe9ff;&#xA;background: #f4fbff;&#xA;}&#xA;.priority-list {&#xA;counter-reset: priority;&#xA;list-style: none;&#xA;padding-left: 0;&#xA;margin: 1.25rem 0 0;&#xA;}&#xA;.priority-list li {&#xA;counter-increment: priority;&#xA;padding: 1rem 0 1rem 3.25rem;&#xA;position: relative;&#xA;border-bottom: 1px solid #edf0f7;&#xA;color: #2b3042;&#xA;line-height: 1.45;&#xA;}&#xA;.priority-list li::before {&#xA;content: counter(priority);&#xA;position: absolute;&#xA;left: 0.8rem;&#xA;top: 1rem;&#xA;background: #4b6fff;&#xA;color: #ffffff;&#xA;width: 1.65rem;&#xA;height: 1.65rem;&#xA;border-radius: 999px;&#xA;display: flex;&#xA;align-items: center;&#xA;justify-content: center;&#xA;font-size: 0.9rem;&#xA;font-weight: 600;&#xA;box-shadow: 0 6px 20px rgba(75,111,255,0.3);&#xA;}&#xA;.event-grid {&#xA;display: grid;&#xA;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));&#xA;gap: 1.5rem;&#xA;margin-top: 1.5rem;&#xA;}&#xA;.event-card {&#xA;background: #fefefe;&#xA;border-radius: 24px;&#xA;padding: 1.75rem;&#xA;border: 1px solid #e6eaf5;&#xA;display: flex;&#xA;flex-direction: column;&#xA;gap: 0.85rem;&#xA;box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);&#xA;}&#xA;.event-card h4 {&#xA;margin: 0;&#xA;font-size: 1.05rem;&#xA;color: #12182b;&#xA;}&#xA;.event-meta {&#xA;display: flex;&#xA;justify-content: space-between;&#xA;align-items: center;&#xA;gap: 0.75rem;&#xA;font-size: 0.8rem;&#xA;color: #5b6075;&#xA;}&#xA;.priority-pill {&#xA;background: #ffe5e5;&#xA;color: #c21f3a;&#xA;border-radius: 999px;&#xA;padding: 0.2rem 0.8rem;&#xA;font-weight: 600;&#xA;text-transform: uppercase;&#xA;font-size: 0.72rem;&#xA;}&#xA;.event-card.severity-medium .priority-pill {&#xA;background: #ffeccf;&#xA;color: #a86a00;&#xA;}&#xA;.event-card.severity-low .priority-pill {&#xA;background: #e1f6ff;&#xA;color: #1477a5;&#xA;}&#xA;.event-body h5, .event-body h6 {&#xA;margin-top: 1rem;&#xA;margin-bottom: 0.3rem;&#xA;font-size: 0.85rem;&#xA;letter-spacing: 0.05em;&#xA;color: #4b6fff;&#xA;text-transform: uppercase;&#xA;}&#xA;.event-body ul {&#xA;margin: 0.5rem 0 0.5rem 1.1rem;&#xA;padding: 0;&#xA;}&#xA;.table-scroll {&#xA;overflow-x: auto;&#xA;border: 1px solid #e5e8f2;&#xA;border-radius: 16px;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.table-scroll table {&#xA;width: 100%;&#xA;border-collapse: collapse;&#xA;min-width: 640px;&#xA;}&#xA;.table-scroll th,&#xA;.table-scroll td {&#xA;padding: 0.55rem 0.85rem;&#xA;border-bottom: 1px solid #edf0f7;&#xA;white-space: nowrap;&#xA;}&#xA;.table-scroll th {&#xA;text-transform: uppercase;&#xA;font-size: 0.68rem;&#xA;letter-spacing: 0.12em;&#xA;color: #6c7693;&#xA;background: #f7f8fd;&#xA;}&#xA;.table-scroll td {&#xA;color: #2d3245;&#xA;font-size: 0.85rem;&#xA;}&#xA;.ti-section-block {&#xA;border-top: 1px solid #eef1f8;&#xA;padding-top: 1.25rem;&#xA;margin-top: 1.25rem;&#xA;}&#xA;.ti-section-block h4 {&#xA;margin: 0 0 0.6rem 0;&#xA;font-size: 1rem;&#xA;color: #141b31;&#xA;}&#xA;.ti-section-body {&#xA;color: #3a404f;&#xA;line-height: 1.55;&#xA;}&#xA;.ti-section-body ul,&#xA;.ti-section-body ol {&#xA;margin-left: 1.25rem;&#xA;}&#xA;.ti-footer {&#xA;text-align: right;&#xA;font-size: 0.8rem;&#xA;color: #7a8097;&#xA;margin-top: 1.75rem;&#xA;}&#xA;@media (max-width: 1100px) {&#xA;.summary-grid {&#xA;flex-wrap: wrap;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 calc(50% - 0.75rem);&#xA;}&#xA;}&#xA;@media (max-width: 768px) {&#xA;.ti-wrapper {&#xA;width: 95%;&#xA;padding: 1.75rem;&#xA;}&#xA;.ti-header {&#xA;flex-direction: column;&#xA;align-items: flex-start;&#xA;}&#xA;.ti-header .timestamp {&#xA;text-align: left;&#xA;}&#xA;.summary-card {&#xA;flex: 1 1 100%;&#xA;}&#xA;}&#xA;&lt;/style&gt;&#xA;&lt;div class=&#34;ti-wrapper&#34;&gt;&#xA;&lt;header class=&#34;ti-header&#34;&gt;&#xA;&lt;div&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Weekly Threat Intelligence Briefing&lt;/div&gt;&#xA;&lt;h1&gt;Weekly Threat Intelligence Briefing&lt;/h1&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;timestamp&#34;&gt;&#xA;&lt;div class=&#34;eyebrow&#34;&gt;Report Date (UTC)&lt;/div&gt;&#xA;&lt;div&gt;2025-11-08 14:00:00 UTC&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/header&gt;&#xA;&lt;section class=&#34;ti-panel&#34;&gt;&#xA;&lt;h3 class=&#34;panel-title&#34;&gt;Executive Summary — Top Threats&lt;/h3&gt;&#xA;&lt;div class=&#34;summary-grid&#34;&gt;&#xA;&lt;article class=&#34;summary-card severity-high&#34;&gt;&#xA;&lt;div class=&#34;summary-chip&#34;&gt;NEW&lt;/div&gt;&#xA;&lt;h4&gt;A patched Samsung zero-day vulnerability (CVE-2025-21042) was actively exploited in the wild via zero-click messages to deploy new commercial-grade Android spyware called LANDFALL, primarily targeting entities in the Middle East&lt;/h4&gt;&#xA;&lt;p&gt;A patched Samsung zero-day vulnerability (CVE-2025-21042) was actively exploited in the wild via zero-click messages to deploy new commercial-grade Android spyware called LANDFALL, primarily targeting entities in the Middle East.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Weekly-Intels on Cyber Frogy</title><link>https://iamthefrogy.github.io/weekly-intel/</link><description>Recent content in Weekly-Intels on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 02 Dec 2025 09:13:45 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/weekly-intel/index.xml" rel="self" type="application/rss+xml"/><item><title>2025-12-02</title><link>https://iamthefrogy.github.io/weekly-intel/02-12-2025/</link><pubDate>Tue, 02 Dec 2025 09:13:45 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/02-12-2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
+&lt;style&gt;
+:root {
+color-scheme: light;
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: #f4f6fb;
+}
+body {
+margin: 0;
+padding: 0;
+background: #f4f6fb;
+color: #1f2430;
+}
+.ti-wrapper {
+width: 100%;
+max-width: 1400px;
+margin: 2rem auto;
+padding: 3rem 3.5rem;
+background: #ffffff;
+border-radius: 32px;
+box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+.ti-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem;
+border-bottom: 1px solid #e4e8f2;
+padding-bottom: 1.5rem;
+margin-bottom: 2rem;
+}
+.ti-header h1 {
+margin: 0;
+font-size: 2.25rem;
+color: #101626;
+}
+.ti-header .eyebrow {
+letter-spacing: 0.18em;
+text-transform: uppercase;
+font-size: 0.78rem;
+color: #4b6fff;
+}
+.ti-header .timestamp {
+text-align: right;
+color: #4a4f63;
+}
+.ti-panel {
+margin-bottom: 2.5rem;
+background: #ffffff;
+border: 1px solid #e6e9f3;
+border-radius: 28px;
+padding: 2rem;
+box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);
+}
+.panel-title {
+margin-top: 0;
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+color: #6d7693;
+text-transform: uppercase;
+}
+.summary-grid {
+display: flex;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+.summary-card {
+flex: 1 1 calc(20% - 0.8rem);
+border-radius: 22px;
+padding: 1.2rem;
+background: #f9faff;
+border: 1px solid #e4e9ff;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.summary-card h4 {
+margin: 0;
+font-size: 1rem;
+color: #141b31;
+}
+.summary-card p {
+margin: 0;
+color: #4c5169;
+font-size: 0.92rem;
+}
+.summary-chip {
+align-self: flex-start;
+font-size: 0.72rem;
+font-weight: 600;
+padding: 0.2rem 0.6rem;
+border-radius: 999px;
+background: #e8edff;
+color: #3046c7;
+}
+.summary-card dl {
+margin: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+font-size: 0.8rem;
+}
+.summary-card dl div {
+flex: 1 1 90px;
+min-width: 90px;
+}
+.summary-card dt {
+color: #7e85a5;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-size: 0.68rem;
+}
+.summary-card dd {
+margin: 0;
+font-weight: 600;
+color: #101626;
+}
+.summary-card.severity-high {
+border-color: #ffb1b1;
+background: #fff6f6;
+}
+.summary-card.severity-medium {
+border-color: #ffd9a3;
+background: #fff9f0;
+}
+.summary-card.severity-low {
+border-color: #bfe9ff;
+background: #f4fbff;
+}
+.priority-list {
+counter-reset: priority;
+list-style: none;
+padding-left: 0;
+margin: 1.25rem 0 0;
+}
+.priority-list li {
+counter-increment: priority;
+padding: 1rem 0 1rem 3.25rem;
+position: relative;
+border-bottom: 1px solid #edf0f7;
+color: #2b3042;
+line-height: 1.45;
+}
+.priority-list li::before {
+content: counter(priority);
+position: absolute;
+left: 0.8rem;
+top: 1rem;
+background: #4b6fff;
+color: #ffffff;
+width: 1.65rem;
+height: 1.65rem;
+border-radius: 999px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+font-weight: 600;
+box-shadow: 0 6px 20px rgba(75,111,255,0.3);
+}
+.event-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.event-card {
+background: #fefefe;
+border-radius: 24px;
+padding: 1.75rem;
+border: 1px solid #e6eaf5;
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
+box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+.event-card h4 {
+margin: 0;
+font-size: 1.05rem;
+color: #12182b;
+}
+.event-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 0.75rem;
+font-size: 0.8rem;
+color: #5b6075;
+}
+.priority-pill {
+background: #ffe5e5;
+color: #c21f3a;
+border-radius: 999px;
+padding: 0.2rem 0.8rem;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 0.72rem;
+}
+.event-card.severity-medium .priority-pill {
+background: #ffeccf;
+color: #a86a00;
+}
+.event-card.severity-low .priority-pill {
+background: #e1f6ff;
+color: #1477a5;
+}
+.event-body h5, .event-body h6 {
+margin-top: 1rem;
+margin-bottom: 0.3rem;
+font-size: 0.85rem;
+letter-spacing: 0.05em;
+color: #4b6fff;
+text-transform: uppercase;
+}
+.event-body ul {
+margin: 0.5rem 0 0.5rem 1.1rem;
+padding: 0;
+}
+.table-scroll {
+overflow-x: auto;
+border: 1px solid #e5e8f2;
+border-radius: 16px;
+margin-top: 1.25rem;
+}
+.table-scroll table {
+width: 100%;
+border-collapse: collapse;
+min-width: 640px;
+}
+.table-scroll th,
+.table-scroll td {
+padding: 0.55rem 0.85rem;
+border-bottom: 1px solid #edf0f7;
+white-space: nowrap;
+}
+.table-scroll th {
+text-transform: uppercase;
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+color: #6c7693;
+background: #f7f8fd;
+}
+.table-scroll td {
+color: #2d3245;
+font-size: 0.85rem;
+}
+.ti-section-block {
+border-top: 1px solid #eef1f8;
+padding-top: 1.25rem;
+margin-top: 1.25rem;
+}
+.ti-section-block h4 {
+margin: 0 0 0.6rem 0;
+font-size: 1rem;
+color: #141b31;
+}
+.ti-section-body {
+color: #3a404f;
+line-height: 1.55;
+}
+.ti-section-body ul,
+.ti-section-body ol {
+margin-left: 1.25rem;
+}
+.ti-footer {
+text-align: right;
+font-size: 0.8rem;
+color: #7a8097;
+margin-top: 1.75rem;
+}
+@media (max-width: 1100px) {
+.summary-grid {
+flex-wrap: wrap;
+}
+.summary-card {
+flex: 1 1 calc(50% - 0.75rem);
+}
+}
+@media (max-width: 768px) {
+.ti-wrapper {
+width: 95%;
+padding: 1.75rem;
+}
+.ti-header {
+flex-direction: column;
+align-items: flex-start;
+}
+.ti-header .timestamp {
+text-align: left;
+}
+.summary-card {
+flex: 1 1 100%;
+}
+}
+&lt;/style&gt;
+&lt;div class="ti-wrapper"&gt;
+&lt;header class="ti-header"&gt;
+&lt;div&gt;
+&lt;div class="eyebrow"&gt;Threat Landscape Update&lt;/div&gt;
+&lt;h1&gt;Notable Events &amp;amp; Assessments&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="timestamp"&gt;
+&lt;div class="eyebrow"&gt;Report Date (UTC)&lt;/div&gt;
+&lt;div&gt;2025-12-02 18:00:00 UTC&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;section class="ti-panel"&gt;
+&lt;h3 class="panel-title"&gt;Executive Summary&lt;/h3&gt;
+&lt;div class="summary-grid"&gt;
+&lt;article class="summary-card severity-low" tabindex="0" role="button" aria-expanded="false"&gt;
+&lt;div class="summary-status"&gt;NEW&lt;/div&gt;
+&lt;h4&gt;- &lt;strong&gt;[NEW]&lt;/strong&gt; Google has patched 107 Android vulnerabilities, including two high-severity flaws confirmed to be actively exploited in the wild, creating significant risk for unpatched corporate and personal mobile devices&lt;/h4&gt;
+&lt;p class="summary-snippet"&gt;- &lt;strong&gt;[NEW]&lt;/strong&gt; Google has patched 107 Android vulnerabilities, including two high-severity flaws confirmed to be actively exploited in the wild, creating significant risk for unpatched corporate and personal mobile devices.&lt;/p&gt;</description></item><item><title>2025-11-24</title><link>https://iamthefrogy.github.io/weekly-intel/24-11-2025/</link><pubDate>Mon, 24 Nov 2025 14:26:50 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/24-11-2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
+&lt;style&gt;
+:root {
+color-scheme: light;
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: #f4f6fb;
+}
+body {
+margin: 0;
+padding: 0;
+background: #f4f6fb;
+color: #1f2430;
+}
+.ti-wrapper {
+width: 100%;
+max-width: 1400px;
+margin: 2rem auto;
+padding: 3rem 3.5rem;
+background: #ffffff;
+border-radius: 32px;
+box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+.ti-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem;
+border-bottom: 1px solid #e4e8f2;
+padding-bottom: 1.5rem;
+margin-bottom: 2rem;
+}
+.ti-header h1 {
+margin: 0;
+font-size: 2.25rem;
+color: #101626;
+}
+.ti-header .eyebrow {
+letter-spacing: 0.18em;
+text-transform: uppercase;
+font-size: 0.78rem;
+color: #4b6fff;
+}
+.ti-header .timestamp {
+text-align: right;
+color: #4a4f63;
+}
+.ti-panel {
+margin-bottom: 2.5rem;
+background: #ffffff;
+border: 1px solid #e6e9f3;
+border-radius: 28px;
+padding: 2rem;
+box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);
+}
+.panel-title {
+margin-top: 0;
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+color: #6d7693;
+text-transform: uppercase;
+}
+.summary-grid {
+display: flex;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+.summary-card {
+flex: 1 1 calc(20% - 0.8rem);
+border-radius: 22px;
+padding: 1.2rem;
+background: #f9faff;
+border: 1px solid #e4e9ff;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.summary-card h4 {
+margin: 0;
+font-size: 1rem;
+color: #141b31;
+}
+.summary-card p {
+margin: 0;
+color: #4c5169;
+font-size: 0.92rem;
+}
+.summary-chip {
+align-self: flex-start;
+font-size: 0.72rem;
+font-weight: 600;
+padding: 0.2rem 0.6rem;
+border-radius: 999px;
+background: #e8edff;
+color: #3046c7;
+}
+.summary-card dl {
+margin: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+font-size: 0.8rem;
+}
+.summary-card dl div {
+flex: 1 1 90px;
+min-width: 90px;
+}
+.summary-card dt {
+color: #7e85a5;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-size: 0.68rem;
+}
+.summary-card dd {
+margin: 0;
+font-weight: 600;
+color: #101626;
+}
+.summary-card.severity-high {
+border-color: #ffb1b1;
+background: #fff6f6;
+}
+.summary-card.severity-medium {
+border-color: #ffd9a3;
+background: #fff9f0;
+}
+.summary-card.severity-low {
+border-color: #bfe9ff;
+background: #f4fbff;
+}
+.priority-list {
+counter-reset: priority;
+list-style: none;
+padding-left: 0;
+margin: 1.25rem 0 0;
+}
+.priority-list li {
+counter-increment: priority;
+padding: 1rem 0 1rem 3.25rem;
+position: relative;
+border-bottom: 1px solid #edf0f7;
+color: #2b3042;
+line-height: 1.45;
+}
+.priority-list li::before {
+content: counter(priority);
+position: absolute;
+left: 0.8rem;
+top: 1rem;
+background: #4b6fff;
+color: #ffffff;
+width: 1.65rem;
+height: 1.65rem;
+border-radius: 999px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+font-weight: 600;
+box-shadow: 0 6px 20px rgba(75,111,255,0.3);
+}
+.event-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.event-card {
+background: #fefefe;
+border-radius: 24px;
+padding: 1.75rem;
+border: 1px solid #e6eaf5;
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
+box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+.event-card h4 {
+margin: 0;
+font-size: 1.05rem;
+color: #12182b;
+}
+.event-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 0.75rem;
+font-size: 0.8rem;
+color: #5b6075;
+}
+.priority-pill {
+background: #ffe5e5;
+color: #c21f3a;
+border-radius: 999px;
+padding: 0.2rem 0.8rem;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 0.72rem;
+}
+.event-card.severity-medium .priority-pill {
+background: #ffeccf;
+color: #a86a00;
+}
+.event-card.severity-low .priority-pill {
+background: #e1f6ff;
+color: #1477a5;
+}
+.event-body h5, .event-body h6 {
+margin-top: 1rem;
+margin-bottom: 0.3rem;
+font-size: 0.85rem;
+letter-spacing: 0.05em;
+color: #4b6fff;
+text-transform: uppercase;
+}
+.event-body ul {
+margin: 0.5rem 0 0.5rem 1.1rem;
+padding: 0;
+}
+.table-scroll {
+overflow-x: auto;
+border: 1px solid #e5e8f2;
+border-radius: 16px;
+margin-top: 1.25rem;
+}
+.table-scroll table {
+width: 100%;
+border-collapse: collapse;
+min-width: 640px;
+}
+.table-scroll th,
+.table-scroll td {
+padding: 0.55rem 0.85rem;
+border-bottom: 1px solid #edf0f7;
+white-space: nowrap;
+}
+.table-scroll th {
+text-transform: uppercase;
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+color: #6c7693;
+background: #f7f8fd;
+}
+.table-scroll td {
+color: #2d3245;
+font-size: 0.85rem;
+}
+.ti-section-block {
+border-top: 1px solid #eef1f8;
+padding-top: 1.25rem;
+margin-top: 1.25rem;
+}
+.ti-section-block h4 {
+margin: 0 0 0.6rem 0;
+font-size: 1rem;
+color: #141b31;
+}
+.ti-section-body {
+color: #3a404f;
+line-height: 1.55;
+}
+.ti-section-body ul,
+.ti-section-body ol {
+margin-left: 1.25rem;
+}
+.ti-footer {
+text-align: right;
+font-size: 0.8rem;
+color: #7a8097;
+margin-top: 1.75rem;
+}
+@media (max-width: 1100px) {
+.summary-grid {
+flex-wrap: wrap;
+}
+.summary-card {
+flex: 1 1 calc(50% - 0.75rem);
+}
+}
+@media (max-width: 768px) {
+.ti-wrapper {
+width: 95%;
+padding: 1.75rem;
+}
+.ti-header {
+flex-direction: column;
+align-items: flex-start;
+}
+.ti-header .timestamp {
+text-align: left;
+}
+.summary-card {
+flex: 1 1 100%;
+}
+}
+&lt;/style&gt;
+&lt;div class="ti-wrapper"&gt;
+&lt;header class="ti-header"&gt;
+&lt;div&gt;
+&lt;div class="eyebrow"&gt;Threat Landscape Update&lt;/div&gt;
+&lt;h1&gt;Weekly Threat Landscape Briefing&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="timestamp"&gt;
+&lt;div class="eyebrow"&gt;Report Date (UTC)&lt;/div&gt;
+&lt;div&gt;2024-05-21T16:00:00Z&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;section class="ti-panel"&gt;
+&lt;h3 class="panel-title"&gt;Executive Summary&lt;/h3&gt;
+&lt;div class="summary-grid"&gt;
+&lt;article class="summary-card severity-high" tabindex="0" role="button" aria-expanded="false"&gt;
+&lt;div class="summary-status"&gt;NEW&lt;/div&gt;
+&lt;h4&gt;&lt;strong&gt;Likelihood: High | Potential Impact: High | Confidence: High&lt;/strong&gt; An actively exploited, critical remote code execution (RCE) vulnerability in Oracle Identity Manager (CVE-2025-61757) has been added to CISA&amp;#x27;s KEV catalog, indicating a significant and immediate threat to identity and access management systems&lt;/h4&gt;
+&lt;p class="summary-snippet"&gt;&lt;strong&gt;Likelihood: High | Potential Impact: High | Confidence: High&lt;/strong&gt; An actively exploited, critical remote code execution (RCE) vulnerability in Oracle Identity Manager (CVE-2025-61757) has been added to CISA&amp;#x27;s KEV catalog, indicating a significant and immediate threat to identity and access management systems.&lt;/p&gt;</description></item><item><title>2025-11-15</title><link>https://iamthefrogy.github.io/weekly-intel/15-11.2025/</link><pubDate>Sat, 15 Nov 2025 01:43:18 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/15-11.2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
+&lt;style&gt;
+:root {
+color-scheme: light;
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: #f4f6fb;
+}
+body {
+margin: 0;
+padding: 0;
+background: #f4f6fb;
+color: #1f2430;
+}
+.ti-wrapper {
+width: 100%;
+max-width: 1400px;
+margin: 2rem auto;
+padding: 3rem 3.5rem;
+background: #ffffff;
+border-radius: 32px;
+box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+.ti-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem;
+border-bottom: 1px solid #e4e8f2;
+padding-bottom: 1.5rem;
+margin-bottom: 2rem;
+}
+.ti-header h1 {
+margin: 0;
+font-size: 2.25rem;
+color: #101626;
+}
+.ti-header .eyebrow {
+letter-spacing: 0.18em;
+text-transform: uppercase;
+font-size: 0.78rem;
+color: #4b6fff;
+}
+.ti-header .timestamp {
+text-align: right;
+color: #4a4f63;
+}
+.ti-panel {
+margin-bottom: 2.5rem;
+background: #ffffff;
+border: 1px solid #e6e9f3;
+border-radius: 28px;
+padding: 2rem;
+box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);
+}
+.panel-title {
+margin-top: 0;
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+color: #6d7693;
+text-transform: uppercase;
+}
+.summary-grid {
+display: flex;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+.summary-card {
+flex: 1 1 calc(20% - 0.8rem);
+border-radius: 22px;
+padding: 1.2rem;
+background: #f9faff;
+border: 1px solid #e4e9ff;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.summary-card h4 {
+margin: 0;
+font-size: 1rem;
+color: #141b31;
+}
+.summary-card p {
+margin: 0;
+color: #4c5169;
+font-size: 0.92rem;
+}
+.summary-chip {
+align-self: flex-start;
+font-size: 0.72rem;
+font-weight: 600;
+padding: 0.2rem 0.6rem;
+border-radius: 999px;
+background: #e8edff;
+color: #3046c7;
+}
+.summary-card dl {
+margin: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+font-size: 0.8rem;
+}
+.summary-card dl div {
+flex: 1 1 90px;
+min-width: 90px;
+}
+.summary-card dt {
+color: #7e85a5;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-size: 0.68rem;
+}
+.summary-card dd {
+margin: 0;
+font-weight: 600;
+color: #101626;
+}
+.summary-card.severity-high {
+border-color: #ffb1b1;
+background: #fff6f6;
+}
+.summary-card.severity-medium {
+border-color: #ffd9a3;
+background: #fff9f0;
+}
+.summary-card.severity-low {
+border-color: #bfe9ff;
+background: #f4fbff;
+}
+.priority-list {
+counter-reset: priority;
+list-style: none;
+padding-left: 0;
+margin: 1.25rem 0 0;
+}
+.priority-list li {
+counter-increment: priority;
+padding: 1rem 0 1rem 3.25rem;
+position: relative;
+border-bottom: 1px solid #edf0f7;
+color: #2b3042;
+line-height: 1.45;
+}
+.priority-list li::before {
+content: counter(priority);
+position: absolute;
+left: 0.8rem;
+top: 1rem;
+background: #4b6fff;
+color: #ffffff;
+width: 1.65rem;
+height: 1.65rem;
+border-radius: 999px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+font-weight: 600;
+box-shadow: 0 6px 20px rgba(75,111,255,0.3);
+}
+.event-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.event-card {
+background: #fefefe;
+border-radius: 24px;
+padding: 1.75rem;
+border: 1px solid #e6eaf5;
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
+box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+.event-card h4 {
+margin: 0;
+font-size: 1.05rem;
+color: #12182b;
+}
+.event-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 0.75rem;
+font-size: 0.8rem;
+color: #5b6075;
+}
+.priority-pill {
+background: #ffe5e5;
+color: #c21f3a;
+border-radius: 999px;
+padding: 0.2rem 0.8rem;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 0.72rem;
+}
+.event-card.severity-medium .priority-pill {
+background: #ffeccf;
+color: #a86a00;
+}
+.event-card.severity-low .priority-pill {
+background: #e1f6ff;
+color: #1477a5;
+}
+.event-body h5, .event-body h6 {
+margin-top: 1rem;
+margin-bottom: 0.3rem;
+font-size: 0.85rem;
+letter-spacing: 0.05em;
+color: #4b6fff;
+text-transform: uppercase;
+}
+.event-body ul {
+margin: 0.5rem 0 0.5rem 1.1rem;
+padding: 0;
+}
+.table-scroll {
+overflow-x: auto;
+border: 1px solid #e5e8f2;
+border-radius: 16px;
+margin-top: 1.25rem;
+}
+.table-scroll table {
+width: 100%;
+border-collapse: collapse;
+min-width: 640px;
+}
+.table-scroll th,
+.table-scroll td {
+padding: 0.55rem 0.85rem;
+border-bottom: 1px solid #edf0f7;
+white-space: nowrap;
+}
+.table-scroll th {
+text-transform: uppercase;
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+color: #6c7693;
+background: #f7f8fd;
+}
+.table-scroll td {
+color: #2d3245;
+font-size: 0.85rem;
+}
+.ti-section-block {
+border-top: 1px solid #eef1f8;
+padding-top: 1.25rem;
+margin-top: 1.25rem;
+}
+.ti-section-block h4 {
+margin: 0 0 0.6rem 0;
+font-size: 1rem;
+color: #141b31;
+}
+.ti-section-body {
+color: #3a404f;
+line-height: 1.55;
+}
+.ti-section-body ul,
+.ti-section-body ol {
+margin-left: 1.25rem;
+}
+.ti-footer {
+text-align: right;
+font-size: 0.8rem;
+color: #7a8097;
+margin-top: 1.75rem;
+}
+@media (max-width: 1100px) {
+.summary-grid {
+flex-wrap: wrap;
+}
+.summary-card {
+flex: 1 1 calc(50% - 0.75rem);
+}
+}
+@media (max-width: 768px) {
+.ti-wrapper {
+width: 95%;
+padding: 1.75rem;
+}
+.ti-header {
+flex-direction: column;
+align-items: flex-start;
+}
+.ti-header .timestamp {
+text-align: left;
+}
+.summary-card {
+flex: 1 1 100%;
+}
+}
+&lt;/style&gt;
+&lt;div class="ti-wrapper"&gt;
+&lt;header class="ti-header"&gt;
+&lt;div&gt;
+&lt;div class="eyebrow"&gt;Threat Landscape Update&lt;/div&gt;
+&lt;h1&gt;Priority Actions&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="timestamp"&gt;
+&lt;div class="eyebrow"&gt;Report Date (UTC)&lt;/div&gt;
+&lt;div&gt;2024-06-16T10:00:00Z&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;section class="ti-panel"&gt;
+&lt;h3 class="panel-title"&gt;Executive Summary&lt;/h3&gt;
+&lt;div class="summary-grid"&gt;
+&lt;article class="summary-card severity-high" tabindex="0" role="button" aria-expanded="false"&gt;
+&lt;div class="summary-status"&gt;NEW&lt;/div&gt;
+&lt;h4&gt;A critical, unauthenticated authentication bypass vulnerability (CVE-2025-64446) in Fortinet FortiWeb is being actively exploited to create unauthorized administrator accounts, requiring immediate patching of internet-facing devices&lt;/h4&gt;
+&lt;p class="summary-snippet"&gt;A critical, unauthenticated authentication bypass vulnerability (CVE-2025-64446) in Fortinet FortiWeb is being actively exploited to create unauthorized administrator accounts, requiring immediate patching of internet-facing devices.&lt;/p&gt;</description></item><item><title>2025-11-08</title><link>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</link><pubDate>Sat, 08 Nov 2025 12:34:16 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/08-11-2025/</guid><description>&lt;!-- Weekly Threat Intelligence Briefing --&gt;
+&lt;style&gt;
+:root {
+color-scheme: light;
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+background: #f4f6fb;
+}
+body {
+margin: 0;
+padding: 0;
+background: #f4f6fb;
+color: #1f2430;
+}
+.ti-wrapper {
+width: 100%;
+max-width: 1400px;
+margin: 2rem auto;
+padding: 3rem 3.5rem;
+background: #ffffff;
+border-radius: 32px;
+box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+.ti-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem;
+border-bottom: 1px solid #e4e8f2;
+padding-bottom: 1.5rem;
+margin-bottom: 2rem;
+}
+.ti-header h1 {
+margin: 0;
+font-size: 2.25rem;
+color: #101626;
+}
+.ti-header .eyebrow {
+letter-spacing: 0.18em;
+text-transform: uppercase;
+font-size: 0.78rem;
+color: #4b6fff;
+}
+.ti-header .timestamp {
+text-align: right;
+color: #4a4f63;
+}
+.ti-panel {
+margin-bottom: 2.5rem;
+background: #ffffff;
+border: 1px solid #e6e9f3;
+border-radius: 28px;
+padding: 2rem;
+box-shadow: 0 15px 45px rgba(19, 33, 68, 0.05);
+}
+.panel-title {
+margin-top: 0;
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+color: #6d7693;
+text-transform: uppercase;
+}
+.summary-grid {
+display: flex;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+.summary-card {
+flex: 1 1 calc(20% - 0.8rem);
+border-radius: 22px;
+padding: 1.2rem;
+background: #f9faff;
+border: 1px solid #e4e9ff;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.summary-card h4 {
+margin: 0;
+font-size: 1rem;
+color: #141b31;
+}
+.summary-card p {
+margin: 0;
+color: #4c5169;
+font-size: 0.92rem;
+}
+.summary-chip {
+align-self: flex-start;
+font-size: 0.72rem;
+font-weight: 600;
+padding: 0.2rem 0.6rem;
+border-radius: 999px;
+background: #e8edff;
+color: #3046c7;
+}
+.summary-card dl {
+margin: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 0.6rem;
+font-size: 0.8rem;
+}
+.summary-card dl div {
+flex: 1 1 90px;
+min-width: 90px;
+}
+.summary-card dt {
+color: #7e85a5;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-size: 0.68rem;
+}
+.summary-card dd {
+margin: 0;
+font-weight: 600;
+color: #101626;
+}
+.summary-card.severity-high {
+border-color: #ffb1b1;
+background: #fff6f6;
+}
+.summary-card.severity-medium {
+border-color: #ffd9a3;
+background: #fff9f0;
+}
+.summary-card.severity-low {
+border-color: #bfe9ff;
+background: #f4fbff;
+}
+.priority-list {
+counter-reset: priority;
+list-style: none;
+padding-left: 0;
+margin: 1.25rem 0 0;
+}
+.priority-list li {
+counter-increment: priority;
+padding: 1rem 0 1rem 3.25rem;
+position: relative;
+border-bottom: 1px solid #edf0f7;
+color: #2b3042;
+line-height: 1.45;
+}
+.priority-list li::before {
+content: counter(priority);
+position: absolute;
+left: 0.8rem;
+top: 1rem;
+background: #4b6fff;
+color: #ffffff;
+width: 1.65rem;
+height: 1.65rem;
+border-radius: 999px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+font-weight: 600;
+box-shadow: 0 6px 20px rgba(75,111,255,0.3);
+}
+.event-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.event-card {
+background: #fefefe;
+border-radius: 24px;
+padding: 1.75rem;
+border: 1px solid #e6eaf5;
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
+box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+.event-card h4 {
+margin: 0;
+font-size: 1.05rem;
+color: #12182b;
+}
+.event-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 0.75rem;
+font-size: 0.8rem;
+color: #5b6075;
+}
+.priority-pill {
+background: #ffe5e5;
+color: #c21f3a;
+border-radius: 999px;
+padding: 0.2rem 0.8rem;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 0.72rem;
+}
+.event-card.severity-medium .priority-pill {
+background: #ffeccf;
+color: #a86a00;
+}
+.event-card.severity-low .priority-pill {
+background: #e1f6ff;
+color: #1477a5;
+}
+.event-body h5, .event-body h6 {
+margin-top: 1rem;
+margin-bottom: 0.3rem;
+font-size: 0.85rem;
+letter-spacing: 0.05em;
+color: #4b6fff;
+text-transform: uppercase;
+}
+.event-body ul {
+margin: 0.5rem 0 0.5rem 1.1rem;
+padding: 0;
+}
+.table-scroll {
+overflow-x: auto;
+border: 1px solid #e5e8f2;
+border-radius: 16px;
+margin-top: 1.25rem;
+}
+.table-scroll table {
+width: 100%;
+border-collapse: collapse;
+min-width: 640px;
+}
+.table-scroll th,
+.table-scroll td {
+padding: 0.55rem 0.85rem;
+border-bottom: 1px solid #edf0f7;
+white-space: nowrap;
+}
+.table-scroll th {
+text-transform: uppercase;
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+color: #6c7693;
+background: #f7f8fd;
+}
+.table-scroll td {
+color: #2d3245;
+font-size: 0.85rem;
+}
+.ti-section-block {
+border-top: 1px solid #eef1f8;
+padding-top: 1.25rem;
+margin-top: 1.25rem;
+}
+.ti-section-block h4 {
+margin: 0 0 0.6rem 0;
+font-size: 1rem;
+color: #141b31;
+}
+.ti-section-body {
+color: #3a404f;
+line-height: 1.55;
+}
+.ti-section-body ul,
+.ti-section-body ol {
+margin-left: 1.25rem;
+}
+.ti-footer {
+text-align: right;
+font-size: 0.8rem;
+color: #7a8097;
+margin-top: 1.75rem;
+}
+@media (max-width: 1100px) {
+.summary-grid {
+flex-wrap: wrap;
+}
+.summary-card {
+flex: 1 1 calc(50% - 0.75rem);
+}
+}
+@media (max-width: 768px) {
+.ti-wrapper {
+width: 95%;
+padding: 1.75rem;
+}
+.ti-header {
+flex-direction: column;
+align-items: flex-start;
+}
+.ti-header .timestamp {
+text-align: left;
+}
+.summary-card {
+flex: 1 1 100%;
+}
+}
+&lt;/style&gt;
+&lt;div class="ti-wrapper"&gt;
+&lt;header class="ti-header"&gt;
+&lt;div&gt;
+&lt;div class="eyebrow"&gt;Weekly Threat Intelligence Briefing&lt;/div&gt;
+&lt;h1&gt;Weekly Threat Intelligence Briefing&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="timestamp"&gt;
+&lt;div class="eyebrow"&gt;Report Date (UTC)&lt;/div&gt;
+&lt;div&gt;2025-11-08 14:00:00 UTC&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;section class="ti-panel"&gt;
+&lt;h3 class="panel-title"&gt;Executive Summary — Top Threats&lt;/h3&gt;
+&lt;div class="summary-grid"&gt;
+&lt;article class="summary-card severity-high"&gt;
+&lt;div class="summary-chip"&gt;NEW&lt;/div&gt;
+&lt;h4&gt;A patched Samsung zero-day vulnerability (CVE-2025-21042) was actively exploited in the wild via zero-click messages to deploy new commercial-grade Android spyware called LANDFALL, primarily targeting entities in the Middle East&lt;/h4&gt;
+&lt;p&gt;A patched Samsung zero-day vulnerability (CVE-2025-21042) was actively exploited in the wild via zero-click messages to deploy new commercial-grade Android spyware called LANDFALL, primarily targeting entities in the Middle East.&lt;/p&gt;</description></item></channel></rss>
