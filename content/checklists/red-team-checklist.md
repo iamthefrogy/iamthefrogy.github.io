@@ -4,8 +4,16 @@ draft = false
 title = 'Red Team Checklist'
 +++
 
-<html>
-<iframe src="https://docs.google.com/spreadsheets/d/1AH89A1clYuwlVnXMtpfBcKHP468SvwwS/edit?usp=sharing&ouid=110899656416453588800&rtpof=true&sd=true"
-        width="100%" height="1000px" frameborder="0"></iframe>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=/red-team-testcase-atlas.html">
+    <script>
+        window.location.href = '/red-team-testcase-atlas.html';
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="/red-team-testcase-atlas.html">click here</a>.</p>
+</body>
 </html>
