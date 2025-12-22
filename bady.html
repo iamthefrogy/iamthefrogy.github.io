@@ -408,6 +408,22 @@
       color: var(--muted);
       font-size: 13px;
     }
+    .waiting-remove {
+      border: none;
+      background: none;
+      color: inherit;
+      font: inherit;
+      font-weight: 600;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.15s ease;
+    }
+    .waiting-remove:hover,
+    .waiting-remove:focus-visible {
+      color: var(--danger);
+      outline: none;
+    }
     .completed-item {
       padding: 12px 14px;
       border-radius: 14px;
@@ -562,6 +578,13 @@
         statusLine.innerHTML = '<span class="' + tone + '">' + message + '</span>';
       }
 
+      function removePlayerRecord(id) {
+        state.players.delete(id);
+        state.playerOrder = state.playerOrder.filter(pid => pid !== id);
+        state.availableQueue = state.availableQueue.filter(pid => pid !== id);
+        state.scores.delete(id);
+      }
+
       function createPlayer(name) {
         const id = 'p' + state.playerCounter++;
         const player = { id, name: name.trim() };
@@ -596,12 +619,27 @@
 
       function handleRemovePlayer(id) {
         if (state.sessionActive) return;
-        state.players.delete(id);
-        state.playerOrder = state.playerOrder.filter(pid => pid !== id);
-        state.scores.delete(id);
+        removePlayerRecord(id);
         renderRoster();
         renderLeaderboard();
         updateStatus('Removed player from this session.', 'muted');
+      }
+
+      function handleLobbyRemoval(id) {
+        if (!state.sessionActive) return;
+        if (!state.availableQueue.includes(id)) {
+          updateStatus('Player is already on court. Wait until they return to the lobby.', 'warn');
+          return;
+        }
+        const info = state.players.get(id);
+        if (!info) return;
+        const confirmed = window.confirm('Remove ' + info.name + ' from today\'s lobby?');
+        if (!confirmed) return;
+        removePlayerRecord(id);
+        renderRoster();
+        renderLeaderboard();
+        renderWaitingList();
+        updateStatus('Removed ' + info.name + ' from the lobby.', 'muted');
       }
 
       function renderRoster() {
@@ -963,7 +1001,19 @@
           if (!player) return;
           const row = document.createElement('div');
           row.className = 'waiting-player';
-          row.innerHTML = '<strong>' + player.name + '</strong><span>#' + (idx + 1) + ' in queue</span>';
+          const nameBtn = document.createElement('button');
+          nameBtn.type = 'button';
+          nameBtn.className = 'waiting-remove';
+          nameBtn.textContent = player.name;
+          nameBtn.title = 'Remove ' + player.name + ' from the lobby';
+          nameBtn.addEventListener('click', (evt) => {
+            evt.stopPropagation();
+            handleLobbyRemoval(id);
+          });
+          const spot = document.createElement('span');
+          spot.textContent = '#' + (idx + 1) + ' in queue';
+          row.appendChild(nameBtn);
+          row.appendChild(spot);
           waitingListEl.appendChild(row);
         });
       }
