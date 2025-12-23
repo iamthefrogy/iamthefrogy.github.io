@@ -535,6 +535,17 @@
     </div>
   </div>
 
+  <div class="modal-overlay" id="remove-overlay">
+    <div class="modal">
+      <h3>Remove from Lobby?</h3>
+      <p id="remove-message"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn-accent" id="remove-confirm">Yes, remove</button>
+        <button type="button" class="btn-secondary" id="remove-cancel">Keep waiting</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     (() => {
       const addPlayerInput = document.getElementById('player-input');
@@ -556,6 +567,10 @@
       const modalReplayBtn = document.getElementById('post-match-replay');
       const modalRestBtn = document.getElementById('post-match-rest');
       const modalCancelBtn = document.getElementById('post-match-cancel');
+      const removalOverlay = document.getElementById('remove-overlay');
+      const removalMessage = document.getElementById('remove-message');
+      const removalConfirmBtn = document.getElementById('remove-confirm');
+      const removalCancelBtn = document.getElementById('remove-cancel');
 
       const state = {
         players: new Map(),
@@ -571,6 +586,7 @@
         matchCounter: 1,
         pendingFinish: null,
         pendingAward: null,
+        pendingRemoval: null,
         scores: new Map()
       };
 
@@ -633,13 +649,30 @@
         }
         const info = state.players.get(id);
         if (!info) return;
-        const confirmed = window.confirm('Remove ' + info.name + ' from today\'s lobby?');
-        if (!confirmed) return;
-        removePlayerRecord(id);
+        openRemovalModal(info);
+      }
+
+      function openRemovalModal(info) {
+        state.pendingRemoval = { id: info.id, name: info.name };
+        removalMessage.innerHTML = 'Remove <strong>' + info.name + '</strong> from today\'s lobby? You can add them again any time.';
+        removalOverlay.classList.add('active');
+      }
+
+      function closeRemovalModal() {
+        removalOverlay.classList.remove('active');
+        removalMessage.innerHTML = '';
+        state.pendingRemoval = null;
+      }
+
+      function confirmRemoval() {
+        if (!state.pendingRemoval) return;
+        const target = state.pendingRemoval;
+        removePlayerRecord(target.id);
         renderRoster();
         renderLeaderboard();
         renderWaitingList();
-        updateStatus('Removed ' + info.name + ' from the lobby.', 'muted');
+        updateStatus('Removed ' + target.name + ' from the lobby.', 'muted');
+        closeRemovalModal();
       }
 
       function renderRoster() {
@@ -1117,6 +1150,14 @@
         if (evt.target === winnerOverlay) {
           closeWinnerModal();
           state.pendingFinish = null;
+        }
+      });
+
+      removalConfirmBtn.addEventListener('click', confirmRemoval);
+      removalCancelBtn.addEventListener('click', closeRemovalModal);
+      removalOverlay.addEventListener('click', (evt) => {
+        if (evt.target === removalOverlay) {
+          closeRemovalModal();
         }
       });
 
