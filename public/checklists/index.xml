@@ -1,19 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Checklists on Cyber Frogy</title><link>https://iamthefrogy.github.io/checklists/</link><description>Recent content in Checklists on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 21 Jul 2025 13:34:44 +0100</lastBuildDate><atom:link href="https://iamthefrogy.github.io/checklists/index.xml" rel="self" type="application/rss+xml"/><item><title>Network Pentest Checklist</title><link>https://iamthefrogy.github.io/checklists/network-pentest-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/network-pentest-checklist/</guid><description>&lt;html&gt;
-&lt;iframe src="https://docs.google.com/spreadsheets/d/1lIwAqXp5iT9U3V5QyC8g6II8NgKWyJx9/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true"
- width="100%" height="1000px" frameborder="0"&gt;&lt;/iframe&gt;
-&lt;/html&gt;</description></item><item><title>Red Team Checklist</title><link>https://iamthefrogy.github.io/checklists/red-team-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/red-team-checklist/</guid><description>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
- &lt;meta charset="utf-8"&gt;
- &lt;meta http-equiv="refresh" content="0; url=https://iamthefrogy.github.io/red-team-testcase-atlas.html"&gt;
- &lt;script&gt;
- window.location.href = '/red-team-testcase-atlas.html';
- &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
- &lt;p&gt;If you are not redirected automatically, &lt;a href="https://iamthefrogy.github.io/red-team-testcase-atlas.html"&gt;click here&lt;/a&gt;.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</description></item><item><title>Web Application Pentest Checklist</title><link>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</guid><description>&lt;html&gt;
-&lt;iframe src="https://docs.google.com/spreadsheets/d/16OtOOlAvR576bZjJJoYZ9a-pyoUi9tnj/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true"
- width="100%" height="1000px" frameborder="0"&gt;&lt;/iframe&gt;
-&lt;/html&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Checklists on Cyber Frogy</title>
+    <link>http://localhost:1313/checklists/</link>
+    <description>Recent content in Checklists on Cyber Frogy</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 21 Jul 2025 13:34:44 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/checklists/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Network Pentest Checklist</title>
+      <link>http://localhost:1313/checklists/network-pentest-checklist/</link>
+      <pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate>
+      <guid>http://localhost:1313/checklists/network-pentest-checklist/</guid>
+      <description>&lt;html&gt;&#xA;&lt;iframe src=&#34;https://docs.google.com/spreadsheets/d/1lIwAqXp5iT9U3V5QyC8g6II8NgKWyJx9/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true&#34;&#xA;        width=&#34;100%&#34; height=&#34;1000px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/html&gt;</description>
+    </item>
+    <item>
+      <title>Red Team Checklist</title>
+      <link>http://localhost:1313/checklists/red-team-checklist/</link>
+      <pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate>
+      <guid>http://localhost:1313/checklists/red-team-checklist/</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&#34;utf-8&#34;&gt;&#xA;    &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; url=http://localhost:1313/red-team-testcase-atlas.html&#34;&gt;&#xA;    &lt;script&gt;&#xA;        window.location.href = &#39;/red-team-testcase-atlas.html&#39;;&#xA;    &lt;/script&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;    &lt;p&gt;If you are not redirected automatically, &lt;a href=&#34;http://localhost:1313/red-team-testcase-atlas.html&#34;&gt;click here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;</description>
+    </item>
+    <item>
+      <title>Web Application Pentest Checklist</title>
+      <link>http://localhost:1313/checklists/web-application-pentest-checklist/</link>
+      <pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate>
+      <guid>http://localhost:1313/checklists/web-application-pentest-checklist/</guid>
+      <description>&lt;html&gt;&#xA;&lt;iframe src=&#34;https://docs.google.com/spreadsheets/d/16OtOOlAvR576bZjJJoYZ9a-pyoUi9tnj/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true&#34;&#xA;        width=&#34;100%&#34; height=&#34;1000px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/html&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -116,47 +116,42 @@ weight = 100
 identifier = "home"
 url = "/"
 [[menu.main]]
-name = "Blog"
+name = "Whoami"
+identifier = "whoami"
 weight = 200
+url = "/whoami"
+[[menu.main]]
+name = "Blog"
+weight = 300
 identifier = "posts"
 url = "/posts"
 [[menu.main]]
-name = "Weekly-Intel"
-weight = 300
-identifier = "weekly-intel"
-url = "/weekly-intel"
-[[menu.main]]
-name = "Visualisations"
-identifier = "visualisations"
+name = "Mindmaps"
+identifier = "mindmaps"
 weight = 400
-url = "/visualisations"
+url = "/mindmaps"
 [[menu.main]]
-name = "Threat-Actor Map"
-identifier = "threatactormap"
+name = "Threat-Actor DB"
+identifier = "threat-actor-db"
 weight = 500
-url = "/threat-actor-map"
+url = "/threat-actor-db"
 [[menu.main]]
-name = "About Me"
-identifier = "about"
+name = "GitHub"
+identifier = "github"
 weight = 600
-url = "/about"
-[[menu.main]]
-name = "My Repos"
-identifier = "repositories"
-weight = 700
-url = "/repositories"
+url = "/github"
 [[menu.main]]
 name = "Checklists"
 identifier = "checklists"
-weight = 800
+weight = 700
 url = "/checklists"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
-weight = 900
+weight = 800
 url = "/kickstartcareer"
 [[menu.main]]
 name = "Disclaimer"
 identifier = "disclaimer"
-weight = 1000
+weight = 900
 url = "/disclaimer"
