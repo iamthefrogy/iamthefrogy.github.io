@@ -276,7 +276,7 @@
     <section class="top-row">
       <div class="metric">
         <h2>Total Test Cases</h2>
-        <div class="metric-value">44</div>
+        <div class="metric-value">40</div>
       </div>
       <div class="metric">
         <h2>Last Updated</h2>
@@ -304,17 +304,9 @@
     
 
     <div class="analytics-row">
-      <div class="analytics-label">Uncategorized <span>5</span></div>
+      <div class="analytics-label">Network <span>5</span></div>
       <div class="analytics-bar">
         <div class="analytics-bar-fill" style="width:25%"></div>
-      </div>
-    </div>
-    
-
-    <div class="analytics-row">
-      <div class="analytics-label">Network <span>4</span></div>
-      <div class="analytics-bar">
-        <div class="analytics-bar-fill" style="width:20%"></div>
       </div>
     </div>
     
@@ -328,11 +320,10 @@
       <div>
         <label for="categoryFilter">Category</label>
         <select id="categoryFilter">
-          <option value="all">All Categories (44)</option>
+          <option value="all">All Categories (40)</option>
           <option value="Web App">Web App (20)</option>
 <option value="API">API (15)</option>
-<option value="Uncategorized">Uncategorized (5)</option>
-<option value="Network">Network (4)</option>
+<option value="Network">Network (5)</option>
         </select>
       </div>
     </section>
@@ -762,23 +753,6 @@
     </article>
     
 
-    <article class="card" data-category="Uncategorized">
-      <button type="button" class="card-toggle">
-        <span class="card-title">Report 2890071 Testcase</span>
-        <span class="card-meta-mini">
-          <span class="badge">Uncategorized</span>
-          <span class="chevron" aria-hidden="true">▸</span>
-        </span>
-      </button>
-      <div class="card-body">
-        <p>Skipped: The report describes a specific auditing issue within a file-sharing application, which is too feature-specific to be generalised.</p>
-        <div class="card-meta">
-          <span>Added: 2025-12-26</span>
-        </div>
-      </div>
-    </article>
-    
-
     <article class="card" data-category="API">
       <button type="button" class="card-toggle">
         <span class="card-title">Blind SSRF via Webhook URL</span>
@@ -1001,23 +975,6 @@
     </article>
     
 
-    <article class="card" data-category="Uncategorized">
-      <button type="button" class="card-toggle">
-        <span class="card-title">Report 3316910 Testcase</span>
-        <span class="card-meta-mini">
-          <span class="badge">Uncategorized</span>
-          <span class="chevron" aria-hidden="true">▸</span>
-        </span>
-      </button>
-      <div class="card-body">
-        <p>Skipped: The report lacks specific details on how the second-order XSS vulnerability was triggered and exploited.</p>
-        <div class="card-meta">
-          <span>Added: 2025-12-26</span>
-        </div>
-      </div>
-    </article>
-    
-
     <article class="card" data-category="Web App">
       <button type="button" class="card-toggle">
         <span class="card-title">Unauthorised Share Enumeration</span>
@@ -1039,23 +996,6 @@
 <p><strong class="section-heading section-impact">Impact:</strong> Information disclosure; potential for unauthorized access.</p>
 
 <p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper access controls to prevent unauthenticated users from enumerating shares. Ensure fixes from prior vulnerabilities are correctly implemented and tested.</p>
-        <div class="card-meta">
-          <span>Added: 2025-12-26</span>
-        </div>
-      </div>
-    </article>
-    
-
-    <article class="card" data-category="Uncategorized">
-      <button type="button" class="card-toggle">
-        <span class="card-title">Report 3338748 Testcase</span>
-        <span class="card-meta-mini">
-          <span class="badge">Uncategorized</span>
-          <span class="chevron" aria-hidden="true">▸</span>
-        </span>
-      </button>
-      <div class="card-body">
-        <p>Skipped: Report describes a feature specific to the Nextcloud application and does not provide generalizable steps or vulnerabilities.</p>
         <div class="card-meta">
           <span>Added: 2025-12-26</span>
         </div>
@@ -1361,23 +1301,6 @@
     </article>
     
 
-    <article class="card" data-category="Uncategorized">
-      <button type="button" class="card-toggle">
-        <span class="card-title">Report 3458235 Testcase</span>
-        <span class="card-meta-mini">
-          <span class="badge">Uncategorized</span>
-          <span class="chevron" aria-hidden="true">▸</span>
-        </span>
-      </button>
-      <div class="card-body">
-        <p>Skipped: Report title mentions a CVE and refers to a specific product, making it difficult to create a target-agnostic test case.</p>
-        <div class="card-meta">
-          <span>Added: 2025-12-26</span>
-        </div>
-      </div>
-    </article>
-    
-
     <article class="card" data-category="Web App">
       <button type="button" class="card-toggle">
         <span class="card-title">Stack Buffer Overflow in TLS Error Handling</span>
@@ -1517,23 +1440,6 @@ int main() {
     </article>
     
 
-    <article class="card" data-category="Uncategorized">
-      <button type="button" class="card-toggle">
-        <span class="card-title">Report 3463619 Testcase</span>
-        <span class="card-meta-mini">
-          <span class="badge">Uncategorized</span>
-          <span class="chevron" aria-hidden="true">▸</span>
-        </span>
-      </button>
-      <div class="card-body">
-        <p>Skipped: The report is a request for assistance and does not describe a vulnerability.</p>
-        <div class="card-meta">
-          <span>Added: 2025-12-26</span>
-        </div>
-      </div>
-    </article>
-    
-
     <article class="card" data-category="Web App">
       <button type="button" class="card-toggle">
         <span class="card-title">URL-Encoded Path Traversal Bypass</span>
@@ -1616,6 +1522,37 @@ int main() {
 <p><strong class="section-heading section-impact">Impact:</strong> Denial of service through process crashes or heap memory corruption, with a potential for arbitrary code execution depending on the heap layout and implemented mitigations.</p>
 
 <p><strong class="section-heading section-remediation">Remediation:</strong> Implement dynamic buffer allocation that accounts for structure alignment and padding requirements when performing DNS resolution. Validate the size and offset calculations to prevent out-of-bounds writes.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">TOCTOU Race Condition in Resumed SFTP Uploads</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A race condition exists in SFTP resume functionality where a file&#x27;s state is checked before being opened, allowing an attacker to swap the target file with a symbolic link. This enables arbitrary data appending to files accessible by the authenticated user.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Establish a connection to an SFTP server using a tool like <code>curl</code>.</li>
+<li>Authenticate to the server.</li>
+<li>Initiate a file upload using <code>curl</code> with the <code>-C -</code> flag to resume from the end.</li>
+<li>Simultaneously, an attacker on the server must rapidly replace the target file with a symbolic link to a sensitive file. For instance: <code>mkfifo /tmp/symlink; ln -s /tmp/symlink /path/to/target_file</code>.</li>
+<li>Observe whether data appended during the upload is written to the sensitive file pointed to by the symbolic link.</li>
+<li>Use backticks to run commands like: <code>curl -u &lt;USERNAME&gt;:&lt;PASSWORD&gt; -C - &lt;TARGET_URL&gt;:&lt;PAYLOAD&gt;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker with authenticated access can append arbitrary data to files the user has write access to, potentially leading to remote code execution, denial of service, or log injection.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Verify that the file opened matches the file whose size was initially checked before continuing with the upload process. Use file attributes like inode number to perform the validation.</p>
         <div class="card-meta">
           <span>Added: 2025-12-26</span>
         </div>
