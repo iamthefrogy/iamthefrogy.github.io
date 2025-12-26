@@ -5,9 +5,9 @@
 &lt;html lang="en"&gt;
 &lt;head&gt;
  &lt;meta charset="utf-8"&gt;
- &lt;meta http-equiv="refresh" content="0; url=https://iamthefrogy.github.io/red-team-testcase-atlas.html"&gt;
+ &lt;meta http-equiv="refresh" content="0; url=http://redops.chintangurjar.com/"&gt;
  &lt;script&gt;
- window.location.href = '/red-team-testcase-atlas.html';
+ window.location.href = 'http://redops.chintangurjar.com/';
  &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -16,9 +16,9 @@
 &lt;html lang="en"&gt;
 &lt;head&gt;
  &lt;meta charset="utf-8"&gt;
- &lt;meta http-equiv="refresh" content="0; url=https://iamthefrogy.github.io/hackerone-testcases.html"&gt;
+ &lt;meta http-equiv="refresh" content="0; url=https://iamthefrogy.github.io/https://buglist.chintangurjar.com/"&gt;
  &lt;script&gt;
- window.location.href = '/hackerone-testcases.html';
+ window.location.href = 'https://buglist.chintangurjar.com/';
  &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
