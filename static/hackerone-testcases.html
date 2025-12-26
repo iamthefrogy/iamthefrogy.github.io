@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bug Bounty Test Case Library</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0e17;
+      --panel: #141a2a;
+      --card: #1d2438;
+      --text: #f2f5ff;
+      --muted: #94a3b8;
+      --accent: #66d9ef;
+      --accent-2: #f78c6c;
+      --impact: #ffcb6b;
+      --border: #2c3654;
+      --shadow: 0 10px 30px rgba(0,0,0,0.3);
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .shell {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      padding: 30px 5% 60px;
+      box-sizing: border-box;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 780px;
+      line-height: 1.5;
+    }
+    .top-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .metric {
+      flex: 1 1 220px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .metric h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .metric-value {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .filters {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 15px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+    .filters label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .filters input,
+    .filters select {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 10px 12px;
+      min-width: 220px;
+      font-size: 1rem;
+    }
+    .analytics-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 15px;
+      box-shadow: var(--shadow);
+      margin-bottom: 25px;
+    }
+    .analytics-panel h2 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+    }
+    .analytics-row {
+      margin-bottom: 12px;
+    }
+    .analytics-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .analytics-bar {
+      width: 100%;
+      height: 10px;
+      background: var(--card);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .analytics-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-toggle {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: inherit;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      gap: 12px;
+    }
+    .card-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .card-title {
+      font-weight: 600;
+      text-align: left;
+    }
+    .card-meta-mini {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      background: rgba(102, 217, 239, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(102, 217, 239, 0.4);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .chevron {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .card.open .chevron {
+      transform: rotate(90deg);
+    }
+    .card-body h1,
+    .card-body h2,
+    .card-body h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .card-body p {
+      margin: 0 0 10px;
+      line-height: 1.5;
+    }
+    .card-body ul,
+    .card-body ol {
+      padding-left: 22px;
+      margin: 0 0 12px;
+    }
+    .card-body li {
+      margin-bottom: 6px;
+    }
+    .card-body code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: rgba(0,0,0,0.3);
+      padding: 12px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      padding: 0 20px;
+      transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.25s ease;
+    }
+    .card.open .card-body {
+      max-height: 1200px;
+      opacity: 1;
+      padding: 0 20px 20px;
+    }
+    .section-heading {
+      display: inline-block;
+      margin-right: 6px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--impact);
+    }
+    .status-line {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+    @media (max-width: 640px) {
+      .filters input, .filters select {
+        width: 100%;
+      }
+      .card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .chart-wrapper {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>Reusable HackerOne Test Cases</h1>
+      <p>Every report from HackerOne is analysed by local AI (Ollama) and generic test case has been derrived to be used as a checklist to test other websites.</p>
+    </header>
+
+    <section class="top-row">
+      <div class="metric">
+        <h2>Total Test Cases</h2>
+        <div class="metric-value">14</div>
+      </div>
+      <div class="metric">
+        <h2>Last Updated</h2>
+        <div class="metric-value">2025-12-26</div>
+      </div>
+    </section>
+
+    <section class="analytics-panel">
+      <h2>Category Breakdown</h2>
+      
+    <div class="analytics-row">
+      <div class="analytics-label">API <span>8</span></div>
+      <div class="analytics-bar">
+        <div class="analytics-bar-fill" style="width:100%"></div>
+      </div>
+    </div>
+    
+
+    <div class="analytics-row">
+      <div class="analytics-label">Web App <span>5</span></div>
+      <div class="analytics-bar">
+        <div class="analytics-bar-fill" style="width:62%"></div>
+      </div>
+    </div>
+    
+
+    <div class="analytics-row">
+      <div class="analytics-label">Network <span>1</span></div>
+      <div class="analytics-bar">
+        <div class="analytics-bar-fill" style="width:12%"></div>
+      </div>
+    </div>
+    
+    </section>
+
+    <section class="filters">
+      <div>
+        <label for="searchInput">Keyword Search</label>
+        <input type="text" id="searchInput" placeholder="Search summaries, steps, payloads..."/>
+      </div>
+      <div>
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All Categories (14)</option>
+          <option value="API">API (8)</option>
+<option value="Web App">Web App (5)</option>
+<option value="Network">Network (1)</option>
+        </select>
+      </div>
+    </section>
+
+    <p class="status-line">Tap any card to expand the full test case.</p>
+
+    <section class="cards" id="cardContainer">
+      
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Heap Buffer Over-Read via Malicious SMB Response</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A malicious server can trigger a heap buffer over-read in a client application when responding to a specific SMB request, potentially disclosing sensitive information. This occurs because the client&#x27;s parsing of the response does not adequately validate the data offset, leading to an out-of-bounds read.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set up a malicious SMB server using a provided script (e.g., <code>smb<em>exploit</em>server.py</code>) on a specific port (e.g., 4455).</li>
+<li>Configure a client application (e.g., <code>curl</code>) to connect to the malicious server using a specified URL (e.g., <code>smb://&lt;TARGET_URL&gt;:4455/share/file.txt</code>).  Use dummy credentials (e.g., <code>-u anyuser:anypass</code>).</li>
+<li>Initiate a file transfer using the client application.</li>
+<li>Verify the size of the received data. The expected size should be larger than the amount of legitimate data sent by the server.</li>
+<li>Examine the contents of the received data to identify leaked heap memory. A payload such as <code>AAAAAAAAAAAAAAAA</code> can be sent from the server to more easily identify the heap leak.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Potential disclosure of sensitive information, including authentication credentials, session tokens, and memory layout, which could be used for further exploitation.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust input validation within the SMB parsing logic to ensure data offsets are within the boundaries of the expected response structure. Specifically, verify the offset against the message layout and byte count.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Public Suffix Cookie Injection</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability occurs when a web application or library doesn&#x27;t properly validate the Domain attribute in <code>Set-Cookie</code> headers. Attackers can use this to inject cookies that are inadvertently sent to other domains sharing the same public suffix, potentially leading to session hijacking or other malicious actions. Improper configuration or build options can exacerbate the problem.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Build a tool or library that handles HTTP cookies without public suffix validation (e.g., <code>./configure --disable-shared --without-libpsl &amp;&amp; make -j</code>).</li>
+<li>Start a local HTTP server that sets a <code>Set-Cookie</code> header with a malicious <code>Domain</code> attribute (e.g., <code>Set-Cookie: sess=attack; Domain=.co.uk; Path=/</code>).</li>
+<li>Use the vulnerable tool/library to retrieve the cookie from the malicious server using a specific hostname (e.g., <code>curl -v --resolve attacker.co.uk:8000:127.0.0.1 http://attacker.co.uk:8000/ -c /tmp/cjar2</code>).</li>
+<li>Reuse the retrieved cookie jar with a different hostname (e.g., <code>curl -v --resolve victim.co.uk:8000:127.0.0.1 http://victim.co.uk:8000/ -b /tmp/cjar2</code>).</li>
+<li>Verify that the cookie is sent to the second hostname. Example payload: <code>Domain=.co.uk</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can inject cookies and have them sent to unrelated domains, potentially leading to session hijacking, session fixation, or other forms of request poisoning.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always validate the <code>Domain</code> attribute of <code>Set-Cookie</code> headers against a list of public suffixes. Use libraries or functions that provide this validation automatically. Ensure all tools and libraries are configured correctly, including necessary dependencies.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">CRLF Injection in Gopher Protocol</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability arises from improper handling of newline characters within the Gopher protocol, allowing attackers to inject arbitrary commands. Exploitation can lead to unauthorized access and control of internal services, potentially resulting in remote code execution or data breaches.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set up a listener on a specific port to receive incoming commands: <code>nc -lvnp &lt;PORT&gt;</code></li>
+<li>Construct a Gopher URL containing URL-encoded CRLF characters to inject commands: <code>./curl &quot;gopher://&lt;TARGET<em>URL&gt;:&lt;PORT&gt;/</em>Dummy%0d%0a&lt;PAYLOAD&gt;%0d%0&quot;</code></li>
+<li>Observe the output on the listener. The listener should receive multiple commands instead of a single line. For example, <code><em>Dummy%0d%0aHELLO</em>SERVER%0d%0</code> should appear as three separate lines.</li>
+<li>Verify that the injected <code>&lt;PAYLOAD&gt;</code> is correctly interpreted and executed by the receiving service.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Allows attackers to interact with internal text-based protocols, potentially enabling remote code execution, SMTP injection, or bypassing security controls.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict input validation and sanitization for all incoming data within the Gopher protocol handler, ensuring that newline characters are properly handled and cannot be exploited to inject arbitrary commands.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Tab Nabbing</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Tab nabbing is a type of attack where a newly opened tab can redirect the user&#x27;s original tab to a malicious website, often mimicking a legitimate page. This can be used for phishing attacks to steal user credentials or redirect users to harmful content. The vulnerability arises when a page opens in a new tab without proper safeguards against external manipulation.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Open a web application that allows links to open in new tabs (target=&quot;_blank&quot;).</li>
+<li>Open a link in a new tab.</li>
+<li>Open the browser&#x27;s developer console.</li>
+<li>Execute the following JavaScript code in the console: <code>window.opener.location=&#x27;http://&lt;TARGET_URL&gt;&#x27;</code> (Example: <code>window.opener.location=&#x27;http://example.com&#x27;</code>)</li>
+<li>Observe if the original tab redirects to the specified URL.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Users may be redirected to a malicious website without their knowledge, potentially leading to credential theft or other harmful actions.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always implement strict content security policies (CSP) and avoid using <code>window.opener</code> unless absolutely necessary. If it is needed, sanitize and validate the target URL carefully to prevent redirection to unintended or malicious locations.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Connection Reuse Leads to IP Spoofing and mTLS Context Smuggling</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to hijack an authenticated connection, potentially bypassing access controls and impersonating a higher-privileged user. It occurs due to improper connection reuse where the client IP specified for the connection is not persisted and is therefore reused for subsequent requests.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Establish a secure connection to &lt;TARGET<em>URL&gt; using a specific client IP address <code>&lt;PAYLOAD&gt; curl --haproxy-client-ip 10.0.0.1 &lt;TARGET</em>URL&gt;</code>.</li>
+<li>Immediately after the first request, send a second request to the same &lt;TARGET<em>URL&gt; without specifying a client IP address or with a different client IP address <code>&lt;PAYLOAD&gt; curl &lt;TARGET</em>URL&gt;</code>.</li>
+<li>Monitor the server-side logs to confirm that the second request is attributed to the IP address of the initial connection (10.0.0.1 in the example) rather than the IP address of the second request.</li>
+<li>If the target utilizes mTLS, verify that the second request inherits the TLS context of the initial connection.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong>  An attacker can bypass access controls, impersonate privileged users, and potentially gain unauthorized access to resources or data. This leads to integrity and confidentiality compromises.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure that the client IP is stored and verified during connection reuse.  Implement robust connection management that respects client-provided identity information, preventing the accidental reuse of connections with mismatched identities.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">WebSocket Handshake Spoofing</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This issue describes a vulnerability where a WebSocket client fails to properly validate the <code>Sec-WebSocket-Accept</code> header during the handshake process. This can allow an attacker to inject malicious frames into the WebSocket connection, leading to potential data manipulation or protocol confusion. The client accepts a server’s response even when the <code>Sec-WebSocket-Accept</code> is incorrect.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Build a WebSocket client library from source, disabling SSL and other dependencies as needed.</li>
+<li>Set up a TCP server that responds with a WebSocket 101 response containing a deliberately incorrect <code>Sec-WebSocket-Accept</code> header and a text frame. For example: <code>HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: WRONGKEY\r\n\r\n</code>.</li>
+<li>Run the WebSocket client against the server at <code>&lt;TARGET_URL&gt;</code> using the client’s built-in example or a similar test script.</li>
+<li>Observe if the client successfully receives and processes the text frame despite the incorrect <code>Sec-WebSocket-Accept</code> value. The expected behavior is that the handshake should fail. Example payload: <code>ws://&lt;TARGET_URL&gt;/</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can inject malicious WebSocket frames without proper authentication, leading to data injection or protocol confusion. This violates WebSocket handshake integrity and exposes clients to potential compromise.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict validation of the <code>Sec-WebSocket-Accept</code> header during WebSocket handshake processing. Ensure the server-provided value matches the client’s calculated value. Follow RFC 6455 guidelines closely for WebSocket handshake implementation.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Blind SSRF via SMTP Header</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to trigger Server-Side Request Forgery (SSRF) by manipulating the <code>List-Unsubscribe</code> header in an SMTP email. The server then makes a request to a URL specified within this header, potentially accessing internal resources. The vulnerability exists when local and remote server connections are allowed.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure the target application to allow local and remote SMTP servers.</li>
+<li>Craft an email with a manipulated <code>List-Unsubscribe</code> header containing a URL pointing to an internal resource. Example: <code>List-Unsubscribe: &lt;http://internal.example.com/sensitive_data&gt;</code></li>
+<li>Send the email to a valid recipient within the target application.</li>
+<li>Observe the server’s response and network traffic to confirm the request to <code>&lt;http://internal.example.com/sensitive_data&gt;</code> was made.</li>
+<li>Use a timing-based SSRF technique like <code>List-Unsubscribe: &lt;http://&lt;TARGET_URL&gt;/slowloris.php&gt;</code> to identify internal services.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can potentially access internal resources, read sensitive data, or interact with internal services without proper authorization.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Disable or restrict the ability to use local and remote SMTP servers. Validate and sanitize all user-supplied data within email headers, particularly the <code>List-Unsubscribe</code> header. Implement strict network segmentation and access controls.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Link Unfurling SSRF via Link-Local Addresses</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> The application allows users to provide a URL for link unfurling, fetching metadata from the given URL. Due to insufficient validation, link-local addresses are not blocked, leading to Server-Side Request Forgery (SSRF) vulnerabilities. This can allow authenticated users to access internal services or metadata.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Authenticate to the target application.</li>
+<li>Send a POST request to the link unfurl endpoint with a link-local URL.</li>
+<li>Use the following payload as an example:</li>
+</ol>
+<pre><code>curl -X POST &lt;TARGET_URL&gt;/unfurl_link -H &quot;Cookie: &lt;COOKIE_VALUE&gt;&quot; -H &quot;X-CSRF-Token: &lt;CSRF_TOKEN&gt;&quot; -d &#x27;url=http://169.254.169.254/latest/meta-data/&#x27;</code></pre>
+<ol>
+<li>Observe if the application fetches data from the link-local address.  Verify that the response contains data from the targeted link-local resource.</li>
+<li>Repeat the test with other link-local addresses like <code>fe80::/10</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An authenticated attacker can potentially access internal services, cloud metadata, or other sensitive resources that are only accessible within the internal network.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement stricter URL validation to explicitly block link-local addresses (169.254.0.0/16 and fe80::/10) during URL resolution. Use a robust private network guard that includes link-local address checks.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Digest Authentication Parsing Regression: Whitespace and Escaped Quotes</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A flaw in how Digest authentication headers are parsed can lead to authentication failures or fallback to weaker authentication methods. Malicious servers can craft RFC-compliant headers containing unexpected whitespace or escaped quotes to exploit this, potentially causing denial-of-service or bypassing authentication.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set up an API server or listener at <code>&lt;TARGET_URL&gt;</code> that returns the following <code>WWW-Authenticate</code> header:</li>
+<li>Send a request to <code>&lt;TARGET<em>URL&gt;</code> using a tool like <code>curl</code> with Digest authentication enabled: <code>curl --digest -u &lt;USERNAME&gt;:&lt;PASSWORD&gt; &lt;TARGET</em>URL&gt;</code></li>
+<li>Observe if the authentication fails, or if parameters are incorrectly parsed.</li>
+<li>Repeat the test with a <code>WWW-Authenticate</code> header including a space after the comma: <code>WWW-Authenticate: Digest realm=&quot;test&quot;, nonce=&quot;xyz&quot;</code></li>
+<li>Repeat the test with an escaped quote inside the realm attribute: <code>WWW-Authenticate: Digest realm=&quot;My \&quot;Cool\&quot; Realm&quot;, nonce=&quot;xyz&quot;</code></li>
+<li>Verify that the response indicates authentication failure or incorrect parameter parsing.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Authentication failures, fallback to weaker authentication schemes, or potential bypass of authentication mechanisms.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure proper handling of optional whitespace and escaped quotes when parsing <code>WWW-Authenticate</code> headers. Adhere to RFC specifications for header parsing and use well-tested libraries.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unbounded Memory Consumption during Decompression</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability occurs when an application, like curl, processes compressed HTTP responses (gzip, brotli, or zstd) without limiting the size of the uncompressed data. A malicious server can exploit this by sending a small compressed file that expands to a very large size when decompressed, potentially leading to denial-of-service. The issue stems from the lack of safeguards against excessive memory usage during decompression.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Send a compressed HTTP response from a server using a content encoding like <code>gzip</code>, <code>brotli</code>, or <code>zstd</code>. The compressed data should be relatively small in size.</li>
+<li>Use a tool like <code>curl</code> to retrieve the response: <code>curl -s &lt;TARGET_URL&gt;</code></li>
+<li>Monitor the memory usage of the process handling the decompression. Observe if memory consumption grows significantly beyond what is expected based on the size of the compressed data.</li>
+<li>An example payload could be a specially crafted, small compressed PDF file designed to expand significantly upon decompression.  <code>&lt;PAYLOAD&gt;</code> could be the contents of this crafted file.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service due to excessive memory consumption, potentially crashing the application or impacting system stability.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement a maximum limit on the size of the uncompressed data during decompression and halt the process if the limit is exceeded.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Environment Variable Truncation in Proxy Handling</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A flaw exists where excessively long protocol schemes can lead to truncation of environment variable names used for proxy configuration. This can cause unexpected proxy behavior as curl might read configuration from unintended, truncated environment variables. This potentially exposes applications to incorrect proxy settings and bypasses security policies.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set a protocol scheme longer than 12 characters in a URL, for example, <code>&lt;TARGET_URL&gt;?scheme=extremelylongprotocolname</code>.</li>
+<li>Observe the environment variable name constructed for proxy configuration.</li>
+<li>Check if the environment variable name is truncated. For instance, <code>extremelylongprotocolname</code> might become <code>extremelylongsc</code>.</li>
+<li>Use a command line tool, like <code>curl</code> with a custom scheme, to trigger the vulnerability: <code>curl -x &lt;PROXY<em>URL&gt; -H &quot;Proxy-Scheme: extremelylongprotocolname&quot; &lt;TARGET</em>URL&gt;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Incorrect proxy configuration, potential proxy bypass, and unexpected network behavior due to the reading of unintended environment variables.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Increase the buffer size for environment variable name construction to accommodate longer protocol scheme names. Implement validation to ensure that generated environment variable names do not exceed a maximum length.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Heap Buffer Over-Read via Malicious SMB Response</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A maliciously crafted response from an SMB server can trigger a heap buffer over-read in a client using a vulnerable version of libcurl. This leads to information disclosure, potentially exposing sensitive data like authentication credentials or API keys. The vulnerability stems from an incorrect bounds check during the processing of SMB READ_ANDX responses.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure an SMB server to send a specially crafted response containing a large claimed message size.</li>
+<li>Use a vulnerable version of curl (e.g., 8.15.0) to connect to the SMB server and request a file: <code>curl -u anyuser:anypass -o leaked.bin smb://&lt;TARGET_URL&gt;/share/file.txt</code></li>
+<li>Verify the output file size: <code>ls -la leaked.bin</code>. The size should be significantly larger than the actual data sent by the server.</li>
+<li>Inspect the contents of the output file using a hex editor or <code>xxd</code>: <code>xxd leaked.bin | head -20</code>. The output should show the expected data followed by heap memory content.</li>
+<li>The attacker can set <code>data<em>offset</code> and <code>data</em>length</code> to read from any position within the receive buffer.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Exposure of heap memory potentially containing sensitive information such as authentication tokens, API keys, or other private data. This could lead to account compromise and further exploitation.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement stricter bounds checking when processing SMB responses.  Ensure that offsets are validated against the expected message layout and size of the response data. The byte_count field needs to be used and not just the total received bytes.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Improper Authentication Tag Length Validation in Ciphertext Decryption</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability arises from a failure to properly validate the length of the authentication tag during ciphertext decryption. The API documentation suggests a default tag length, but the implementation does not enforce this, allowing for shorter, truncated tags. This enables an attacker to potentially recover the encryption key and forge valid ciphertexts.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Utilize the <code>createCipheriv</code> and <code>createDecipheriv</code> functions with a specified algorithm, such as <code>&lt;ALGORITHM&gt;</code>.</li>
+<li>Initialize a cipher object with a key and nonce: <code>key = &#x27;&lt;KEY&gt;&#x27;; nonce = &#x27;&lt;NONCE&gt;&#x27;</code>.</li>
+<li>Encrypt a plaintext message: <code>plaintext = &#x27;&lt;PLAINTEXT&gt;&#x27;</code>.</li>
+<li>Obtain the authentication tag: <code>tag = cipher.getAuthTag()</code>.</li>
+<li>Initialize a decipher object with the same key and nonce.</li>
+<li>Attempt decryption using a truncated authentication tag: <code>decipher.setAuthTag(tag.subarray(0, &lt;TAG<em>LENGTH&gt;));</code> where <code>&lt;TAG</em>LENGTH&gt;</code> is less than the expected default value (e.g., 4, 8, 12).</li>
+<li>If the decryption is successful, it indicates a vulnerability.</li>
+<li>Example payload: <code>const key = &#x27;key0123456789key&#x27;; const nonce = &#x27;123456789012&#x27;; decipher.setAuthTag(tag.subarray(0, 4));</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker could potentially decrypt ciphertexts without the full authentication tag, recover the encryption key, and forge valid ciphertexts, leading to data breaches and unauthorized access.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement rigorous validation of the authentication tag length during decryption. Ensure that the tag length matches the expected value as defined in the API documentation and handle invalid tag lengths appropriately. Enforce the documented tag length.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Reflected XSS</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to inject malicious scripts into a web application via a crafted URL. This can lead to session hijacking, defacement, or redirection to malicious sites. The issue arises when user-supplied data is not properly sanitised before being included in the response.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Construct a URL using the following pattern: <code>&lt;TARGET_URL&gt;?targetURL=&lt;PAYLOAD&gt;</code></li>
+<li>Replace <code>&lt;PAYLOAD&gt;</code> with a script injection payload, for example: <code>&quot;%22);alert(document.domain);//</code></li>
+<li>Access the crafted URL in a web browser.</li>
+<li>Observe if the injected script executes, indicating successful XSS.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary JavaScript code in the user&#x27;s browser, potentially leading to account compromise or data theft.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper input validation and output encoding to prevent the injection of malicious scripts. Use a Content Security Policy (CSP) to restrict the resources that the browser is allowed to load.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+    </section>
+  </div>
+
+  <script>
+    const debounce = (fn, delay = 200) => {
+      let timeout;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn(...args), delay);
+      };
+    };
+
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const cards = Array.from(document.querySelectorAll('.card'));
+
+    function normalize(text) {
+      return text.toLowerCase();
+    }
+
+    function applyFilters() {
+      const term = normalize(searchInput.value);
+      const category = categoryFilter.value;
+      cards.forEach(card => {
+        const cardText = normalize(card.innerText);
+        const matchesText = !term || cardText.includes(term);
+        const matchesCategory = category === 'all' || card.dataset.category === category;
+        card.style.display = (matchesText && matchesCategory) ? 'block' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', debounce(applyFilters, 150));
+    categoryFilter.addEventListener('change', applyFilters);
+    applyFilters();
+
+    document.querySelectorAll('.card-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.card');
+        card.classList.toggle('open');
+      });
+    });
+
+  </script>
+</body>
+</html>

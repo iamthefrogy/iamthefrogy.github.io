@@ -14,6 +14,5 @@ title = 'Red Team Checklist'
     </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="/red-team-testcase-atlas.html">click here</a>.</p>
 </body>
 </html>
