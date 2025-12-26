@@ -11,9 +11,16 @@
  &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
- &lt;p&gt;If you are not redirected automatically, &lt;a href="https://iamthefrogy.github.io/red-team-testcase-atlas.html"&gt;click here&lt;/a&gt;.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</description></item><item><title>Web Application Pentest Checklist</title><link>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</guid><description>&lt;html&gt;
-&lt;iframe src="https://docs.google.com/spreadsheets/d/16OtOOlAvR576bZjJJoYZ9a-pyoUi9tnj/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true"
- width="100%" height="1000px" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;/html&gt;</description></item><item><title>Web Application Pentest Checklist</title><link>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</guid><description>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;meta charset="utf-8"&gt;
+ &lt;meta http-equiv="refresh" content="0; url=https://iamthefrogy.github.io/hackerone-testcases.html"&gt;
+ &lt;script&gt;
+ window.location.href = '/hackerone-testcases.html';
+ &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
 &lt;/html&gt;</description></item></channel></rss>

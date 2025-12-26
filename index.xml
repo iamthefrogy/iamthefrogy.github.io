@@ -15,11 +15,18 @@
  &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
- &lt;p&gt;If you are not redirected automatically, &lt;a href="https://iamthefrogy.github.io/red-team-testcase-atlas.html"&gt;click here&lt;/a&gt;.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</description></item><item><title>Web Application Pentest Checklist</title><link>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</guid><description>&lt;html&gt;
-&lt;iframe src="https://docs.google.com/spreadsheets/d/16OtOOlAvR576bZjJJoYZ9a-pyoUi9tnj/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true"
- width="100%" height="1000px" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;/html&gt;</description></item><item><title>Web Application Pentest Checklist</title><link>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</link><pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate><guid>https://iamthefrogy.github.io/checklists/web-application-pentest-checklist/</guid><description>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;meta charset="utf-8"&gt;
+ &lt;meta http-equiv="refresh" content="0; url=https://iamthefrogy.github.io/hackerone-testcases.html"&gt;
+ &lt;script&gt;
+ window.location.href = '/hackerone-testcases.html';
+ &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
 &lt;/html&gt;</description></item><item><title>(AppSec) End-to-End API Security Lifecycle</title><link>https://iamthefrogy.github.io/posts/api-security/</link><pubDate>Thu, 15 May 2025 13:46:07 +0100</pubDate><guid>https://iamthefrogy.github.io/posts/api-security/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In today’s cloud-native world, APIs are the backbone of digital ecosystems connecting microservices, external partners, and end-users alike. But with increased connectivity comes a growing attack surface. Securing APIs isn’t just about protecting endpoints; it’s about embedding security across the entire API lifecycle. From planning and design to runtime enforcement and telemetry, modern API protection requires a layered, identity-driven approach. This article presents a visual and conceptual framework for API security combining DevSecOps principles, NIST-guided controls, Zero Trust architecture, and gateway deployment best practices. Through diagrams and detailed breakdowns, we offer a holistic view of how to operationalize API security across your organization.&lt;/p&gt;</description></item><item><title>(DNS Security) – Building a Resilient DNS Infrastructure</title><link>https://iamthefrogy.github.io/posts/secure_dns/</link><pubDate>Tue, 13 May 2025 10:10:44 +0100</pubDate><guid>https://iamthefrogy.github.io/posts/secure_dns/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Think of DNS like the Internet’s phone book: it turns names you understand into addresses computers use. In this guide, we’ll walk through four simple views how DNS is built, how it can block threats, common attacks and defenses, and how it fits into a “never trust, always verify” network modelso that even if you’ve never worked with DNS before, you’ll see exactly how to keep it safe.&lt;/p&gt;
