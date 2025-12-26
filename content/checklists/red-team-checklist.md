@@ -8,9 +8,9 @@ title = 'Red Team Checklist'
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=/red-team-testcase-atlas.html">
+    <meta http-equiv="refresh" content="0; url=http://redops.chintangurjar.com/">
     <script>
-        window.location.href = '/red-team-testcase-atlas.html';
+        window.location.href = 'http://redops.chintangurjar.com/';
     </script>
 </head>
 <body>

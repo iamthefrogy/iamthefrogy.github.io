@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Team Test Case Atlas</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
     :root {
       color-scheme: dark;
+      --font-body: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       --bg: #020611;
       --bg-panel: rgba(10, 20, 40, 0.92);
       --bg-panel-alt: rgba(18, 30, 55, 0.85);
@@ -19,7 +18,6 @@
       --accent-2: #ffe66d;
       --danger: #ff6b81;
       --success: #7ed957;
-      font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     * {
@@ -31,13 +29,217 @@
       min-height: 100vh;
       background: radial-gradient(circle at top, #0b1e4a 0%, #020611 45%, #01030a 100%);
       color: var(--text);
-      padding: 2rem 5px 4rem;
       font-size: 0.95rem;
+      font-family: var(--font-body);
+    }
+
+    .page-shell {
+      width: 100%;
+      padding: 2.5rem 0 4rem;
     }
 
     .app {
       width: 100%;
       margin: 0 auto;
+    }
+
+    .container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+      box-sizing: border-box;
+    }
+
+    .my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 720px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1320px;
+      }
+    }
+
+    .site-nav {
+      background: rgba(8, 15, 32, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(18px);
+      margin-bottom: 2rem;
+    }
+
+    .site-nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .site-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .site-brand__mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #26de50, var(--accent));
+      box-shadow: 0 0 0 4px rgba(110, 231, 255, 0.15);
+      display: inline-block;
+    }
+
+    .site-brand__text {
+      line-height: 1;
+      color: inherit;
+    }
+
+    .site-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .site-menu__link {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .site-menu__link:hover,
+    .site-menu__link:focus-visible {
+      color: var(--accent);
+    }
+
+    .site-nav__actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .navbar-toggler,
+    .site-menu__toggle {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      width: 46px;
+      height: 46px;
+      border-radius: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .navbar-toggler:focus,
+    .site-menu__toggle:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .navbar-toggler:hover,
+    .site-menu__toggle:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .fa-solid {
+      font-style: normal;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .fa-solid.fa-bars::before {
+      content: "\2261";
+      font-size: 1.3rem;
+    }
+
+    .collapse {
+      display: none;
+    }
+
+    .collapse.show {
+      display: block;
+    }
+
+    .site-menu__drawer {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: rgba(8, 12, 24, 0.95);
+      padding: 1rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      margin-top: 0.75rem;
+    }
+
+    .site-menu__drawer .site-menu__link {
+      color: var(--text);
+    }
+
+    .d-flex {
+      display: flex !important;
+    }
+
+    .flex-column {
+      flex-direction: column !important;
+    }
+
+    .gap-2 {
+      gap: 0.5rem !important;
+    }
+
+    .d-none {
+      display: none !important;
+    }
+
+    @media (min-width: 768px) {
+      .d-md-flex {
+        display: flex !important;
+      }
+
+      .d-md-none {
+        display: none !important;
+      }
     }
 
     header.hero {
@@ -427,10 +629,6 @@
     }
 
     @media (max-width: 640px) {
-      body {
-        padding: 1rem;
-      }
-
       th,
       td {
         padding: 0.75rem;
@@ -439,28 +637,68 @@
   </style>
 </head>
 <body>
-  <div class="app">
-    <header class="hero">
-      <div>
-        <h1>Red Team Test Case Atlas</h1>
-        <p class="full-width">
-          Dive into the world’s largest library of red-teaming test cases, curated from real adversarial operations and rebuilt locally via the `scripts/build_dashboard.mjs` pipeline. Regenerate this static snapshot whenever the CSV changes, then ship the intel anywhere without relying on external services.
-        </p>
-        <p class="full-width">
-          Each test case originates from a deep analysis of every Darknet Diaries episode, reframed through a breach-and-attack simulation lens so you can replay the exact tradecraft adversaries have used in the wild. The mapping from raw narratives to structured cases is largely automated, and manual review happens only when time permits.
-        </p>
-        <p class="full-width">
-          Disclaimer: this dataset is for lawful, defensive security research only. Because the content is machine-generated from public stories, it may include inaccuracies, deprecated techniques, or references to real individuals, companies, governments, or countries. Nothing here should be treated as an endorsement, accusation, or instruction to target any entity; you are solely responsible for vetting every scenario, redacting sensitive details, obtaining proper authorization, and ensuring compliance with all applicable laws and policies before use.
-        </p>
-        <p class="full-width">
-          Review the primary legal notice at <a href="https://chintangurjar.com/disclaimer/" target="_blank" rel="noopener noreferrer">chintangurjar.com/disclaimer</a> for the complete disclaimer that governs this project.
-        </p>
+  <div class="page-shell">
+    <div class="container my-auto">
+      <div class="site-nav">
+        <div class="site-nav__inner">
+          <a class="site-brand" href="/">
+            <span class="site-brand__mark"></span>
+            <span class="site-brand__text">Cyber Frogy</span>
+          </a>
+          <nav class="site-menu d-none d-md-flex">
+            <a class="site-menu__link" href="/">Home</a>
+            <a class="site-menu__link" href="/whoami">Whoami</a>
+            <a class="site-menu__link" href="/posts">Blog</a>
+            <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+            <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+            <a class="site-menu__link" href="/github">GitHub</a>
+            <a class="site-menu__link" href="/checklists">Checklists</a>
+            <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+            <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+          </nav>
+          <div class="site-nav__actions">
+            <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
+          <nav class="d-flex flex-column gap-2">
+            <a class="site-menu__link" href="/">Home</a>
+            <a class="site-menu__link" href="/whoami">Whoami</a>
+            <a class="site-menu__link" href="/posts">Blog</a>
+            <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+            <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+            <a class="site-menu__link" href="/github">GitHub</a>
+            <a class="site-menu__link" href="/checklists">Checklists</a>
+            <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+            <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+          </nav>
+        </div>
       </div>
-      <div class="hero-actions">
-        <span class="chip" id="sourceChip">Source: static dataset</span>
-        <span class="chip" id="activeFiltersChip">Active filters: 0</span>
-      </div>
-    </header>
+
+      <div class="app">
+        <header class="hero">
+          <div>
+            <h1>Red Team Test Case Atlas</h1>
+            <p class="full-width">
+              Dive into the world’s largest library of red-teaming test cases, curated from real adversarial operations and rebuilt locally via the `scripts/build_dashboard.mjs` pipeline. Regenerate this static snapshot whenever the CSV changes, then ship the intel anywhere without relying on external services.
+            </p>
+            <p class="full-width">
+              Each test case originates from a deep analysis of every Darknet Diaries episode, reframed through a breach-and-attack simulation lens so you can replay the exact tradecraft adversaries have used in the wild. The mapping from raw narratives to structured cases is largely automated, and manual review happens only when time permits.
+            </p>
+            <p class="full-width">
+              Disclaimer: this dataset is for lawful, defensive security research only. Because the content is machine-generated from public stories, it may include inaccuracies, deprecated techniques, or references to real individuals, companies, governments, or countries. Nothing here should be treated as an endorsement, accusation, or instruction to target any entity; you are solely responsible for vetting every scenario, redacting sensitive details, obtaining proper authorization, and ensuring compliance with all applicable laws and policies before use.
+            </p>
+            <p class="full-width">
+              Review the primary legal notice at <a href="https://chintangurjar.com/disclaimer/" target="_blank" rel="noopener noreferrer">chintangurjar.com/disclaimer</a> for the complete disclaimer that governs this project.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <span class="chip" id="sourceChip">Source: static dataset</span>
+            <span class="chip" id="activeFiltersChip">Active filters: 0</span>
+          </div>
+        </header>
 
     <div id="statusBanner" class="status-banner loading">Preparing dashboard…</div>
 
@@ -511,6 +749,8 @@
           <tr><td colspan="3" class="empty-state">Loading data…</td></tr>
         </tbody>
       </table>
+    </div>
+    </div>
     </div>
   </div>
 
@@ -916,6 +1156,40 @@
         }
       });
     }
+
+    (function initSiteNavToggle() {
+      const toggles = document.querySelectorAll('.site-menu__toggle');
+      if (!toggles.length) return;
+      const getTarget = (toggle) => {
+        const selector = toggle.dataset.bsTarget;
+        if (!selector) return null;
+        return document.querySelector(selector);
+      };
+      toggles.forEach((toggle) => {
+        const target = getTarget(toggle);
+        if (!target) return;
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          target.classList.toggle('show', !expanded);
+        });
+        target.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            target.classList.remove('show');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      });
+      document.addEventListener('click', (event) => {
+        toggles.forEach((toggle) => {
+          const target = getTarget(toggle);
+          if (!target || !target.classList.contains('show')) return;
+          if (target.contains(event.target) || toggle.contains(event.target)) return;
+          target.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
   </script>
 </body>
 </html>
