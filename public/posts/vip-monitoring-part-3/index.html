@@ -1,183 +1,20 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62223&amp;path=livereload" data-no-instant defer></script>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        
-        <meta name="description" content="Practical Cybersecurity Blog">
-        
-        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
-
-        <title>
-              Cyber Frogy - (CTI) - VIP Monitoring in Threat Intel - Part 3 
-        </title>
-
-        <meta name="generator" content="Hugo 0.153.2">
-
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-        
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="http://localhost:62223/css/main.css">
-        <link rel="stylesheet" href="http://localhost:62223/css/custom.css">
-
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <meta name="theme-color" content="#ffffff"></head>
-
-    <body lang="en-US" class="is-page">
-        <div class="container my-auto">
-
-
-
-<div class="site-nav">
-  <div class="site-nav__inner">
-    <a class="site-brand" href="/">
-      <span class="site-brand__mark"></span>
-      <span class="site-brand__text">Cyber Frogy</span>
-    </a>
-    
-    <nav class="site-menu d-none d-md-flex">
-      
-      <a class="site-menu__link" href="/">Home</a>
-      
-      <a class="site-menu__link" href="/whoami">Whoami</a>
-      
-      <a class="site-menu__link" href="/posts">Blog</a>
-      
-      <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
-      
-      <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
-      
-      <a class="site-menu__link" href="/github">GitHub</a>
-      
-      <a class="site-menu__link" href="/checklists">Checklists</a>
-      
-      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
-      
-      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
-      
-    </nav>
-    
-    <div class="site-nav__actions">
-      
-      <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse"
-        data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      
-    </div>
-  </div>
-  
-  <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
-    <nav class="d-flex flex-column gap-2">
-      
-      <a class="site-menu__link" href="/">Home</a>
-      
-      <a class="site-menu__link" href="/whoami">Whoami</a>
-      
-      <a class="site-menu__link" href="/posts">Blog</a>
-      
-      <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
-      
-      <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
-      
-      <a class="site-menu__link" href="/github">GitHub</a>
-      
-      <a class="site-menu__link" href="/checklists">Checklists</a>
-      
-      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
-      
-      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
-      
-    </nav>
-  </div>
-  
-</div>
-
-
-
-<main class="page-shell">
-  <article class="page-article">
-    <header class="page-article__header">
-      <h1 class="page-article__title">(CTI) - VIP Monitoring in Threat Intel - Part 3</h1>
-    </header>
-
-    <section id="category-pane" class="page-article__meta meta-block">
-      
-      <div class="meta-row">
-        <p class="meta meta--label">
-           PUBLISHED ON DEC 24, 2024
-          
-          / 0 MIN READ
-          
-        </p>
-      </div>
-      
-    </section>
-
-    <section id="content-pane" class="page-article__content">
-      <div class="content">
-        
-        <p>To help implement and evaluate your VIP Monitoring Program effectively, access the comprehensive checklist provided in the shared Google Spreadsheet.</p>
-<h2 id="access-the-checklist">Access the Checklist</h2>
-<p><a href="https://docs.google.com/spreadsheets/d/1GMwYTuEqtHpLuDpVgasfRDKXIaCQ3J2ZKlSCRZb0Dcg/edit?usp=sharing"><strong>Click here to open the VIP Monitoring Checklist</strong></a></p>
-<h3 id="how-to-use-the-checklist">How to Use the Checklist</h3>
-<ol>
-<li>Open the link to view the checklist in Google Sheets.</li>
-<li>Navigate through the sections for detailed action items.</li>
-<li>Use the checklist for planning, monitoring, and evaluating your VIP monitoring efforts.</li>
-</ol>
-<h3 id="open-image-in-new-tab-to-see-in-hd">OPEN IMAGE IN NEW TAB TO SEE IN HD</h3>
-<center><img src="/images/vip-map.svg" alt="Gaps" width="1300"/></center> </br>
-<p><em>Note: You can download the file or make a copy to adapt it for your organization’s needs.</em></p>
-
-      </div>
-    </section>
-
-    
-    
-  </article>
-</main>
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-
-<script>hljs.highlightAll();</script>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="/js/custom.js"></script>
-</body>
-
-</html>
-
-
+<!doctype html><html lang=en-US><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=description content="Practical Cybersecurity Blog"><meta name=keywords content="cybersecurity,infosec,bug-bounty,bugbounty,SOC,CTI,VM,Pentest,Cyber Defense"><title>Cyber Frogy - (CTI) - VIP Monitoring in Threat Intel - Part 3</title><meta name=generator content="Hugo 0.153.2"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/main.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=theme-color content="#ffffff"></head><body lang=en-US class=is-page><div class="container my-auto"><div class=site-nav><div class=site-nav__inner><a class=site-brand href=/><span class=site-brand__mark></span>
+<span class=site-brand__text>Cyber Frogy</span></a><nav class="site-menu d-none d-md-flex"><a class=site-menu__link href=/>Home</a>
+<a class=site-menu__link href=/whoami>Whoami</a>
+<a class=site-menu__link href=/posts>Blog</a>
+<a class=site-menu__link href=/mindmaps>Mindmaps</a>
+<a class=site-menu__link href=/threat-actor-db>Threat-Actor DB</a>
+<a class=site-menu__link href=/github>GitHub</a>
+<a class=site-menu__link href=/checklists>Checklists</a>
+<a class=site-menu__link href=/kickstartcareer>Kickstart Career</a>
+<a class=site-menu__link href=/disclaimer>Disclaimer</a></nav><div class=site-nav__actions><button class="navbar-toggler site-menu__toggle d-md-none" type=button data-bs-toggle=collapse data-bs-target=#site-menu-drawer aria-controls=site-menu-drawer aria-expanded=false aria-label="Toggle navigation">
+<i class="fa-solid fa-bars"></i></button></div></div><div class="collapse site-menu__drawer d-md-none" id=site-menu-drawer><nav class="d-flex flex-column gap-2"><a class=site-menu__link href=/>Home</a>
+<a class=site-menu__link href=/whoami>Whoami</a>
+<a class=site-menu__link href=/posts>Blog</a>
+<a class=site-menu__link href=/mindmaps>Mindmaps</a>
+<a class=site-menu__link href=/threat-actor-db>Threat-Actor DB</a>
+<a class=site-menu__link href=/github>GitHub</a>
+<a class=site-menu__link href=/checklists>Checklists</a>
+<a class=site-menu__link href=/kickstartcareer>Kickstart Career</a>
+<a class=site-menu__link href=/disclaimer>Disclaimer</a></nav></div></div><main class=page-shell><article class=page-article><header class=page-article__header><h1 class=page-article__title>(CTI) - VIP Monitoring in Threat Intel - Part 3</h1></header><section id=category-pane class="page-article__meta meta-block"><div class=meta-row><p class="meta meta--label">PUBLISHED ON DEC 24, 2024
+/ 0 MIN READ</p></div></section><section id=content-pane class=page-article__content><div class=content><p>To help implement and evaluate your VIP Monitoring Program effectively, access the comprehensive checklist provided in the shared Google Spreadsheet.</p><h2 id=access-the-checklist>Access the Checklist</h2><p><a href="https://docs.google.com/spreadsheets/d/1GMwYTuEqtHpLuDpVgasfRDKXIaCQ3J2ZKlSCRZb0Dcg/edit?usp=sharing"><strong>Click here to open the VIP Monitoring Checklist</strong></a></p><h3 id=how-to-use-the-checklist>How to Use the Checklist</h3><ol><li>Open the link to view the checklist in Google Sheets.</li><li>Navigate through the sections for detailed action items.</li><li>Use the checklist for planning, monitoring, and evaluating your VIP monitoring efforts.</li></ol><h3 id=open-image-in-new-tab-to-see-in-hd>OPEN IMAGE IN NEW TAB TO SEE IN HD</h3><center><img src=/images/vip-map.svg alt=Gaps width=1300></center></br><p><em>Note: You can download the file or make a copy to adapt it for your organization’s needs.</em></p></div></section></article></main></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js></script><script>hljs.highlightAll()</script><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script><script src=/js/custom.js></script></body></html>
