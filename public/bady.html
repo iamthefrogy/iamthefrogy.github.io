@@ -28,6 +28,9 @@
       justify-content: center;
       padding: 32px 16px 48px;
     }
+    body.tour-locked {
+      overflow: hidden;
+    }
     .app {
       width: min(1100px, 100%);
       display: flex;
@@ -311,22 +314,6 @@
       color: var(--text);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .idle-btn {
-      align-self: stretch;
-      margin-top: 10px;
-      padding: 11px 12px;
-      border-radius: 12px;
-      border: 1px dashed rgba(255, 255, 255, 0.35);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text);
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s ease, transform 0.15s ease;
-    }
-    .idle-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-1px);
-    }
     .court-card.waiting {
       border-style: dashed;
       border-color: rgba(255, 255, 255, 0.18);
@@ -352,6 +339,238 @@
     }
     .leaderboard-row span {
       color: var(--muted);
+    }
+    .chemistry-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .chemistry-row {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chemistry-row-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+    .chemistry-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chemistry-games {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .chemistry-pill {
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(71, 198, 255, 0.18);
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .chemistry-pill.alt {
+      background: rgba(0, 255, 163, 0.18);
+      color: var(--accent-strong);
+    }
+    .chemistry-chip-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+    .chemistry-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .chemistry-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-height: 24px;
+    }
+    .chemistry-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 13px;
+    }
+    .chemistry-empty {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .tour-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 60;
+    }
+    .tour-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .tour-card {
+      width: min(460px, 100%);
+      background: #0f172a;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+    .tour-step-label {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 8px;
+    }
+    .tour-card h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+    .tour-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .tour-illustration {
+      width: 100%;
+      min-height: 180px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 16px;
+    }
+    .tour-sample {
+      width: 100%;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tour-sample label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .tour-sample input {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      padding: 10px;
+      font-size: 14px;
+    }
+    .tour-sample .tour-sample-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .tour-sample .tour-chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+    }
+    .tour-sample button {
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #020617;
+      font-weight: 600;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    .tour-sample .tour-court {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(4, 12, 24, 0.95));
+    }
+    .tour-sample .tour-team {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .tour-sample .tour-teams {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .tour-sample .tour-team-card {
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+    }
+    .tour-sample .tour-leaderboard-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 14px;
+    }
+    .tour-sample .tour-chemistry {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tour-actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .tour-actions button {
+      flex: 1;
+      min-width: 140px;
+    }
+    .tour-content.animate {
+      animation: tourFadeIn 0.4s ease;
+    }
+    @keyframes tourFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .lb-row-top {
       display: flex;
@@ -424,6 +643,26 @@
       color: var(--danger);
       outline: none;
     }
+    .idle-btn {
+      align-self: stretch;
+      margin-top: 10px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease, opacity 0.2s ease;
+    }
+    .idle-btn:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
+    .idle-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     .completed-item {
       padding: 12px 14px;
       border-radius: 14px;
@@ -478,8 +717,7 @@
           <label for="court-input">Courts Available</label>
           <input type="number" id="court-input" min="1" value="2">
           <div class="player-actions">
-            <button class="btn-accent" id="start-btn">Go</button>
-            <button class="btn-ghost" id="fill-btn" disabled>Mix Waiting Players</button>
+            <button class="btn-accent" id="start-btn">Start Rotation</button>
           </div>
           <div class="status-line" id="status-line">
           </div>
@@ -503,6 +741,11 @@
         <div id="leaderboard" class="leaderboard"></div>
       </div>
       <div class="card">
+        <h3 style="margin-top:0;">Team Chemistry</h3>
+        <p style="margin:6px 0 12px;color:var(--muted);font-size:14px;">Track who&apos;s teamed up (partners) and who they&apos;ve battled (opponents).</p>
+        <div id="chemistry-board" class="chemistry-list"></div>
+      </div>
+      <div class="card">
         <h3 style="margin-top:0;">Waiting Lobby</h3>
         <div id="waiting-list" class="waiting-list"></div>
       </div>
@@ -511,6 +754,21 @@
         <div id="completed-list" class="completed-list"></div>
       </div>
     </section>
+  </div>
+
+  <div class="tour-overlay" id="tour-overlay">
+    <div class="tour-card">
+      <p class="tour-step-label" id="tour-step-count"></p>
+      <div class="tour-content" id="tour-content">
+        <div class="tour-illustration" id="tour-illustration"></div>
+        <h3 id="tour-title"></h3>
+        <p id="tour-body"></p>
+      </div>
+      <div class="tour-actions">
+        <button type="button" class="btn-ghost" id="tour-skip">Skip tour</button>
+        <button type="button" class="btn-accent" id="tour-next">Next</button>
+      </div>
+    </div>
   </div>
 
   <div class="modal-overlay" id="winner-overlay">
@@ -553,12 +811,20 @@
       const playerListEl = document.getElementById('player-list');
       const courtInput = document.getElementById('court-input');
       const startBtn = document.getElementById('start-btn');
-      const mixBtn = document.getElementById('fill-btn');
       const statusLine = document.getElementById('status-line');
       const activeCourtsEl = document.getElementById('active-courts');
       const waitingListEl = document.getElementById('waiting-list');
       const completedListEl = document.getElementById('completed-list');
       const leaderboardEl = document.getElementById('leaderboard');
+      const chemistryBoardEl = document.getElementById('chemistry-board');
+      const tourOverlay = document.getElementById('tour-overlay');
+      const tourStepCountEl = document.getElementById('tour-step-count');
+      const tourTitleEl = document.getElementById('tour-title');
+      const tourBodyEl = document.getElementById('tour-body');
+      const tourNextBtn = document.getElementById('tour-next');
+      const tourSkipBtn = document.getElementById('tour-skip');
+      const tourContentEl = document.getElementById('tour-content');
+      const tourIllustrationEl = document.getElementById('tour-illustration');
       const winnerOverlay = document.getElementById('winner-overlay');
       const winnerOptions = document.getElementById('winner-options');
       const winnerCancelBtn = document.getElementById('winner-cancel');
@@ -587,8 +853,100 @@
         pendingFinish: null,
         pendingAward: null,
         pendingRemoval: null,
-        scores: new Map()
+        scores: new Map(),
+        gamesPlayed: new Map()
       };
+      const TOUR_STORAGE_KEY = 'badmintonTourComplete';
+      const tourSteps = [
+        {
+          title: 'Invite the squad',
+          body: 'Add everyone joining today. Drop names one-by-one separated list or add name and hit enter.',
+          markup: '<div class="tour-sample"><label>Players</label><input type="text" value="Riya, Aarav, Zara, Dev, Kian, Mei, Suraj, Tara, Nikhil" readonly><div class="tour-sample-row" style="flex-wrap:wrap;gap:6px;"><span class="tour-chip">Riya</span><span class="tour-chip">Aarav</span><span class="tour-chip">Zara</span><span class="tour-chip">Dev</span><span class="tour-chip">Kian</span><span class="tour-chip">Mei</span><span class="tour-chip">Suraj</span><span class="tour-chip">Tara</span><span class="tour-chip">Nikhil</span></div></div>'
+        },
+        {
+          title: 'Set the courts',
+          body: 'Input number of courts you have booked to start with and click "START ROTATION"',
+          markup: '<div class="tour-sample"><label>Courts Available</label><div class="tour-sample-row"><input type="number" value="2" readonly style="max-width:90px;"><button type="button">Start Rotation</button></div><div class="tour-sample-row" style="font-size:12px;color:var(--muted);">Auto-fill keeps two courts spinning.</div></div>'
+        },
+        {
+          title: 'Play the games ',
+          body: 'Play games according to pair lists are organised with court numbers.',
+          markup: '<div class="tour-sample"><div class="tour-court"><div style="font-size:12px;text-transform:uppercase;color:var(--accent);letter-spacing:0.08em;">Court 1</div><div class="tour-team" style="margin-top:8px;"><span>Riya &amp; Aarav</span><span>🔵</span></div><div class="tour-team"><span>Zara &amp; Nikhil</span><span>🟢</span></div></div><div class="tour-court"><div style="font-size:12px;text-transform:uppercase;color:var(--accent);letter-spacing:0.08em;">Court 2</div><div class="tour-team" style="margin-top:8px;"><span>Dev &amp; Mei</span><span></span></div><div class="tour-team"><span>Kian &amp; Tara</span><span></span></div></div></div>'
+        },
+        {
+          title: 'Finish the game',
+          body: 'If either game on any court is done, tap "MARK FINISHED" and pick the winning pair to move next.',
+          markup: '<div class="tour-sample"><div class="tour-court"><div style="font-size:12px;text-transform:uppercase;color:var(--accent);letter-spacing:0.08em;">Court 1</div><div class="tour-team" style="margin-top:8px;"><span>Riya &amp; Aarav</span><span>Ready</span></div><div class="tour-team"><span>Zara &amp; Nikhil</span><span>Ready</span></div></div><div class="tour-court"><div style="font-size:12px;text-transform:uppercase;color:var(--accent);letter-spacing:0.08em;">Court 2</div><div class="tour-team" style="margin-top:8px;"><span>Dev &amp; Mei</span><span>Playing</span></div><div class="tour-team"><span>Kian &amp; Tara</span><span>Playing</span></div></div></div>'
+        },
+        {
+          title: 'Wait or replay logic',
+          body: 'Choose “WAIT IN LOBBY” to hold the finished until court 2 game ends and when you finsh court 2 game, it will autoamtically mix all players and assign new pairs for each court. If you pick “Play right away”, that same court remixes immediately while the other court keeps running.',
+          markup: '<div class="tour-sample"><div class="tour-court"><div style="font-size:14px;font-weight:600;">Court 1 done</div><div class="tour-team" style="margin-top:8px;"><span>Riya &amp; Aarav</span><span>Lobby</span></div><div class="tour-team"><span>Zara &amp; Nikhil</span><span>Lobby</span></div><div class="tour-teams" style="margin-top:12px;"><button type="button" style="background:rgba(255,255,255,0.1);color:var(--text);border:1px solid rgba(255,255,255,0.2);">Wait in lobby</button><button type="button">Play right away</button></div></div><div class="tour-court"><div style="font-size:14px;font-weight:600;">Court 2 playing</div><div class="tour-team" style="margin-top:8px;"><span>Dev &amp; Mei</span><span>vs</span></div><div class="tour-team"><span>Kian &amp; Tara</span><span>vs</span></div></div><div style="font-size:12px;color:var(--muted);">When Court 2 taps Mark Finished, all freed players auto-mix into fresh teams.</div></div>'
+        },
+        {
+          title: 'Track chemistry',
+          body: 'Leaderboard + Team Chemistry cards show wins, partners, and opponents so play stays fresh.',
+          markup: '<div class="tour-sample"><div class="tour-leaderboard-row"><strong>Riya</strong><span>6 pts</span></div><div class="tour-leaderboard-row"><strong>Aarav</strong><span>5 pts</span></div><div class="tour-leaderboard-row"><strong>Mei</strong><span>4 pts</span></div><label>Partners &amp; Opponents</label><div class="tour-chemistry"><span class="tour-chip">Partner: Aarav</span><span class="tour-chip">Partner: Dev</span><span class="tour-chip">Partner: Tara</span><span class="tour-chip">Opponent: Kian</span><span class="tour-chip">Opponent: Mei</span><span class="tour-chip">Opponent: Nikhil</span></div></div>'
+        }
+      ];
+      let tourIndex = 0;
+
+      function hasCompletedTour() {
+        try {
+          return localStorage.getItem(TOUR_STORAGE_KEY) === 'done';
+        } catch (err) {
+          return false;
+        }
+      }
+
+      function markTourCompleted() {
+        try {
+          localStorage.setItem(TOUR_STORAGE_KEY, 'done');
+        } catch (err) {
+          // ignore
+        }
+      }
+
+      function startTour() {
+        if (!tourOverlay || hasCompletedTour()) return;
+        tourIndex = 0;
+        document.body.classList.add('tour-locked');
+        tourOverlay.classList.add('active');
+        updateTourStep();
+      }
+
+      function updateTourStep() {
+        if (!tourOverlay) return;
+        const step = tourSteps[tourIndex];
+        tourStepCountEl.textContent = 'Step ' + (tourIndex + 1) + ' of ' + tourSteps.length;
+        tourTitleEl.textContent = step.title;
+        tourBodyEl.textContent = step.body;
+        if (tourIllustrationEl) {
+          tourIllustrationEl.innerHTML = step.markup || '';
+        }
+        tourNextBtn.textContent = tourIndex === tourSteps.length - 1 ? 'End tour' : 'Next';
+        if (tourContentEl) {
+          tourContentEl.classList.remove('animate');
+          void tourContentEl.offsetWidth;
+          tourContentEl.classList.add('animate');
+        }
+      }
+
+      function advanceTour() {
+        if (tourIndex >= tourSteps.length - 1) {
+          endTour();
+          return;
+        }
+        tourIndex += 1;
+        updateTourStep();
+      }
+
+      function endTour() {
+        if (!tourOverlay) return;
+        markTourCompleted();
+        tourOverlay.classList.remove('active');
+        document.body.classList.remove('tour-locked');
+      }
 
       function updateStatus(message, tone = 'muted') {
         statusLine.innerHTML = '<span class="' + tone + '">' + message + '</span>';
@@ -599,6 +957,7 @@
         state.playerOrder = state.playerOrder.filter(pid => pid !== id);
         state.availableQueue = state.availableQueue.filter(pid => pid !== id);
         state.scores.delete(id);
+        state.gamesPlayed.delete(id);
       }
 
       function createPlayer(name) {
@@ -608,6 +967,9 @@
         state.playerOrder.push(id);
         if (!state.scores.has(id)) {
           state.scores.set(id, 0);
+        }
+        if (!state.gamesPlayed.has(id)) {
+          state.gamesPlayed.set(id, 0);
         }
         return player;
       }
@@ -701,7 +1063,7 @@
 
       function startSession() {
         if (state.sessionActive) {
-          fillCourts(true);
+          updateStatus('Session already rolling. Courts refresh automatically.', 'muted');
           return;
         }
         if (state.playerOrder.length < 4) {
@@ -714,8 +1076,8 @@
         state.pendingFinish = null;
         modalOverlay.classList.remove('active');
         state.sessionActive = true;
-        startBtn.textContent = 'Mix & Go';
-        mixBtn.disabled = false;
+        startBtn.textContent = 'Rotation Live';
+        startBtn.disabled = true;
         updateStatus('Session live. Courts will fill as players free up.', 'ok');
         renderWaitingList();
         fillCourts();
@@ -729,7 +1091,7 @@
         openWinnerModal(match);
       }
 
-      function resolveMatchCompletion(match, mode = 'auto') {
+      function resolveMatchCompletion(match, action = 'wait') {
         const index = state.activeMatches.findIndex(m => m.id === match.id);
         if (index === -1) return;
         state.activeMatches.splice(index, 1);
@@ -742,19 +1104,22 @@
         });
         state.completedMatches = state.completedMatches.slice(0, 8);
         renderCompletedMatches();
-        if (mode === 'replay') {
-          startSelfMatch(freedPlayers, match.courtIndex);
-          updateStatus('Remixed the same crew on Court ' + (match.courtIndex + 1) + '.', 'ok');
+        const pushToLobby = () => {
+          state.availableQueue.push(...freedPlayers);
+          renderWaitingList();
+        };
+        pushToLobby();
+        freedPlayers.forEach(id => {
+          state.gamesPlayed.set(id, (state.gamesPlayed.get(id) || 0) + 1);
+        });
+        renderActiveMatches();
+        if (action === 'play') {
+          assignCourtSlot(match.courtIndex);
           return;
         }
-        state.availableQueue.push(...freedPlayers);
-        renderWaitingList();
-        if (mode === 'rest') {
-          renderActiveMatches();
+        if (action === 'wait') {
           updateStatus('Players are chilling in the lobby until others free up.', 'muted');
-          return;
         }
-        fillCourts();
       }
 
       function openWinnerModal(match) {
@@ -783,13 +1148,7 @@
         state.pendingAward = { matchId: match.id, players: [...team] };
         awardWin(team);
         closeWinnerModal();
-        if (state.courtCount === 1 || state.availableQueue.length > 0) {
-          resolveMatchCompletion(match, 'auto');
-          state.pendingFinish = null;
-          state.pendingAward = null;
-        } else {
-          openPostMatchModal(match);
-        }
+        openPostMatchModal(match);
       }
 
       function awardWin(players) {
@@ -810,11 +1169,11 @@
         renderLeaderboard();
       }
 
-      function finalizePendingMatch(mode) {
+      function finalizePendingMatch(action) {
         if (!state.pendingFinish) return;
         const match = state.pendingFinish;
         closePostMatchModal();
-        resolveMatchCompletion(match, mode);
+        resolveMatchCompletion(match, action);
         state.pendingFinish = null;
         state.pendingAward = null;
       }
@@ -826,31 +1185,6 @@
 
       function closePostMatchModal() {
         modalOverlay.classList.remove('active');
-      }
-
-      function startSelfMatch(players, courtIndex) {
-        if (players.length < 4) return;
-        const pairings = [
-          [[players[0], players[1]], [players[2], players[3]]],
-          [[players[0], players[2]], [players[1], players[3]]],
-          [[players[0], players[3]], [players[1], players[2]]]
-        ];
-        let best = null;
-        pairings.forEach(teams => {
-          const score = rateConfiguration(teams, players);
-          if (!best || score < best.score) {
-            best = { teams, score };
-          }
-        });
-        if (!best) return;
-        const match = {
-          id: 'm' + state.matchCounter++,
-          teams: best.teams,
-          createdAt: new Date(),
-          courtIndex
-        };
-        state.activeMatches.push(match);
-        renderActiveMatches();
       }
 
       function recordHistory(match) {
@@ -865,6 +1199,7 @@
             state.opponentHistory.set(key, (state.opponentHistory.get(key) || 0) + 1);
           });
         });
+        renderChemistryBoard();
       }
 
       function fillCourts() {
@@ -873,42 +1208,73 @@
           return;
         }
         let created = false;
-        const usedSlots = new Set(state.activeMatches.map(m => m.courtIndex));
         for (let slot = 0; slot < state.courtCount; slot++) {
-          if (usedSlots.has(slot)) continue;
-          const next = pickNextMatch();
-          if (!next) break;
-          next.courtIndex = slot;
-          state.activeMatches.push(next);
-          created = true;
+          if (state.activeMatches.some(m => m.courtIndex === slot)) continue;
+          const assigned = assignCourtSlot(slot, true);
+          if (assigned) {
+            created = true;
+          } else {
+            break;
+          }
         }
+        if (created) {
+          updateStatus('Fresh courts ready. Play on!', 'ok');
+        } else if (state.availableQueue.length < 4) {
+          updateStatus('Waiting on more players to free up.', 'muted');
+        }
+      }
+
+      function assignCourtSlot(slot, silent = false) {
+        if (!state.sessionActive) {
+          if (!silent) updateStatus('Start the session first.', 'warn');
+          return false;
+        }
+        if (state.activeMatches.some(m => m.courtIndex === slot)) {
+          if (!silent) updateStatus('Court ' + (slot + 1) + ' is already running.', 'warn');
+          return false;
+        }
+        const next = pickNextMatch();
+        if (!next) {
+          if (!silent) {
+            const need = Math.max(0, 4 - state.availableQueue.length);
+            const msg = need > 0
+              ? 'Need ' + need + ' more player' + (need === 1 ? '' : 's') + ' before mixing.'
+              : 'All combos lately played—wait for fresh faces.';
+            updateStatus(msg, 'muted');
+          }
+          return false;
+        }
+        next.courtIndex = slot;
+        state.activeMatches.push(next);
         renderActiveMatches();
         renderWaitingList();
-        if (!created) {
-          if (state.availableQueue.length < 4) {
-            updateStatus('Waiting on more players to free up.', 'muted');
-          } else {
-            updateStatus('All smart combos are already on court.', 'muted');
-          }
-        } else {
-          updateStatus('Fresh courts ready. Play on!', 'ok');
+        if (!silent) {
+          updateStatus('Court ' + (slot + 1) + ' has a fresh matchup.', 'ok');
         }
+        return true;
       }
 
       function pickNextMatch() {
         if (state.availableQueue.length < 4) return null;
         const combos = getCombinations(state.availableQueue, 4);
+        const queuePositions = new Map();
+        state.availableQueue.forEach((id, idx) => queuePositions.set(id, idx));
         let best = null;
-        combos.forEach(group => {
+        shuffle(combos).forEach(group => {
           const pairings = [
             [[group[0], group[1]], [group[2], group[3]]],
             [[group[0], group[2]], [group[1], group[3]]],
             [[group[0], group[3]], [group[1], group[2]]]
           ];
-          pairings.forEach(teams => {
-            const score = rateConfiguration(teams, group);
-            if (!best || score < best.score) {
-              best = { teams, group, score };
+          shuffle(pairings).forEach(teams => {
+            const rating = scoreConfiguration(teams, group, queuePositions);
+            if (
+              !best ||
+              rating.freshPartners > best.rating.freshPartners ||
+              (rating.freshPartners === best.rating.freshPartners && rating.freshOpponents > best.rating.freshOpponents) ||
+              (rating.freshPartners === best.rating.freshPartners && rating.freshOpponents === best.rating.freshOpponents && rating.weighted < best.rating.weighted)
+            ) {
+              best = { teams, group, rating };
             }
           });
         });
@@ -922,24 +1288,41 @@
         };
       }
 
-      function rateConfiguration(teams, group) {
-        let score = 0;
+      function scoreConfiguration(teams, group, queuePositions = null) {
+        let freshPartners = 0;
+        let freshOpponents = 0;
+        let partnerPenalty = 0;
+        let opponentPenalty = 0;
         teams.forEach(team => {
           const key = [...team].sort().join('|');
-          score += (state.partnerHistory.get(key) || 0) * 3;
+          const seen = state.partnerHistory.get(key) || 0;
+          if (seen === 0) {
+            freshPartners += 1;
+          }
+          partnerPenalty += seen;
         });
         const [teamA, teamB] = teams;
         teamA.forEach(a => {
           teamB.forEach(b => {
             const key = [a, b].sort().join('|');
-            score += (state.opponentHistory.get(key) || 0);
+            const seen = state.opponentHistory.get(key) || 0;
+            if (seen === 0) {
+              freshOpponents += 1;
+            }
+            opponentPenalty += seen;
           });
         });
-        group.forEach(id => {
-          const idx = state.availableQueue.indexOf(id);
-          score += idx * 0.05;
-        });
-        return score;
+        let waitingPenalty = 0;
+        if (queuePositions) {
+          group.forEach(id => {
+            const idx = queuePositions.get(id);
+            if (typeof idx === 'number' && idx >= 0) {
+              waitingPenalty += idx * 0.1;
+            }
+          });
+        }
+        const weighted = partnerPenalty * 1000 + opponentPenalty * 400 + waitingPenalty + Math.random() * 0.01;
+        return { freshPartners, freshOpponents, weighted };
       }
 
       function getCombinations(arr, size) {
@@ -957,6 +1340,15 @@
         }
         helper(0, []);
         return result;
+      }
+
+      function shuffle(arr) {
+        const list = arr.slice();
+        for (let i = list.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [list[i], list[j]] = [list[j], list[i]];
+        }
+        return list;
       }
 
       function formatMatchSummary(match) {
@@ -1004,16 +1396,17 @@
               : 'Players available in the lobby.';
             idleCard.innerHTML = '<span class="card-tag">Court ' + (idx + 1) + '</span>' +
               '<p style="margin:4px 0 0;font-size:18px;font-weight:600;">Court idle</p>' +
-              '<small>' + statusMsg + ' Auto-mix keeps this court ready.</small>';
-            const idleBtn = document.createElement('button');
-            idleBtn.type = 'button';
-            idleBtn.className = 'idle-btn';
-            idleBtn.textContent = need > 0 ? 'Check again soon' : 'Send next matchup';
-            idleBtn.addEventListener('click', (evt) => {
+              '<small>' + statusMsg + '</small>';
+            const assignBtn = document.createElement('button');
+            assignBtn.type = 'button';
+            assignBtn.className = 'idle-btn';
+            assignBtn.textContent = need > 0 ? 'Need more players' : 'Assign next matchup';
+            assignBtn.disabled = need > 0;
+            assignBtn.addEventListener('click', (evt) => {
               evt.stopPropagation();
-              fillCourts(true);
+              assignCourtSlot(idx);
             });
-            idleCard.appendChild(idleBtn);
+            idleCard.appendChild(assignBtn);
             activeCourtsEl.appendChild(idleCard);
           }
         }
@@ -1070,6 +1463,7 @@
         leaderboardEl.innerHTML = '';
         if (!state.playerOrder.length) {
           leaderboardEl.innerHTML = '<div class="empty-state" style="padding:14px;">Add players to start tracking wins.</div>';
+          renderChemistryBoard();
           return;
         }
         const stats = state.playerOrder.map(id => ({
@@ -1093,6 +1487,72 @@
             '<div class="score-track"><div class="score-fill" style="width:' + percent + '%"></div></div>';
           leaderboardEl.appendChild(row);
         });
+        renderChemistryBoard();
+      }
+
+      function renderChemistryBoard() {
+        if (!chemistryBoardEl) return;
+        chemistryBoardEl.innerHTML = '';
+        if (!state.playerOrder.length) {
+          chemistryBoardEl.innerHTML = '<div class="empty-state" style="padding:14px;">Add players to see partner &amp; opponent stats.</div>';
+          return;
+        }
+        const partnerSets = new Map();
+        const opponentSets = new Map();
+        state.playerOrder.forEach(id => {
+          partnerSets.set(id, new Set());
+          opponentSets.set(id, new Set());
+        });
+        state.partnerHistory.forEach((count, key) => {
+          if (!count) return;
+          const [a, b] = key.split('|');
+          if (!partnerSets.has(a) || !partnerSets.has(b)) return;
+          partnerSets.get(a).add(b);
+          partnerSets.get(b).add(a);
+        });
+        state.opponentHistory.forEach((count, key) => {
+          if (!count) return;
+          const [a, b] = key.split('|');
+          if (!opponentSets.has(a) || !opponentSets.has(b)) return;
+          opponentSets.get(a).add(b);
+          opponentSets.get(b).add(a);
+        });
+        state.playerOrder.forEach(id => {
+          const info = state.players.get(id);
+          if (!info) return;
+          const partners = Array.from(partnerSets.get(id) || []);
+          const opponents = Array.from(opponentSets.get(id) || []);
+          const games = state.gamesPlayed.get(id) || 0;
+          const partnerNames = partners
+            .map(pid => state.players.get(pid)?.name)
+            .filter(Boolean)
+            .sort((a, b) => a.localeCompare(b));
+          const opponentNames = opponents
+            .map(pid => state.players.get(pid)?.name)
+            .filter(Boolean)
+            .sort((a, b) => a.localeCompare(b));
+          const row = document.createElement('div');
+          row.className = 'chemistry-row';
+          const partnerChips = partnerNames.length
+            ? partnerNames.map(name => '<span class="chemistry-chip">' + name + '</span>').join('')
+            : '<span class="chemistry-empty">Waiting on first pairing</span>';
+          const opponentChips = opponentNames.length
+            ? opponentNames.map(name => '<span class="chemistry-chip">' + name + '</span>').join('')
+            : '<span class="chemistry-empty">No opponents yet</span>';
+          row.innerHTML =
+            '<div class="chemistry-row-head">' +
+            '<div><strong>' + info.name + '</strong><div class="chemistry-games">' + games + ' game' + (games === 1 ? '' : 's') + '</div></div>' +
+            '<div class="chemistry-pills">' +
+            '<span class="chemistry-pill">Partners (' + partnerNames.length + ')</span>' +
+            '<span class="chemistry-pill alt">Opponents (' + opponentNames.length + ')</span>' +
+            '</div>' +
+            '</div>' +
+            '<div class="chemistry-chip-groups">' +
+            '<div><span class="chemistry-label">Partners</span><div class="chemistry-chips">' + partnerChips + '</div></div>' +
+            '<div><span class="chemistry-label">Opponents</span><div class="chemistry-chips">' + opponentChips + '</div></div>' +
+            '</div>';
+          chemistryBoardEl.appendChild(row);
+        });
       }
 
       addPlayerBtn.addEventListener('click', () => handleAddPlayers(addPlayerInput.value));
@@ -1103,7 +1563,6 @@
         }
       });
       startBtn.addEventListener('click', startSession);
-      mixBtn.addEventListener('click', () => fillCourts(true));
       courtInput.addEventListener('change', () => {
         const next = Math.max(1, parseInt(courtInput.value, 10) || 1);
         courtInput.value = next;
@@ -1116,17 +1575,12 @@
         const card = evt.target.closest('.court-card');
         if (!card) return;
         const matchId = card.dataset.matchId;
-        if (!matchId) {
-          if (state.sessionActive) {
-            fillCourts(true);
-          }
-          return;
-        }
+        if (!matchId) return;
         handleFinishRequest(matchId);
       });
 
-      modalReplayBtn.addEventListener('click', () => finalizePendingMatch('replay'));
-      modalRestBtn.addEventListener('click', () => finalizePendingMatch('rest'));
+      modalReplayBtn.addEventListener('click', () => finalizePendingMatch('play'));
+      modalRestBtn.addEventListener('click', () => finalizePendingMatch('wait'));
       modalCancelBtn.addEventListener('click', () => {
         revertPendingAward();
         closePostMatchModal();
@@ -1161,11 +1615,26 @@
         }
       });
 
+      if (tourNextBtn) {
+        tourNextBtn.addEventListener('click', advanceTour);
+      }
+      if (tourSkipBtn) {
+        tourSkipBtn.addEventListener('click', endTour);
+      }
+      if (tourOverlay) {
+        tourOverlay.addEventListener('click', (evt) => {
+          if (evt.target === tourOverlay) {
+            endTour();
+          }
+        });
+      }
+
       renderRoster();
       renderActiveMatches();
       renderWaitingList();
       renderCompletedMatches();
       renderLeaderboard();
+      startTour();
     })();
   </script>
 </body>

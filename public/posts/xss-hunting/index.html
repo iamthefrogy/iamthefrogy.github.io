@@ -1,20 +1,244 @@
-<!doctype html><html lang=en-US><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=description content="Practical Cybersecurity Blog"><meta name=keywords content="cybersecurity,infosec,bug-bounty,bugbounty,SOC,CTI,VM,Pentest,Cyber Defense"><title>Cyber Frogy - (Bug-Bounty) Master XSS Hunting Methodology</title><meta name=generator content="Hugo 0.153.2"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/main.css><link rel=stylesheet href=https://iamthefrogy.github.io/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=theme-color content="#ffffff"></head><body lang=en-US class=is-page><div class="container my-auto"><div class=site-nav><div class=site-nav__inner><a class=site-brand href=/><span class=site-brand__mark></span>
-<span class=site-brand__text>Cyber Frogy</span></a><nav class="site-menu d-none d-md-flex"><a class=site-menu__link href=/>Home</a>
-<a class=site-menu__link href=/whoami>Whoami</a>
-<a class=site-menu__link href=/posts>Blog</a>
-<a class=site-menu__link href=/mindmaps>Mindmaps</a>
-<a class=site-menu__link href=/threat-actor-db>Threat-Actor DB</a>
-<a class=site-menu__link href=/github>GitHub</a>
-<a class=site-menu__link href=/checklists>Checklists</a>
-<a class=site-menu__link href=/kickstartcareer>Kickstart Career</a>
-<a class=site-menu__link href=/disclaimer>Disclaimer</a></nav><div class=site-nav__actions><button class="navbar-toggler site-menu__toggle d-md-none" type=button data-bs-toggle=collapse data-bs-target=#site-menu-drawer aria-controls=site-menu-drawer aria-expanded=false aria-label="Toggle navigation">
-<i class="fa-solid fa-bars"></i></button></div></div><div class="collapse site-menu__drawer d-md-none" id=site-menu-drawer><nav class="d-flex flex-column gap-2"><a class=site-menu__link href=/>Home</a>
-<a class=site-menu__link href=/whoami>Whoami</a>
-<a class=site-menu__link href=/posts>Blog</a>
-<a class=site-menu__link href=/mindmaps>Mindmaps</a>
-<a class=site-menu__link href=/threat-actor-db>Threat-Actor DB</a>
-<a class=site-menu__link href=/github>GitHub</a>
-<a class=site-menu__link href=/checklists>Checklists</a>
-<a class=site-menu__link href=/kickstartcareer>Kickstart Career</a>
-<a class=site-menu__link href=/disclaimer>Disclaimer</a></nav></div></div><main class=page-shell><article class=page-article><header class=page-article__header><h1 class=page-article__title>(Bug-Bounty) Master XSS Hunting Methodology</h1></header><section id=category-pane class="page-article__meta meta-block"><div class=meta-row><p class="meta meta--label">PUBLISHED ON FEB 3, 2025
-/ 2 MIN READ</p></div></section><section id=content-pane class=page-article__content><div class=content><nav id=TableOfContents><ul><li><a href=#1-identify-where-user-input-can-appear>1. Identify Where User Input Can Appear</a></li><li><a href=#2-classify-the-reflection-context>2. Classify the Reflection Context</a></li><li><a href=#3-develop-a-strategy-for-injection>3. Develop a Strategy for Injection</a></li><li><a href=#4-move-beyond-initial-attempts>4. Move Beyond Initial Attempts</a></li><li><a href=#5-check-for-stored-persistent-xss>5. Check for Stored (Persistent) XSS</a></li><li><a href=#6-adjust-and-refine>6. Adjust and Refine</a></li><li><a href=#7-verify-and-document>7. Verify and Document</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav><p>Below is a straightforward, step-by-step approach to uncovering Cross-Site Scripting (XSS) vulnerabilities. The focus here is on the methodology rather than specific payload examples.</p><center><img src=/images/xss_hunting.png width=1300></center></br><hr><h2 id=1-identify-where-user-input-can-appear>1. Identify Where User Input Can Appear</h2><ol><li>Look for any field, query parameter, or user-controllable data source.</li><li>Observe if the input is shown back on the page, either directly or indirectly.</li><li>Note whether the input appears inside HTML, in script code, or within attributes.</li></ol><hr><h2 id=2-classify-the-reflection-context>2. Classify the Reflection Context</h2><ol><li><strong>Raw HTML Context:</strong> Check if the input is inserted as normal text or within tags.</li><li><strong>HTML Attribute Context:</strong> Examine if the input is used inside attributes (e.g., <code>href</code>, <code>src</code>).</li><li><strong>JavaScript Context:</strong> Determine if the input lands inside script blocks or inline event handlers.</li><li><strong>Client-Side Templating:</strong> If frameworks like Angular, React, or Vue are present, see if user input is being processed through a template.</li><li><strong>Callback Functions:</strong> Look for parameters that might be used inside a JavaScript function call.</li></ol><p>Understanding exactly where and how input is reflected dictates the techniques you use next.</p><hr><h2 id=3-develop-a-strategy-for-injection>3. Develop a Strategy for Injection</h2><ol><li><strong>Analyze Existing Filters:</strong> Identify what filtering or sanitization the application applies.</li><li><strong>Consider Encoding Methods:</strong> Explore character encodings, escaping, and other ways to bypass basic filters.</li><li><strong>Try Breaking Out of Context:</strong> If the input is within a tag or string, see if you can close it and create new syntax.</li><li><strong>Review Browser-Specific Behaviors:</strong> Check if older or less common browsers might handle content differently.</li></ol><hr><h2 id=4-move-beyond-initial-attempts>4. Move Beyond Initial Attempts</h2><p>If simple methods are blocked:</p><ol><li><strong>DOM XSS Inspections:</strong> Search for dangerous functions that write directly to the page (e.g., <code>document.write</code>, <code>eval</code>, or framework-specific rendering).</li><li><strong>Event Handlers and Alternate Attributes:</strong> Look at mouse, keyboard, and load events. Some contexts may be overlooked by simple filters.</li><li><strong>Template Injection Techniques:</strong> Examine how data is inserted if a JavaScript framework is in use. Attempt to break or exploit the template system.</li><li><strong>Chained Attacks:</strong> Combine smaller vulnerabilities (like parameter pollution or path traversal) to position your input in a place where it can achieve full script execution.</li></ol><hr><h2 id=5-check-for-stored-persistent-xss>5. Check for Stored (Persistent) XSS</h2><ol><li><strong>Submit Data That Persists:</strong> Enter data through forms, profile updates, or any input fields that might be saved.</li><li><strong>Revisit or Load Another Page:</strong> See if that stored data is later rendered in a way that allows for script execution.</li><li><strong>Monitor Sanitization or Escaping Measures:</strong> Determine if the application attempts to neutralize certain strings or patterns.</li></ol><hr><h2 id=6-adjust-and-refine>6. Adjust and Refine</h2><ol><li><strong>Experiment With Different Contexts:</strong> If one approach is blocked, try injecting the same data into another part of the application.</li><li><strong>Stay Aware of Advanced Protections:</strong> If Content Security Policy (CSP) or a Web Application Firewall (WAF) is present, plan alternative bypasses.</li><li><strong>Leverage Multiple Methods:</strong> Sometimes a combination of partial injections and encodings is needed for success.</li></ol><hr><h2 id=7-verify-and-document>7. Verify and Document</h2><ol><li><strong>Confirm Execution:</strong> Establish a clear indication that the script runs—this may be a console log or other benign proof of execution.</li><li><strong>Document Findings Clearly:</strong> Provide details on where the vulnerability occurs and why it is exploitable.</li><li><strong>Suggest Remediation:</strong> Propose solutions (e.g., output encoding, content security policies, strict input validation).</li></ol><hr><h2 id=conclusion>Conclusion</h2><p>By methodically checking reflection points, analyzing the context, and adjusting your approach when blocked, you can systematically uncover XSS vulnerabilities. Stay persistent, pay attention to where and how user input appears, and tailor your technique to the specific context at hand.</p></div></section></article></main></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js></script><script>hljs.highlightAll()</script><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script><script src=/js/custom.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        
+        <meta name="description" content="Practical Cybersecurity Blog">
+        
+        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
+
+        <title>
+              Cyber Frogy - (Bug-Bounty) Master XSS Hunting Methodology 
+        </title>
+
+        <meta name="generator" content="Hugo 0.154.3">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#ffffff"></head>
+
+    <body lang="en-US" class="is-page">
+        <div class="container my-auto">
+
+
+
+<div class="site-nav">
+  <div class="site-nav__inner">
+    <a class="site-brand" href="/">
+      <span class="site-brand__mark"></span>
+      <span class="site-brand__text">Cyber Frogy</span>
+    </a>
+    
+    <nav class="site-menu d-none d-md-flex">
+      
+      <a class="site-menu__link" href="/">Home</a>
+      
+      <a class="site-menu__link" href="/whoami">Whoami</a>
+      
+      <a class="site-menu__link" href="/posts">Blog</a>
+      
+      <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+      
+      <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+      
+      <a class="site-menu__link" href="/github">GitHub</a>
+      
+      <a class="site-menu__link" href="/checklists">Checklists</a>
+      
+      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+      
+      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+      
+    </nav>
+    
+    <div class="site-nav__actions">
+      
+      <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+    </div>
+  </div>
+  
+  <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
+    <nav class="d-flex flex-column gap-2">
+      
+      <a class="site-menu__link" href="/">Home</a>
+      
+      <a class="site-menu__link" href="/whoami">Whoami</a>
+      
+      <a class="site-menu__link" href="/posts">Blog</a>
+      
+      <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+      
+      <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+      
+      <a class="site-menu__link" href="/github">GitHub</a>
+      
+      <a class="site-menu__link" href="/checklists">Checklists</a>
+      
+      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+      
+      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+      
+    </nav>
+  </div>
+  
+</div>
+
+
+
+<main class="page-shell">
+  <article class="page-article">
+    <header class="page-article__header">
+      <h1 class="page-article__title">(Bug-Bounty) Master XSS Hunting Methodology</h1>
+    </header>
+
+    <section id="category-pane" class="page-article__meta meta-block">
+      
+      <div class="meta-row">
+        <p class="meta meta--label">
+           PUBLISHED ON FEB 3, 2025
+          
+          / 2 MIN READ
+          
+        </p>
+      </div>
+      
+    </section>
+
+    <section id="content-pane" class="page-article__content">
+      <div class="content">
+        
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-identify-where-user-input-can-appear">1. Identify Where User Input Can Appear</a></li>
+    <li><a href="#2-classify-the-reflection-context">2. Classify the Reflection Context</a></li>
+    <li><a href="#3-develop-a-strategy-for-injection">3. Develop a Strategy for Injection</a></li>
+    <li><a href="#4-move-beyond-initial-attempts">4. Move Beyond Initial Attempts</a></li>
+    <li><a href="#5-check-for-stored-persistent-xss">5. Check for Stored (Persistent) XSS</a></li>
+    <li><a href="#6-adjust-and-refine">6. Adjust and Refine</a></li>
+    <li><a href="#7-verify-and-document">7. Verify and Document</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        
+        <p>Below is a straightforward, step-by-step approach to uncovering Cross-Site Scripting (XSS) vulnerabilities. The focus here is on the methodology rather than specific payload examples.</p>
+<center><img src="/images/xss_hunting.png" width="1300"/></center></br>
+<hr>
+<h2 id="1-identify-where-user-input-can-appear">1. Identify Where User Input Can Appear</h2>
+<ol>
+<li>Look for any field, query parameter, or user-controllable data source.</li>
+<li>Observe if the input is shown back on the page, either directly or indirectly.</li>
+<li>Note whether the input appears inside HTML, in script code, or within attributes.</li>
+</ol>
+<hr>
+<h2 id="2-classify-the-reflection-context">2. Classify the Reflection Context</h2>
+<ol>
+<li><strong>Raw HTML Context:</strong> Check if the input is inserted as normal text or within tags.</li>
+<li><strong>HTML Attribute Context:</strong> Examine if the input is used inside attributes (e.g., <code>href</code>, <code>src</code>).</li>
+<li><strong>JavaScript Context:</strong> Determine if the input lands inside script blocks or inline event handlers.</li>
+<li><strong>Client-Side Templating:</strong> If frameworks like Angular, React, or Vue are present, see if user input is being processed through a template.</li>
+<li><strong>Callback Functions:</strong> Look for parameters that might be used inside a JavaScript function call.</li>
+</ol>
+<p>Understanding exactly where and how input is reflected dictates the techniques you use next.</p>
+<hr>
+<h2 id="3-develop-a-strategy-for-injection">3. Develop a Strategy for Injection</h2>
+<ol>
+<li><strong>Analyze Existing Filters:</strong> Identify what filtering or sanitization the application applies.</li>
+<li><strong>Consider Encoding Methods:</strong> Explore character encodings, escaping, and other ways to bypass basic filters.</li>
+<li><strong>Try Breaking Out of Context:</strong> If the input is within a tag or string, see if you can close it and create new syntax.</li>
+<li><strong>Review Browser-Specific Behaviors:</strong> Check if older or less common browsers might handle content differently.</li>
+</ol>
+<hr>
+<h2 id="4-move-beyond-initial-attempts">4. Move Beyond Initial Attempts</h2>
+<p>If simple methods are blocked:</p>
+<ol>
+<li><strong>DOM XSS Inspections:</strong> Search for dangerous functions that write directly to the page (e.g., <code>document.write</code>, <code>eval</code>, or framework-specific rendering).</li>
+<li><strong>Event Handlers and Alternate Attributes:</strong> Look at mouse, keyboard, and load events. Some contexts may be overlooked by simple filters.</li>
+<li><strong>Template Injection Techniques:</strong> Examine how data is inserted if a JavaScript framework is in use. Attempt to break or exploit the template system.</li>
+<li><strong>Chained Attacks:</strong> Combine smaller vulnerabilities (like parameter pollution or path traversal) to position your input in a place where it can achieve full script execution.</li>
+</ol>
+<hr>
+<h2 id="5-check-for-stored-persistent-xss">5. Check for Stored (Persistent) XSS</h2>
+<ol>
+<li><strong>Submit Data That Persists:</strong> Enter data through forms, profile updates, or any input fields that might be saved.</li>
+<li><strong>Revisit or Load Another Page:</strong> See if that stored data is later rendered in a way that allows for script execution.</li>
+<li><strong>Monitor Sanitization or Escaping Measures:</strong> Determine if the application attempts to neutralize certain strings or patterns.</li>
+</ol>
+<hr>
+<h2 id="6-adjust-and-refine">6. Adjust and Refine</h2>
+<ol>
+<li><strong>Experiment With Different Contexts:</strong> If one approach is blocked, try injecting the same data into another part of the application.</li>
+<li><strong>Stay Aware of Advanced Protections:</strong> If Content Security Policy (CSP) or a Web Application Firewall (WAF) is present, plan alternative bypasses.</li>
+<li><strong>Leverage Multiple Methods:</strong> Sometimes a combination of partial injections and encodings is needed for success.</li>
+</ol>
+<hr>
+<h2 id="7-verify-and-document">7. Verify and Document</h2>
+<ol>
+<li><strong>Confirm Execution:</strong> Establish a clear indication that the script runs—this may be a console log or other benign proof of execution.</li>
+<li><strong>Document Findings Clearly:</strong> Provide details on where the vulnerability occurs and why it is exploitable.</li>
+<li><strong>Suggest Remediation:</strong> Propose solutions (e.g., output encoding, content security policies, strict input validation).</li>
+</ol>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>By methodically checking reflection points, analyzing the context, and adjusting your approach when blocked, you can systematically uncover XSS vulnerabilities. Stay persistent, pay attention to where and how user input appears, and tailor your technique to the specific context at hand.</p>
+
+      </div>
+    </section>
+
+    
+    
+  </article>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+</html>
+
+
