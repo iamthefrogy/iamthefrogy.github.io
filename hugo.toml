@@ -131,27 +131,32 @@ identifier = "mindmaps"
 weight = 400
 url = "/mindmaps"
 [[menu.main]]
+name = "Weekly Intel"
+identifier = "weekly-intel"
+weight = 500
+url = "/weekly-intel"
+[[menu.main]]
 name = "Threat-Actor DB"
 identifier = "threat-actor-db"
-weight = 500
+weight = 600
 url = "/threat-actor-db"
 [[menu.main]]
 name = "GitHub"
 identifier = "github"
-weight = 600
+weight = 700
 url = "/github"
 [[menu.main]]
 name = "Checklists"
 identifier = "checklists"
-weight = 700
+weight = 800
 url = "/checklists"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
-weight = 800
+weight = 900
 url = "/kickstartcareer"
 [[menu.main]]
 name = "Disclaimer"
 identifier = "disclaimer"
-weight = 900
+weight = 1000
 url = "/disclaimer"
