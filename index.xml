@@ -1,4 +1,510 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 07 Dec 2025 08:24:25 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Unified Threat Actor Dashboard</title><link>https://iamthefrogy.github.io/threat-actor-db/</link><pubDate>Sun, 07 Dec 2025 08:24:25 +0000</pubDate><guid>https://iamthefrogy.github.io/threat-actor-db/</guid><description/></item><item><title>(CTI) Automotive industry threat landscape</title><link>https://iamthefrogy.github.io/posts/automotive-risk-trend/</link><pubDate>Wed, 19 Nov 2025 06:37:07 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/automotive-risk-trend/</guid><description>&lt;p&gt;Modern cars are not just machines that move you from A to B. They are packed with radios, sensors, SIM cards, Wi-Fi, Bluetooth, cloud backends, and mobile apps effectively &lt;strong&gt;computers on wheels that talk a lot&lt;/strong&gt;. That connectivity is great for drivers and fleet operators. It is also great targets for attackers.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cyber Frogy</title><link>https://iamthefrogy.github.io/</link><description>Recent content on Cyber Frogy</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://iamthefrogy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Jan-2026 - Week 4</title><link>https://iamthefrogy.github.io/weekly-intel/jan26-week4/</link><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><guid>https://iamthefrogy.github.io/weekly-intel/jan26-week4/</guid><description>&lt;style&gt;
+
+ .weekly-intel {
+
+ color-scheme: light;
+ --bg: #ffffff;
+ --bg-alt: #f5f7fb;
+ --panel: #ffffff;
+ --panel-strong: #ffffff;
+ --card: #ffffff;
+ --border: rgba(15, 23, 42, 0.12);
+ --text: #0f172a;
+ --muted: rgba(15, 23, 42, 0.65);
+ --accent: #1d4ed8;
+ --accent-2: #1e40af;
+ --accent-3: #0f766e;
+ --warn: #b45309;
+ --shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+
+ --radius-xl: 24px;
+ --radius-lg: 18px;
+ --radius-md: 12px;
+ --radius-sm: 8px;
+ --font-body: "Arial", "Segoe UI", "Helvetica Neue", sans-serif;
+ }
+
+ * { box-sizing: border-box; }
+ .weekly-intel {
+ margin: 0;
+ font-family: var(--font-body);
+ color: var(--text);
+ font-size: 17px;
+
+ background: #ffffff;
+
+ min-height: 100vh;
+ }
+
+ a { color: var(--accent); text-decoration: none; }
+ a:hover { color: #9ae1ff; }
+
+ .weekly-intel .page {
+ width: min(1400px, 96vw);
+ margin: 0 auto;
+ padding: 32px 0 80px;
+ }
+
+ .weekly-intel .site-nav {
+ background: var(--panel);
+ border: 1px solid var(--border);
+ border-radius: 999px;
+ padding: 16px 22px;
+ backdrop-filter: blur(14px);
+ box-shadow: var(--shadow);
+ }
+ .weekly-intel .site-nav__inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 16px;
+ }
+ .weekly-intel .site-brand {
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ font-size: 0.85rem;
+ color: var(--text);
+ }
+ .weekly-intel .site-brand__mark {
+ width: 12px;
+ height: 12px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, #36f38d, var(--accent));
+ box-shadow: 0 0 0 4px rgba(103, 201, 247, 0.16);
+ }
+ .weekly-intel .site-menu {
+ display: flex;
+ gap: 16px;
+ align-items: center;
+ flex-wrap: wrap;
+ }
+ .weekly-intel .site-menu__link {
+ font-size: 0.78rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ font-weight: 600;
+ color: var(--text);
+ }
+ .weekly-intel .site-nav__actions {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+ .weekly-intel .site-menu__toggle {
+ display: none;
+ background: transparent;
+ color: var(--text);
+ border: 1px solid var(--border);
+ padding: 10px 14px;
+ border-radius: 12px;
+ cursor: pointer;
+ }
+ .weekly-intel .site-menu__drawer {
+ display: none;
+ flex-direction: column;
+ gap: 10px;
+ padding: 16px 0 8px;
+ }
+ .weekly-intel .collapse.show {
+ display: flex;
+ }
+ .weekly-intel .d-none {
+ display: none;
+ }
+ .weekly-intel .d-flex {
+ display: flex;
+ }
+ .weekly-intel .flex-column {
+ flex-direction: column;
+ }
+ .weekly-intel .gap-2 {
+ gap: 8px;
+ }
+
+ .weekly-intel .hero {
+ margin-top: 30px;
+ background: var(--panel);
+ border: 1px solid var(--border);
+ border-radius: var(--radius-xl);
+ padding: 28px 32px;
+ box-shadow: var(--shadow);
+ }
+ .weekly-intel .hero h1 {
+ margin: 0 0 10px;
+ font-size: 2.1rem;
+ letter-spacing: -0.02em;
+ }
+ .weekly-intel .hero p {
+ margin: 0;
+ color: var(--muted);
+ }
+
+ .weekly-intel .metrics {
+ margin-top: 24px;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: 14px;
+ }
+ .weekly-intel .metric {
+ background: var(--card);
+ border-radius: var(--radius-lg);
+ border: 1px solid var(--border);
+ padding: 18px;
+ }
+ .weekly-intel .metric span {
+ display: block;
+ font-size: 0.75rem;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ color: var(--muted);
+ }
+ .weekly-intel .metric strong {
+ font-size: 1.6rem;
+ display: block;
+ margin-top: 6px;
+ }
+
+ .weekly-intel .analytics-grid {
+ margin-top: 24px;
+ display: grid;
+ grid-template-columns: repeat(4, minmax(0, 1fr));
+ gap: 16px;
+ }
+ .weekly-intel .analytics-card {
+ background: var(--panel);
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ padding: 18px;
+ box-shadow: var(--shadow);
+ }
+ .weekly-intel .analytics-card h3 {
+ margin: 0 0 10px;
+ font-size: 16px;
+ font-weight: 800;
+ color: #000000;
+ }
+ .weekly-intel .analytics-list {
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ }
+ .weekly-intel .analytics-row {
+ display: grid;
+ grid-template-columns: 1fr auto;
+ gap: 10px;
+ align-items: center;
+ }
+ .weekly-intel .analytics-label {
+ font-size: 15px;
+ color: var(--text);
+ }
+ .weekly-intel .analytics-bar {
+ height: 8px;
+ background: var(--bg-alt);
+ border-radius: 999px;
+ overflow: hidden;
+ border: 1px solid var(--border);
+ }
+ .weekly-intel .analytics-fill {
+ height: 100%;
+ background: var(--accent);
+ }
+ .weekly-intel .analytics-count {
+ font-size: 14px;
+ color: var(--muted);
+ text-align: right;
+ min-width: 34px;
+ }
+
+ .section { margin-top: 36px; }
+ .weekly-intel .section-header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 20px;
+ margin-bottom: 16px;
+ }
+ .section h2 { margin: 0; font-size: 1.5rem; }
+ .section p { margin: 6px 0 0; color: var(--muted); }
+
+ .weekly-intel .filters {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 12px;
+ margin: 16px 0 20px;
+ }
+ .weekly-intel .filters input, .weekly-intel .filters select {
+ background: var(--card);
+ border: 1px solid var(--border);
+ color: var(--text);
+ padding: 10px 12px;
+ border-radius: 10px;
+ min-width: 200px;
+ }
+
+ .weekly-intel .signal-card {
+ background: var(--panel-strong);
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ margin-bottom: 16px;
+ padding: 0;
+ overflow: hidden;
+ box-shadow: var(--shadow);
+ }
+ .weekly-intel .signal-card summary {
+ list-style: none;
+ cursor: pointer;
+ padding: 18px 22px;
+ }
+ .weekly-intel .signal-card summary:hover {
+ background: var(--bg-alt);
+ }
+ .signal-card summary::-webkit-details-marker { display: none; }
+ .weekly-intel .signal-head {
+ display: flex;
+ justify-content: space-between;
+ gap: 20px;
+ flex-wrap: wrap;
+ }
+ .weekly-intel .signal-title {
+ font-size: 18px;
+ font-weight: 800;
+ color: #000000;
+ margin-bottom: 10px;
+ }
+ .signal-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+ .weekly-intel .pill {
+ border: 1px solid var(--border);
+ background: var(--bg-alt);
+ padding: 6px 10px;
+ border-radius: 999px;
+ font-size: 0.75rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: var(--text);
+ }
+ .weekly-intel .signal-dates {
+ display: grid;
+ gap: 6px;
+ font-size: 0.8rem;
+ color: var(--muted);
+ }
+ .weekly-intel .signal-dates span {
+ display: block;
+ font-size: 0.65rem;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ color: var(--muted);
+ }
+ .weekly-intel .signal-body {
+ padding: 18px 22px 22px;
+ border-top: 1px solid var(--border);
+ background: var(--bg);
+ }
+ .weekly-intel .signal-summary {
+ margin: 0 0 16px;
+ font-size: 16px;
+ color: var(--text);
+ font-weight: 500;
+ }
+ .weekly-intel .signal-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 16px;
+ margin-bottom: 16px;
+ }
+ .weekly-intel .signal-grid &gt; div {
+ border: 1px solid var(--border);
+ border-radius: var(--radius-md);
+ padding: 14px 16px;
+ background: var(--bg-alt);
+ }
+ .weekly-intel .signal-grid h4, .weekly-intel .signal-actions h4 {
+ margin: 0 0 8px;
+ font-size: 0.8rem;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ color: var(--muted);
+ }
+ .weekly-intel .signal-grid p {
+ margin: 6px 0;
+ color: var(--text);
+ font-size: 16px;
+ }
+ .weekly-intel .signal-actions {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap: 16px;
+ margin-bottom: 14px;
+ }
+ .weekly-intel .signal-actions p {
+ font-size: 16px;
+ color: var(--text);
+ }
+ .weekly-intel .signal-actions &gt; div {
+ border: 1px solid var(--border);
+ border-radius: var(--radius-md);
+ padding: 14px 16px;
+ background: var(--bg-alt);
+ }
+ .signal-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+ .weekly-intel .tag {
+ background: var(--bg-alt);
+ border: 1px solid var(--border);
+ color: var(--accent);
+ padding: 4px 10px;
+ border-radius: 999px;
+ font-size: 0.75rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ }
+ .weekly-intel .signal-refs {
+ margin-top: 12px;
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ font-size: 0.85rem;
+ }
+
+ .weekly-intel table {
+ width: 100%;
+ border-collapse: collapse;
+ background: var(--panel);
+ border-radius: var(--radius-lg);
+ overflow: hidden;
+ border: 1px solid var(--border);
+ box-shadow: var(--shadow);
+ }
+ .weekly-intel th, .weekly-intel td {
+ text-align: left;
+ padding: 12px 14px;
+ border-bottom: 1px solid rgba(116, 132, 163, 0.12);
+ font-size: 0.85rem;
+ vertical-align: top;
+ }
+ .weekly-intel th {
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ font-size: 0.7rem;
+ color: var(--muted);
+ background: var(--bg-alt);
+ }
+ .mono { font-family: "Courier New", monospace; font-size: 0.82rem; }
+ .refs a { display: block; }
+
+ .weekly-intel .detect-card {
+ background: var(--panel-strong);
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ margin-bottom: 14px;
+ box-shadow: var(--shadow);
+ overflow: hidden;
+ }
+ .weekly-intel .detect-card summary {
+ padding: 18px 22px;
+ cursor: pointer;
+ list-style: none;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 12px;
+ }
+ .weekly-intel .detect-card summary:hover {
+ background: var(--bg-alt);
+ }
+ .detect-card summary::-webkit-details-marker { display: none; }
+ .weekly-intel .detect-title {
+ font-size: 18px;
+ font-weight: 800;
+ color: #000000;
+ }
+ .weekly-intel .detect-body {
+ padding: 18px 22px 22px;
+ border-top: 1px solid var(--border);
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 16px;
+ background: var(--bg);
+ }
+ .weekly-intel .detect-body &gt; div {
+ border: 1px solid var(--border);
+ border-radius: var(--radius-md);
+ padding: 14px 16px;
+ background: var(--bg-alt);
+ }
+ .weekly-intel .detect-body h4 {
+ margin: 0 0 8px;
+ font-size: 0.8rem;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ color: var(--muted);
+ }
+ .weekly-intel .detect-body p, .weekly-intel .detect-body li {
+ margin: 6px 0;
+ color: var(--text);
+ font-size: 16px;
+ }
+
+ .weekly-intel .site-footer {
+ margin-top: 46px;
+ padding: 28px;
+ border-radius: var(--radius-xl);
+ border: 1px solid var(--border);
+ background: rgba(8, 12, 22, 0.9);
+ box-shadow: var(--shadow);
+ }
+ .weekly-intel .site-footer__inner {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 18px;
+ align-items: center;
+ justify-content: space-between;
+ }
+ .weekly-intel .site-footer__nav {
+ display: flex;
+ gap: 12px;
+ flex-wrap: wrap;
+ font-size: 0.8rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: var(--text);
+ }
+ .weekly-intel .site-footer__nav a.site-footer__nav {
+ display: inline-flex;
+ color: var(--text);
+ }
+
+ @media (max-width: 900px) {
+ .site-menu { display: none; }
+ .d-md-flex { display: none; }
+ .d-md-none { display: inline-flex; }
+ .site-menu__toggle { display: inline-flex; }
+ .site-nav { border-radius: 24px; }
+ .signal-head { flex-direction: column; }
+ }
+ @media (max-width: 1100px) {
+ .analytics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ }
+ @media (max-width: 700px) {
+ .analytics-grid { grid-template-columns: 1fr; }
+ }
+ @media (min-width: 901px) {
+ .d-md-flex { display: flex; }
+ .d-md-none { display: none; }
+ }
+
+&lt;/style&gt;
+&lt;div class="weekly-intel"&gt;
+&lt;div class="page"&gt;
+
+
+ &lt;section class="hero"&gt;
+ &lt;h1&gt;Weekly Threat Intel Briefing&lt;/h1&gt;
+ &lt;p&gt;Consolidated signals, vulnerabilities, IOCs, and detections for rapid operational action.&lt;/p&gt;</description></item><item><title>Unified Threat Actor Dashboard</title><link>https://iamthefrogy.github.io/threat-actor-db/</link><pubDate>Sun, 07 Dec 2025 08:24:25 +0000</pubDate><guid>https://iamthefrogy.github.io/threat-actor-db/</guid><description/></item><item><title>(CTI) Automotive industry threat landscape</title><link>https://iamthefrogy.github.io/posts/automotive-risk-trend/</link><pubDate>Wed, 19 Nov 2025 06:37:07 +0000</pubDate><guid>https://iamthefrogy.github.io/posts/automotive-risk-trend/</guid><description>&lt;p&gt;Modern cars are not just machines that move you from A to B. They are packed with radios, sensors, SIM cards, Wi-Fi, Bluetooth, cloud backends, and mobile apps effectively &lt;strong&gt;computers on wheels that talk a lot&lt;/strong&gt;. That connectivity is great for drivers and fleet operators. It is also great targets for attackers.&lt;/p&gt;
 &lt;p&gt;Today I am going to cover the automotive IoT threat landscape: where attackers are getting in, what they are doing, and what both drivers and builders should be doing to reduce the blast radius.&lt;/p&gt;</description></item><item><title>(SIEM) Advanced Detection Engineering</title><link>https://iamthefrogy.github.io/posts/detection-engineering/</link><pubDate>Thu, 28 Aug 2025 03:10:29 +0100</pubDate><guid>https://iamthefrogy.github.io/posts/detection-engineering/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I was going through the SANS material on detection engineering from multiple of their courses and I wanted to make a practical ready notes for the same. This is the output of my reading and implementing some of them into my home personal lab as well as my past companies.&lt;/p&gt;
 &lt;p&gt;The summary of entire process is:&lt;/p&gt;
