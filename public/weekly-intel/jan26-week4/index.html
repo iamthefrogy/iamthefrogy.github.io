@@ -173,15 +173,18 @@
       background: #ffffff;
 
       min-height: 100vh;
+      width: 100%;
+      max-width: 100%;
     }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: #9ae1ff; }
 
     .weekly-intel .page {
-      width: min(1400px, 96vw);
+      width: min(1400px, 100%);
+      max-width: 100%;
       margin: 0 auto;
-      padding: 32px 0 80px;
+      padding: 32px 3% 80px;
     }
 
     .weekly-intel .site-nav {
@@ -511,6 +514,7 @@
 
     .weekly-intel table {
       width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
       background: var(--panel);
       border-radius: var(--radius-lg);
@@ -524,6 +528,8 @@
       border-bottom: 1px solid rgba(116, 132, 163, 0.12);
       font-size: 0.85rem;
       vertical-align: top;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .weekly-intel th {
       text-transform: uppercase;
@@ -534,6 +540,39 @@
     }
     .mono { font-family: "Courier New", monospace; font-size: 0.82rem; }
     .refs a { display: block; }
+    .weekly-intel td .cell-content {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+      line-height: 1.45;
+      max-height: calc(1.45em * 5);
+      white-space: normal;
+    }
+    .weekly-intel td.expanded .cell-content {
+      -webkit-line-clamp: initial;
+      max-height: none;
+      overflow: visible;
+    }
+    .weekly-intel .cell-expand {
+      margin-top: 6px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 8px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .weekly-intel .table-wrap {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
 
     .weekly-intel .detect-card {
       background: var(--panel-strong);
@@ -2822,6 +2861,37 @@
     }
 
     [iocSearch, iocTypeFilter].forEach(el => el && el.addEventListener('input', filterIOCs));
+
+    const clampTables = Array.from(document.querySelectorAll('.weekly-intel table'));
+    const buildCellClamp = () => {
+      clampTables.forEach(table => {
+        const cells = Array.from(table.querySelectorAll('tbody td'));
+        cells.forEach(cell => {
+          if (cell.dataset.clamped === 'true') return;
+          if (!cell.textContent.trim()) return;
+          const wrapper = document.createElement('div');
+          wrapper.className = 'cell-content';
+          while (cell.firstChild) {
+            wrapper.appendChild(cell.firstChild);
+          }
+          cell.appendChild(wrapper);
+          const needsExpand = wrapper.scrollHeight > wrapper.clientHeight + 2;
+          if (needsExpand) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'cell-expand';
+            btn.textContent = 'Expand';
+            btn.addEventListener('click', () => {
+              const expanded = cell.classList.toggle('expanded');
+              btn.textContent = expanded ? 'Collapse' : 'Expand';
+            });
+            cell.appendChild(btn);
+          }
+          cell.dataset.clamped = 'true';
+        });
+      });
+    };
+    window.addEventListener('load', buildCellClamp);
   </script>
 </div>
 
