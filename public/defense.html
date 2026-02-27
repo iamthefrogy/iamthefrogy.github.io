@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defense-in-Depth 2025 — Interactive Layered Cybersecurity Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#050810;
+  --bg2:#0a0f1e;
+  --surface:#0d1328;
+  --surface2:#111936;
+  --border:#1a2555;
+  --border-light:#243070;
+  --text:#b8c4e0;
+  --text-dim:#5b6a8f;
+  --white:#e8ecf8;
+  --ring-threat:#ef4444;
+  --ring-human:#ec4899;
+  --ring-cloud:#a855f7;
+  --ring-perimeter:#f43f5e;
+  --ring-network:#f97316;
+  --ring-endpoint:#eab308;
+  --ring-app:#22c55e;
+  --ring-data:#06b6d4;
+  --ring-identity:#3b82f6;
+  --ring-assets:#6366f1;
+  --pillar-gov:#10b981;
+  --pillar-ops:#3b82f6;
+  --pillar-resil:#f59e0b;
+  --pillar-phys:#8b5cf6;
+}
+
+html{font-size:15px;scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.55;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Subtle animated scanline */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,20,60,.03) 2px,rgba(0,20,60,.03) 4px);
+  opacity:.5;
+}
+
+/* ===== HEADER ===== */
+.header{
+  text-align:center;padding:36px 2% 8px;position:relative;z-index:2;
+}
+.header-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Fira Code',monospace;font-size:.65rem;font-weight:500;
+  color:var(--ring-data);letter-spacing:.15em;text-transform:uppercase;
+  background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);
+  border-radius:40px;padding:6px 18px;margin-bottom:12px;
+}
+.header-badge .pulse{
+  width:7px;height:7px;border-radius:50%;background:var(--ring-data);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+.header h1{
+  font-family:'Chakra Petch',sans-serif;font-weight:700;
+  font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:-.01em;
+  color:var(--white);margin-bottom:6px;
+}
+.header h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--ring-data),var(--ring-identity),var(--ring-cloud));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.header .tagline{
+  font-size:.88rem;color:var(--text-dim);max-width:620px;margin:0 auto 16px;
+}
+
+/* Search */
+.search-bar{
+  max-width:480px;margin:0 auto;position:relative;
+}
+.search-bar input{
+  width:100%;background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:11px 16px 11px 42px;
+  font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--white);
+  outline:none;transition:all .25s;
+}
+.search-bar input:focus{border-color:var(--ring-data);box-shadow:0 0 0 3px rgba(6,182,212,.12)}
+.search-bar input::placeholder{color:var(--text-dim)}
+.search-bar svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
+.search-count{
+  font-family:'Fira Code',monospace;font-size:.65rem;color:var(--text-dim);
+  text-align:center;margin-top:8px;height:16px;
+}
+
+/* ===== STATS ===== */
+.stats-row{
+  display:flex;justify-content:center;gap:32px;padding:18px 24px 8px;flex-wrap:wrap;
+}
+.stat{text-align:center}
+.stat-num{
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.5rem;color:var(--white);
+  line-height:1;
+}
+.stat-label{
+  font-family:'Fira Code',monospace;font-size:.6rem;color:var(--text-dim);
+  text-transform:uppercase;letter-spacing:.12em;margin-top:2px;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-layout{
+  max-width:100%;margin:0 auto;padding:20px 2%;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+
+/* ===== CONCENTRIC RINGS (Hero) ===== */
+.rings-section{
+  display:flex;justify-content:center;align-items:flex-end;
+  padding:10px 0 0;position:relative;overflow:hidden;
+  min-height:560px;
+}
+
+.rings-container{
+  position:relative;width:96%;max-width:1400px;height:560px;
+}
+
+.ring{
+  position:absolute;border-radius:50%;cursor:pointer;
+  transition:all .35s cubic-bezier(.23,1,.32,1);
+  border:2px solid transparent;
+  display:flex;align-items:flex-start;justify-content:center;
+}
+.ring::before{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  transition:all .35s;opacity:.12;
+}
+.ring:hover::before{opacity:.22}
+.ring.active{border-color:currentColor}
+.ring.active::before{opacity:.25}
+.ring.dimmed{opacity:.35}
+
+.ring-label{
+  position:absolute;
+  font-family:'Chakra Petch',sans-serif;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.7);
+  pointer-events:none;white-space:nowrap;
+  transition:all .3s;
+  padding:3px 10px;border-radius:4px;
+}
+.ring.active .ring-label{
+  background:rgba(0,0,0,.5);
+}
+
+/* Ring click indicator */
+.ring-click-hint{
+  position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+  font-family:'Fira Code',monospace;font-size:.6rem;color:var(--text-dim);
+  opacity:.6;animation:fadeInUp .8s ease .5s both;pointer-events:none;
+}
+@keyframes fadeInUp{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:.6;transform:translateX(-50%) translateY(0)}}
+
+/* Pillar labels on sides */
+.pillar-side-label{
+  position:absolute;top:50%;
+  font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:.7rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);
+  writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);
+  pointer-events:none;opacity:.5;
+}
+.pillar-side-label.left{left:-10px}
+.pillar-side-label.right{right:-10px;transform:translateY(-50%) rotate(0deg)}
+
+/* ===== DETAIL PANEL ===== */
+.detail-panel{
+  max-width:100%;margin:0 auto;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  max-height:0;opacity:0;
+  transition:max-height .5s cubic-bezier(.23,1,.32,1),opacity .4s,margin .4s;
+  margin-top:0;
+}
+.detail-panel.open{
+  max-height:2000px;opacity:1;margin-top:24px;
+}
+
+.detail-header{
+  padding:24px 28px 16px;display:flex;align-items:center;gap:14px;
+  border-bottom:1px solid var(--border);
+}
+.detail-icon{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.detail-title{
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.2rem;
+  color:var(--white);letter-spacing:.02em;
+}
+.detail-subtitle{
+  font-size:.78rem;color:var(--text-dim);margin-top:2px;line-height:1.4;
+}
+.detail-close{
+  margin-left:auto;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--text-dim);transition:all .2s;flex-shrink:0;
+}
+.detail-close:hover{background:rgba(255,255,255,.1);color:var(--white)}
+
+.detail-techs{
+  padding:20px 28px 28px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+@media(max-width:1100px){.detail-techs{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.detail-techs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.detail-techs{grid-template-columns:1fr}}
+
+.tech-card{
+  background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;padding:16px 18px;
+  transition:all .25s;position:relative;overflow:hidden;cursor:default;
+}
+.tech-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--accent);opacity:0;transition:opacity .25s;
+}
+.tech-card:hover{
+  background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);
+  transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);
+}
+.tech-card:hover::before{opacity:1}
+
+.tech-name{
+  font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:.88rem;
+  color:var(--white);margin-bottom:6px;display:flex;align-items:center;gap:8px;
+}
+.tech-dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+}
+.tech-desc{
+  font-size:.76rem;color:var(--text-dim);line-height:1.45;
+}
+.tech-tags{
+  display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;
+}
+.tech-tag{
+  font-family:'Fira Code',monospace;font-size:.58rem;
+  padding:2px 8px;border-radius:20px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  color:var(--text-dim);
+}
+
+/* ===== PILLARS SECTION ===== */
+.pillars-section{
+  max-width:100%;margin:32px auto 0;padding:0 2%;
+}
+.section-title{
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1rem;
+  color:var(--white);letter-spacing:.05em;text-transform:uppercase;
+  margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.section-title .line{flex:1;height:1px;background:var(--border)}
+
+.pillars-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;
+}
+
+.pillar-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:16px;
+  overflow:hidden;transition:all .3s;
+}
+.pillar-card:hover{border-color:var(--border-light);transform:translateY(-2px)}
+
+.pillar-header{
+  padding:18px 20px 12px;display:flex;align-items:center;gap:10px;
+  cursor:pointer;user-select:none;
+}
+.pillar-icon{
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:.75rem;color:#fff;
+  flex-shrink:0;
+}
+.pillar-name{
+  font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:.88rem;
+  color:var(--white);flex:1;
+}
+.pillar-count{
+  font-family:'Fira Code',monospace;font-size:.6rem;color:var(--text-dim);
+  background:rgba(255,255,255,.04);padding:3px 10px;border-radius:20px;
+}
+.pillar-chevron{
+  width:18px;height:18px;color:var(--text-dim);transition:transform .3s;flex-shrink:0;
+}
+.pillar-card.open .pillar-chevron{transform:rotate(180deg)}
+
+.pillar-desc{
+  font-size:.74rem;color:var(--text-dim);padding:0 20px 10px;line-height:1.4;
+}
+
+.pillar-items{
+  padding:0 14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s,opacity .3s;opacity:0;
+}
+.pillar-card.open .pillar-items{max-height:800px;padding:4px 14px 18px;opacity:1}
+
+.pillar-item{
+  background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);
+  border-radius:10px;padding:10px 12px;transition:all .2s;
+}
+.pillar-item:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)}
+.pillar-item-name{
+  font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:.76rem;color:var(--white);margin-bottom:3px;
+}
+.pillar-item-desc{font-size:.68rem;color:var(--text-dim);line-height:1.35}
+
+/* ===== CROSS-CUTTING ===== */
+.crosscut-section{
+  max-width:100%;margin:28px auto 0;padding:0 2%;
+}
+.crosscut-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;
+}
+.crosscut-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:16px;
+  padding:20px;transition:all .3s;position:relative;overflow:hidden;
+}
+.crosscut-card:hover{border-color:var(--border-light)}
+.crosscut-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:.6;
+}
+.crosscut-card.cc-zt::before{background:linear-gradient(90deg,var(--ring-data),var(--ring-identity))}
+.crosscut-card.cc-ai::before{background:linear-gradient(90deg,var(--ring-cloud),var(--ring-human))}
+.crosscut-card.cc-auto::before{background:linear-gradient(90deg,var(--ring-app),var(--ring-endpoint))}
+
+.cc-title{
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:.9rem;
+  margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.cc-zt .cc-title{color:var(--ring-data)}
+.cc-ai .cc-title{color:var(--ring-cloud)}
+.cc-auto .cc-title{color:var(--ring-app)}
+
+.cc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cc-tag{
+  font-size:.7rem;font-weight:500;padding:5px 12px;border-radius:20px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  color:var(--text);transition:all .2s;cursor:default;
+}
+.cc-tag:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+
+/* ===== FOOTER ===== */
+.footer-section{
+  max-width:100%;margin:36px auto 0;padding:0 2% 48px;text-align:center;
+}
+.fw-label{
+  font-family:'Fira Code',monospace;font-size:.6rem;color:var(--text-dim);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;
+}
+.fw-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.fw-pill{
+  font-family:'Fira Code',monospace;font-size:.62rem;font-weight:500;
+  padding:6px 16px;border-radius:24px;border:1px solid var(--border);
+  color:var(--text-dim);background:rgba(255,255,255,.015);transition:all .2s;
+}
+.fw-pill:hover{background:rgba(255,255,255,.04);border-color:var(--border-light)}
+
+.footer-credit{
+  margin-top:20px;font-family:'Fira Code',monospace;font-size:.58rem;
+  color:#2a3360;letter-spacing:.08em;
+}
+.footer-copyright{
+  margin-top:10px;font-family:'Fira Code',monospace;font-size:.62rem;
+  color:var(--text-dim);letter-spacing:.06em;
+}
+.footer-copyright strong{color:var(--ring-data)}
+.footer-copyright a{color:var(--ring-identity);text-decoration:none;border-bottom:1px solid rgba(59,130,246,.3);transition:all .2s}
+.footer-copyright a:hover{color:var(--white);border-bottom-color:var(--white)}
+
+/* ===== NAV DOTS ===== */
+.ring-nav{
+  display:flex;flex-direction:column;gap:6px;
+  position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:50;
+}
+.ring-nav-dot{
+  width:10px;height:10px;border-radius:50%;border:1.5px solid var(--text-dim);
+  background:transparent;cursor:pointer;transition:all .25s;position:relative;
+}
+.ring-nav-dot:hover{border-color:var(--white);transform:scale(1.3)}
+.ring-nav-dot.active{border-color:currentColor;background:currentColor}
+.ring-nav-dot .nav-tip{
+  position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-family:'Chakra Petch',sans-serif;font-size:.65rem;font-weight:500;
+  color:var(--white);background:var(--surface2);border:1px solid var(--border);
+  padding:4px 12px;border-radius:6px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.ring-nav-dot:hover .nav-tip{opacity:1}
+
+/* ===== SEARCH HIGHLIGHTING ===== */
+.tech-card.search-match{border-color:rgba(6,182,212,.4);background:rgba(6,182,212,.06)}
+.tech-card.search-hidden{display:none}
+.pillar-item.search-match{border-color:rgba(6,182,212,.4);background:rgba(6,182,212,.06)}
+.pillar-item.search-hidden{display:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:860px){
+  .rings-container{width:100%;height:400px}
+  .ring-label{font-size:.55rem!important}
+  .pillar-items{grid-template-columns:1fr}
+  .pillar-side-label{display:none}
+  .ring-nav{display:none}
+  .stats-row{gap:18px}
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes ringAppear{
+  from{opacity:0;transform:translate(-50%,0) scale(.92)}
+  to{opacity:1;transform:translate(-50%,0) scale(1)}
+}
+.ring{animation:ringAppear .6s cubic-bezier(.23,1,.32,1) both}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge"><span class="pulse"></span> Interactive Framework — Click rings to explore</div>
+  <h1><em>Defense-in-Depth</em> 2025</h1>
+  <p class="tagline">A comprehensive layered cybersecurity framework for the modern enterprise. Click any ring to explore its technologies.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat"><div class="stat-num" id="statLayers">0</div><div class="stat-label">Defence Layers</div></div>
+  <div class="stat"><div class="stat-num" id="statTechs">0</div><div class="stat-label">Technologies</div></div>
+  <div class="stat"><div class="stat-num" id="statPillars">0</div><div class="stat-label">Supporting Pillars</div></div>
+  <div class="stat"><div class="stat-num" id="statFrameworks">0</div><div class="stat-label">Frameworks Aligned</div></div>
+</div>
+
+<!-- MAIN -->
+<div class="main-layout">
+  <!-- RINGS -->
+  <div class="rings-section">
+    <div class="rings-container" id="ringsContainer">
+      <div class="pillar-side-label left">Governance & Risk</div>
+      <div class="pillar-side-label right">Detection & Response</div>
+
+    </div>
+  </div>
+
+  <!-- DETAIL PANEL -->
+  <div class="detail-panel" id="detailPanel">
+    <div class="detail-header">
+      <div class="detail-icon" id="detailIcon"></div>
+      <div>
+        <div class="detail-title" id="detailTitle"></div>
+        <div class="detail-subtitle" id="detailSubtitle"></div>
+      </div>
+      <div class="detail-close" id="detailClose" title="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </div>
+    </div>
+    <div class="detail-techs" id="detailTechs"></div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<div class="pillars-section">
+  <div class="section-title"><span>Supporting Pillars</span><span class="line"></span></div>
+  <div class="pillars-grid" id="pillarsGrid"></div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-section">
+  <div class="fw-label">Aligned With Industry Frameworks &amp; Standards</div>
+  <div class="fw-pills" id="fwPills"></div>
+  <div class="footer-credit">Defense-in-Depth Framework 2025 — Inspired by Northrop Grumman DiD Fan (2010) — Reimagined for Zero Trust Era</div>
+  <div class="footer-copyright">© 2025 <strong>Chintan 'Frogy' Gurjar</strong> — <a href="https://chintangurjar.com" target="_blank" rel="noopener">chintangurjar.com</a></div>
+</div>
+
+<!-- NAV DOTS -->
+<div class="ring-nav" id="ringNav"></div>
+
+<script>
+// ============================================================
+//  DATA — Layers (outermost → innermost)
+// ============================================================
+const layers = [
+  {
+    id:'threat',emoji:'⚡',color:'#ef4444',
+    title:'Outside Threat Landscape',
+    desc:'The evolving adversarial environment — nation-state actors, cybercriminal syndicates, AI-driven attacks, and emerging threat vectors targeting every layer.',
+    techs:[
+      {name:'Nation-State APTs',desc:'Sophisticated persistent campaigns from state-sponsored actors targeting critical infrastructure, defence, and IP.',tags:['MITRE ATT&CK','Threat Intel']},
+      {name:'Ransomware-as-a-Service',desc:'Commoditised ransomware with affiliate models, double/triple extortion, data leak sites, and initial access brokers.',tags:['RaaS','Extortion']},
+      {name:'AI-Powered Attacks',desc:'Adversarial AI, deepfake voice/video phishing, LLM-driven social engineering, polymorphic malware, and automated recon.',tags:['GenAI','Deepfake']},
+      {name:'Supply Chain Attacks',desc:'Compromising software dependencies, CI/CD pipelines, open-source packages, and MSP/MSSP vendor access.',tags:['SolarWinds','MOVEit']},
+      {name:'Zero-Day Exploits',desc:'Exploitation of unknown vulnerabilities traded in dark markets and used by state actors before patches exist.',tags:['CVE','0-day']},
+      {name:'Insider Threats',desc:'Malicious or negligent insiders with privileged access causing data exfiltration, sabotage, or fraud.',tags:['UBA','Insider Risk']},
+      {name:'Hacktivism & DDoS',desc:'Ideologically motivated attacks, DDoS-for-hire services, and coordinated disruption campaigns.',tags:['DDoS','Disruption']},
+    ]
+  },
+  {
+    id:'human',emoji:'👤',color:'#ec4899',
+    title:'Human Layer Security',
+    desc:'People are both the strongest asset and the weakest link. This layer focuses on building a security-first culture and defending against social engineering.',
+    techs:[
+      {name:'Security Awareness Training',desc:'Continuous, adaptive training programmes with phishing simulations, gamification, and role-based content.',tags:['Phishing Sim','KnowBe4']},
+      {name:'Social Engineering Defence',desc:'Vishing, smishing, pretexting, and BEC defence through verification protocols and awareness.',tags:['BEC','Vishing']},
+      {name:'Security Champions Programme',desc:'Embedding security advocates across business units to drive secure-by-design culture.',tags:['Culture','DevSec']},
+      {name:'Insider Threat Programme',desc:'Formal insider risk management with behavioural analytics, access monitoring, and HR integration.',tags:['UEBA','Insider Risk']},
+      {name:'Executive Protection',desc:'Targeted protection for C-suite — digital footprint reduction, travel security, impersonation monitoring.',tags:['VIP','Digital Risk']},
+      {name:'Board-Level Cyber Literacy',desc:'Cyber risk education for boards and leadership, enabling informed governance and risk appetite decisions.',tags:['Governance','Board']},
+      {name:'🤖 AI Security & Governance',desc:'LLM guardrails, AI red teaming, adversarial ML defence, AI-powered SOC copilot, deepfake detection, AI governance framework, prompt injection prevention, model security & SBOM, shadow AI discovery, and responsible AI policies.',tags:['Deepfake','LLM Guardrails','Prompt Injection']},
+    ]
+  },
+  {
+    id:'cloud',emoji:'☁️',color:'#a855f7',
+    title:'Cloud & Edge Security',
+    desc:'Securing multi-cloud, hybrid, and edge computing environments with cloud-native security controls and posture management.',
+    techs:[
+      {name:'CNAPP',desc:'Cloud-Native Application Protection Platform — unified CSPM + CWPP + CIEM + IaC scanning in a single platform.',tags:['Wiz','Prisma Cloud']},
+      {name:'CSPM',desc:'Cloud Security Posture Management — continuous detection of misconfigurations across AWS, Azure, GCP.',tags:['Posture','Compliance']},
+      {name:'CWPP',desc:'Cloud Workload Protection — runtime security for VMs, containers, serverless functions, and K8s clusters.',tags:['Runtime','Containers']},
+      {name:'CASB',desc:'Cloud Access Security Broker — SaaS visibility, shadow IT discovery, DLP, and conditional access controls.',tags:['SaaS','Shadow IT']},
+      {name:'SSPM',desc:'SaaS Security Posture Management — continuously assessing SaaS app configurations, permissions, and compliance.',tags:['SaaS Config','Drift']},
+      {name:'Container & K8s Security',desc:'Image scanning, admission controllers, service mesh security, runtime protection, and CIS benchmarks for K8s.',tags:['Docker','Kubernetes']},
+      {name:'CIEM',desc:'Cloud Infrastructure Entitlement Management — right-sizing excessive permissions and enforcing least privilege.',tags:['IAM','Permissions']},
+      {name:'Edge & IoT Cloud',desc:'Securing edge nodes, IoT gateways, CDN edge, and distributed cloud instances.',tags:['Edge','CDN']},
+    ]
+  },
+  {
+    id:'perimeter',emoji:'🛡️',color:'#f43f5e',
+    title:'Perimeter & Zero Trust Access',
+    desc:'The modern perimeter is identity-defined. Zero Trust Network Access replaces traditional castle-and-moat with continuous verification at every access point.',
+    techs:[
+      {name:'SASE / SSE',desc:'Secure Access Service Edge — converged SD-WAN + SWG + CASB + ZTNA delivered as a cloud service.',tags:['Zscaler','Netskope']},
+      {name:'ZTNA',desc:'Zero Trust Network Access — identity-based, context-aware, least-privilege access replacing legacy VPNs.',tags:['Zero Trust','BeyondCorp']},
+      {name:'Secure Web Gateway (SWG)',desc:'Inline web traffic inspection, URL filtering, malware scanning, and TLS/SSL interception.',tags:['Web Filter','Proxy']},
+      {name:'Next-Gen Firewall (NGFW)',desc:'Application-aware firewalls with IPS, threat intel feeds, TLS inspection, sandboxing, and IoT profiling.',tags:['Palo Alto','Fortinet']},
+      {name:'DDoS Mitigation',desc:'Cloud-scale scrubbing, rate limiting, and anycast-based absorption (Cloudflare, AWS Shield, Akamai).',tags:['L3/L4/L7','Scrubbing']},
+      {name:'Email Security Gateway',desc:'AI-based BEC detection, DMARC/DKIM/SPF, sandboxing, URL rewriting, and impersonation protection.',tags:['Anti-Phishing','BEC']},
+      {name:'Microsegmentation',desc:'Workload-level network segmentation reducing lateral movement with identity-aware policies.',tags:['Illumio','Guardicore']},
+      {name:'🎯 Zero Trust Architecture',desc:'Never Trust, Always Verify — continuous validation at every access point, least privilege everywhere, identity-centric access, assume breach posture, context-aware policies, and software-defined perimeter per NIST SP 800-207.',tags:['Never Trust','Assume Breach','NIST 800-207']},
+    ]
+  },
+  {
+    id:'network',emoji:'🌐',color:'#f97316',
+    title:'Network Security',
+    desc:'Network-layer visibility, segmentation, encrypted traffic analysis, and specialised IoT/OT network monitoring.',
+    techs:[
+      {name:'NDR',desc:'Network Detection & Response — ML-driven analysis of network flows, metadata, and packets for threat detection.',tags:['Darktrace','Vectra']},
+      {name:'DNS Security',desc:'Protective DNS, DNSSEC, DNS-over-HTTPS/TLS, and DNS filtering to block C2 and phishing at the DNS layer.',tags:['DNS Filter','DoH/DoT']},
+      {name:'Network Visibility (TAP/SPAN)',desc:'Full packet capture, network traffic mirroring, and visibility fabric for forensic analysis and NDR.',tags:['Packet Capture','PCAP']},
+      {name:'SD-WAN Security',desc:'Encrypted overlay tunnels, traffic segmentation, application-aware routing, and integrated security stack.',tags:['SDWAN','Overlay']},
+      {name:'Encrypted Traffic Analysis',desc:'ML-based inspection of TLS-encrypted flows without decryption — fingerprinting, JA3/JA4, and behavioural analysis.',tags:['ETA','JA3/JA4']},
+      {name:'NAC (802.1X)',desc:'Network Access Control with device profiling, posture checks, and policy-based admission/quarantine.',tags:['802.1X','Posture']},
+      {name:'IoT / OT Network Security',desc:'Protocol-aware monitoring for ICS/SCADA, Purdue Model segmentation, and OT asset discovery.',tags:['ICS','SCADA']},
+      {name:'Network Firewall & IPS',desc:'Stateful inspection, signature + anomaly-based IPS, and geo-IP blocking at network boundaries.',tags:['IPS','Stateful']},
+    ]
+  },
+  {
+    id:'endpoint',emoji:'💻',color:'#eab308',
+    title:'Endpoint Security',
+    desc:'Advanced detection, response, and hardening across workstations, servers, mobile devices, IoT, and OT endpoints.',
+    techs:[
+      {name:'EDR / XDR',desc:'Endpoint/Extended Detection & Response — behavioural telemetry, threat correlation, automated containment, and forensics.',tags:['CrowdStrike','SentinelOne']},
+      {name:'Mobile Threat Defense (MTD)',desc:'Mobile device posture, app vetting, on-device network protection, and anti-phishing for iOS/Android.',tags:['MDM','MTD']},
+      {name:'Remote Browser Isolation',desc:'RBI — rendering web content in isolated cloud containers to prevent browser-based exploits and drive-by downloads.',tags:['RBI','Isolation']},
+      {name:'Patch & Vulnerability Mgmt',desc:'Risk-prioritised, automated patching of OS, applications, and firmware with CVSS/EPSS-based prioritisation.',tags:['EPSS','Auto-Patch']},
+      {name:'Device Trust & Posture',desc:'Continuous health checks (OS version, encryption, EDR status) as a real-time Zero Trust access signal.',tags:['Posture','ZT Signal']},
+      {name:'IoT / OT Endpoint Protection',desc:'Lightweight agents for IoT devices, industrial PLCs, medical devices, and operational technology assets.',tags:['IoT Agent','OT']},
+      {name:'VDI / DaaS',desc:'Secure virtual desktops and Desktop-as-a-Service with centralised data control and session watermarking.',tags:['Citrix','AVD']},
+    ]
+  },
+  {
+    id:'app',emoji:'⚙️',color:'#22c55e',
+    title:'Application Security',
+    desc:'Shift-left security embedded into the entire SDLC through DevSecOps practices, runtime protection, and supply chain integrity.',
+    techs:[
+      {name:'DevSecOps / CI-CD Gates',desc:'Security integrated into CI/CD pipelines — automated scanning, policy-as-code, approval gates, and shift-left workflows.',tags:['GitLab','GitHub Actions']},
+      {name:'SAST / DAST / IAST',desc:'Static, Dynamic, and Interactive Application Security Testing for code-time and runtime vulnerability detection.',tags:['Snyk','Checkmarx']},
+      {name:'API Security',desc:'API discovery, schema validation, rate limiting, broken auth detection, and runtime API threat protection.',tags:['OWASP API','42Crunch']},
+      {name:'SCA (Composition Analysis)',desc:'Open-source dependency scanning for known CVEs, licence risks, and transitive vulnerability chains.',tags:['Snyk','Dependabot']},
+      {name:'WAF / WAAP',desc:'Web Application Firewall & API Protection — OWASP Top 10 defence, bot management, and L7 DDoS.',tags:['Cloudflare','AWS WAF']},
+      {name:'RASP',desc:'Runtime Application Self-Protection — in-app agents blocking injection, serialisation, and other attacks in real-time.',tags:['In-App','Runtime']},
+      {name:'SBOM Management',desc:'Software Bill of Materials for full component transparency, vulnerability tracking, and supply chain compliance.',tags:['CycloneDX','SPDX']},
+      {name:'Secrets Management',desc:'Vault-based secrets storage, rotation, dynamic credentials, and prevention of hardcoded secrets in code.',tags:['HashiCorp','CyberArk']},
+      {name:'⚡ Security-as-Code',desc:'Automation & Orchestration — Policy-as-Code, IaC scanning, automated remediation, ChatOps security, continuous validation, exposure management, and breach & attack simulation.',tags:['Policy-as-Code','Purple Team','BAS']},
+      {name:'Secrets Management',desc:'Vault-based secrets storage, rotation, dynamic credentials, and prevention of hardcoded secrets in code.',tags:['HashiCorp','CyberArk']},
+    ]
+  },
+  {
+    id:'data',emoji:'🔐',color:'#06b6d4',
+    title:'Data Security & Privacy',
+    desc:'Protecting data at rest, in transit, and in use with modern encryption, classification, privacy engineering, and data governance.',
+    techs:[
+      {name:'DLP (AI-Powered)',desc:'Data Loss Prevention with AI content inspection, context-aware policies across cloud, endpoints, and SaaS.',tags:['Content Inspect','Exact Match']},
+      {name:'Data Classification',desc:'Automated ML-driven data discovery, classification, labelling, and sensitivity-based access controls.',tags:['Auto-Label','Discovery']},
+      {name:'Encryption & Key Mgmt',desc:'E2E encryption, HSMs, KMS, BYOK/HYOK, post-quantum crypto readiness, and certificate lifecycle management.',tags:['PQC','HSM']},
+      {name:'DSPM',desc:'Data Security Posture Management — finding and securing sensitive data across cloud, SaaS, and on-prem stores.',tags:['Data Posture','Discovery']},
+      {name:'Privacy Engineering',desc:'GDPR/CCPA/DPDPA compliance tooling, consent management, DSARs, PIAs, and anonymisation/pseudonymisation.',tags:['GDPR','DPDPA']},
+      {name:'Backup & Cyber Resilience',desc:'Immutable backups, air-gapped vaults, ransomware-proof recovery, and data resilience orchestration.',tags:['Immutable','Air-Gap']},
+      {name:'Database Security',desc:'Database activity monitoring, masking, tokenisation, and privileged query controls.',tags:['DAM','Masking']},
+    ]
+  },
+  {
+    id:'identity',emoji:'🔑',color:'#3b82f6',
+    title:'Identity & Access Management',
+    desc:'Identity is the new perimeter and the foundation of Zero Trust. Robust authentication, authorisation, and identity governance for humans and machines.',
+    techs:[
+      {name:'IAM / IGA',desc:'Identity lifecycle management, access certification, RBAC/ABAC, and automated provisioning/deprovisioning.',tags:['SailPoint','Okta']},
+      {name:'PAM',desc:'Privileged Access Management — credential vaulting, JIT/JEA access, session recording, and privilege elevation.',tags:['CyberArk','BeyondTrust']},
+      {name:'MFA / Passwordless',desc:'Phishing-resistant FIDO2 passkeys, platform authenticators, biometrics, and adaptive risk-based MFA.',tags:['FIDO2','Passkeys']},
+      {name:'SSO / Federation',desc:'SAML 2.0, OpenID Connect, cross-domain federation, and seamless authentication across cloud and on-prem.',tags:['OIDC','SAML']},
+      {name:'ITDR',desc:'Identity Threat Detection & Response — detecting credential theft, MFA fatigue, token abuse, and Kerberoasting.',tags:['Identity SOC','MFA Fatigue']},
+      {name:'Non-Human Identity Mgmt',desc:'Machine identities — API keys, service accounts, certificates, workload identity (SPIFFE/SPIRE), and secrets rotation.',tags:['Machine ID','SPIFFE']},
+    ]
+  },
+  {
+    id:'assets',emoji:'💎',color:'#6366f1',
+    title:'Mission Critical Assets',
+    desc:'The crown jewels at the core — the data, systems, intellectual property, and business processes that the entire architecture exists to protect.',
+    techs:[
+      {name:'Critical Data & IP',desc:'Trade secrets, customer PII, financial records, source code, proprietary algorithms, and regulated data.',tags:['Crown Jewels','PII']},
+      {name:'Core Business Applications',desc:'ERP, CRM, HRMS, core banking, and revenue-generating systems driving daily operations.',tags:['SAP','Salesforce']},
+      {name:'Production Infrastructure',desc:'Production servers, databases, core networking, DNS, Active Directory, and PKI infrastructure.',tags:['AD','PKI']},
+      {name:'Operational Technology',desc:'ICS/SCADA, manufacturing execution systems, building management, and critical infrastructure operations.',tags:['ICS','OT/IT']},
+      {name:'AI Models & Training Data',desc:'Proprietary ML models, training datasets, inference pipelines, and AI intellectual property.',tags:['ML Ops','Model IP']},
+    ]
+  },
+];
+
+// ============================================================
+//  DATA — Supporting Pillars
+// ============================================================
+const pillars = [
+  {
+    id:'gov',color:'#10b981',icon:'G',
+    title:'Governance, Risk & Compliance',
+    desc:'Strategic governance, risk quantification, and regulatory compliance underpinning all security decisions and investments.',
+    items:[
+      {name:'Security Architecture & Design',desc:'Threat modelling (STRIDE/PASTA/LINDDUN), reference architectures, and secure design patterns.'},
+      {name:'GRC Automation Platform',desc:'Automated policy management, audit evidence collection, control mapping, and risk register management.'},
+      {name:'Frameworks (NIST/ISO/CIS)',desc:'NIST CSF 2.0, ISO 27001:2022, CIS Controls v8, COBIT 2019, and MITRE ATT&CK-aligned defence.'},
+      {name:'Cyber Risk Quantification',desc:'FAIR methodology, Monte Carlo simulations, translating cyber risk into financial impact for leadership.'},
+      {name:'Third-Party Risk (TPRM)',desc:'Vendor assessments, SIG/CAIQ questionnaires, continuous monitoring, and supply chain risk scoring.'},
+      {name:'Compliance Automation',desc:'Continuous compliance for SOC2, PCI-DSS 4.0, HIPAA, FedRAMP, DORA, NIS2, and DPDPA.'},
+      {name:'Cyber Insurance',desc:'Policy alignment, underwriting requirements, coverage gap analysis, and incident cost modelling.'},
+      {name:'Security Metrics & KPIs',desc:'MTTD/MTTR tracking, risk reduction metrics, patching SLA compliance, and board-level dashboards.'},
+    ]
+  },
+  {
+    id:'ops',color:'#3b82f6',icon:'D',
+    title:'Security Operations (SecOps)',
+    desc:'AI-driven detection, automated response, threat hunting, and 24×7 security operations capabilities.',
+    items:[
+      {name:'Next-Gen SIEM',desc:'Cloud-native SIEM with UEBA, ML analytics, massive-scale ingestion, and hot/cold tiered storage.'},
+      {name:'SOAR',desc:'Security Orchestration, Automation & Response — playbooks, case management, and cross-tool integration.'},
+      {name:'XDR Platform',desc:'Unified detection and response correlating endpoint, network, cloud, email, and identity telemetry.'},
+      {name:'MDR / MXDR',desc:'Managed Detection & Response — outsourced 24×7 SOC with expert analysts and guided remediation.'},
+      {name:'Threat Intelligence (CTI)',desc:'Aggregated feeds, IOC management, MITRE ATT&CK mapping, strategic + tactical intel, and dark web monitoring.'},
+      {name:'Proactive Threat Hunting',desc:'Hypothesis-driven hunting using behavioural analytics, anomaly detection, and adversary emulation.'},
+      {name:'Incident Response (CIRT)',desc:'IR retainers, playbooks, forensic analysis, containment, eradication, and post-incident reviews.'},
+      {name:'Attack Surface Mgmt (ASM)',desc:'External ASM, digital risk protection, brand monitoring, exposed credential detection, and dark web alerts.'},
+    ]
+  },
+  {
+    id:'resil',color:'#f59e0b',icon:'R',
+    title:'Resilience, Recovery & Continuity',
+    desc:'Ensuring business continuity and rapid recovery from cyber incidents through planning, testing, and resilient architectures.',
+    items:[
+      {name:'Business Continuity (BCP)',desc:'BIA, recovery strategies, alternate site planning, and continuity of critical business functions.'},
+      {name:'Disaster Recovery (DRP)',desc:'RTO/RPO-driven recovery, automated failover, cross-region replication, and DR testing cadence.'},
+      {name:'Ransomware Recovery',desc:'Immutable backup validation, isolated recovery environments, decryption negotiation, and clean-room rebuilds.'},
+      {name:'Crisis Management',desc:'Crisis communication plans, war room protocols, stakeholder notification, and media handling procedures.'},
+      {name:'Chaos Engineering',desc:'Proactive resilience testing through controlled failure injection to validate recovery capabilities.'},
+      {name:'Cyber Resilience Testing',desc:'Tabletop exercises, red/blue/purple team engagements, and full-scale breach simulation drills.'},
+    ]
+  },
+  {
+    id:'phys',color:'#8b5cf6',icon:'P',
+    title:'Physical & Environmental Security',
+    desc:'Physical access controls, environmental protection, and convergence of cyber-physical security in modern hybrid environments.',
+    items:[
+      {name:'Physical Access Control',desc:'Badge readers, biometric scanners, mantraps, visitor management, and PACS integration with IAM.'},
+      {name:'Video Surveillance (CCTV)',desc:'AI-powered video analytics, facial recognition (where permitted), and tamper detection.'},
+      {name:'Data Centre Security',desc:'Cage locks, environmental monitoring (HVAC, fire suppression, water leak), and UPS/generator controls.'},
+      {name:'Secure Disposal',desc:'Certified media destruction, degaussing, and chain-of-custody documentation for hardware decommissioning.'},
+      {name:'Cyber-Physical Convergence',desc:'Unified security operations centre monitoring both cyber and physical threats in converged environments.'},
+      {name:'Supply Chain Physical Security',desc:'Tamper-evident packaging, hardware integrity verification, and trusted manufacturing programmes.'},
+    ]
+  }
+];
+
+// ============================================================
+//  DATA — Cross-cutting
+// ============================================================
+const crossCutting = [
+  {
+    cls:'cc-zt',title:'🎯 Zero Trust Architecture',
+    tags:['Never Trust, Always Verify','Least Privilege Everywhere','Continuous Validation','Identity-Centric Access','Microsegmentation','Assume Breach Posture','Context-Aware Policies','NIST SP 800-207','Software-Defined Perimeter']
+  },
+  {
+    cls:'cc-ai',title:'🤖 AI Security & Governance',
+    tags:['LLM Guardrails','AI Red Teaming','Adversarial ML Defence','AI-Powered SOC Copilot','Deepfake Detection','AI Governance Framework','Prompt Injection Prevention','Model Security & SBOM','Shadow AI Discovery','Responsible AI Policies']
+  },
+  {
+    cls:'cc-auto',title:'⚡ Automation & Orchestration',
+    tags:['Security-as-Code','Policy-as-Code','Infrastructure-as-Code Scanning','Automated Remediation','ChatOps Security','Continuous Validation','Exposure Management','Breach & Attack Simulation','Purple Team Automation']
+  },
+];
+
+const frameworks = [
+  'NIST CSF 2.0','MITRE ATT&CK','ISO 27001:2022','CIS Controls v8',
+  'NIST 800-207 (Zero Trust)','OWASP Top 10 (2025)','DORA','NIS2 Directive',
+  'SOC 2 Type II','PCI-DSS 4.0','HIPAA','COBIT 2019'
+];
+
+// ============================================================
+//  RENDER — Concentric Rings
+// ============================================================
+const ringsContainer = document.getElementById('ringsContainer');
+const totalLayers = layers.length;
+let activeRing = null;
+
+// Ring sizing — outermost (threat) largest, innermost (assets) smallest
+// We use CSS half-circles (semicircles) stacked concentrically
+// Responsive: size based on actual container
+const containerEl = ringsContainer;
+const maxW = Math.min(containerEl.offsetWidth || 1300, 1300);
+const maxH = Math.min(containerEl.offsetHeight || 560, 560);
+const ringStep = maxW / (totalLayers + 0.5);
+
+layers.forEach((layer, i) => {
+  const w = maxW - i * ringStep;
+  const h = maxH - i * (maxH / (totalLayers + 0.5));
+  const ring = document.createElement('div');
+  ring.className = 'ring';
+  ring.dataset.index = i;
+  ring.style.cssText = `
+    width:${w}px; height:${h}px;
+    left:50%; bottom:0;
+    transform:translateX(-50%);
+    border-radius:${w}px ${w}px 0 0;
+    z-index:${totalLayers - i};
+    animation-delay:${i * 0.06}s;
+  `;
+  ring.style.setProperty('color', layer.color);
+
+  // Background fill
+  ring.innerHTML = `
+    <div style="position:absolute;inset:0;border-radius:${w}px ${w}px 0 0;
+      background:radial-gradient(ellipse at 50% 100%,${layer.color}18,${layer.color}08 60%,transparent 80%);
+      border:2px solid ${layer.color}30;border-bottom:none;
+      transition:all .35s;"></div>
+  `;
+
+  // Label
+  const label = document.createElement('div');
+  label.className = 'ring-label';
+  const fontSize = i === totalLayers - 1 ? .65 : Math.max(.58, .78 - i * .018);
+  label.style.cssText = `
+    top:${Math.max(6, 10 - i)}px;
+    font-size:${fontSize}rem;
+    color:${layer.color};
+  `;
+  label.textContent = `${layer.emoji} ${layer.title}`;
+  ring.appendChild(label);
+
+  // Click handler — coordinate-based to avoid DOM overlap issues
+  ring.style.pointerEvents = 'none';
+
+  ringsContainer.appendChild(ring);
+});
+
+// Single container-level click handler with math-based ring detection
+ringsContainer.addEventListener('click', (e) => {
+  const rect = ringsContainer.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.bottom; // semicircles anchor at bottom
+
+  const px = e.clientX - centerX;
+  const py = centerY - e.clientY; // upward = positive
+
+  // Only register clicks in the upper half (inside the semicircles)
+  if (py < 0) return;
+
+  // Determine which ring was clicked (innermost first)
+  let clickedIndex = null;
+  for (let i = totalLayers - 1; i >= 0; i--) {
+    const w = maxW - i * ringStep;
+    const h = maxH - i * (maxH / (totalLayers + 0.5));
+    const a = w / 2; // semi-axis x
+    const b = h;     // semi-axis y (full height for semicircle)
+    if ((px * px) / (a * a) + (py * py) / (b * b) <= 1) {
+      clickedIndex = i;
+      break; // innermost ring that contains the click
+    }
+  }
+
+  if (clickedIndex !== null) {
+    e.stopPropagation();
+    selectLayer(clickedIndex);
+  }
+});
+
+// ============================================================
+//  RENDER — Detail Panel
+// ============================================================
+const detailPanel = document.getElementById('detailPanel');
+const detailIcon = document.getElementById('detailIcon');
+const detailTitle = document.getElementById('detailTitle');
+const detailSubtitle = document.getElementById('detailSubtitle');
+const detailTechs = document.getElementById('detailTechs');
+const detailClose = document.getElementById('detailClose');
+
+function selectLayer(index) {
+  const rings = document.querySelectorAll('.ring');
+  const navDots = document.querySelectorAll('.ring-nav-dot');
+
+  if (activeRing === index) {
+    // Deselect
+    activeRing = null;
+    rings.forEach(r => { r.classList.remove('active','dimmed') });
+    navDots.forEach(d => d.classList.remove('active'));
+    detailPanel.classList.remove('open');
+    return;
+  }
+
+  activeRing = index;
+  const layer = layers[index];
+
+  // Update rings
+  rings.forEach((r, i) => {
+    r.classList.remove('active','dimmed');
+    if (i === index) r.classList.add('active');
+    else r.classList.add('dimmed');
+  });
+
+  // Update nav dots
+  navDots.forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+
+  // Update detail panel
+  detailIcon.textContent = layer.emoji;
+  detailIcon.style.background = `${layer.color}22`;
+  detailIcon.style.border = `2px solid ${layer.color}44`;
+  detailTitle.textContent = layer.title;
+  detailTitle.style.color = layer.color;
+  detailSubtitle.textContent = layer.desc;
+
+  detailTechs.innerHTML = '';
+  layer.techs.forEach((t, ti) => {
+    const card = document.createElement('div');
+    card.className = 'tech-card';
+    card.style.setProperty('--accent', layer.color);
+    card.style.animationDelay = (ti * 0.04) + 's';
+    card.dataset.search = `${t.name} ${t.desc} ${(t.tags||[]).join(' ')}`.toLowerCase();
+    card.innerHTML = `
+      <div class="tech-name"><span class="tech-dot" style="background:${layer.color}"></span>${t.name}</div>
+      <div class="tech-desc">${t.desc}</div>
+      ${t.tags ? `<div class="tech-tags">${t.tags.map(tg=>`<span class="tech-tag">${tg}</span>`).join('')}</div>` : ''}
+    `;
+    detailTechs.appendChild(card);
+  });
+
+  detailPanel.classList.add('open');
+
+  // Smooth scroll to detail
+  setTimeout(() => {
+    detailPanel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }, 100);
+}
+
+detailClose.addEventListener('click', () => selectLayer(activeRing));
+
+// ============================================================
+//  RENDER — Nav Dots
+// ============================================================
+const ringNav = document.getElementById('ringNav');
+layers.forEach((layer, i) => {
+  const dot = document.createElement('div');
+  dot.className = 'ring-nav-dot';
+  dot.style.color = layer.color;
+  dot.innerHTML = `<div class="nav-tip">${layer.emoji} ${layer.title}</div>`;
+  dot.addEventListener('click', () => selectLayer(i));
+  ringNav.appendChild(dot);
+});
+
+// ============================================================
+//  RENDER — Pillars
+// ============================================================
+const pillarsGrid = document.getElementById('pillarsGrid');
+pillars.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'pillar-card';
+  card.innerHTML = `
+    <div class="pillar-header">
+      <div class="pillar-icon" style="background:${p.color}">${p.icon}</div>
+      <div class="pillar-name">${p.title}</div>
+      <div class="pillar-count">${p.items.length}</div>
+      <svg class="pillar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="pillar-desc">${p.desc}</div>
+    <div class="pillar-items">
+      ${p.items.map(it => `
+        <div class="pillar-item" data-search="${it.name.toLowerCase()} ${it.desc.toLowerCase()}">
+          <div class="pillar-item-name">${it.name}</div>
+          <div class="pillar-item-desc">${it.desc}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  card.querySelector('.pillar-header').addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+  pillarsGrid.appendChild(card);
+});
+
+// ============================================================
+//  RENDER — Frameworks
+// ============================================================
+const fwPills = document.getElementById('fwPills');
+frameworks.forEach(f => {
+  const pill = document.createElement('span');
+  pill.className = 'fw-pill';
+  pill.textContent = f;
+  fwPills.appendChild(pill);
+});
+
+// ============================================================
+//  STATS (animated counters)
+// ============================================================
+function animateCount(el, target, duration=1000) {
+  let start = 0;
+  const step = target / (duration / 16);
+  function update() {
+    start += step;
+    if (start >= target) { el.textContent = target; return; }
+    el.textContent = Math.floor(start);
+    requestAnimationFrame(update);
+  }
+  update();
+}
+
+const totalTechs = layers.reduce((s,l) => s + l.techs.length, 0) +
+                   pillars.reduce((s,p) => s + p.items.length, 0);
+
+setTimeout(() => {
+  animateCount(document.getElementById('statLayers'), layers.length, 800);
+  animateCount(document.getElementById('statTechs'), totalTechs, 1200);
+  animateCount(document.getElementById('statPillars'), pillars.length, 800);
+  animateCount(document.getElementById('statFrameworks'), frameworks.length, 800);
+}, 300);
+
+// ============================================================
+//  KEYBOARD NAV
+// ============================================================
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (activeRing !== null) selectLayer(activeRing);
+  }
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+    e.preventDefault();
+    const next = activeRing === null ? 0 : Math.min(activeRing + 1, layers.length - 1);
+    selectLayer(next);
+  }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+    e.preventDefault();
+    const prev = activeRing === null ? layers.length - 1 : Math.max(activeRing - 1, 0);
+    selectLayer(prev);
+  }
+});
+
+// Click outside to deselect
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.rings-container') && !e.target.closest('.detail-panel') && !e.target.closest('.ring-nav-dot')) {
+    if (activeRing !== null) {
+      const rings = document.querySelectorAll('.ring');
+      const navDots = document.querySelectorAll('.ring-nav-dot');
+      activeRing = null;
+      rings.forEach(r => r.classList.remove('active','dimmed'));
+      navDots.forEach(d => d.classList.remove('active'));
+      detailPanel.classList.remove('open');
+    }
+  }
+});
+</script>
+</body>
+</html>
