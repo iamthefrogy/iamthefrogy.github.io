@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Critical Thinker's Arsenal</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --accent-orange: #FF6B35;
+    --accent-yellow: #FFC857;
+    --accent-cyan: #00E5CC;
+    --accent-pink: #FF3C82;
+    --accent-purple: #A855F7;
+    --accent-blue: #3B82F6;
+    --text: #f0f0f0;
+    --text-dim: #8888a0;
+    --text-muted: #555566;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .poster {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 32px 60px;
+    position: relative;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-yellow));
+    border-radius: 2px;
+  }
+
+  .tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeDown 0.8s ease forwards 0.2s;
+  }
+
+  .title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #fff 0%, #ccc 50%, var(--accent-yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    animation: fadeDown 0.8s ease forwards 0.4s;
+  }
+
+  .subtitle {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--text-dim);
+    margin-top: 8px;
+    opacity: 0;
+    animation: fadeDown 0.8s ease forwards 0.6s;
+  }
+
+  /* ===== MANTRA STRIP ===== */
+  .mantra-strip {
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink), var(--accent-purple));
+    padding: 14px 20px;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    letter-spacing: 4px;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeDown 0.8s ease forwards 0.8s;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* ===== W-QUESTIONS GRID ===== */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    padding-left: 4px;
+  }
+
+  .w-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+
+  .w-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 24px 24px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .w-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .w-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .w-card:nth-child(1)::before { background: var(--accent-orange); }
+  .w-card:nth-child(2)::before { background: var(--accent-yellow); }
+  .w-card:nth-child(3)::before { background: var(--accent-cyan); }
+  .w-card:nth-child(4)::before { background: var(--accent-pink); }
+  .w-card:nth-child(5)::before { background: var(--accent-purple); }
+  .w-card:nth-child(6)::before { background: var(--accent-blue); }
+  .w-card:nth-child(7)::before { background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink)); }
+  .w-card:nth-child(8)::before { background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue)); }
+
+  .w-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .w-card:nth-child(1) .w-letter { color: var(--accent-orange); }
+  .w-card:nth-child(2) .w-letter { color: var(--accent-yellow); }
+  .w-card:nth-child(3) .w-letter { color: var(--accent-cyan); }
+  .w-card:nth-child(4) .w-letter { color: var(--accent-pink); }
+  .w-card:nth-child(5) .w-letter { color: var(--accent-purple); }
+  .w-card:nth-child(6) .w-letter { color: var(--accent-blue); }
+  .w-card:nth-child(7) .w-letter { color: var(--accent-pink); }
+  .w-card:nth-child(8) .w-letter { color: var(--accent-cyan); }
+
+  .w-question {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .w-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .w-prompt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(255,255,255,0.04);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    color: var(--text);
+    border-left: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .w-card:nth-child(1) .w-prompt { border-left-color: var(--accent-orange); }
+  .w-card:nth-child(2) .w-prompt { border-left-color: var(--accent-yellow); }
+  .w-card:nth-child(3) .w-prompt { border-left-color: var(--accent-cyan); }
+  .w-card:nth-child(4) .w-prompt { border-left-color: var(--accent-pink); }
+  .w-card:nth-child(5) .w-prompt { border-left-color: var(--accent-purple); }
+  .w-card:nth-child(6) .w-prompt { border-left-color: var(--accent-blue); }
+  .w-card:nth-child(7) .w-prompt { border-left-color: var(--accent-pink); }
+  .w-card:nth-child(8) .w-prompt { border-left-color: var(--accent-cyan); }
+
+  /* ===== FRAMEWORKS SECTION ===== */
+  .frameworks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 44px;
+  }
+
+  .framework-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 28px;
+    position: relative;
+  }
+
+  .framework-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fw-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .framework-card .steps {
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .framework-card .steps li {
+    counter-increment: step;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .framework-card .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fc-red .steps li::before { background: rgba(255,60,130,0.15); color: var(--accent-pink); }
+  .fc-blue .steps li::before { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+  .fc-green .steps li::before { background: rgba(0,229,204,0.15); color: var(--accent-cyan); }
+
+  .fc-red h3 { color: var(--accent-pink); }
+  .fc-blue h3 { color: var(--accent-blue); }
+  .fc-green h3 { color: var(--accent-cyan); }
+
+  .fc-red .fw-icon { background: rgba(255,60,130,0.12); }
+  .fc-blue .fw-icon { background: rgba(59,130,246,0.12); }
+  .fc-green .fw-icon { background: rgba(0,229,204,0.12); }
+
+  /* ===== BIAS AWARENESS ===== */
+  .bias-section {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bias-section::before {
+    content: '⚠';
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 140px;
+    opacity: 0.03;
+  }
+
+  .bias-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+  }
+
+  .bias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .bias-item {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 16px;
+    border-left: 3px solid var(--accent-yellow);
+  }
+
+  .bias-name {
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .bias-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  /* ===== DAILY HABITS ===== */
+  .habits-section {
+    margin-bottom: 44px;
+  }
+
+  .habits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .habit {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .habit:hover { transform: translateY(-2px); }
+
+  .habit-emoji {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .habit-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--accent-cyan);
+    margin-bottom: 6px;
+  }
+
+  .habit-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ===== GOLDEN RULES FOOTER ===== */
+  .golden-rules {
+    background: linear-gradient(135deg, rgba(255,200,87,0.08), rgba(255,107,53,0.08));
+    border: 1px solid rgba(255,200,87,0.15);
+    border-radius: 14px;
+    padding: 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .golden-rules::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255,200,87,0.06), transparent 60%);
+  }
+
+  .golden-rules h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .rules-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    text-align: left;
+    position: relative;
+  }
+
+  .rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .rule-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-yellow);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-quote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--text-dim);
+    max-width: 650px;
+    margin: 0 auto 8px;
+    line-height: 1.5;
+  }
+
+  .footer-author {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .w-card, .framework-card, .bias-section, .habit, .golden-rules, .habits-section, .footer {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .w-card:nth-child(1) { animation-delay: 0.9s; }
+  .w-card:nth-child(2) { animation-delay: 1.0s; }
+  .w-card:nth-child(3) { animation-delay: 1.1s; }
+  .w-card:nth-child(4) { animation-delay: 1.2s; }
+  .w-card:nth-child(5) { animation-delay: 1.3s; }
+  .w-card:nth-child(6) { animation-delay: 1.4s; }
+  .w-card:nth-child(7) { animation-delay: 1.5s; }
+  .w-card:nth-child(8) { animation-delay: 1.6s; }
+  .framework-card { animation-delay: 1.7s; }
+  .bias-section { animation-delay: 1.8s; }
+  .habits-section { animation-delay: 1.9s; }
+  .habit:nth-child(1) { animation-delay: 2.0s; }
+  .habit:nth-child(2) { animation-delay: 2.05s; }
+  .habit:nth-child(3) { animation-delay: 2.1s; }
+  .habit:nth-child(4) { animation-delay: 2.15s; }
+  .habit:nth-child(5) { animation-delay: 2.2s; }
+  .golden-rules { animation-delay: 2.3s; }
+  .footer { animation-delay: 2.4s; }
+
+  /* ===== PRINT STYLES ===== */
+  @media print {
+    body { background: #0a0a0f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .poster { padding: 20px; }
+    * { animation: none !important; opacity: 1 !important; }
+  }
+
+  @media (max-width: 640px) {
+    .poster { padding: 24px 16px; }
+    .w-grid { grid-template-columns: 1fr; }
+    .frameworks { grid-template-columns: 1fr; }
+    .bias-grid { grid-template-columns: 1fr; }
+    .habits-grid { grid-template-columns: repeat(2, 1fr); }
+    .rules-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="tagline">// Your Daily Mental Toolkit</div>
+    <h1 class="title">Think Critically.<br>Question Everything.</h1>
+    <p class="subtitle">"The mind that opens to a new idea never returns to its original size."</p>
+  </div>
+
+  <!-- MANTRA -->
+  <div class="mantra-strip">
+    Don't Just Accept — Investigate · Analyse · Challenge · Decide
+  </div>
+
+  <!-- W-QUESTIONS -->
+  <div class="section-label">→ The Power Questions</div>
+  <div class="w-grid">
+
+    <div class="w-card">
+      <div class="w-letter">WHAT?</div>
+      <div class="w-question">Define the problem clearly</div>
+      <div class="w-desc">Strip away the noise. What exactly is happening here? What are the facts vs. opinions? What am I actually being told?</div>
+      <div class="w-prompt">"What evidence supports this claim?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">WHY?</div>
+      <div class="w-question">Find the root cause — dig deeper</div>
+      <div class="w-desc">Ask "why" five times in a row. Surface-level answers hide the real truth. Why does this matter? Why now? Why this way?</div>
+      <div class="w-prompt">"Why do I believe this is true?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">HOW?</div>
+      <div class="w-question">Understand the mechanism</div>
+      <div class="w-desc">How does this actually work? How was this conclusion reached? How reliable is the method? How can I verify this?</div>
+      <div class="w-prompt">"How would I explain this to a 10-year-old?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">WHO?</div>
+      <div class="w-question">Trace the source & motives</div>
+      <div class="w-desc">Who benefits from this? Who is saying this and why? Who is affected? Who is being left out of the conversation?</div>
+      <div class="w-prompt">"Who has the most to gain or lose here?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">WHEN?</div>
+      <div class="w-question">Context of time matters</div>
+      <div class="w-desc">When was this true? Is it still true? When did things change? Timing shapes relevance — old data can mislead today's decisions.</div>
+      <div class="w-prompt">"When was this last verified or updated?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">WHERE?</div>
+      <div class="w-question">Context of place & scope</div>
+      <div class="w-desc">Where does this apply? Where does it break down? Is this universal or specific? A truth in one context can be a lie in another.</div>
+      <div class="w-prompt">"Where else has this been tested?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">WHY NOT?</div>
+      <div class="w-question">Invert the problem — flip it</div>
+      <div class="w-desc">The most powerful question. Why NOT the opposite? What if the common answer is wrong? Inversion reveals blind spots others miss entirely.</div>
+      <div class="w-prompt">"What if the opposite were true?"</div>
+    </div>
+
+    <div class="w-card">
+      <div class="w-letter">WHAT IF?</div>
+      <div class="w-question">Explore possibilities & consequences</div>
+      <div class="w-desc">Stretch your thinking. What if this fails? What if it succeeds beyond expectations? What are the second and third-order effects?</div>
+      <div class="w-prompt">"What's the worst / best that can happen?"</div>
+    </div>
+
+  </div>
+
+  <!-- FRAMEWORKS -->
+  <div class="section-label">→ Thinking Frameworks To Apply Daily</div>
+  <div class="frameworks">
+
+    <div class="framework-card fc-red">
+      <h3><span class="fw-icon">🔍</span> First Principles</h3>
+      <ul class="steps">
+        <li>Identify your assumption — what do you "just know"?</li>
+        <li>Break it down to fundamental truths that cannot be reduced further</li>
+        <li>Question each piece — is this actually true or just widely believed?</li>
+        <li>Rebuild your understanding from the ground up</li>
+        <li>Arrive at your OWN conclusion, not the borrowed one</li>
+      </ul>
+    </div>
+
+    <div class="framework-card fc-blue">
+      <h3><span class="fw-icon">🎭</span> Steel Man Method</h3>
+      <ul class="steps">
+        <li>Find the STRONGEST version of the opposing argument</li>
+        <li>Argue FOR the other side as if it's your own position</li>
+        <li>Identify what's genuinely valid in that perspective</li>
+        <li>Only then build your counter — now it's actually strong</li>
+        <li>If you can't steel man it, you don't truly understand it</li>
+      </ul>
+    </div>
+
+    <div class="framework-card fc-green">
+      <h3><span class="fw-icon">🔄</span> Second-Order Thinking</h3>
+      <ul class="steps">
+        <li>First-order: "What happens next?" (everyone does this)</li>
+        <li>Second-order: "And then what happens after that?"</li>
+        <li>Map the chain of consequences — 2nd, 3rd, 4th order effects</li>
+        <li>Check: Who else will react? How will the system adapt?</li>
+        <li>The best decisions consider what most people overlook</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- COGNITIVE BIASES -->
+  <div class="bias-section">
+    <h3>⚡ Biases That Hijack Your Thinking — Watch Out!</h3>
+    <div class="bias-grid">
+      <div class="bias-item">
+        <div class="bias-name">Confirmation Bias</div>
+        <div class="bias-desc">You seek info that proves what you already believe and ignore what doesn't.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Anchoring Effect</div>
+        <div class="bias-desc">The first piece of info you get becomes the anchor for all your judgements.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Dunning-Kruger</div>
+        <div class="bias-desc">The less you know, the more confident you feel. Expertise breeds humility.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Sunk Cost Fallacy</div>
+        <div class="bias-desc">You keep going because you've invested, not because it still makes sense.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Bandwagon Effect</div>
+        <div class="bias-desc">Everyone believes it, so it must be right. Popular ≠ correct.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Availability Heuristic</div>
+        <div class="bias-desc">What comes to mind easily feels more true or common than it actually is.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Survivorship Bias</div>
+        <div class="bias-desc">You only see the winners. The graveyard of failures is invisible to you.</div>
+      </div>
+      <div class="bias-item">
+        <div class="bias-name">Authority Bias</div>
+        <div class="bias-desc">Someone important said it, so it must be true. Titles don't equal truth.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY HABITS -->
+  <div class="habits-section">
+    <div class="section-label">→ Build The Muscle — Daily Habits</div>
+    <div class="habits-grid">
+      <div class="habit">
+        <span class="habit-emoji">📓</span>
+        <div class="habit-title">Journal Your Thinking</div>
+        <div class="habit-desc">Write down one decision per day and your reasoning behind it. Review weekly.</div>
+      </div>
+      <div class="habit">
+        <span class="habit-emoji">🗣️</span>
+        <div class="habit-title">Debate Both Sides</div>
+        <div class="habit-desc">Pick any topic. Argue FOR it for 2 min, then AGAINST it. Do this daily.</div>
+      </div>
+      <div class="habit">
+        <span class="habit-emoji">📰</span>
+        <div class="habit-title">Read Opposing Views</div>
+        <div class="habit-desc">Deliberately consume content that challenges your worldview. Sit with discomfort.</div>
+      </div>
+      <div class="habit">
+        <span class="habit-emoji">🤫</span>
+        <div class="habit-title">Pause Before Reacting</div>
+        <div class="habit-desc">Strong emotion = weak thinking. Take 10 seconds before you respond to anything triggering.</div>
+      </div>
+      <div class="habit">
+        <span class="habit-emoji">🧩</span>
+        <div class="habit-title">Solve Puzzles & Problems</div>
+        <div class="habit-desc">Logic puzzles, riddles, chess, Sudoku — exercise your analytical brain like a muscle.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOLDEN RULES -->
+  <div class="golden-rules">
+    <h3>✦ The 8 Non-Negotiable Rules ✦</h3>
+    <div class="rules-list">
+      <div class="rule"><span class="rule-num">01</span> Correlation is NOT causation. Just because two things happen together doesn't mean one caused the other.</div>
+      <div class="rule"><span class="rule-num">02</span> Strong opinions, loosely held. Be willing to change your mind when evidence says so.</div>
+      <div class="rule"><span class="rule-num">03</span> "I don't know" is the most powerful sentence. It's the beginning of learning, not the end.</div>
+      <div class="rule"><span class="rule-num">04</span> Seek to understand before seeking to be understood. Listen first, judge later.</div>
+      <div class="rule"><span class="rule-num">05</span> The map is not the territory. Your model of reality is always an approximation.</div>
+      <div class="rule"><span class="rule-num">06</span> Check the incentives. When confused about why something is happening, follow the money.</div>
+      <div class="rule"><span class="rule-num">07</span> Beware of false dichotomies. Most choices aren't either/or — the truth often sits in between.</div>
+      <div class="rule"><span class="rule-num">08</span> Think in probabilities, not certainties. Nothing is 100% — assign confidence levels.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p class="footer-quote">"The test of a first-rate intelligence is the ability to hold two opposing ideas in mind at the same time and still retain the ability to function."</p>
+    <p class="footer-author">— F. Scott Fitzgerald</p>
+  </div>
+
+</div>
+
+</body>
+</html>
