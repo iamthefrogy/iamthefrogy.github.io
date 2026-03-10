@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 360° Circle of Control</title>
+<style>
+  :root {
+    --bg: #0D0D0D;
+    --bg2: #151515;
+    --control: #34D399;
+    --influence: #FBBF24;
+    --concern: #F87171;
+    --text: #E8E8E8;
+    --text-dim: #888888;
+    --border: #2A2A2A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .header { text-align: center; padding: 10px 20px 4px; flex-shrink: 0; }
+  .tag {
+    display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--control);
+    border: 1px solid rgba(52,211,153,0.3); padding: 3px 12px;
+    border-radius: 20px; margin-bottom: 5px;
+  }
+  h1 { font-size: clamp(1rem, 2.5vw, 1.6rem); font-weight: 700; color: #fff; margin-bottom: 2px; }
+  .sub { font-size: 0.72rem; color: var(--text-dim); }
+  .tabs {
+    display: flex; justify-content: center; flex-wrap: wrap;
+    gap: 5px; padding: 6px 12px 5px; flex-shrink: 0;
+  }
+  .tab {
+    background: var(--bg2); border: 1px solid var(--border); color: var(--text-dim);
+    font-family: Arial, Helvetica, sans-serif; font-size: 0.68rem; font-weight: 700;
+    padding: 5px 14px; border-radius: 20px; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px;
+  }
+  .tab:hover { color: #fff; border-color: #444; }
+  .tab.active { background: #fff; color: #000; border-color: #fff; }
+  .circle-wrap {
+    flex: 1; display: flex; justify-content: center;
+    align-items: center; padding: 4px 10px 4px; min-height: 0;
+  }
+  .circle-box {
+    position: relative;
+    width: min(calc(100vh - 185px), calc(100vw - 20px));
+    height: min(calc(100vh - 185px), calc(100vw - 20px));
+  }
+  .ring { position: absolute; border-radius: 50%; transition: opacity 0.3s; }
+  .r-concern {
+    width: 100%; height: 100%; top: 0; left: 0;
+    background: radial-gradient(circle at 45% 40%, #1E1215 0%, #170D10 60%, #120A0D 100%);
+    border: 2px solid rgba(248,113,113,0.2);
+    box-shadow: 0 0 60px rgba(248,113,113,0.06), inset 0 0 80px rgba(248,113,113,0.03);
+  }
+  .r-influence {
+    width: 62%; height: 62%; top: 19%; left: 19%;
+    background: radial-gradient(circle at 45% 40%, #1C1810 0%, #16120A 60%, #110E08 100%);
+    border: 2px solid rgba(251,191,36,0.2);
+    box-shadow: 0 0 50px rgba(251,191,36,0.06), inset 0 0 60px rgba(251,191,36,0.03); z-index: 2;
+  }
+  .r-control {
+    width: 32%; height: 32%; top: 34%; left: 34%;
+    background: radial-gradient(circle at 45% 40%, #0D1A14 0%, #0A1610 60%, #07120D 100%);
+    border: 2px solid rgba(52,211,153,0.25);
+    box-shadow: 0 0 50px rgba(52,211,153,0.08), inset 0 0 60px rgba(52,211,153,0.04); z-index: 3;
+  }
+  .ring-title {
+    position: absolute;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .rt-concern {
+    top: 2%; left: 50%; transform: translateX(-50%);
+    font-size: clamp(0.45rem, 1.1vw, 0.72rem);
+    background: rgba(248,113,113,0.18);
+    border: 1px solid rgba(248,113,113,0.55);
+    box-shadow: 0 0 10px rgba(248,113,113,0.15);
+  }
+  .rt-influence {
+    top: 21%; left: 50%; transform: translateX(-50%);
+    font-size: clamp(0.42rem, 0.95vw, 0.65rem);
+    background: rgba(251,191,36,0.16);
+    border: 1px solid rgba(251,191,36,0.5);
+    box-shadow: 0 0 10px rgba(251,191,36,0.12);
+    z-index: 5;
+  }
+  .rt-control {
+    top: 35.5%; left: 50%; transform: translateX(-50%);
+    font-size: clamp(0.42rem, 0.95vw, 0.65rem);
+    background: rgba(52,211,153,0.16);
+    border: 1px solid rgba(52,211,153,0.5);
+    box-shadow: 0 0 10px rgba(52,211,153,0.12);
+    z-index: 6;
+  }
+  .item {
+    position: absolute;
+    font-size: clamp(0.52rem, 1.1vw, 0.78rem);
+    font-weight: 600; pointer-events: none; white-space: nowrap;
+    transition: opacity 0.35s ease; text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    transform: translateX(-50%);
+  }
+  .item-concern  { color: rgba(248,113,113,0.88); }
+  .item-influence{ color: rgba(251,191,36,0.88); z-index: 4; }
+  .item-control  { color: rgba(52,211,153,0.92); z-index: 5; }
+  .legend {
+    display: flex; justify-content: center; gap: 22px;
+    flex-wrap: wrap; padding: 4px 20px 6px; flex-shrink: 0;
+  }
+  .leg { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 600; color: var(--text-dim); }
+  .leg span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .quote { text-align: center; border-top: 1px solid var(--border); padding: 6px 20px 5px; flex-shrink: 0; }
+  .quote p { font-size: 0.7rem; color: var(--text-dim); font-style: italic; line-height: 1.5; }
+  .quote .attr { font-size: 0.65rem; color: #555; font-style: normal; font-weight: 700; }
+  .footer { text-align: center; padding: 3px 20px 6px; font-size: 0.6rem; color: #333; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="tag">Inspired by Stephen Covey</div>
+  <h1>The 360° Circle of Control</h1>
+  <p class="sub">What you control, influence, and must let go.</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-cat="personal">Personal</button>
+  <button class="tab" data-cat="social">Social</button>
+  <button class="tab" data-cat="professional">Professional</button>
+  <button class="tab" data-cat="health">Health</button>
+  <button class="tab" data-cat="digital">Digital</button>
+  <button class="tab" data-cat="financial">Financial</button>
+</div>
+
+<div class="circle-wrap">
+  <div class="circle-box">
+    <div class="ring r-concern"></div>
+    <div class="ring r-influence"></div>
+    <div class="ring r-control"></div>
+    <div class="ring-title rt-concern">OUT OF MY CONTROL</div>
+    <div class="ring-title rt-influence">I CAN INFLUENCE</div>
+    <div class="ring-title rt-control">IN MY CONTROL</div>
+    <div id="items-container"></div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="leg"><span style="background:var(--control)"></span> In My Control</div>
+  <div class="leg"><span style="background:var(--influence)"></span> I Can Influence</div>
+  <div class="leg"><span style="background:var(--concern)"></span> Out of Control</div>
+</div>
+
+<div class="quote">
+  <p>"Between stimulus and response there is a space. In that space is our power to choose."</p>
+  <div class="attr">— Viktor Frankl</div>
+</div>
+
+<div class="footer">Concept inspired by Stephen Covey's <em>The 7 Habits of Highly Effective People</em></div>
+
+<script>
+const data = {
+  personal: {
+    control: [
+      "Morning Mindset","Self-Talk","Daily Habits","My Boundaries",
+      "Failure Response","Daily Effort","My Values","Asking Help",
+      "Free Time","Being Present","My Attitude","What I Learn",
+    ],
+    influence: [
+      "My Reputation","Growth Path","My Environment","Close Circle",
+      "My Opportunities","My Legacy","My Resilience","Friend Quality",
+    ],
+    concern: [
+      "The Past","Others' Opinions","Ageing","Natural Disasters",
+      "Birth Family","Others' Choices","Life Events","Death & Loss",
+      "Birth Place","Can't Undo",
+    ]
+  },
+  social: {
+    control: [
+      "How I Treat","Forgiving Others","My Honesty","My Kindness",
+      "My Circle","Staying Connected","Conflict Behavior","Respecting Limits",
+      "Active Listening","My Energy","My Words","Second Chances",
+    ],
+    influence: [
+      "Bond Depth","Friend Culture","Building Trust","Kids' Worldview",
+      "Partner's Joy","Conflict Outcomes","Community Spirit","Family Wellbeing",
+    ],
+    concern: [
+      "Being Accepted","Others' Feelings","Strangers' Actions","Gossip & Rumours",
+      "Others' Loyalty","Societal Norms","Others' Punctuality","True Intentions",
+      "Strangers' Views","Behind My Back",
+    ]
+  },
+  professional: {
+    control: [
+      "Work Ethic","Feedback Response","Daily Learning","Meeting Prep",
+      "Work Quality","Networking","Time Management","Tough Colleagues",
+      "Taking Initiative","Punctuality","Handling Pressure","Smart Questions",
+    ],
+    influence: [
+      "Team Morale","Work Culture","Career Growth","Pro Reputation",
+      "Getting Mentored","Client Trust","Project Direction","Review Outcomes",
+    ],
+    concern: [
+      "Layoffs","Boss's Mood","AI Disruption","Job Market",
+      "Peers' Output","Office Politics","Economy","Mergers",
+      "Competitors","Policy Changes",
+    ]
+  },
+  health: {
+    control: [
+      "Diet & Drink","Exercise Routine","Sleep Schedule","Health Checks",
+      "Stress Management","Avoid Addiction","Seeking Therapy","Mindfulness",
+      "Screen Time","Posture","Hydration","Choosing Rest",
+    ],
+    influence: [
+      "Long-term Health","Fitness Level","Mental Health","Family Health",
+      "Healthcare Quality","Recovery Speed","Work-Life Balance","Home Stress",
+    ],
+    concern: [
+      "Genetics","Pandemics","Accidents","Others' Health",
+      "Body Ageing","Health System","Med Side Effects","Pollution",
+      "Viral Infections","Family Illness",
+    ]
+  },
+  digital: {
+    control: [
+      "What I Post","Who I Follow","Screen Limits","Privacy Settings",
+      "Ignoring Trolls","App Choices","News Sources","Digital Detox",
+      "No Comparison","Fact-Checking","Notifications","Password Safety",
+    ],
+    influence: [
+      "Online Brand","Conversation Tone","Family Literacy","Community Building",
+      "Fact Awareness","Content Impact","Kids Online","Starting Dialogue",
+    ],
+    concern: [
+      "Algorithms","Data Breaches","Misinformation","Online Trolls",
+      "Platform Rules","AI Deepfakes","Tagged Posts","Big Tech",
+      "Censorship","Outrage Cycles",
+    ]
+  },
+  financial: {
+    control: [
+      "Budgeting","Monthly Savings","Investing","Avoiding Debt",
+      "Finance Learning","Filing Taxes","Emergency Fund","Lifestyle Inflation",
+      "Side Income","Expense Tracking","No Impulse Buys","Research First",
+    ],
+    influence: [
+      "Salary Negotiation","Long-term Returns","Family Savings","Risk Management",
+      "Finance Literacy","Business Revenue","Credit Score","Retirement Fund",
+    ],
+    concern: [
+      "Market Crashes","Inflation","Tax Policy","Recession",
+      "Interest Rates","Currency Swings","Medical Bills","Property Market",
+      "Crypto Volatility","Automation Risk",
+    ]
+  }
+};
+
+function getPositions(count, zone) {
+  const positions = [];
+  if (zone === 'control') {
+    // Inner circle: 34%–66%. Keep items well away from top (34%) and bottom (66%).
+    const spots = [
+      [42, 42],[57, 42],
+      [37, 46],[50, 45],[63, 46],
+      [42, 50],[58, 50],
+      [37, 55],[50, 55],[63, 55],
+      [43, 59],[57, 59],
+    ];
+    for (let i = 0; i < count; i++) positions.push(spots[i % spots.length]);
+  } else if (zone === 'influence') {
+    // Mid ring: 19%–81%. Keep items away from the ring borders.
+    const spots = [
+      [27, 32],[73, 32],
+      [20, 42],[80, 42],
+      [20, 53],[80, 53],
+      [26, 64],[74, 64],
+    ];
+    for (let i = 0; i < count; i++) positions.push(spots[i % spots.length]);
+  } else {
+    // Outer ring: 0%–100% box. Items must stay off the very top and bottom arcs.
+    const spots = [
+      [22, 15],[50, 13],[78, 15],
+      [8,  28],[92, 28],
+      [5,  50],[95, 50],
+      [8,  70],[92, 70],
+      [50, 84],
+    ];
+    for (let i = 0; i < count; i++) positions.push(spots[i % spots.length]);
+  }
+  return positions;
+}
+
+const container = document.getElementById('items-container');
+
+function render(cat) {
+  container.innerHTML = '';
+  const d = data[cat];
+
+  const cPos = getPositions(d.control.length, 'control');
+  d.control.forEach((txt, i) => {
+    const el = document.createElement('div');
+    el.className = 'item item-control';
+    el.textContent = txt;
+    el.style.left = cPos[i][0] + '%';
+    el.style.top  = cPos[i][1] + '%';
+    el.style.opacity = '0';
+    container.appendChild(el);
+    setTimeout(() => el.style.opacity = '1', 40 * i);
+  });
+
+  const iPos = getPositions(d.influence.length, 'influence');
+  d.influence.forEach((txt, i) => {
+    const el = document.createElement('div');
+    el.className = 'item item-influence';
+    el.textContent = txt;
+    el.style.left = iPos[i][0] + '%';
+    el.style.top  = iPos[i][1] + '%';
+    el.style.opacity = '0';
+    container.appendChild(el);
+    setTimeout(() => el.style.opacity = '1', 40 * (d.control.length + i));
+  });
+
+  const oPos = getPositions(d.concern.length, 'concern');
+  d.concern.forEach((txt, i) => {
+    const el = document.createElement('div');
+    el.className = 'item item-concern';
+    el.textContent = txt;
+    el.style.left = oPos[i][0] + '%';
+    el.style.top  = oPos[i][1] + '%';
+    el.style.opacity = '0';
+    container.appendChild(el);
+    setTimeout(() => el.style.opacity = '1', 40 * (d.control.length + d.influence.length + i));
+  });
+}
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render(btn.dataset.cat);
+  });
+});
+
+render('personal');
+</script>
+</body>
+</html>

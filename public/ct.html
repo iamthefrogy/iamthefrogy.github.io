@@ -16,6 +16,8 @@
     --accent-pink: #FF3C82;
     --accent-purple: #A855F7;
     --accent-blue: #3B82F6;
+    --accent-emerald: #10B981;
+    --accent-rose: #FB7185;
     --text: #f0f0f0;
     --text-dim: #8888a0;
     --text-muted: #555566;
@@ -32,9 +34,9 @@
   }
 
   .poster {
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 40px 32px 60px;
+    padding: 40px 5% 60px;
     position: relative;
   }
 
@@ -107,7 +109,7 @@
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
 
-  /* ===== W-QUESTIONS GRID ===== */
+  /* ===== SECTION LABELS ===== */
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -118,97 +120,122 @@
     padding-left: 4px;
   }
 
-  .w-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
-    margin-bottom: 44px;
-  }
+  /* ===== EXPANDED QUESTION CARDS ===== */
+  .q-section { margin-bottom: 48px; }
 
-  .w-card {
+  .q-card {
     background: var(--surface);
     border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 12px;
-    padding: 24px 24px 20px;
-    position: relative;
+    border-radius: 14px;
+    margin-bottom: 16px;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: border-color 0.3s;
   }
 
-  .w-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255,255,255,0.12);
+  .q-card:hover { border-color: rgba(255,255,255,0.1); }
+
+  .q-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 28px;
+    cursor: default;
   }
 
-  .w-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    border-radius: 12px 12px 0 0;
+  .q-color-bar {
+    width: 4px;
+    height: 48px;
+    border-radius: 2px;
+    flex-shrink: 0;
   }
 
-  .w-card:nth-child(1)::before { background: var(--accent-orange); }
-  .w-card:nth-child(2)::before { background: var(--accent-yellow); }
-  .w-card:nth-child(3)::before { background: var(--accent-cyan); }
-  .w-card:nth-child(4)::before { background: var(--accent-pink); }
-  .w-card:nth-child(5)::before { background: var(--accent-purple); }
-  .w-card:nth-child(6)::before { background: var(--accent-blue); }
-  .w-card:nth-child(7)::before { background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink)); }
-  .w-card:nth-child(8)::before { background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue)); }
-
-  .w-letter {
+  .q-letter {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px;
+    font-size: 40px;
     line-height: 1;
-    margin-bottom: 2px;
+    flex-shrink: 0;
+    min-width: 120px;
   }
 
-  .w-card:nth-child(1) .w-letter { color: var(--accent-orange); }
-  .w-card:nth-child(2) .w-letter { color: var(--accent-yellow); }
-  .w-card:nth-child(3) .w-letter { color: var(--accent-cyan); }
-  .w-card:nth-child(4) .w-letter { color: var(--accent-pink); }
-  .w-card:nth-child(5) .w-letter { color: var(--accent-purple); }
-  .w-card:nth-child(6) .w-letter { color: var(--accent-blue); }
-  .w-card:nth-child(7) .w-letter { color: var(--accent-pink); }
-  .w-card:nth-child(8) .w-letter { color: var(--accent-cyan); }
-
-  .w-question {
+  .q-headline {
     font-family: 'DM Serif Display', serif;
+    font-style: italic;
     font-size: 15px;
     color: var(--text-dim);
-    margin-bottom: 10px;
-    font-style: italic;
   }
 
-  .w-desc {
+  .q-desc {
     font-size: 13px;
-    line-height: 1.6;
     color: var(--text-dim);
     font-weight: 300;
+    margin-top: 2px;
   }
 
-  .w-prompt {
+  /* Sub-questions grid */
+  .q-subs {
+    padding: 0 28px 24px;
+    padding-left: 52px;
+  }
+
+  .q-sub-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .q-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px;
+  }
+
+  .q-sub {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.025);
+    border-radius: 6px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    background: rgba(255,255,255,0.04);
-    padding: 8px 12px;
-    border-radius: 6px;
-    margin-top: 12px;
     color: var(--text);
-    border-left: 2px solid rgba(255,255,255,0.1);
+    line-height: 1.5;
+    border-left: 2px solid transparent;
   }
 
-  .w-card:nth-child(1) .w-prompt { border-left-color: var(--accent-orange); }
-  .w-card:nth-child(2) .w-prompt { border-left-color: var(--accent-yellow); }
-  .w-card:nth-child(3) .w-prompt { border-left-color: var(--accent-cyan); }
-  .w-card:nth-child(4) .w-prompt { border-left-color: var(--accent-pink); }
-  .w-card:nth-child(5) .w-prompt { border-left-color: var(--accent-purple); }
-  .w-card:nth-child(6) .w-prompt { border-left-color: var(--accent-blue); }
-  .w-card:nth-child(7) .w-prompt { border-left-color: var(--accent-pink); }
-  .w-card:nth-child(8) .w-prompt { border-left-color: var(--accent-cyan); }
+  .q-sub .arrow {
+    flex-shrink: 0;
+    opacity: 0.4;
+    margin-top: 1px;
+  }
+
+  /* Card color coding */
+  .q-card--what .q-color-bar, .q-card--what .q-sub { border-left-color: var(--accent-orange); }
+  .q-card--what .q-letter { color: var(--accent-orange); }
+
+  .q-card--why .q-color-bar, .q-card--why .q-sub { border-left-color: var(--accent-yellow); }
+  .q-card--why .q-letter { color: var(--accent-yellow); }
+
+  .q-card--how .q-color-bar, .q-card--how .q-sub { border-left-color: var(--accent-cyan); }
+  .q-card--how .q-letter { color: var(--accent-cyan); }
+
+  .q-card--who .q-color-bar, .q-card--who .q-sub { border-left-color: var(--accent-pink); }
+  .q-card--who .q-letter { color: var(--accent-pink); }
+
+  .q-card--when .q-color-bar, .q-card--when .q-sub { border-left-color: var(--accent-purple); }
+  .q-card--when .q-letter { color: var(--accent-purple); }
+
+  .q-card--where .q-color-bar, .q-card--where .q-sub { border-left-color: var(--accent-blue); }
+  .q-card--where .q-letter { color: var(--accent-blue); }
+
+  .q-card--whynot .q-color-bar, .q-card--whynot .q-sub { border-left-color: var(--accent-emerald); }
+  .q-card--whynot .q-letter { color: var(--accent-emerald); }
+
+  .q-card--whatif .q-color-bar, .q-card--whatif .q-sub { border-left-color: var(--accent-rose); }
+  .q-card--whatif .q-letter { color: var(--accent-rose); }
 
   /* ===== FRAMEWORKS SECTION ===== */
   .frameworks {
@@ -223,7 +250,6 @@
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 14px;
     padding: 28px;
-    position: relative;
   }
 
   .framework-card h3 {
@@ -256,7 +282,7 @@
     counter-increment: step;
     padding: 8px 0 8px 36px;
     position: relative;
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--text-dim);
     line-height: 1.5;
     font-weight: 300;
@@ -346,9 +372,7 @@
   }
 
   /* ===== DAILY HABITS ===== */
-  .habits-section {
-    margin-bottom: 44px;
-  }
+  .habits-section { margin-bottom: 44px; }
 
   .habits-grid {
     display: grid;
@@ -367,11 +391,7 @@
 
   .habit:hover { transform: translateY(-2px); }
 
-  .habit-emoji {
-    font-size: 32px;
-    margin-bottom: 10px;
-    display: block;
-  }
+  .habit-emoji { font-size: 32px; margin-bottom: 10px; display: block; }
 
   .habit-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -388,7 +408,7 @@
     font-weight: 300;
   }
 
-  /* ===== GOLDEN RULES FOOTER ===== */
+  /* ===== GOLDEN RULES ===== */
   .golden-rules {
     background: linear-gradient(135deg, rgba(255,200,87,0.08), rgba(255,107,53,0.08));
     border: 1px solid rgba(255,200,87,0.15);
@@ -476,45 +496,22 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .w-card, .framework-card, .bias-section, .habit, .golden-rules, .habits-section, .footer {
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards;
-  }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .w-card:nth-child(1) { animation-delay: 0.9s; }
-  .w-card:nth-child(2) { animation-delay: 1.0s; }
-  .w-card:nth-child(3) { animation-delay: 1.1s; }
-  .w-card:nth-child(4) { animation-delay: 1.2s; }
-  .w-card:nth-child(5) { animation-delay: 1.3s; }
-  .w-card:nth-child(6) { animation-delay: 1.4s; }
-  .w-card:nth-child(7) { animation-delay: 1.5s; }
-  .w-card:nth-child(8) { animation-delay: 1.6s; }
-  .framework-card { animation-delay: 1.7s; }
-  .bias-section { animation-delay: 1.8s; }
-  .habits-section { animation-delay: 1.9s; }
-  .habit:nth-child(1) { animation-delay: 2.0s; }
-  .habit:nth-child(2) { animation-delay: 2.05s; }
-  .habit:nth-child(3) { animation-delay: 2.1s; }
-  .habit:nth-child(4) { animation-delay: 2.15s; }
-  .habit:nth-child(5) { animation-delay: 2.2s; }
-  .golden-rules { animation-delay: 2.3s; }
-  .footer { animation-delay: 2.4s; }
-
-  /* ===== PRINT STYLES ===== */
   @media print {
     body { background: #0a0a0f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .poster { padding: 20px; }
-    * { animation: none !important; opacity: 1 !important; }
+    .poster { padding: 20px 5%; }
   }
 
   @media (max-width: 640px) {
-    .poster { padding: 24px 16px; }
-    .w-grid { grid-template-columns: 1fr; }
+    .poster { padding: 24px 5%; }
+    .q-card-header { flex-wrap: wrap; padding: 18px 20px; }
+    .q-letter { min-width: auto; }
+    .q-subs { padding-left: 20px; padding-right: 20px; }
+    .q-sub-grid { grid-template-columns: 1fr; }
     .frameworks { grid-template-columns: 1fr; }
     .bias-grid { grid-template-columns: 1fr; }
     .habits-grid { grid-template-columns: repeat(2, 1fr); }
@@ -538,72 +535,229 @@
     Don't Just Accept — Investigate · Analyse · Challenge · Decide
   </div>
 
-  <!-- W-QUESTIONS -->
-  <div class="section-label">→ The Power Questions</div>
-  <div class="w-grid">
+  <!-- ==================== EXPANDED POWER QUESTIONS ==================== -->
+  <div class="q-section">
+    <div class="section-label">→ The Power Questions — Deep Dive</div>
 
-    <div class="w-card">
-      <div class="w-letter">WHAT?</div>
-      <div class="w-question">Define the problem clearly</div>
-      <div class="w-desc">Strip away the noise. What exactly is happening here? What are the facts vs. opinions? What am I actually being told?</div>
-      <div class="w-prompt">"What evidence supports this claim?"</div>
+    <!-- WHAT -->
+    <div class="q-card q-card--what">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHAT?</div>
+        <div>
+          <div class="q-headline">Define the problem clearly — strip away the noise</div>
+          <div class="q-desc">Before solving anything, make sure you actually understand what's in front of you.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> What exactly is happening here?</div>
+          <div class="q-sub"><span class="arrow">→</span> What are the facts vs. opinions?</div>
+          <div class="q-sub"><span class="arrow">→</span> What am I actually being told?</div>
+          <div class="q-sub"><span class="arrow">→</span> What is the core claim or argument?</div>
+          <div class="q-sub"><span class="arrow">→</span> What evidence supports this?</div>
+          <div class="q-sub"><span class="arrow">→</span> What evidence is missing?</div>
+          <div class="q-sub"><span class="arrow">→</span> What assumptions am I making?</div>
+          <div class="q-sub"><span class="arrow">→</span> What are the key terms & do I truly understand them?</div>
+          <div class="q-sub"><span class="arrow">→</span> What's the scope — how big is this really?</div>
+          <div class="q-sub"><span class="arrow">→</span> What would change my mind about this?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">WHY?</div>
-      <div class="w-question">Find the root cause — dig deeper</div>
-      <div class="w-desc">Ask "why" five times in a row. Surface-level answers hide the real truth. Why does this matter? Why now? Why this way?</div>
-      <div class="w-prompt">"Why do I believe this is true?"</div>
+    <!-- WHY -->
+    <div class="q-card q-card--why">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHY?</div>
+        <div>
+          <div class="q-headline">Find the root cause — dig 5 levels deep</div>
+          <div class="q-desc">Surface-level answers are comfortable. The truth hides underneath.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> Why is this happening in the first place?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why now? Why not earlier or later?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why this way and not another way?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why do I believe this is true?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why does this matter? What's at stake?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why does everyone accept this without questioning?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why is this the chosen solution?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not the simpler / cheaper / faster alternative?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why is this person telling me this? What's their motive?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why am I emotionally attached to this view?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why hasn't this been solved already?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why did previous attempts fail?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">HOW?</div>
-      <div class="w-question">Understand the mechanism</div>
-      <div class="w-desc">How does this actually work? How was this conclusion reached? How reliable is the method? How can I verify this?</div>
-      <div class="w-prompt">"How would I explain this to a 10-year-old?"</div>
+    <!-- HOW -->
+    <div class="q-card q-card--how">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">HOW?</div>
+        <div>
+          <div class="q-headline">Understand the mechanism — don't just accept the output</div>
+          <div class="q-desc">If you can't explain how it works, you don't really understand it.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> How does this actually work, step by step?</div>
+          <div class="q-sub"><span class="arrow">→</span> How was this conclusion reached?</div>
+          <div class="q-sub"><span class="arrow">→</span> How reliable is the method used?</div>
+          <div class="q-sub"><span class="arrow">→</span> How can I verify this independently?</div>
+          <div class="q-sub"><span class="arrow">→</span> How would I explain this to a 10-year-old?</div>
+          <div class="q-sub"><span class="arrow">→</span> How is this different from what came before?</div>
+          <div class="q-sub"><span class="arrow">→</span> How scalable / repeatable is this?</div>
+          <div class="q-sub"><span class="arrow">→</span> How confident am I, and how confident should I be?</div>
+          <div class="q-sub"><span class="arrow">→</span> How do experts in this field view it?</div>
+          <div class="q-sub"><span class="arrow">→</span> How would this fail? What's the failure mode?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">WHO?</div>
-      <div class="w-question">Trace the source & motives</div>
-      <div class="w-desc">Who benefits from this? Who is saying this and why? Who is affected? Who is being left out of the conversation?</div>
-      <div class="w-prompt">"Who has the most to gain or lose here?"</div>
+    <!-- WHO -->
+    <div class="q-card q-card--who">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHO?</div>
+        <div>
+          <div class="q-headline">Trace the source, motive & stakeholders</div>
+          <div class="q-desc">Every claim has a person behind it. Every person has an agenda.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> Who is saying this and what's their credibility?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who benefits from this being true?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who gets harmed if this is wrong?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who is being left out of this conversation?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who funded this research / study / report?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who disagrees and why?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who has the most to gain or lose?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who is the intended audience for this message?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who verified this? Is there peer review?</div>
+          <div class="q-sub"><span class="arrow">→</span> Who am I trusting, and have they earned it?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">WHEN?</div>
-      <div class="w-question">Context of time matters</div>
-      <div class="w-desc">When was this true? Is it still true? When did things change? Timing shapes relevance — old data can mislead today's decisions.</div>
-      <div class="w-prompt">"When was this last verified or updated?"</div>
+    <!-- WHEN -->
+    <div class="q-card q-card--when">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHEN?</div>
+        <div>
+          <div class="q-headline">Context of time — relevance has an expiry date</div>
+          <div class="q-desc">Old data can mislead today's decisions. Timing shapes everything.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> When was this true? Is it still true today?</div>
+          <div class="q-sub"><span class="arrow">→</span> When did things change, and what triggered the change?</div>
+          <div class="q-sub"><span class="arrow">→</span> When was this data collected?</div>
+          <div class="q-sub"><span class="arrow">→</span> When is the right time to act vs. wait?</div>
+          <div class="q-sub"><span class="arrow">→</span> When has this been tried before?</div>
+          <div class="q-sub"><span class="arrow">→</span> When will this become irrelevant?</div>
+          <div class="q-sub"><span class="arrow">→</span> When is the deadline, and is it real or artificial?</div>
+          <div class="q-sub"><span class="arrow">→</span> When was this last verified or updated?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">WHERE?</div>
-      <div class="w-question">Context of place & scope</div>
-      <div class="w-desc">Where does this apply? Where does it break down? Is this universal or specific? A truth in one context can be a lie in another.</div>
-      <div class="w-prompt">"Where else has this been tested?"</div>
+    <!-- WHERE -->
+    <div class="q-card q-card--where">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHERE?</div>
+        <div>
+          <div class="q-headline">Context of place & scope — truth isn't universal</div>
+          <div class="q-desc">A truth in one context can be a lie in another. Scope kills bad arguments.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> Where does this apply? Where doesn't it?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where does this argument break down?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where else has this been tested or tried?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where is the evidence coming from geographically?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where are the boundaries of this claim?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where would this work best vs. worst?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where am I getting my information — and is that source reliable here?</div>
+          <div class="q-sub"><span class="arrow">→</span> Where are the blind spots in this analysis?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">WHY NOT?</div>
-      <div class="w-question">Invert the problem — flip it</div>
-      <div class="w-desc">The most powerful question. Why NOT the opposite? What if the common answer is wrong? Inversion reveals blind spots others miss entirely.</div>
-      <div class="w-prompt">"What if the opposite were true?"</div>
+    <!-- WHY NOT -->
+    <div class="q-card q-card--whynot">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHY NOT?</div>
+        <div>
+          <div class="q-headline">Invert the problem — flip every assumption</div>
+          <div class="q-desc">The most powerful question. Inversion reveals what everyone else misses.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> Why not the opposite approach entirely?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not do nothing at all?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not a simpler solution?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not question the premise itself?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not listen to the critics?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not try what failed before — has context changed?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not the unconventional route?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not challenge the "expert" consensus?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not remove instead of adding?</div>
+          <div class="q-sub"><span class="arrow">→</span> Why not ask: what would make this claim FALSE?</div>
+        </div>
+      </div>
     </div>
 
-    <div class="w-card">
-      <div class="w-letter">WHAT IF?</div>
-      <div class="w-question">Explore possibilities & consequences</div>
-      <div class="w-desc">Stretch your thinking. What if this fails? What if it succeeds beyond expectations? What are the second and third-order effects?</div>
-      <div class="w-prompt">"What's the worst / best that can happen?"</div>
+    <!-- WHAT IF -->
+    <div class="q-card q-card--whatif">
+      <div class="q-card-header">
+        <div class="q-color-bar"></div>
+        <div class="q-letter">WHAT IF?</div>
+        <div>
+          <div class="q-headline">Explore possibilities, consequences & second-order effects</div>
+          <div class="q-desc">Stretch your imagination. The best thinkers play out scenarios before they happen.</div>
+        </div>
+      </div>
+      <div class="q-subs">
+        <div class="q-sub-label">Granular Questions to Ask</div>
+        <div class="q-sub-grid">
+          <div class="q-sub"><span class="arrow">→</span> What if this fails? What's the worst case?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if this succeeds beyond expectations?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if the key assumption is wrong?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if I had unlimited resources?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if I had zero resources?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if the opposite were true?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if I'm the one who's wrong here?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if this has unintended consequences?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if 10x more people did this?</div>
+          <div class="q-sub"><span class="arrow">→</span> What if I revisit this in 5 years — will it still hold?</div>
+        </div>
+      </div>
     </div>
 
   </div>
 
-  <!-- FRAMEWORKS -->
+  <!-- ==================== FRAMEWORKS ==================== -->
   <div class="section-label">→ Thinking Frameworks To Apply Daily</div>
   <div class="frameworks">
-
     <div class="framework-card fc-red">
       <h3><span class="fw-icon">🔍</span> First Principles</h3>
       <ul class="steps">
@@ -614,7 +768,6 @@
         <li>Arrive at your OWN conclusion, not the borrowed one</li>
       </ul>
     </div>
-
     <div class="framework-card fc-blue">
       <h3><span class="fw-icon">🎭</span> Steel Man Method</h3>
       <ul class="steps">
@@ -625,7 +778,6 @@
         <li>If you can't steel man it, you don't truly understand it</li>
       </ul>
     </div>
-
     <div class="framework-card fc-green">
       <h3><span class="fw-icon">🔄</span> Second-Order Thinking</h3>
       <ul class="steps">
@@ -636,10 +788,9 @@
         <li>The best decisions consider what most people overlook</li>
       </ul>
     </div>
-
   </div>
 
-  <!-- COGNITIVE BIASES -->
+  <!-- ==================== BIASES ==================== -->
   <div class="bias-section">
     <h3>⚡ Biases That Hijack Your Thinking — Watch Out!</h3>
     <div class="bias-grid">
@@ -678,7 +829,7 @@
     </div>
   </div>
 
-  <!-- DAILY HABITS -->
+  <!-- ==================== DAILY HABITS ==================== -->
   <div class="habits-section">
     <div class="section-label">→ Build The Muscle — Daily Habits</div>
     <div class="habits-grid">
@@ -710,7 +861,7 @@
     </div>
   </div>
 
-  <!-- GOLDEN RULES -->
+  <!-- ==================== GOLDEN RULES ==================== -->
   <div class="golden-rules">
     <h3>✦ The 8 Non-Negotiable Rules ✦</h3>
     <div class="rules-list">
