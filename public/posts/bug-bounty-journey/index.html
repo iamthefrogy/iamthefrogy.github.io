@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        
+        <meta name="description" content="Practical Cybersecurity Blog">
+        
+        <meta name="keywords" content="cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense">
+
+        <title>
+              Cyber Frogy - From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened 
+        </title>
+
+        <meta name="generator" content="Hugo 0.159.1">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#ffffff"></head>
+
+    <body lang="en-US" class="is-page">
+        <div class="container my-auto">
+
+
+
+<div class="site-nav">
+  <div class="site-nav__inner">
+    <a class="site-brand" href="/">
+      <span class="site-brand__mark"></span>
+      <span class="site-brand__text">Cyber Frogy</span>
+    </a>
+    
+    <nav class="site-menu d-none d-md-flex">
+      
+      <a class="site-menu__link" href="/">Home</a>
+      
+      <a class="site-menu__link" href="/whoami">Whoami</a>
+      
+      <a class="site-menu__link" href="/posts">Blog</a>
+      
+      <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+      
+      <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+      
+      <a class="site-menu__link" href="/github">GitHub</a>
+      
+      <a class="site-menu__link" href="/checklists">Checklists</a>
+      
+      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+      
+      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+      
+    </nav>
+    
+    <div class="site-nav__actions">
+      
+      <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+    </div>
+  </div>
+  
+  <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
+    <nav class="d-flex flex-column gap-2">
+      
+      <a class="site-menu__link" href="/">Home</a>
+      
+      <a class="site-menu__link" href="/whoami">Whoami</a>
+      
+      <a class="site-menu__link" href="/posts">Blog</a>
+      
+      <a class="site-menu__link" href="/mindmaps">Mindmaps</a>
+      
+      <a class="site-menu__link" href="/threat-actor-db">Threat-Actor DB</a>
+      
+      <a class="site-menu__link" href="/github">GitHub</a>
+      
+      <a class="site-menu__link" href="/checklists">Checklists</a>
+      
+      <a class="site-menu__link" href="/kickstartcareer">Kickstart Career</a>
+      
+      <a class="site-menu__link" href="/disclaimer">Disclaimer</a>
+      
+    </nav>
+  </div>
+  
+</div>
+
+
+
+<main class="page-shell">
+  <article class="page-article">
+    <header class="page-article__header">
+      <h1 class="page-article__title">From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened</h1>
+    </header>
+
+    <section id="category-pane" class="page-article__meta meta-block">
+      
+      <div class="meta-row">
+        <p class="meta meta--label">
+           PUBLISHED ON APR 23, 2026
+          
+          / 14 MIN READ
+          
+        </p>
+      </div>
+      
+    </section>
+
+    <section id="content-pane" class="page-article__content">
+      <div class="content">
+        
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-is-this-for">Who is this for?</a></li>
+    <li><a href="#the-numbers-no-sugarcoating---from-sep-2025---april-2026">The Numbers (No Sugarcoating - From Sep 2025 - April 2026)</a>
+      <ul>
+        <li><a href="#overall-portfolio">Overall Portfolio</a></li>
+        <li><a href="#platform-breakdown">Platform Breakdown</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-real-journey-from-zero-to-here">The Real Journey: From Zero to Here</a>
+      <ul>
+        <li><a href="#phase-1-the-just-start-phase-early-days">Phase 1: The &ldquo;Just Start&rdquo; Phase (Early Days)</a></li>
+        <li><a href="#phase-2-the-duplicaterejection-phase-the-grind">Phase 2: The Duplicate/Rejection Phase (The Grind)</a></li>
+        <li><a href="#phase-3-the--email-phase-it-clicks">Phase 3: The &ldquo;$$$$ email&rdquo; phase (It clicks)</a></li>
+        <li><a href="#phase-4-the-systematic-phase-where-i-am-now">Phase 4: The Systematic Phase (Where I Am Now)</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-actually-finds-bugs-from-my-data">What Actually Finds Bugs (From My Data)</a>
+      <ul>
+        <li><a href="#top-5-bug-finding-techniques-by-success-rate">Top 5 Bug-Finding Techniques (By Success Rate)</a></li>
+        <li><a href="#what-does-not-work-save-your-time">What Does NOT Work (Save Your Time)</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-art-of-chaining-where-real-impact-lives">The Art of Chaining (Where Real Impact Lives)</a>
+      <ul>
+        <li><a href="#chain-example-1-config-file-to-account-takeover">Chain Example 1: Config File to Account Takeover</a></li>
+        <li><a href="#chain-example-2-ssrf-to-mass-credential-exposure">Chain Example 2: SSRF to Mass Credential Exposure</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-methodology-that-changed-everything">The Methodology That Changed Everything</a>
+      <ul>
+        <li><a href="#step-1-understand-before-you-touch-30-of-time">Step 1: Understand Before You Touch (30% of time)</a></li>
+        <li><a href="#step-2-map-everything-20-of-time">Step 2: Map Everything (20% of time)</a></li>
+        <li><a href="#step-3-generate-hypotheses-10-of-time">Step 3: Generate Hypotheses (10% of time)</a></li>
+        <li><a href="#step-4-test-systematically-30-of-time">Step 4: Test Systematically (30% of time)</a></li>
+        <li><a href="#step-5-chain-and-maximize-10-of-time">Step 5: Chain and Maximize (10% of time)</a></li>
+        <li><a href="#the-key-insight">The Key Insight</a></li>
+      </ul>
+    </li>
+    <li><a href="#report-writing-what-gets-triaged-vs-what-gets-closed">Report Writing: What Gets Triaged vs What Gets Closed</a>
+      <ul>
+        <li><a href="#what-gets-triaged-do-this">What Gets Triaged (Do This)</a></li>
+        <li><a href="#what-gets-closed-do-not-do-this">What Gets Closed (Do Not Do This)</a></li>
+        <li><a href="#the-xyz-company-example">The XYZ Company Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-mindset-what-nobody-tells-you">The Mindset: What Nobody Tells You</a>
+      <ul>
+        <li><a href="#1-it-is-a-race---but-consistency-wins">1. It Is a Race - But Consistency Wins</a></li>
+        <li><a href="#2-rejections-are-part-of-the-game">2. Rejections Are Part of the Game</a></li>
+        <li><a href="#3-process-matters-more-than-tools">3. Process Matters More Than Tools</a></li>
+        <li><a href="#4-some-engagements-turn-into-something-bigger">4. Some Engagements Turn Into Something Bigger</a></li>
+        <li><a href="#5-the-best-bugs-come-from-understanding-the-business">5. The Best Bugs Come from Understanding the Business</a></li>
+        <li><a href="#finding-classes-that-paid">Finding Classes That Paid</a></li>
+        <li><a href="#time-investment-vs-returns">Time Investment vs Returns</a></li>
+        <li><a href="#the-golden-rule">The Golden Rule</a></li>
+      </ul>
+    </li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav>
+        
+        <p><em>A practical, no-BS guide based on real submissions, real rejections, and real lessons - not theory.</em></p>
+<h2 id="who-is-this-for">Who is this for?</h2>
+<p>If you are sitting there thinking &ldquo;bug bounty is too hard&rdquo; or &ldquo;all the good bugs are already found&rdquo; - this report is for you. I am going to share my actual journey. Not just the wins. The duplicates. The rejections. The informational closures. The emails where companies said &ldquo;thanks but no thanks.&rdquo; And then the $$$$ payouts, the private pentest invitations, and the moments where everything clicked.</p>
+<p>This is not a tutorial. This is a story backed by data.</p>
+<h2 id="the-numbers-no-sugarcoating---from-sep-2025---april-2026">The Numbers (No Sugarcoating - From Sep 2025 - April 2026)</h2>
+<p>Let me start with the raw stats from my engagements:</p>
+<h3 id="overall-portfolio">Overall Portfolio</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Metric</th>
+          <th>Number</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Total targets hunted</td>
+          <td>45+ (including very small ones with 2/3 subdomains</td>
+      </tr>
+      <tr>
+          <td>Targets where I found something</td>
+          <td>17</td>
+      </tr>
+      <tr>
+          <td>Total findings reported</td>
+          <td>40~</td>
+      </tr>
+      <tr>
+          <td>Findings that were Critical</td>
+          <td>9</td>
+      </tr>
+      <tr>
+          <td>Findings that were High</td>
+          <td>13</td>
+      </tr>
+      <tr>
+          <td>Findings that were Medium</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td>Findings that were Low/Info</td>
+          <td>12</td>
+      </tr>
+      <tr>
+          <td>Hypotheses I generated</td>
+          <td>300+</td>
+      </tr>
+      <tr>
+          <td>Chain exploits discovered</td>
+          <td>6+</td>
+      </tr>
+      <tr>
+          <td>Targets with zero findings</td>
+          <td>28</td>
+      </tr>
+      <tr>
+          <td>Duplicate reports received</td>
+          <td>Multiple</td>
+      </tr>
+      <tr>
+          <td>Reports rejected outright</td>
+          <td>Multiple</td>
+      </tr>
+      <tr>
+          <td>Reports marked Informative</td>
+          <td>Multiple</td>
+      </tr>
+  </tbody>
+</table>
+<p>Look at that. 28 targets with ZERO findings. More than half. That is the reality nobody talks about on Twitter.</p>
+<h3 id="platform-breakdown">Platform Breakdown</h3>
+<p>I have submitted across:</p>
+<ul>
+<li><strong>HackerOne</strong> - main platform, 15+ reports (All duplicates)</li>
+<li><strong>Bugcrowd</strong> - None</li>
+<li><strong>bugbounty.ch</strong> - Swiss VDP programs - Just 1 program 1 report Medium</li>
+<li><strong>Com Olho</strong> - Just 1 program 2 reports both duplicates</li>
+<li><strong>Self-hosted programs</strong> - Biggest wins, all of my good payouts and HoFs are from here.</li>
+</ul>
+<h2 id="the-real-journey-from-zero-to-here">The Real Journey: From Zero to Here</h2>
+<h3 id="phase-1-the-just-start-phase-early-days">Phase 1: The &ldquo;Just Start&rdquo; Phase (Early Days)</h3>
+<p>My first responsible disclosure was to a healthcare company in January 2026. I found vulnerabilities, reported them via email, and the response was:</p>
+<blockquote>
+<p>&ldquo;That&rsquo;s very gracious of you, thank you so much for understanding.&rdquo;</p>
+</blockquote>
+<p>No bounty program. No payout. Just a LinkedIn connection request from the CTO and CEO.</p>
+<p>But here is what happened next - They offered me a full time job (which I politely declined) and also asked me to be their dedicated pen tester on a retainer. I said &ldquo;I have managed bug bounty programs for large firms throughout my career. Happy to do dedicated pen testing so you can save money before your actual program goes live.&rdquo;</p>
+<p><strong>Lesson 1: Bug bounty is not just about finding bugs. It is about building relationships. Some engagements turn into paid pentest assignments.</strong></p>
+<p>That email from January 2026? It taught me that being professional, being transparent, and offering value - even when there is no bounty - opens doors you cannot imagine.</p>
+<h3 id="phase-2-the-duplicaterejection-phase-the-grind">Phase 2: The Duplicate/Rejection Phase (The Grind)</h3>
+<p>On Com Olho and HackerOne platform, I submitted a total 20ish reports:</p>
+<blockquote>
+<p>&ldquo;All of them were marked as Duplicates.</p>
+</blockquote>
+<p><strong>How did that feel?</strong> Terrible. You spend hours finding something, writing the report, and someone either found it first or the program does not care.</p>
+<p><strong>Lesson 2: Duplicates and rejections are not failures. They are data points. A duplicate means your methodology WORKS - you found a real bug. You were just slower because you do full time job or have other repsonsibilities compared to other full time bug hunters. So don&rsquo;t get discouraged, keep pushing!</strong></p>
+<h3 id="phase-3-the--email-phase-it-clicks">Phase 3: The &ldquo;$$$$ email&rdquo; phase (It clicks)</h3>
+<p>Then came this email:</p>
+<blockquote>
+<p>&ldquo;Thank you for your submission regarding an issue with one of our internal API endpoints. We have completed our review and can confirm this is a valid security finding.&rdquo;</p>
+</blockquote>
+<p>Severity: High. Bounty: $$$$. Invoice attached.</p>
+<p>What changed? Not my skills dramatically. What changed was my <strong>approach</strong>. I stopped running scanners and hoping. I started thinking like a developer. I started asking &ldquo;what would go wrong if&hellip;?&rdquo; instead of &ldquo;what tool should I run?&rdquo;</p>
+<h3 id="phase-4-the-systematic-phase-where-i-am-now">Phase 4: The Systematic Phase (Where I Am Now)</h3>
+<p>My current approach is hypothesis-driven hunting. Here is what it looks like with real numbers from one engagement:</p>
+<p><strong>Target: European Industrial Company (VDP)</strong></p>
+<ul>
+<li>OSINT phase: 411 subdomains discovered, 28 vendors mapped, 25 employee credentials found in stealer databases</li>
+<li>Recon phase: 327 subdomains enumerated, 17 live hosts confirmed, 5 CDN providers mapped</li>
+<li>Front-analysis: 34 hosts visited, 39 endpoints inventoried, 6 new hostnames discovered via CSP headers</li>
+<li>Hypothesis generation: 110 hypotheses created (87 unauthenticated, 23 authenticated) - <strong>What the heck is hypothesis? Its there in the section below.</strong></li>
+<li>Testing: 87 test cases tested from hypothesis.</li>
+<li>Results: 9 confirmed, 67 falsified, 11 needs manual verification</li>
+<li>Final findings: 7 validated (2 downgraded after knowing it does not affect company from impact standpoint)</li>
+</ul>
+<p>That is a ~10% hit rate on hypotheses. Out of 110 ideas, 9 worked. And out of those 9, only 7 survived hard validation.
+<strong>Because I am treating target like how real pen testers treat target, so 10% hit rate is good for me. I am not looking target from bounty-hunting mindset but from red-team mindset</strong></p>
+<p><strong>Lesson 3: Bug bounty is a numbers game wrapped in a thinking game. Generate many ideas, test them all, validate ruthlessly.</strong></p>
+<h2 id="what-actually-finds-bugs-from-my-data">What Actually Finds Bugs (From My Data)</h2>
+<p>I tracked what worked across 17 targets with findings. Here is the ranking:</p>
+<h3 id="top-5-bug-finding-techniques-by-success-rate">Top 5 Bug-Finding Techniques (By Success Rate)</h3>
+<p><strong>1. Configuration File Extraction (80%+ success)</strong></p>
+<p>On 8 out of 10 targets I tested, probing <code>/environment.json</code>, <code>/config.json</code>, or <code>/appsettings.json</code> revealed something useful. On one target, this single file exposed Azure AD credentials that enabled a complete account takeover vector against any employee.</p>
+<p>Always check: <code>/environment.json</code>, <code>/env.json</code>, <code>/config.json</code>, <code>/appsettings.json</code>, <code>/appsettings.Development.json</code></p>
+<p><strong>2. Source Map Analysis (60%+ success)</strong></p>
+<p>When developers forget to remove <code>.js.map</code> files from production, you get the full source code. I found:</p>
+<ul>
+<li>OAuth client IDs and secrets</li>
+<li>Internal service URLs</li>
+<li>Sentry DSN keys (20+ on one target)</li>
+<li>Git commit SHAs that revealed deployment details</li>
+</ul>
+<p><strong>3. CSP Header Mining (50%+ success)</strong></p>
+<p>Content-Security-Policy headers are a goldmine. Developers add their internal/partner domains to CSP <code>connect-src</code> and <code>script-src</code> directives. I discovered a secondary host serving PII data purely from parsing a CSP header on the main website.</p>
+<p>Always read: Every <code>Content-Security-Policy</code> header on every response.</p>
+<p><strong>4. Assumption Inversion (40%+ success in ghost-hunting)</strong></p>
+<p>This is my favourite technique. Take something that works one way and ask &ldquo;what if I do the opposite?&rdquo;</p>
+<p>Real example: A Fortinet IPS was blocking requests to a Telerik handler using <code>?type=rau</code>. I tried <code>?Type=rau</code> (capital T). The IPS rule was case-sensitive. The application was not. Bypass confirmed.</p>
+<p>Another example: Azure AD was supposed to only accept registered redirect URIs. I tried <code>redirect_uri=https://evil.com</code>. No error. The login page rendered with my evil URL embedded in the authentication flow. Authorization code theft - High severity.</p>
+<p><strong>5. Version Archaeology (30%+ success)</strong></p>
+<p>If <code>app-test.company.com</code> exists, try <code>app.company.com</code>, <code>app-dev.company.com</code>, <code>app-staging.company.com</code>. Different environments often have different security configurations. I found a PRODUCTION environment with the same vulnerability as the TEST environment - simply by changing the subdomain.</p>
+<h3 id="what-does-not-work-save-your-time">What Does NOT Work (Save Your Time)</h3>
+<ul>
+<li><strong>Running Nuclei/Nikto and submitting raw output</strong> - instant rejection</li>
+<li><strong>Subdomain takeover on CNAME that is not dangling</strong> - check with <code>dig</code> first</li>
+<li><strong>CORS on public APIs that do not use cookie-based auth</strong> - informative at best</li>
+<li><strong>&ldquo;I found an API key&rdquo; without proving what it can access</strong> - always test the scope</li>
+<li><strong>Version disclosure alone</strong> - &ldquo;Server: Apache 2.4.9&rdquo; is not a vulnerability</li>
+</ul>
+<h2 id="the-art-of-chaining-where-real-impact-lives">The Art of Chaining (Where Real Impact Lives)</h2>
+<p>My most impactful findings were not single bugs. They were chains.</p>
+<h3 id="chain-example-1-config-file-to-account-takeover">Chain Example 1: Config File to Account Takeover</h3>
+<ol>
+<li><strong>Step 1:</strong> Found <code>/environment.json</code> on a test environment - exposed Azure AD client ID and tenant ID (no auth required)</li>
+<li><strong>Step 2:</strong> Used the client ID to initiate an OAuth device code flow - Azure accepted it</li>
+<li><strong>Step 3:</strong> Discovered the same client ID accepts ANY redirect URI - login page renders with attacker URL</li>
+<li><strong>Step 4:</strong> Combined: attacker sends employee a legitimate-looking Microsoft login URL, employee authenticates, authorization code goes to attacker&rsquo;s server</li>
+<li><strong>Impact:</strong> Full account takeover of any employee in the organization</li>
+</ol>
+<p>Single findings: Medium + Low. Chained: High/Critical.</p>
+<h3 id="chain-example-2-ssrf-to-mass-credential-exposure">Chain Example 2: SSRF to Mass Credential Exposure</h3>
+<ol>
+<li><strong>Step 1:</strong> Found SSRF via a CAPTCHA audio proxy endpoint</li>
+<li><strong>Step 2:</strong> Used SSRF to reach an internal Sentry error monitoring instance</li>
+<li><strong>Step 3:</strong> Sentry had hardcoded DSN keys - extracted 20+ production monitoring endpoints</li>
+<li><strong>Step 4:</strong> Each endpoint leaked internal service URLs, Git SHAs, and deployment metadata</li>
+<li><strong>Impact:</strong> Complete mapping of internal infrastructure + credential exposure</li>
+</ol>
+<p><strong>Lesson 4: Every finding is a node in a graph. Always ask &ldquo;what does this enable next?&rdquo; A Medium IDOR + a Low info disclosure + an SSRF = Critical account takeover.</strong></p>
+<h2 id="the-methodology-that-changed-everything">The Methodology That Changed Everything</h2>
+<p>I used to hunt randomly. Open Burp, click around, run tools. Hit rate: maybe 5%.</p>
+<p>Now I follow a structured process. Here is the simplified version:</p>
+<h3 id="step-1-understand-before-you-touch-30-of-time">Step 1: Understand Before You Touch (30% of time)</h3>
+<ul>
+<li>OSINT: Who works there? What tech do they use? Any leaked credentials?</li>
+<li>Recon: Subdomains, live hosts, ports, certificates</li>
+<li>Goal: Build a mental model of the target BEFORE sending a single request</li>
+</ul>
+<h3 id="step-2-map-everything-20-of-time">Step 2: Map Everything (20% of time)</h3>
+<ul>
+<li>Visit every live host on every port</li>
+<li>Extract JS bundles, config files, API specs</li>
+<li>Read CSP headers, CORS configs, error messages</li>
+<li>Goal: Know every endpoint, parameter, and technology</li>
+</ul>
+<h3 id="step-3-generate-hypotheses-10-of-time">Step 3: Generate Hypotheses (10% of time)</h3>
+<p><strong>Wait - what is a hypothesis?</strong> Think of it like this. When a doctor sees you coughing, they do not randomly prescribe 50 medicines. They think: &ldquo;Maybe it is a cold. Maybe it is allergies. Maybe it is something serious.&rdquo; Each &ldquo;maybe&rdquo; is a hypothesis. They test one by one - check temperature, listen to lungs, do a blood test - until they find the real cause.</p>
+<p>Bug bounty hunting works the same way. After I map an application, I do not randomly throw payloads at it. I look at what I discovered and form specific, testable guesses. For example: I see an API endpoint that takes a user ID parameter. My hypothesis: &ldquo;If I change this user ID to someone else&rsquo;s ID, will the API return their data instead of mine?&rdquo; That is one testable idea. I see an endpoint returning 401 Unauthorized. My hypothesis: &ldquo;What if I change the HTTP method from GET to POST - will it bypass the auth check?&rdquo; Another testable idea. I see an Azure AD client ID exposed in a config file. My hypothesis: &ldquo;Does this client ID accept any redirect URI, or only the registered ones?&rdquo; One more testable idea.</p>
+<p>Each hypothesis is ONE specific question with a YES/NO answer. I write them all down in a table - the hypothesis, what I am testing, what auth level is needed, and the priority. Then I test them one by one. On a serious target, I generate 100+ hypotheses. Most will be &ldquo;no&rdquo; (falsified). But the 5-10 that are &ldquo;yes&rdquo; - those are your findings.</p>
+<p><strong>The power of this approach:</strong> You never miss anything because every observation becomes a question. You never waste time because each test has a specific goal. And when you submit your report, you can say &ldquo;I tested 110 hypotheses, 9 confirmed&rdquo; - that tells the triager you were thorough, not lucky.</p>
+<ul>
+<li>For every data point discovered, generate at least one testable idea</li>
+<li>&ldquo;This endpoint has a user ID parameter → test IDOR with other IDs&rdquo;</li>
+<li>&ldquo;This API has no auth → test if write operations work&rdquo;</li>
+<li>Goal: Convert observations into testable questions</li>
+</ul>
+<h3 id="step-4-test-systematically-30-of-time">Step 4: Test Systematically (30% of time)</h3>
+<ul>
+<li>Test unauthenticated hypotheses first (highest value)</li>
+<li>Minimum depth: 3-5 requests per hypothesis before ruling it out</li>
+<li>Log everything - failures prove thoroughness</li>
+<li>Goal: Confirm or falsify every hypothesis</li>
+</ul>
+<h3 id="step-5-chain-and-maximize-10-of-time">Step 5: Chain and Maximize (10% of time)</h3>
+<ul>
+<li>Connect findings to other findings</li>
+<li>Ask: can I go deeper? Wider? More sensitive data?</li>
+<li>Goal: Maximize the proven impact of every finding</li>
+</ul>
+<h3 id="the-key-insight">The Key Insight</h3>
+<p><strong>I generate 500+ hypotheses per serious engagement. About 90 confirm. About 70 survive validation. The remaining 430+ are documented failures - and they are just as valuable because they prove I tested everything.</strong></p>
+<h2 id="report-writing-what-gets-triaged-vs-what-gets-closed">Report Writing: What Gets Triaged vs What Gets Closed</h2>
+<p>From my experience submitting 50+ reports, here is what separates a triaged report from an informative/NMI closure:</p>
+<h3 id="what-gets-triaged-do-this">What Gets Triaged (Do This)</h3>
+<ol>
+<li>
+<p><strong>Lead with the impact, not the technique</strong></p>
+<ul>
+<li>Bad: &ldquo;I found CORS misconfiguration on api.example.com&rdquo;</li>
+<li>Good: &ldquo;An attacker can steal any user&rsquo;s session data from api.example.com via a malicious website&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Show the full PoC with actual responses</strong></p>
+<ul>
+<li>Include the exact curl command</li>
+<li>Include the actual HTTP response (not &ldquo;it returned sensitive data&rdquo;)</li>
+<li>Show the specific data that proves the impact</li>
+</ul>
+</li>
+<li>
+<p><strong>Address &ldquo;so what?&rdquo; before the triager asks it</strong></p>
+<ul>
+<li>&ldquo;This exposes 30M+ user records including email addresses and phone numbers&rdquo;</li>
+<li>Not: &ldquo;This endpoint returns user data&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Be honest about limitations</strong></p>
+<ul>
+<li>&ldquo;Full exploitation requires the victim to click a link and authenticate&rdquo;</li>
+<li>Not: &ldquo;An attacker gains full access&rdquo; (when it actually needs user interaction)</li>
+</ul>
+</li>
+</ol>
+<h3 id="what-gets-closed-do-not-do-this">What Gets Closed (Do Not Do This)</h3>
+<ol>
+<li><strong>Theoretical impact without proof</strong> - &ldquo;An attacker COULD steal&hellip;&rdquo; without a working PoC</li>
+<li><strong>Scanner output with no analysis</strong> - copy-pasting Nuclei/Burp results</li>
+<li><strong>Severity inflation</strong> - claiming Critical when the real impact is Medium</li>
+<li><strong>Missing preconditions</strong> - not mentioning that the attack needs XSS/phishing/MitM</li>
+<li><strong>Duplicate claims on intended behavior</strong> - &ldquo;CORS allows all origins&rdquo; on a public API that uses token auth (not cookies)</li>
+</ol>
+<h3 id="the-xyz-company-example">The XYZ Company Example</h3>
+<p>When I reported the entire Hypothesis table to XYZ Company, the founder responded:</p>
+<blockquote>
+<p>&ldquo;Thanks for flagging this, and for the hypothesis table as well. That&rsquo;s a really helpful resource.&rdquo;</p>
+</blockquote>
+<p>They paid $500 and said the hypothesis table (my list of what I tested and what I did not test) was valuable to them. <strong>The methodology itself was part of the deliverable.</strong></p>
+<center><img src="/images/hypothesis.png" alt="dd_bg" width="1550"/></center></br>
+<h2 id="the-mindset-what-nobody-tells-you">The Mindset: What Nobody Tells You</h2>
+<h3 id="1-it-is-a-race---but-consistency-wins">1. It Is a Race - But Consistency Wins</h3>
+<p>Bug bounty IS competitive. You WILL get duplicates. Some bugs are so common that many hunters find them around the same time - the first person to report it gets the bounty, and everyone else gets &ldquo;duplicate&rdquo; or &ldquo;informative&rdquo;. That stings.</p>
+<p>But here is the thing: the person who reported was probably consistent. They probably hunted that target every week. Consistency beats bursts of effort every single time.</p>
+<h3 id="2-rejections-are-part-of-the-game">2. Rejections Are Part of the Game</h3>
+<p>You will get rejections. Sometimes for valid reasons, sometimes not. Do not let it discourage you. Every rejection is a learning opportunity. Ask for feedback if possible. Understand why it was rejected and use that knowledge to improve your future reports. I have had my reports rejected for various reasons, including: scope issues, impact not being significant enough, or sometimes the program decides a specific finding is not a security issue even if it is technically a vulnerability. This is part of the game.</p>
+<h3 id="3-process-matters-more-than-tools">3. Process Matters More Than Tools</h3>
+<p>I have seen beginners spend weeks setting up tool chains. Fancy recon pipelines, automated scanners, dashboard after dashboard.</p>
+<p>The bugs I found? Most came from:</p>
+<ul>
+<li>Reading JavaScript source code</li>
+<li>Sending manual BurpSuite requests via Repeater</li>
+<li>Thinking &ldquo;what if this parameter accepts negative numbers?&rdquo;</li>
+<li>Asking &ldquo;what happens if I remove the auth header?&rdquo;</li>
+</ul>
+<p>Tools help with discovery. Thinking finds bugs.</p>
+<h3 id="4-some-engagements-turn-into-something-bigger">4. Some Engagements Turn Into Something Bigger</h3>
+<p>My xyz.com disclosure in 2026 turned into a relationship for me to become their regular pentester for 6 months. My abc.com (not public yet) submission turned into a private Discord community invite. My structured reporting to startups turned into private pentest assignments.</p>
+<p><strong>Bug bounty is not just a job. It is a portfolio that opens doors.</strong></p>
+<h3 id="5-the-best-bugs-come-from-understanding-the-business">5. The Best Bugs Come from Understanding the Business</h3>
+<p>My highest-impact findings came from understanding what the application DOES, not just how it is built.</p>
+<ul>
+<li>Understanding that a pump selection ERP system should NOT have open registration → found open registration on production system (High)</li>
+<li>Understanding that OAuth redirect_uri should be validated → found open redirect in Azure AD app (High)</li>
+<li>Understanding that a CAPTCHA proxy might reach internal services → found SSRF to internal Sentry (Critical chain)</li>
+</ul>
+<p><strong>Technical skills find Low/Medium bugs. Business understanding finds High/Critical bugs.</strong></p>
+<h3 id="finding-classes-that-paid">Finding Classes That Paid</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Vulnerability Class</th>
+          <th>Count</th>
+          <th>Avg Severity</th>
+          <th>Paid?</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Config/Secret Exposure</td>
+          <td>4</td>
+          <td>High</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>IDOR/BOLA</td>
+          <td>5</td>
+          <td>High</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>SSRF</td>
+          <td>4</td>
+          <td>High-Critical</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Auth Bypass/Missing Auth</td>
+          <td>4</td>
+          <td>High</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>CORS Misconfiguration</td>
+          <td>1</td>
+          <td>Medium</td>
+          <td>Sometimes</td>
+      </tr>
+      <tr>
+          <td>Injection (SQLi/NoSQLi/SSTI)</td>
+          <td>3</td>
+          <td>High-Critical</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Business Logic</td>
+          <td>3</td>
+          <td>Medium-High</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Open Redirect/OAuth</td>
+          <td>2</td>
+          <td>Medium-High</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Info Disclosure</td>
+          <td>9</td>
+          <td>Low</td>
+          <td>Rarely</td>
+      </tr>
+      <tr>
+          <td>GraphQL Issues</td>
+          <td>4</td>
+          <td>Medium-High</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Smart Contract Bugs</td>
+          <td>1</td>
+          <td>High</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="time-investment-vs-returns">Time Investment vs Returns</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Phase</th>
+          <th>% of Time</th>
+          <th>Findings Found</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>OSINT + Recon</td>
+          <td>30%</td>
+          <td>Enables everything, 0 direct findings</td>
+      </tr>
+      <tr>
+          <td>Surface Mapping</td>
+          <td>20%</td>
+          <td>15% of findings (config files, exposed endpoints)</td>
+      </tr>
+      <tr>
+          <td>Hypothesis Testing</td>
+          <td>30%</td>
+          <td>70% of findings (the bulk of work)</td>
+      </tr>
+      <tr>
+          <td>Chain + Ghost Hunt</td>
+          <td>15%</td>
+          <td>10% of findings (but highest severity)</td>
+      </tr>
+      <tr>
+          <td>Reporting</td>
+          <td>5%</td>
+          <td>5% findings upgraded via better PoC</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="the-golden-rule">The Golden Rule</h3>
+<p><strong>Submit ONE well-researched, fully-proven finding rather than TEN scanner-output reports.</strong> Quality over quantity. Every time.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Bug bounty is hard. The stats prove it - I found zero bugs on more than half my targets. I got duplicated. I got rejected. I got reports closed as informative.</p>
+<p>But I also got $$$$ in a single payout. I got private pentest invitations. I got thanked by CTOs of startups. I got offered free software licenses. I built a methodology that consistently finds real bugs on real targets.</p>
+<p>The difference between someone who quits after their first duplicate and someone who earns consistent bounties is NOT talent. It is:</p>
+<ol>
+<li><strong>Process</strong> - having a systematic approach, not random clicking</li>
+<li><strong>Patience</strong> - accepting that most hypotheses will be falsified</li>
+<li><strong>Persistence</strong> - moving to the next target when one does not pay off</li>
+<li><strong>Learning</strong> - every engagement teaches something for the next one</li>
+</ol>
+<p>Every duplicate I received proved my methodology works - I was just slower. Every rejection taught me what programs actually care about. Every informational closure taught me the difference between &ldquo;interesting observation&rdquo; and &ldquo;proven security impact.&rdquo;</p>
+<p>Start today. Pick a target. Follow a process. Accept the failures. Learn from them. The bugs are there. The bounties are there. You just have to be consistent enough to find them.</p>
+<p><em>Written from real engagement data across 45+ targets, 120+ findings, and 500+ hypotheses. No theory - just what actually happened.</em></p>
+<p><em>All company names have been sanitised where required. Vulnerability details are described at a high level to protect ongoing programs.</em></p>
+
+      </div>
+    </section>
+
+    
+    
+  </article>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+</html>
+
+

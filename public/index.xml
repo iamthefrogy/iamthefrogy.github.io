@@ -6,8 +6,15 @@
     <description>Recent content on Cyber Frogy</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 23 Feb 2026 19:05:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 16:50:26 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened</title>
+      <link>http://localhost:1313/posts/bug-bounty-journey/</link>
+      <pubDate>Thu, 23 Apr 2026 16:50:26 +0100</pubDate>
+      <guid>http://localhost:1313/posts/bug-bounty-journey/</guid>
+      <description>&lt;p&gt;&lt;em&gt;A practical, no-BS guide based on real submissions, real rejections, and real lessons - not theory.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;who-is-this-for&#34;&gt;Who is this for?&lt;/h2&gt;&#xA;&lt;p&gt;If you are sitting there thinking &amp;ldquo;bug bounty is too hard&amp;rdquo; or &amp;ldquo;all the good bugs are already found&amp;rdquo; - this report is for you. I am going to share my actual journey. Not just the wins. The duplicates. The rejections. The informational closures. The emails where companies said &amp;ldquo;thanks but no thanks.&amp;rdquo; And then the $$$$ payouts, the private pentest invitations, and the moments where everything clicked.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>(SIEM) The Data Normalization Problem Nobody Talks About</title>
       <link>http://localhost:1313/posts/ai-soc-data-normalisation/</link>
