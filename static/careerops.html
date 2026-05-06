@@ -404,6 +404,596 @@
         padding: 1.5rem
       }
     }
+
+    /* extended sections */
+    .section {
+      margin-top: 3rem
+    }
+
+    .section-head {
+      margin-bottom: 1.25rem
+    }
+
+    .section-head h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px
+    }
+
+    .section-head p {
+      font-size: 13.5px;
+      color: var(--text-2);
+      max-width: 780px;
+      line-height: 1.6
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 4px 9px;
+      border-radius: 999px;
+      margin-bottom: 10px
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      position: sticky;
+      top: 8px;
+      z-index: 20;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .topnav a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: all .15s
+    }
+
+    .topnav a:hover {
+      background: var(--primary-soft);
+      color: var(--primary)
+    }
+
+    /* podium */
+    .podium {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px
+    }
+
+    .podium-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+      position: relative
+    }
+
+    .podium-card .rank {
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      border: 2px solid var(--bg)
+    }
+
+    .podium-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 6px;
+      margin-bottom: 6px
+    }
+
+    .podium-card p {
+      font-size: 12px;
+      color: var(--text-3);
+      line-height: 1.5
+    }
+
+    @media (max-width:900px) {
+      .podium {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    /* tabs */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .tab {
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-family: inherit
+    }
+
+    .tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      font-weight: 600
+    }
+
+    .tab-panel {
+      display: none
+    }
+
+    .tab-panel.active {
+      display: block
+    }
+
+    .bucket-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px
+    }
+
+    .bucket-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--text)
+    }
+
+    .bucket-avoid li {
+      border-left-color: #D85A30
+    }
+
+    .bucket-target li {
+      border-left-color: #1D9E75
+    }
+
+    .bucket-leverage li {
+      border-left-color: #378ADD
+    }
+
+    /* generic table */
+    .data-table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: auto;
+      box-shadow: var(--shadow-sm)
+    }
+
+    table.data {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 600px
+    }
+
+    table.data th,
+    table.data td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border)
+    }
+
+    table.data th {
+      background: var(--surface-2);
+      color: var(--text-2);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap
+    }
+
+    table.data th:hover {
+      color: var(--primary)
+    }
+
+    table.data th.sort-asc::after {
+      content: ' ↑';
+      color: var(--primary)
+    }
+
+    table.data th.sort-desc::after {
+      content: ' ↓';
+      color: var(--primary)
+    }
+
+    table.data tr:last-child td {
+      border-bottom: none
+    }
+
+    table.data tr:hover td {
+      background: var(--surface-2)
+    }
+
+    .risk-cell {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      line-height: 22px;
+      font-size: 11px;
+      font-weight: 700
+    }
+
+    .r1 {
+      background: #1D9E75
+    }
+
+    .r2 {
+      background: #6FAE3B
+    }
+
+    .r3 {
+      background: #BA7517
+    }
+
+    .r4 {
+      background: #D85A30
+    }
+
+    .r5 {
+      background: #A32D2D
+    }
+
+    /* country grid */
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px
+    }
+
+    .country-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: all .15s
+    }
+
+    .country-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .country-card .flag {
+      font-size: 22px;
+      margin-bottom: 6px
+    }
+
+    .country-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px
+    }
+
+    .country-card .row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-3);
+      padding: 3px 0
+    }
+
+    .country-card .row b {
+      color: var(--text-2);
+      font-weight: 600
+    }
+
+    /* personality picker */
+    .picker {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .picker-q {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-bottom: 10px
+    }
+
+    .picker-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+      margin-bottom: 16px
+    }
+
+    .picker-opt {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-size: 13px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: all .15s
+    }
+
+    .picker-opt:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft)
+    }
+
+    .picker-opt.selected {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600
+    }
+
+    .picker-result {
+      padding: 14px;
+      background: linear-gradient(135deg, #F4F3FF 0%, #FFFFFF 100%);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-md);
+      display: none
+    }
+
+    .picker-result.show {
+      display: block
+    }
+
+    .picker-result h4 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px
+    }
+
+    .picker-result .fit {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 6px
+    }
+
+    .picker-result .avoid {
+      font-size: 12.5px;
+      color: var(--warning)
+    }
+
+    /* timeline */
+    .timeline {
+      position: relative;
+      padding-left: 28px
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--border)
+    }
+
+    .tl-item {
+      position: relative;
+      padding-bottom: 18px
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--primary)
+    }
+
+    .tl-item h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px
+    }
+
+    .tl-item ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.7
+    }
+
+    /* accordion */
+    .acc-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      overflow: hidden
+    }
+
+    .acc-head {
+      width: 100%;
+      padding: 12px 14px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text)
+    }
+
+    .acc-head:hover {
+      background: var(--surface-2)
+    }
+
+    .acc-head .arrow {
+      transition: transform .2s;
+      color: var(--text-3)
+    }
+
+    .acc-item.open .acc-head .arrow {
+      transform: rotate(90deg);
+      color: var(--primary)
+    }
+
+    .acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s
+    }
+
+    .acc-item.open .acc-body {
+      max-height: 600px
+    }
+
+    .acc-body div {
+      padding: 0 14px 14px;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.65
+    }
+
+    /* matrix */
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 32px 1fr 1.2fr 1fr;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      align-items: center;
+      font-size: 13px
+    }
+
+    .matrix-row .mrank {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 12px
+    }
+
+    .matrix-row b {
+      font-size: 13.5px
+    }
+
+    .matrix-row .mfit {
+      color: var(--text-2)
+    }
+
+    .matrix-row .mcond {
+      color: var(--warning);
+      font-size: 12.5px
+    }
+
+    @media (max-width:760px) {
+      .matrix-row {
+        grid-template-columns: 32px 1fr;
+        gap: 6px
+      }
+
+      .matrix-row .mfit,
+      .matrix-row .mcond {
+        grid-column: 2
+      }
+    }
+
+    .sources {
+      columns: 2;
+      column-gap: 24px;
+      font-size: 12px;
+      color: var(--text-3);
+      line-height: 1.7
+    }
+
+    .sources a {
+      color: var(--text-2);
+      text-decoration: none
+    }
+
+    .sources a:hover {
+      color: var(--primary)
+    }
+
+    @media (max-width:760px) {
+      .sources {
+        columns: 1
+      }
+    }
+
+    .callout {
+      background: linear-gradient(135deg, #FFF8EB 0%, #FFFFFF 100%);
+      border: 1px solid #F0D8A6;
+      border-left: 3px solid var(--warning);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 12px 0
+    }
+
+    .callout b {
+      color: var(--warning)
+    }
   </style>
 </head>
 
@@ -418,6 +1008,24 @@
       <p>Physics · Chemistry · Mathematics - complete career map with AI resistance, income stability, India + global
         opportunities. Tap any card for full breakdown.</p>
     </div>
+
+    <nav class="topnav" aria-label="Section navigation">
+      <a href="#verdict">Top 5 verdict</a>
+      <a href="#filters4">4 filters</a>
+      <a href="#sectors">Sector outlook</a>
+      <a href="#ai-buckets">AI buckets</a>
+      <a href="#grid">Career cards</a>
+      <a href="#countries">Countries</a>
+      <a href="#salary-table">Salary table</a>
+      <a href="#ai-score">AI scorecard</a>
+      <a href="#family-score">Family scorecard</a>
+      <a href="#picker">Personality picker</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#mistakes">Mistakes</a>
+      <a href="#critical">Critical thinking</a>
+      <a href="#final-matrix">Final matrix</a>
+      <a href="#sources">Sources</a>
+    </nav>
 
     <div class="stats-row">
       <div class="stat-card">
@@ -463,6 +1071,309 @@
     </div>
 
     <div class="grid" id="grid"></div>
+
+    <!-- Executive verdict -->
+    <section class="section" id="verdict">
+      <div class="section-head">
+        <span class="section-eyebrow">Executive verdict</span>
+        <h2>Top 5 career clusters that clear all 4 filters</h2>
+        <p>High income · low AI risk · global demand · family stability. Picture this - at a 10-platform railway junction, only these 5 trains still run in 2050 with full coaches.</p>
+      </div>
+      <div class="podium">
+        <div class="podium-card"><div class="rank">1</div><h3>Medicine (MBBS + MD/MS)</h3><p>Highest stability. AI-immune. Globally portable via USMLE/PLAB/AMC.</p></div>
+        <div class="podium-card"><div class="rank">2</div><h3>Aviation - Pilot / ATC</h3><p>Tax-friendly band, global licensing, manual-skill protected through 2045.</p></div>
+        <div class="podium-card"><div class="rank">3</div><h3>Merchant Navy</h3><p>Tax-free at sea Rs 50K to Rs 6L/month. Global jobs, fast wealth.</p></div>
+        <div class="podium-card"><div class="rank">4</div><h3>Core Engg + Specialisation</h3><p>VLSI, Aerospace, Petroleum, Civil-Structural, Robotics. PSU + abroad.</p></div>
+        <div class="podium-card"><div class="rank">5</div><h3>Govt / Defence / UPSC / PSU</h3><p>Pension, housing, family medical, social respect for life.</p></div>
+      </div>
+    </section>
+
+    <!-- 4 filters -->
+    <section class="section" id="filters4">
+      <div class="section-head">
+        <span class="section-eyebrow">Method</span>
+        <h2>The 4 filters we applied</h2>
+        <p>Out of 60+ PCM career options in coaching brochures, only those passing all four filters made the cut.</p>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+        <div class="card" style="cursor:default"><div class="card-title">1. Income floor</div><div class="card-sub" style="margin-top:8px">Entry &gt; Rs 5 LPA OR clear path to Rs 15 LPA in 7 years. Below this, cannot insulate 4-member family from inflation in tier-1 city by 2035.</div></div>
+        <div class="card" style="cursor:default"><div class="card-title">2. AI-resistance</div><div class="card-sub" style="margin-top:8px">Will it exist in recognisable form in 2035? Three sub-tests - physical/manual presence, legal accountability, high-stakes judgement under uncertainty.</div></div>
+        <div class="card" style="cursor:default"><div class="card-title">3. Foreign portability</div><div class="card-sub" style="margin-top:8px">Can you earn USD/EUR/AUD/CAD/AED with clear visa path? Hedges INR depreciation (~50% loss vs USD over 15 yrs).</div></div>
+        <div class="card" style="cursor:default"><div class="card-title">4. Family stability stack</div><div class="card-sub" style="margin-top:8px">Salary + medical insurance + pension/EPF + housing loan + child school admission + community respect. Salary alone is not stability.</div></div>
+      </div>
+    </section>
+
+    <!-- Sector forecast -->
+    <section class="section" id="sectors">
+      <div class="section-head">
+        <span class="section-eyebrow">India 2026-2040</span>
+        <h2>Sector hiring outlook</h2>
+        <p>Working-age population peaks ~2035 then declines. If you are 18 today, peak earning decade is 2035-2045. Click column header to sort.</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data" id="sector-table">
+          <thead><tr>
+            <th data-sort="0">Sector</th>
+            <th data-sort="1">2026 size</th>
+            <th data-sort="2">2035 forecast</th>
+            <th data-sort="3">Hiring outlook</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>IT services (TCS/Infy style)</td><td>USD 250B</td><td>USD 350B (slow)</td><td>Saturated, AI-eaten at junior level</td></tr>
+            <tr><td>Semiconductor / VLSI</td><td>USD 38B</td><td>USD 110B</td><td>Massive shortage - PLI scheme</td></tr>
+            <tr><td>Healthcare</td><td>USD 370B</td><td>USD 800B</td><td>Doctor + nurse shortage</td></tr>
+            <tr><td>Aviation</td><td>1300 aircraft</td><td>3000+ aircraft</td><td>30,000+ pilot shortage globally</td></tr>
+            <tr><td>Renewable energy</td><td>180 GW</td><td>500 GW (target)</td><td>Grid, solar, EV engineers in demand</td></tr>
+            <tr><td>Defence manufacturing</td><td>USD 25B</td><td>USD 70B</td><td>DRDO, HAL, private engineers needed</td></tr>
+            <tr><td>Construction / Infra</td><td>USD 700B</td><td>USD 1.4T</td><td>Civil engineers, urban planners short</td></tr>
+            <tr><td>BPO / Routine IT</td><td>USD 60B</td><td>Declining</td><td>AI replacing rapidly</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><b>Cold truth -</b> 'PCM → B.Tech CSE → TCS/Infy' was the safest middle-class escalator for 25 years. Naukri Jan 2026 - generic SE fresher hiring DOWN 30-40% YoY since 2024. GitHub Copilot now writes the boilerplate code juniors used to. The escalator now requires AI specialisation, not just a B.Tech CSE.</div>
+    </section>
+
+    <!-- AI buckets tabs -->
+    <section class="section" id="ai-buckets">
+      <div class="section-head">
+        <span class="section-eyebrow">AI disruption</span>
+        <h2>What will survive, what won't</h2>
+        <p>Reference - WEF Future of Jobs 2025 (85M displaced, 97M created). Click tabs to switch view.</p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="avoid">Avoid (AI eats by 2035)</button>
+        <button class="tab" data-tab="target">Target (AI cannot eat through 2040)</button>
+        <button class="tab" data-tab="leverage">Leverage (becomes more valuable WITH AI)</button>
+      </div>
+      <div class="tab-panel active" id="tab-avoid">
+        <ul class="bucket-list bucket-avoid">
+          <li>Routine software dev (CRUD apps, basic web, manual QA)</li>
+          <li>BPO / call centres / KPO / basic accounting / data entry</li>
+          <li>Junior legal review, junior financial analysis</li>
+          <li>Basic radiology image reading</li>
+          <li>Translators, transcribers, content writers (general)</li>
+          <li>Basic graphic design</li>
+          <li>Bank tellers, level-1 insurance underwriters</li>
+          <li>Tax preparation (level 1)</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="tab-target">
+        <ul class="bucket-list bucket-target">
+          <li>Surgeons, anaesthetists, dentists, physiotherapists</li>
+          <li>Pilots, ATC, ship captains, marine engineers</li>
+          <li>Civil/structural engineers signing physical structures</li>
+          <li>Semiconductor process engineers, chip designers</li>
+          <li>Defence, police, fire, armed forces officers</li>
+          <li>Skilled trades - HVAC, electrical, plumbing, automotive</li>
+          <li>Mental health, psychiatry, geriatrics, paediatrics</li>
+          <li>Top-tier judgement - research scientists, R&amp;D leaders, CXOs</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="tab-leverage">
+        <ul class="bucket-list bucket-leverage">
+          <li>AI/ML engineer, MLOps, AI safety, AI product engineer</li>
+          <li>Cybersecurity engineer (AI raises attack volume)</li>
+          <li>Data scientist with physics/biology domain depth</li>
+          <li>Robotics + automation engineer</li>
+          <li>Doctors + lawyers + engineers using AI as 10x leverage</li>
+        </ul>
+        <div class="callout">Safest career - one where YOU command the AI, not AI commands you. 'AI engineer' safer than 'data analyst' for the same reason 'pilot' safer than 'cabin crew' - proximity to the controls.</div>
+      </div>
+    </section>
+
+    <!-- Foreign country map -->
+    <section class="section" id="countries">
+      <div class="section-head">
+        <span class="section-eyebrow">Foreign opportunity map</span>
+        <h2>Country-by-country guide</h2>
+        <p>Visa friction, salary band, citizenship timeline. Hover for highlights.</p>
+      </div>
+      <div class="country-grid" id="country-grid"></div>
+      <div class="callout">
+        <b>Critical thinking -</b> USA H1B lottery is 25% odds, do not bet sole career on it. Canada PR is slowing - CRS cutoffs rising. Germany is the easiest 'serious' country for Indian engineers (EU Blue Card in 2 weeks). Gulf jobs tax-free but no PR - wealth-build mode only.
+      </div>
+    </section>
+
+    <!-- Salary master table -->
+    <section class="section" id="salary-table">
+      <div class="section-head">
+        <span class="section-eyebrow">Salary master table</span>
+        <h2>India + Abroad (2026 baseline)</h2>
+        <p>Click any column header to sort. All figures pre-tax unless noted.</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data" id="sal-table">
+          <thead><tr>
+            <th data-sort="0">Career</th>
+            <th data-sort="1">India entry</th>
+            <th data-sort="2">India 10 yr</th>
+            <th data-sort="3">Foreign 10 yr</th>
+            <th data-sort="4">Tax notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>MBBS specialist (private)</td><td>Rs 12 LPA</td><td>Rs 50L-3Cr</td><td>USA Rs 3-8Cr</td><td>USA highest tax</td></tr>
+            <tr><td>AI/ML engineer (top firm)</td><td>Rs 15-30 LPA</td><td>Rs 80L-2Cr</td><td>USA Rs 2-5Cr</td><td>USA H1B</td></tr>
+            <tr><td>Semiconductor / VLSI</td><td>Rs 12-18 LPA</td><td>Rs 60L-1.5Cr</td><td>USA Rs 2-4Cr</td><td>Strong demand</td></tr>
+            <tr><td>Pilot (Captain)</td><td>Rs 60L (FO)</td><td>Rs 1.5-3 Cr</td><td>Rs 2-4 Cr</td><td>Tax-friendly</td></tr>
+            <tr><td>Merchant Navy (Master)</td><td>Rs 25 LPA cadet</td><td>Rs 1.5-2.5 Cr</td><td>Same (NRI)</td><td>TAX-FREE</td></tr>
+            <tr><td>Civil engineer (PSU)</td><td>Rs 12-15 LPA</td><td>Rs 25-40 LPA</td><td>Gulf Rs 60L-1.5Cr</td><td>Gulf TAX-FREE</td></tr>
+            <tr><td>Civil services IAS</td><td>Rs 10 LPA</td><td>Rs 25-40 LPA</td><td>-</td><td>Pension lifetime</td></tr>
+            <tr><td>ISRO / DRDO scientist</td><td>Rs 10-15 LPA</td><td>Rs 30-50 LPA</td><td>-</td><td>Housing + pension</td></tr>
+            <tr><td>Quant (top firm)</td><td>Rs 50L-1Cr</td><td>Rs 3-8 Cr</td><td>Rs 5-15 Cr</td><td>-</td></tr>
+            <tr><td>Actuary qualified</td><td>Rs 8-15 LPA</td><td>Rs 50-80 LPA</td><td>UK Rs 1-2Cr</td><td>-</td></tr>
+            <tr><td>CA (Big 4 + own practice)</td><td>Rs 12-15 LPA</td><td>Rs 50-80 LPA</td><td>Gulf Rs 60L-1.5Cr</td><td>-</td></tr>
+            <tr><td>Architect (own firm)</td><td>Rs 4-6 LPA</td><td>Rs 20-50 LPA</td><td>USA Rs 60L-1.2Cr</td><td>-</td></tr>
+            <tr><td>BSc Physics + MSc + PhD</td><td>Rs 6-10 LPA</td><td>Rs 20-40 LPA</td><td>USA Rs 1.5-3Cr</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- AI Resistance Master Scorecard -->
+    <section class="section" id="ai-score">
+      <div class="section-head">
+        <span class="section-eyebrow">AI resistance scorecard</span>
+        <h2>1 = safe · 5 = at risk</h2>
+        <p>Forecast year by year. Sort by 2040 column to see where to NOT bet your career.</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data" id="ai-table">
+          <thead><tr>
+            <th data-sort="0">Career</th>
+            <th data-sort="1" data-numeric="true">2030</th>
+            <th data-sort="2" data-numeric="true">2035</th>
+            <th data-sort="3" data-numeric="true">2040</th>
+            <th data-sort="4">Why</th>
+          </tr></thead>
+          <tbody id="ai-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Family Stability Scorecard -->
+    <section class="section" id="family-score">
+      <div class="section-head">
+        <span class="section-eyebrow">Family stability scorecard</span>
+        <h2>The full bundle - not just salary</h2>
+        <p>1 = excellent, 5 = poor across medical, pension, housing, schooling, social respect. Lower total = better family stability.</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data" id="fam-table">
+          <thead><tr>
+            <th data-sort="0">Career</th>
+            <th data-sort="1" data-numeric="true">Medical</th>
+            <th data-sort="2" data-numeric="true">Pension</th>
+            <th data-sort="3" data-numeric="true">Housing</th>
+            <th data-sort="4" data-numeric="true">Schooling</th>
+            <th data-sort="5" data-numeric="true">Respect</th>
+            <th data-sort="6" data-numeric="true">Total</th>
+          </tr></thead>
+          <tbody id="fam-tbody"></tbody>
+        </table>
+      </div>
+      <div class="callout"><b>Pattern -</b> Govt + core engg with PSU win on pure stability. Private sector wins on pure income. Only medicine + pilot + IAS/IPS win on BOTH.</div>
+    </section>
+
+    <!-- Personality picker -->
+    <section class="section" id="picker">
+      <div class="section-head">
+        <span class="section-eyebrow">Decision framework</span>
+        <h2>Which student are you? - tap to find fit</h2>
+        <p>Income chasing without personality fit = burnout by 32. Pick the option that sounds most like the student.</p>
+      </div>
+      <div class="picker">
+        <div class="picker-q">Pick the description that fits best</div>
+        <div class="picker-options" id="picker-opts"></div>
+        <div class="picker-result" id="picker-result">
+          <h4>Strong fit</h4>
+          <div class="fit" id="picker-fit"></div>
+          <h4 style="margin-top:10px">Avoid</h4>
+          <div class="avoid" id="picker-avoid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap timeline -->
+    <section class="section" id="roadmap">
+      <div class="section-head">
+        <span class="section-eyebrow">Action roadmap</span>
+        <h2>Year by year - Class 11 to first job</h2>
+        <p>Lock the foreign-option exam early. Save 30%+ of first salary. Foreign move ideally before age 30 (visa age points).</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><h4>Class 11 - now</h4><ul>
+          <li>Lock subjects - PCM + ideally B (PCMB) for medicine optionality</li>
+          <li>Start JEE Main + Advanced prep (Allen / Resonance / FIITJEE / online)</li>
+          <li>Take aptitude test - confirm fit before locking direction</li>
+          <li>Begin English certification path - spoken English + IELTS familiarity</li>
+        </ul></div>
+        <div class="tl-item"><h4>Class 12</h4><ul>
+          <li>JEE Main (Jan + April), JEE Advanced (May), BITSAT, state CETs</li>
+          <li>If medicine - NEET in May</li>
+          <li>If Defence - NDA written (April + Sept) and SSB</li>
+          <li>If Aviation - DGCA Class 1 medical, start CPL admission process</li>
+        </ul></div>
+        <div class="tl-item"><h4>College year 1-2</h4><ul>
+          <li>Build portfolio - GitHub for CS, projects + internships for engineering</li>
+          <li>Lock foreign-option exam early - GRE for USA, IELTS for Canada/Australia, German A1-B2</li>
+          <li>Decide GATE vs MBA vs job track by end of Year 2</li>
+        </ul></div>
+        <div class="tl-item"><h4>College year 3-4</h4><ul>
+          <li>Internships in target sector - 2-3 substantial ones</li>
+          <li>If GATE/PSU route - prep starts Year 3</li>
+          <li>If higher studies abroad - applications Year 4 Sep-Dec</li>
+          <li>If campus placement - target tier-1 firms with AI/ML/cybersec specialisation</li>
+        </ul></div>
+        <div class="tl-item"><h4>First 5 years of work</h4><ul>
+          <li>Save 30%+ of income, 6-month emergency fund, term insurance, parents' health insurance</li>
+          <li>Foreign move ideally before age 30</li>
+          <li>Domain depth &gt; job-hopping. Become known in one sub-field</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- Common mistakes -->
+    <section class="section" id="mistakes">
+      <div class="section-head">
+        <span class="section-eyebrow">Common mistakes</span>
+        <h2>What Indian PCM families get wrong</h2>
+        <p>Tap each card to expand.</p>
+      </div>
+      <div id="mistakes-acc"></div>
+    </section>
+
+    <!-- Critical thinking -->
+    <section class="section" id="critical">
+      <div class="section-head">
+        <span class="section-eyebrow">Critical thinking</span>
+        <h2>What brochures hide</h2>
+        <p>Coaching brochures sell hope. Counsellors sell admissions. Below - the inconvenient parts.</p>
+      </div>
+      <div id="critical-acc"></div>
+    </section>
+
+    <!-- Final matrix -->
+    <section class="section" id="final-matrix">
+      <div class="section-head">
+        <span class="section-eyebrow">Final recommendation matrix</span>
+        <h2>Top 10 ranked - all factors equally weighted</h2>
+        <p>Income + AI-resistance + foreign + family stability + entry feasibility.</p>
+      </div>
+      <div id="matrix-list"></div>
+      <div class="callout">
+        <b>Hybrid strategy we recommend most -</b> If your child is above-average PCM with no extreme single-direction passion - take PCMB in 11-12 (keep medicine open), aim IIT/IIIT/BITS via JEE in CSE+AI or Electronics/VLSI, in parallel write NDA + UPSC prelims as backup. By age 28 - own a home, term + health insurance for whole family, parents' medical secured. Not the highest-upside path. Highest-probability happy path for next 30 years.
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="section" id="sources">
+      <div class="section-head">
+        <span class="section-eyebrow">Sources &amp; references</span>
+        <h2>Where the numbers come from</h2>
+        <p>Verify exam dates, fees, visa rules from official sources before commitment. Income figures are 2026 market estimates.</p>
+      </div>
+      <div class="sources" id="sources-list"></div>
+    </section>
   </div>
 
   <script>
@@ -892,6 +1803,242 @@
     });
 
     renderCards();
+
+    /* ====== Tabs (AI buckets) ====== */
+    document.querySelectorAll('.tab').forEach(t => {
+      t.addEventListener('click', () => {
+        const id = t.dataset.tab;
+        document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        document.getElementById('tab-' + id).classList.add('active');
+      });
+    });
+
+    /* ====== Sortable tables ====== */
+    function makeSortable(tableId) {
+      const tbl = document.getElementById(tableId);
+      if (!tbl) return;
+      const tbody = tbl.querySelector('tbody');
+      tbl.querySelectorAll('th[data-sort]').forEach(th => {
+        th.addEventListener('click', () => {
+          const idx = +th.dataset.sort;
+          const numeric = th.dataset.numeric === 'true';
+          const dir = th.classList.contains('sort-asc') ? 'desc' : 'asc';
+          tbl.querySelectorAll('th').forEach(x => x.classList.remove('sort-asc', 'sort-desc'));
+          th.classList.add(dir === 'asc' ? 'sort-asc' : 'sort-desc');
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+          rows.sort((a, b) => {
+            let av = a.children[idx].innerText.trim();
+            let bv = b.children[idx].innerText.trim();
+            if (numeric) { av = parseFloat(av); bv = parseFloat(bv); }
+            return dir === 'asc' ? (av > bv ? 1 : av < bv ? -1 : 0) : (av < bv ? 1 : av > bv ? -1 : 0);
+          });
+          rows.forEach(r => tbody.appendChild(r));
+        });
+      });
+    }
+
+    /* ====== AI Resistance Scorecard ====== */
+    const aiScores = [
+      ["Surgeon / Anaesthetist", 1, 1, 1, "Manual + legal + empathy"],
+      ["Pilot (commercial)", 1, 1, 2, "Manual + safety regulation"],
+      ["Merchant Navy Officer", 1, 1, 2, "Manual + maritime law"],
+      ["Civil Structural Engineer", 1, 1, 2, "Sign-off liability"],
+      ["Semiconductor Engineer", 1, 1, 2, "Physics + lab + IP"],
+      ["AI/ML Engineer", 1, 1, 2, "Builder of AI"],
+      ["Cybersecurity Engineer", 1, 1, 1, "Adversarial, escalating"],
+      ["Civil Services Officer", 1, 1, 1, "Sovereign function"],
+      ["Defence Officer", 1, 1, 1, "Sovereign function"],
+      ["Actuary", 1, 2, 2, "Regulated, signing"],
+      ["Chartered Accountant (audit)", 2, 2, 3, "Audit safe, bookkeeping gone"],
+      ["Architect", 2, 3, 3, "Drafting gone, sign-off safe"],
+      ["Generic Software Engineer", 3, 4, 5, "Copilot + agentic AI"],
+      ["Data Analyst (BI dashboards)", 3, 4, 5, "AI does this now"],
+      ["BPO / Call centre", 4, 5, 5, "Voice AI"],
+      ["Junior accountant / tax prep", 3, 4, 5, "Already automating"],
+      ["Translator / Content writer", 4, 5, 5, "GPT-class models"],
+      ["Junior radiologist", 3, 3, 4, "AI image reading"]
+    ];
+    document.getElementById('ai-tbody').innerHTML = aiScores.map(r =>
+      `<tr><td>${r[0]}</td><td><span class="risk-cell r${r[1]}">${r[1]}</span></td><td><span class="risk-cell r${r[2]}">${r[2]}</span></td><td><span class="risk-cell r${r[3]}">${r[3]}</span></td><td>${r[4]}</td></tr>`
+    ).join('');
+    makeSortable('ai-table');
+    makeSortable('sal-table');
+    makeSortable('sector-table');
+
+    /* ====== Family Stability Scorecard ====== */
+    const fam = [
+      ["IAS / IPS / IFS", 1, 1, 1, 1, 1],
+      ["Defence Officer", 1, 1, 1, 1, 1],
+      ["ISRO / DRDO / PSU", 1, 1, 1, 2, 1],
+      ["Doctor (MD specialist)", 1, 3, 1, 1, 1],
+      ["Pilot (Captain)", 2, 3, 1, 1, 1],
+      ["Merchant Navy", 3, 4, 1, 2, 2],
+      ["AI/ML at top tech", 2, 3, 1, 1, 2],
+      ["Semiconductor engineer", 2, 3, 1, 1, 2],
+      ["Civil engineer PSU", 1, 1, 1, 2, 2],
+      ["CA (own practice)", 2, 3, 1, 1, 1],
+      ["BSc + private job", 3, 4, 3, 3, 3],
+      ["Quant trader", 2, 4, 1, 1, 2],
+      ["Generic IT engineer", 3, 4, 2, 2, 3]
+    ];
+    document.getElementById('fam-tbody').innerHTML = fam.map(r => {
+      const tot = r[1] + r[2] + r[3] + r[4] + r[5];
+      return `<tr><td>${r[0]}</td>
+        <td><span class="risk-cell r${r[1]}">${r[1]}</span></td>
+        <td><span class="risk-cell r${r[2]}">${r[2]}</span></td>
+        <td><span class="risk-cell r${r[3]}">${r[3]}</span></td>
+        <td><span class="risk-cell r${r[4]}">${r[4]}</span></td>
+        <td><span class="risk-cell r${r[5]}">${r[5]}</span></td>
+        <td><b>${tot}</b></td></tr>`;
+    }).join('');
+    makeSortable('fam-table');
+
+    /* ====== Country grid ====== */
+    const countries = [
+      { flag: "🇺🇸", name: "USA", best: "AI / CS / Quant / Doctors", visa: "H1B (lottery), O1, EB1/2/3", salary: "Rs 1-5 Cr", citizenship: "10-15 yr" },
+      { flag: "🇨🇦", name: "Canada", best: "Engineers, Healthcare, IT", visa: "Express Entry, PNP", salary: "Rs 50L-1.5Cr", citizenship: "5 yr" },
+      { flag: "🇩🇪", name: "Germany", best: "Engineers, Semiconductor, Auto", visa: "EU Blue Card (2 weeks)", salary: "Rs 60L-1.2Cr", citizenship: "5-6 yr" },
+      { flag: "🇦🇺", name: "Australia", best: "Civil/Mech/Health/IT", visa: "Skilled Independent 189", salary: "Rs 50L-1.5Cr", citizenship: "4 yr" },
+      { flag: "🇬🇧", name: "UK", best: "Doctors, Finance, AI", visa: "Skilled Worker, HPI", salary: "Rs 50L-2Cr", citizenship: "5-6 yr" },
+      { flag: "🇦🇪", name: "UAE / Saudi", best: "Petroleum, Civil, Construction", visa: "Employer-sponsored", salary: "Rs 50L-2Cr TAX-FREE", citizenship: "Rare" },
+      { flag: "🇸🇬", name: "Singapore", best: "Finance, Quant, IT", visa: "EP / Tech.Pass", salary: "Rs 50L-3Cr", citizenship: "Hard" },
+      { flag: "🇳🇱", name: "Netherlands", best: "AI, Semiconductor (ASML)", visa: "Highly Skilled Migrant", salary: "Rs 60L-1.5Cr", citizenship: "5 yr" },
+      { flag: "🇯🇵", name: "Japan", best: "Robotics, Auto, AI", visa: "Highly Skilled Professional", salary: "Rs 40L-1Cr", citizenship: "5-10 yr" },
+      { flag: "🇳🇿", name: "New Zealand", best: "Engineers, Health", visa: "Skilled Migrant", salary: "Rs 40L-90L", citizenship: "5 yr" }
+    ];
+    document.getElementById('country-grid').innerHTML = countries.map(c => `
+      <div class="country-card">
+        <div class="flag">${c.flag}</div>
+        <h3>${c.name}</h3>
+        <div class="row"><span>Best for</span><b>${c.best}</b></div>
+        <div class="row"><span>Visa route</span><b>${c.visa}</b></div>
+        <div class="row"><span>Salary (10 yr)</span><b>${c.salary}</b></div>
+        <div class="row"><span>Citizenship</span><b>${c.citizenship}</b></div>
+      </div>`).join('');
+
+    /* ====== Personality picker ====== */
+    const personas = [
+      { label: "Calm under pressure, manual skill, can study long", fit: "MBBS, Pilot, ATC", avoid: "Quant, Sales" },
+      { label: "Loves coding + maths, builds projects", fit: "AI/ML, Quant, Cybersec, Semiconductor", avoid: "Civil, Pure Sci unless PhD" },
+      { label: "Loves physics/maths, abstract thinker", fit: "Quant, IIT/IISc Research, Actuary", avoid: "Generic engineering" },
+      { label: "Wants security above all", fit: "UPSC, Defence, PSU via GATE", avoid: "Pure private sector" },
+      { label: "Loves drawing, space, 3D thinking", fit: "Architecture, Aerospace", avoid: "Pure CS" },
+      { label: "Risk-tolerant, big-money chase", fit: "Quant, Top AI, Entrepreneur, Pilot", avoid: "Govt" },
+      { label: "Family business background", fit: "Engineering + MBA + take over", avoid: "Govt unless passion" },
+      { label: "Wants to live abroad permanently", fit: "AI, Doctor, Semiconductor, Civil (Gulf)", avoid: "UPSC / Defence" },
+      { label: "Loves outdoors, adventure", fit: "Defence, Merchant Navy, Pilot, Civil-Site", avoid: "Desk-IT" }
+    ];
+    const optsEl = document.getElementById('picker-opts');
+    optsEl.innerHTML = personas.map((p, i) => `<button class="picker-opt" data-i="${i}">${p.label}</button>`).join('');
+    optsEl.addEventListener('click', e => {
+      const b = e.target.closest('.picker-opt');
+      if (!b) return;
+      const p = personas[+b.dataset.i];
+      document.querySelectorAll('.picker-opt').forEach(x => x.classList.remove('selected'));
+      b.classList.add('selected');
+      document.getElementById('picker-fit').textContent = p.fit;
+      document.getElementById('picker-avoid').textContent = p.avoid;
+      document.getElementById('picker-result').classList.add('show');
+    });
+
+    /* ====== Mistakes accordion ====== */
+    const mistakes = [
+      ["Picking branch by 'cutoff rank prestige' not by fit", "Result - IIT mechanical grads doing IT support unhappily."],
+      ["Treating CSE as default safe", "It is no longer - generic CSE being eaten by AI. CSE+AI/ML/Cybersec specialisation is the new safe."],
+      ["Ignoring pure science + IIT/IISc/CMI/ISI route", "Some of the highest-paying quant roles globally start there."],
+      ["Going abroad for sub-tier USA university with Rs 70L loan", "Calculate ROI brutally. Weak job market = debt trap."],
+      ["Choosing private engg college without checking placement", "Below tier-2 colleges, B.Tech is now a depreciating asset."],
+      ["Forcing medicine on a child who fears blood", "OR forcing engineering on a child who loves biology/design."],
+      ["Ignoring Defence/UPSC because 'too hard'", "The lifetime value of clearing those exams is enormous."],
+      ["No backup plan", "Every path needs a Plan B by year 2 of college."],
+      ["Ignoring soft skills - communication, negotiation, English", "These differentiate at senior levels."],
+      ["Believing 'pilot/MBA = guaranteed rich'", "Both have heavy upfront cost and saturated mid-tier markets."]
+    ];
+    const critical = [
+      ["The IT salary illusion", "TCS/Infosys fresher salary 2010 = Rs 3.5 LPA. In 2026 = Rs 3.5-4 LPA. Sixteen years, ZERO real growth. Inflation eaten everything. AI accelerates this."],
+      ["The MBBS debt trap", "Private MBBS = Rs 1-1.5 Cr fees. MD/MS another 3-5 yrs. Practice setup another Rs 50L-2Cr. Net positive financially yes, but 12-15 years before stable income. Plan financing carefully."],
+      ["The 'study abroad = good life' myth", "US master's at non-top-50 university = Rs 60L-1Cr loan. H1B lottery = 25% odds. If no H1B, return with debt. Calculation must include downside."],
+      ["The pilot ROI math", "CPL + type rating = Rs 80L-1.2Cr loan. First 3 yrs FO = Rs 15-20 LPA. EMI eats 60-70%. Real money starts Year 6-8. If medical fails, career ends. Insure aggressively."],
+      ["The 'AI-proof' paradox", "Today's 'AI-proof' job is tomorrow's AI target. Plumbing safe today, but humanoid robots cheap by 2040. Real AI-proof skill is META-skill - ability to LEARN new domains every 5 years."],
+      ["Geographic concentration risk", "80% of high-paying Indian tech jobs are in 4 cities (Bengaluru, Hyderabad, Pune, Delhi-NCR). Rs 25 LPA in Bengaluru ~ Rs 12 LPA in tier-2 city. Factor housing, traffic, schooling, parent care."],
+      ["The marriage market angle (uncomfortable but real)", "In Indian arranged-marriage market, certain professions carry premium - doctor, IAS, defence officer, IIT engineer abroad, CA. Real-world stability factor for both genders."],
+      ["The AI-builder leverage", "Single biggest income lever now to 2040 - your traditional profession + AI as 10x leverage. Doctor + AI = 30 patients/day. Architect + AI = 5 designs/week. Cross-train in basic Python + LLM tooling regardless of chosen career."]
+    ];
+    function buildAcc(targetId, items) {
+      document.getElementById(targetId).innerHTML = items.map((it, i) =>
+        `<div class="acc-item" data-i="${i}">
+           <button class="acc-head"><span>${it[0]}</span><span class="arrow">›</span></button>
+           <div class="acc-body"><div>${it[1]}</div></div>
+         </div>`).join('');
+      document.getElementById(targetId).addEventListener('click', e => {
+        const head = e.target.closest('.acc-head');
+        if (!head) return;
+        head.parentElement.classList.toggle('open');
+      });
+    }
+    buildAcc('mistakes-acc', mistakes);
+    buildAcc('critical-acc', critical);
+
+    /* ====== Final matrix ====== */
+    const matrix = [
+      ["MBBS + MD/MS specialist", "Hardworking, calm, empathetic, can study 10+ years", "Switch to PCMB now"],
+      ["B.Tech CSE+AI/ML at IIT/IIIT/BITS + abroad route", "Strong maths, project builder, ambitious", "Top college only"],
+      ["B.Tech VLSI/Semiconductor at top NIT/IIT", "Loves electronics + physics", "Hardware-leaning"],
+      ["Commercial Pilot Licence (CPL)", "Calm, manual-skilled, financially backed", "Medical fitness + Rs 80L+ funding"],
+      ["B.Tech + GATE + PSU (Civil/Mech/Electrical)", "Wants stability + tech work", "Strong on family stability"],
+      ["UPSC Civil Services (after any degree)", "Public service mindset, stamina", "Have parallel degree as Plan B"],
+      ["Merchant Navy (Marine Engineering)", "Tolerates sea life, wants tax-free wealth fast", "Plan shore career by 35"],
+      ["BSc/MSc Maths/Physics at IISc/CMI/ISI → Quant", "Top-tier mathematical brain", "IIT/IISc tier only"],
+      ["B.Arch + abroad licensing", "Visual + spatial + creative", "Specialise green/sustainable"],
+      ["CA + CFA combo", "Maths-strong, finance-curious", "Strong audit/advisory focus"]
+    ];
+    document.getElementById('matrix-list').innerHTML = matrix.map((m, i) =>
+      `<div class="matrix-row">
+        <div class="mrank">${i + 1}</div>
+        <div><b>${m[0]}</b></div>
+        <div class="mfit">${m[1]}</div>
+        <div class="mcond">${m[2]}</div>
+      </div>`).join('');
+
+    /* ====== Sources ====== */
+    const sources = [
+      "BMU - High Salary Courses After 12th Science (PCM) 2026 (bmu.edu.in)",
+      "Sam Global University - After 12th PCM Career Guide 2026 (samglobaluniversity.ac.in)",
+      "Mahindra University - Career Options After 12th PCM (mahindrauniversity.edu.in)",
+      "Jetking - How Many Jobs Will AI Replace in India by 2030 (jetking.com)",
+      "Analytics India Magazine - AI Replacing Engineers by 2025 But Not in India (analyticsindiamag.com)",
+      "Rest of World - AI Wiping Out Entry-Level Tech Jobs May 2025 (restofworld.org)",
+      "NCU India - Will AI Replace Engineering Jobs (ncuindia.edu)",
+      "RealShePower - Jobs That Will Disappear in India by 2030 (realshepower.in)",
+      "Nature - AI Threatening Science Jobs 2026 (nature.com)",
+      "AIM India - Highest Paying Engineering Branches Besides CS 2026 (aimindia.in)",
+      "Siddhartha Institute - Best Engineering Branches 2026 (siddhartha.org.in)",
+      "Shiksha - Highest Paying Engineering Branches and Recruiters (shiksha.com)",
+      "Bitget Academy - Highest Paying Engineering Careers India 2026 (bitget.com)",
+      "BMU - Career Options After 12th Science PCM Other Than Engineering (bmu.edu.in)",
+      "Smart Achievers - Career Options After PCM Without JEE (smartachievers.online)",
+      "Toprankers - Career Options After PCM Apart From Engineering (toprankers.com)",
+      "Leverage Edu - Career Options After 12th Science PCM (leverageedu.com)",
+      "GG IMS - Abroad Jobs for Indian Freshers 2026 (ggims.com)",
+      "Terratern - Jobs in Foreign Countries for Indian Freshers 2026 (terratern.com)",
+      "Universal Adviser - Top 5 Countries Easy Work Visas to Indians 2026 (universaladviser.com)",
+      "Maven Consulting - Indian Students Jobs Abroad 2026 (mavenconsultingservices.com)",
+      "Curominds - Future Jobs in India by 2030 (curominds.com)",
+      "Washington Tech Institute - Jobs AI Won't Replace in 2030 (washingtontech.edu)",
+      "Hari Educational Consultancy - Future Careers 2030 (harieducationalconsultancy.com)",
+      "Naukri - Careers in AI for Freshers 2026 (naukri.com)",
+      "Scaler - AI Engineer Salary in India 2026 (scaler.com)",
+      "Taggd - Top Skills in Demand 2026 (taggd.in)",
+      "Skillfloor - High-Paying AI Jobs India 2026 (skillfloor.com)",
+      "World Economic Forum - Future of Jobs Report 2025",
+      "Boeing Pilot &amp; Technician Outlook 2024-2043",
+      "Indian Aviation Ministry data, DGCA data 2026",
+      "Institute of Actuaries of India (IAI) salary surveys 2025",
+      "GATE / UPSC / NDA official notification 2026 cycles"
+    ];
+    document.getElementById('sources-list').innerHTML = sources.map(s => `<div>• ${s}</div>`).join('');
   </script>
 </body>
 
