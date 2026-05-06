@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PCM Career Guide - India 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.4.0/dist/tabler-icons.min.css">
+  <style>
+    :root {
+      --bg: #F7F8FA;
+      --surface: #FFFFFF;
+      --surface-2: #F1F3F7;
+      --border: #E4E7EC;
+      --border-strong: #CDD3DC;
+      --text: #101828;
+      --text-2: #475467;
+      --text-3: #667085;
+      --primary: #534AB7;
+      --primary-soft: #EEEDFE;
+      --success: #0F7A4A;
+      --warning: #A85B00;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+      --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.06), 0 2px 4px rgba(16, 24, 40, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.5
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
+
+    .wrap {
+      padding: 2.5rem 5% 4rem
+    }
+
+    .hero {
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F4F3FF 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm)
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.65;
+      max-width: 780px
+    }
+
+    .hero .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 2rem
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-top: 4px;
+      font-weight: 500
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.25rem
+    }
+
+    .pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: var(--surface);
+      color: var(--text-2);
+      transition: all 0.15s;
+      font-family: inherit
+    }
+
+    .pill:hover {
+      border-color: var(--border-strong);
+      color: var(--text)
+    }
+
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      box-shadow: 0 1px 3px rgba(83, 74, 183, 0.3)
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 1.5rem;
+      font-size: 12px;
+      color: var(--text-3);
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md)
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px)
+    }
+
+    .card.expanded {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12), var(--shadow-md)
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+      letter-spacing: -0.01em
+    }
+
+    .card-sub {
+      font-size: 12.5px;
+      color: var(--text-3);
+      line-height: 1.45
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.01em
+    }
+
+    .b-ai {
+      background: #E6F6EE;
+      color: #0B5E37
+    }
+
+    .b-sal {
+      background: #E8F0FB;
+      color: #0C447C
+    }
+
+    .b-gov {
+      background: #FBEFD6;
+      color: #6B3D04
+    }
+
+    .b-hot {
+      background: #FBE7DD;
+      color: #7A2C12
+    }
+
+    .meter-row {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 6px
+    }
+
+    .meter-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--text-3);
+      font-weight: 500
+    }
+
+    .meter-label span:last-child {
+      color: var(--text-2);
+      font-weight: 600
+    }
+
+    .meter-bar {
+      height: 5px;
+      background: var(--surface-2);
+      border-radius: 999px;
+      overflow: hidden
+    }
+
+    .meter-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s
+    }
+
+    .details {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease
+    }
+
+    .details.open {
+      max-height: 1400px
+    }
+
+    .detail-body {
+      padding-top: 14px;
+      margin-top: 12px;
+      border-top: 1px solid var(--border)
+    }
+
+    .detail-sec {
+      margin-bottom: 12px
+    }
+
+    .detail-sec h4 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 5px
+    }
+
+    .detail-sec p {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 7px
+    }
+
+    .tag {
+      font-size: 11.5px;
+      padding: 3px 9px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-2);
+      font-weight: 500
+    }
+
+    .pros {
+      color: var(--success) !important
+    }
+
+    .cons {
+      color: var(--warning) !important
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-3);
+      font-size: 14px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-md);
+      grid-column: 1/-1
+    }
+
+    @media (max-width:900px) {
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .hero h1 {
+        font-size: 24px
+      }
+    }
+
+    @media (max-width:560px) {
+      .wrap {
+        padding: 1.5rem 5% 3rem
+      }
+
+      .hero {
+        padding: 1.5rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h2 class="sr-only">PCM Career Guide for India - interactive career explorer with AI resistance, salaries, and
+      opportunities</h2>
+
+    <div class="hero">
+      <span class="eyebrow">India 2026 · Class 12 PCM</span>
+      <h1>PCM career guide - India 2026</h1>
+      <p>Physics · Chemistry · Mathematics - complete career map with AI resistance, income stability, India + global
+        opportunities. Tap any card for full breakdown.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">18</div>
+        <div class="stat-label">career paths mapped</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">6</div>
+        <div class="stat-label">high AI-proof options</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">₹8–40L</div>
+        <div class="stat-label">peak salaries in India</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">12</div>
+        <div class="stat-label">global-ready careers</div>
+      </div>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="pill active" data-cat="all">All careers</button>
+      <button class="pill" data-cat="engineering">Engineering</button>
+      <button class="pill" data-cat="tech">Tech &amp; data</button>
+      <button class="pill" data-cat="govt">Govt &amp; defence</button>
+      <button class="pill" data-cat="research">Research &amp; space</button>
+      <button class="pill" data-cat="niche">Niche &amp; emerging</button>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#1D9E75"></div> High AI resistance
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#378ADD"></div> High salary
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#BA7517"></div> Govt/PSU stability
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#D85A30"></div> Hot/trending
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <script>
+    const careers = [
+      {
+        cat: "engineering",
+        icon: "ti-building-bridge",
+        iconBg: "#E6F1FB", iconFg: "#185FA5",
+        title: "Civil engineering",
+        sub: "Infrastructure · urban planning · construction",
+        aiRisk: 10, stability: 95, salary: 70, globalScope: 75,
+        salaryRange: "₹5–18 LPA",
+        badges: ["ai-proof", "govt stable"],
+        ai: "Physical site judgment, project management & safety oversight cannot be automated. Infrastructure will always need humans on ground.",
+        india: "CPWD, PWD, NHAI, Smart City projects. 100+ Smart Cities mission = massive demand.",
+        abroad: "Middle East, Singapore, Australia, Canada actively hire Indian civil engineers. PR pathways via Australia/Canada.",
+        degree: "B.Tech Civil Engg → GATE → PSU/M.Tech",
+        exams: "JEE Main/Advanced, GATE, SSC JE, RRB JE, UPSC ESE",
+        family: "Govt jobs = pension, housing, medical. Private sector = transport allowance, provident fund.",
+        growth: "₹3.5L (fresher) → ₹18L+ (15 yrs exp) → Senior consultant ₹40L+",
+        pros: "Never outsourced, physical nature makes AI replacement very hard, massive govt demand",
+        cons: "Physically demanding, slower salary growth vs IT"
+      },
+      {
+        cat: "engineering",
+        icon: "ti-bolt",
+        iconBg: "#FAEEDA", iconFg: "#854F0B",
+        title: "Electrical engineering",
+        sub: "Power systems · EVs · smart grids",
+        aiRisk: 20, stability: 90, salary: 75, globalScope: 80,
+        salaryRange: "₹6–22 LPA",
+        badges: ["govt stable", "hot field"],
+        ai: "Physical installation, power system analysis & safety work requires licensed human engineers. EV boom = huge new demand.",
+        india: "NTPC, BHEL, PGCIL, state electricity boards. EV sector growing 40% YoY.",
+        abroad: "Germany, Canada, Australia, Gulf countries. Licensed PE opens $100K+ roles in USA.",
+        degree: "B.Tech Electrical Engg → GATE/PSU/M.Tech",
+        exams: "JEE, GATE (EE), UPSC ESE, SSC JE",
+        family: "PSU perks: housing, medical, gratuity, pension. Strong job security.",
+        growth: "₹4L (fresher) → ₹22L (10 yrs) → Manager ₹35L+",
+        pros: "EV revolution creating massive new jobs, critical infrastructure = recession-proof",
+        cons: "Requires continuous certification/licensing upkeep"
+      },
+      {
+        cat: "engineering",
+        icon: "ti-engine",
+        iconBg: "#FAECE7", iconFg: "#993C1D",
+        title: "Mechanical engineering",
+        sub: "Manufacturing · robotics · aerospace",
+        aiRisk: 25, stability: 85, salary: 72, globalScope: 82,
+        salaryRange: "₹5–20 LPA",
+        badges: ["govt stable", "ai-proof"],
+        ai: "Physical design, materials testing, field maintenance = human domain. AI aids but doesn't replace the engineer.",
+        india: "DRDO, HAL, BHEL, automobile companies (Tata, M&M, Bajaj). Manufacturing push under Make in India.",
+        abroad: "Germany (manufacturing hub), Japan, Canada, USA, Australia. German job seeker visa is excellent.",
+        degree: "B.Tech Mech → GATE/PSU or M.Tech/MBA",
+        exams: "JEE, GATE (ME), UPSC ESE, DRDO SET",
+        family: "Core industry jobs very stable. Automotive PSUs offer full benefits.",
+        growth: "₹3.5L → ₹20L (senior engineer) → Operations head ₹45L+",
+        pros: "Widest scope - can move to robotics, aerospace, automotive, energy",
+        cons: "Core mech salaries lower vs CS. Needs specialisation for high pay."
+      },
+      {
+        cat: "tech",
+        icon: "ti-shield-lock",
+        iconBg: "#EAF3DE", iconFg: "#3B6D11",
+        title: "Cybersecurity",
+        sub: "Ethical hacking · network security · forensics",
+        aiRisk: 8, stability: 95, salary: 90, globalScope: 95,
+        salaryRange: "₹8–40 LPA",
+        badges: ["ai-proof", "hot field"],
+        ai: "Cyber threats are human-driven; human defenders needed for strategy, ethics, and real-time crisis response. 33% job growth forecast by 2033.",
+        india: "CERT-In, defence agencies, every major bank, IT firm, startup. Cybercrime cost $10.5 trillion globally = unlimited demand.",
+        abroad: "USA, UK, EU, Singapore, Israel. H-1B visas readily sponsored. $120K–200K salaries in USA.",
+        degree: "B.Tech CS/IT + CEH, CISSP, OSCP certifications",
+        exams: "JEE, CUET, plus industry certifications (CEH, CompTIA, CISSP)",
+        family: "Very high salaries support large family. WFH-friendly = savings on commute.",
+        growth: "₹6L (fresher) → ₹25L (5 yrs) → CISO ₹80L–1Cr+",
+        pros: "Fastest growing IT field, nearly impossible to automate, premium salaries everywhere",
+        cons: "Must continuously upskill as threats evolve, high-stress role"
+      },
+      {
+        cat: "tech",
+        icon: "ti-chart-dots",
+        iconBg: "#E6F1FB", iconFg: "#185FA5",
+        title: "Data science & analytics",
+        sub: "ML engineering · business intelligence",
+        aiRisk: 30, stability: 85, salary: 88, globalScope: 90,
+        salaryRange: "₹7–35 LPA",
+        badges: ["hot field"],
+        ai: "Ironically, AI creates more data science jobs than it replaces. Strategic interpretation, ethics, domain expertise = human work. 36% job growth by 2033.",
+        india: "Every sector - fintech, e-commerce, BFSI, healthcare. TCS, Infosys, Google, Amazon India all hiring heavily.",
+        abroad: "USA, UK, Canada, Australia. Easiest stream to get remote work for foreign companies while living in India.",
+        degree: "B.Tech CS/Maths + M.Sc Data Science, or direct Data Science B.Tech",
+        exams: "JEE, CUET, IIT-JAM (for M.Sc), GATE CS",
+        family: "High salaries. Remote work = can live in tier 2 city with metro salary.",
+        growth: "₹5L (fresher) → ₹20L (5 yrs) → Principal Data Scientist ₹60L+",
+        pros: "Massive demand across all industries, not limited to IT",
+        cons: "Lower-level roles at risk from AI automation tools. Must stay at senior/strategic level."
+      },
+      {
+        cat: "tech",
+        icon: "ti-cpu",
+        iconBg: "#EEEDFE", iconFg: "#3C3489",
+        title: "AI & machine learning engineering",
+        sub: "Building the tools that build AI",
+        aiRisk: 15, stability: 88, salary: 92, globalScope: 95,
+        salaryRange: "₹10–50 LPA",
+        badges: ["hot field"],
+        ai: "You build AI - you cannot be replaced by it. NASSCOM: India's AI talent demand grew 42% in 2025.",
+        india: "Infosys, TCS, Wipro AI labs, Flipkart, Ola, Jio, ISRO's AI division, Defence AI projects.",
+        abroad: "USA (Silicon Valley, Seattle), UK, Canada, Germany. OPT/H-1B/Global Talent Visa easily accessible.",
+        degree: "B.Tech CS/AI + specialised M.Tech or online certs (Coursera, UpGrad)",
+        exams: "JEE, CUET, GATE CS, IISER Aptitude Test",
+        family: "Highest salaries in any technical field. Substantial bonuses at top companies.",
+        growth: "₹8L (fresher) → ₹30L (5 yrs) → ML Lead/Architect ₹1Cr+",
+        pros: "You become the one making AI - safest possible position",
+        cons: "Requires very strong maths & programming. Competitive entry."
+      },
+      {
+        cat: "govt",
+        icon: "ti-flag",
+        iconBg: "#FAEEDA", iconFg: "#854F0B",
+        title: "Indian civil services (IAS/IPS/IFS)",
+        sub: "Governance · administration · policy",
+        aiRisk: 5, stability: 99, salary: 65, globalScope: 50,
+        salaryRange: "₹56K–2.5L/month + perks",
+        badges: ["ai-proof", "govt stable"],
+        ai: "Governance, diplomacy, public administration, law enforcement = deeply human. Zero risk of AI displacement.",
+        india: "Top of India's prestige hierarchy. Collector, SP, IFS officer. Unmatched power, influence & respect.",
+        abroad: "IFS (Foreign Service) = postings across 100+ countries. Diplomatic career = international lifestyle.",
+        degree: "Any degree → UPSC CSE (any stream can appear). PCM gives edge in CSAT.",
+        exams: "UPSC CSE (Prelims + Mains + Interview). 1–3 yr preparation typically needed.",
+        family: "Government bungalow, car, peon, medical, children's education support, pension for life. Entire family benefits.",
+        growth: "SDM → DM → Secretary → Cabinet Secretary. Rank = power & resources.",
+        pros: "Absolute job security, highest social status in India, pension for life, entire family looked after",
+        cons: "Extremely competitive (0.1% selection), takes 2–5 years of dedicated prep"
+      },
+      {
+        cat: "govt",
+        icon: "ti-rocket",
+        iconBg: "#E1F5EE", iconFg: "#0F6E56",
+        title: "ISRO / DRDO / BARC",
+        sub: "Space · defence · nuclear research",
+        aiRisk: 10, stability: 98, salary: 72, globalScope: 60,
+        salaryRange: "₹8–20 LPA + full govt perks",
+        badges: ["ai-proof", "govt stable"],
+        ai: "Rocket science, nuclear physics, advanced defence tech - no AI can replace the scientific judgment and national security expertise required.",
+        india: "ISRO (Chandrayaan, Gaganyaan), DRDO (missiles, fighter jets), BARC (nuclear energy). Nation-building careers.",
+        abroad: "India–NASA collaborations, bilateral research programs. ISRO scientists attend global conferences.",
+        degree: "B.Tech → GATE → direct ISRO/DRDO recruitment. M.Sc Physics/Maths for scientist roles.",
+        exams: "GATE, ISRO Centralised Recruitment Board (ICRB), DRDO SET, BARC OCES/DGFS",
+        family: "Govt housing colonies, medical, children's schooling. Pension. Townships in Bangalore, Hyderabad, etc.",
+        growth: "Scientist/Engineer SC → SF → SH → Distinguished Scientist (like walking the IAS ladder)",
+        pros: "Work on India's most prestigious missions. Unmatched job security. National pride.",
+        cons: "Transfers likely across India, hierarchical promotion system, lower salaries vs private tech"
+      },
+      {
+        cat: "govt",
+        icon: "ti-shield",
+        iconBg: "#FCEBEB", iconFg: "#A32D2D",
+        title: "Indian armed forces",
+        sub: "Army · Navy · Air Force officer",
+        aiRisk: 5, stability: 99, salary: 70, globalScope: 55,
+        salaryRange: "₹56K–2.5L/month + canteen allowances",
+        badges: ["ai-proof", "govt stable"],
+        ai: "Combat, leadership, national defence - irreplaceable by any technology. The most AI-proof career that exists.",
+        india: "NDA/CDS officer. Extremely respected career. Cantonment lifestyle with all amenities.",
+        abroad: "UN Peacekeeping missions, bilateral military exchanges. Air Force pilots can transition to commercial aviation.",
+        degree: "PCM → NDA entrance (after 12th) or CDS after graduation. Technical branches via TES/UES.",
+        exams: "NDA, CDS, AFCAT, TES (Technical Entry Scheme for PCM students - direct entry!)",
+        family: "Free housing in cantonments, free medical for entire family, children's school (KV/Army schools), pension, canteen subsidies, CSD facilities.",
+        growth: "Lt → Captain → Major → Colonel → General. Each rank = substantial raise.",
+        pros: "Most holistic lifestyle - housing, medical, canteen, school, pension all covered. Highest social respect.",
+        cons: "Transfers across India/world, physically demanding, combat risk"
+      },
+      {
+        cat: "govt",
+        icon: "ti-train",
+        iconBg: "#FAEEDA", iconFg: "#633806",
+        title: "PSU & railways (BHEL, NTPC, ONGC)",
+        sub: "Public sector technical jobs",
+        aiRisk: 20, stability: 97, salary: 68, globalScope: 40,
+        salaryRange: "₹7–18 LPA + allowances",
+        badges: ["govt stable"],
+        ai: "Physical plant operations, energy infrastructure, field engineering - AI assists but cannot replace human technical oversight in critical infrastructure.",
+        india: "BHEL, NTPC, ONGC, GAIL, HPCL, Indian Railways. Thousands of posts every year through GATE.",
+        abroad: "Limited abroad scope, but PSU experience valued in Middle East oil sector (ARAMCO, ADNOC).",
+        degree: "B.Tech (any core branch) → GATE score → PSU interview",
+        exams: "GATE, RRB JE, SSC JE, individual PSU recruitment",
+        family: "DA (dearness allowance), HRA, LTA, medical for family, provident fund, gratuity, pension.",
+        growth: "Junior Engineer → Engineer → Manager → DGM → GM. Clear ladder.",
+        pros: "Unbeatable job security, benefits package rivals no private company, work-life balance",
+        cons: "Salary growth slower vs private sector, bureaucratic culture"
+      },
+      {
+        cat: "niche",
+        icon: "ti-plane",
+        iconBg: "#E6F1FB", iconFg: "#185FA5",
+        title: "Commercial pilot / aviation",
+        sub: "Airlines · corporate aviation · helicopter",
+        aiRisk: 15, stability: 85, salary: 90, globalScope: 95,
+        salaryRange: "₹10–50 LPA",
+        badges: ["ai-proof", "hot field"],
+        ai: "FAA/DGCA regulations require human pilots. AI co-pilots (autopilot) exist but human captain is mandatory by international law. Likely to remain so for decades.",
+        india: "IndiGo, Air India, SpiceJet, Vistara. India is the world's 3rd largest aviation market. Massive pilot shortage.",
+        abroad: "Emirates, Qatar Airways, Singapore Airlines, international cargo carriers all hire Indian pilots. Global career.",
+        degree: "12th PCM → CPL (Commercial Pilot Licence) from DGCA-approved flying school (India or USA)",
+        exams: "DGCA CPL exams, Type Rating for specific aircraft",
+        family: "Top-tier salary, airline travel benefits for entire family, international medical. Some airlines offer housing allowance.",
+        growth: "First Officer → Captain → Senior Captain. Captain = ₹35–50L+/yr",
+        pros: "Most glamorous career, excellent work-life schedule, international lifestyle, family travel perks",
+        cons: "CPL training costs ₹25–45L, airlines affected by fuel price/pandemic, irregular schedules"
+      },
+      {
+        cat: "niche",
+        icon: "ti-ship",
+        iconBg: "#E1F5EE", iconFg: "#085041",
+        title: "Merchant navy",
+        sub: "Marine engineering · navigation · cargo shipping",
+        aiRisk: 15, stability: 90, salary: 95, globalScope: 100,
+        salaryRange: "₹15–60 LPA (tax-free at sea)",
+        badges: ["ai-proof", "hot field"],
+        ai: "Physical ship operations, maritime law, emergency response, port navigation - requires licensed human officers by international maritime law (STCW convention).",
+        india: "SCI (Shipping Corporation of India), Essar Shipping, private maritime companies from Mumbai/Kolkata ports.",
+        abroad: "Truly global career - you ARE abroad. Ships sail worldwide. International Certificate of Competency (CoC) valid everywhere.",
+        degree: "12th PCM → B.E. Marine Engineering / Nautical Science from IMU or approved institute",
+        exams: "IMU CET (Indian Maritime University entrance), sponsorship entrance tests by shipping companies",
+        family: "Income is TAX-FREE when working on foreign-flagged ships. High remittance capacity. 4 months at sea + 4 months at home.",
+        growth: "4th Engineer → 3rd → 2nd → Chief Engineer → Superintendent (shore-based) → ₹1Cr+",
+        pros: "Highest tax-free salary in any technical field. Saves entire salary (no living costs at sea). Superb savings rate.",
+        cons: "Long separation from family (4–6 months at sea), physically demanding"
+      },
+      {
+        cat: "niche",
+        icon: "ti-home-2",
+        iconBg: "#EEEDFE", iconFg: "#26215C",
+        title: "Architecture",
+        sub: "Urban planning · sustainable design · smart cities",
+        aiRisk: 22, stability: 80, salary: 72, globalScope: 80,
+        salaryRange: "₹4–20 LPA (own practice: unlimited)",
+        badges: ["ai-proof", "hot field"],
+        ai: "Creative design, client relations, site supervision, urban policy - AI tools assist but a licensed architect cannot be replaced. India's smart city mission = 50 years of work.",
+        india: "Smart Cities Mission, PMAY housing scheme, metro projects. COA (Council of Architecture) licensed architect = protected profession.",
+        abroad: "USA, UK, Australia, UAE - Indian architects in demand. RIBA, AIA certifications open global doors.",
+        degree: "B.Arch (5 years) from NIT/SPA/private institutes → Council of Architecture registration",
+        exams: "JEE Paper 2 / NATA for B.Arch admissions",
+        family: "Own practice = generational wealth. Govt-licensed profession = protected income floor.",
+        growth: "Junior Architect → Project Architect → Partner → Own Firm. Unlimited upside.",
+        pros: "Creative profession with strong legal protection. Indian cities will need architects for decades.",
+        cons: "Slow income start. Regulatory and client delays common."
+      },
+      {
+        cat: "research",
+        icon: "ti-telescope",
+        iconBg: "#EEEDFE", iconFg: "#3C3489",
+        title: "Scientific research (IISc/IIT/TIFR)",
+        sub: "Physics · mathematics · materials science",
+        aiRisk: 8, stability: 88, salary: 68, globalScope: 90,
+        salaryRange: "₹6–18 LPA + research grants",
+        badges: ["ai-proof"],
+        ai: "Scientific creativity, hypothesis formation, interpretation of experimental results - fundamentally human. AI is a tool, not a scientist.",
+        india: "IISc Bangalore, IITs, IISERs, TIFR, CSIR labs. Growing research funding under National Research Foundation.",
+        abroad: "PhD + postdoc → professorship at any global university. USA, Germany, UK, Japan, Australia. Research is the most globalised profession.",
+        degree: "B.Sc → M.Sc → PhD. Alternatively B.Tech → direct PhD at IIT/IISc.",
+        exams: "IIT-JAM, JEST, CSIR-NET, GATE, IISER Aptitude Test",
+        family: "Research fellowships (JRF ₹37K/month, SRF ₹42K/month), later professor salaries with 7th Pay Commission + academic freedom.",
+        growth: "Research Fellow → Scientist C → Senior Scientist → Professor → Dean. Academic job security = near-permanent.",
+        pros: "Maximum intellectual freedom. International collaborations. Teaching + research = fulfilling life.",
+        cons: "Long trajectory (PhD = 5–6 yrs). Competitive academia. Lower salary vs corporate."
+      },
+      {
+        cat: "niche",
+        icon: "ti-activity",
+        iconBg: "#EAF3DE", iconFg: "#27500A",
+        title: "Biomedical / healthcare tech engineering",
+        sub: "Medical devices · imaging · prosthetics",
+        aiRisk: 18, stability: 88, salary: 78, globalScope: 85,
+        salaryRange: "₹6–25 LPA",
+        badges: ["hot field"],
+        ai: "Combining biology + engineering + medical ethics. AI enhances imaging but human engineers design, validate and maintain medical devices. Strict regulatory approval = human oversight mandatory.",
+        india: "Philips India, Siemens Healthineers, Tata Medical, Apollo Hospitals. India's medical devices market growing 15% YoY.",
+        abroad: "USA (FDA-regulated market), Germany, UK, Singapore. Medical device engineers in high demand globally.",
+        degree: "B.Tech Biomedical Engg / B.E. Instrumentation + M.Tech Biomedical",
+        exams: "JEE, GATE (BM/IN), state CET exams",
+        family: "Healthcare sector = recession-proof. Stable salary + corporate medical benefits.",
+        growth: "₹4L → ₹20L (10 yrs) → Product head ₹40L+",
+        pros: "Intersection of engineering and healthcare - meaningful work, strong long-term outlook",
+        cons: "Niche field, fewer college options, slower early salary vs pure CS"
+      },
+      {
+        cat: "niche",
+        icon: "ti-leaf",
+        iconBg: "#EAF3DE", iconFg: "#3B6D11",
+        title: "Renewable energy engineering",
+        sub: "Solar · wind · hydrogen · energy storage",
+        aiRisk: 20, stability: 88, salary: 75, globalScope: 88,
+        salaryRange: "₹6–22 LPA",
+        badges: ["hot field"],
+        ai: "Physical installation, grid integration, project engineering - field work that AI cannot do. Climate urgency = fastest-growing engineering sector globally.",
+        india: "Adani Green, Tata Power, ReNew, SECI. India targeting 500GW renewable by 2030. Massive talent demand.",
+        abroad: "EU (Germany, Netherlands), USA, Australia all have massive renewable targets and need engineers. GIZ scholarships available.",
+        degree: "B.Tech Electrical/Mech/Chemical with renewable energy specialisation, or M.Tech Clean Energy",
+        exams: "JEE, GATE (EE/CH/ME), specialised university exams",
+        family: "Growing sector = job security over 30-yr horizon. Clean energy = future-proof.",
+        growth: "₹4L → ₹22L (10 yrs) → Project Director ₹50L+",
+        pros: "Only sector guaranteed to grow regardless of economy/AI. Doing good while earning well.",
+        cons: "Newer sector = fewer structured career paths. Project-based employment."
+      },
+      {
+        cat: "niche",
+        icon: "ti-chart-line",
+        iconBg: "#FAEEDA", iconFg: "#854F0B",
+        title: "Actuarial science / quantitative finance",
+        sub: "Risk · insurance · financial modelling",
+        aiRisk: 25, stability: 90, salary: 88, globalScope: 85,
+        salaryRange: "₹8–40 LPA",
+        badges: ["ai-proof"],
+        ai: "Actuaries interpret probabilistic models, testify in courts, set regulatory policy. The professional judgment and legal accountability = cannot be automated.",
+        india: "LIC, GIC, Bajaj Allianz, HDFC Life. Insurance sector in India growing 18% YoY. Massive shortage of qualified actuaries.",
+        abroad: "USA, UK, Canada, Australia - qualified actuaries are visa-sponsorable professionals. IFOA/SOA/CAS globally recognised.",
+        degree: "B.Sc Maths/Statistics → Institute of Actuaries of India (IAI) exams (15 papers over years)",
+        exams: "IAI Foundation/Intermediate/Fellowship exams (Indian), CT/CA/SA series (British IFOA also valid in India)",
+        family: "High salary at full qualification. Insurance firm benefits. Rare skill = stable employment.",
+        growth: "Student Actuary → Associate → Fellow Actuary → Chief Actuary ₹1Cr+",
+        pros: "Very rare skill - qualified actuaries = guaranteed high-paying jobs. Highly respected profession.",
+        cons: "Long qualification path (7–10 yrs of exams alongside work). Maths-intensive."
+      },
+      {
+        cat: "niche",
+        icon: "ti-atom",
+        iconBg: "#FCEBEB", iconFg: "#A32D2D",
+        title: "Nuclear / petroleum engineering",
+        sub: "Nuclear power · oil & gas · energy",
+        aiRisk: 18, stability: 92, salary: 85, globalScope: 90,
+        salaryRange: "₹10–45 LPA",
+        badges: ["ai-proof", "govt stable"],
+        ai: "Nuclear reactor operations, safety oversight, petroleum reservoir engineering require licensed professionals. Extreme safety stakes = mandatory human accountability.",
+        india: "BARC, NPCIL (nuclear plants), ONGC, OIL, HPCL. High-paying public sector with excellent benefits.",
+        abroad: "UAE (ARAMCO, ADNOC), USA, Canada, Australia (mining), Qatar, Kuwait. Petroleum engineers can earn $150K+ abroad.",
+        degree: "B.Tech Chemical/Mech/Mining → OCES/DGFS for BARC; Petroleum Engg B.Tech for oil sector",
+        exams: "JEE, GATE, BARC OCES, ONGC GT recruitment, SSC JE",
+        family: "NPCIL/ONGC townships provide housing, school, medical. Oil sector abroad provides tax-free income + accommodation.",
+        growth: "₹8L (fresher) → ₹25L (10 yrs) → Senior Manager ₹50L+",
+        pros: "Critical national infrastructure - never outsourced, never automated. Premium salaries especially abroad.",
+        cons: "Limited geographic locations for work (nuclear plants, refineries), safety-critical = high-pressure"
+      }
+    ];
+
+    let activeFilter = 'all';
+    const grid = document.getElementById('grid');
+
+    function aiColor(risk) {
+      if (risk <= 15) return '#1D9E75';
+      if (risk <= 25) return '#BA7517';
+      return '#D85A30';
+    }
+
+    function renderCards() {
+      const filtered = activeFilter === 'all' ? careers : careers.filter(c => c.cat === activeFilter);
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="no-results">No careers match this filter.</div>';
+        return;
+      }
+      grid.innerHTML = filtered.map((c) => {
+        const globalIdx = careers.indexOf(c);
+        return `<div class="card" id="card-${globalIdx}" onclick="toggleCard(${globalIdx})">
+      <div class="card-head">
+        <div class="card-icon" style="background:${c.iconBg}">
+          <i class="ti ${c.icon}" style="color:${c.iconFg};font-size:22px" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="card-title">${c.title}</div>
+          <div class="card-sub">${c.sub}</div>
+        </div>
+      </div>
+      <div class="badge-row">
+        ${c.badges.map(b => b === 'ai-proof' ? '<span class="badge b-ai">AI-proof</span>' : b === 'govt stable' ? '<span class="badge b-gov">Govt/PSU stable</span>' : '<span class="badge b-hot">Hot field</span>').join('')}
+        <span class="badge b-sal">${c.salaryRange}</span>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label"><span>AI resistance</span><span>${100 - c.aiRisk}%</span></div>
+        <div class="meter-bar"><div class="meter-fill" style="width:${100 - c.aiRisk}%;background:${aiColor(c.aiRisk)}"></div></div>
+        <div class="meter-label"><span>Job stability</span><span>${c.stability}%</span></div>
+        <div class="meter-bar"><div class="meter-fill" style="width:${c.stability}%;background:#378ADD"></div></div>
+        <div class="meter-label"><span>Global scope</span><span>${c.globalScope}%</span></div>
+        <div class="meter-bar"><div class="meter-fill" style="width:${c.globalScope}%;background:#7F77DD"></div></div>
+      </div>
+      <div class="details" id="details-${globalIdx}">
+        <div class="detail-body">
+          <div class="detail-sec"><h4>Why AI won't replace this</h4><p>${c.ai}</p></div>
+          <div class="detail-sec"><h4>Opportunities in India</h4><p>${c.india}</p></div>
+          <div class="detail-sec"><h4>Foreign opportunities</h4><p>${c.abroad}</p></div>
+          <div class="detail-sec">
+            <h4>Degree & entrance exams</h4>
+            <p>${c.degree}</p>
+            <div class="tag-list">${c.exams.split(', ').map(e => `<span class="tag">${e}</span>`).join('')}</div>
+          </div>
+          <div class="detail-sec"><h4>Family benefits & stability</h4><p>${c.family}</p></div>
+          <div class="detail-sec"><h4>Salary growth trajectory</h4><p>${c.growth}</p></div>
+          <div class="detail-sec"><h4>Pros</h4><p class="pros">${c.pros}</p></div>
+          <div class="detail-sec"><h4>Watch out for</h4><p class="cons">${c.cons}</p></div>
+        </div>
+      </div>
+    </div>`;
+      }).join('');
+    }
+
+    function toggleCard(idx) {
+      const card = document.getElementById('card-' + idx);
+      const details = document.getElementById('details-' + idx);
+      const isOpen = details.classList.contains('open');
+      document.querySelectorAll('.details.open').forEach(d => d.classList.remove('open'));
+      document.querySelectorAll('.card.expanded').forEach(c => c.classList.remove('expanded'));
+      if (!isOpen) {
+        details.classList.add('open');
+        card.classList.add('expanded');
+      }
+    }
+
+    document.getElementById('filters').addEventListener('click', e => {
+      const pill = e.target.closest('.pill');
+      if (!pill) return;
+      activeFilter = pill.dataset.cat;
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      renderCards();
+    });
+
+    renderCards();
+  </script>
+</body>
+
+</html>
