@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Definitive Badminton Restringing Guide</title>
+  <style>
+    :root {
+      --bg: #EEF1EE;
+      --surface: #FFFFFF;
+      --console: #0F211C;
+      --ink: #14201C;
+      --soft: #56635C;
+      --power: #E2552B;
+      --amber: #F0A500;
+      --teal: #1FA18C;
+      --control: #0E6E50;
+      --line: rgba(20, 32, 28, .12);
+      --line2: rgba(20, 32, 28, .06);
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .x {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      padding: 0 5%
+    }
+
+    :focus-visible {
+      outline: 2.5px solid var(--power);
+      outline-offset: 2px;
+      border-radius: 4px
+    }
+
+    .spectrum {
+      height: 6px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--power) 0%, var(--amber) 36%, var(--teal) 64%, var(--control) 100%)
+    }
+
+    .hatch {
+      background-image: repeating-linear-gradient(0deg, var(--line2) 0 1px, transparent 1px 13px), repeating-linear-gradient(90deg, var(--line2) 0 1px, transparent 1px 13px)
+    }
+
+    /* type */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--control);
+      font-weight: 600
+    }
+
+    h1 {
+      font-size: clamp(32px, 8.5vw, 52px);
+      line-height: 1;
+      letter-spacing: -.025em;
+      font-weight: 800;
+      margin: .3em 0 .28em
+    }
+
+    h2 {
+      font-size: clamp(22px, 5.6vw, 30px);
+      line-height: 1.06;
+      letter-spacing: -.018em;
+      font-weight: 800
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.01em
+    }
+
+    p {
+      color: var(--soft)
+    }
+
+    .lead {
+      font-size: 17.5px;
+      color: var(--ink);
+      max-width: 56ch
+    }
+
+    strong {
+      color: var(--ink);
+      font-weight: 700
+    }
+
+    /* sticky nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(238, 241, 238, .92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .navrow {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 11px 14px;
+      scrollbar-width: none;
+      -ms-overflow-style: none
+    }
+
+    .navrow::-webkit-scrollbar {
+      display: none
+    }
+
+    .navrow a {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-decoration: none;
+      color: var(--soft);
+      white-space: nowrap;
+      padding: 6px 11px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+      font-weight: 600
+    }
+
+    .navrow a:hover {
+      color: var(--ink);
+      border-color: var(--soft)
+    }
+
+    header {
+      padding: 44px 0 34px
+    }
+
+    .factors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px
+    }
+
+    .fchip {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .03em;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 9px 12px;
+      font-weight: 600;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .fchip i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block
+    }
+
+    section.sec {
+      padding: 42px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .sec-head {
+      margin-bottom: 22px
+    }
+
+    .sec-head p {
+      margin-top: 7px
+    }
+
+    /* CONSOLE / recommender */
+    .console {
+      background: var(--console);
+      color: #E8F0EC;
+      border-radius: 20px;
+      padding: 26px 20px 24px;
+      margin-top: 4px
+    }
+
+    .console .eyebrow {
+      color: var(--amber)
+    }
+
+    .console h2 {
+      color: #fff
+    }
+
+    .console .sub {
+      color: #9FB1AA;
+      margin-top: 6px;
+      font-size: 15px
+    }
+
+    .qblock {
+      margin-top: 22px
+    }
+
+    .qlabel {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #8DA29B;
+      margin-bottom: 10px
+    }
+
+    .opts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .opt {
+      font-size: 13.5px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .16);
+      color: #D6E2DC;
+      border-radius: 10px;
+      padding: 10px 13px;
+      cursor: pointer;
+      transition: all .15s
+    }
+
+    .opt:hover {
+      border-color: rgba(255, 255, 255, .45)
+    }
+
+    .opt[aria-pressed="true"] {
+      background: #fff;
+      color: var(--console);
+      border-color: #fff
+    }
+
+    .result {
+      margin-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      padding-top: 22px
+    }
+
+    .res-tension {
+      display: flex;
+      align-items: baseline;
+      gap: 10px
+    }
+
+    .res-tension .big {
+      font-family: var(--mono);
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1;
+      color: var(--amber)
+    }
+
+    .res-tension .cap {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #8DA29B
+    }
+
+    .res-row {
+      margin-top: 18px
+    }
+
+    .res-row .k {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #8DA29B;
+      margin-bottom: 8px
+    }
+
+    .schip {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(31, 161, 140, .18);
+      border: 1px solid rgba(31, 161, 140, .5);
+      color: #9EE7D8;
+      border-radius: 8px;
+      padding: 6px 11px;
+      margin: 0 6px 6px 0
+    }
+
+    .res-gauge {
+      font-size: 14.5px;
+      color: #C7D5CF
+    }
+
+    .res-why {
+      margin-top: 16px;
+      font-size: 14.5px;
+      color: #C7D5CF;
+      background: rgba(255, 255, 255, .05);
+      border-radius: 11px;
+      padding: 13px 14px;
+      line-height: 1.5
+    }
+
+    .res-why b {
+      color: #fff
+    }
+
+    /* myth */
+    .myth {
+      background: var(--ink);
+      color: #EAF0EC;
+      border-radius: 18px;
+      padding: 24px 20px
+    }
+
+    .myth .eyebrow {
+      color: var(--amber)
+    }
+
+    .myth h2 {
+      color: #fff
+    }
+
+    .myth p {
+      color: #B7C5BE
+    }
+
+    .tramp {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px
+    }
+
+    .trc {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 12px;
+      padding: 15px 13px;
+      text-align: center
+    }
+
+    .trc .tag {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .trc.lo .tag {
+      color: var(--power)
+    }
+
+    .trc.hi .tag {
+      color: var(--teal)
+    }
+
+    .bed {
+      position: relative;
+      height: 58px;
+      margin: 13px 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .net {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, .18)
+    }
+
+    .net.loose {
+      background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, .2) 0 1px, transparent 1px 15px), repeating-linear-gradient(90deg, rgba(255, 255, 255, .2) 0 1px, transparent 1px 15px)
+    }
+
+    .net.tight {
+      background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, .2) 0 1px, transparent 1px 7px), repeating-linear-gradient(90deg, rgba(255, 255, 255, .2) 0 1px, transparent 1px 7px)
+    }
+
+    .sh {
+      position: relative;
+      z-index: 2;
+      font-size: 24px
+    }
+
+    .trc .a {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 12px;
+      margin-top: 2px
+    }
+
+    .trc.lo .a {
+      color: var(--power)
+    }
+
+    .trc.hi .a {
+      color: var(--teal)
+    }
+
+    /* tension simulator */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 18px
+    }
+
+    .sim-top {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 12px
+    }
+
+    .sim-read {
+      display: flex;
+      align-items: baseline;
+      gap: 9px
+    }
+
+    .sim-val {
+      font-family: var(--mono);
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1
+    }
+
+    .sim-unit {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--soft)
+    }
+
+    .sim-feel {
+      font-weight: 700;
+      font-size: 15px;
+      margin: 3px 0 14px;
+      min-height: 1.4em
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 10px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--power) 0%, var(--amber) 36%, var(--teal) 64%, var(--control) 100%);
+      outline: none
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 3px solid #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(20, 32, 28, .35)
+    }
+
+    .slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 3px solid #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(20, 32, 28, .35)
+    }
+
+    .ticks {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--soft);
+      margin-top: 7px
+    }
+
+    .ticks span:first-child {
+      color: var(--power);
+      font-weight: 600
+    }
+
+    .ticks span:last-child {
+      color: var(--control);
+      font-weight: 600
+    }
+
+    .meterset {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px 18px;
+      margin-top: 18px
+    }
+
+    .meter .ml {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--soft);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px
+    }
+
+    .track {
+      height: 8px;
+      border-radius: 5px;
+      background: var(--line);
+      overflow: hidden
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width .15s ease
+    }
+
+    /* zones */
+    .zones {
+      display: flex;
+      flex-direction: column;
+      gap: 11px
+    }
+
+    .zone {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--line);
+      border-radius: 12px;
+      padding: 15px 15px
+    }
+
+    .zone.p {
+      border-left-color: var(--power)
+    }
+
+    .zone.b {
+      border-left-color: var(--amber)
+    }
+
+    .zone.c {
+      border-left-color: var(--teal)
+    }
+
+    .zone.e {
+      border-left-color: var(--control)
+    }
+
+    .zt {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .zt .lbs {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 17px
+    }
+
+    .zt .zn {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--soft)
+    }
+
+    .zone.p .zn {
+      color: var(--power)
+    }
+
+    .zone p {
+      margin-top: 6px;
+      font-size: 14px
+    }
+
+    /* gauge interactive */
+    .gauge-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline
+    }
+
+    .gauge-mm {
+      font-family: var(--mono);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.02em
+    }
+
+    .gauge-name {
+      font-weight: 700;
+      font-size: 15px
+    }
+
+    .gline {
+      height: 0;
+      margin: 18px 0;
+      border-top: 2px solid var(--ink);
+      transition: border-top-width .15s ease
+    }
+
+    .gauge-desc {
+      font-size: 14.5px;
+      color: var(--ink);
+      min-height: 2.6em
+    }
+
+    .gradeticks {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--soft);
+      margin-top: 6px
+    }
+
+    /* string filter + cards */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 16px
+    }
+
+    .fbtn {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--soft);
+      border-radius: 20px;
+      padding: 7px 13px;
+      cursor: pointer
+    }
+
+    .fbtn[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink)
+    }
+
+    #cards {
+      display: flex;
+      flex-direction: column;
+      gap: 13px
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 17px 16px
+    }
+
+    .card .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px
+    }
+
+    .card .nm {
+      font-size: 16.5px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      line-height: 1.15
+    }
+
+    .card .gg {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--soft);
+      margin-top: 3px
+    }
+
+    .price {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--control);
+      font-weight: 700
+    }
+
+    .ratings {
+      margin: 13px 0 9px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px
+    }
+
+    .rrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px
+    }
+
+    .rlab {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--soft)
+    }
+
+    .dots {
+      display: flex;
+      gap: 3px
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--line)
+    }
+
+    .dot.on {
+      background: var(--ink)
+    }
+
+    .best {
+      font-size: 13.5px;
+      border-top: 1px dashed var(--line);
+      padding-top: 9px
+    }
+
+    .best b {
+      color: var(--ink)
+    }
+
+    /* weight table */
+    .wtable {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    .wrow {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line2)
+    }
+
+    .wrow:first-child {
+      border-top: 0
+    }
+
+    .wgrade {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 12px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .wgrade small {
+      font-weight: 400;
+      color: var(--soft);
+      font-size: 11px;
+      letter-spacing: .02em
+    }
+
+    .wbody {
+      padding: 13px 14px;
+      font-size: 14px;
+      color: var(--soft)
+    }
+
+    .wbody b {
+      color: var(--ink)
+    }
+
+    /* balance toggle */
+    .baltabs {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 18px
+    }
+
+    .baltab {
+      flex: 1;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--soft);
+      border-radius: 10px;
+      padding: 10px 6px;
+      cursor: pointer;
+      text-align: center
+    }
+
+    .baltab[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink)
+    }
+
+    .racket {
+      position: relative;
+      height: 70px;
+      margin: 6px 0 18px
+    }
+
+    .rk-line {
+      position: absolute;
+      top: 50%;
+      left: 6%;
+      right: 6%;
+      height: 4px;
+      background: var(--line);
+      border-radius: 3px;
+      transform: translateY(-50%)
+    }
+
+    .rk-head {
+      position: absolute;
+      top: 50%;
+      left: 6%;
+      width: 34px;
+      height: 46px;
+      border: 3px solid var(--soft);
+      border-radius: 50%;
+      transform: translateY(-50%)
+    }
+
+    .rk-grip {
+      position: absolute;
+      top: 50%;
+      right: 6%;
+      width: 30px;
+      height: 13px;
+      background: var(--soft);
+      border-radius: 3px;
+      transform: translateY(-50%)
+    }
+
+    .rk-mark {
+      position: absolute;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--power);
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(20, 32, 28, .3);
+      transform: translate(-50%, -50%);
+      transition: left .3s ease
+    }
+
+    .rk-cap {
+      position: absolute;
+      bottom: -4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--soft);
+      transform: translateX(-50%);
+      transition: left .3s ease;
+      white-space: nowrap
+    }
+
+    .balgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px
+    }
+
+    .balcol h4 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .balcol.good h4 {
+      color: var(--control)
+    }
+
+    .balcol.less h4 {
+      color: var(--power)
+    }
+
+    .balcol ul {
+      list-style: none;
+      font-size: 14px;
+      color: var(--soft)
+    }
+
+    .balcol li {
+      padding: 3px 0 3px 16px;
+      position: relative
+    }
+
+    .balcol li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%
+    }
+
+    .balcol.good li::before {
+      background: var(--control)
+    }
+
+    .balcol.less li::before {
+      background: var(--power)
+    }
+
+    .balwho {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--ink)
+    }
+
+    .balwho b {
+      font-weight: 700
+    }
+
+    /* shot matrix */
+    .shotbtns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 18px
+    }
+
+    .shotbtn {
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--soft);
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer
+    }
+
+    .shotbtn[aria-pressed="true"] {
+      background: var(--power);
+      color: #fff;
+      border-color: var(--power)
+    }
+
+    .shotpanel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 6px 16px 14px
+    }
+
+    .frow {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px 0;
+      border-top: 1px solid var(--line2)
+    }
+
+    .frow .fk {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--control);
+      padding-top: 2px;
+      font-weight: 600
+    }
+
+    .frow .fv {
+      font-size: 14px;
+      color: var(--ink)
+    }
+
+    .shottip {
+      margin-top: 6px;
+      background: rgba(243, 165, 0, .13);
+      border: 1px solid rgba(243, 165, 0, .45);
+      border-radius: 11px;
+      padding: 12px 13px;
+      font-size: 13.5px;
+      color: #8a6300
+    }
+
+    .shottip b {
+      color: #6e4f00
+    }
+
+    /* level cards */
+    .levels {
+      display: flex;
+      flex-direction: column;
+      gap: 13px
+    }
+
+    .lvl {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 17px 16px
+    }
+
+    .lvl .lh {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px
+    }
+
+    .lvl .badge {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 20px;
+      color: #fff
+    }
+
+    .lvl.bg .badge {
+      background: var(--power)
+    }
+
+    .lvl.in .badge {
+      background: var(--amber)
+    }
+
+    .lvl.ad .badge {
+      background: var(--control)
+    }
+
+    .lvl p {
+      font-size: 14px
+    }
+
+    .lvl .specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 11px
+    }
+
+    .lvl .spec {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 5px 9px;
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    /* checklist */
+    .check {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 17px
+    }
+
+    .check .rule {
+      background: rgba(31, 161, 140, .1);
+      border: 1px solid rgba(31, 161, 140, .4);
+      border-radius: 11px;
+      padding: 12px 14px;
+      font-size: 14.5px;
+      color: #0c5e44;
+      margin-bottom: 14px
+    }
+
+    .check .rule b {
+      color: #0a4a36
+    }
+
+    .check ul {
+      list-style: none
+    }
+
+    .check li {
+      padding: 9px 0 9px 28px;
+      position: relative;
+      font-size: 14px;
+      color: var(--soft);
+      border-top: 1px solid var(--line2)
+    }
+
+    .check li:first-child {
+      border-top: 0
+    }
+
+    .check li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      color: var(--power);
+      font-weight: 800
+    }
+
+    .check li b {
+      color: var(--ink)
+    }
+
+    /* faq accordion */
+    .acc {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--surface)
+    }
+
+    .acc-item {
+      border-top: 1px solid var(--line2)
+    }
+
+    .acc-item:first-child {
+      border-top: 0
+    }
+
+    .acc-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 16px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--sans)
+    }
+
+    .acc-q .plus {
+      font-family: var(--mono);
+      color: var(--power);
+      font-size: 20px;
+      font-weight: 400;
+      transition: transform .2s;
+      flex-shrink: 0
+    }
+
+    .acc-q[aria-expanded="true"] .plus {
+      transform: rotate(45deg)
+    }
+
+    .acc-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .25s ease
+    }
+
+    .acc-a p {
+      padding: 0 16px 16px;
+      font-size: 14px
+    }
+
+    /* cheat */
+    .cheat {
+      background: var(--console);
+      color: #E8F0EC;
+      border-radius: 18px;
+      padding: 26px 20px
+    }
+
+    .cheat .eyebrow {
+      color: var(--amber)
+    }
+
+    .cheat h2 {
+      color: #fff
+    }
+
+    .cheat ul {
+      list-style: none;
+      margin-top: 16px
+    }
+
+    .cheat li {
+      padding: 11px 0;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      display: flex;
+      gap: 12px;
+      font-size: 15px;
+      color: #C7D5CF
+    }
+
+    .cheat li:first-child {
+      border-top: 0
+    }
+
+    .cheat li b {
+      color: #fff
+    }
+
+    .cheat .k {
+      font-family: var(--mono);
+      color: var(--amber);
+      font-weight: 700;
+      flex-shrink: 0
+    }
+
+    .disc {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--soft);
+      text-align: center;
+      padding: 30px 0 6px;
+      line-height: 1.6;
+      letter-spacing: .03em
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .55s ease, transform .55s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none
+      }
+
+      * {
+        scroll-behavior: auto
+      }
+    }
+
+    @media(min-width:640px) {
+      .ratings {
+        gap: 9px 28px
+      }
+
+      .balgrid {
+        gap: 18px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="navrow">
+      <a href="#tool">⚙ The tool</a>
+      <a href="#tension">Tension</a>
+      <a href="#gauge">Thickness</a>
+      <a href="#strings">Strings</a>
+      <a href="#weight">Weight</a>
+      <a href="#balance">Balance</a>
+      <a href="#shots">By shot</a>
+      <a href="#level">By level</a>
+      <a href="#when">When to restring</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+
+  <header class="hatch">
+    <div class="x">
+      <span class="eyebrow">The definitive guide</span>
+      <h1>How to restring a badminton racket.</h1>
+      <p class="lead">Everything that actually changes how your racket plays - tension, string, thickness, weight and
+        balance - explained simply, with tools to dial in your own setup. The whole spectrum runs from <span
+          style="color:var(--power);font-weight:700">power</span> to <span
+          style="color:var(--control);font-weight:700">control</span>; that idea ties this entire guide together.</p>
+      <div class="spectrum" style="margin-top:22px"></div>
+      <div class="factors">
+        <span class="fchip"><i style="background:var(--power)"></i>Tension (lb)</span>
+        <span class="fchip"><i style="background:var(--amber)"></i>String thickness</span>
+        <span class="fchip"><i style="background:var(--teal)"></i>String type</span>
+        <span class="fchip"><i style="background:var(--control)"></i>Racket weight</span>
+        <span class="fchip"><i style="background:var(--ink)"></i>Racket balance</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TOOL -->
+  <section class="sec" id="tool">
+    <div class="x">
+      <div class="console reveal">
+        <span class="eyebrow">Interactive · build your setup</span>
+        <h2>Tune your racket</h2>
+        <p class="sub">Answer three things. Get a tension, a string and a thickness - with the reasoning. Tap the
+          options.</p>
+
+        <div class="qblock">
+          <div class="qlabel">1 · Your level</div>
+          <div class="opts" id="q-level">
+            <button class="opt" data-v="beginner" aria-pressed="true">Beginner</button>
+            <button class="opt" data-v="intermediate" aria-pressed="false">Intermediate</button>
+            <button class="opt" data-v="advanced" aria-pressed="false">Advanced</button>
+          </div>
+        </div>
+
+        <div class="qblock">
+          <div class="qlabel">2 · What you want most</div>
+          <div class="opts" id="q-priority">
+            <button class="opt" data-v="power" aria-pressed="true">Power &amp; easy depth</button>
+            <button class="opt" data-v="control" aria-pressed="false">Control &amp; placement</button>
+            <button class="opt" data-v="allround" aria-pressed="false">All-round</button>
+            <button class="opt" data-v="defence" aria-pressed="false">Defence &amp; fast hands</button>
+            <button class="opt" data-v="durability" aria-pressed="false">Long string life</button>
+          </div>
+        </div>
+
+        <div class="qblock">
+          <div class="qlabel">3 · How often do strings break for you</div>
+          <div class="opts" id="q-breaks">
+            <button class="opt" data-v="often" aria-pressed="false">Often (monthly)</button>
+            <button class="opt" data-v="sometimes" aria-pressed="true">Sometimes</button>
+            <button class="opt" data-v="rarely" aria-pressed="false">Rarely</button>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="qlabel" style="margin-bottom:8px">Recommended tension</div>
+          <div class="res-tension"><span class="big" id="r-tension">-</span><span class="cap">to start · adjust by
+              feel</span></div>
+          <div class="res-row">
+            <div class="k">Try these strings</div>
+            <div id="r-strings"></div>
+          </div>
+          <div class="res-row">
+            <div class="k">Thickness</div>
+            <div class="res-gauge" id="r-gauge"></div>
+          </div>
+          <div class="res-why" id="r-why"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENSION -->
+  <section class="sec" id="tension">
+    <div class="x">
+      <div class="myth reveal">
+        <span class="eyebrow">Start with the biggest myth</span>
+        <h2>Higher tension ≠ more power.</h2>
+        <p>The string bed is a trampoline. Looser strings flex more on impact and throw the shuttle back for you.
+          Tighter strings barely move, so the power must come from your own swing speed. That's why tighter strings give
+          <strong style="color:#fff">control</strong>, not free power.</p>
+        <div class="tramp">
+          <div class="trc lo">
+            <div class="tag">Low tension</div>
+            <div class="bed">
+              <div class="net loose"></div><span class="sh">🏸</span>
+            </div>
+            <div class="a">↑ big rebound</div>
+          </div>
+          <div class="trc hi">
+            <div class="tag">High tension</div>
+            <div class="bed">
+              <div class="net tight"></div><span class="sh">🏸</span>
+            </div>
+            <div class="a">↑ small rebound</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-head reveal" style="margin-top:30px">
+        <span class="eyebrow">Interactive · feel the tension</span>
+        <h2>What each pound does</h2>
+        <p>Drag the slider. Power, control and sweet-spot size all move together.</p>
+      </div>
+      <div class="panel reveal">
+        <div class="sim-top"><span>Drag →</span><span>Tension simulator</span></div>
+        <div class="sim-read"><span class="sim-val" id="s-val">24</span><span class="sim-unit">lb</span></div>
+        <div class="sim-feel" id="s-feel"></div>
+        <input class="slider" id="s-slider" type="range" min="19" max="32" step="1" value="24"
+          aria-label="Tension in pounds">
+        <div class="ticks"><span>19 · POWER</span><span>26</span><span>32 · CONTROL</span></div>
+        <div class="meterset">
+          <div class="meter">
+            <div class="ml"><span>Power / repulsion</span><span id="m-pwr-t"></span></div>
+            <div class="track">
+              <div class="fill" id="m-pwr" style="background:var(--power)"></div>
+            </div>
+          </div>
+          <div class="meter">
+            <div class="ml"><span>Control / precision</span><span id="m-ctl-t"></span></div>
+            <div class="track">
+              <div class="fill" id="m-ctl" style="background:var(--control)"></div>
+            </div>
+          </div>
+          <div class="meter">
+            <div class="ml"><span>Sweet-spot size</span><span id="m-sweet-t"></span></div>
+            <div class="track">
+              <div class="fill" id="m-sweet" style="background:var(--teal)"></div>
+            </div>
+          </div>
+          <div class="meter">
+            <div class="ml"><span>Effort needed from you</span><span id="m-eff-t"></span></div>
+            <div class="track">
+              <div class="fill" id="m-eff" style="background:var(--amber)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="zones reveal" style="margin-top:16px">
+        <div class="zone p">
+          <div class="zt"><span class="lbs">19–23 lb</span><span class="zn">Power zone</span></div>
+          <p>Biggest trampoline and biggest, most forgiving sweet spot. Easiest depth on clears with the least effort.
+            Trades away a little crispness and precision.</p>
+        </div>
+        <div class="zone b">
+          <div class="zt"><span class="lbs">24–26 lb</span><span class="zn">Balanced</span></div>
+          <p>The sensible middle. More feel and control while keeping useful pop. A great default for improving players.
+          </p>
+        </div>
+        <div class="zone c">
+          <div class="zt"><span class="lbs">27–29 lb</span><span class="zn">Control</span></div>
+          <p>Crisp, clean response and precise placement, but a smaller sweet spot. You must supply the power with a
+            fast swing.</p>
+        </div>
+        <div class="zone e">
+          <div class="zt"><span class="lbs">30–32 lb</span><span class="zn">Elite</span></div>
+          <p>Strong-club to pro territory. Very unforgiving; only worth it with fast, clean technique. Most players play
+            weaker here, not stronger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAUGE -->
+  <section class="sec" id="gauge">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Interactive · string thickness</span>
+        <h2>Thick or thin?</h2>
+        <p>Gauge is the string's diameter in mm. Drag from thick to thin and watch the trade-off.</p>
+      </div>
+      <div class="panel reveal">
+        <div class="gauge-head"><span class="gauge-name" id="g-name">Medium</span><span class="gauge-mm" id="g-mm">0.68
+            mm</span></div>
+        <div class="gline" id="g-line" style="border-top-width:4px"></div>
+        <input class="slider" id="g-slider" type="range" min="0" max="4" step="1" value="2"
+          style="background:linear-gradient(90deg,var(--control),var(--teal),var(--amber),var(--power))"
+          aria-label="String thickness">
+        <div class="gradeticks"><span>0.70 thick</span><span>0.66</span><span>0.61 thin</span></div>
+        <div class="gauge-desc" id="g-desc" style="margin-top:14px"></div>
+        <div class="meterset" style="grid-template-columns:1fr 1fr">
+          <div class="meter">
+            <div class="ml"><span>Power</span></div>
+            <div class="track">
+              <div class="fill" id="g-pwr" style="background:var(--power)"></div>
+            </div>
+          </div>
+          <div class="meter">
+            <div class="ml"><span>Durability</span></div>
+            <div class="track">
+              <div class="fill" id="g-dur" style="background:var(--control)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal" style="margin-top:14px;font-size:14px">The honest trade-off: <strong>no single string is both
+          maximum power and maximum durability.</strong> Thinner = more pop but restring sooner. Pick your side by how
+        often you snap strings. Hybrid strings (thin mains + thick crosses) try to get a bit of both.</p>
+    </div>
+  </section>
+
+  <!-- STRINGS -->
+  <section class="sec" id="strings">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Interactive · the shortlist</span>
+        <h2>Which string to buy</h2>
+        <p>Filter by what you want. Ratings are out of 5. These are the safe, widely-available picks - Yonex BG is where
+          almost everyone starts.</p>
+      </div>
+      <div class="filters reveal" id="filters">
+        <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+        <button class="fbtn" data-f="power" aria-pressed="false">Power</button>
+        <button class="fbtn" data-f="allround" aria-pressed="false">All-round</button>
+        <button class="fbtn" data-f="control" aria-pressed="false">Control</button>
+        <button class="fbtn" data-f="speed" aria-pressed="false">Speed</button>
+        <button class="fbtn" data-f="durable" aria-pressed="false">Durable</button>
+      </div>
+      <div id="cards"></div>
+    </div>
+  </section>
+
+  <!-- WEIGHT -->
+  <section class="sec" id="weight">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The racket itself · weight</span>
+        <h2>What "3U / 4U / 5U" means</h2>
+        <p>The U-grade is the racket's weight class - lower number = heavier. (Approximate unstrung ranges; they vary
+          slightly by brand.)</p>
+      </div>
+      <div class="wtable reveal">
+        <div class="wrow">
+          <div class="wgrade">2U<small>90–94 g</small></div>
+          <div class="wbody"><b>Heaviest, most powerful & stable.</b> Most mass behind smashes and clears, but tiring
+            and slower to swing. For strong, attacking players.</div>
+        </div>
+        <div class="wrow">
+          <div class="wgrade">3U<small>85–89 g</small></div>
+          <div class="wbody"><b>The classic all-round weight.</b> Good power with manageable handling. The most common
+            singles choice and a safe pick.</div>
+        </div>
+        <div class="wrow">
+          <div class="wgrade">4U<small>80–84 g</small></div>
+          <div class="wbody"><b>Light and fast.</b> Quicker swings and reactions with still-decent power. Hugely
+            popular, especially for doubles and modern fast play.</div>
+        </div>
+        <div class="wrow">
+          <div class="wgrade">5U<small>75–79 g</small></div>
+          <div class="wbody"><b>Very light & maneuverable.</b> Easiest on the arm, fastest hands, but less mass for
+            power. Great for beginners, juniors and quick net/defence play.</div>
+        </div>
+      </div>
+      <p class="reveal" style="margin-top:14px;font-size:14px"><strong>Rule of thumb:</strong> heavier = more power but
+        slower and more tiring; lighter = faster and easier but you generate power from speed and technique, not mass.
+        Beginners and anyone with arm/shoulder strain usually do best at <strong>4U–5U</strong>.</p>
+    </div>
+  </section>
+
+  <!-- BALANCE -->
+  <section class="sec" id="balance">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Interactive · the racket itself · balance</span>
+        <h2>Head-heavy, even, or head-light?</h2>
+        <p>Where the weight sits matters as much as how much there is. Tap to compare.</p>
+      </div>
+      <div class="panel reveal">
+        <div class="baltabs" id="baltabs">
+          <button class="baltab" data-b="heavy" aria-pressed="true">Head-heavy</button>
+          <button class="baltab" data-b="even" aria-pressed="false">Even</button>
+          <button class="baltab" data-b="light" aria-pressed="false">Head-light</button>
+        </div>
+        <div class="racket">
+          <div class="rk-line"></div>
+          <div class="rk-head"></div>
+          <div class="rk-grip"></div>
+          <div class="rk-mark" id="rk-mark"></div>
+          <div class="rk-cap" id="rk-cap">balance point</div>
+        </div>
+        <div class="balgrid">
+          <div class="balcol good">
+            <h4>Strengths</h4>
+            <ul id="bal-good"></ul>
+          </div>
+          <div class="balcol less">
+            <h4>Trade-offs</h4>
+            <ul id="bal-less"></ul>
+          </div>
+        </div>
+        <div class="balwho" id="bal-who"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOTS -->
+  <section class="sec" id="shots">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Interactive · 360° by shot</span>
+        <h2>Set up for the shot you want</h2>
+        <p>Pick what you're trying to improve. Here's how every factor should be set - and the one technique cue that
+          matters most.</p>
+      </div>
+      <div class="shotbtns reveal" id="shotbtns">
+        <button class="shotbtn" data-s="clear" aria-pressed="true">Backcourt clear</button>
+        <button class="shotbtn" data-s="smash" aria-pressed="false">Backcourt smash</button>
+        <button class="shotbtn" data-s="drive" aria-pressed="false">Flat drives</button>
+        <button class="shotbtn" data-s="defence" aria-pressed="false">Defence / blocks</button>
+        <button class="shotbtn" data-s="net" aria-pressed="false">Net &amp; touch</button>
+        <button class="shotbtn" data-s="reaction" aria-pressed="false">Faster reactions</button>
+      </div>
+      <div class="shotpanel reveal" id="shotpanel"></div>
+    </div>
+  </section>
+
+  <!-- LEVEL -->
+  <section class="sec" id="level">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">By player level</span>
+        <h2>What to prioritise as you grow</h2>
+      </div>
+      <div class="levels reveal">
+        <div class="lvl bg">
+          <div class="lh"><span class="badge">Beginner</span>
+            <h3>Forgiveness first</h3>
+          </div>
+          <p>You want the <strong>biggest, most forgiving sweet spot</strong> and effortless power while your technique
+            is still forming. Low tension does both. A durable string means you're not restringing constantly, and a
+            lighter, easy-to-swing racket protects your arm and helps you learn clean contact.</p>
+          <div class="specs"><span class="spec">Tension 22–24 lb</span><span class="spec">Durable string
+              (BG65)</span><span class="spec">Thicker 0.70 mm</span><span class="spec">4U–5U, even / head-light</span>
+          </div>
+        </div>
+        <div class="lvl in">
+          <div class="lh"><span class="badge">Intermediate</span>
+            <h3>Start refining</h3>
+          </div>
+          <p>Your contact is more consistent, so you can trade a little forgiveness for feel. Nudge tension up, move to
+            a balanced or power string, and choose a balance that matches your game - head-heavy if you attack,
+            head-light if you defend.</p>
+          <div class="specs"><span class="spec">Tension 24–27 lb</span><span class="spec">Balanced / power
+              string</span><span class="spec">Medium 0.66–0.69 mm</span><span class="spec">3U–4U</span></div>
+        </div>
+        <div class="lvl ad">
+          <div class="lh"><span class="badge">Advanced</span>
+            <h3>Control & precision</h3>
+          </div>
+          <p>You hit the centre cleanly and consistently, so a small sweet spot is fine and even desirable. Higher
+            tension gives sharp placement and feel; a thin string gives crisp response and the steepest, fastest shots.
+            Set weight and balance to your role.</p>
+          <div class="specs"><span class="spec">Tension 27–30+ lb</span><span class="spec">Thin string (BG66 /
+              Exbolt)</span><span class="spec">Thin 0.61–0.65 mm</span><span class="spec">Weight & balance to
+              role</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN -->
+  <section class="sec" id="when">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Maintenance</span>
+        <h2>When to restring</h2>
+      </div>
+      <div class="check reveal">
+        <div class="rule"><b>Rule of thumb:</b> restring about as many times per year as you play per week. Play 3× a
+          week → restring ~3× a year, minimum - even if it never snaps.</div>
+        <h3 style="margin-bottom:6px">Signs your string is dead</h3>
+        <ul>
+          <li>The crisp <b>"ping"</b> is gone and hits sound dull or muddy.</li>
+          <li>You're hitting <b>shorter</b> for the same effort - power has quietly leaked away.</li>
+          <li>The shuttle feels like it <b>slides or sits</b> on the strings instead of springing off.</li>
+          <li>Visible <b>fraying, notching or flat spots</b> where the strings cross.</li>
+          <li>Strings have <b>shifted out of place</b> and don't snap back.</li>
+        </ul>
+        <p style="margin-top:12px;font-size:13.5px">Don't wait for a break - a dead string steals power and control well
+          before it snaps. And get it strung on a proper machine; even, quality stringing holds tension far better than
+          a cheap rush job.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="x">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Plain-English glossary</span>
+        <h2>Quick answers</h2>
+      </div>
+      <div class="acc reveal" id="acc"></div>
+    </div>
+  </section>
+
+  <!-- CHEAT -->
+  <section class="sec">
+    <div class="x">
+      <div class="cheat reveal">
+        <span class="eyebrow">Save this</span>
+        <h2>The whole guide in 7 lines</h2>
+        <ul>
+          <li><span class="k">01</span><span><b>Lower tension = more power</b> (bigger trampoline). Higher = more
+              control, needs a fast swing.</span></li>
+          <li><span class="k">02</span><span><b>Thinner string = more pop, breaks faster.</b> Thicker = durable, less
+              pop.</span></li>
+          <li><span class="k">03</span><span>Beginners: <b>low tension + thick durable string + big sweet spot.</b>
+              Advanced: tighter + thinner.</span></li>
+          <li><span class="k">04</span><span><b>Lighter / head-light racket</b> = fast hands & defence. <b>Heavier /
+                head-heavy</b> = smash power.</span></li>
+          <li><span class="k">05</span><span>Backcourt depth & power → <b>lower tension + repulsion string</b> (and good
+              technique).</span></li>
+          <li><span class="k">06</span><span>Stay <b>1–2 lb under the frame's max</b>; keep budget / very light frames
+              lower.</span></li>
+          <li><span class="k">07</span><span>Restring <b>~(times you play per week) per year</b> - dead strings feel
+              weak.</span></li>
+        </ul>
+      </div>
+      <p class="disc">A general guide for all players · brands and exact specs vary, and tension is personal - treat
+        every recommendation as a starting line and adjust by feel.</p>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      "use strict";
+      function pct(v, min, max) { return Math.max(0, Math.min(100, (v - min) / (max - min) * 100)); }
+
+      /* ---------- RECOMMENDER ---------- */
+      var state = { level: "beginner", priority: "power", breaks: "sometimes" };
+      function bindGroup(id, key) {
+        var g = document.getElementById(id);
+        g.addEventListener("click", function (e) {
+          var b = e.target.closest("button"); if (!b) return;
+          state[key] = b.dataset.v;
+          g.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+          recommend();
+        });
+      }
+      bindGroup("q-level", "level"); bindGroup("q-priority", "priority"); bindGroup("q-breaks", "breaks");
+
+      function recommend() {
+        var center = { beginner: 23, intermediate: 25, advanced: 28 }[state.level];
+        var shift = { power: -1.5, control: 1.5, allround: 0, defence: -0.5, durability: 0 }[state.priority];
+        var c = Math.round(center + shift); if (c < 19) c = 19; if (c > 31) c = 31;
+        document.getElementById("r-tension").textContent = (c - 1) + "–" + (c + 1) + " lb";
+
+        var strings, gauge;
+        if (state.breaks === "often") {
+          strings = ["Yonex BG65 (0.70mm) - toughest", "Yonex Nanogy 95 (0.69mm)"];
+          gauge = "Thicker 0.69–0.70 mm so it survives.";
+        } else if (state.priority === "power") {
+          strings = state.breaks === "rarely" ? ["Yonex BG66 Ultimax (0.65mm)", "Yonex BG80 Power (0.68mm)"] : ["Yonex BG80 Power (0.68mm)"];
+          gauge = "Thin–medium 0.65–0.68 mm for maximum repulsion.";
+        } else if (state.priority === "control") {
+          strings = ["Yonex Exbolt 63 (0.63mm)", "Yonex Nanogy 95 (0.69mm)"];
+          gauge = "Medium-thin 0.63–0.69 mm for a crisp, precise feel.";
+        } else if (state.priority === "defence") {
+          strings = ["Yonex BG66 Ultimax (0.65mm)", "Yonex Aerobite Boost (hybrid)"];
+          gauge = "Thin 0.61–0.65 mm for quick rebound on blocks & drives.";
+        } else if (state.priority === "durability") {
+          strings = ["Yonex BG65 (0.70mm)", "Yonex Nanogy 95 (0.69mm)"];
+          gauge = "Thick 0.69–0.70 mm for the longest life.";
+        } else {
+          strings = ["Yonex Nanogy 95 (0.69mm)", "Yonex BG80 Power (0.68mm)"];
+          gauge = "Medium 0.66–0.69 mm - the best all-round balance.";
+        }
+        document.getElementById("r-strings").innerHTML = strings.map(function (s) { return '<span class="schip">' + s + '</span>'; }).join("");
+        document.getElementById("r-gauge").textContent = gauge;
+
+        var lw = {
+          beginner: "As a beginner you want the biggest, most forgiving sweet spot",
+          intermediate: "At intermediate level you can balance pop with a bit more control",
+          advanced: "As an advanced player you can handle a tighter, sharper string bed"
+        }[state.level];
+        var pw = {
+          power: "so we keep tension low for maximum trampoline and effortless depth",
+          control: "so we lift tension a little for sharper placement and feel",
+          allround: "so we sit mid-range for a balance of pop and control",
+          defence: "so we favour a fast-rebounding string for quick blocks and flat exchanges",
+          durability: "so we choose a tougher, thicker string built to last"
+        }[state.priority];
+        var why = "<b>" + lw + "</b>, " + pw + ".";
+        if (state.breaks === "often") why += " Since you break strings often, we picked a thicker, tougher string over the absolute max-power option - it'll save you money.";
+        document.getElementById("r-why").innerHTML = why;
+      }
+
+      /* ---------- TENSION SIMULATOR ---------- */
+      var ss = document.getElementById("s-slider");
+      function simFeel(t) {
+        if (t <= 23) return ["Max power · big, forgiving sweet spot · least effort", getComputedStyle(document.documentElement).getPropertyValue('--power')];
+        if (t <= 26) return ["Balanced · more control, still good pop", "#b88300"];
+        if (t <= 29) return ["Crisp control · needs a fast swing for power", getComputedStyle(document.documentElement).getPropertyValue('--teal')];
+        return ["Elite control · very unforgiving, not for most players", getComputedStyle(document.documentElement).getPropertyValue('--control')];
+      }
+      function setText(id, v) { document.getElementById(id).textContent = v; }
+      function sim() {
+        var t = parseInt(ss.value, 10);
+        setText("s-val", t);
+        var f = simFeel(t); var fe = document.getElementById("s-feel"); fe.textContent = f[0]; fe.style.color = f[1].trim();
+        var p = pct(32 - t, 0, 13);          // lower tension -> more power
+        var ctl = pct(t - 19, 0, 13);        // higher tension -> more control
+        var sweet = pct(32 - t, 0, 13);      // lower tension -> bigger sweet spot
+        var eff = pct(t - 19, 0, 13);        // higher tension -> more effort needed
+        document.getElementById("m-pwr").style.width = p + "%";
+        document.getElementById("m-ctl").style.width = ctl + "%";
+        document.getElementById("m-sweet").style.width = sweet + "%";
+        document.getElementById("m-eff").style.width = eff + "%";
+        function lab(v) { return v > 72 ? "high" : v > 40 ? "med" : "low"; }
+        setText("m-pwr-t", lab(p)); setText("m-ctl-t", lab(ctl)); setText("m-sweet-t", lab(sweet)); setText("m-eff-t", lab(eff));
+      }
+      ss.addEventListener("input", sim);
+
+      /* ---------- GAUGE ---------- */
+      var gs = document.getElementById("g-slider");
+      var gData = [
+        { mm: "0.70 mm", name: "Thick", w: 7, pwr: 30, dur: 100, d: "Most durable, more control, a slightly duller hit. The friend of players who keep snapping strings." },
+        { mm: "0.69 mm", name: "Medium-thick", w: 6, pwr: 45, dur: 82, d: "Tough all-rounder. Lasts well with a fairly lively feel - a safe, long-lasting choice." },
+        { mm: "0.68 mm", name: "Medium", w: 4, pwr: 62, dur: 62, d: "The balanced middle. Good power and good durability together - hard to go wrong here." },
+        { mm: "0.65 mm", name: "Thin", w: 3, pwr: 82, dur: 42, d: "High repulsion and a crisp 'ting' with good shuttle bite, but it breaks sooner. Loved by attacking players." },
+        { mm: "0.61 mm", name: "Very thin", w: 2, pwr: 100, dur: 26, d: "Maximum power and the sharpest sound and feel - but the most fragile. For clean hitters chasing speed." }
+      ];
+      function gauge() {
+        var d = gData[parseInt(gs.value, 10)];
+        document.getElementById("g-mm").textContent = d.mm;
+        document.getElementById("g-name").textContent = d.name;
+        document.getElementById("g-line").style.borderTopWidth = d.w + "px";
+        document.getElementById("g-desc").textContent = d.d;
+        document.getElementById("g-pwr").style.width = d.pwr + "%";
+        document.getElementById("g-dur").style.width = d.dur + "%";
+      }
+      gs.addEventListener("input", gauge);
+
+      /* ---------- STRING CARDS ---------- */
+      var strings = [
+        { nm: "Yonex BG80 Power", gg: "0.68 mm · medium", price: "₹₹", tags: ["power"], r: { Power: 5, Repulsion: 4, Durability: 3, Control: 3 }, best: "Effortless power with okay durability - the attacking club favourite and a great first 'power' string." },
+        { nm: "Yonex BG66 Ultimax", gg: "0.65 mm · thin", price: "₹₹", tags: ["power", "speed"], r: { Power: 4, Repulsion: 5, Durability: 2, Control: 4 }, best: "Max repulsion with a gorgeous crisp sound. Best for fast smashes & drives - restring more often." },
+        { nm: "Yonex Aerosonic", gg: "0.61 mm · thinnest", price: "₹₹₹", tags: ["speed", "power"], r: { Power: 4, Repulsion: 5, Durability: 1, Control: 3 }, best: "The thinnest, sharpest, fastest string Yonex makes. Stunning feel - but fragile. For clean hitters only." },
+        { nm: "Yonex Exbolt 63", gg: "0.63 mm · thin", price: "₹₹₹", tags: ["power", "control", "speed"], r: { Power: 4, Repulsion: 5, Durability: 3, Control: 4 }, best: "Modern all-round power, a touch tougher than BG66 for the repulsion you get. A superb newer option." },
+        { nm: "Yonex Aerobite Boost", gg: "0.61/0.72 mm · hybrid", price: "₹₹₹", tags: ["speed", "control", "defence"], r: { Power: 4, Repulsion: 4, Durability: 3, Control: 4 }, best: "Thin mains for pop + thick cross for grip. Helps steeper smashes and quick blocks. Hybrid, a bit premium." },
+        { nm: "Yonex Nanogy 95", gg: "0.69 mm · medium", price: "₹₹", tags: ["allround", "control"], r: { Power: 3, Repulsion: 3, Durability: 4, Control: 4 }, best: "The balanced all-rounder - solid power, solid life, clean feel. A safe everyday string for most players." },
+        { nm: "Yonex BG65", gg: "0.70 mm · thick", price: "₹", tags: ["durable", "allround"], r: { Power: 2, Repulsion: 2, Durability: 5, Control: 4 }, best: "The reliable workhorse. Cheap and very durable for learning & practice - but it is NOT a power string." }
+      ];
+      var labels = ["Power", "Repulsion", "Durability", "Control"];
+      function dots(n) { var h = '<div class="dots">'; for (var i = 1; i <= 5; i++)h += '<span class="dot' + (i <= n ? ' on' : '') + '"></span>'; return h + '</div>'; }
+      function renderCards(filter) {
+        var wrap = document.getElementById("cards"), html = "";
+        strings.forEach(function (s) {
+          if (filter !== "all" && s.tags.indexOf(filter) === -1) return;
+          var rows = ""; labels.forEach(function (l) { rows += '<div class="rrow"><span class="rlab">' + l + '</span>' + dots(s.r[l]) + '</div>'; });
+          html += '<div class="card"><div class="top"><div><div class="nm">' + s.nm + '</div><div class="gg">' + s.gg + '</div></div><span class="price">' + s.price + '</span></div><div class="ratings">' + rows + '</div><div class="best"><b>Best for:</b> ' + s.best + '</div></div>';
+        });
+        wrap.innerHTML = html || '<div class="card"><p style="font-size:14px">No string matches that filter - try another.</p></div>';
+      }
+      document.getElementById("filters").addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        renderCards(b.dataset.f);
+      });
+
+      /* ---------- BALANCE ---------- */
+      var bal = {
+        heavy: { pos: 24, good: ["Big smash power", "Strong, easy clears", "Mass behind every shot"], less: ["Slower to manoeuvre", "Tougher on fast defence", "More tiring on the wrist"], who: "Attacking singles players and smashers who play from the back." },
+        even: { pos: 50, good: ["Versatile all-rounder", "Decent power and decent speed", "Adapts to most situations"], less: ["Not the absolute best at any one thing"], who: "Most players - a brilliant default for both singles and doubles." },
+        light: { pos: 76, good: ["Fast hands & reactions", "Excellent defence and net play", "Quick flat drives"], less: ["Less raw smash power", "Needs technique for backcourt depth"], who: "Doubles players, defenders and control players who value speed." }
+      };
+      function setBal(k) {
+        var b = bal[k];
+        document.getElementById("rk-mark").style.left = b.pos + "%";
+        document.getElementById("rk-cap").style.left = b.pos + "%";
+        document.getElementById("bal-good").innerHTML = b.good.map(function (t) { return "<li>" + t + "</li>"; }).join("");
+        document.getElementById("bal-less").innerHTML = b.less.map(function (t) { return "<li>" + t + "</li>"; }).join("");
+        document.getElementById("bal-who").innerHTML = "<b>Best for:</b> " + b.who;
+      }
+      document.getElementById("baltabs").addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        setBal(b.dataset.b);
+      });
+
+      /* ---------- SHOT MATRIX ---------- */
+      var shots = {
+        clear: { factors: [["Tension", "Lower (more trampoline = easier depth without arming it)"], ["Thickness", "Thinner for extra repulsion"], ["String", "BG80 Power / BG66 Ultimax"], ["Balance", "Head-heavy adds mass behind the shot"], ["Weight", "A slightly heavier head (2U–3U) helps drive it deep"]], tip: "Biggest gain is technique: use forearm pronation and body rotation, not the arm, and hit at full reach." },
+        smash: { factors: [["Tension", "Low for raw power; mid if you want to control the steep angle"], ["Thickness", "Thin–medium"], ["String", "BG80 Power / Aerosonic / Exbolt 63"], ["Balance", "Head-heavy - the classic smash weapon"], ["Weight", "Heavier (2U–3U) pushes more mass through the shuttle"]], tip: "Steepness beats raw speed: contact at the highest point in front of you, snap the face down, then place it at the body or sidelines." },
+        drive: { factors: [["Tension", "Mid - repulsion gives free speed in fast exchanges"], ["Thickness", "Thin for a quick rebound"], ["String", "BG66 Ultimax / Aerosonic"], ["Balance", "Even or head-light for fast hands"], ["Weight", "Lighter (4U–5U) for racket speed"]], tip: "Reset to a relaxed, neutral grip between shots so the next drive fires instantly." },
+        defence: { factors: [["Tension", "Mid–low so blocks travel deep with little effort"], ["Thickness", "Thin repulsion helps the block carry"], ["String", "BG66 Ultimax / Aerobite Boost"], ["Balance", "Head-light = the fastest reactions"], ["Weight", "Lighter racket gets up to the shuttle quicker"]], tip: "Compact swing, meet the shuttle early and in front - let the string do the work." },
+        net: { factors: [["Tension", "Higher for more touch and control"], ["Thickness", "Medium–thin"], ["String", "Exbolt 65 / Nanogy 95"], ["Balance", "Head-light for fine, delicate control"], ["Weight", "Lighter for quick, soft wrist work"]], tip: "Soft hands and a relaxed grip - net play is about feel, not force." },
+        reaction: { factors: [["Tension", "Mid - repulsion gives you speed for free"], ["Thickness", "Thin"], ["String", "Aerosonic / BG66 Ultimax"], ["Balance", "Head-light or even is quickest to swing"], ["Weight", "Lighter U-grade (4U–6U)"]], tip: "The fastest racket = light + head-light + a thin, lively string. Combine all three." }
+      };
+      function setShot(k) {
+        var s = shots[k], html = "";
+        s.factors.forEach(function (f) { html += '<div class="frow"><div class="fk">' + f[0] + '</div><div class="fv">' + f[1] + '</div></div>'; });
+        html += '<div class="shottip"><b>Technique cue:</b> ' + s.tip + '</div>';
+        document.getElementById("shotpanel").innerHTML = html;
+      }
+      document.getElementById("shotbtns").addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        setShot(b.dataset.s);
+      });
+
+      /* ---------- FAQ ---------- */
+      var faqs = [
+        ["Does higher tension really not give more power?", "Correct - for most players it gives less. Tight strings barely flex, so power must come from your own swing speed. They reward clean, fast hitters with control and feel. If you want easy power, go lower."],
+        ["What is 'repulsion'?", "Just the springiness of the string bed - how hard the strings throw the shuttle back. Thin strings and lower tension give more repulsion, so you get more speed for the same effort."],
+        ["What is the sweet spot?", "The central area of the string bed that gives the cleanest, most powerful hit. Lower tension makes it bigger and more forgiving (great for beginners); higher tension shrinks it but sharpens the feel."],
+        ["What do 'U' and 'G' mean on a racket?", "U is the weight class - lower number is heavier (2U heavier, 5U lighter). G is the grip size - lower number is a thicker grip. Brands vary slightly, so treat them as a guide."],
+        ["Thick vs thin string, in one line?", "Thick = durable and controlled but less pop. Thin = more power and crisper feel but breaks sooner."],
+        ["What's a hybrid string?", "Thin string on the main (vertical) strings for repulsion, plus a thicker string on the crosses for durability and shuttle grip. A way to get some power and some toughness in one job."],
+        ["How tight can I actually go?", "Stay 1–2 lb under the frame's printed maximum for safety. Cheap or very light frames should be strung lower than the label suggests - over-tightening a soft frame can warp or crack it."],
+        ["Is the factory pre-strung string any good?", "Usually it's basic string at an unknown, often low tension. Once you're playing regularly, a custom restring at a tension you choose is a noticeable upgrade."],
+        ["Natural gut or synthetic?", "Badminton is effectively all synthetic (nylon multifilament). Ignore gut - it's a tennis thing. Your choice is between different synthetic strings."],
+        ["How long does a string last before it's 'dead'?", "Even unbroken, most strings lose their best pop within a couple of months of regular play. Restring roughly as many times a year as you play per week."]
+      ];
+      (function () {
+        var acc = document.getElementById("acc"), html = "";
+        faqs.forEach(function (f, i) {
+          html += '<div class="acc-item"><button class="acc-q" aria-expanded="false" data-i="' + i + '">' + f[0] + '<span class="plus">+</span></button><div class="acc-a"><p>' + f[1] + '</p></div></div>';
+        });
+        acc.innerHTML = html;
+        acc.addEventListener("click", function (e) {
+          var b = e.target.closest(".acc-q"); if (!b) return;
+          var open = b.getAttribute("aria-expanded") === "true";
+          var panel = b.nextElementSibling;
+          b.setAttribute("aria-expanded", open ? "false" : "true");
+          panel.style.maxHeight = open ? null : panel.scrollHeight + "px";
+        });
+      })();
+
+      /* ---------- INIT ---------- */
+      recommend(); sim(); gauge(); renderCards("all"); setBal("heavy"); setShot("clear");
+
+      /* ---------- REVEAL ---------- */
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .1 });
+        document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+      } else { document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); }); }
+    })();
+  </script>
+</body>
+
+</html>
