@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read the Sky - Drone Pilot's Plain-English Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@500;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --sky: #EEF1F5;
+      /* overcast-sky background */
+      --ink: #16283C;
+      /* chart ink navy */
+      --ink-soft: #4A5B6E;
+      --paper: #FFFFFF;
+      --restrict: #D6336C;
+      /* aeronautical-chart magenta = restricted */
+      --restrict-soft: #FBE7EF;
+      --caution: #D98E04;
+      --caution-soft: #FCF3DF;
+      --clear: #2F9E62;
+      --clear-soft: #E4F4EB;
+      --line: #D5DCE4;
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Public Sans', system-ui, sans-serif;
+      background: var(--sky);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: auto;
+      margin: 0 auto;
+      padding: 0 3%;
+    }
+
+    /* ---- hatching = the chart language for "restricted" ---- */
+    .hatch {
+      background-image: repeating-linear-gradient(45deg, var(--restrict) 0 5px, transparent 5px 12px);
+    }
+
+    /* ================= HERO ================= */
+    header {
+      padding: 44px 0 10px
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--restrict);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 800;
+      font-size: clamp(44px, 9vw, 76px);
+      line-height: .95;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+      margin: 8px 0 14px;
+    }
+
+    h1 .thin {
+      font-weight: 500;
+      color: var(--ink-soft)
+    }
+
+    .lede {
+      max-width: 560px;
+      color: var(--ink-soft);
+      font-size: 17px
+    }
+
+    .hatch-rule {
+      height: 10px;
+      border-radius: 5px;
+      margin: 26px 0 0;
+      opacity: .9
+    }
+
+    /* ================= DECODER (signature) ================= */
+    .decoder {
+      background: var(--ink);
+      color: #EAF0F6;
+      border-radius: var(--radius);
+      padding: 26px 22px 22px;
+      margin: 30px 0 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .decoder::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-image: repeating-linear-gradient(45deg, var(--restrict) 0 6px, #fff 6px 12px);
+    }
+
+    .decoder h2 {
+      font-family: 'Big Shoulders', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin-bottom: 4px
+    }
+
+    .decoder p.sub {
+      color: #9FB2C5;
+      font-size: 14px;
+      margin-bottom: 18px
+    }
+
+    .readout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .chip {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14.5px;
+      font-weight: 500;
+      background: #243A52;
+      border: 1px solid #3A536F;
+      color: #EAF0F6;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .chip:hover {
+      border-color: var(--restrict)
+    }
+
+    .chip.active {
+      background: var(--restrict);
+      border-color: var(--restrict);
+      color: #fff
+    }
+
+    .chip:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px
+    }
+
+    .meaning {
+      background: #0E1B29;
+      border-radius: 10px;
+      padding: 16px;
+      min-height: 96px;
+      border-left: 4px solid var(--restrict);
+    }
+
+    .meaning .code {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--restrict);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .05em
+    }
+
+    .meaning .plain {
+      font-size: 15.5px;
+      margin-top: 6px
+    }
+
+    .meaning .plain strong {
+      color: #FFD9E6
+    }
+
+    .verdict {
+      margin-top: 14px;
+      background: var(--restrict);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .verdict span {
+      font-size: 18px;
+      line-height: 1.2
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      padding: 34px 0 6px
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px
+    }
+
+    .sec-head h2 {
+      font-family: 'Big Shoulders', sans-serif;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .sec-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .12em;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+    }
+
+    .sec-sub {
+      color: var(--ink-soft);
+      max-width: 600px;
+      margin-bottom: 20px;
+      font-size: 15.5px
+    }
+
+    /* ---- glossary ---- */
+    .search {
+      width: 100%;
+      padding: 13px 16px;
+      font-size: 16px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      font-family: 'Public Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .search:focus {
+      outline: 2px solid var(--restrict);
+      border-color: transparent
+    }
+
+    .gloss {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px
+    }
+
+    .term {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .term .abbr {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--restrict);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .term .full {
+      font-weight: 600;
+      font-size: 13.5px;
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink)
+    }
+
+    .term p {
+      font-size: 14px;
+      color: var(--ink-soft)
+    }
+
+    .term p strong {
+      color: var(--ink)
+    }
+
+    .no-results {
+      display: none;
+      color: var(--ink-soft);
+      font-size: 15px;
+      padding: 10px 2px
+    }
+
+    /* ---- traffic-light fly guide ---- */
+    .lights {
+      display: grid;
+      gap: 14px
+    }
+
+    .light {
+      background: var(--paper);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .light-bar {
+      height: 8px
+    }
+
+    .light.no .light-bar {
+      background-image: repeating-linear-gradient(45deg, var(--restrict) 0 6px, #fff 6px 12px)
+    }
+
+    .light.careful .light-bar {
+      background: var(--caution)
+    }
+
+    .light.ok .light-bar {
+      background: var(--clear)
+    }
+
+    .light-body {
+      padding: 18px 20px 16px
+    }
+
+    .light h3 {
+      font-family: 'Big Shoulders', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin-bottom: 2px;
+    }
+
+    .light.no h3 {
+      color: var(--restrict)
+    }
+
+    .light.careful h3 {
+      color: var(--caution)
+    }
+
+    .light.ok h3 {
+      color: var(--clear)
+    }
+
+    .light .when {
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-weight: 600;
+      margin-bottom: 10px
+    }
+
+    .light ul {
+      list-style: none
+    }
+
+    .light li {
+      font-size: 14.5px;
+      padding: 7px 0 7px 24px;
+      position: relative;
+      border-top: 1px dashed var(--line);
+    }
+
+    .light li:first-child {
+      border-top: none
+    }
+
+    .light li::before {
+      position: absolute;
+      left: 0;
+      top: 7px;
+      font-weight: 700
+    }
+
+    .light.no li::before {
+      content: "✕";
+      color: var(--restrict)
+    }
+
+    .light.careful li::before {
+      content: "!";
+      color: var(--caution)
+    }
+
+    .light.ok li::before {
+      content: "✓";
+      color: var(--clear)
+    }
+
+    .golden {
+      margin-top: 16px;
+      background: var(--restrict-soft);
+      border: 1.5px solid var(--restrict);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+
+    .golden strong {
+      color: var(--restrict)
+    }
+
+    /* ---- checklist ---- */
+    .progress-shell {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--sky);
+      padding: 10px 0 12px;
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .bar {
+      flex: 1;
+      height: 10px;
+      background: #DDE3EA;
+      border-radius: 5px;
+      overflow: hidden
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--restrict);
+      border-radius: 5px;
+      transition: width .3s ease, background .3s ease
+    }
+
+    .bar-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      min-width: 120px;
+      text-align: right;
+      color: var(--ink-soft)
+    }
+
+    .checks {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px
+    }
+
+    .check {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: border-color .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .check:hover {
+      border-color: var(--restrict)
+    }
+
+    .check input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border: 2px solid var(--ink-soft);
+      border-radius: 7px;
+      cursor: pointer;
+      position: relative;
+      margin-top: 1px;
+      background: var(--paper);
+    }
+
+    .check input:checked {
+      background: var(--clear);
+      border-color: var(--clear)
+    }
+
+    .check input:checked::after {
+      content: "✓";
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+    }
+
+    .check input:focus-visible {
+      outline: 2px solid var(--restrict);
+      outline-offset: 2px
+    }
+
+    .check .txt b {
+      display: block;
+      font-size: 15px;
+      font-weight: 600
+    }
+
+    .check .txt small {
+      font-size: 13.5px;
+      color: var(--ink-soft)
+    }
+
+    .check.done .txt b {
+      text-decoration: line-through;
+      color: var(--ink-soft)
+    }
+
+    .all-clear {
+      display: none;
+      margin-top: 14px;
+      background: var(--clear-soft);
+      border: 1.5px solid var(--clear);
+      color: var(--clear);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 15.5px;
+      text-align: center;
+    }
+
+    .reset-btn {
+      margin-top: 12px;
+      background: none;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-family: 'Public Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      cursor: pointer;
+    }
+
+    .reset-btn:hover {
+      border-color: var(--ink)
+    }
+
+    /* ---- links ---- */
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px
+    }
+
+    .link-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--ink);
+      display: block;
+      transition: border-color .15s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--restrict)
+    }
+
+    .link-card b {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px
+    }
+
+    .link-card span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      color: var(--restrict);
+      word-break: break-all
+    }
+
+    .link-card p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin-top: 4px
+    }
+
+    footer {
+      padding: 36px 0 46px;
+      color: var(--ink-soft);
+      font-size: 13px
+    }
+
+    footer .hatch-rule {
+      margin-bottom: 18px
+    }
+
+    @media (min-width:680px) {
+      .lights {
+        grid-template-columns: 1fr 1fr 1fr
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important
+      }
+
+      html {
+        scroll-behavior: auto
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="wrap">
+    <div class="eyebrow">Drone pilot's plain-English companion · UK</div>
+    <h1>Read<br>the <span class="thin">Sky</span></h1>
+    <p class="lede">Apps like Drone Assist speak in pilot code. This page translates it - so you never read a
+      restriction upside down again.</p>
+    <div class="hatch-rule hatch"></div>
+  </header>
+
+  <!-- ============ DECODER ============ -->
+  <div class="wrap">
+    <div class="decoder">
+      <h2>Decode a real readout</h2>
+      <p class="sub">This is an actual line from Drone Assist. Tap each part to translate it.</p>
+      <div class="readout" id="readout"></div>
+      <div class="meaning" id="meaning">
+        <div class="code">TAP A CODE ABOVE ▲</div>
+        <div class="plain">Each piece means something specific. Start with any chip.</div>
+      </div>
+      <div class="verdict"><span>⛔</span>
+        <div>Put together: this zone is restricted from the ground up, all day every day. You need permission
+          <em>before</em> take-off - height does not save you.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GLOSSARY ============ -->
+  <section class="wrap" id="glossary">
+    <div class="sec-head">
+      <h2>Jargon Decoder</h2><span class="sec-tag">A–Z of what apps say</span>
+    </div>
+    <p class="sec-sub">Type any code you see on screen - the list filters as you type.</p>
+    <input class="search" id="search" type="text" placeholder="Search: AGL, H24, FRZ, NOTAM…"
+      aria-label="Search glossary">
+    <div class="gloss" id="gloss"></div>
+    <p class="no-results" id="noResults">Nothing matching that - try fewer letters.</p>
+  </section>
+
+  <!-- ============ WHERE TO FLY ============ -->
+  <section class="wrap" id="where">
+    <div class="sec-head">
+      <h2>Where to Fly</h2><span class="sec-tag">The traffic-light rule</span>
+    </div>
+    <p class="sec-sub">Drop a pin on your exact spot in the map app first. Then match what you see to one of these
+      three.</p>
+
+    <div class="lights">
+      <div class="light no">
+        <div class="light-bar"></div>
+        <div class="light-body">
+          <h3>Never Without Permission</h3>
+          <div class="when">Pin lands in a RED / magenta shape</div>
+          <ul>
+            <li>Airport &amp; airfield FRZs - criminal offence to fly without a yes from them</li>
+            <li>Restricted Areas (EG R…) - MoD sites, prisons, power stations</li>
+            <li>Any active NOTAM area - air shows, VIP visits, emergencies</li>
+            <li>Over crowds - festivals, matches, protests, always</li>
+            <li>Near police, fire or ambulance incidents</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="light careful">
+        <div class="light-bar"></div>
+        <div class="light-body">
+          <h3>Fly With Extra Care</h3>
+          <div class="when">Pin lands in AMBER / YELLOW, or near these</div>
+          <ul>
+            <li>Glider &amp; parachute sites - watch for winch cables and canopies</li>
+            <li>Danger Areas (EG D…) - check if active before flying near</li>
+            <li>Military low-flying areas - jets at your height, keep eyes up</li>
+            <li>Helicopter landing sites &amp; hospitals</li>
+            <li>Wildlife and nesting areas - keep distance and noise down</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="light ok">
+        <div class="light-bar"></div>
+        <div class="light-body">
+          <h3>Clear to Fly</h3>
+          <div class="when">Pin lands in NO coloured shape</div>
+          <ul>
+            <li>Airspace is open - now sort the ground</li>
+            <li>Get the landowner's OK for take-off &amp; landing</li>
+            <li>Council parks: check byelaws; National Trust: written permission only</li>
+            <li>Stay under 120 m and keep the drone in your own eyesight</li>
+            <li>Sub-250g drones may fly over people - never over crowds</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden"><strong>The golden rule:</strong> "Surface to 2000ft" describes where the
+      <strong>restriction</strong> lives - it starts at the ground. If your pin is inside the shape, there is no legal
+      height for you. Restrictions are read as walls, not ceilings.
+    </div>
+  </section>
+
+  <!-- ============ CHECKLIST ============ -->
+  <section class="wrap" id="checklist">
+    <div class="sec-head">
+      <h2>Pre-Flight Checklist</h2><span class="sec-tag">Run before every flight</span>
+    </div>
+    <p class="sec-sub">Pilots of big aircraft never trust memory - they run the list. Do the same. Ticks reset when you
+      close the page, by design: every flight gets a fresh run.</p>
+
+    <div class="progress-shell">
+      <div class="progress-row">
+        <div class="bar">
+          <div class="bar-fill" id="barFill"></div>
+        </div>
+        <div class="bar-label" id="barLabel">0 / 10 checked</div>
+      </div>
+    </div>
+
+    <div class="checks" id="checks"></div>
+    <div class="all-clear" id="allClear">✈ All ten green - you are clear for take-off. Fly well.</div>
+    <button class="reset-btn" id="resetBtn" type="button">Reset list</button>
+  </section>
+
+  <!-- ============ LINKS ============ -->
+  <section class="wrap" id="links">
+    <div class="sec-head">
+      <h2>Your Toolkit</h2><span class="sec-tag">Every site &amp; number in one place</span>
+    </div>
+    <div class="links">
+      <a class="link-card" href="https://register-drones.caa.co.uk" target="_blank" rel="noopener">
+        <b>CAA Registration</b><span>register-drones.caa.co.uk</span>
+        <p>Flyer ID (free test) + Operator ID (£12.34/yr). One-time job, renew yearly.</p>
+      </a>
+      <a class="link-card" href="https://dronesafetymap.com" target="_blank" rel="noopener">
+        <b>Drone Safety Map</b><span>dronesafetymap.com</span>
+        <p>Web map of all zones - no app needed. Pin-check here before every flight.</p>
+      </a>
+      <a class="link-card" href="https://dronesafe.uk" target="_blank" rel="noopener">
+        <b>Drone Assist app</b><span>App Store / Play Store</span>
+        <p>Same data on your phone. Cross-check anything borderline with the AIP below.</p>
+      </a>
+      <a class="link-card" href="https://aip.aero/uk/" target="_blank" rel="noopener">
+        <b>UK AIP - official source</b><span>aip.aero/uk · section ENR 5.1</span>
+        <p>The legal master list of restricted, danger and prohibited areas.</p>
+      </a>
+      <a class="link-card" href="https://register-drones.caa.co.uk/drone-code" target="_blank" rel="noopener">
+        <b>The Drone Code</b><span>caa.co.uk → drone code</span>
+        <p>The full official rulebook in readable form. Worth one proper read.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="hatch-rule hatch"></div>
+    <p>Rules correct as of August 2026 - regulations change, so caa.co.uk/drones is always the final word. This page is
+      a friendly translation, not legal advice. Magenta hatching borrowed from real aeronautical charts, where it has
+      meant "restricted" for a hundred years.</p>
+  </footer>
+
+  <script>
+    /* ---------- Decoder ---------- */
+    const decoderData = [
+      { chip: "EGRU125", code: "ZONE ID CODE", plain: "Just a serial number for this piece of sky. <strong>EG</strong> = United Kingdom, the rest is the zone's ID. Not a rule itself - the rule comes in the parts after it." },
+      { chip: "HALTON", code: "ZONE NAME", plain: "Who the zone belongs to - here, RAF Halton airfield. This tells you <strong>who to phone</strong> for permission." },
+      { chip: "Surface", code: "LOWER LIMIT", plain: "The restriction starts at <strong>the ground itself</strong> (sometimes written SFC). Not at some height above you - at your feet. There is no free gap underneath." },
+      { chip: "2000ft AGL", code: "UPPER LIMIT · ABOVE GROUND LEVEL", plain: "The restriction reaches up to 2,000 feet <strong>measured from the ground below</strong> (that's what AGL means). So Surface→2000ft = the entire band your drone flies in is covered. It is a wall, not a ceiling." },
+      { chip: "FRZ", code: "FLIGHT RESTRICTION ZONE", plain: "A protected bubble around an airfield. Flying a drone of <strong>any size</strong> inside one without permission is a criminal offence - sub-250g gives no exemption here." },
+      { chip: "Active H24", code: "OPERATING HOURS", plain: "<strong>H24 = 24 hours a day, every day.</strong> The zone never sleeps - no night-time or weekend loophole. (If you ever see SR–SS instead, that means sunrise to sunset only.)" }
+    ];
+    const readout = document.getElementById('readout');
+    const meaning = document.getElementById('meaning');
+    decoderData.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button'; b.textContent = d.chip;
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        b.classList.add('active');
+        meaning.innerHTML = '<div class="code">' + d.code + '</div><div class="plain">' + d.plain + '</div>';
+      });
+      readout.appendChild(b);
+    });
+
+    /* ---------- Glossary ---------- */
+    const terms = [
+      { a: "AGL", f: "Above Ground Level", d: "Height measured from the ground directly below - the number your drone app shows. Its cousin <strong>AMSL</strong> means above sea level." },
+      { a: "SFC / Surface", f: "The ground", d: "When a zone says 'SFC to…', the restriction begins at ground level. No free space underneath it." },
+      { a: "FRZ", f: "Flight Restriction Zone", d: "Protected bubble around an airfield, usually ~2–2.5 nautical miles wide and up to 2,000 ft. No drones without permission - any size." },
+      { a: "RPZ", f: "Runway Protection Zone", d: "Extra rectangles (5km × 1km) sticking out from each runway end, where planes climb and descend. Part of the FRZ." },
+      { a: "ATZ", f: "Aerodrome Traffic Zone", d: "The circle of airspace an airfield uses for its normal traffic - the FRZ is built from it." },
+      { a: "EG R… / EG D… / EG P…", f: "UK zone codes", d: "EG = UK. Then <strong>R</strong> = Restricted (permission needed), <strong>D</strong> = Danger (hazardous activity - check if active), <strong>P</strong> = Prohibited (never). Numbers are just IDs." },
+      { a: "H24", f: "24 hours", d: "The zone is active round the clock, every day. No off-hours." },
+      { a: "SR–SS", f: "Sunrise to Sunset", d: "Zone active during daylight only - common at glider sites. Outside those hours the hazard is gone (the rule may remain, so read the full note)." },
+      { a: "NOTAM", f: "Notice to Aviation", d: "A temporary restriction - air show, VIP visit, emergency. Appears and vanishes at short notice, which is why you check on the morning of the flight." },
+      { a: "TDA / TRA", f: "Temporary Danger / Restricted Area", d: "A pop-up zone created for something short-term, delivered by NOTAM. Treat like its permanent cousin while active." },
+      { a: "VLOS", f: "Visual Line of Sight", d: "Your own eyes must see the drone at all times - the screen doesn't count. For a Mini, realistically 300–500 m." },
+      { a: "(MIL) / (AD)", f: "Military / Aerodrome", d: "Labels telling you who runs the site. MIL = military - expect stricter handling and be extra courteous on the phone." },
+      { a: "W and T", f: "Winch and Tug launching", d: "How gliders get airborne there. <strong>Winch = a steel cable fired hundreds of feet up at speed.</strong> Give these sites a wide berth." },
+      { a: "Legacy", f: "No class mark", d: "App label for drones sold before UK class marks (UK0–UK6). Your Mini 4K is likely legacy - under 250g it still enjoys the friendliest A1 rules." },
+      { a: "A1 / A2 / A3", f: "Open category classes", d: "A1 = fly over people (sub-250g lives here, never over crowds). A2 = closer to people with a certificate. A3 = far from everyone (150 m from built-up areas)." },
+      { a: "Enhanced Warning Zone", f: "DJI's orange alert", d: "DJI no longer blocks take-off - it only warns. <strong>The drone letting you fly does not mean it's legal.</strong> The law sits with you, not the firmware." },
+      { a: "Flyer ID / Operator ID", f: "Your licence &amp; number plate", d: "Flyer ID = you passed the free test. Operator ID (OP-…) = £12.34/yr, must be written on the drone. Camera drones 100g+ need both." },
+      { a: "RTH", f: "Return to Home", d: "The drone's auto fly-back. Set its height above the tallest obstacle nearby, and remember: strong headwind can defeat it." }
+    ];
+    const gloss = document.getElementById('gloss');
+    const noResults = document.getElementById('noResults');
+    function renderTerms(list) {
+      gloss.innerHTML = list.map(t =>
+        '<div class="term"><span class="abbr">' + t.a + '</span><span class="full">' + t.f + '</span><p>' + t.d + '</p></div>'
+      ).join('');
+      noResults.style.display = list.length ? 'none' : 'block';
+    }
+    renderTerms(terms);
+    document.getElementById('search').addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      renderTerms(!q ? terms : terms.filter(t => (t.a + ' ' + t.f + ' ' + t.d).toLowerCase().includes(q)));
+    });
+
+    /* ---------- Checklist ---------- */
+    const items = [
+      { b: "Registered, and OP-ID written on the drone", s: "Flyer ID passed · Operator ID sticker on the body" },
+      { b: "Pin dropped on TODAY'S exact spot in the map app", s: "Not yesterday's check - zones and NOTAMs change overnight" },
+      { b: "No red / magenta shape over my pin", s: "If there is one: no flight until whoever runs it says yes" },
+      { b: "Inside an FRZ? Permission phoned and granted", s: "Near Halton: Airfield Manager 07771 522083" },
+      { b: "Landowner happy for me to take off here", s: "Garden = fine · park = check byelaws · NT land = written permission" },
+      { b: "Wind at height checked and under 38 kph", s: "Use UAV Forecast - wind at 120 m is often double ground level" },
+      { b: "Turn-back battery % decided before take-off", s: "Spent 30% going out with the wind? Budget 45% to fight back home" },
+      { b: "RTH height set above the tallest thing around", s: "Trees, masts, church spires - the drone flies home in a straight line" },
+      { b: "Battery full, SD card in, firmware happy", s: "The boring ones that ruin the day when skipped" },
+      { b: "I can keep my own eyes on the drone the whole flight", s: "VLOS is the law - the screen doesn't count" }
+    ];
+    const checksEl = document.getElementById('checks');
+    const barFill = document.getElementById('barFill');
+    const barLabel = document.getElementById('barLabel');
+    const allClear = document.getElementById('allClear');
+    let state = new Array(items.length).fill(false);
+
+    items.forEach((it, i) => {
+      const label = document.createElement('label');
+      label.className = 'check';
+      label.innerHTML = '<input type="checkbox" data-i="' + i + '" aria-label="' + it.b + '"><div class="txt"><b>' + it.b + '</b><small>' + it.s + '</small></div>';
+      checksEl.appendChild(label);
+    });
+    checksEl.addEventListener('change', e => {
+      if (e.target.matches('input[type=checkbox]')) {
+        const i = +e.target.dataset.i;
+        state[i] = e.target.checked;
+        e.target.closest('.check').classList.toggle('done', e.target.checked);
+        updateBar();
+      }
+    });
+    function updateBar() {
+      const done = state.filter(Boolean).length;
+      const pct = Math.round(done / items.length * 100);
+      barFill.style.width = pct + '%';
+      barFill.style.background = done === items.length ? 'var(--clear)' : 'var(--restrict)';
+      barLabel.textContent = done + ' / ' + items.length + ' checked';
+      allClear.style.display = done === items.length ? 'block' : 'none';
+    }
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      state.fill(false);
+      document.querySelectorAll('.check input').forEach(c => { c.checked = false; c.closest('.check').classList.remove('done'); });
+      updateBar();
+    });
+  </script>
+</body>
+
+</html>

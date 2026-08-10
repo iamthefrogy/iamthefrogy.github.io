@@ -45,6 +45,8 @@ Cybersecurity professional with **13 years of experience**, excelling in **vulne
 - **2022** - UK - Joined as Senior Vulnerability Management Senior Analyst at TikTok
 - **2022** - USA - Visited USA for 3 weeks on a TikTok project
 - **2023** - UK - Began role as Threat & Vulnerability Manager at M&S
+- **2025** - UK - Began role as Cyber Threat Detection Manager largest Automotive firm GKN Automotive
+- **2026** - UK - Began role as Threat Detection Manager ION Group (Fintech firm)
 
 ---
 
