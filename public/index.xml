@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Thu, 23 Apr 2026 16:50:26 +0100</lastBuildDate>
+			<lastBuildDate>Sun, 23 Aug 2026 10:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Projects</title>
+				<link>http://localhost:1313/projects/</link>
+				<pubDate>Sun, 23 Aug 2026 10:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened</title>
 				<link>http://localhost:1313/posts/bug-bounty-journey/</link>
@@ -47,27 +54,6 @@
 				<pubDate>Thu, 28 Aug 2025 03:10:29 +0100</pubDate>
 				<guid>http://localhost:1313/posts/detection-engineering/</guid>
 				<description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I was going through the SANS material on detection engineering from multiple of their courses and I wanted to make a practical ready notes for the same. This is the output of my reading and implementing some of them into my home personal lab as well as my past companies.&lt;/p&gt;&#xA;&lt;p&gt;The summary of entire process is:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;OPEN IMAGE IN A NEW TAB AND IT WILL BE THE HIGH RESOLUTION IMAGE&lt;/strong&gt;&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Network Pentest Checklist</title>
-				<link>http://localhost:1313/checklists/network-pentest-checklist/</link>
-				<pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate>
-				<guid>http://localhost:1313/checklists/network-pentest-checklist/</guid>
-				<description>&lt;html&gt;&#xA;&lt;iframe src=&#34;https://docs.google.com/spreadsheets/d/1lIwAqXp5iT9U3V5QyC8g6II8NgKWyJx9/edit?usp=sharing&amp;ouid=110899656416453588800&amp;rtpof=true&amp;sd=true&#34;&#xA;        width=&#34;100%&#34; height=&#34;1000px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/html&gt;</description>
-			</item>
-			<item>
-				<title>Red Team Checklist</title>
-				<link>http://localhost:1313/checklists/red-team-checklist/</link>
-				<pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate>
-				<guid>http://localhost:1313/checklists/red-team-checklist/</guid>
-				<description>&lt;!DOCTYPE html&gt;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&#34;utf-8&#34;&gt;&#xA;    &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; url=http://redops.chintangurjar.com/&#34;&gt;&#xA;    &lt;script&gt;&#xA;        window.location.href = &#39;http://redops.chintangurjar.com/&#39;;&#xA;    &lt;/script&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;</description>
-			</item>
-			<item>
-				<title>Web Application Pentest Checklist</title>
-				<link>http://localhost:1313/checklists/web-application-pentest-checklist/</link>
-				<pubDate>Mon, 21 Jul 2025 13:34:44 +0100</pubDate>
-				<guid>http://localhost:1313/checklists/web-application-pentest-checklist/</guid>
-				<description>&lt;!DOCTYPE html&gt;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&#34;utf-8&#34;&gt;&#xA;    &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; url=http://localhost:1313/https://buglist.chintangurjar.com/&#34;&gt;&#xA;    &lt;script&gt;&#xA;        window.location.href = &#39;https://buglist.chintangurjar.com/&#39;;&#xA;    &lt;/script&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;</description>
 			</item>
 			<item>
 				<title>(AppSec) End-to-End API Security Lifecycle</title>
@@ -208,13 +194,6 @@
 				<pubDate>Tue, 24 Dec 2024 22:56:41 +0000</pubDate>
 				<guid>http://localhost:1313/posts/vip-monitoring-part-3/</guid>
 				<description>&lt;p&gt;To help implement and evaluate your VIP Monitoring Program effectively, access the comprehensive checklist provided in the shared Google Spreadsheet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;access-the-checklist&#34;&gt;Access the Checklist&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1GMwYTuEqtHpLuDpVgasfRDKXIaCQ3J2ZKlSCRZb0Dcg/edit?usp=sharing&#34;&gt;&lt;strong&gt;Click here to open the VIP Monitoring Checklist&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;how-to-use-the-checklist&#34;&gt;How to Use the Checklist&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Open the link to view the checklist in Google Sheets.&lt;/li&gt;&#xA;&lt;li&gt;Navigate through the sections for detailed action items.&lt;/li&gt;&#xA;&lt;li&gt;Use the checklist for planning, monitoring, and evaluating your VIP monitoring efforts.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;open-image-in-new-tab-to-see-in-hd&#34;&gt;OPEN IMAGE IN NEW TAB TO SEE IN HD&lt;/h3&gt;&#xA;&lt;center&gt;&lt;img src=&#34;http://localhost:1313/images/vip-map.svg&#34; alt=&#34;Gaps&#34; width=&#34;1300&#34;/&gt;&lt;/center&gt; &lt;/br&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: You can download the file or make a copy to adapt it for your organization’s needs.&lt;/em&gt;&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Repositories</title>
-				<link>http://localhost:1313/github/</link>
-				<pubDate>Tue, 24 Dec 2024 22:49:54 +0000</pubDate>
-				<guid>http://localhost:1313/github/</guid>
-				<description>&lt;p&gt;🎉 &lt;strong&gt;Welcome to my collection of open-source projects and tools!&lt;/strong&gt;&lt;br&gt;&#xA;Each repository reflects my passion for &lt;strong&gt;cybersecurity, automation, and innovation.&lt;/strong&gt; Below is an overview of the repositories and their purpose:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h5 id=&#34;frogy20---automated-easm&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/frogy2.0&#34;&gt;&lt;strong&gt;Frogy2.0 - Automated EASM&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A multi-functional cybersecurity utility for recon and attack surface management.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h5 id=&#34;threat-intel-atlas&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/Threat-Intel-Atlas&#34;&gt;&lt;strong&gt;Threat-Intel-Atlas&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;Your single pane of glass for threat intel: a clean, public feed that highlights high‑value security updates and trends.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h5 id=&#34;emailauthinspector&#34;&gt;&lt;a href=&#34;https://github.com/iamthefrogy/EmailAuthInspector&#34;&gt;&lt;strong&gt;EmailAuthInspector&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;em&gt;A tool for analyzing email authentication protocols like SPF, DKIM, and DMARC.&lt;/em&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>About Me</title>

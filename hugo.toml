@@ -131,20 +131,10 @@ identifier = "mindmaps"
 weight = 400
 url = "/mindmaps"
 [[menu.main]]
-name = "Threat-Actor DB"
-identifier = "threat-actor-db"
+name = "Projects"
+identifier = "projects"
 weight = 500
-url = "/threat-actor-db"
-[[menu.main]]
-name = "GitHub"
-identifier = "github"
-weight = 600
-url = "/github"
-[[menu.main]]
-name = "Checklists"
-identifier = "checklists"
-weight = 700
-url = "/checklists"
+url = "/projects"
 [[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"

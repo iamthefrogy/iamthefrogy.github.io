@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Permalink | relURL }}</title>
+  <link rel="canonical" href="{{ .Permalink | relURL }}">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ .Permalink | relURL }}">
+</head>
+<body>
+  <a href="{{ .Permalink | relURL }}">Redirecting to {{ .Permalink | relURL }}</a>
+</body>
+</html>
