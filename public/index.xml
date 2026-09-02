@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 23 Aug 2026 10:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 02 Sep 2026 22:19:42 +0100</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>(EDR) Endpoint Security Virtualisation PoV</title>
+				<link>http://localhost:1313/posts/endpoint-security-virtualisation/</link>
+				<pubDate>Wed, 02 Sep 2026 22:19:42 +0100</pubDate>
+				<guid>http://localhost:1313/posts/endpoint-security-virtualisation/</guid>
+				<description>&lt;h1 id=&#34;how-bad-is-it-really-a-field-guide-to-endpoint-security-severity&#34;&gt;How Bad Is It Really? A Field Guide to Endpoint Security Severity&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Summary:&lt;/strong&gt; Endpoint security findings get mis-rated in both directions - a scary-sounding privilege label gets stamped Critical with no real capability gain, while a &amp;ldquo;contained&amp;rdquo; sandbox escape gets stamped Low even though a signed driver or session token walked out first. This guide gives a repeatable six-question framework (starting position, capability gained, boundary crossed, containment, scope, blast radius) and applies it to 22 concrete endpoint scenarios spanning isolation/containment, privilege boundaries, data and trust exfiltration, telemetry integrity, update/supply-chain risk, and physical/social attack paths. The goal is the reason§ing habit, not the 22 memorized answers.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Projects</title>
 				<link>http://localhost:1313/projects/</link>
@@ -21,7 +28,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened</title>
+				<title>(Bug-Bounty) From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened</title>
 				<link>http://localhost:1313/posts/bug-bounty-journey/</link>
 				<pubDate>Thu, 23 Apr 2026 16:50:26 +0100</pubDate>
 				<guid>http://localhost:1313/posts/bug-bounty-journey/</guid>

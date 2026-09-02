@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title desc">
+  <title id="title">Privilege ladder and real boundaries</title>
+  <desc id="desc">Generic endpoint privilege boundaries.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="610" fill="#ffffff"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#111827"><tspan x="40" y="50">Privilege ladder and real boundaries</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#475569"><tspan x="40" y="82">Severity rises when the attacker crosses a boundary that grants meaningful new capability.</tspan></text>
+  <rect x="160" y="122" width="860" height="54" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="184" y="156">Kernel / hypervisor / firmware</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="620" y="156">Below the OS; can defeat most endpoint defenses.</tspan></text>
+  <rect x="160" y="200" width="860" height="70" rx="8" fill="#fff4de" stroke="#b7791f" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="184" y="234">SYSTEM / root</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="620" y="234">High-privilege OS control; close to admin on</tspan><tspan x="620" dy="21">many systems.</tspan></text>
+  <rect x="160" y="294" width="860" height="70" rx="8" fill="#fff4de" stroke="#b7791f" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="184" y="328">Local administrator</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="620" y="328">Can install software, change configuration, and</tspan><tspan x="620" dy="21">weaken defenses.</tspan></text>
+  <rect x="160" y="388" width="860" height="54" rx="8" fill="#eaf3fb" stroke="#2f6f9f" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="184" y="422">Standard local user</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="620" y="422">Can run own apps and read own files.</tspan></text>
+  <rect x="160" y="466" width="860" height="54" rx="8" fill="#eaf3fb" stroke="#2f6f9f" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="184" y="500">Unauthenticated / remote</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="620" y="500">No local access yet.</tspan></text>
+  <line x1="160" y1="188" x2="1040" y2="188" stroke="#b91c1c" stroke-width="4"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#b91c1c"><tspan x="48" y="180">Real boundary:</tspan><tspan x="48" dy="17">signed driver, boot,</tspan><tspan x="48" dy="17">or firmware path</tspan></text>
+  <line x1="160" y1="376" x2="1040" y2="376" stroke="#b91c1c" stroke-width="4"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#b91c1c"><tspan x="48" y="368">Real boundary: user</tspan><tspan x="48" dy="17">to admin</tspan></text>
+  <line x1="160" y1="454" x2="1040" y2="454" stroke="#b91c1c" stroke-width="4"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#b91c1c"><tspan x="48" y="446">Real boundary:</tspan><tspan x="48" dy="17">initial access</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="40" y="552">Useful rule: rate the gained capability, not the label. Admin to SYSTEM may be low; user to admin or SYSTEM to</tspan><tspan x="40" dy="24">kernel is usually high.</tspan></text>
+</svg>

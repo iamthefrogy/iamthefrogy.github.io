@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
+  <title id="title">Scenario 18: Malicious update</title>
+  <desc id="desc">A malicious package can be substituted into the endpoint update flow. What is the worst case?</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="730" fill="#ffffff"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#111827"><tspan x="44" y="48">Scenario 18: Malicious update</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#475569"><tspan x="44" y="82">A malicious package can be substituted into the endpoint update flow. What is the worst case?</tspan></text>
+  <rect x="44" y="118" width="336" height="282" rx="8" fill="#fffdf7" stroke="#111827" stroke-width="2" stroke-dasharray="9 7"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#2f6f9f"><tspan x="70" y="156">SCENARIO QUESTION</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#111827"><tspan x="70" y="196">A malicious package can</tspan><tspan x="70" dy="25">be substituted into the</tspan><tspan x="70" dy="25">endpoint update flow.</tspan><tspan x="70" dy="25">What is the worst case?</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#334155"><tspan x="70" y="310">Are update packages</tspan><tspan x="70" dy="20">cryptographically verified</tspan><tspan x="70" dy="20">independently of transport?</tspan></text>
+  <rect x="408" y="118" width="748" height="282" rx="8" fill="#fbfdff" stroke="#334155" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#2f6f9f"><tspan x="436" y="156">WHITEBOARD ARCHITECTURE</tspan></text>
+  <line x1="760" y1="172" x2="760" y2="382" stroke="#64748b" stroke-width="2" stroke-dasharray="8 8"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#475569"><tspan x="684" y="188">boundary /</tspan><tspan x="684" dy="17">decision</tspan></text>
+  <rect x="430" y="224" width="146" height="118" rx="8" fill="#eaf3fb" stroke="#2f6f9f" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#111827"><tspan x="446" y="255">Channel</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="446" y="286">Endpoint</tspan><tspan x="446" dy="17">retrieves update</tspan><tspan x="446" dy="17">content.</tspan></text>
+  <line x1="584" y1="282" x2="592" y2="282" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <rect x="602" y="224" width="146" height="118" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#111827"><tspan x="618" y="255">Substitute</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="618" y="286">Attacker supplies</tspan><tspan x="618" dy="17">a malicious</tspan><tspan x="618" dy="17">package.</tspan></text>
+  <line x1="756" y1="282" x2="764" y2="282" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <rect x="774" y="224" width="146" height="118" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#111827"><tspan x="790" y="255">Install</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="790" y="286">High-privilege</tspan><tspan x="790" dy="17">agent accepts and</tspan><tspan x="790" dy="17">runs it.</tspan></text>
+  <line x1="928" y1="282" x2="936" y2="282" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <rect x="946" y="224" width="146" height="118" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#111827"><tspan x="962" y="255">Impact</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="962" y="286">Many endpoints</tspan><tspan x="962" dy="17">execute trusted</tspan><tspan x="962" dy="17">malicious code.</tspan></text>
+  <rect x="44" y="430" width="748" height="178" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#b91c1c"><tspan x="72" y="468">ANSWER</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#b91c1c"><tspan x="72" y="508">Rate it Critical.</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="72" y="550">Reason: Many endpoints execute trusted malicious code.</tspan></text>
+  <rect x="820" y="430" width="336" height="178" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="3"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#b91c1c"><tspan x="848" y="468">DECISION RULE</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="848" y="510">Are update packages</tspan><tspan x="848" dy="23">cryptographically verified</tspan><tspan x="848" dy="23">independently of transport?</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#475569"><tspan x="44" y="686">Use the diagram as a reasoning aid: identify the start point, the crossed boundary, the thing that escapes, and the</tspan><tspan x="44" dy="21">resulting blast radius.</tspan></text>
+</svg>

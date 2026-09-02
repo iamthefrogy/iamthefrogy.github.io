@@ -1,7 +1,7 @@
 +++
 date = '2026-04-23T16:50:26+01:00'
 draft = false
-title = 'From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened'
+title = '(Bug-Bounty) From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened'
 +++
 
 *A practical, no-BS guide based on real submissions, real rejections, and real lessons - not theory.*

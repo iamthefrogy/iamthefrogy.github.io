@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Code containment versus impact containment</title>
+  <desc id="desc">A generic endpoint isolation model.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="640" fill="#ffffff"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#111827"><tspan x="40" y="50">Code containment versus impact containment</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#475569"><tspan x="40" y="82">Isolation can stop executable code from crossing a boundary while data, secrets, and trusted artifacts still</tspan><tspan x="40" dy="21">leave.</tspan></text>
+  <rect x="40" y="120" width="720" height="400" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#111827"><tspan x="72" y="154">Protected host</tspan></text>
+  <rect x="88" y="206" width="580" height="174" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#b91c1c"><tspan x="118" y="246">Disposable isolated environment</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#334155"><tspan x="118" y="284">Risky content executes here. The attacker may control this</tspan><tspan x="118" dy="21">environment, but direct host code execution remains blocked.</tspan></text>
+  <rect x="118" y="316" width="500" height="38" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="1"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#b91c1c"><tspan x="138" y="341">Code path blocked at the host boundary</tspan></text>
+  <rect x="82" y="418" width="282" height="58" rx="8" fill="#e9f7ef" stroke="#2f855a" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#2f855a"><tspan x="104" y="453">Code dies with teardown</tspan></text>
+  <rect x="408" y="418" width="282" height="58" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#b91c1c"><tspan x="430" y="453">Impact may leave first</tspan></text>
+  <rect x="820" y="120" width="320" height="400" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#111827"><tspan x="852" y="154">Outside impact</tspan></text>
+  <rect x="852" y="206" width="246" height="64" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#b91c1c"><tspan x="876" y="242">Data exfiltration</tspan></text>
+  <rect x="852" y="296" width="246" height="64" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#b91c1c"><tspan x="876" y="332">Session token reuse</tspan></text>
+  <rect x="852" y="386" width="246" height="64" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#b91c1c"><tspan x="876" y="422">Portable signed artifact</tspan></text>
+  <line x1="668" y1="292" x2="840" y2="238" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="668" y1="322" x2="840" y2="328" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="668" y1="352" x2="840" y2="418" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="40" y="584">Always ask two separate questions: can the code break out, and can the impact break out?</tspan></text>
+</svg>

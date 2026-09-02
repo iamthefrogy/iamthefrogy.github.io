@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Severity reasoning framework</title>
+  <desc id="desc">Six checks for endpoint-control severity analysis.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="640" fill="#ffffff"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#111827"><tspan x="40" y="50">Severity reasoning framework</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#475569"><tspan x="40" y="82">Use the same six checks for every endpoint-control finding before assigning impact.</tspan></text>
+  <rect x="40" y="122" width="520" height="76" rx="8" fill="#eaf3fb" stroke="#2f6f9f" stroke-width="2"/>
+  <circle cx="70" cy="153" r="18" fill="#2f6f9f"/>
+  <text x="70" y="160" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">1</text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="104" y="147">Starting position</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="104" y="173">Remote, local user, local admin, inside an isolated</tspan><tspan x="104" dy="17">task, or physical access.</tspan></text>
+  <rect x="620" y="122" width="520" height="76" rx="8" fill="#eaf3fb" stroke="#2f6f9f" stroke-width="2"/>
+  <circle cx="650" cy="153" r="18" fill="#2f6f9f"/>
+  <text x="650" y="160" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">2</text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="684" y="147">New capability gained</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="684" y="173">Severity follows the delta. No meaningful delta</tspan><tspan x="684" dy="17">usually means low severity.</tspan></text>
+  <rect x="40" y="216" width="520" height="76" rx="8" fill="#eaf3fb" stroke="#2f6f9f" stroke-width="2"/>
+  <circle cx="70" cy="247" r="18" fill="#2f6f9f"/>
+  <text x="70" y="254" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">3</text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="104" y="241">Boundary crossed</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="104" y="267">Guest to host, user to admin, user mode to kernel,</tspan><tspan x="104" dy="17">single endpoint to fleet.</tspan></text>
+  <rect x="620" y="216" width="520" height="76" rx="8" fill="#fff4de" stroke="#b7791f" stroke-width="2"/>
+  <circle cx="650" cy="247" r="18" fill="#b7791f"/>
+  <text x="650" y="254" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">4</text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="684" y="241">Containment result</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="684" y="267">Does code stay trapped? Can data, tokens, trust, or</tspan><tspan x="684" dy="17">state still escape?</tspan></text>
+  <rect x="40" y="310" width="520" height="76" rx="8" fill="#fff4de" stroke="#b7791f" stroke-width="2"/>
+  <circle cx="70" cy="341" r="18" fill="#b7791f"/>
+  <text x="70" y="348" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">5</text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="104" y="335">Threat model fit</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="104" y="361">Is this attacker in scope for the control, or a</tspan><tspan x="104" dy="17">documented limitation?</tspan></text>
+  <rect x="620" y="310" width="520" height="76" rx="8" fill="#fff4de" stroke="#b7791f" stroke-width="2"/>
+  <circle cx="650" cy="341" r="18" fill="#b7791f"/>
+  <text x="650" y="348" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">6</text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#111827"><tspan x="684" y="335">Blast radius</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#334155"><tspan x="684" y="361">One session, one endpoint, many users, fleet-wide, or</tspan><tspan x="684" dy="17">reusable elsewhere.</tspan></text>
+  <rect x="40" y="430" width="1120" height="126" rx="8" fill="#111827" stroke="#111827" stroke-width="2"/>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#93c5fd"><tspan x="68" y="468">Verdict sentence</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#f8fafc"><tspan x="68" y="502">Attacker starts at [X], gains [Y], crosses [boundary Z]. Damage is/is not contained, the case is/is not in scope,</tspan><tspan x="68" dy="21">blast radius is [N]. Rate [severity] because of the capability delta and blast radius.</tspan></text>
+  <text font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#b91c1c"><tspan x="40" y="608">Mental traps: scary labels do not equal severity, and contained code does not guarantee contained impact.</tspan></text>
+</svg>
