@@ -1,10 +1,18 @@
 #!/bin/bash
+set -e
+
 git add .
-git commit -m "updated site"
+git commit -m "updated site" || true
 git push origin main
-hugo --minify --cleanDestinationDir
+
+# public/ is a git worktree checked out on gh-pages (see: git worktree list).
+# Never use `hugo --cleanDestinationDir` here - it deletes public/.git along
+# with stale pages, which turns the worktree back into a plain folder and
+# breaks every deploy after it. Clean by hand, skipping .git, instead.
+find public -mindepth 1 ! -path 'public/.git' ! -path 'public/.git/*' -delete
+hugo --minify
+
 cd public
-git checkout gh-pages
 git add .
-git commit -m "deploying updated site"
+git commit -m "deploying updated site" || true
 git push origin gh-pages
