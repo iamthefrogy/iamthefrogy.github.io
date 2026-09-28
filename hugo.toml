@@ -136,6 +136,11 @@ identifier = "projects"
 weight = 500
 url = "/projects"
 [[menu.main]]
+name = "Threat Intel"
+identifier = "threatintel"
+weight = 600
+url = "/threat-intel/"
+[[menu.main]]
 name = "Kickstart Career"
 identifier = "kickstartcareer"
 weight = 800

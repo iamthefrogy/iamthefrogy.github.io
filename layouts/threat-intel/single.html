@@ -1,0 +1,49 @@
+{{ partial "header.html" . }}
+{{ partial "main_menu.html" . }}
+<main class="page-shell projects-page">
+  <article class="page-article">
+    <header class="page-article__header">
+      <h1 class="page-article__title">{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="projects-page__lead">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    {{ with .Content }}
+    <section class="page-article__content">
+      <div class="content">{{ . }}</div>
+    </section>
+    {{ end }}
+
+    <section class="projects-section" id="weekly-briefings">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+        {{ range sort .Params.weeks "date" "desc" }}
+        <div class="col">
+          <article class="home-card projects-card h-100">
+            <div class="home-card__icon">
+              <span class="icon-circle">
+                <i class="fa-solid fa-satellite-dish"></i>
+              </span>
+            </div>
+            <h3 class="home-card__title">
+              <a href="{{ .url | safeURL }}" target="_blank" rel="noopener">{{ .title }}</a>
+            </h3>
+            {{ with .summary }}
+            <p class="home-card__body">{{ . }}</p>
+            {{ end }}
+            <ul class="home-card__tags">
+              <li>{{ dateFormat "Jan 2, 2006" .date }}</li>
+            </ul>
+            <div class="projects-card__links">
+              <a class="home-card__link" href="{{ .url | safeURL }}" target="_blank" rel="noopener">
+                Read briefing <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+  </article>
+</main>
+{{ partial "footer.html" . }}
