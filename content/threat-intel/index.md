@@ -16,8 +16,10 @@ description = 'Weekly roundup of notable threat-intel developments: exploited CV
 # ---------------------------------------------------------------------------
 
 [[weeks]]
-title = '21 - 28 Sep 2026'
-date = '2026-09-28'
+title = '26 Sep - 3 Oct 2026'
+date = '2026-10-03'
 url = '/threat-intel/2026-09-21-2026-09-28.html'
-summary = '482 developments, 36 rated critical or high, 51 vulnerabilities exploited in the wild. Top: CVE-2026-87902 exploitation, ShinyHunters exploiting CVE-2026-35273 via WAF bypass, CVE-2026-65660 and CVE-2026-67279 exploited.'
+
+
+
 +++
