@@ -1,5 +1,4 @@
 {{ partial "header.html" . }}
-{{ partial "main_menu.html" . }}
 <main class="page-shell projects-page">
   <article class="page-article">
     <header class="page-article__header">
@@ -10,9 +9,7 @@
     </header>
 
     {{ with .Content }}
-    <section class="page-article__content">
-      <div class="content">{{ . }}</div>
-    </section>
+    <div class="content">{{ . }}</div>
     {{ end }}
 
     <section class="projects-section" id="weekly-briefings">
@@ -21,8 +18,8 @@
         <div class="col">
           <article class="home-card projects-card h-100">
             <div class="home-card__icon">
-              <span class="icon-circle">
-                <i class="fa-solid fa-satellite-dish"></i>
+              <span class="icon-square">
+                <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>
               </span>
             </div>
             <h3 class="home-card__title">
@@ -36,7 +33,7 @@
             </ul>
             <div class="projects-card__links">
               <a class="home-card__link" href="{{ .url | safeURL }}" target="_blank" rel="noopener">
-                Read briefing <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Read briefing <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
               </a>
             </div>
           </article>

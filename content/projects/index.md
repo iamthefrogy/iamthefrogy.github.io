@@ -15,6 +15,7 @@ aliases = ['/github/', '/checklists/', '/checklists/web-application-pentest-chec
 #   external     - true = opens in new tab
 #   repo         - optional GitHub source link (shows "Source" button)
 #   tags         - optional small pills
+#   featured     - true = also shown on the home page
 # ---------------------------------------------------------------------------
 
 [[sections]]
@@ -24,6 +25,7 @@ subtitle = 'Interactive, data-backed views I maintain for threat intel, detectio
 
   [[sections.cards]]
   title = 'Threat Actor DB'
+  featured = true
   description = 'Unified dashboard of APT and threat-actor groups: state sponsors, victims, sectors, timelines and searchable detail per actor.'
   url = '/threat-actor-db/'
   icon = 'fa-user-secret'
@@ -31,6 +33,7 @@ subtitle = 'Interactive, data-backed views I maintain for threat intel, detectio
 
   [[sections.cards]]
   title = 'MITRE ATT&CK Analytic Observatory'
+  featured = true
   description = 'Coverage and gap assessment, CTI-to-detection mapper, detection-engineering workbench and purple-team board on ATT&CK Enterprise.'
   url = 'https://mitre.chintangurjar.com/'
   external = true
@@ -52,6 +55,7 @@ subtitle = 'Ready-to-use test cases and checklists for web, network, red team an
 
   [[sections.cards]]
   title = 'Buglist - Web App Security Checklist'
+  featured = true
   description = '279+ reusable web, API and network test cases distilled from real HackerOne reports. Filter by category and tick as you test.'
   url = 'https://buglist.chintangurjar.com/'
   external = true
@@ -91,6 +95,7 @@ subtitle = 'Tools I build and maintain on GitHub. Obsolete ones (e.g. Frogy2.0) 
 
   [[sections.cards]]
   title = 'FrogScope'
+  featured = true
   description = 'External attack-surface and exposure management in one Docker container. Correlates hosts, ports, certs and DNS, ranks findings in plain English and diffs against the last scan. Successor of Frogy2.0.'
   url = 'https://github.com/iamthefrogy/frogscope'
   external = true
@@ -175,14 +180,7 @@ subtitle = 'Interactive single-page guides on how to think and how to choose a p
 [[sections]]
 id = 'beyond'
 title = 'Beyond Security'
-subtitle = 'Side projects from the sky, the court and the kitchen.'
-
-  [[sections.cards]]
-  title = 'Paragliding Flight-Day Runbook'
-  description = 'From go/no-go weather check to landing and debrief: a complete paragliding flight-day checklist and reference.'
-  url = '/paragliding.html'
-  icon = 'fa-wind'
-  tags = ['Paragliding']
+subtitle = 'Side projects from outside work.'
 
   [[sections.cards]]
   title = 'Read the Sky'

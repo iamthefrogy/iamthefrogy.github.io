@@ -1,7 +1,8 @@
 +++
 date = '2025-02-20T11:42:41Z'
 draft = false
-title = '(ASM) Free/Open-Source External ASM Toolkit'
+title = 'Free/Open-Source External ASM Toolkit'
+tags = ['Vulnerability Management and ASM', 'Offensive Security']
 +++
 
 ## Introduction
@@ -81,11 +82,13 @@ Because **Frogy** is open source and lightweight, it’s ideal for:
 ## GitHub Link
 https://github.com/iamthefrogy/frogy2.0
 
+> **Update:** Frogy 2.0 is no longer maintained. Its successor is [FrogScope](https://github.com/iamthefrogy/frogscope). This post is kept as a reference for the approach.
+
 ## Core Logic
 
 Below is the working process of this tool.
 
-<center><img src="/images/frogyasm.png" width="900"/></center></br>
+<img src="/images/frogyasm.webp" alt="Free/Open-Source External ASM Toolkit: Core Logic" width="900" height="728" decoding="async">
 
 ## How Does it Run?
 
@@ -93,6 +96,6 @@ Below is how you provide user input and run it. Post completion, it will generat
 
 **The content of report.html file will not be visible until you create a web server and then load report.html**
 
-<center><img src="/images/asm2frogy.png" width="1200"/></center></br>
+<img src="/images/asm2frogy.webp" alt="Free/Open-Source External ASM Toolkit: How Does it Run?" width="1200" height="521" loading="lazy" decoding="async">
 
-<center><img src="/images/asm1frogy.png" width="1200"/></center></br>
+<img src="/images/asm1frogy.webp" alt="Free/Open-Source External ASM Toolkit: How Does it Run?" width="1200" height="626" loading="lazy" decoding="async">

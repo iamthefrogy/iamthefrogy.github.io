@@ -1,56 +1,66 @@
-{{ partial "main_menu.html" . }}
+{{ $isPost := eq .Section "posts" }}
 <main class="page-shell">
   <article class="page-article">
     <header class="page-article__header">
+      {{ if $isPost }}
+      <a class="page-article__back" href="{{ "posts/" | relURL }}"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>All writing</a>
+      {{ end }}
       <h1 class="page-article__title">{{ .Title }}</h1>
+      {{ if ne .Params.showpagemeta false }}
+      <p class="page-article__meta">
+        {{ if $isPost }}By <a href="{{ "whoami/" | relURL }}">{{ site.Params.author }}</a> <span aria-hidden="true">&middot;</span>{{ end }}
+        {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (site.Params.dateformat | default "Jan 2, 2006") }}</time>
+        <span aria-hidden="true">&middot;</span>{{ end }}
+        {{ .ReadingTime }} min read
+      </p>
+      {{ with .GetTerms "tags" }}
+      <ul class="tag-list">
+        {{ range . }}<li><a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ end }}
     </header>
 
-    <section id="category-pane" class="page-article__meta meta-block">
-      {{ if ne .Params.showpagemeta false }}
-      <div class="meta-row">
-        <p class="meta meta--label">
-          {{ if not .Date.IsZero }} PUBLISHED ON {{ .Date.Format (default "Jan 2, 2006" .Site.Params.dateformat) | upper }}
-          {{ end }}
-          / {{ math.Round (div (countwords .Content) 220.0) }} MIN READ
-          {{ if isset .Params "categories" }}
-          {{ $total := len .Params.categories }}
-          {{ if gt $total 0 }}
-          —
-          {{ $total := sub $total 1 }}
-          {{ range $i, $cat := sort $.Params.categories }}
-          <a class="meta meta--link"
-            href="{{ "categories/" | relURL }}{{ $cat | urlize }}">{{ $cat | upper }}</a>{{ if lt $i $total }}, {{ end }}
-          {{ end }}
-          {{ end }}
-          {{ end }}
-        </p>
-      </div>
+    {{ if and (ne .Params.toc false) (gt .WordCount 600) }}
+    <details class="toc">
+      <summary>On this page</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{ end }}
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    {{ if $isPost }}
+    <aside class="author-box">
+      {{ with resources.Get (printf "images/%s" site.Params.authorimage) }}
+      {{ $img := .Fill "144x144 webp q82" }}
+      <img class="author-box__avatar" src="{{ $img.RelPermalink }}" width="72" height="72" alt="" loading="lazy">
       {{ end }}
-    </section>
-
-    <section id="content-pane" class="page-article__content">
-      <div class="content">
-        {{ if and (ne .Params.toc false) (gt .WordCount 300) }}
-        {{ .TableOfContents }}
-        {{ end }}
-        {{ .Content }}
-      </div>
-    </section>
-
-    {{ $hasTags := and (isset .Params "tags") (gt (len .Params.tags) 0) }}
-    {{ if and (ne .Params.showpagemeta false) $hasTags }}
-    <section id="tag-pane" class="page-article__meta meta-block">
-      <div class="meta-row">
-        <p class="meta meta--label meta--align-end">
-          TAGS:
-          {{ $subtotal := sub (len .Params.tags) 1 }}
-          {{ range $i, $tag := sort $.Params.tags }}
-          <a class="meta meta--link" href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ $tag | upper }}</a>{{ if lt $i $subtotal }},
-          {{ end }}
-          {{ end }}
+      <div>
+        <p class="author-box__name">Written by {{ site.Params.author }}</p>
+        <p class="author-box__bio">{{ site.Params.job_title }} at {{ site.Params.employer }}. Nine years of pentesting and red teaming, now leading detection engineering, threat intelligence and vulnerability management.</p>
+        <p class="author-box__links">
+          <a href="{{ "whoami/" | relURL }}">About me</a>
+          {{ with site.Params.social.linkedin }}<a href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+          {{ with site.Params.social.github }}<a href="https://github.com/{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+          <a href="{{ "posts/index.xml" | relURL }}">RSS</a>
         </p>
       </div>
+    </aside>
+
+    {{ $related := first 3 (where (where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" .Params.tags) "Permalink" "ne" .Permalink) }}
+    {{ with $related }}
+    <section class="related-posts">
+      <h2 class="related-posts__title">Related writing</h2>
+      <div class="post-list">
+        {{ range . }}
+        {{ partial "site/post-row.html" . }}
+        {{ end }}
+      </div>
     </section>
+    {{ end }}
     {{ end }}
   </article>
 </main>

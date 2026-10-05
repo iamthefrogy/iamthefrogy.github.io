@@ -1,12 +1,13 @@
 +++
 date = '2025-02-03T04:46:47Z'
 draft = false
-title = '(Bug-Bounty) Master XSS Hunting Methodology'
+title = 'Master XSS Hunting Methodology'
+tags = ['Offensive Security']
 +++
 
 Below is a straightforward, step-by-step approach to uncovering Cross-Site Scripting (XSS) vulnerabilities. The focus here is on the methodology rather than specific payload examples.
 
-<center><img src="/images/xss_hunting.png" width="1300"/></center></br>
+<img src="/images/xss_hunting.webp" alt="Master XSS Hunting Methodology" width="1300" height="861" decoding="async">
 
 ---
 

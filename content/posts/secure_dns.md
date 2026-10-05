@@ -1,7 +1,8 @@
 +++
 date = '2025-05-13T10:10:44+01:00'
 draft = false
-title = '(DNS Security) – Building a Resilient DNS Infrastructure'
+title = 'Building a Resilient DNS Infrastructure'
+tags = ['Security Architecture']
 +++
 
 ## Introduction
@@ -21,7 +22,7 @@ In a **secure DNS deployment**, we add layers of cryptographic validation, encry
 
 This section walks through a conceptual architecture map (see diagram) and explains how the pieces fit together, even if you’ve never designed a DNS service before.
 
-<center><img src="/images/secure-dns-1.png" width="850"/></center></br>
+<img src="/images/secure-dns-1.webp" alt="Building a Resilient DNS Infrastructure: 1. Introduction" width="850" height="542" decoding="async">
 
 ---
 
@@ -147,7 +148,7 @@ Protective DNS (sometimes called “DNS security”) sits between your users and
 
 Even if you’ve never configured a DNS firewall, this step-by-step breakdown will make it crystal clear.
 
-<center><img src="/images/secure-dns-2.png" width="750"/></center></br>
+<img src="/images/secure-dns-2.webp" alt="Building a Resilient DNS Infrastructure: 1. What Is Protective DNS?" width="750" height="900" loading="lazy" decoding="async">
 
 ---
 
@@ -349,7 +350,7 @@ Even if you’re new to DNS security, you’ll walk away knowing exactly which c
 
 Below is a quick-reference table summarizing the flow from attack type through to defense:
 
-<center><img src="/images/secure-dns-3.png" width="650"/></center></br>
+<img src="/images/secure-dns-3.webp" alt="Building a Resilient DNS Infrastructure: 4. Threat → Component → Mitigation Mapping" width="650" height="373" loading="lazy" decoding="async">
 
 ---
 
@@ -383,7 +384,7 @@ Below is a quick-reference table summarizing the flow from attack type through t
 
 In a Zero Trust model, **never trust, always verify** applies to every network transaction including DNS lookups. Instead of assuming “on the corporate LAN = safe,” Zero Trust continuously evaluates **who** is asking, **what** they’re asking for, and **where** they are before allowing or blocking the DNS resolution.
 
-<center><img src="/images/secure-dns-4.png" width="650"/></center></br>
+<img src="/images/secure-dns-4.webp" alt="Building a Resilient DNS Infrastructure: 1. Introduction" width="650" height="773" loading="lazy" decoding="async">
 
 ---
 

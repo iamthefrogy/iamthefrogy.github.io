@@ -1,7 +1,8 @@
 +++
 date = '2025-01-17T19:47:14Z'
 draft = false
-title = '(Bug-Bounty) How to Know You are Ready for Full-Time Bug Bounty'
+title = 'How to Know You are Ready for Full-Time Bug Bounty'
+tags = ['Offensive Security']
 +++
 
 If you’ve been flirting with the idea of turning your bug bounty side hustle into a full-time career, it’s important to be aware that there’s far more to the lifestyle than bounties and bragging rights. Yes, you’ll enjoy the freedom to work when and how you want, and you might earn more in bounties than you did at a traditional job. But along with these perks come significant responsibilities, challenges, and risks that may not be obvious from the outside.
@@ -14,7 +15,7 @@ This guide is divided into two main parts:
 
 - **Part Two**: Additional insights and a discussion of “bad practices” and the darker sides of the bug bounty field that can undermine your success as a full-time hunter.
 
-<center><img src="/images/bb-fulltime.jpeg" alt="Gaps" width="950"/></center>
+<img src="/images/bb-fulltime.webp" alt="How to Know You are Ready for Full-Time Bug Bounty" width="950" height="879" decoding="async">
 
 ## Part One: The Roadmap to Going Full-Time
 
@@ -90,7 +91,7 @@ Even with a solid roadmap, there are extra details—and outright pitfalls—tha
 
 Below are realities that many hunters encounter but few talk about openly. While some might never face every issue, awareness is key to preparing mentally and operationally.
 
-<center><img src="/images/bb-demotivation.png" alt="bb-demotivation" width="1300"/></center>
+<img src="/images/bb-demotivation.webp" alt="bb-demotivation" width="1300" height="466" loading="lazy" decoding="async">
 
 #### 1.1 Demotivation and Burnout
 - **Why It Happens**: A large percentage of your recon and testing may lead to dead-ends or low-severity issues. With no guaranteed timeline for payouts, motivation can plummet.  
@@ -220,7 +221,7 @@ In addition to these darker sides, many hunters—new and experienced—fall int
 
 Going full-time in bug bounty isn’t just about raw hacking skills—it’s about self-management, emotional resilience, continuous learning, and a willingness to handle all the behind-the-scenes logistics of being your own boss. The reality is that big bounty payouts can take weeks or months, and the frequent dry spells can challenge even the most determined hackers. But if you’re prepared to navigate the darker sides—competition, potential burnout, hype culture, and more—and you still feel the thrill of finding high-impact vulnerabilities, then bug bounty might well be your calling.
 
-<center><img src="/images/bb-full-time2.jpeg" alt="Gaps" width="1300"/></center>
+<img src="/images/bb-full-time2.webp" alt="How to Know You are Ready for Full-Time Bug Bounty: Final Thoughts" width="1300" height="241" loading="lazy" decoding="async">
 
 If you’re serious about making the leap:
 1. **Prepare financially**: Set aside a robust runway of savings.  

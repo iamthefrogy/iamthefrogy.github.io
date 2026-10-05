@@ -1,6 +1,8 @@
-{{ partial "main_menu.html" . }}
-<section id="error-pane" class="text-center error">
-  <h1 class="text-center">404</h1>
-  <p>Sorry! That page does not exist. It may have been removed or moved to a new section on the site. Click <a
-      href="/">here</a> go back to the home page.</p>
-</section>
+<main class="page-shell">
+  <section class="error-page">
+    <p class="error-page__code">404</p>
+    <h1 class="error-page__title">Page not found</h1>
+    <p>This page does not exist. It may have been moved or removed.</p>
+    <p><a class="btn btn-primary" href="{{ "/" | relURL }}">Go to home page</a> <a class="btn btn-outline-primary" href="{{ "posts/" | relURL }}">Browse writing</a></p>
+  </section>
+</main>

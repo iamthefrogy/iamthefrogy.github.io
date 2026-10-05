@@ -1,91 +1,124 @@
 ## Basic Configuration
 
-baseurl = "https://iamthefrogy.github.io/"
-builddrafts = false
-canonifyurls = false
-languageCode = "en-US"
-preserveCNAME = true
+baseURL = "https://chintangurjar.com/"
+buildDrafts = false
+locale = "en-GB"
 
-contentdir = "content"
-layoutdir = "layouts"
-publishdir = "public"
+contentDir = "content"
+layoutDir = "layouts"
+publishDir = "public"
 
-author = "Chintan Gurjar"
-title = "Cyber Frogy"
-
+title = "Chintan Gurjar"
 theme = "hugo-goa"
-
-## Hugo Built-in Features
-# disqusShortname = "discusShortname" # Enable if you want to use Disqus
-# googleAnalytics = "UA-XXXXXXXX-X" # Enable if you want to use Google Analytics
 enableRobotsTXT = true
+
+[taxonomies]
+tag = "tags"
 
 ## Site Settings
 [params]
 author = "Chintan Gurjar"
-intro = " 13 Years of Exp. | VM | CTI | Detection Engineering | Pentest "
-description = """
-<center><img src="/images/career_summary.png" width="1050"/></center></br>
-"""
+brand_tagline = "Cyber Frogy"
+job_title = "Threat Detection Manager"
+employer = "ION Group"
 authorimage = "headshot.png"
 dateformat = "Jan 2, 2006"
 
 [params.hero]
 greeting = "Hi, I am Chintan"
-title = "Building resilient cyber defense programs that scale."
-subtitle = "Hands-on security leader with 13+ years orchestrating threat intelligence, vulnerability management, and application security across global teams."
+title = "9 years breaking in. 5 years of building teams that catch it."
+subtitle = "I spent 9 years as a pentester and red teamer, then moved to product companies since last 5 years to build and lead vulnerability management, threat intelligence and detection engineering teams."
 primary_cta_label = "Download Resume"
 primary_cta_link = "/files/resume-sample.pdf"
-secondary_cta_label = "Explore recent work"
+secondary_cta_label = "Read my work"
 secondary_cta_link = "/posts/"
 
 [[params.hero.stats]]
-label = "experience leading security programs."
-value = "13+ years"
+label = "in cybersecurity, since 2011"
+value = "14 years"
 
 [[params.hero.stats]]
-label = "Pentests & Red-team projects delivered"
-value = "150+"
+label = "CVE-2016-7786 (Sophos UTM) and CVE-2020-35387"
+value = "2 CVEs discovered"
 
 [[params.hero.stats]]
-label = "8 years offensive, 5 years Defensive"
+label = "9 years pentest and red team, then 5 years leading defensive teams"
 value = "Offensive & Defensive"
 
 [[params.hero.stats]]
-label = "VM, CTI, Detection Engineering divisions for product-based firms"
-value = "Built & Managed Programs"
+label = "Presented my open-source attack surface toolkit"
+value = "Black Hat USA 2025 Arsenal"
 
 [params.home]
 latest_posts_heading = "Latest writing"
-highlights_heading = "What makes me different"
-highlights_subheading = "I apply pragmatic approach that blends advisory to operational and tech audience."
-resources_heading = "Starter resources"
+highlights_heading = "What I bring"
+highlights_subheading = "I have worked on both sides, attack and defense, so I can talk to the board and to the engineer at the terminal."
 
 [[params.home.highlights]]
 title = "Builder of Security Programs"
-description = "I have built and run security programs end-to-end—standing up VM, CTI, ASM, and VAPT divisions, managing MSSPs/vendors, and delivering outcomes at global brands."
-tags = ["Program Design", "MSSP/vendor mgmt", "VM/CTI/ASM/VAPT/TH", "Roadmaps & KPIs", "Playbooks & SOPs", "Matrics & Dashboards"]
+description = "I have built and run vulnerability management, threat intelligence and detection engineering teams at large product companies across retail, automotive and fintech, and managed the MSSPs and vendors around them."
+tags = ["Program Design", "MSSP/vendor mgmt", "VM/CTI/ASM/VAPT/TH", "Roadmaps & KPIs", "Playbooks & SOPs", "Metrics & Dashboards"]
 
 [[params.home.highlights]]
 title = "Strategic Security Leader"
-description = "I align security with business goals crafting 3–5 year roadmaps, reporting to execs/boards, and translating CISO pain points into measurable initiatives."
+description = "I connect security work to business goals: 3 to 5 year roadmaps, reporting to executives and boards, and turning CISO priorities into work a team can measure."
 tags = ["3–5 yr strategy", "Exec/Board reporting", "CISO Priorities", "Risk → Business", "Maturity Model", "Governance"]
 
 [[params.home.highlights]]
 title = "Offensive + Defensive Depth"
-description = "200+ pentests & 10 red-team projects delivered, founder of two CVE discoveries, hands-on technical depth from assessment to integration and also designing strategy from scratch."
+description = "Nine years of hands-on pentesting and red teaming, two CVEs discovered, and an offensive edge kept sharp through bug bounty, side projects and open-source tools outside my day job."
 tags = ["Pentest & Red-team", "Adversary Emulation & Purple Teaming", "Detection Engineering", "Threat Intelligence & Hunting"]
 
 [[params.home.highlights]]
 title = "Tech & Tools Matrix"
-description = "Hands-on across pentest/red team, VM, detection engineering, threat hunting, and CTI toolings and solutions from assessment, implementation, integration and usage point of view."
+description = "Hands-on with the tools of pentest, red team, vulnerability management, detection engineering, threat hunting and CTI: I have assessed, deployed, integrated and used them daily."
 tags = ["BurpSuite", "Bloodhound", "Nmap", "Nessus/Qualys", "CTI Solutions", "MITRE ATT&CK", "Wiz", "MS Sentinel/Defender", "CrowdStrike", "Docker", "Kenna Security", "GitHub"]
 
+## Home: two reader paths
+[[params.home.paths]]
+title = "For security leaders"
+intro = "How I think about building and running security programs: structure, maturity and trade-offs."
+icon = "fa-chess-knight"
+  [[params.home.paths.links]]
+  label = "How to build a threat intelligence division"
+  url = "/posts/how-to-build-cti-division/"
+  [[params.home.paths.links]]
+  label = "CTI maturity model"
+  url = "/posts/cti-maturity-model/"
+  [[params.home.paths.links]]
+  label = "Risk-based vulnerability management"
+  url = "/posts/risk-based-vm-guide/"
+  [[params.home.paths.links]]
+  label = "Endpoint security: a point of view on virtualisation"
+  url = "/posts/endpoint-security-virtualisation/"
+  [[params.home.paths.links]]
+  label = "Defense-in-Depth 2026 framework"
+  url = "/defense.html"
+
+[[params.home.paths]]
+title = "For practitioners"
+intro = "Hands-on work from both sides: detection logic, hunting methodology, tools and research."
+icon = "fa-code"
+  [[params.home.paths.links]]
+  label = "A bug bounty journey that actually happened"
+  url = "/posts/bug-bounty-journey/"
+  [[params.home.paths.links]]
+  label = "Advanced detection engineering"
+  url = "/posts/detection-engineering/"
+  [[params.home.paths.links]]
+  label = "From threat intelligence to detection rules"
+  url = "/posts/intel-to-hunt/"
+  [[params.home.paths.links]]
+  label = "STRIDE threat modelling, in-depth and practical"
+  url = "/posts/stride/"
+  [[params.home.paths.links]]
+  label = "Open-source tools and checklists"
+  url = "/projects/"
 
 ## Site Meta Settings
 [params.meta]
-description = "Practical Cybersecurity Blog"
-keywords = "cybersecurity, infosec, bug-bounty, bugbounty, SOC, CTI, VM, Pentest, Cyber Defense"
+title = "Chintan Gurjar (Frogy) | Detection Engineering, Threat Intelligence, Offensive Security"
+description = "Chintan Gurjar (Frogy): nine years of pentesting and red teaming, now leading detection engineering, threat intelligence and vulnerability management. Practical cybersecurity writing, tools and research."
 
 ## Social Accounts
 [params.social]
@@ -95,58 +128,50 @@ twitter = "iamthefrogy"
 youtube = "@Cyberevolution/videos"
 email = "chintangurjar@outlook.com"
 
-## Extras
-[params.extra]
-copyright = "© Chintan Gurjar - chintangurjar@outlook.com"
-poweredby = true
-highlightjs = true
-socialmarkup = true
-toc = true
-displayrssicon = true
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
 
 ## Main Menu
 [[menu.main]]
-name = "Home"
+name = "About"
 weight = 100
-identifier = "home"
-url = "/"
+pageRef = "/whoami"
 [[menu.main]]
-name = "Whoami"
-identifier = "whoami"
+name = "Writing"
 weight = 200
-url = "/whoami"
-[[menu.main]]
-name = "Blog"
-weight = 300
-identifier = "posts"
-url = "/posts"
-[[menu.main]]
-name = "Mindmaps"
-identifier = "mindmaps"
-weight = 400
-url = "/mindmaps"
+pageRef = "/posts"
 [[menu.main]]
 name = "Projects"
-identifier = "projects"
-weight = 500
-url = "/projects"
+weight = 300
+pageRef = "/projects"
+[[menu.main]]
+name = "Mindmaps"
+weight = 400
+pageRef = "/mindmaps"
 [[menu.main]]
 name = "Threat Intel"
-identifier = "threatintel"
+weight = 500
+pageRef = "/threat-intel"
+[[menu.main]]
+name = "Career Guide"
 weight = 600
-url = "/threat-intel/"
-[[menu.main]]
-name = "Kickstart Career"
-identifier = "kickstartcareer"
-weight = 800
-url = "/kickstartcareer"
-[[menu.main]]
+pageRef = "/kickstartcareer"
+
+## Footer Menu
+[[menu.footer]]
 name = "Disclaimer"
-identifier = "disclaimer"
-weight = 900
-url = "/disclaimer"
+weight = 100
+pageRef = "/disclaimer"
+[[menu.footer]]
+name = "RSS"
+weight = 200
+url = "/posts/index.xml"
+[[menu.footer]]
+name = "security.txt"
+weight = 300
+url = "/.well-known/security.txt"

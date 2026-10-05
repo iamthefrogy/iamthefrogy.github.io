@@ -1,20 +1,21 @@
 +++
 date = '2025-05-15T13:46:07+01:00'
 draft = false
-title = '(AppSec) End-to-End API Security Lifecycle'
+title = 'End-to-End API Security Lifecycle'
+tags = ['Security Architecture']
 +++
 
 ## Introduction
 
 In today’s cloud-native world, APIs are the backbone of digital ecosystems connecting microservices, external partners, and end-users alike. But with increased connectivity comes a growing attack surface. Securing APIs isn’t just about protecting endpoints; it’s about embedding security across the entire API lifecycle. From planning and design to runtime enforcement and telemetry, modern API protection requires a layered, identity-driven approach. This article presents a visual and conceptual framework for API security combining DevSecOps principles, NIST-guided controls, Zero Trust architecture, and gateway deployment best practices. Through diagrams and detailed breakdowns, we offer a holistic view of how to operationalize API security across your organization.
 
-<center><img src="/images/api-security-summary.png" width="950"/></center></br>
+<img src="/images/api-security-summary.webp" alt="End-to-End API Security Lifecycle: Introduction" width="950" height="1243" decoding="async">
 
 ## Part 1 - Visualizing the API Protection Framework: From Plan to Runtime
 
 APIs have become the lingua franca of modern enterprise systems powering everything from microservices meshes to third-party integrations. With that ubiquity comes risk: how do we make sure every API call is planned, built, and monitored in a consistent, repeatable way? The **API Protection Framework** diagram below captures the full DevSecOps life-cycle of API security, showing how **pre-runtime** and **runtime** controls each split into **basic** vs. **advanced** levels work together to mitigate common API risks.
 
-<center><img src="/images/api-security-1.png" width="1050"/></center></br>
+<img src="/images/api-security-1.webp" alt="End-to-End API Security Lifecycle: Part 1 - Visualizing the API Protection Framework: From Plan to Runtime" width="1050" height="743" loading="lazy" decoding="async">
 
 ---
 
@@ -115,7 +116,7 @@ The diagram’s loop from **Monitor**→**Feedback** back to **Plan** reminds us
 
 The **API Risk and Control Matrix** provides a clear mapping between the most common API vulnerabilities and the mitigation controls both pre-runtime and runtime recommended by NIST. By aligning each risk to one or more security controls, teams can ensure that every threat vector is countered with appropriate defenses.
 
-<center><img src="/images/api-security-2.png" width="950"/></center></br>
+<img src="/images/api-security-2.webp" alt="End-to-End API Security Lifecycle: Part 2 - API Risk and Control Matrix" width="950" height="722" loading="lazy" decoding="async">
 
 ---
 
@@ -146,7 +147,7 @@ Pre-runtime (green box) controls are implemented **before** an API is deployed d
 | **Request/Response Schema Validation**               | SC-3 / SI-8             | Enforce shape, length, and format of payloads      |
 | **Define API Specification (OpenAPI, gRPC, Thrift)** | SA-22 (Developer Security Testing) | Serve as single source of truth for design and tests |
 
-</br>
+<br>
 
 1. **Visibility & Inventory**  
    - Establish a living catalog of APIs (CM-8).  
@@ -172,7 +173,7 @@ Runtime (yellow box) controls defend every API call in production, mapping to NI
 | **Log API Access and Monitor Usage**              | AU-2 / AU-6         | Collect audit trails and detect anomalous behavior     |
 
 
-</br>
+<br>
 
 1. **Secure Transport**  
    - TLS everywhere (SC-8) to prevent sniffing or tampering.  
@@ -206,7 +207,7 @@ Runtime (yellow box) controls defend every API call in production, mapping to NI
 
 The **Zero Trust API Communication Flow** diagram illustrates how modern cloud-native environments enforce identity, authentication, and authorization at every hop ensuring that no request is trusted by default. By canonicalizing credentials, leveraging both service and user identity providers, and inserting API gateways at the edge, perimeter, and egress, this flow implements a true Zero Trust posture.
 
-<center><img src="/images/api-security-3.png" width="950"/></center></br>
+<img src="/images/api-security-3.webp" alt="End-to-End API Security Lifecycle: Part 3 - Zero Trust API Communication Flow" width="950" height="707" loading="lazy" decoding="async">
 
 ---
 
@@ -293,7 +294,7 @@ The **Zero Trust API Communication Flow** diagram illustrates how modern cloud-n
 
 The **API Gateway Deployment Patterns** diagram shows how to position and configure API gateways and sidecar proxies across the external edge, internal service mesh, and outbound egress zones while relying on a central identity & credential infrastructure for seamless trust translation.
 
-<center><img src="/images/api-security-4.png" width="450"/></center></br>
+<img src="/images/api-security-4.webp" alt="End-to-End API Security Lifecycle: Part 4 - API Gateway Deployment Patterns" width="450" height="910" loading="lazy" decoding="async">
 
 ---
 

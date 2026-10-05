@@ -1,7 +1,8 @@
 +++
 date = '2025-11-19T06:37:07Z'
 draft = false
-title = '(CTI) Automotive industry threat landscape'
+title = 'Automotive industry threat landscape'
+tags = ['Threat Intelligence']
 +++
 
 Modern cars are not just machines that move you from A to B. They are packed with radios, sensors, SIM cards, Wi-Fi, Bluetooth, cloud backends, and mobile apps   effectively **computers on wheels that talk a lot**. That connectivity is great for drivers and fleet operators. It is also great targets for attackers.
@@ -127,7 +128,7 @@ Real-world flavors:
   - Access to audio streams  
   - Collection of telemetry or positional data in some exploitation paths
 
-  <center><img src="/images/automotive-threat-landscape.png" width="1050"/></center></br>
+  <img src="/images/automotive-threat-landscape.webp" alt="Automotive industry threat landscape: 4. Metadata within car" width="1050" height="779" decoding="async">
 
 
 
@@ -216,7 +217,7 @@ Below are practical steps, split between:
 1. **Drivers / owners / fleet operators**  
 2. **Developers / OEMs / suppliers**
 
-<center><img src="/images/automotive-threat-landscape2.png" width="450"/></center></br>
+<img src="/images/automotive-threat-landscape2.webp" alt="Automotive industry threat landscape: 7. What to do about it" width="450" height="1277" loading="lazy" decoding="async">
 
 
 ### 7.1. For drivers, owners, and fleet operators

@@ -2,6 +2,7 @@
 date = '2024-12-27T11:23:51Z'
 draft = false
 title = 'Kick Start Your Cybersecurity Career'
+description = 'A beginner guide to starting a cybersecurity career: roles, skills, certifications, learning plan, resume and interview advice, answered in 26 questions.'
 +++
 
 <style>
@@ -25,10 +26,10 @@ title = 'Kick Start Your Cybersecurity Career'
   }
 </style>
 
-## **IMPORTANT!!!!**
+## Important
 
 ### MYTH BUSTER
-<left><img src="/images/myth.png" alt="myth" width="55"/></left>
+<left><img src="/images/myth.webp" alt="Kick Start Your Cybersecurity Career: MYTH BUSTER" width="55" height="55" decoding="async"></left>
 
 When you see the **Myth Buster** icon, it’s time to challenge commonly held beliefs! This marker highlights misconceptions or myths that might hold you back and replaces them with facts to set the record straight.  
 *Example: “MYTH: You need a Master’s degree to start a cybersecurity career.”*
@@ -36,7 +37,7 @@ When you see the **Myth Buster** icon, it’s time to challenge commonly held be
 ---
 
 ### ACTION ITEM
-<left><img src="/images/act.png" alt="action" width="65"/></left>
+<left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: ACTION ITEM" width="65" height="65" loading="lazy" decoding="async"></left>
 
 The **Action Item** icon signals a task or step you should take to move forward in your journey. These are practical, to-the-point actions designed to help you stay on track and achieve your goals.  
 *Example: “ACTION ITEM: Create a LinkedIn profile optimized for the cybersecurity roles you’re targeting.”*
@@ -44,7 +45,7 @@ The **Action Item** icon signals a task or step you should take to move forward 
 ---
 
 ### WARNING
-<left><img src="/images/warning.png" alt="warning" width="55"/></left>
+<left><img src="/images/warning.webp" alt="Kick Start Your Cybersecurity Career: WARNING" width="55" height="55" loading="lazy" decoding="async"></left>
 
 The **Warning** icon alerts you to potential pitfalls, risks, or mistakes to avoid. Pay close attention whenever you see this marker—it’s your early warning system to keep you from heading in the wrong direction!  
 *Example: “WARNING: Don’t blindly accept a job offer without researching the company’s leadership and culture.”*
@@ -52,7 +53,7 @@ The **Warning** icon alerts you to potential pitfalls, risks, or mistakes to avo
 ---
 
 ### TIP
-<left><img src="/images/tip.png" alt="tip" width="55"/></left>
+<left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: TIP" width="55" height="55" loading="lazy" decoding="async"></left>
 
 The **Tip** icon offers valuable advice, quick shortcuts, or insights that can help you make smarter choices. Think of these as nuggets of wisdom curated to make your journey smoother and more efficient.  
 *Example: “TIP: Use tools like Glassdoor and LinkedIn to cross-check employee reviews before applying for a job.”*
@@ -82,7 +83,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 ---
 
 ### Key Tip: Keep Doing Your Current Job
-- <left><img src="/images/tip.png" alt="tip" width="55"/></left> **Why?**: It’s vital to keep earning until you secure a full-time cybersecurity role. Your financial stability and responsibilities matter.<left><img src="/images/warning.png" alt="warning" width="55"/></left> Do not take a break for study or certifications unless absolutely necessary.
+- <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Key Tip: Keep Doing Your Current Job" width="55" height="55" loading="lazy" decoding="async"></left> **Why?**: It’s vital to keep earning until you secure a full-time cybersecurity role. Your financial stability and responsibilities matter.<left><img src="/images/warning.webp" alt="Kick Start Your Cybersecurity Career: Key Tip: Keep Doing Your Current Job" width="55" height="55" loading="lazy" decoding="async"></left> Do not take a break for study or certifications unless absolutely necessary.
 
 ## 2. Which cybersecurity domain is the right fit for me?
 1. **Refer to the CISO Mind Map**: Explore these resources to get an overview of cybersecurity domains that one large company CISO would handle:
@@ -90,7 +91,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 
 2. **Understand the Domains**: Learn about the various domains available in cybersecurity. Each domain has unique responsibilities and skill requirements.
 
-3. <left><img src="/images/act.png" alt="action" width="55"/></left> **Ask Yourself Key Questions**: For each domain, answer the following:
+3. <left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: 2. Which cybersecurity domain is the right fit for me?" width="55" height="55" loading="lazy" decoding="async"></left> **Ask Yourself Key Questions**: For each domain, answer the following:
    - What is that domain about?
    - What kinds of roles/titles/designations does the company offer in that domain?
    - What free, open-source, or commercial tools and solutions do people/companies use?
@@ -101,12 +102,12 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
    - Does it fancy you?
    - Which roles you can start within that domain as beginer and where can you reach maximum after 5/10/15 years?
    - What will be the future of this role in regards to automation and AI?
-   - <left><img src="/images/tip.png" alt="tip" width="55"/></left> **Bonus Tip:**
+   - <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: 2. Which cybersecurity domain is the right fit for me?" width="55" height="55" loading="lazy" decoding="async"></left> **Bonus Tip:**
      - Stay curious and use resources like Google or ChatGPT to gather more insights into each of these questions for any of your domains you are interested in like mentioned below.
 
-    <center><img src="/images/gpt1.png" alt="gpt1" width="700"/></center>
-    <center><img src="/images/gpt2.png" alt="gpt2" width="700"/></center>
-    <center><img src="/images/gpt3.png" alt="gpt3" width="700"/></center>
+    <img src="/images/gpt1.webp" alt="Kick Start Your Cybersecurity Career: 2. Which cybersecurity domain is the right fit for me?" width="667" height="830" loading="lazy" decoding="async">
+    <img src="/images/gpt2.webp" alt="Kick Start Your Cybersecurity Career: 2. Which cybersecurity domain is the right fit for me?" width="667" height="830" loading="lazy" decoding="async">
+    <img src="/images/gpt3.webp" alt="Kick Start Your Cybersecurity Career: 2. Which cybersecurity domain is the right fit for me?" width="650" height="583" loading="lazy" decoding="async">
 
 
 ## 3. What’s the best way to learn cybersecurity?
@@ -140,7 +141,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
      Ideal for those with shift jobs or variable schedules. Dedicate 1-3 hours to study when free.
 
 4. **Use Tools to Plan Effectively**  
-   - <left><img src="/images/act.png" alt="action" width="65"/></left> Create a study plan using Excel or similar tools.  
+   - <left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: 4. How do I create a personalized career plan?" width="65" height="65" loading="lazy" decoding="async"></left> Create a study plan using Excel or similar tools.  
    - Organize topics and track progress systematically.
 
 5. **Keep Your Plan Visible**: Place your plan somewhere you see often (e.g., desk, fridge) to stay motivated.
@@ -167,7 +168,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 ---
 
 ### Prioritizing Your Needs
-<left><img src="/images/myth.png" alt="myth" width="55"/></left> **Let’s be honest—no company can meet **all** your expectations, even if you’re working for Google’s California beachside office two days a week! Yes, even with the stunning views, free gourmet meals, and bean bags galore, something will always be missing.**
+<left><img src="/images/myth.webp" alt="Kick Start Your Cybersecurity Career: Prioritizing Your Needs" width="55" height="55" loading="lazy" decoding="async"></left> **Let’s be honest—no company can meet **all** your expectations, even if you’re working for Google’s California beachside office two days a week! Yes, even with the stunning views, free gourmet meals, and bean bags galore, something will always be missing.**
 
 **That’s why it’s crucial to prioritize. Choose at least 2–3 factors that matter the most to you, and if those are fulfilled, consider that company a good match. Remember, perfection is a myth—even in Silicon Valley.**
 
@@ -211,13 +212,13 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 ## 6. What should I know before switching jobs in cybersecurity?
 
 ### How to Use the Above Table:
-<left><img src="/images/act.png" alt="action" width="55"/></left>
+<left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: How to Use the Above Table" width="55" height="55" loading="lazy" decoding="async"></left>
 1. Identify the industries you’re passionate about or align with your skills.  
 2. Research the companies in your desired industry using tools like LinkedIn, Glassdoor, and company websites.  
 3. Use this as a reference to create a **company comparison spreadsheet** in Excel or Notion, tracking factors like revenue, reviews, and future opportunities.
 
 ### Steps to Research Effectively
-<left><img src="/images/act.png" alt="action" width="55"/></left>
+<left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: Steps to Research Effectively" width="55" height="55" loading="lazy" decoding="async"></left>
 1. List industries and companies that interest you.
 2. Use LinkedIn, Glassdoor, and company websites to gather insights.
 3. Create a spreadsheet to track revenue, employee reviews, culture, and industry focus.
@@ -228,7 +229,7 @@ These highlighters are here to guide you, whether it’s breaking myths, providi
 
 Finding the right mentor is challenging, especially for beginners in the security field. Use this table to explore the DOs and DON'Ts before selecting your mentor:
 
-| **DOs <left><img src="/images/tip.png" alt="tip" width="55"/></left>**                                                                                                   | **DON'Ts <left><img src="/images/warning.png" alt="warning" width="55"/></left>**                                                                 |
+| **DOs <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: 7. How do I find a quality mentor who truly adds value?" width="55" height="55" loading="lazy" decoding="async"></left>**                                                                                                   | **DON'Ts <left><img src="/images/warning.webp" alt="Kick Start Your Cybersecurity Career: 7. How do I find a quality mentor who truly adds value?" width="55" height="55" loading="lazy" decoding="async"></left>**                                                                 |
 |-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | Select a mentor who is **down to earth**, willing to learn and coach.                                     | Don’t select mentors solely based on their **number of certifications**.   |
 | Look for mentors who provide a **clear vision and guidance** for your career goals over 2–5 years.        | Don’t base your decision only on their **online presence or popularity**.  |
@@ -255,7 +256,7 @@ Finding the right mentor is challenging, especially for beginners in the securit
 While no mentor will check every single box, prioritize the ones who align most with your needs. Remember, mentorship is a two-way street—commit to learning and contributing to make the relationship successful.
 
 ## 8. What factors should I consider before applying for a job?
-<center><img src="/images/ready-for-job-mindmap.png" alt="tip" width="900"/></center>
+<img src="/images/ready-for-job-mindmap.webp" alt="Kick Start Your Cybersecurity Career: 8. What factors should I consider before applying for a job?" width="871" height="961" loading="lazy" decoding="async">
 
 ### Proven Job-Hunting Tips for Cybersecurity Careers
 
@@ -266,7 +267,7 @@ While no mentor will check every single box, prioritize the ones who align most 
 
 - **Beginners**:  
   Create a professional resume even if you lack work experience. Focus on showcasing your technical skills, certifications, and learning progress.  
-  *<left><img src="/images/act.png" alt="action" width="65"/></left> Refer to the **section number 16** for more guidance.*
+  *<left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: General Tips" width="65" height="65" loading="lazy" decoding="async"></left> Refer to the **section number 16** for more guidance.*
 
 - **No Professional Experience?**  
   Add the following to your resume:  
@@ -280,7 +281,7 @@ While no mentor will check every single box, prioritize the ones who align most 
 - Use multiple job portals but **don’t forget Google Jobs**.  
   *WARNING: Many jobs listed on Google Jobs are not available on LinkedIn or other platforms, so always check there.*
 
-- <left><img src="/images/tip.png" alt="tip" width="55"/></left> Reach out to **cybersecurity-specific recruitment agencies**.  
+- <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Where to Apply" width="55" height="55" loading="lazy" decoding="async"></left> Reach out to **cybersecurity-specific recruitment agencies**.  
   These agencies often fill roles for big companies and are familiar with the industry demands.
 
 - Connect with **HR professionals in cybersecurity** on LinkedIn.  
@@ -291,7 +292,7 @@ While no mentor will check every single box, prioritize the ones who align most 
 ### Interview Preparation
 Prepare for interviews based on job descriptions (JD). Most questions will stem from the roles and responsibilities mentioned in the JD. Follow these steps for effective preparation:
 
-<left><img src="/images/tip.png" alt="tip" width="55"/></left>
+<left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Interview Preparation" width="55" height="55" loading="lazy" decoding="async"></left>
 1. **Understand the JD**: Break down each line of the job description.  
 2. **Use ChatGPT or other AI modules**:  
    - Give ChatGPT a paragraph summarizing the JD and company.  
@@ -453,7 +454,7 @@ This section explores whether pursuing a master’s degree in cybersecurity is a
 
 ### Myths vs. Realities
 
-| **Myth <left><img src="/images/myth.png" alt="myth" width="55"/></left>**                                              | **Reality <left><img src="/images/tip.png" alt="tip" width="55"/></left>**                                                                                                         |
+| **Myth <left><img src="/images/myth.webp" alt="Kick Start Your Cybersecurity Career: Myths vs. Realities" width="55" height="55" loading="lazy" decoding="async"></left>**                                              | **Reality <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Myths vs. Realities" width="55" height="55" loading="lazy" decoding="async"></left>**                                                                                                         |
 |-------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | A Master’s degree in cybersecurity is not required.   | True but not 100%. It offers intermediate benefits such as enhanced networking, soft skills, and academic recognition. |
 | A Master’s degree guarantees a higher salary or quick job. | Generally false, unless it’s from a prestigious university with excellent placement programs.                        |
@@ -534,9 +535,9 @@ Whether a Master’s degree is worth it depends on your personal goals, financia
 | **Certification from Reputable Authorities**      | Ensure the certification is issued by well-known authorities in cybersecurity.                                                                                                 |
 |                                                   | - Cybersecurity-specific authorities: ISC2, eLearnSecurity, Offensive Security, ISACA, EC-Council, CompTIA, CREST, SANS, GIAC, etc.                                             |
 |                                                   | - Vendor-specific authorities: Amazon (AWS), Google (GCP), Microsoft (Azure), Cisco, Checkpoint, etc.                                                                           |
-| **Market Demand for the Certification**           | <left><img src="/images/tip.png" alt="tip" width="55"/></left> Research if the certification is in demand by analyzing job descriptions on LinkedIn or other platforms.                                                                        |
+| **Market Demand for the Certification**           | <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Key Considerations Before Choosing a Cybersecurity Certification" width="55" height="55" loading="lazy" decoding="async"></left> Research if the certification is in demand by analyzing job descriptions on LinkedIn or other platforms.                                                                        |
 | **Beginner vs Advanced Certification**            | Understand if you're opting for a beginner-level cert in your domain or directly aiming for a management/high-level cert. Plan your starting point and endpoint.               |
-| **Certification Variety**                         | <left><img src="/images/tip.png" alt="tip" width="55"/></left> Consider obtaining certificates from different providers to diversify your resume and showcase versatility.                                                                     |
+| **Certification Variety**                         | <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Key Considerations Before Choosing a Cybersecurity Certification" width="55" height="55" loading="lazy" decoding="async"></left> Consider obtaining certificates from different providers to diversify your resume and showcase versatility.                                                                     |
 | **Purpose of the Certification**                  | Reflect on whether you’re pursuing the certification for:                                                                                                                       |
 |                                                   | - Job-specific purposes: Be cautious about spending a significant amount without a job guarantee.                                                                               |
 |                                                   | - Knowledge acquisition: A certification should ideally enhance your understanding and practical skills.                                                                        |
@@ -600,7 +601,7 @@ Which types of companies should you consider in the initial stages of your cyber
 ---
 
 ### Factors to Consider While Choosing
-<left><img src="/images/tip.png" alt="tip" width="55"/></left>
+<left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Factors to Consider While Choosing" width="55" height="55" loading="lazy" decoding="async"></left>
 1. **Career Goals**: Are you aiming for diverse exposure or niche expertise?
 2. **Work-Life Balance**: Product companies often provide better work-life balance compared to consulting.
 3. **Learning Curve**: Consulting firms offer faster growth but may not allow deep specialization.
@@ -636,7 +637,7 @@ Want to break into cybersecurity but lack experience? Here are some great resume
 Accomplishing the majority of these activities will provide strong content for your resume and interviews.
 
 ---
-|<left><img src="/images/warning.png" alt="warning" width="55"/></left> Mistake                           | **Explanation**                                                                                      |
+|<left><img src="/images/warning.webp" alt="Kick Start Your Cybersecurity Career: Key Activities to Build a Strong Resume in Cybersecurity" width="55" height="55" loading="lazy" decoding="async"></left> Mistake                           | **Explanation**                                                                                      |
 |----------------------------------------|------------------------------------------------------------------------------------------------------|
 | **Typos and Grammatical Errors**       | It's crucial to proofread your resume before submitting it. Errors may suggest a lack of attention to detail or professionalism. |
 | **Providing Inaccurate Information**   | Whether it's wrong dates or exaggerated qualifications, falsifying information is always a big no-no. |
@@ -681,9 +682,9 @@ By avoiding common mistakes and actively building relevant skills and activities
 | **Category**              | **Details**                                                                                                                                                              |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Profile Picture**       | Choose a professional photo. Your LinkedIn profile picture should reflect professionalism and seriousness towards the platform. Avoid casual or overly social photos.    |
-| <left><img src="/images/tip.png" alt="tip" width="55"/></left> **Things You Share and Like** | Share and like content relevant to your profession. Avoid random posts, jokes, politics, or unrelated debates. Focus on cybersecurity topics to show expertise and interest. |
-| <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Writing Posts on Your Wall** | Write clear and concise posts. Avoid controversial topics, hate speech, or irrelevant content. Post about unique topics in your field and ensure your tone is professional and neutral. |
-| <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Writing Relevant Posts** | Share unique insights within your domain. Avoid over-discussed topics unless you add a new perspective. Be neutral and clear, avoiding slang or unprofessional language.    |
+| <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: 17. Why should I invest time in building a LinkedIn profile?" width="55" height="55" loading="lazy" decoding="async"></left> **Things You Share and Like** | Share and like content relevant to your profession. Avoid random posts, jokes, politics, or unrelated debates. Focus on cybersecurity topics to show expertise and interest. |
+| <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: 17. Why should I invest time in building a LinkedIn profile?" width="55" height="55" loading="lazy" decoding="async"></left>**Writing Posts on Your Wall** | Write clear and concise posts. Avoid controversial topics, hate speech, or irrelevant content. Post about unique topics in your field and ensure your tone is professional and neutral. |
+| <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: 17. Why should I invest time in building a LinkedIn profile?" width="55" height="55" loading="lazy" decoding="async"></left>**Writing Relevant Posts** | Share unique insights within your domain. Avoid over-discussed topics unless you add a new perspective. Be neutral and clear, avoiding slang or unprofessional language.    |
 | **Be Polite and Gentle**   | Maintain professionalism when connecting or responding to others. Greet new connections politely. Handle negative comments gracefully and choose your words carefully.        |
 | **Contact Information**    | Keep your profile updated with current email, phone number, and other contact details. Highlight roles, awards, and achievements in each job experience.                    |
 | **Introduction Paragraph** | Write a strong introduction summarizing who you are, your experience, and your career goals. Clearly outline your expertise and future aspirations.                         |
@@ -708,7 +709,7 @@ By avoiding common mistakes and actively building relevant skills and activities
 
 By following these guidelines, you can make your LinkedIn profile a powerful tool for career advancement.
 ## 18. Why is finding a job abroad so challenging for international candidates?
-<left><img src="/images/myth.png" alt="myth" width="55"/></left>
+<left><img src="/images/myth.webp" alt="Kick Start Your Cybersecurity Career: 18. Why is finding a job abroad so challenging for international candidates?" width="55" height="55" loading="lazy" decoding="async"></left>
 Why companies don't sponsor, they just need to provide a sponsorship letter right then why they don't do it?
 
 Do you know how much it would cost a company if they sponsor a candidate outside of their own country? (**I am taking an example of UK as I have UK experience**)
@@ -789,7 +790,7 @@ By following the below bulletproof framework with dedication, you are setting yo
     - Update your resume and LinkedIn profile with new skills and expertise every 2 weeks.
 
 ### Step 5: Create Minimum 10 Target Countries
-1. <left><img src="/images/tip.png" alt="tip" width="55"/></left> Select top 10 countries in which you are interested to migrate. Imagine depending upon geopolitical stuff, market demand, government rules and many other factors your dream country may or may not be ease. Hence you need to pick a region rather than specific country. Region breakdown is as follows:
+1. <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Step 5: Create Minimum 10 Target Countries" width="55" height="55" loading="lazy" decoding="async"></left> Select top 10 countries in which you are interested to migrate. Imagine depending upon geopolitical stuff, market demand, government rules and many other factors your dream country may or may not be ease. Hence you need to pick a region rather than specific country. Region breakdown is as follows:
 
 | **Region**   | **Description**                                                               |
 |--------------|-------------------------------------------------------------------------------|
@@ -803,11 +804,11 @@ By following the below bulletproof framework with dedication, you are setting yo
 
 
 ### Step 6: Expand Your Network
-1. <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Connect with Professionals**
+1. <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Step 6: Expand Your Network" width="55" height="55" loading="lazy" decoding="async"></left>**Connect with Professionals**
    - Add 30/40 security professionals (at least at your same designation or above, I prefer anyone who is manager and above) daily from your target countries of any region you chose from above.
    - Rotate to a new country every week.
 
-2. <left><img src="/images/tip.png" alt="tip" width="55"/></left>**Connect with Recruiters**  
+2. <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Step 6: Expand Your Network" width="55" height="55" loading="lazy" decoding="async"></left>**Connect with Recruiters**  
    - Add 20 security recruiters daily from the same target countries.
    - Engage in meaningful conversations and discussions.
    - Below are the various roles for specific Cybersecurity Recruiters you can find on LinkedIn.
@@ -818,7 +819,7 @@ By following the below bulletproof framework with dedication, you are setting yo
       - Security Recruitment Specialist
       - Cybersecurity Staffing
       - Cyber Talent Consultant
-   - <left><img src="/images/tip.png" alt="tip" width="55"/></left>Do you know you can create boolean search queries based on your need and perform search effectively on LinkedIn.     
+   - <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Step 6: Expand Your Network" width="55" height="55" loading="lazy" decoding="async"></left>Do you know you can create boolean search queries based on your need and perform search effectively on LinkedIn.     
 
       ##### Basic Search
       ("Cybersecurity Recruiter" OR "Information Security Recruiter" OR "Cyber Talent Acquisition Specialist" OR "Security Recruitment Specialist")
@@ -831,9 +832,9 @@ By following the below bulletproof framework with dedication, you are setting yo
 
       ##### Targeting Agencies
       (("Cybersecurity Recruiter" OR "Cybersecurity Staffing Specialist") AND ("CyberSN" OR "Hays Technology" OR "Optiv"))
-    - <left><img src="/images/tip.png" alt="tip" width="55"/></left>Alternatively you can also use advance filters of LinkedIn to narrow down your searches as mentioned in the below screenshot.
+    - <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Step 6: Expand Your Network" width="55" height="55" loading="lazy" decoding="async"></left>Alternatively you can also use advance filters of LinkedIn to narrow down your searches as mentioned in the below screenshot.
 
-<Center><img src="/images/linkedin.png" alt="LinkedIn" width="700"/></Center>
+<img src="/images/linkedin.webp" alt="LinkedIn" width="700" height="664" loading="lazy" decoding="async">
 
 ### Step 7: Optimize Your Resume
 1. Tailor your resume to match the job description:
@@ -845,11 +846,11 @@ By following the below bulletproof framework with dedication, you are setting yo
 ### Step 8: Apply Strategically
 1. Apply to 10 jobs daily in each target country.
    - If focusing on your home country, follow the same routine.
-2. <left><img src="/images/tip.png" alt="tip" width="55"/></left> Track your applications using a spreadsheet. It is extremely important to ask the full name of the recruiter and his/her numbers. Lots of companies when they do the first initial screening HR call, you would not have an official email. Post screening if they don't come back and you want to reachout, you won't have any contact information. Sometimes more than 1 agencies or recruiters are hiring for the same position in one large company. So it's easy for you to map all these information in your excel tracker.
+2. <left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Step 8: Apply Strategically" width="55" height="55" loading="lazy" decoding="async"></left> Track your applications using a spreadsheet. It is extremely important to ask the full name of the recruiter and his/her numbers. Lots of companies when they do the first initial screening HR call, you would not have an official email. Post screening if they don't come back and you want to reachout, you won't have any contact information. Sometimes more than 1 agencies or recruiters are hiring for the same position in one large company. So it's easy for you to map all these information in your excel tracker.
 
 ### Timeline and Expectations
 - **Duration**: Follow this methodology consistently for **8 months** to see tangible results.  
-- <left><img src="/images/warning.png" alt="warning" width="55"/></left>
+- <left><img src="/images/warning.webp" alt="Kick Start Your Cybersecurity Career: Timeline and Expectations" width="55" height="55" loading="lazy" decoding="async"></left>
 **Results**: While there’s no guaranteed timeline, consistent efforts will lead to:
   - A cybersecurity job within a year.
   - Expanded LinkedIn network and increased visibility.
@@ -867,7 +868,7 @@ By following the below bulletproof framework with dedication, you are setting yo
 - **Networking Impact**: Your connections and shared content can lead to unexpected opportunities over time.  
 
 ## 20. How do I know it’s the right time to switch jobs?
-<center><img src="/images/job-satisfaction.png" alt="js" width="900"/></center>
+<img src="/images/job-satisfaction.webp" alt="Kick Start Your Cybersecurity Career: 20. How do I know it’s the right time to switch jobs?" width="900" height="849" loading="lazy" decoding="async">
 
 ## 21. What are the general DOs and DON’Ts in cybersecurity?
 | **✅ DO**                                                                                                                                                               | **❌ DON'T**                                                                                                                       |
@@ -922,7 +923,7 @@ By following the below bulletproof framework with dedication, you are setting yo
 ### Actionable Methods to Stay Updated
 
 
-<left><img src="/images/act.png" alt="action" width="65"/></left>
+<left><img src="/images/act.webp" alt="Kick Start Your Cybersecurity Career: Actionable Methods to Stay Updated" width="65" height="65" loading="lazy" decoding="async"></left>
 
 | **Method**                                  | **Description**                                                                                                                             | **Action Steps**                                                                                                                      |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
@@ -954,7 +955,7 @@ By following the below bulletproof framework with dedication, you are setting yo
 By implementing these strategies, you can stay ahead in the rapidly evolving cybersecurity landscape.
 
 ## 24. Why can’t I become a CEO right out of my degree?
-<left><img src="/images/warning.png" alt="warning" width="55"/></left>
+<left><img src="/images/warning.webp" alt="Kick Start Your Cybersecurity Career: 24. Why can’t I become a CEO right out of my degree?" width="55" height="55" loading="lazy" decoding="async"></left>
 <style>
   .kickstart-ceo {
     margin: clamp(2rem, 6vw, 3.2rem) auto;
@@ -1006,35 +1007,35 @@ By implementing these strategies, you can stay ahead in the rapidly evolving cyb
 <div class="kickstart-ceo">
   <div class="kickstart-ceo__grid">
     <div class="kickstart-ceo__item">
-      <img src="/images/market-exp.png" alt="Market Experience Icon">
+      <img src="/images/market-exp.webp" alt="Market Experience Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>No Market Experience</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/competition.png" alt="Competitor Experience Icon">
+      <img src="/images/competition.webp" alt="Competitor Experience Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>No Competitor Experience</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/interactions.png" alt="Customer Interaction Icon">
+      <img src="/images/interactions.webp" alt="Customer Interaction Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>No Professional Experience with Customers</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/trust.png" alt="Trust Icon">
+      <img src="/images/trust.webp" alt="Trust Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>No One Knows or Trusts You</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/hard-work.png" alt="Project Icon">
+      <img src="/images/hard-work.webp" alt="Project Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>Struggle to Get Projects</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/gap.png" alt="Experience Gap Icon">
+      <img src="/images/gap.webp" alt="Experience Gap Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>Long Gap in Professional Experience</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/patience.png" alt="Patience Icon">
+      <img src="/images/patience.webp" alt="Patience Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>Lose Patience</strong></p>
     </div>
     <div class="kickstart-ceo__item">
-      <img src="/images/reputation.png" alt="Reputation Icon">
+      <img src="/images/reputation.webp" alt="Reputation Icon" width="512" height="512" loading="lazy" decoding="async">
       <p><strong>Reputation at Stake When Searching for a Job</strong></p>
     </div>
   </div>
@@ -1044,7 +1045,7 @@ By implementing these strategies, you can stay ahead in the rapidly evolving cyb
 
 ### Core Elements for Success
 
-<left><img src="/images/tip.png" alt="tip" width="55"/></left>
+<left><img src="/images/tip.webp" alt="Kick Start Your Cybersecurity Career: Core Elements for Success" width="55" height="55" loading="lazy" decoding="async"></left>
 | **Solid Product**                                                                                                               | **Unique Service**                                                                                                                                                                                                                                                                                   | **Solid Funding**                                                                                                              |
 |-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Creating a product that is unique and solves significant problems for enterprises. Ensure no other product in the market is as good as yours, and include all features to meet any large enterprise's needs.                                     | Offering no common services (like code reviews or standard risk management assessments). Instead, provide services that are unique and deliver exceptional value compared to competitors.                                                                 | If you don't have a great idea, invest in building an exceptional service or product with the help of a skilled and experienced team.                              |
@@ -1074,7 +1075,7 @@ Post-analysis, create your product and sell it in the market as a dynamic entrep
 
 ## 25. How do I stay motivated and overcome setbacks?
 
-<center><img src="/images/skill-demotivate.png" alt="gpt1" width="450"/></center>
+<img src="/images/skill-demotivate.webp" alt="Kick Start Your Cybersecurity Career: 25. How do I stay motivated and overcome setbacks?" width="450" height="530" loading="lazy" decoding="async">
 
 
 Demotivation in cybersecurity is not new. With the high level of competition in the industry, common causes include:
@@ -1113,7 +1114,7 @@ The key to staying motivated in cybersecurity lies in shifting your perspective 
 
    It's common to feel intimidated or demotivated when comparing your experience to those who have been in cybersecurity for decades. However, here's a fresh perspective to help you stay motivated:
 
-   <center><img src="/images/exp-demotivate.png" alt="gpt1" width="850"/></center>
+   <img src="/images/exp-demotivate.webp" alt="Kick Start Your Cybersecurity Career: Overcoming Demotivation Due to Experience Gap" width="850" height="504" loading="lazy" decoding="async">
 
 ### The Reality of Experience
    1. **Experience vs. Life Expectancy**  

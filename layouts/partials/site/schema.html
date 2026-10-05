@@ -1,0 +1,42 @@
+{{- $page := .page -}}
+{{- $social := site.Params.social -}}
+{{- $sameAs := slice -}}
+{{- with $social.linkedin }}{{ $sameAs = $sameAs | append (printf "https://www.linkedin.com/in/%s" .) }}{{ end -}}
+{{- with $social.github }}{{ $sameAs = $sameAs | append (printf "https://github.com/%s" .) }}{{ end -}}
+{{- with $social.twitter }}{{ $sameAs = $sameAs | append (printf "https://x.com/%s" .) }}{{ end -}}
+{{- with $social.youtube }}{{ $sameAs = $sameAs | append (printf "https://www.youtube.com/%s" .) }}{{ end -}}
+
+{{- $person := dict
+  "@type" "Person"
+  "@id" (printf "%s#person" site.BaseURL)
+  "name" site.Params.author
+  "alternateName" "Frogy"
+  "url" site.BaseURL
+  "jobTitle" site.Params.job_title
+  "worksFor" (dict "@type" "Organization" "name" site.Params.employer)
+  "sameAs" $sameAs
+  "knowsAbout" (slice "Detection Engineering" "Cyber Threat Intelligence" "Vulnerability Management" "Penetration Testing" "Red Teaming" "Attack Surface Management")
+-}}
+{{- with .image }}{{ $person = merge $person (dict "image" .) }}{{ end -}}
+
+{{- $schema := dict -}}
+{{- if $page.IsHome -}}
+  {{- $schema = merge (dict "@context" "https://schema.org") $person -}}
+{{- else if and $page.IsPage (eq $page.Section "posts") -}}
+  {{- $schema = dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" $page.Title
+    "description" .desc
+    "url" $page.Permalink
+    "mainEntityOfPage" $page.Permalink
+    "datePublished" ($page.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" ($page.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "author" $person
+    "publisher" $person
+  -}}
+  {{- with $page.Params.tags }}{{ $schema = merge $schema (dict "keywords" (delimit . ", ")) }}{{ end -}}
+{{- end -}}
+{{- with $schema }}
+<script type="application/ld+json">{{ . | jsonify | safeJS }}</script>
+{{- end -}}

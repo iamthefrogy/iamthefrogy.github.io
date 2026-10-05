@@ -1,0 +1,13 @@
+<article class="post-row">
+  <p class="post-row__meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (site.Params.dateformat | default "Jan 2, 2006") }}</time>
+    <span aria-hidden="true">&middot;</span> {{ .ReadingTime }} min read
+  </p>
+  <h3 class="post-row__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p class="post-row__excerpt">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 170 }}{{ end }}</p>
+  {{ with .GetTerms "tags" }}
+  <ul class="tag-list">
+    {{ range . }}<li><a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+</article>

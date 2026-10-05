@@ -1,7 +1,8 @@
 +++
 date = '2025-08-28T03:10:29+01:00'
 draft = false
-title = '(SIEM) Advanced Detection Engineering'
+title = 'Advanced Detection Engineering'
+tags = ['Detection Engineering']
 +++
 
 ## Introduction
@@ -9,9 +10,9 @@ I was going through the SANS material on detection engineering from multiple of 
 
 The summary of entire process is:
 
-**OPEN IMAGE IN A NEW TAB AND IT WILL BE THE HIGH RESOLUTION IMAGE**
+Click the image to open it in full size.
 
-<center><img src="/images/advanced-detection-engineering.png" width="1300"/></center></br>
+<img src="/images/advanced-detection-engineering.webp" alt="Advanced Detection Engineering: Introduction" width="1300" height="370" decoding="async">
 
 
 
@@ -32,7 +33,7 @@ The summary of entire process is:
 
 **Key takeaway:** Hire + grow staff; collect the right data; adopt tools that support analyst workflow. (MITRE “11 Strategies”).
 
-**Aporoach:**  
+**Approach:**  
 People/Process deficits → need hiring & training + repeatable processes → enables tactical (not just compliant) SIEM that maintains detection fidelity.
 
 ---

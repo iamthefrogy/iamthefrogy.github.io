@@ -1,10 +1,11 @@
 +++
 date = '2024-12-30T16:16:28Z'
 draft = false
-title = '(CTI) Dead Drops: Threat Actor Perspective'
+title = 'Dead Drops: Threat Actor Perspective'
+tags = ['Threat Intelligence']
 +++
 
-<center><img src="/images/dd_bg.png" alt="dd_bg" width="850"/></center></br>
+<img src="/images/dd_bg.webp" alt="Dead Drops: Threat Actor Perspective" width="850" height="481" decoding="async">
 
 ## Introduction
 
@@ -62,11 +63,11 @@ If you are planning to interact with Dead Drops for research, curiosity, or ethi
 - **Enforce USB Policies:** Disable USB ports where unnecessary or use endpoint security solutions to monitor their use.
 - **Track Dead Drops Near You:** Monitor public databases like [**DeadDrops.com**](https://deaddrops.com/db-map-2/) to stay aware of potential local threats.
 
-<center><img src="/images/dd1.png" alt="dd1" width="1350"/></center>
+<img src="/images/dd1.webp" alt="Dead Drops: Threat Actor Perspective: Practical Advice for Using or Investigating Dead Drops" width="1205" height="971" loading="lazy" decoding="async">
 
-<center><img src="/images/dd2.png" alt="dd2" width="1350"/></center>
+<img src="/images/dd2.webp" alt="Dead Drops: Threat Actor Perspective: Practical Advice for Using or Investigating Dead Drops" width="1290" height="737" loading="lazy" decoding="async">
 
-<center><img src="/images/dd3.png" alt="dd3" width="1350"/></center></br>
+<img src="/images/dd3.webp" alt="Dead Drops: Threat Actor Perspective: Practical Advice for Using or Investigating Dead Drops" width="1350" height="697" loading="lazy" decoding="async">
 
 **For Public Users**
 - **Be Skeptical:** If you find a Dead Drop, treat it as suspicious. Files on these drives could be malicious.

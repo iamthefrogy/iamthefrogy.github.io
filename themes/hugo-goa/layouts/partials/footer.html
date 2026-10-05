@@ -1,20 +1,23 @@
-</div>
+    </div>
 
-{{ with .Site.Params.extra }}
-{{ if .highlightjs }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-{{ range .highlightjslanguages }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{.}}.min.js"></script>
-{{ end }}
+    {{ partial "site/footer.html" . }}
 
-<script>hljs.highlightAll();</script>
-{{ end }}
-{{ end }}
-
-{{ template "_internal/google_analytics.html" . }}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="/js/custom.js"></script>
+    {{- $isActorDB := eq .Type "threat-actor-db" -}}
+    {{- $hasCode := and (not .IsHome) (findRE "<pre" .Content 1) -}}
+    {{- if $hasCode }}
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+        integrity="sha384-F/bZzf7p3Joyp5psL90p/p89AZJsndkSoGwRpXcZhleCWhd8SnRuoYo4d0yirjJp" crossorigin="anonymous"></script>
+    {{- end }}
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {{- if $isActorDB }}
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
+        integrity="sha384-k5vbMeKHbxEZ0AEBTSdR7UjAgWCcUfrS8c0c5b2AfIh7olfhNkyCZYwOfzOQhauK" crossorigin="anonymous"></script>
+    <script defer src="{{ "js/threat-actor.js" | relURL }}"></script>
+    {{- end }}
+    <script defer src="{{ "js/custom.js" | relURL }}"></script>
 </body>
 
 </html>

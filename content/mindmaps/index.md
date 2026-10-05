@@ -1,56 +1,55 @@
 +++
 date = '2024-01-03T22:49:54Z'
 draft = false
-title = 'About Visualisations'
+title = 'Mindmaps'
+description = 'Mind maps and infographics on Active Directory attacks, bug bounty, detection engineering, GRC and more. Click any image for full size.'
+showpagemeta = false
+toc = false
 +++
 
-Welcome to the Visualizations section! Here, you'll find a variety of diagrams, concept maps, mind maps, infographics, and other visual aids that help illustrate important concepts and ideas. Whether you're a student looking for inspiration for your next project or an educator seeking creative ways to teach complex topics, this section is here to help.
+Diagrams, concept maps and infographics I use to explain security topics. I find a good picture often teaches faster than ten pages of text.
 
-**I personally love concept arts and I believe they play a crucial role in understanding complex ideas.** That's why I created this section specifically to showcase and promote the use of concept arts in education and communication. Whether you're looking for inspiration or just want to learn more about a particular topic, the Visualizations section of our website is a great place to start. With so many different types of visualizations to choose from, you're sure to find something that interests you and helps you better understand the world around you.
-
-So why not take a look and see what catches your eye? I hope you find it as helpful as I do!
-
-I use GenAI to create these visualizations.
+Click any image to open it in full size. I use GenAI tools to help draw these; the ideas and structure are mine.
 
 
 ---
 
-##### Understanding Active Directory and how bloodhound enumerates entire directory
-<center><img src="/images/ad-bloodhound-relation.png" width="1250"/></br></center></br>
+### Understanding Active Directory and how bloodhound enumerates entire directory
+<img src="/images/ad-bloodhound-relation.webp" alt="Understanding Active Directory and how bloodhound enumerates entire directory" width="1250" height="694" decoding="async">
 
-##### Bug-Bounty Recon Automation (Active vs. Passive)
-<center><img src="/images/bb-automation-active-passive.png" width="450"/></br></center></br>
+### Bug-Bounty Recon Automation (Active vs. Passive)
+<img src="/images/bb-automation-active-passive.webp" alt="Bug-Bounty Recon Automation (Active vs. Passive)" width="450" height="672" loading="lazy" decoding="async">
 
-##### [The Darker Side of Bug-Bounty](https://chintangurjar.com/posts/full-time-bug-bounty/)  
-<center><img src="/images/bb-demotivation.png" width="1300"/></br></center></br>
+### [The Darker Side of Bug-Bounty](https://chintangurjar.com/posts/full-time-bug-bounty/)  
+<img src="/images/bb-demotivation.webp" alt="The Darker Side of Bug-Bounty" width="1300" height="466" loading="lazy" decoding="async">
 
-##### [Full-time Bug-Bounty Roadmap](https://chintangurjar.com/posts/full-time-bug-bounty/)  
-<center><img src="/images/bb-fulltime.jpeg" width="800"/></br></center></br>
+### [Full-time Bug-Bounty Roadmap](https://chintangurjar.com/posts/full-time-bug-bounty/)  
+<img src="/images/bb-fulltime.webp" alt="Full-time Bug-Bounty Roadmap" width="800" height="740" loading="lazy" decoding="async">
 
-##### [Full-time Bug-Bounty Roadmap - Detailed](https://chintangurjar.com/posts/full-time-bug-bounty/)  
-<center><img src="/images/bb-full-time2.jpeg" width="1300"/></br></center></br>
+### [Full-time Bug-Bounty Roadmap - Detailed](https://chintangurjar.com/posts/full-time-bug-bounty/)  
+<img src="/images/bb-full-time2.webp" alt="Full-time Bug-Bounty Roadmap - Detailed" width="1300" height="241" loading="lazy" decoding="async">
 
-##### [Kickstart Cyber Career](https://chintangurjar.com/kickstartcareer/)  
-<center><img src="/images/kickstart-cyber-career.jpeg" alt="kickstart-cyber-career" width="950"/></br></center></br>
+### [Kickstart Cyber Career](https://chintangurjar.com/kickstartcareer/)  
+<img src="/images/kickstart-cyber-career.webp" alt="kickstart-cyber-career" width="950" height="820" loading="lazy" decoding="async">
 
-##### [Network Pentest Checklist from book.hacktricks.xyz](https://book.hacktricks.wiki/en/generic-methodologies-and-resources/pentesting-network/index.html)  
-<center><img src="/images/network-pentest-checklist.png" width="1250"/></br></center></br>
+### [Network Pentest Checklist from book.hacktricks.xyz](https://book.hacktricks.wiki/en/generic-methodologies-and-resources/pentesting-network/index.html)  
+<img src="/images/network-pentest-checklist.webp" alt="Network Pentest Checklist from book.hacktricks.xyz" width="1250" height="1459" loading="lazy" decoding="async">
 
-##### [(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules](https://chintangurjar.com/posts/intel-to-hunt/)  
-<center><img src="/images/ROAD_CTIDetection_Diagram.svg" width="950"/></br></center></br>
+### [(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules](https://chintangurjar.com/posts/intel-to-hunt/)  
+<img src="/images/ROAD_CTIDetection_Diagram.svg" alt="(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules" width="950" loading="lazy" decoding="async">
 
-##### (CTI) Starting Cybersecurity Business
-<center><img src="/images/start-cyber-business.png" width="1100"/></br></center></br>
+### (CTI) Starting Cybersecurity Business
+<img src="/images/start-cyber-business.webp" alt="(CTI) Starting Cybersecurity Business" width="1100" height="993" loading="lazy" decoding="async">
 
-##### [(AppSec) Ensure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile](https://csrc.nist.gov/pubs/sp/800/218/a/final)  
-<center><img src="/images/ssdf-ai-3.png" width="700"/></br></center></br>
+### [(AppSec) Ensure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile](https://csrc.nist.gov/pubs/sp/800/218/a/final)  
+<img src="/images/ssdf-ai-3.webp" alt="(AppSec) Ensure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile" width="700" height="1390" loading="lazy" decoding="async">
 
-##### (Bug-Bounty) BugBounty Recon Methodology
-<center><img src="/images/external-recon-1.png" width="1250"/></br></center></br>
-<center><img src="/images/external-recon-2.png" width="1450"/></br></center></br>
+### (Bug-Bounty) BugBounty Recon Methodology
+<img src="/images/external-recon-1.webp" alt="(Bug-Bounty) BugBounty Recon Methodology" width="1250" height="1294" loading="lazy" decoding="async">
+<img src="/images/external-recon-2.webp" alt="(Bug-Bounty) BugBounty Recon Methodology" width="1450" height="760" loading="lazy" decoding="async">
 
-##### SIEM Query Document Knowledgebase Template
-<center><img src="/images/siem-query-document-kb-template.png" width="650"/></br></center></br>
+### SIEM Query Document Knowledgebase Template
+<img src="/images/siem-query-document-kb-template.webp" alt="SIEM Query Document Knowledgebase Template" width="650" height="997" loading="lazy" decoding="async">
 
-##### GRC Summary
-<center><img src="/images/grc-summary.png" width="1250"/></br></center></br>
+### GRC Summary
+<img src="/images/grc-summary.webp" alt="GRC Summary" width="1250" height="382" loading="lazy" decoding="async">

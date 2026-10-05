@@ -1,7 +1,8 @@
 +++
 date = '2024-12-24T22:58:04Z'
 draft = false
-title = '(CTI) - How to Build Cyber Threat Intelligence Division For Your Organisation'
+title = 'How to Build Cyber Threat Intelligence Division For Your Organisation'
+tags = ['Threat Intelligence']
 +++
 
 Establishing a Cyber Threat Intelligence (CTI) division involves a structured approach encompassing planning, designing, and optimizing processes to effectively counter cyber threats. Below is a practical guide to building a CTI division:

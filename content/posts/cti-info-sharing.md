@@ -1,7 +1,8 @@
 +++
 date = '2025-02-07T04:54:48Z'
 draft = false
-title = '(CTI) Threat Intelligence Information Sharing'
+title = 'Threat Intelligence Information Sharing'
+tags = ['Threat Intelligence']
 +++
 
 ---

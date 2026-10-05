@@ -1,45 +1,32 @@
-{{ partial "main_menu.html" . }}
 <main class="page-shell">
   <section class="page-collection">
     <header class="page-collection__header">
+      {{ if eq .Kind "term" }}
+      <a class="page-article__back" href="{{ "posts/" | relURL }}"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>All writing</a>
+      {{ end }}
       <h1 class="page-collection__title">{{ .Title }}</h1>
+      {{ with .Description }}
+      <p class="page-collection__intro">{{ . }}</p>
+      {{ end }}
       {{ with .Content }}
-      <div class="page-collection__intro">
-        {{ . }}
-      </div>
+      <div class="page-collection__intro">{{ . }}</div>
+      {{ end }}
+      {{ if or (eq .Section "posts") (eq .Kind "term") (eq .Kind "taxonomy") }}
+      <ul class="tag-list tag-list--filter" aria-label="Browse by topic">
+        <li><a class="tag{{ if eq .Section "posts" }} is-active{{ end }}" href="{{ "posts/" | relURL }}">All</a></li>
+        {{ $current := . }}
+        {{ range site.Taxonomies.tags.ByCount }}
+        <li><a class="tag{{ if eq $current.RelPermalink .Page.RelPermalink }} is-active{{ end }}" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <span class="tag__count">{{ .Count }}</span></a></li>
+        {{ end }}
+      </ul>
       {{ end }}
     </header>
-    <div class="page-collection__list">
-      {{ range .Data.Pages.ByPublishDate.Reverse }}
-      <article class="page-collection__item">
-        <div class="page-collection__meta">
-          {{ if not .Date.IsZero }}{{ .Date.Format (default "Jan 2, 2006" $.Site.Params.dateformat) | upper }}{{ end }}
-          · {{ math.Round (div (countwords .Content) 220.0) }} MIN READ
-          {{ if isset .Params "categories" }}
-          {{ $total := len .Params.categories }}
-          {{ if gt $total 0 }}
-          ·
-          {{ $totalMinusOne := sub $total 1 }}
-          {{ range $i, $cat := sort .Params.categories }}
-          <a class="page-collection__meta-link"
-            href="{{ "categories/" | relURL }}{{ $cat | humanize | urlize }}">{{ $cat | upper }}</a>{{ if lt $i $totalMinusOne }}, {{ end }}
-          {{ end }}
-          {{ end }}
-          {{ end }}
-        </div>
-        <h2 class="page-collection__item-title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-        <p class="page-collection__excerpt">
-          {{ with .Description }}
-          {{ . }}
-          {{ else }}
-          {{ .Summary | plainify | truncate 150 }}
-          {{ end }}
-        </p>
-        <a class="page-collection__cta" href="{{ .RelPermalink }}">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
-      </article>
+    {{ if ne .Kind "taxonomy" }}
+    <div class="post-list">
+      {{ range .Pages.ByPublishDate.Reverse }}
+      {{ partial "site/post-row.html" . }}
       {{ end }}
     </div>
+    {{ end }}
   </section>
 </main>

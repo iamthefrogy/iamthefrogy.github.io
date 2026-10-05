@@ -1,7 +1,8 @@
 +++
 date = '2024-12-25T11:16:24Z'
 draft = false
-title = '(VM) - Mind Your Vulnerability Gaps: Risk-based VM Approach'
+title = 'Mind Your Vulnerability Gaps: Risk-based VM Approach'
+tags = ['Vulnerability Management and ASM']
 +++
 
 ## Introduction: Why is Vulnerability Management Important?

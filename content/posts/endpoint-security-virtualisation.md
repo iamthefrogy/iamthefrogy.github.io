@@ -1,10 +1,11 @@
 +++
 date = '2026-09-02T22:19:42+01:00'
 draft = false
-title = '(EDR) Endpoint Security Virtualisation PoV'
+title = 'Endpoint Security Virtualisation PoV'
+tags = ['Detection Engineering']
 +++
 
-# How Bad Is It Really? A Field Guide to Endpoint Security Severity
+## How Bad Is It Really? A Field Guide to Endpoint Security Severity
 
 **Summary:** Endpoint security findings get mis-rated in both directions - a scary-sounding privilege label gets stamped Critical with no real capability gain, while a "contained" sandbox escape gets stamped Low even though a signed driver or session token walked out first. This guide gives a repeatable six-question framework (starting position, capability gained, boundary crossed, containment, scope, blast radius) and applies it to 22 concrete endpoint scenarios spanning isolation/containment, privilege boundaries, data and trust exfiltration, telemetry integrity, update/supply-chain risk, and physical/social attack paths. The goal is the reason§ing habit, not the 22 memorized answers.
 
@@ -14,7 +15,7 @@ title = '(EDR) Endpoint Security Virtualisation PoV'
 
 ## THE FRAMEWORK - how to reason through severity
 
-<center><img src="/images/edr-article-images/framework_generic.svg" alt="The endpoint severity reasoning framework" width="900"/></center></br>
+<img src="/images/edr-article-images/framework_generic.svg" alt="The endpoint severity reasoning framework" width="900" decoding="async">
 
 Whenever you assess a scenario, walk through these six questions in order:
 
@@ -34,17 +35,17 @@ Whenever you assess a scenario, walk through these six questions in order:
 
 **Trap B - "Contained code" ≠ contained damage.** The isolation stops the *code* crossing the wall. It does **not** automatically stop *data, secrets, or trust* crossing it. Stolen tokens, exfiltrated files, and signed drivers can all escape the box even when the code can't.
 
-<center><img src="/images/edr-article-images/containment_model_generic.svg" alt="Code containment versus impact containment" width="900"/></center></br>
+<img src="/images/edr-article-images/containment_model_generic.svg" alt="Code containment versus impact containment" width="900" loading="lazy" decoding="async">
 
 Always split one scary question into two calm ones: *"Can the CODE break out?"* and *"Can the IMPACT break out?"* They have different answers.
 
 ### The privilege ladder - where real boundaries actually are
 
-<center><img src="/images/edr-article-images/privilege_ladder_generic.svg" alt="The privilege ladder" width="900"/></center></br>
+<img src="/images/edr-article-images/privilege_ladder_generic.svg" alt="The privilege ladder" width="900" loading="lazy" decoding="async">
 
 Severity comes from crossing a **real** boundary (initial access, user→admin, SYSTEM→kernel). Moving between rungs that share a boundary (admin→SYSTEM on a box you already admin) is barely a gain. Use this ladder to separate a label change from a real capability change.
 
-# THE SCENARIOS
+## THE SCENARIOS
 
 Grouped by theme. Each has: the setup, the core question, the reasoning path, the severity verdict, and the trap to avoid.
 
@@ -53,7 +54,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 1 - Full compromise inside the guest, no breakout
 **Setup:** Attacker corrupts the guest-environment drivers, gets admin *inside the isolated task environment*. There is no breakout to the host. How bad is it?
 
-<center><img src="/images/edr-article-images/scenario-01-contained-impact.svg" alt="Scenario 1 impact map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-01-contained-impact.svg" alt="Scenario 1 impact map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you understand that "no code breakout" is only half the answer? Do you reach for Trap B?
 
@@ -66,7 +67,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 2 - Clipboard / file-transfer bridge between guest and host
 **Setup:** The isolated web session lets the user copy text and drag files out to the host (a usability feature). Attacker controls content inside the guest. Severity?
 
-<center><img src="/images/edr-article-images/scenario-02-bridge.svg" alt="Scenario 2 bridge map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-02-bridge.svg" alt="Scenario 2 bridge map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you spot that *usability bridges are the real attack surface* of an isolation control - not the hypervisor itself?
 
@@ -79,7 +80,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 3 - The isolation decision is bypassed (risky task runs un-isolated)
 **Setup:** The control decides what to isolate based on the executable's filename. Attacker renames the browser/RDP client. Now the risky task runs *directly on the host*, never entering an isolated environment. Severity?
 
-<center><img src="/images/edr-article-images/scenario-03-decision-bypass.svg" alt="Scenario 3 decision bypass map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-03-decision-bypass.svg" alt="Scenario 3 decision bypass map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you understand that *bypassing the decision to isolate* is easier and just as damaging as escaping the box?
 
@@ -92,7 +93,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 4 - Guest environment used purely as a resource/pivot (no breakout)
 **Setup:** Attacker owns the guest, can't break out, but uses it to mine crypto (host memory/CPU) and to scan the internal network the guest can reach. Severity?
 
-<center><img src="/images/edr-article-images/scenario-04-network-pivot.svg" alt="Scenario 4 network pivot map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-04-network-pivot.svg" alt="Scenario 4 network pivot map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Can you separate *nuisance* impact from *pivot* impact?
 
@@ -105,7 +106,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 5 - Disposable environment teardown fails / persistence across sessions
 **Setup:** Attacker finds that something they place inside a "disposable" isolated environment actually survives teardown and is present in the *next* isolated environment the user spins up. Severity?
 
-<center><img src="/images/edr-article-images/scenario-05-persistence.svg" alt="Scenario 5 persistence map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-05-persistence.svg" alt="Scenario 5 persistence map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you understand that the disposability *is* the security control? If it fails, the whole model weakens.
 
@@ -120,7 +121,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 6 - Local admin escalates to SYSTEM
 **Setup:** Attacker already has local admin. A report says they escalated to SYSTEM and rates it Critical. Reality?
 
-<center><img src="/images/edr-article-images/scenario-06-admin-system.svg" alt="Scenario 6 admin to SYSTEM map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-06-admin-system.svg" alt="Scenario 6 admin to SYSTEM map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Trap A. Do you know admin→SYSTEM is barely a boundary on a machine you already own?
 
@@ -133,7 +134,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 7 - Local admin can disable the security agent
 **Setup:** A local admin clicks "Disable" (or kills the agent's service) and turns off endpoint protection. A report rates it Critical. Reality?
 
-<center><img src="/images/edr-article-images/scenario-07-admin-disable.svg" alt="Scenario 7 admin disable map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-07-admin-disable.svg" alt="Scenario 7 admin disable map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Attacker-model scoping. Is a malicious local admin *in scope*?
 
@@ -146,7 +147,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 8 - Standard user escalates to local admin
 **Setup:** A normal, unprivileged user finds a way to become local admin. Severity?
 
-<center><img src="/images/edr-article-images/scenario-08-user-admin.svg" alt="Scenario 8 user to admin map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-08-user-admin.svg" alt="Scenario 8 user to admin map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you recognise this crosses a *real* boundary (unlike Scenario 6)?
 
@@ -159,7 +160,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 9 - SYSTEM escalates to kernel/driver level
 **Setup:** Attacker with SYSTEM loads malicious code into the kernel via a driver. Severity?
 
-<center><img src="/images/edr-article-images/scenario-09-system-kernel.svg" alt="Scenario 9 SYSTEM to kernel map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-09-system-kernel.svg" alt="Scenario 9 SYSTEM to kernel map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you know SYSTEM→kernel *is* a real boundary (unlike admin→SYSTEM)?
 
@@ -174,7 +175,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 10 - Session cookie / token theft from inside an isolated web session
 **Setup:** Malware runs in an isolated web session (contained). Before teardown it steals the user's authenticated session cookies for their cloud email/SaaS and exfiltrates them. Severity?
 
-<center><img src="/images/edr-article-images/scenario-10-token-theft.svg" alt="Scenario 10 token theft map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-10-token-theft.svg" alt="Scenario 10 token theft map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Trap B again, and awareness of the modern shift from password theft to *token* theft.
 
@@ -187,7 +188,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 11 - Credentials typed *into* an isolated privileged session
 **Setup:** An admin uses an isolated RDP/SSH session (the isolation is meant to protect the credential from a compromised host). But the attacker has compromised *inside* the isolated session itself. Severity?
 
-<center><img src="/images/edr-article-images/scenario-11-privileged-session.svg" alt="Scenario 11 privileged session map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-11-privileged-session.svg" alt="Scenario 11 privileged session map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you understand the isolation's *direction* - it protects the session from the host, not necessarily from a threat that's already inside the session?
 
@@ -200,7 +201,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 12 - Signed driver/binary exfiltration for reuse elsewhere
 **Setup:** Attacker extracts a legitimately-signed driver or binary from the machine and reuses it (or a known-vulnerable signed driver) on *other* organisations' machines entirely. Severity?
 
-<center><img src="/images/edr-article-images/scenario-12-signed-artifact.svg" alt="Scenario 12 signed artifact map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-12-signed-artifact.svg" alt="Scenario 12 signed artifact map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you grasp that *signed trust is portable* and the blast radius jumps to "anyone, anywhere"?
 
@@ -213,7 +214,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 13 - Sensitive data visible inside the box during processing
 **Setup:** A confidential document is opened inside the isolated environment (safe from host malware). Attacker controls code inside that same isolated environment. Severity?
 
-<center><img src="/images/edr-article-images/scenario-13-data-in-use.svg" alt="Scenario 13 data-in-use map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-13-data-in-use.svg" alt="Scenario 13 data-in-use map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Same as 10/12 - containment of code, not of data-in-use.
 
@@ -228,7 +229,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 14 - Attacker forges or floods the security telemetry/logs
 **Setup:** Attacker (contained in a box, or with local access) can submit fake log/telemetry entries to the management console - forging "all healthy" events, or flooding logs to bury real ones. Severity?
 
-<center><img src="/images/edr-article-images/scenario-14-telemetry-forgery.svg" alt="Scenario 14 telemetry forgery map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-14-telemetry-forgery.svg" alt="Scenario 14 telemetry forgery map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you value *integrity of detection* as a security property in its own right?
 
@@ -241,7 +242,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 15 - Attacker disables telemetry silently (agent still "green")
 **Setup:** Attacker stops the endpoint from *sending* telemetry, but the console still shows the device as connected/healthy (last-known-good). Severity?
 
-<center><img src="/images/edr-article-images/scenario-15-silent-telemetry.svg" alt="Scenario 15 silent telemetry map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-15-silent-telemetry.svg" alt="Scenario 15 silent telemetry map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you distinguish "no alerts" from "no problems"?
 
@@ -254,7 +255,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 16 - Isolation works, but nothing is logged about what happened inside
 **Setup:** Malware detonates in the isolated environment, is contained and destroyed - but no forensic record of what it did/tried is captured. Severity?
 
-<center><img src="/images/edr-article-images/scenario-16-no-forensics.svg" alt="Scenario 16 no-forensics map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-16-no-forensics.svg" alt="Scenario 16 no-forensics map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you value post-incident visibility, not just prevention?
 
@@ -269,7 +270,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 17 - Attacker forces a downgrade to an older, vulnerable agent version
 **Setup:** Attacker can make the endpoint "update" to an *older* version of the security agent that has known vulnerabilities. Severity?
 
-<center><img src="/images/edr-article-images/scenario-17-downgrade.svg" alt="Scenario 17 downgrade map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-17-downgrade.svg" alt="Scenario 17 downgrade map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you know rollback/downgrade defeats patching entirely?
 
@@ -282,7 +283,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 18 - Update channel isn't integrity-checked (malicious update)
 **Setup:** The agent fetches updates over a channel where an attacker (MITM, or a compromised mirror) can substitute a malicious package that the agent installs. Severity?
 
-<center><img src="/images/edr-article-images/scenario-18-malicious-update.svg" alt="Scenario 18 malicious update map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-18-malicious-update.svg" alt="Scenario 18 malicious update map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you recognise a security agent's update path as a *privileged code-execution channel*?
 
@@ -295,7 +296,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 19 - A default/weak configuration ships protection-off
 **Setup:** The platform is powerful, but its *default* config leaves a key protection disabled, and most customers never change defaults. Severity?
 
-<center><img src="/images/edr-article-images/scenario-19-weak-default.svg" alt="Scenario 19 weak default map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-19-weak-default.svg" alt="Scenario 19 weak default map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you weight *real-world deployed state* over theoretical capability?
 
@@ -310,7 +311,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 20 - Attacker with physical access / evil-maid
 **Setup:** Attacker has brief physical access to a powered-off, isolation-protected laptop. Severity?
 
-<center><img src="/images/edr-article-images/scenario-20-physical.svg" alt="Scenario 20 physical access map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-20-physical.svg" alt="Scenario 20 physical access map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you know where endpoint software protection ends and physical/firmware threats begin?
 
@@ -323,7 +324,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 21 - Isolation covers the browser, but not another entry vector
 **Setup:** The control isolates browser and email attachments effectively. Attacker delivers their payload via a USB stick / a chat file / a channel the control doesn't isolate. Severity?
 
-<center><img src="/images/edr-article-images/scenario-21-uncovered-vector.svg" alt="Scenario 21 uncovered vector map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-21-uncovered-vector.svg" alt="Scenario 21 uncovered vector map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Can you find *coverage gaps* - the un-isolated path - rather than attacking the strong path?
 
@@ -336,7 +337,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 ### Scenario 22 - Social engineering the user out of the protection
 **Setup:** The control would isolate a risky action, but the attacker convinces the user to click "always allow / trust this / open outside protected mode." Severity?
 
-<center><img src="/images/edr-article-images/scenario-22-user-optout.svg" alt="Scenario 22 user opt-out map" width="700"/></center></br>
+<img src="/images/edr-article-images/scenario-22-user-optout.svg" alt="Scenario 22 user opt-out map" width="700" loading="lazy" decoding="async">
 
 **Core question:** Do you account for the human as part of the attack surface, and for "secure but bypassable-by-consent" designs?
 
@@ -346,7 +347,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 
 **Trap avoided:** don't ignore the human path just because it's "not technical" - it's often the easiest bypass.
 
-# QUICK-REFERENCE SEVERITY TABLE
+## QUICK-REFERENCE SEVERITY TABLE
 
 | # | Scenario (one-liner) | Likely verdict | The key insight |
 |---|---|---|---|
@@ -373,7 +374,7 @@ Grouped by theme. Each has: the setup, the core question, the reasoning path, th
 | 21 | Un-isolated delivery vector | High | Attack where isolation isn't |
 | 22 | Social-engineer the opt-out | Medium | Human is part of the attack surface |
 
-# THE FIVE PRINCIPLES BEHIND EVERY ANSWER
+## THE FIVE PRINCIPLES BEHIND EVERY ANSWER
 
 If you internalize nothing else, internalize these - they generate the right answer to scenarios you've never seen:
 

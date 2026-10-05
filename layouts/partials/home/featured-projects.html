@@ -1,0 +1,28 @@
+{{ with site.GetPage "/projects" }}
+{{ $cards := slice }}
+{{ range .Params.sections }}{{ range .cards }}{{ if .featured }}{{ $cards = $cards | append . }}{{ end }}{{ end }}{{ end }}
+{{ if $cards }}
+<section class="home-section home-projects">
+  <div class="section-heading section-heading--split">
+    <div>
+      <h2 class="section-heading__title">Things I have built</h2>
+      <p class="section-heading__subtitle">Open-source tools, dashboards and checklists. Free to use.</p>
+    </div>
+    <a class="section-heading__more" href="{{ .RelPermalink }}">All projects<i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+    {{ range $cards }}
+    <div class="col">
+      <article class="home-card h-100">
+        <span class="icon-square"><i class="{{ if .icon_brand }}fa-brands{{ else }}fa-solid{{ end }} {{ .icon }}" aria-hidden="true"></i></span>
+        <h3 class="home-card__title">
+          <a class="stretched-link" href="{{ .url | safeURL }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .title }}</a>
+        </h3>
+        <p class="home-card__body">{{ .description }}</p>
+      </article>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+{{ end }}

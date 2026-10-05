@@ -2,10 +2,12 @@
 date = '2024-12-30T15:58:23Z'
 draft = false
 title = 'Disclaimer and Legal Notice'
+description = 'Disclaimer and legal notice for content published by Chintan Gurjar on this website and other platforms.'
+showpagemeta = false
 +++
 
 ## Agreement and Acknowledgment
-By engaging with the information, resources, code samples, commands, tutorials, videos, or any other content (collectively referred to as "Content") shared by Chintan Gurjar across any platform—including but not limited to this website (https://chintangurjar.com), blogs, GitHub repositories, LinkedIn posts, YouTube videos, Twitter, Facebook, and any offline/online interactions (collectively referred to as "Platforms")—you (the "User") acknowledge and agree to the following terms and conditions. If you do not agree to these terms, you must immediately cease using the Content and any associated services.
+By engaging with the information, resources, code samples, commands, tutorials, videos, or any other content (collectively referred to as "Content") shared by Chintan Gurjar across any platform—including but not limited to this website (https://chintangurjar.com), blogs, GitHub repositories, LinkedIn posts, YouTube videos, X (Twitter), and any offline/online interactions (collectively referred to as "Platforms")—you (the "User") acknowledge and agree to the following terms and conditions. If you do not agree to these terms, you must immediately cease using the Content and any associated services.
 
 ---
 
@@ -82,7 +84,7 @@ By accessing the Content, you agree to indemnify, defend, and hold harmless Chin
    Users must comply with the **Computer Misuse Act 1990**. Any misuse of the Content, including unauthorized access to systems or networks, is strictly prohibited and may result in legal action.
 
 3. **Data Protection:**
-   Any personal data collected via this website or associated platforms will be handled in compliance with the **UK GDPR**. Refer to the [Privacy Policy](#) for more details on data handling practices.
+   This website does not use analytics, cookies, comments or forms, and does not collect personal data. Pages load some styling and script files from third-party CDNs (such as jsDelivr, cdnjs and Google Fonts), and those providers may log your IP address as part of serving the files. If you email me, your message is handled in compliance with the **UK GDPR**.
 
 4. **Jurisdiction and Governing Law:**
    This disclaimer is governed by the laws of England and Wales. Any disputes arising from the use of this website or its Content shall fall under the exclusive jurisdiction of the courts of England and Wales.

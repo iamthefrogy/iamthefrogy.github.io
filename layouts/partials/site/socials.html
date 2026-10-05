@@ -1,0 +1,18 @@
+{{ $social := site.Params.social }}
+{{ $class := .class }}
+{{ with $social.linkedin }}
+<a class="{{ $class }}" href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noopener me"
+  aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+{{ end }}
+{{ with $social.github }}
+<a class="{{ $class }}" href="https://github.com/{{ . }}" target="_blank" rel="noopener me"
+  aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+{{ end }}
+{{ with $social.twitter }}
+<a class="{{ $class }}" href="https://x.com/{{ . }}" target="_blank" rel="noopener me"
+  aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+{{ end }}
+{{ with $social.youtube }}
+<a class="{{ $class }}" href="https://www.youtube.com/{{ . }}" target="_blank" rel="noopener me"
+  aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+{{ end }}

@@ -1,7 +1,8 @@
 +++
 date = '2024-12-24T23:00:30Z'
 draft = false
-title = '(CTI) - CTI Maturity Model'
+title = 'CTI Maturity Model'
+tags = ['Threat Intelligence']
 +++
 
 ## **Introduction**

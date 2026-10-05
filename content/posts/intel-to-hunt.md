@@ -1,7 +1,8 @@
 +++
 date = '2025-01-02T21:38:11Z'
 draft = false
-title = '(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rules'
+title = 'Navigating the R.O.A.D. from Threat Intelligence to Detection Rules'
+tags = ['Threat Intelligence', 'Detection Engineering']
 +++
 
 ## Overview of R.O.A.D.
@@ -12,7 +13,7 @@ title = '(CTI) Navigating the R.O.A.D. from Threat Intelligence to Detection Rul
 - **Actionable Detection**  
 - **Deployment & Refinement**
 
-<center><img src="/images/ROAD_CTIDetection_Diagram.svg" alt="r1" width="1200"/></center></br>
+<img src="/images/ROAD_CTIDetection_Diagram.svg" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Overview of R.O.A.D." width="1200" decoding="async">
 
 When combined with the six steps outlined below, this approach ensures your organization can systematically transform raw CTI into real-world detection rules. While each step is broken down into an extensive checklist, think of R.O.A.D. as the conceptual glue that keeps your CTI lifecycle aligned, effective, and continually improving.
 
@@ -23,7 +24,7 @@ When combined with the six steps outlined below, this approach ensures your orga
 **Objective**  
 Assemble threat data from all relevant sources, then standardize it so that your organization can use it effectively. This ensures incoming information is high-quality, unique, and ready for downstream analysis.
 
-<center><img src="/images/road3.png" alt="r3" width="650"/></center>
+<img src="/images/road3.webp" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Step 1: Collection and Normalization" width="650" height="389" loading="lazy" decoding="async">
 
 1. **Identify and Catalog Sources**  
    - **External Threat Feeds**  
@@ -73,7 +74,7 @@ Assemble threat data from all relevant sources, then standardize it so that your
 **Objective**  
 Enrich each threat indicator with meaningful context, such as business impact, attacker tactics, and any internal visibility you have. Contextualization transforms raw data into actionable intelligence.
 
-<center><img src="/images/road4.png" alt="r4" width="750"/></center>
+<img src="/images/road4.webp" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Step 2: Contextualization and Enrichment" width="750" height="509" loading="lazy" decoding="async">
 
 1. **Correlate with Internal Data**  
    - **Asset-Relevance Mapping**  
@@ -118,7 +119,7 @@ Enrich each threat indicator with meaningful context, such as business impact, a
 **Objective**  
 Narrow your focus to the threats that matter most, and create tangible use cases that guide your detection strategy.
 
-<center><img src="/images/road5.png" alt="r5" width="650"/></center>
+<img src="/images/road5.webp" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Step 3: Threat Prioritization and Use Case Development" width="650" height="426" loading="lazy" decoding="async">
 
 1. **Rank Threats by Severity and Likelihood**  
    - **Severity Matrix**  
@@ -162,7 +163,7 @@ Narrow your focus to the threats that matter most, and create tangible use cases
 **Objective**  
 Translate prioritized threats and use cases into precise detection rules that can be deployed in your existing security technologies.
 
-<center><img src="/images/road6.png" alt="r6" width="500"/></center>
+<img src="/images/road6.webp" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Step 4: Creation of Detection Rules" width="500" height="329" loading="lazy" decoding="async">
 
 1. **Select Detection Technologies**  
    - **Platforms**  
@@ -208,7 +209,7 @@ Translate prioritized threats and use cases into precise detection rules that ca
 **Objective**  
 Implement your detection rules in production environments, then refine them to achieve a reliable balance between actionable alerts and minimal false positives.
 
-<center><img src="/images/road7.png" alt="r7" width="650"/></center>
+<img src="/images/road7.webp" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Step 5: Deployment and Tuning" width="650" height="229" loading="lazy" decoding="async">
 
 1. **Staged Rollout**  
    - **Pilot Deployment**  
@@ -251,7 +252,7 @@ Implement your detection rules in production environments, then refine them to a
 **Objective**  
 Evaluate the effectiveness of your detection program, capture lessons learned, and iterate to stay ahead of changing threats.
 
-<center><img src="/images/road8.png" alt="r8" width="400"/></center>
+<img src="/images/road8.webp" alt="Navigating the R.O.A.D. from Threat Intelligence to Detection Rules: Step 6: Measurement and Continuous Improvement" width="400" height="372" loading="lazy" decoding="async">
 
 1. **Key Performance Indicators (KPIs)**  
    - **Detection Rate**  

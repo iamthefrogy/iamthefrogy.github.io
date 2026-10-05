@@ -1,0 +1,20 @@
+{{ with site.Params.home.paths }}
+<section class="home-section home-paths" aria-label="Where to start">
+  <div class="home-paths__grid">
+    {{ range . }}
+    <article class="path-card">
+      <div class="path-card__head">
+        {{ with .icon }}<span class="icon-square"><i class="fa-solid {{ . }}" aria-hidden="true"></i></span>{{ end }}
+        <h2 class="path-card__title">{{ .title }}</h2>
+      </div>
+      <p class="path-card__intro">{{ .intro }}</p>
+      <ul class="path-card__links">
+        {{ range .links }}
+        <li><a href="{{ .url | relURL }}">{{ .label }}<i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a></li>
+        {{ end }}
+      </ul>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

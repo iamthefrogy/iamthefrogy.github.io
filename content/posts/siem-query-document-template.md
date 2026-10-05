@@ -1,7 +1,8 @@
 +++
 date = '2025-01-12T01:08:17Z'
 draft = false
-title = '(SIEM) SIEM Query Knowledgebase Document Template'
+title = 'SIEM Query Knowledgebase Document Template'
+tags = ['Detection Engineering']
 +++
 
 ## Why I Created a SIEM Query Template

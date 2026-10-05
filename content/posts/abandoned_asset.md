@@ -1,7 +1,8 @@
 +++
 date = '2025-03-25T12:55:31Z'
 draft = false
-title = '(ASM) Decision Tree to Identify Potential/Confirmed Abandoned/Unmaintained External Applications'
+title = 'Decision Tree to Identify Potential/Confirmed Abandoned/Unmaintained External Applications'
+tags = ['Vulnerability Management and ASM']
 +++
 
 Maintaining a clean and secure application inventory is critical for any organization. Over time, however, many web applications become outdated or downright abandoned. This post presents an **in-depth decision framework**—complete with a **GraphViz DOT diagram**—that you can use to systematically identify potentially unwanted or abandoned applications.
@@ -38,4 +39,4 @@ We generally split “abandonment indicators” into *Potential* vs. *Confirmed*
 
 By **tallying these indicators**, you can decide whether an application is simply *Potentially Abandoned* (needs more investigation) or *Confirmed Abandoned* (safe to retire or require urgent remediation).
 
-<center><img src="/images/abandoned_asset.png" width="1250"/></center></br>
+<img src="/images/abandoned_asset.webp" alt="Decision Tree to Identify Potential/Confirmed Abandoned/Unmaintained External Applications: High-Level Criteria" width="1250" height="1390" decoding="async">

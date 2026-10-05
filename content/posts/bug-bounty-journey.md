@@ -1,7 +1,8 @@
 +++
 date = '2026-04-23T16:50:26+01:00'
 draft = false
-title = '(Bug-Bounty) From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened'
+title = 'From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened'
+tags = ['Offensive Security']
 +++
 
 *A practical, no-BS guide based on real submissions, real rejections, and real lessons - not theory.*
@@ -255,7 +256,7 @@ When I reported the entire Hypothesis table to XYZ Company, the founder responde
 
 They paid $500 and said the hypothesis table (my list of what I tested and what I did not test) was valuable to them. **The methodology itself was part of the deliverable.**
 
-<center><img src="/images/hypothesis.png" alt="dd_bg" width="1550"/></center></br>
+<img src="/images/hypothesis.webp" alt="From duplicates to $$$$ bounties: A bug bounty journey v2.0 that actually happened: The XYZ Company Example" width="1550" height="610" decoding="async">
 
 ## The Mindset: What Nobody Tells You
 

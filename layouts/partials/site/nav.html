@@ -1,33 +1,34 @@
-<div class="site-nav">
+{{ $current := . }}
+<header class="site-nav">
   <div class="site-nav__inner">
     <a class="site-brand" href="{{ "/" | relURL }}">
-      <span class="site-brand__mark"></span>
-      <span class="site-brand__text">{{ .Site.Title }}</span>
+      <span class="site-brand__name">{{ site.Params.author }}</span>
+      {{ with site.Params.brand_tagline }}
+      <span class="site-brand__tagline">{{ . }}</span>
+      {{ end }}
     </a>
-    {{ with .Site.Menus.main }}
-    <nav class="site-menu d-none d-md-flex">
+    {{ with site.Menus.main }}
+    <nav class="site-menu d-none d-lg-flex" aria-label="Main">
       {{ range . }}
-      <a class="site-menu__link" href="{{ .URL }}">{{ .Name }}</a>
+      {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+      <a class="site-menu__link{{ if $active }} is-active{{ end }}" href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
     </nav>
+    <button class="site-menu__toggle d-lg-none" type="button" data-bs-toggle="collapse"
+      data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
     {{ end }}
-    <div class="site-nav__actions">
-      {{ with .Site.Menus.main }}
-      <button class="navbar-toggler site-menu__toggle d-md-none" type="button" data-bs-toggle="collapse"
-        data-bs-target="#site-menu-drawer" aria-controls="site-menu-drawer" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      {{ end }}
-    </div>
   </div>
-  {{ with .Site.Menus.main }}
-  <div class="collapse site-menu__drawer d-md-none" id="site-menu-drawer">
-    <nav class="d-flex flex-column gap-2">
+  {{ with site.Menus.main }}
+  <div class="collapse site-menu__drawer d-lg-none" id="site-menu-drawer">
+    <nav class="site-menu__drawer-list" aria-label="Main, mobile">
       {{ range . }}
-      <a class="site-menu__link" href="{{ .URL }}">{{ .Name }}</a>
+      {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+      <a class="site-menu__link{{ if $active }} is-active{{ end }}" href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
     </nav>
   </div>
   {{ end }}
-</div>
+</header>

@@ -1,5 +1,4 @@
 {{ partial "header.html" . }}
-{{ partial "main_menu.html" . }}
 <main class="page-shell projects-page">
   <article class="page-article">
     <header class="page-article__header">
@@ -10,9 +9,7 @@
     </header>
 
     {{ with .Content }}
-    <section class="page-article__content">
-      <div class="content">{{ . }}</div>
-    </section>
+    <div class="content">{{ . }}</div>
     {{ end }}
 
     {{ range .Params.sections }}
@@ -29,8 +26,8 @@
         <div class="col">
           <article class="home-card projects-card h-100">
             <div class="home-card__icon">
-              <span class="icon-circle">
-                <i class="{{ if .icon_brand }}fa-brands{{ else }}fa-solid{{ end }} {{ .icon }}"></i>
+              <span class="icon-square">
+                <i class="{{ if .icon_brand }}fa-brands{{ else }}fa-solid{{ end }} {{ .icon }}" aria-hidden="true"></i>
               </span>
             </div>
             <h3 class="home-card__title">
@@ -44,11 +41,11 @@
             {{ end }}
             <div class="projects-card__links">
               <a class="home-card__link" href="{{ .url | safeURL }}" target="{{ $target }}"{{ if .external }} rel="noopener"{{ end }}>
-                Open {{ if .external }}<i class="fa-solid fa-arrow-up-right-from-square"></i>{{ else }}<i class="fa-solid fa-arrow-right-long"></i>{{ end }}
+                Open {{ if .external }}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>{{ else }}<i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>{{ end }}
               </a>
               {{ with .repo }}
               <a class="home-card__link" href="{{ . | safeURL }}" target="_blank" rel="noopener">
-                Source <i class="fa-brands fa-github"></i>
+                Source <i class="fa-brands fa-github" aria-hidden="true"></i>
               </a>
               {{ end }}
             </div>

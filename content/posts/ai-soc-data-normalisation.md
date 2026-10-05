@@ -1,7 +1,8 @@
 +++
 date = '2026-02-23T19:05:01Z'
 draft = false
-title = '(SIEM) The Data Normalization Problem Nobody Talks About'
+title = 'The Data Normalization Problem Nobody Talks About'
+tags = ['Detection Engineering']
 +++
 
 
@@ -21,7 +22,7 @@ Let us be concrete about the scale of this problem. A mid-size enterprise runnin
 
 The following diagram shows the core problem. The same authentication failure event, fragmented across six common enterprise security tools, each naming fields differently - all pointing to one overwhelmed analyst who needs to produce a single detection rule:
 
-<center><img src="/images/fleak1.png" width="850"/></center></br>
+<img src="/images/fleak1.webp" alt="The Data Normalization Problem Nobody Talks About: 01 - The Problem Space: Why Security Data Is Still a Mess in 2026" width="850" height="480" decoding="async">
 
 
 The following is the same event - a **failed authentication** - rendered across three common vendors. All three mean exactly the same thing. None of them look alike:
@@ -71,7 +72,7 @@ OCSF was open-sourced in August 2022 and has been gaining adoption at impressive
 
 The below is the schema heirachy example fo the authentication event:
 
-<center><img src="/images/fleak2.png" width="1450"/></center></br>
+<img src="/images/fleak2.webp" alt="The Data Normalization Problem Nobody Talks About: 02 - The Standard: OCSF, the Common Language for Security Events" width="1389" height="500" loading="lazy" decoding="async">
 
 The key insight is in the leaf nodes. Every authentication event whether from Active Directory, Okta, or AWS IAM, MUST uses the same field names:
 
@@ -105,7 +106,7 @@ The tool is available for free at [app.ocsf.fleak.ai](https://app.ocsf.fleak.ai/
 
 There are two distinct components in the Fleak solution, and understanding the separation of concerns between them is essential before evaluating either.
 
-<center><img src="/images/fleak3.png" width="500"/></center></br>
+<img src="/images/fleak3.webp" alt="The Data Normalization Problem Nobody Talks About: 04 - Architecture: How It Works End to End" width="500" height="964" loading="lazy" decoding="async">
 
 
 The **OCSF Mapper** is where you design and test your transformations - purely a design tool, nothing runs live. **ZephFlow** is the execution engine that processes your live log streams using the exported configuration files. The configurations are portable and can be deployed in your own infrastructure.
@@ -119,7 +120,7 @@ The **OCSF Mapper** is where you design and test your transformations - purely a
 
 The diagram below shows the internal decision flow of the AI when it receives a raw log and needs to produce an OCSF mapping:
 
-<center><img src="/images/fleak4.png" width="500"/></center></br>
+<img src="/images/fleak4.webp" alt="The Data Normalization Problem Nobody Talks About: 05 - Technical Deep Dive: What the AI Is Actually Doing" width="500" height="999" loading="lazy" decoding="async">
 
 
 The key step is **Semantic Analysis** - the AI is not doing a lookup table. It is understanding the *intent* of the event. The Cisco `%ASA-4-106023` code gets resolved to `activity_id: 6` (Refuse) not because there is a hardcoded mapping for that message ID, but because the AI understands that "deny" in a network access control context maps to OCSF's Refuse activity. This is semantic translation, not just syntactic renaming.
@@ -183,23 +184,23 @@ AssumeRole is one of the most abused APIs in AWS-based attacks. An attacker who 
 
 3. Inside the project, click **"New Mapping"** → select JSON log (you can select any based on your requirement).
 
-<center><img src="/images/aws-fleak-1.png" width="900"/></center></br>
+<img src="/images/aws-fleak-1.webp" alt="The Data Normalization Problem Nobody Talks About: Example 1 - AWS CloudTrail: Suspicious AssumeRole Event" width="900" height="626" loading="lazy" decoding="async">
 
 4. In the input panel, paste the entire JSON block above.
 
-<center><img src="/images/aws-fleak-2.png" width="1200"/></center></br>
+<img src="/images/aws-fleak-2.webp" alt="The Data Normalization Problem Nobody Talks About: Example 1 - AWS CloudTrail: Suspicious AssumeRole Event" width="1200" height="840" loading="lazy" decoding="async">
 
 5. Click **"Analyse & Map to OCSF"**. The AI should detect this as an **Identity & Access Management** event (class 3002 Authentication).
 
-<center><img src="/images/aws-fleak-3.png" width="1200"/></center></br>
+<img src="/images/aws-fleak-3.webp" alt="The Data Normalization Problem Nobody Talks About: Example 1 - AWS CloudTrail: Suspicious AssumeRole Event" width="1200" height="832" loading="lazy" decoding="async">
 
 6. Click on **Generate Mapping** and it will generate rule mapping for you which would look something like below.
 
-<center><img src="/images/aws-fleak-4.png" width="1200"/></center></br>
+<img src="/images/aws-fleak-4.webp" alt="The Data Normalization Problem Nobody Talks About: Example 1 - AWS CloudTrail: Suspicious AssumeRole Event" width="1200" height="832" loading="lazy" decoding="async">
 
 You can also know the rule transformation code.
 
-<center><img src="/images/aws-fleak-5.png" width="1300"/></center></br>
+<img src="/images/aws-fleak-5.webp" alt="The Data Normalization Problem Nobody Talks About: Example 1 - AWS CloudTrail: Suspicious AssumeRole Event" width="1300" height="610" loading="lazy" decoding="async">
 
 7. In the Visual Editor, verify that `userIdentity.userName` is mapped to `actor.user.name`, and that `sourceIPAddress` → `src_endpoint.ip`.
 
@@ -453,7 +454,7 @@ Windows Event ID 4625 is one of the highest-volume events in any Windows environ
 
 Following the same steps as listed in the above AWS topic, you will get below output.
 
-<center><img src="/images/aws-fleak-6.png" width="1300"/></center></br>
+<img src="/images/aws-fleak-6.webp" alt="The Data Normalization Problem Nobody Talks About: Example 2 - Windows Security Event Log: Password Spray (Event ID 4625)" width="1300" height="757" loading="lazy" decoding="async">
 
 **OCSF Output:**
 
@@ -605,7 +606,7 @@ Feb 18 2026 09:12:47 PA-VM-5250 1,2026/02/18 09:12:47,012345678901,THREAT,vulner
 
 Following the same steps as listed in the above sections, you will get below output.
 
-<center><img src="/images/aws-fleak-7.png" width="1300"/></center></br>
+<img src="/images/aws-fleak-7.webp" alt="The Data Normalization Problem Nobody Talks About: Example 3 - Palo Alto NGFW: Log4Shell Threat Alert" width="1300" height="638" loading="lazy" decoding="async">
 
 **OCSF Output:**
 
@@ -789,7 +790,7 @@ Zeek is widely used for network traffic analysis. Its `conn.log` is a tab-separa
 
 Following the same steps as listed in the above sections, you will get below output.
 
-<center><img src="/images/aws-fleak-7.png" width="1300"/></center></br>
+<img src="/images/aws-fleak-7.webp" alt="The Data Normalization Problem Nobody Talks About: Example 4 - Zeek (Bro) Network Sensor: conn.log with C2 Pattern" width="1300" height="638" loading="lazy" decoding="async">
 
 **OCSF Output:**
 
@@ -1095,7 +1096,7 @@ Following the same steps as listed in the above sections, you will get below out
 
 The diagram below shows a production-grade ZephFlow deployment processing all six of our lab log sources simultaneously, routing normalised OCSF events to different downstream platforms:
 
-<center><img src="/images/fleak5.png" width="1050"/></center></br>
+<img src="/images/fleak5.webp" alt="The Data Normalization Problem Nobody Talks About: 07 - ZephFlow: The Open-Source Execution Engine" width="991" height="491" loading="lazy" decoding="async">
 
 ```yaml
 # Simplified ZephFlow workflow definition - referencing Lab mapping configs
@@ -1176,7 +1177,7 @@ There is a direct line between the work Fleak is doing and the AI SOC evolution 
 
 The diagram below illustrates exactly what the data layer looks like before and after OCSF normalisation - and why this matters so much for AI model accuracy:
 
-<center><img src="/images/fleak7.png" width="850"/></center></br>
+<img src="/images/fleak7.webp" alt="The Data Normalization Problem Nobody Talks About: The Broader Context: Why This Matters for AI SOC" width="801" height="896" loading="lazy" decoding="async">
 
 
 The majority failure rate of AI agent projects within 30 days is not primarily a model quality problem. It is a data quality problem. Models trained on or prompted with normalised, semantically consistent data outperform models dealing with fragmented vendor dialects - by a wide margin.

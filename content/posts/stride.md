@@ -1,7 +1,8 @@
 +++
 date = '2025-04-29T14:34:07+01:00'
 draft = false
-title = '(Threat Model) - STRIDE Threat Modelling - In-Depth Practical'
+title = 'STRIDE Threat Modelling - In-Depth Practical'
+tags = ['Security Architecture']
 +++
 
 ## Threat Modeling Isn't Just for Paranoids: Getting Real with STRIDE
@@ -129,7 +130,7 @@ So if I were to summarize all of these in a single table, it would be something 
 </table>
 </div>
 
-</br>
+<br>
 
 ### Why STRIDE Rocks (and When to Use It)
 
@@ -146,14 +147,14 @@ Now that we know what STRIDE is, let's look at how to actually put it into pract
 ## Summary of The Approach
 Before we go deep into this novel approach, let me summarize the overall process from this article in a simplistic diagram.
 
-<center><img src="/images/overall-stride-approach.png" width="850"/></center>
+<img src="/images/overall-stride-approach.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Summary of The Approach" width="850" height="1124" decoding="async">
 
 
 ## The STRIDE Process: From Theory to Action
 
 Before we go deep into process, let’s look at the high level process how does it look like:
 
-<center><img src="/images/stride_process_high_level.png" width="850"/></center>
+<img src="/images/stride_process_high_level.webp" alt="STRIDE Threat Modelling - In-Depth Practical: The STRIDE Process: From Theory to Action" width="850" height="1032" loading="lazy" decoding="async">
 
 Okay, we know the what (the STRIDE categories) and the why (proactive security!). Now, let's get into the how. How do you actually do a STRIDE analysis? It's not just about chanting the acronym; it's a process. Here’s a typical flow, keeping in mind this can be adapted:
 
@@ -917,12 +918,12 @@ Internally, this API needs to interact with several other components:
 ### Data Flow Diagram (DFD)
 
 - Level 1 DFD
-<center><img src="/images/stride-ecom-l1.png" width="650"/></center>
+<img src="/images/stride-ecom-l1.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Data Flow Diagram (DFD)" width="650" height="493" loading="lazy" decoding="async">
 
 - Level 2 DFD
-<center><img src="/images/stride-ecom-l2.png" width="1050"/></center>
+<img src="/images/stride-ecom-l2.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Data Flow Diagram (DFD)" width="1050" height="342" loading="lazy" decoding="async">
 
-</br>
+<br>
 
 - **External Entities:** Customer (via Frontend App), Payment Gateway.
 - **Processes:** Checkout API, (maybe separate internal processes like Validate Order, Process Payment, Update Database).
@@ -975,7 +976,7 @@ For each category:
     - Customer ↔ API (public Internet)
     - API ↔ Payment Gateway (PCI zone)
     - API ↔ internal services/databases (internal network).
-</br>
+<br>
 
  - **Key data flows into/out of P1:**
     - In: Cart details + auth token (from Customer)
@@ -1524,10 +1525,10 @@ This system typically involves several components:
 ### Data Flow Diagrams (DFDs)
 
 **Level 1 DFD**
-<center><img src="/images/dfd-iot-smart-lock-l1.png" width="850"/></center>
+<img src="/images/dfd-iot-smart-lock-l1.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Data Flow Diagrams (DFDs)" width="850" height="431" loading="lazy" decoding="async">
 
 **Level 2 DFD**
-<center><img src="/images/dfd-iot-smart-lock-l2.png" width="850"/></center>
+<img src="/images/dfd-iot-smart-lock-l2.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Data Flow Diagrams (DFDs)" width="850" height="468" loading="lazy" decoding="async">
 
 - **External Entities:** User, (potentially) Guest User.
 - **Processes:** Mobile App, Cloud Backend, Smart Lock Firmware.
@@ -1563,10 +1564,10 @@ This platform likely involves numerous microservices running in a cloud environm
 ### Data Flow Diagrams (DFDs)
 
 **Level 1 DFD**
-<center><img src="/images/dfd-ca-l1.png" width="850"/></center>
+<img src="/images/dfd-ca-l1.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Data Flow Diagrams (DFDs)" width="850" height="259" loading="lazy" decoding="async">
 
 **Level 2 DFD**
-<center><img src="/images/dfd-ca-l2.png" width="850"/></center>
+<img src="/images/dfd-ca-l2.webp" alt="STRIDE Threat Modelling - In-Depth Practical: Data Flow Diagrams (DFDs)" width="850" height="698" loading="lazy" decoding="async">
 
 - **External Entities:** Tenant User, (potentially) Tenant Admin, Tenant IdP.
 - **Processes:** Web UI/API Gateway, Ingestion Service, Compute Service (Job Execution), Job Scheduler, Dashboard Service, IdP.
