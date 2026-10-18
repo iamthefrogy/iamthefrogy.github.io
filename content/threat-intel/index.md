@@ -20,6 +20,11 @@ title = '26 Sep - 3 Oct 2026'
 date = '2026-10-03'
 url = '/threat-intel/2026-09-21-2026-09-28.html'
 
+[[weeks]]
+title = '04 Oct - 18 Oct 2026'
+date = '2026-10-18'
+url = '/threat-intel/2026-10-18_14d_technical.html'
+
 
 
 +++
